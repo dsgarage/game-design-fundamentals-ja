@@ -1,0 +1,2262 @@
+STORYTELLING AND NARRATIVE 
+199
+ CHAPTER 7
+Design Practice QUESTIONS
+1. How do the actions that you make available to the player work with the story in 
+your game such that the story remains credible, coherent, and dramatically 
+meaningful?
+2. How will you design your gameplay to be sure that the player does not experience 
+so much randomness or repetition that it harms the dramatic tension of your story?
+3. Will the story in your game be linear or nonlinear?
+4. If your story is nonlinear, will the story branch or fold back? What kinds of 
+things will cause it to branch: challenges, choices, or both? Will you allow deferred 
+or cumulative inﬂ uences, or will all inﬂ uences be immediate?
+5. If the story folds back, how many inevitable events will it have? What will they 
+be like?
+6. How many endings will your story have? How does each ending reﬂ ect the play-
+er’s play and/or choices throughout the game?
+7. What will be the size of your game’s granularity? How and when are narrative 
+events interwoven with game events and player actions?
+8. What mechanism will you use to advance the plot? Travel, events, time, or some 
+combination?
+9. Can the story begin at the beginning of the game, or would the game beneﬁ t 
+from a prolog as well?
+10. Will the game include narrative (that is, noninteractive) material? What role will 
+it play—an introduction, mission brieﬁ ng, transitional material, a conclusion, or 
+character deﬁ nition? Is the narrative essential for the player to understand and play 
+the game?
+11. What form will the narrative material take? Pages in the manual? Scrolling text 
+in the program? Movies? Cut-scenes? Voiceover narration? Monologs by characters?
+12. What actions might the player take that are story actions but not efforts to over-
+come challenges? Conversations? Construction? Exploration?
+13. Will the game include scripted conversations? Between the player and which 
+characters? For what purpose?
+14. Will the story be multipart? If so, how will the plot lines be handled: as an 
+unlimited series, a limited series, or a serial?
+
+
+--- PAGE BREAK ---
+
+User Interfaces
+The user interface (UI) creates the player’s experience, making the game visible, 
+audible, and playable. It has an enormous effect on whether the player perceives 
+the game as satisfying or disappointing, elegant or graceless, fun or frustrating.
+In this chapter, you’ll learn the general principles of user interface design and a 
+process for designing your interface, along with some ideas about how to manage 
+its complexity. We’ll then look at two key concepts related to game interfaces:
+interaction models and camera models. After that we’ll delve into speciﬁ cs, examining 
+some of the most widely used visual and audio elements in video game UI and ana-
+lyzing the functionality of various types of input devices. Because the overwhelming
+majority of video games include some notion of moving characters or vehicles 
+around the game world, we’ll consider a variety of navigation mechanisms as they 
+are implemented in different camera models and with different input devices. The 
+chapter concludes with a few observations on how to make your game 
+customizable.
+What Is the User Interface?
+What works is better than what looks good. The looks good can change, but what
+works, works.
+—RAY KAISER EAMES, DESIGNER AND ARCHITECT
+As you saw in Figure 2.1, the UI lies between the player and the internals of the 
+game. The UI knows all about any supported input and output hardware. It trans-
+lates the player’s input—the button-presses (or other actions) in the real world—
+into actions in the game world according to the interaction model (see Chapter 1, 
+“Games and Video Games”), passing on those actions to the core mechanics, and
+it presents the internal data that the player needs in each situation in visible and 
+audible forms.
+This chapter refers to the outputs as the visual elements and audio elements of the 
+user interface and to the inputs as the control elements. When the game gives impor-
+tant information to the player about his activities, the state of the game world, or 
+the state of his avatar (such as the amount of health or money he has), we say that 
+it gives feedback to the player—that is, it informs him of the effects of his actions. 
+The visual and audio elements of the user interface that provide this information 
+are called feedback elements.
+NOTE To see repre-
+sentative examples 
+of screen layouts suit-
+able for different game 
+genres, read the chap-
+ters in Part Two, “The 
+Genres of Games,” that 
+discuss the genres.
+NOTE When you 
+design the core me-
+chanics, you should 
+avoid making choices 
+that depend on the 
+performance charac-
+teristics of particular 
+input/output (I/O) 
+devices. Let the UI 
+manage the hardware, 
+and keep the internals 
+of the game hardware-
+independent. If you 
+later port the game to 
+another machine, you 
+will only have to re-
+design the UI, not the 
+core mechanics.
+CHAPTER 8
+200
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+201
+ CHAPTER 8
+TERMINOLOGY ISSUES
+The term button is unfortunately overloaded, because it sometimes refers to a button on 
+an input device that the player can physically press and at other times it refers to a visual 
+element on the screen that the player can click with the mouse. In order to disambiguate 
+the two, this chapter always refers to physical buttons on an input device as controller 
+buttons and those on the screen, activated by the mouse, as screen buttons. Keys refers 
+to keys on a computer keyboard. The term key is interchangeable with controller button
+because they both transmit the same type of data.
+Menus and screen buttons appear on the screen as visual elements, but clicking them 
+with the mouse sends a message to the internals of the game, which makes them control 
+elements as well. Furthermore, the appearance of a screen button may change in 
+response to a click, making it a mechanism for giving information as well as for exercis-
+ing control. Your experience with computers should allow you to tell from context what 
+these terms refer to when you encounter them in this text.
+Any discussion of user interface design runs into a chicken-and-egg problem: You 
+can’t learn how to design a good UI without already knowing the names of com-
+mon visual elements such as power bars and gauges, and this chapter can’t introduce
+the common visual elements without making references to how they’re used. So, to 
+address the most critical information ﬁ rst, we’ll start with the principles of inter-
+face design. If you encounter a reference to an interface element you’ve never heard 
+of, see the section “Visual Elements” later in the chapter for an explanation.
+Dozens, perhaps hundreds, of published books address user interface design, and 
+this chapter does not try to duplicate all that material. The following sections con-
+centrate speciﬁ cally on user interfaces for games, how they interact with the game’s 
+mechanics, and how they create the entertainment experience for the player. To 
+read more about user interfaces in general, see The Elements of User Experience by 
+Jesse James Garrett (Garrett, 2003).
+Player-Centric Interface Design
+A game’s user interface plays a more complex role than does the UI of most other 
+kinds of programs. Most computer programs are tools, so their interfaces allow the 
+user to enter and create data, to control processes, and to see the results. A video 
+game, on the other hand, exists to entertain and, although its user interface must 
+be easy to learn and use, it doesn’t tell the player everything that’s happening 
+inside the game, nor does it give the player maximum control over the game. It 
+mediates between the internals and the player, creating an experience for the 
+player that feels to him like gameplay and storytelling.
+
+
+--- PAGE BREAK ---
+
+202 
+FUNDAMENTALS OF GAME DESIGN
+The player-centric approach taught in this book applies to user interface design,
+as it does to all aspects of designing a game. Therefore, the discussion is tightly 
+focused on what the player needs to play the game well and how to create as 
+smooth and enjoyable an experience as possible.
+About Innovation
+Although innovation is a good thing in almost all aspects of game design—theme, 
+game worlds, storytelling, art, sound, and of course gameplay—do not innovate 
+unnecessarily when designing a new interface. This is especially true of button 
+assignments on controllers and keyboards. Over the years, most genres have 
+evolved a practical set of feedback elements and control mechanisms suited to their 
+gameplay. Learn the standard techniques by playing other games in your chosen 
+genre and adopt whichever of them is appropriate for your game. Pay special atten-
+tion to games that are widely admired as the best of their kind. Their UI probably 
+helped them secure that reputation.  
+DESIGN RULE Do Not Innovate Unnecessarily in UI Design
+If a standard exists, use it—or as much of it as works with your game. If you force the 
+player to learn an unfamiliar UI when a perfectly good one already exists, you will frus-
+trate him and he will dislike the game no matter what other good qualities it has. 
+If you do choose to offer a new user interface for a familiar problem, build a tutorial 
+level and playtest it thoroughly with both novice and experienced players. If test-
+ing shows that your new system is not a substantial improvement over the traditional
+approach, go back to what works. Also be sure to allow the player to customize the 
+interface in case he doesn’t like it. The section “Allowing for Customization” 
+addresses this further near the end of this chapter.
+Some General Principles
+The following general principles for user interface design apply to all games regard-
+less of genre:
+■ Be consistent. This applies to both aesthetic and functional issues; your game 
+should be stylistically as well as operationally consistent. If you offer the same 
+action in several different gameplay modes, assign that action to the same controller 
+button or menu item in each mode. The names for things that appear in indica-
+tors, menus, and the main view should be identical in each location. Your use of 
+color, capitalization, typeface, and layout should be consistent throughout related 
+areas of the game.
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+203
+ CHAPTER 8
+■ Give good feedback. When the player interacts with the game, he expects the 
+game to react—at least with an acknowledgment—immediately. When the player 
+presses any screen button, the game should produce an audible response even if the 
+button is inactive at the time. An active button’s appearance should change either 
+momentarily or permanently to acknowledge the player’s click.
+■ Remember that the player is the one in control. Players want to feel in charge 
+of the game—at least in regard to control of their avatars. Don’t seize control of the 
+avatar and make him do something the player may not want. The player can accept 
+random, uncontrollable events that you may want to create in the game world or as 
+part of the behavior of nonplayer characters, but don’t make the avatar do random 
+things the user didn’t ask him to do.
+■ Limit the number of steps required to take an action. Set a maximum of 
+three controller-button presses to initiate any special move unless you need combo 
+moves for a ﬁ ghting game (see Chapter 13, “Action Games”). The casual gamer’s 
+twitch ability tops out at about three presses. Similarly, don’t require the player to 
+go through menu after menu to ﬁ nd a commonly used command. (See “Depth ver-
+sus Breadth” later in the chapter for further discussion.)
+■ Permit easy reversal of actions. If a player makes a mistake, allow him to undo 
+the action unless that would affect the game balance adversely. Puzzle games that 
+involve manipulating items such as cards or tiles should keep an undo/redo list and 
+let the player go backward and forward through it, though you can set a limit on 
+how many moves backward and forward the game permits.
+■ Minimize physical stress. Video games famously cause tired thumbs, and 
+unfortunately, repetitive stress injuries from overused hands can seriously debili-
+tate players. Assign common and rapid actions to the most easily accessible 
+controller buttons. Not only do you reduce the chance of injuring your player, but 
+you allow him to play longer and to enjoy it more.
+■ Don’t strain the player’s short-term memory. Don’t require the player to 
+remember too many things at once; provide a way for him to look up information 
+that he needs. Display information that he needs constantly in a permanent feed-
+back element on the screen.
+■ Group related screen-based controls and feedback mechanisms on the 
+screen. That way, the player can take in the information he needs in a single glance 
+rather than having to look all over the screen to gather the information to make a 
+decision.
+■ Provide shortcuts for experienced players. Once players become experienced 
+with your game, they won’t want to go through multiple layers of menus to ﬁ nd 
+the command they need. Provide shortcut keys to perform the most commonly 
+used actions from the game’s menus, and include a key-reassignment feature. See 
+the section “Allowing for Customization” at the end of the chapter.
+
+
+--- PAGE BREAK ---
+
+204 
+FUNDAMENTALS OF GAME DESIGN
+What the Player Needs to Know
+Players naturally need to know what’s happening in the game world, but they also 
+need to know what they should do next, and most critically, they need information 
+about whether their efforts are succeeding or failing, taking them closer to victory 
+or closer to defeat. In this section, you learn about the information that the game 
+must present to the player to enable her to play the game. In keeping with a player-
+centric view of game design, think of these items as questions the player would ask.
+■ Where am I? Provide the player with a view of the game world. This visual ele-
+ment is called the main view. If she can’t see the whole world at one time (as she 
+usually can’t), also give her a map or a mini-map that enables her to orient herself 
+with respect to parts of the world that she can’t currently see. You should also pro-
+vide audio feedback from the world: ambient sounds that tell her something about 
+her environment.
+■ What am I actually doing right now? To tell the player what she’s doing, show 
+her avatar, party, units, or whatever she’s controlling in the game world, so she can 
+see it (or them) moving, ﬁ ghting, resting, and so on. If the game uses a ﬁ rst-person 
+perspective, you can’t show the player’s avatar, so show her something from which 
+she can infer what her avatar is doing: If her avatar climbs a ladder, the player sees 
+the ladder moving downward as she goes up. Here again, give audio feedback: Riding 
+a horse should produce a clop-clop sound; walking or running should produce foot-
+steps at an appropriate pace. Less concrete activities, such as designating an area in 
+which a building will be constructed, should also produce visible and audible 
+effects: Display a glow on the ground and play a deﬁ nitive clunk or similar sound.
+■ What challenges am I facing? Display the game’s challenges, puzzles, combat, 
+or whatever they may be—directly in the main view of the game world. Some chal-
+lenges make noise: Monsters roar and boxers grunt. To show conceptual or economic
+challenges, you may need text to explain the challenge, for example, “You must 
+assemble all the clues and solve the mystery by midnight.”
+■ Did my action succeed or fail? Show animations and indicators that display 
+the consequences of actions: The player punches the bad guy and the bad guy falls 
+down; the player sells a building and the money appears in her inventory. 
+Accompany these consequences with suitable audio feedback for both success and 
+failure: a whack sound if the player’s punch lands and a whiff sound if the player’s 
+punch misses; a ka-ching! when the money comes in.
+■ Do I have what I need to play successfully? The player must know what 
+resources she can control and expend. Display indicators for each: ammunition, 
+money, energy, and so on.
+■ Am I in danger of losing the game? Show indicators for health points, power, 
+time remaining in a timed challenge, or any other resource that must not be 
+allowed to reach zero. Use audio signals—alarms or vocal warnings—to alert the 
+player when one of these commodities nears a critical level.
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+205
+ CHAPTER 8
+■ Am I making progress? Show indicators for the score, the percentage of a task 
+completed, or the fact that a player passed a checkpoint.
+■ What should I do next? Unless your game provides only a sandbox-type game 
+world in which the player can run around and do anything she likes in any order, 
+players need guidance about what to do. You don’t need to hold their hands every 
+step of the way, but you do need to make sure they always have an idea of what the 
+next action could or should be. Adventure games sometimes maintain a list of peo-
+ple for the avatar to talk to or subjects to ask NPCs about. Road races over unfamiliar
+territory often include signs warning of curves ahead.
+■ How did I do? Give the player emotional rewards for success and (to a lesser 
+extent) disincentives for failure through text messages, animations, and sounds. 
+Tell her clearly when she’s doing well or badly and when she has won or lost. When 
+she completes a level, give her a debrieﬁ ng: a score screen, a summary of her activi-
+ties, or some narrative.
+DESIGN RULE Do Not Taunt the Player
+A few designers think it’s funny to taunt or insult the player for losing. This is mean-spirited 
+and violates a central principle of player-centric game design—the duty to empathize. 
+The player will feel bad about losing anyway. Don’t make it worse.
+What the Player Wants to Do
+Just as the player needs to know things, the player wants to do things. You can 
+offer him many things to do depending upon the game’s genre and the current 
+state of the game, but some actions crop up so commonly as to seem almost univer-
+sal. Here are some extremely common actions.
+■ Move. The vast majority of video games include travel through the game world 
+as a basic player action. How you implement movement depends on your chosen 
+camera and interaction models. You have so many different options that a whole 
+section, “Navigation Mechanisms,” addresses movement later in this chapter.
+■ Look around. In most games, the player cannot see the whole game world at 
+one time. In addition to moving through the world, he needs a way of adjusting his 
+view of the world. In avatar-based games, he can do this through the navigation 
+mechanism (see “Navigation Mechanisms”). In games using multipresent and other 
+interaction models that provide aerial perspectives, give him a set of controls that 
+allow him to move the virtual camera to see different parts of the world.
+■ Interact physically with nonplayer characters. In games involving combat, 
+this usually means attacking nonplayer characters, but interaction can also mean 
+giving them items from the inventory, carrying or healing them, and many other 
+kinds of interactions.
+
+
+--- PAGE BREAK ---
+
+206 
+FUNDAMENTALS OF GAME DESIGN
+■ Pick portable objects up and put them down. If your game includes portable 
+objects, implement a mechanism for picking them up and putting them down. 
+This can mean anything from picking up a chess piece and putting it down else-
+where on the board to a full-blown inventory system in a role-playing game in 
+which the player can pick up objects in the environment, add them to the inven-
+tory, give them to other characters, buy them, sell them, or discard them again.
+Be sure to include checks to prevent items from being put down in inappropriate 
+places (such as making an illegal move in chess). Some games do not permit players 
+to put objects down, in order to prevent the players from leaving critical objects 
+behind.
+■ Manipulate ﬁ xed objects. Many objects in the environment can be manipu-
+lated in place but not picked up, such as light switches and doors. For an avatar-
+based game, design a mechanism that works whenever the avatar is close enough to 
+the object to press it, turn it, or whatever might be necessary. In other interaction 
+models, let the player interact more directly with ﬁ xed objects by clicking them. 
+You can simplify this process by giving ﬁ xed objects a limited number of states 
+through which they may be rotated: a light switch is on or off; curtains are fully 
+open, halfway open, or closed.
+■ Construct and demolish objects. Any game that allows the player to build 
+things needs suitable control mechanisms for choosing something to build or 
+materials to build with, selecting a place to build, and demolishing or disassem-
+bling already-built objects. It also requires feedback mechanisms to indicate where 
+the player may and may not build, what materials he has available, and if appropri-
+ate, what it will cost. You should also include controls for allowing him to see the 
+structure in progress from a variety of angles. For further discussion of construc-
+tion mechanisms, see Chapter 18, “Construction and Management Simulations.”
+■ Conduct negotiations and ﬁ nancial transactions, and set numeric values.
+In complex simulations, players sometimes need to deal with numbers directly, 
+especially when managing quantities of intangible resources such as money. 
+Conventional user interfaces for desktop applications employ many ways of obtain-
+ing a number from the user—typed characters, scrolling list boxes, sliders, and so 
+on. Unfortunately, most of these prosaic mechanisms harm the player’s fantasy 
+unless he is playing a game set in the modern world. If you need to let the player 
+manipulate raw numbers, try to ﬁ nd a way—perhaps with appropriate artwork and 
+consistent typefaces—to make it ﬁ t into your game’s cultural style.
+■ Give orders to units or characters. Players need to give orders to units or char-
+acters in many types of games. Typically this requires a two- or three-step process: 
+designating the unit to receive the order, giving the order, and optionally giving 
+the object of the order, or target. Orders take the form of verbs, such as attack, hug,
+open, or unload, and targets take the form of direct objects for the verbs, such as thug,
+dog, crate, or truck, indicating what the unit should attack, hug, open, or unload.
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+207
+ CHAPTER 8
+■ Conduct conversations with nonplayer characters. Video games almost 
+always implement dialog with NPCs as scripted conversations conducted through a 
+series of menus on the screen. See “Scripted Conversations and Dialog Trees” in 
+Chapter 7, “Storytelling and Narrative.”
+■ Customize a character or vehicle. If your game permits the player to customize 
+his character or vehicle, you will have to provide a suitable gameplay mode or shell 
+menu. The player may want to customize visible attributes of avatar characters, 
+such as hair, clothing, and body type, as well as invisible ones, such as dexterity. 
+Players like to specify the color of the vehicles they drive, and they need a way to 
+adjust a racing car’s mechanical attributes because this directly affects its 
+performance.
+■ Talk to friends in networked multiplayer games. Multiplayer online games 
+must give players opportunities to socialize. Build these mechanisms through chat 
+systems and online bulletin boards or forums.
+■ Pause the game. With the exception of arcade games, any single-player game 
+must allow the player to pause the action temporarily.
+■ Set game options. Outside the game world, the player may want to set the 
+game’s difﬁ culty level, customize the control assignments (see “Allowing for 
+Customization” later in this chapter), or adjust other features such as the behavior 
+of the camera. Build shell menus to allow the player to do this.
+■ Save the game. All but the shortest games must give the player a way to stop the 
+game and continue from the same point when the player next starts up the game 
+software. See “Saving the Game” in Chapter 9, “Gameplay.”
+■ End the game. Don’t forget to include a way to quit!
+The Design Process
+You will recall from Chapter 2, “Design Components and Processes,” that the game 
+design process takes place in three stages: concept, elaboration, and tuning. Designing 
+the user interface takes place early during the elaboration stage. There’s no point in 
+designing it any earlier; if you do so before the end of the concept phase, the over-
+all design may change dramatically and your early UI work will be wasted.
+This section outlines the steps of the UI design process. You can ﬁ nd deﬁ nitions for 
+many of the components you will use for your game’s UI later in this chapter.
+Deﬁ ne the Gameplay Modes First
+A gameplay mode consists of a camera model, an interaction model, and the game-
+play (challenges and actions) available. During the concept stage, deﬁ ne, in general 
+NOTE In a commer-
+cial development team, 
+the lead designer and 
+the user interface 
+designer(s) are nor-
+mally different people. 
+For simplicity’s sake, 
+this chapter assumes 
+you will do both jobs.
+
+
+--- PAGE BREAK ---
+
+208
+FUNDAMENTALS OF GAME DESIGN
+terms, what gameplay modes the game will have. At the beginning of the elabora-
+tion stage, start to design the gameplay modes in detail.
+Your ﬁ rst job will be to design the primary gameplay mode, the one in which the 
+player spends the majority of her time. See the sections “Interaction Models” and 
+“Camera Models” later in this chapter for details about each of them. Once you 
+have chosen the camera model, interaction model, and gameplay for the primary 
+gameplay mode, you can begin to create the details of the user interface for that 
+mode.
+When you have designed the primary gameplay mode, move on to the other modes 
+that you think your game will need. Plan the structure of the game using a ﬂ ow-
+board, as described in Chapter 2. In addition to gameplay activities, don’t forget 
+story-related activities. Design modes that deliver narrative content and engage in 
+dialog if your game supports these. Be sure to include a way to interrupt narrative 
+and get back to gameplay, and a pause menu (if it’s a real-time game) so the player 
+can answer the telephone.
+Gameplay modes do not typically use completely different user interfaces but 
+share a number of UI features, so it’s best to deﬁ ne all the modes before you begin 
+UI work. If your game provides a small number of gameplay modes (say, ﬁ ve or 
+fewer), you can start work on the user interfaces as soon as you decide what pur-
+pose each mode serves and what the player will do there. However, if the game 
+provides a large number of modes, then you should wait until after you have 
+planned the structure of the game and you understand how the game moves from 
+mode to mode.
+Once you have the list of gameplay modes, start to think about what visual ele-
+ments and controls each will need. Using graph paper or a diagramming tool such 
+as Microsoft Visio, make a ﬂ owchart of the progression of menus, dialog boxes, and 
+other user interface elements that you intend to use in each mode. Also document 
+what the input devices will do in each.
+Occasionally gameplay modes can share a single UI when the modes differ only
+in the challenges they offer. If you want to allow the player to control the change 
+from one mode to another, your user interface must offer commands to accomplish 
+these mode changes.
+Steps in designing a game’s user interface include, for each mode, designing a 
+screen layout, selecting the visual elements that will tell the player what she needs 
+to know, and deﬁ ning the inputs to make the game do what she wants to do. We’ll 
+take up these topics in turn. The remainder of this discussion assumes that you’re 
+working on the user interface for the most important mode—the primary gameplay 
+mode—although this advice applies equally to any mode.
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+209
+ CHAPTER 8
+BUILD A PROTOTYPE UI
+Experienced designers always build and test a prototype of their user interfaces before 
+designing the ﬁ nal speciﬁ cations. When you have the names and functions of your UI 
+elements for a mode worked out, you can begin to build a prototype using placeholder 
+artwork and sounds so that you can see how your design functions. Don’t spend a lot of 
+time creating artwork or audio on the assumption that you’ll use it in the ﬁ nal product; 
+you may have to throw it away if your plans change. Plenty of good tools allow interface 
+prototyping, including graphics and sound, with minimal programming. You can make 
+very simple prototypes in Microsoft PowerPoint using the hyperlink feature to switch 
+between slides. Macromedia Flash offers more power, and if you can do a little program-
+ming, other game-making tools such as Blitz Basic (www.blitzbasic.com) will let you 
+construct a prototype interface.
+Your prototype won’t be a playable game but will display menus and screen buttons and 
+react to signals from input devices. It should respond to these as accurately as possible 
+given that no actual game software supports it. If a menu item should cause a switch to a 
+new gameplay mode, build that in. If a controller button should shoot a laser, build the 
+prototype so that at least it makes a zap noise to acknowledge the button press.
+As you work and add additional gameplay modes to the prototype, keep testing to see if 
+it does what you want. Don’t try to build it all at once; build a little at a time, test, tune, 
+and add some more. The ﬁ nished prototype will be invaluable to the programming and 
+art teams that will build the real interface. And again, don’t innovate unless you have to. 
+Borrow from the best.
+Choosing a Screen Layout
+Once you have a clear understanding of what the player does in the primary (or 
+any) mode and you’ve chosen an interaction model and a camera model, you must 
+then choose the general screen layout and the visual elements that it will include.
+The main view of the game world should be the largest visual element on the 
+screen, and you must decide whether it will occupy a subset of the screen—a win-
+dow—or whether it will occupy the entire screen and be partially obscured by 
+overlays. See “Main View,” later in the chapter, for more information about your 
+options.
+You will need to ﬁ nd a balance between the amount of screen space that you 
+devote to the main view and the amount that you devote to feedback elements and 
+on-screen controls. Fortunately this seldom presents a problem in personal com-
+puter and console games, which use high-resolution screens. It remains a serious 
+challenge for handheld devices and a very serious one indeed for mobile phones, 
+which do not yet have standardized screen sizes and shapes.
+
+
+--- PAGE BREAK ---
+
+210 
+FUNDAMENTALS OF GAME DESIGN
+Telling the Player What He Needs to Know
+What, apart from the current view of the game world, does the player need to see 
+or to know about? What critical resources does he need to be aware of at all times, 
+and what’s the best way to make that information available to him? Select the
+data from your core mechanics that you want to show, and choose the feedback 
+elements most suited to display those kinds of data using the list in “Feedback 
+Elements,” later in this chapter, as a guide. Also ask yourself what warnings the 
+player may need and then decide how to give both visual and audible cues. Use
+the general list from “What the Player Needs to Know” earlier in this chapter, but 
+remember that the gameplay you offer might dictate a slightly different list. Your 
+game may include unique attributes that have never been used before, which 
+require new types of feedback elements. For example, a game about clothing design 
+might include an attribute called originality, and you could display the level of origi-
+nality with a set of iconic images of T-shirts, ranging from plain white (unoriginal) 
+to something outrageously tie-dyed (very original).
+Once you have deﬁ ned the critical information, move on to the optional informa-
+tion. What additional data might the player request? A map? A different viewpoint 
+of the game world? Think about what feedback elements would best help him 
+obtain needed information and how to organize access to such features.
+Throughout this process, keep the general principles of good user interface design 
+in mind; test your design against the general principles listed in “Some General 
+Principles” earlier in this chapter.
+Letting the Player Do What She Wants to Do
+Now you can begin devising an appropriate control mechanism to initiate every 
+action the player can take that affects the game (whether within the game world or 
+outside of it, such as saving the game). Refer to the list provided earlier in “What 
+the Player Wants to Do” to get started.
+What key actions will the player take to overcome challenges? Refer to the genre 
+chapters in this book for special UI concerns for each genre. What actions unre-
+lated to challenges might she need: move the camera, participate in the story, 
+express herself, or talk to other players online? Create visual and audible feedback 
+for the actions to let the player know if these succeeded or failed.
+You’ll need to map the input devices to the player’s actions, based on the interac-
+tion model you have chosen (see “Interaction Models” later in this chapter). Games 
+vary too much to tell you exactly how to achieve a good mapping; study other 
+games in the same genre to see how they use on-screen buttons and menus or the 
+physical buttons, joysticks, and other gadgets on control devices. Use the latter for 
+player actions for which you want to give the player the feeling that she’s acting 
+directly in the game without mediation by menus. Whenever possible, borrow 
+tried-and-true techniques to keep it all as familiar as possible.
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+211
+ CHAPTER 8
+Work on one gameplay mode at a time, and every time you move to a new game-
+play mode, be sure to note the actions it has in common with other modes and 
+keep the control mechanisms consistent.
+Shell Menus
+Shell menus allow the player to start, conﬁ gure, and otherwise manage the opera-
+tion of the game before and after play. The screens and menus of the shell interface 
+should allow the player to conﬁ gure the video and audio settings and the game 
+controls (see “Allowing for Customization” later in the chapter), to join in multi-
+player games over a network, to save and load games, and to shut down the game 
+software.
+The player should not have to spend much time in the shell menus. Provide a way 
+to let players get right into the action with one or two clicks of a button.
+A surprising number of games include awkward and ugly shell menus because 
+designers assumed that creating these screens could wait until the last minute. 
+Remember, the shell interface is the ﬁ rst thing your player will see when he starts 
+up the game. You don’t want to make a bad impression before the player even gets 
+into the game world.
+Managing Complexity
+As game machines become more powerful, games themselves become increasingly 
+complex with correspondingly complex user interfaces. Without a scheme for man-
+aging this complexity, you can end up with a game that players ﬁ nd extremely 
+difﬁ cult to play—either because no one can remember all the options (as with 
+some ﬂ ight simulators) or because so many icons and controls crammed onto the 
+screen (as in some badly designed strategy games) leave little room for the main 
+view of the game world. Here you learn some options for managing your game’s 
+complexity.
+Simplify the Game
+This option should be your ﬁ rst resort. If your game is too complex, make it sim-
+pler. You may do this in two ways: with abstraction and automation.
+ABSTRACTION
+When you abstract some aspect of a complicated system, you remove a more accu-
+rate and detailed version of that aspect or function and replace it with a less 
+accurate and detailed version or no version at all. This makes the game less realistic 
+but easier to play. If the abstracted feature required UI control or feedback mecha-
+nisms, you may save yourself the trouble of designing them.
+
+
+--- PAGE BREAK ---
+
+212 
+FUNDAMENTALS OF GAME DESIGN
+Many driving games don’t simulate fuel consumption; the developers abstracted 
+this idea out of the game. They don’t pretend that the car runs by magic—the player 
+can still hear the engine—but they just don’t address the question. Consequently, 
+the user interface needs no fuel gauge and no way to put fuel in the car. The player 
+doesn’t have to think about these things, which makes the game easier to play.
+AUTOMATION
+When you automate a process, you remove it from the player’s control and let the 
+computer handle it for her. When the game requires a choice of action, the com-
+puter chooses. Note that this isn’t the same as abstraction because the underlying 
+process remains part of the core mechanics; you just don’t bother the player about 
+it. The computer can take over the process entirely, in which case, again, you can 
+save the time you would have spent on designing UI, or you can build the manual 
+controls into the game but keep them hidden unless the player chooses to take over 
+manual control (usually through an option in a shell menu). Racing games often 
+automate the process of shifting gears so it just happens by itself; the player doesn’t 
+have to think about it.
+If you let the player choose between automated or manual control over a game fea-
+ture, you can refer to the two options as beginner’s mode and expert mode in the 
+menu where she makes the choice. You might want to reward the player for choos-
+ing the more complex task. For example, you can make automated gear-shifting 
+slightly less efﬁ cient than expert manual gear-shifting, so the player who gets really 
+good at manual shifting gets a beneﬁ t. If the automated task is perfectly efﬁ cient, 
+the player has no incentive to learn the manual task.
+Depth Versus Breadth
+The more options you offer the player at one time, the more you risk scaring off a 
+player who ﬁ nds complex user interfaces intimidating. A UI that provides a large 
+number of options simultaneously is said to be a broad interface. If you offer only a 
+few options at a time and require the player to make several selections in a row to 
+get to the one he wants, the user interface is said to be deep.
+Broad interfaces permit the player to search the whole interface by looking for what 
+he wants, but ﬁ nding the one item of current interest in that broad array takes 
+time. Once the player learns where to ﬁ nd the buttons or dials, he can usually ﬁ nd 
+them again quickly. Players who invest the (sometimes considerable) training time 
+ﬁ nd using a broad interface to be efﬁ cient; they can quickly issue the commands 
+they want. The cockpit of a commercial passenger aircraft qualiﬁ es as an enor-
+mously broad interface; with such a huge array of instruments, the pilot can place 
+his hand on any button he needs almost instantly, which makes ﬂ ying safer. On 
+the other hand, pilots must train for years to learn them all.
+Deep interfaces normally offer all their choices through a hierarchical series of 
+menus or dialog boxes. The user can quickly see what each menu offers. He can’t 
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+213
+ CHAPTER 8
+know in advance what sequence of menu choices he must make to ﬁ nd the option 
+he wants, so the menus must be named and organized coherently to guide him. 
+Even once he learns to ﬁ nd a particular option, he still has to go through the 
+sequence of menus to get to it each time. On the other hand, using a well-designed 
+deep interface takes almost no training.
+It’s a good idea to offer both a deep and a broad interface at the same time: deep
+for the new players, broad for the experienced ones. You can do this on the PC by 
+assigning shortcut keys to frequently used functions. The large number of keys on
+a PC keyboard enables you to construct a broad interface easily. Console machines, 
+with fewer controller buttons available and no mouse for pointing to screen ele-
+ments, offer fewer options for creating broad interfaces.
+If you can only offer one interface, try to make the breadth and depth of your inter-
+face roughly equal; but avoid making anything more than three or four levels deep 
+if you can help it. When deciding how to structure menus, categorize the options 
+by frequency of access. The most frequently accessed elements should be one or 
+two steps away from the player at most. The least frequently accessed elements can 
+be farther down the hierarchy.
+Context-Sensitive Interfaces
+A context-sensitive interface reduces complexity by showing the player only the 
+options that she may actually use at the moment. Menu options that make no 
+sense in the current context simply do not display. Microsoft Windows takes a mid-
+dle path, continuing to show unavailable menu options in gray, while active menu 
+items display in black. This reduces the user’s confusion somewhat because she 
+doesn’t wonder why an option that she saw a few minutes ago has disappeared.
+Graphic adventures, role-playing games, and other mouse-controlled games often 
+use a context-sensitive pointer. The pointer changes form when pointed at an 
+object with which it can interact. When pointing to a tree, for instance, it may 
+change to the shape of an axe to indicate that pressing the mouse button will
+cause the tree to be cut down. The player learns the various things the mouse can 
+do by pointing it at different objects in the game world and seeing how it changes.
+Avoiding Obscurity
+A user interface can function correctly and be pretty to look at, but when the player 
+can’t actually tell what the buttons and menus do, it is obscure. Several factors in 
+the UI design process tend to produce obscurity, and you should be on the lookout 
+for them:
+■ Artistic overenthusiasm. Artists naturally want to make a user interface as 
+pleasing and harmonious as they can. Unfortunately, they sometimes produce UI 
+elements that, while attractive, convey no meaning.
+
+
+--- PAGE BREAK ---
+
+214 
+FUNDAMENTALS OF GAME DESIGN
+■ The pressure to reduce UI screen usage. Using an icon instead of a text label 
+on a screen button saves space, and so does using a small icon instead of a large 
+one. But icons can’t convey complicated messages as well as text can, and small, 
+simple icons are necessarily less visually distinctive than large, complex ones. 
+When you reduce the amount of space required by your UI, be sure you don’t do so 
+to the point of making its functions obscure.
+■ Developer familiarity with the material. You know what your icons mean and 
+how they work—you created them. That means you’re not the best judge of how 
+clear they will be to others. Always test your UI on someone unfamiliar with your 
+game. See whether your test subjects can ﬁ gure out for themselves how things 
+work. If it requires a lot of experimentation, your UI is too obscure.
+Interaction Models
+Chapter 2 deﬁ ned the interaction model as the relationship between the player’s 
+inputs via the input devices and the resulting actions in the game world. You create 
+the game’s interaction model by deciding how the player’s controller-button presses 
+and other real-world actions will be interpreted as game world activities by the core 
+mechanics. The functional capabilities of the various input devices available will 
+inﬂ uence your decisions (see “Input Devices” later in the chapter). There isn’t room 
+here to discuss button assignments in detail, so you should play other games in 
+your genre to ﬁ nd examples that work well.
+In practice, interaction models fall into several well-known types:
+■ Avatar-based, in which the player’s actions consist mostly of controlling a single 
+character—his avatar—in the game world. The player acts upon the world through 
+the avatar and, more importantly, generally can inﬂ uence only the region of the 
+game world that the avatar currently inhabits. An avatar is analogous to the human 
+body: To do something in our world, we have to physically take our bodies to the 
+place where we want to do it. That doesn’t mean an avatar must be human or even 
+humanoid; a vehicle can be an avatar. To implement this mode, therefore, many of 
+your button-assignment decisions will center on navigation (see “Navigation 
+Mechanisms” later in the chapter).
+■ Multipresent (or omnipresent), in which the player can act upon several different 
+parts of the game world at a time. In order for him to do so, you must give him a 
+camera model that permits him to see the various areas that he can change; typi-
+cally, an aerial perspective. Chess uses a multipresent interaction model; the player 
+may ordinarily move any of his pieces (which can legally move) on any turn. 
+Implementing this mode requires providing ways for the player to select and pick 
+up objects or give orders to units.
+■ In the party-based interaction model, most commonly found in role-playing 
+games, small groups of characters generally remain together. In this model, you 
+will probably want to use point-and-click navigation and an aerial perspective.
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+215
+ CHAPTER 8
+■ In the contestant model, the player answers questions and makes decisions, as if a 
+contestant in a TV game show. Navigation will not be necessary; you will simply 
+assign different decision options to different buttons.
+■ The desktop model mimics a computer (or a real) desktop and is ordinarily found 
+only in games that represent some kind of ofﬁ ce activity, such as business simulations.
+A coherent design that follows common industry practice will probably ﬁ t into one 
+of these familiar models. You can create others if your game really requires them, 
+but if you do so, you may need to design more detailed tutorial levels to teach your 
+player the controls.
+Camera Models
+Old video games, especially those for personal computers, used to treat the game 
+screen as if it were a game board in a tabletop game. Today we use a cinematic anal-
+ogy and talk about the main view on the screen as if it displayed the output of a 
+movie camera looking at the game world. This is the source of the terms virtual 
+camera and camera model.
+To deﬁ ne the camera model, you will make a number of design decisions about 
+how you want the player to view the game world, what the camera focuses on, and 
+how the camera behaves. Certain camera models work best with particular interac-
+tion models; the next few sections introduce the most common camera models and 
+discuss the appropriate interaction models for them.
+FILMMAKING TERMINOLOGY
+The game industry has adopted a number of terms from ﬁ lmmaking to describe certain 
+kinds of camera movements. When a camera moves forward or back through the envi-
+ronment, it is said to dolly, as in the camera dollies to follow the avatar. When it moves 
+laterally, as it would to keep the avatar in view in a side-scrolling game, it trucks. When 
+it moves vertically, it cranes. When a camera swivels about its vertical axis but does not 
+move, it pans. When it swivels to look up or down, it tilts. When it rotates around an 
+imaginary axis running lengthwise through the lens, it is said to roll. Games almost 
+never roll their cameras except in ﬂ ight simulators; as in movies, the player normally 
+expects the horizon to be level.
+The 3D Versus 2D Question
+A question you must decide early on is whether your game should use a 3D graph-
+ics display engine or stick to 2D graphics technology. If a game uses 2D graphics, 
+the ﬁ rst-person and third-person perspectives will not be available; those camera 
+models require a 3D engine.
+NOTE The previous 
+edition of this book 
+used the term perspec-
+tive for all sorts of 
+virtual camera behavior. 
+However, perspective 
+suggests a ﬁ xed point 
+of view, which is no 
+longer appropriate for 
+today’s intelligent
+virtual cameras. This 
+edition still uses
+perspective to refer to 
+certain camera models 
+that are ﬁ xed with 
+respect to the game 
+world or the avatar, 
+such as the top-down 
+perspective or the ﬁ rst-
+person perspective. 
+Just remember that 
+a perspective is one 
+kind of camera model. 
+Other kinds of camera 
+models, such as
+context-sensitive
+cameras, aren’t called 
+perspectives because 
+the camera’s viewpoint 
+moves around.
+
+
+--- PAGE BREAK ---
+
+216 
+FUNDAMENTALS OF GAME DESIGN
+Virtually all large standalone games running on powerful game hardware such as
+a personal computer or home game console employ 3D. (Small games and those 
+played within a web browser often still use 2D graphics.) With modern hardware 
+now standard, you should use 3D graphics provided that you have the tools, the 
+skills, and the time to do it well. If you do not have the more complex tools and the 
+specialized skills to get good results, you should not try it. Good-looking 2D graph-
+ics are always preferable to bad-looking 3D graphics. While it may take the player a 
+while to detect weak AI or bad writing in a game, bad graphics show up from the 
+ﬁ rst moment.
+This question becomes critical for games on low-end mobile phones and personal 
+digital assistants. With no 3D graphics acceleration hardware, if these devices dis-
+play 3D graphics, they must do it with software rendering—a complex task that 
+burdens the slow processors that run these gadgets. Think twice before committing 
+yourself (and your programming team) to providing 3D graphics on such platforms. 
+Here, above all, heed the warning that if you cannot do it well, don’t do it at all.
+First-Person Perspective
+In the ﬁ rst-person perspective, used only in avatar-based gameplay modes, the camera 
+takes the position of the avatar’s own eyes, and is ﬁ xed with respect to the avatar. 
+Therefore, the player doesn’t usually see the avatar’s body, though the game may 
+display handheld weapons, if any, and occasionally the avatar’s hands. The ﬁ rst-
+person perspective also works well to display the point of view of the driver of a 
+vehicle; it shows the terrain ahead as well as the vehicle’s instrument panel but not 
+the driver herself. It conveys an impression of speed and helps immerse the player 
+in the game world. First-person perspective also removes any need for the player to 
+adjust the camera and, therefore, any need for you to design UI for camera adjust-
+ment. To look around, the player simply moves the avatar.
+ADVANTAGES OF THE FIRST-PERSON PERSPECTIVE
+Note the following beneﬁ ts of the ﬁ rst-person perspective compared with the third-
+person perspective:
+■ Your game doesn’t display the avatar routinely, so the artists don’t have to 
+develop a large number of animations, or possibly any image at all, of the avatar. 
+This can cut development costs signiﬁ cantly because you need animations only for 
+those rare situations in which the player can see the avatar: cut-scenes, or if the 
+avatar steps in front of a mirror.
+■ You won’t need to design AI to control the camera. The camera looks exactly 
+where the player tells it to look.
+■ The players ﬁ nd it easier to aim ranged weapons at approaching enemies in the 
+ﬁ rst-person perspective for two reasons. First, the avatar’s body does not block the 
+player’s view; second, the player’s viewpoint corresponds exactly with the avatar’s, 
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+217
+ CHAPTER 8
+and therefore, the player does not have to correct for differences between his own 
+perspective and the avatar’s.
+■ The players may ﬁ nd interacting with the environment easier. Many games 
+require the player to maneuver the avatar precisely before allowing him to climb 
+stairs, pick up objects, go through doorways, and so forth. The ﬁ rst-person perspec-
+tive makes it easy for the player to position the avatar accurately with respect to 
+objects.
+DISADVANTAGES OF THE FIRST-PERSON PERSPECTIVE
+Some of the disadvantages of the ﬁ rst-person perspective (as compared with third-
+person) include these:
+■ Because the player cannot see the avatar, the player doesn’t have the pleasure of 
+watching her or customizing her clothing or gear, both of which form a large part 
+of the entertainment in many games. Players enjoy discovering a new animation as 
+the avatar performs an action for the ﬁ rst time.
+■ Being unable to see the avatar’s body language and facial expressions (puzzle-
+ment, fear, caution, aggression, and so on) reduces the player’s sense of her as a 
+distinct character with a personality and a current mood. The avatar’s personality 
+must be expressed in other ways, through scripted interactions with other charac-
+ters, hints to the player, or talking to herself.
+■ The ﬁ rst-person perspective denies the designer the opportunity to use cinematic 
+camera angles for dramatic effect. Camera angles create visual interest for the player, 
+and some games rely on them heavily: Resident Evil, for example, and Grim Fandango.
+■ The ﬁ rst-person perspective makes certain types of gymnastic moves more difﬁ -
+cult. A player trying to jump across a chasm by running up to its edge and pressing 
+the jump button at the last instant ﬁ nds it much easier to judge the timing if the 
+avatar is visible on screen. In the ﬁ rst person, the edge of the chasm disappears off 
+the bottom of the screen during the approach, making it difﬁ cult to know exactly 
+when the player should press the button.
+■ Rapid movements, especially turning or rhythmic rising and falling motions, 
+can create motion sickness in viewers. A few games tried to simulate the motion
+of walking by swaying the camera as the avatar moves; this also tends to induce 
+motion sickness.
+Third-Person Perspective
+Games with avatar-based interaction models can also use the third-person perspective.
+The most common camera model in modern 3D action and action-adventure 
+games with strongly characterized avatars, it has the great advantage of letting the 
+player see the avatar, and the disadvantage that it requires much more work to 
+implement. The camera normally follows the avatar at a ﬁ xed distance, remaining 
+
+
+--- PAGE BREAK ---
+
+218 
+FUNDAMENTALS OF GAME DESIGN
+behind and slightly above her as she runs around in the world so the player can see 
+some way beyond the avatar into the distance.
+The standard third-person perspective depends on an assumption that threats to 
+the avatar will come from in front of her. Some games now include ﬁ ghting in the 
+style of martial-arts movies, in which enemies can surround the avatar; consider 
+recent games in the Prince of Persia series. To permit the player to see both the ava-
+tar and the enemies, the camera must crane up and tilt down to show the ﬁ ght 
+from a raised perspective.
+Designing the camera behavior for the third-person perspective poses a number of 
+challenges, discussed in the next few sections.
+CAMERA BEHAVIOR WHEN THE AVATAR TURNS
+So long as the avatar moves forward, away from the camera, the camera dollies to 
+follow; you should ﬁ nd this behavior easy to implement. When the avatar turns, 
+however, you have several options:
+■ The camera keeps itself continuously oriented behind the avatar, as in the chase
+view in ﬂ ight simulators (see Chapter 17, “Vehicle Simulations”). The camera 
+always points in the direction in which the avatar looks, allowing the player to 
+always see where the avatar is going, which is useful in high-speed or high-threat 
+environments. Unfortunately, the player never sees the avatar’s side or front, only 
+her back, which takes some of the fun out of watching the avatar. Also, a human 
+avatar can change directions rapidly (unlike a vehicle), and the camera must sweep 
+around quickly in order to remain behind her, which can give the player motion 
+sickness.
+■ The camera reorients itself behind the avatar somewhat more slowly, beginning 
+a few seconds after the avatar makes her turn. This option enables the player to see 
+the avatar’s side for a few seconds until the camera reorients itself. Fewer players 
+will ﬁ nd the images dizzying. Super Mario 64, one of the ﬁ rst, and best, 3D console 
+games adopted this approach.
+■ The camera reorients itself behind the avatar only after she stops moving. 
+Although this is the least-intrusive way to reorient the camera, it does mean that if 
+the player instructs the moving avatar to turn and run back the way she came, she 
+runs directly toward the camera, which does not reorient itself; instead it simply 
+dollies away from her to keep her in view. The player cannot see any obstacles or 
+enemies in the avatar’s way because they appear to be behind the camera (until the 
+instant before she runs into them). Toy Story 2: Buzz Lightyear to the Rescue uses this 
+option; the effect, while somewhat peculiar, works well in the game’s largely non-
+threatening environment.
+If you plan for the camera to automatically reorient itself, you can give the player 
+control over how quickly the reorientation occurs by switching between active cam-
+era mode and passive camera mode. In active mode, the camera either remains 
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+219
+ CHAPTER 8
+oriented behind the avatar at all times or reorients itself quickly; in passive mode,
+it either orients itself slowly or only when the avatar stops moving. 
+INTRUDING LANDSCAPE OBJECTS
+What happens when the player maneuvers the avatar to stand with her back to a 
+wall? The camera cannot retain its normal distance from the avatar; if it did, it 
+would take up a position on the other side of the wall. Many kinds of objects in the 
+landscape can intrude between the avatar and the camera, blocking the player’s 
+view of her and everything else.
+If you choose a third-person perspective, consider one of the following solutions:
+■ Place the camera as normal but render the wall (and any other object in the 
+landscape that may come between the camera and the avatar) semitransparent. 
+This allows the player to see the world from his usual position but makes him 
+aware of the presence of the intruding object.
+■ Place the camera immediately behind the avatar, between her and the wall, but 
+crane it upward somewhat and tilt it down, so the player sees the area immediately 
+in front of the avatar from a raised point of view.
+■ Orient the camera immediately behind the avatar’s head and render her head 
+semitransparent until she moves so as to permit a normal camera position. The 
+player remains aware of her position but can still see what is in front of her.
+When the player moves the avatar so that an object no longer intrudes, return the 
+camera smoothly to its normal orientation and make the object suitably opaque 
+again, as appropriate.
+PLAYER ADJUSTMENTS TO THE CAMERA
+In third-person games, players occasionally need to adjust the position of the cam-
+era manually to get a better look at the game world without moving the avatar. If 
+you want to implement this, assign two buttons, usually on the left and right sides 
+of the controller, to control manual camera movement. The buttons should make 
+the camera circle around the avatar to the left or right, keeping her in focus in the 
+middle of the screen. This enables the player to see the environment around the 
+avatar and also to see the avatar herself from different angles.
+Toy Story 2: Buzz Lightyear to the Rescue uses a different adjustment: The left and 
+right buttons cause the avatar to pivot in position while the camera sweeps around 
+to remain behind his back. This changes the direction the avatar faces,  moves the 
+camera, and helps line the avatar up for jumps.
+Allowing the player to adjust the camera can help with the problem of intruding 
+landscape items, but it is not a real solution; the player would prefer that the cam-
+era handle the situation automatically.
+
+
+--- PAGE BREAK ---
+
+220 
+FUNDAMENTALS OF GAME DESIGN
+Aerial Perspectives
+Games with party-based or multipresent interaction models need a camera model 
+that allows the player to see a large part of the game world and several different 
+characters or units at once. Normally such games use an aerial perspective, which 
+gives priority to the game world in general rather than to one particular character.
+In games with multipresent interaction models, you must provide a way for the 
+player to scroll the main game view around to see any part of the world that he 
+wants (although parts of it may be hidden by the fog of war; see Chapter 14, 
+“Strategy Games”). With party-based interaction models, you may reasonably 
+restrict the player’s ability to move the camera so that it cannot move away from 
+the region of the game world where the party is.
+TOP-DOWN PERSPECTIVE
+The top-down perspective shows the game world from directly overhead with the 
+camera pointing straight down. In this respect, it resembles a map, so players ﬁ nd 
+the display familiar. It’s easy to implement using 2D graphics, which keeps its use 
+common on smaller devices, but its many disadvantages have led designers to use 
+other methods on more powerful machines.
+For one thing, this perspective enables the player to see only the roofs of buildings 
+and the tops of people’s heads. To give a slightly better sense of what a building 
+looks like, artists often draw them cheated—that is, at a slight angle even though 
+that isn’t how buildings appear from directly above (see Figure 18.1).
+The top-down perspective also distances the player from the events below. He feels 
+remote from the action and less attached to its outcomes. It makes a game world 
+feel like a simulation rather than a place that could be real.
+Designers of computer and console games now usually reserve this perspective for 
+showing maps, although it is still common on smaller devices and some web-based 
+games. Flight Control, for example, is a hugely popular top-down game for the iPhone.
+ISOMETRIC PERSPECTIVE
+The isometric perspective is normally used to display 2D outdoor scenes. While the 
+top-down perspective looks straight down at the landscape from an elevated posi-
+tion, the isometric perspective looks across the landscape from a somewhat lower 
+elevation, with the camera tilted down about 30 degrees from the horizontal. If the 
+game world is rectilinear, as they usually are in games that use the isometric perspec-
+tive, the camera is normally positioned at a 45-degree angle from the north-south 
+axis of the landscape. This permits players to see the sides of buildings in the land-
+scape, as well as the roof. See Figure 4.5 for a typical example. In the main view, a 
+mixed troop of soldiers marches out through a gap in a city wall. You can see two 
+sides and the roofs of various buildings around the soldiers.
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+221
+ CHAPTER 8
+Normally, a 2D display engine draws the isometric perspective using interchange-
+able tiles of a ﬁ xed size. As a result, the isometric perspective distorts reality 
+somewhat because objects that are farther from the camera are not smaller on the 
+screen. However, the camera does not display much of the landscape at one time, 
+so players don’t mind the slight distortion. The player can truck or dolly the cam-
+era above the landscape but cannot pan, tilt, or roll it. You can also allow the player 
+to shift the camera orientation to one of the other ordinal points of the compass to 
+see other sides of objects in the game world. If you want to provide this feature, the 
+artists will have to draw four sets of tiles, one for each possible camera orientation. 
+You can also let the player choose an altitude from which to view the world, but 
+the artists will have to draw multiple sets of tiles at different scales.
+The isometric perspective brings the player closer to the action than the top-down 
+perspective and allows him to see the sides of buildings as well as the roofs, so the 
+player feels more involved with the world. It also enables him to see the bodies of 
+people more clearly. Real-time strategy games and construction and management 
+simulations, both of which normally use multipresent interaction models, rou-
+tinely display the isometric perspective or its modern 3D equivalent, the 
+free-roaming camera. Some role-playing games that use a party-based interaction 
+model still employ the isometric perspective (see Figure 15.3).
+FREE-ROAMING CAMERA
+For aerial perspectives today, designers favor the free-roaming camera, a 3D camera 
+model that evolved from the isometric perspective and is made possible by modern 
+3D graphics engines. It allows the player considerably more control over the cam-
+era; she can crane it to choose a wide or a close-in view; and she can tilt and pan in 
+any direction at any angle, unlike the ﬁ xed camera angle of the isometric perspec-
+tive. The free-roaming camera also displays the world in true perspective: Objects 
+farther away seem smaller. The biggest disadvantage of the free-roaming camera is 
+that you have to implement all the controls for moving the camera and teach the 
+player how to use them.
+CONTEXT-SENSITIVE CAMERA MODELS
+Context-sensitive camera models require 3D graphics and are normally used with 
+avatar-based or party-based interaction models. In a context-sensitive model, the 
+camera moves intelligently to follow the action, displaying it from whatever angle 
+best suits the action at any time. You must deﬁ ne the behavior of the camera for 
+each location in the game world and for each possible situation in which the avatar 
+or party may ﬁ nd themselves.
+Ico, an action-adventure game, implements a context-sensitive model, using differ-
+ent camera positions in different regions of the world to show off the landscape 
+and the action to the best advantage. This makes Ico an unusually beautiful game 
+(see Figure 13.7). Context-sensitive models allow the designer to act as a 
+
+
+--- PAGE BREAK ---
+
+222
+FUNDAMENTALS OF GAME DESIGN
+cinematographer to create a rich visual experience for the player. Seeing game 
+events this way feels a bit like watching a movie because the designer intentionally 
+composed the view for each location.
+This approach brings with it two disadvantages. First, composing a view for each 
+location in the game world requires you and your programmers to do a lot more 
+work than is needed to implement other camera models. Second, a camera that 
+moves of its own accord can be disorienting in high-speed action situations. When 
+the player tries to control events at speed, he needs a predictable viewpoint from 
+which to do so. The context-sensitive perspective suits slower-moving games quite 
+well, and frenetic ones less well. Some games, such as those in the survival horror 
+series Silent Hill, use a context-sensitive perspective when the avatar explores but 
+switch to a third-person or other more ﬁ xed perspective when she gets into ﬁ ghts.
+DESIGN RULE Limit Camera Movement During Frenetic Action
+In the early Resident Evil games the camera sometimes jumped to a different point of view 
+without warning, right when the player was in the middle of a ﬁ ght. This disoriented the 
+player and upset his understanding of the relationship between the controls and the 
+screen, often causing him to lose the ﬁ ght. Don’t move the camera in unexpected ways 
+during high-speed action. Use a ﬁ xed, or at least a predictable, perspective. 
+Other 2D Display Options
+This section lists a few approaches to 2D displays that are now seldom used in large 
+commercial games on PCs and consoles but still widely found in web-based games 
+and on smaller devices. Modern games that intentionally opt for a retro feel, such 
+as Alien Hominid and Strange Adventures in Inﬁ nite Space, also use 2D approaches.
+■ Single-screen. The display shows the entire world on one screen, normally from 
+a top-down perspective with cheated objects. The camera never moves. Robotron: 
+2084 provides a classic example. (See the left side of Figure 13.1.)
+■ Side-scrolling. The world of a side-scroller—familiar from an entire generation 
+of games—consists of a long 2D strip in which the avatar moves forward and back-
+ward, with a limited ability to move up and down. The player sees the game world 
+from the side as the camera tracks the avatar.
+■ Top-scrolling. In this variant of the top-down perspective, the landscape scrolls 
+beneath the avatar (often a ﬂ ying vehicle), sometimes at a ﬁ xed rate that the player 
+cannot change. This forces the player to continually face new challenges as they 
+appear at the top of the screen.
+■ Painted backgrounds. Many graphical adventure games display the game world 
+in a series of 2D painted backgrounds rather like a stage set. The avatar and other 
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+223
+ CHAPTER 8
+characters appear in front of the backgrounds. The artists can paint these back-
+grounds from a variety of viewpoints, making such games more visually interesting 
+than side-scrolling and top-scrolling games, constrained only by the fact that the 
+same avatar graphics and animations have to look right in all of them. Some use a 
+2D/3D combination model in which the background is 2D but the character ani-
+mations are rendered with a 3D engine in front of the background. (See Figure 19.2 
+for an example.)
+Visual Elements
+Whichever interaction model and camera model your game offers, you’ll need to 
+supply information that the player needs to know by using the visual elements dis-
+cussed in this section.
+Main View
+The player’s main view of the game world should be the largest element on the 
+screen. You must decide whether the main view will appear in a window within 
+the screen with other user interface elements around it, or whether the view will 
+occupy the whole screen and the other user interface elements will appear on top 
+of it. We’ll look at these options next. (See also “Choosing a Screen Layout,” earlier 
+in the chapter.)
+WINDOWED VIEWS
+In a windowed view, the oldest and easiest design choice—the main view—takes up 
+only part of the screen, with th e rest of the screen showing panels displaying feed-
+back and control mechanisms. You ﬁ nd this view most frequently in games with 
+complicated user interfaces such as construction and management simulations, 
+role-playing games, and strategy games, because they require so many on-screen 
+controls (see Figure 15.4 for a typical example). Using a windowed view does not 
+mean that feedback elements never obscure the main view, only that they need to 
+do so less often because most of them are around the edges. 
+The windowed view really does make the player feel as if she’s observing the game 
+world through a window, so it harms immersion somewhat. It looks rather like a 
+computer desktop user interface, and you see this approach more often in PC games 
+than in console games. The loss of immersion matters less when the game requires 
+a great deal of control over a complex internal economy and the player needs access 
+to all those controls at all times.
+OPAQUE OVERLAYS
+If you want to create a greater sense of immersion than the windowed view offers, 
+you can have the main view ﬁ ll all or almost all of the screen and superimpose 
+TIP If you need to 
+display text in an 
+overlay, as many role-
+playing games do, 
+use opaque or nearly 
+opaque overlays so 
+little of the background 
+is visible through them. 
+Figure 15.5 shows why: 
+The semitransparent 
+overlay is hard to read 
+because the image 
+underneath confuses 
+the text. Players ﬁ nd it 
+irritating to read text 
+with graphics under-
+neath it, especially 
+moving graphics.
+
+
+--- PAGE BREAK ---
+
+224
+FUNDAMENTALS OF GAME DESIGN
+graphical elements on it in overlays, small windows that appear and disappear in 
+response to player commands. The most common type, the opaque overlay, entirely 
+obscures everything behind it (see Figure 18.5 for an example). Opaque overlays 
+carve a chunk out of the main view, but when they’re gone the player can see more 
+of the game world than in a windowed view, and she doesn’t feel as if she’s looking 
+through a window.
+Action games that don’t need a lot of UI elements on the screen often use borderless
+opaque overlays—overlays that don’t appear in a box. Compare the rather old-fash-
+ioned windowed view on the left side of Figure 13.2 with the borderless opaque 
+overlays on the right side. The overlays obscure only a small part of the main view, 
+which otherwise runs edge-to-edge.
+SEMITRANSPARENT OVERLAYS
+Semitransparent overlays let the player see partially through them (see Figure 8.1
+for an example). Semitransparent overlays feel less intrusive than opaque ones and 
+work well for things such as instruments in the cockpit-removed view in a ﬂ ight sim-
+ulator. However, the bleed-through of graphic material from behind these overlays 
+can confuse the information that the overlay presents. You can barely read the 
+semitransparent overlay in the upper left corner of Figure 17.5 because it consists
+of light colors with a light sky behind. Be sure your overlay isn’t too transparent.
+FIGURE 8.1
+A semitransparent 
+overlay in Guild Wars.
+The people and land-
+scape are clearly 
+visible through the 
+overlay.
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+225
+ CHAPTER 8
+Feedback Elements
+Feedback elements communicate details about the game’s inner states—its core 
+mechanics—to the player. They tell the player what is going on, how she is doing, 
+what options she has selected, and what activities she has set in motion.
+INDICATORS
+Indicators inform the player about the status of a resource, graphically and at a 
+glance. This section uses common examples from everyday life as illustrations. The 
+meaning of an indicator’s readout comes from labels or from context; the indicator 
+itself provides a value for anything you like. Still, some indicators suit certain types 
+of data better than others. Choose indicators that ﬁ t the theme of your game and 
+ones that don’t introduce anachronisms; a digital readout or an analog clock face 
+would both be shockingly out of place in a medieval fantasy.
+Indicators fall into three categories: general numeric, for large numbers or numbers 
+with fractional values; small-integer numeric, for integers from 0 to 5; and sym-
+bolic, for binary, tri-state, and other symbolic values. Here are some of the most 
+common kinds of indicators, with their types.
+■ Digits. General numeric. (A car’s odometer.) Unambiguous and space-efﬁ cient, a 
+digital readout can display large numbers in a small screen area. Digits can’t be read 
+easily at a glance, however; 171 can look a lot like 111 if you have only a tenth of a 
+second to check the display during an attack. Worse, many types of data the player 
+needs—health, energy, and armor strength—can’t be appropriately communicated 
+to the player by a number; no one actually thinks, “I feel exactly 37 points strong 
+at the moment.” Use digits to display the player’s score and amounts of things for 
+which you would normally use digits in the real world: money, ammunition, vol-
+umes of supplies, and so on. Don’t use digits for quantities that should feel 
+imprecise, such as popularity.
+■ Needle gauge. General numeric. (A car’s speedometer.) Vehicle simulations use 
+duplicates of the real thing—speedometers, tachometers, oil pressure levels, and so 
+on—but few other games require needle gauges. Generally easy to read at a glance, 
+they take up a large amount of screen space to deliver a small amount of informa-
+tion. You can put two needles on the same gauge if you make them different colors 
+or different lengths and they both reﬂ ect data of the same kind; an analog clock is 
+a two-needle gauge (or a three-needle gauge if another hand indicates seconds). Use 
+needle gauges in mechanical contexts.
+■ Power bar. General numeric. (On an analog thermometer, the column of col-
+ored ﬂ uid indicating temperature.) A power bar is a long, narrow colored rectangle 
+that becomes shorter or longer as the value that it represents changes, usually to 
+indicate the health of a character or time remaining in a timed task. (The name is 
+conventional; power bars are not limited to displaying power.) When the value 
+reaches zero, the bar disappears (though a framework around the bar may remain). 
+
+
+--- PAGE BREAK ---
+
+226
+FUNDAMENTALS OF GAME DESIGN
+If shown horizontally, zero is at the left and the maximum at the right; if shown 
+vertically, zero is at the bottom and maximum is at the top. The chief beneﬁ t of 
+power bars is that the player can read the approximate level of the value at a glance. 
+Unlike a thermometer, they rarely carry gradations. You can superimpose a second 
+semitransparent bar of a different color on top of the ﬁ rst one if you need to show 
+two numbers in the same space. Many power bars are drawn in green when full and 
+change color to yellow and red as the value indicated reaches critically low levels to 
+help warn the player. Power bars are moderately space efﬁ cient and, being themati-
+cally neutral, appear in all sorts of contexts. You can make themed power bars; a 
+medieval fantasy game might measure time with a graduated candle or an hourglass.
+■ Small multiples. Small-integer numeric. (On a mobile phone, the bars indicat-
+ing signal strength.) A small picture, repeated multiple times, can indicate the 
+number of something available or remaining. Small multiples are traditionally used 
+to represent lives remaining in action games; often they appear as an image or sil-
+houette of the avatar. Nowadays designers use them for things the avatar can carry, 
+such as grenades or healing potions, although you should limit the maximum 
+number to about ﬁ ve; beyond that the player can’t take in the number of objects at 
+a glance and must stop to count the pictures. To make this method thematically 
+appropriate for your game, simply choose an appropriate small picture.
+■ Colored lights. Symbolic. (In a car, various lights on the instrument panel.) 
+Lights are highly space efﬁ cient, taking up just a few pixels, but they can’t display 
+much data; normally they indicate binary (on/off) values with two colors, or tri-
+state values with three (off/low/high). Above three values, players tend to forget 
+what the individual colors mean, and bright colors are not thematically appropriate 
+in some contexts. Use a suitable palette of colors.
+■ Icons. Symbolic. (In a car, the symbols indicating the heating and air condition-
+ing status.) Icons convey information in a small space, but you must make them 
+obvious and unambiguous. Don’t use them for numerical quantities but for sym-
+bolic data that record a small number of possible options. For example, you can 
+indicate the current season with a snowﬂ ake, a ﬂ ower, the sun, and a dried leaf. 
+This will be clear to people living in the temperate parts of the world where these 
+symbols are well known, but it will work less well in cultures where snow doesn’t 
+fall. The player can quickly identify icons once she learns what they mean, and you 
+can help her learn by using a tooltip, a small balloon of text that appears momen-
+tarily when the mouse pointer touches an icon for a few seconds without clicking 
+it. Don’t use icons if you need large numbers of them (players forget what they 
+mean) or if they refer to abstract ideas not easily represented by pictures. In those 
+cases, use them with text alongside, or use text instead. Make your icons themati-
+cally appropriate by drawing pictures that look as if they belong in your game 
+world. The icons in Cleopatra: Queen of the Nile, set in ancient Egypt, are excellent 
+(see Figure 4.8).
+■ Text indicators. Symbolic. Text represents abstract ideas well, an advantage over 
+other kinds of indicators. In Civilization III, for example, an advisor character can 
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+227
+ CHAPTER 8
+offer the suggestion, “I recommend researching Nationalism.” Finding an icon to 
+represent nationalism or feudalism or communism, also options in the game, poses 
+a problem. On the other hand, some people ﬁ nd text boring, and two words can 
+look alike if they’re both rendered in the same color on the same color background. 
+The worst problem with text, however, is that it must be localized for each language 
+that you want to support. (See “Text” later in this chapter.)
+The books of Dr. Edward Tufte give some of the best advice anywhere about con-
+veying data to the player efﬁ ciently and readably, particularly The Visual Display of 
+Quantitative Information (Tufte, 2001).
+MINI-MAPS
+A mini-map, also sometimes called a radar screen, displays a miniature version of the 
+game world, or a portion of it, from a top-down perspective. The mini-map shows 
+an area larger than that shown by the main view, so the player can orient himself 
+with respect to the rest of the world. To help him do this, designers generally use 
+one of two display conventions: world-oriented or character-oriented mini-maps.
+■ The world-oriented map displays the entire game world with north at the top, 
+just like a paper map, regardless of the main view’s current orientation. An indica-
+tor within the mini-map marks that part of the game world currently visible in the 
+main view. (See Figure 4.2 for an example. The small rectangle on the mini-map 
+indicates which part of the world is currently showing in the main view.) In a mul-
+tipresent game, you can use the world-oriented map as a camera control device: If 
+the player clicks the map, the camera jumps to the location clicked.
+■ The character-oriented map displays the game world around the avatar, placing 
+him at the center of the map facing the top of the screen. If the player turns the 
+avatar to face in a new direction in the game world, the landscape, rather than the 
+avatar, rotates in the map. These mini-maps don’t show the whole game world, only 
+a limited area around the avatar, and as the avatar moves, they change accordingly. 
+They’re often round and for this reason are sometimes called radar screens. Because 
+the landscape rotates in the map, character-oriented mini-maps sometimes include 
+an indicator pointing north, making the map double as a compass.
+Because the mini-map must be small (usually 5 to 10 percent of the screen area), it 
+shows only major geographic features and minimal non–mission-critical data. Key 
+characters or buildings typically appear as colored dots. Areas of the game world 
+hidden by the fog of war appear hidden in the mini-map also.
+A mini-map helps the player orient himself and warns him of challenges not visible 
+in the main view, such as nearby enemies in a strategy or action game or a problem 
+developing in a construction and management simulation. Mini-maps typically 
+show up in a corner of the screen. You can ﬁ nd them in virtually any game that 
+uses aerial perspectives and many others as well. Figures 4.2, 4.5, 4.6, and 4.8 all 
+contain mini-maps.
+
+
+--- PAGE BREAK ---
+
+228
+FUNDAMENTALS OF GAME DESIGN
+COLOR
+You can always double the amount of data shown in a numeric indicator by having 
+the color of the indicator itself represent a second value. You might, for example, 
+represent the speed of an engine with a needle gauge, and the temperature of that 
+engine by changing the color of the needle from black to red as it gets hotter. 
+Colors work best to display information that falls into broad categories and doesn’t 
+require precision within those categories. Consider the green/yellow/red spectrum 
+used for safety/caution/danger: It doesn’t display a precise level of safety but con-
+veys the general level at a glance. (Note the warnings about color-blind players in 
+Appendix A, “Designing to Appeal to Particular Groups.”)
+Colors are also very useful for differentiating groups of opponents, however, and 
+you can apply them to uniforms and other insignia. This is especially handy if the 
+shapes or images of the actual units are identical regardless of which side they’re 
+on… as any chess player knows!
+You can also use color as a feedback element by placing a transparent color ﬁ lter 
+over the entire screen. Some ﬁ rst-person shooters turn the whole screen reddish for 
+a few frames to indicate that the avatar has been hit.
+Character Portraits
+A character portrait, normally appearing in a small window, displays the face of 
+someone in the game world—either the avatar, a member of the player’s party in a 
+party-based game, or a character the player speaks to. If the main view uses an aer-
+ial perspective, it’s hard for the player to see the faces of characters in the game, so 
+a character portrait gives the player a better idea of the person he’s dealing with. 
+Use character portraits to build identiﬁ cation between your player and his avatar or 
+party members and to convey more about the personalities of nonplayer characters. 
+An animated portrait can also function as a feedback element to give the player 
+information; Doom famously uses a portrait of the avatar as a feedback element,
+signaling declining health by appearing bloodier and bloodier. This portrait also 
+allows the player to see his avatar even though he is playing a ﬁ rst-person shooter.
+Screen Buttons and Menus
+Screen buttons and menus enable the player to control processes too complex to 
+manage with controller buttons alone. They work best with the mouse as a point-
+ing device but can also be used with a D-pad or joystick. Because a console doesn’t 
+have a mouse, console games make less use of screen buttons and menus than do 
+PC games, one of several reasons why console games tend to be less complex than 
+PC games.
+Screen buttons and menus should be so familiar to you from your experience with 
+personal computers that there is no need to discuss them in detail here, though 
+you should keep a couple of key issues in mind. First, putting too many buttons 
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+229
+ CHAPTER 8
+and menus on the screen confuses players and makes your game less accessible to 
+casual players (see “Managing Complexity,” earlier in the chapter). Second, unless 
+you use the desktop model, try to avoid making your buttons and menus look too 
+much like an ordinary personal computer interface. The more your game looks like 
+any other Windows or Macintosh application, the more it harms the player’s immer-
+sion in the game. Make your screen-based controls ﬁ t your overall visual theme.
+Text
+Most games contain a fair amount of text, even action games in which the player 
+doesn’t normally expect to do much reading. Text appears as a feedback element in 
+its own right, or as a label for menu items, screen buttons, and to indicate the 
+meaning of other kinds of feedback elements (a needle gauge might be labeled 
+Voltage, for example). You may also use text for narration, dialog (including subti-
+tles), a journal kept by the avatar, detailed information about items such as 
+weapons and vehicles, shell menus, and as part of the game world itself, on posters 
+and billboards.
+LOCALIZATION
+Localization refers to the process of preparing a game for sale in a country other 
+than the one for which you originally designed the game. Localizing a game often 
+requires a great many changes to the software and content of the game, including 
+translating all the text in the game into the target market’s preferred language. In 
+order to make the game easily localizable, you should store all the game’s text in 
+text ﬁ les and never embed text in a picture. Editing a text ﬁ le is trivial; editing a 
+picture is not.
+DESIGN RULE Keep Text Separate from Other Content
+Never have the programmers build text into the program code. Never build text that the 
+player is expected to read into an image such as a texture or a shell screen background. 
+Store all text in one or more text ﬁ les.
+The only exception to this rule applies to text used purely as decoration when you don’t 
+expect the player to read it or understand what it says. A billboard seen in a game set in 
+New York should be in English and remain in English even after localization if the bill-
+board text doesn’t constitute a crucial clue.
+Note that a word and its translation may differ in length in different languages, so 
+that a very short menu item in English can turn into a very long menu item in, say, 
+German. When you design your user interface, don’t crowd the text elements too 
+close together; the translations may require the extra space.
+
+
+--- PAGE BREAK ---
+
+230 
+FUNDAMENTALS OF GAME DESIGN
+TYPEFACES AND FORMATTING
+Make your text easily readable. The minimum height for text displayed on a screen 
+should be about 12 pixels; if you make the characters any smaller, they became less 
+legible. If the game will be localized to display non-Roman text such as Japanese, 
+12 pixels is the bare minimum, and 16 pixels is distinctly preferable.
+If you’re going to display a lot of text, learn the rules of good typesetting and use 
+typefaces (fonts) that have been speciﬁ cally designed for reading on a computer 
+screen, such as Verdana. Use mixed uppercase and lowercase letters for any block of 
+text more than three or four words long. Players ﬁ nd text set entirely in uppercase 
+letters difﬁ cult to read; besides, it looks like SHOUTING, creating a sense of 
+urgency you might not want. (On the other hand, in situations that do require 
+urgency, such as a warning message reading DANGER, uppercase letters work well.)
+Choose your typefaces with care so that they harmonize both with the theme of 
+your game and with each other. Avoid using too many different typefaces, which 
+looks amateurish. Be aware of the difference between display fonts (intended for 
+headlines) such as Impact, and ordinary serif and sans serif fonts (intended for 
+blocks of text) such as Times or Arial, respectively.
+Avoid monospaced (also called ﬁ xed width) fonts, such as Courier, in favor of propor-
+tional fonts, such as Times, unless you need to display a table in which letters must 
+line up in columns. For other uses, ﬁ xed-width fonts waste space and look old-fash-
+ioned and unattractive.
+Audio Elements
+This chapter has already mentioned sound brieﬂ y, but this section presents more 
+detail, addressing several topics: sound effects, ambient sounds, music, dialog, and 
+voiceover narration.
+Keep music, sound effects, and recorded speech in separate ﬁ les, and play them 
+back through separate channels on the machine. Always include a facility that 
+allows the player to adjust the volume level of the music independently from the 
+volume level of the other audio effects—including turning one or the other off 
+completely. Many players tire of hearing the music but still want to hear the sound 
+effects and other sounds. Bear in mind that not all your players will have perfect 
+hearing, and the more control you can give them, the better. See “Accessibility 
+Issues” in the Appendix, “Designing to Appeal to Particular Groups.”
+Sound Effects
+The most common use of sound in a game is for sound effects. These sounds corre-
+spond to the actions and events of the game world—for example, a burst of gunﬁ re 
+or the squealing of tires as a car slides around a corner. In the real world, sound 
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+231
+ CHAPTER 8
+often presents the ﬁ rst warning of approaching danger, so use sound as an indica-
+tor that something needs the player’s attention. Suspense movies do this well, and 
+you can borrow techniques from them: Play the sound of footsteps or the sound of 
+a gun being cocked before the player can see it. You can also use sound to provide 
+feedback about aspects of the game under the player’s control, such as judging 
+when to change gears in a racing game by listening to the pitch of the engine.
+You should also include sound effects as audible feedback in your user interface, 
+not just in the game world. At the very minimum, make sure the screen buttons 
+make an audible click when pressed, but try to ﬁ nd interface effects that harmonize 
+with the theme of your game world as well (as long as they’re not corny). Be sure to 
+support audio feedback from the UI with visual feedback too so that when players 
+hear a click or beep or buzz, the visual feedback directs them to the issue that gen-
+erated the audible signal. We interpret events that we can see more easily than with 
+audio alone.
+Vibration
+Many modern controllers include a vibration feature, which you can use to provide 
+sensory feedback (often called rumble) about game events. Although rumble is not 
+technically an audio element, the player can usually hear it as well as feel it.
+Normally you can control two aspects of the vibration: intensity and duration. Be 
+sure to scale these appropriately to the game world phenomenon that they’re asso-
+ciated with. Rumble can be very startling when it’s unexpected, which makes it an 
+excellent feature for survival horror and stealth games. Don’t use rumble constantly,
+or the player will learn to ignore it. Also, if you use rumble too much, the player’s 
+hands will begin to tingle unpleasantly.
+It’s best to use rumble when something big happens, such as an explosion, or when 
+something bad happens, such as when the player’s racing car scrapes the wall of 
+the racetrack.
+Ambient Sounds
+Just as the main view gives the player visual feedback about where she is, ambient 
+sounds give her aural feedback. Trafﬁ c sounds tell her that she’s in an urban street; 
+cries of monkeys and exotic birds suggest a jungle. Anything that ordinarily makes 
+distinctive sounds in the real world, such as a fountain or a jackhammer, should 
+make the same sound in your game.
+A ﬁ rst- or third-person game should deﬁ nitely use positional audio if the platform’s 
+audio devices support it. Positional audio refers to a system in which different 
+speakers present sounds at different volume levels, allowing you to position the 
+point sources of sound in the three-dimensional space of the world. Some personal 
+computers support as many as seven speakers, but even two-speaker stereo can help 
+
+
+--- PAGE BREAK ---
+
+232 
+FUNDAMENTALS OF GAME DESIGN
+a player detect where a sound is coming from. Correctly positioning sound sources 
+in the 3D space helps the player orient himself and ﬁ nd things that he may be 
+searching for, such as a river, an animal, or another member of the party.
+Don’t overuse ambient sounds, especially in games that mostly feature mental 
+challenges. A cacophonous environment isn’t conducive to thought. Your ambient 
+sounds must also work with the music you choose, which the next section 
+addresses. You may also be limited by the capabilities of your audio hardware, 
+because some machines support only a small number of channels for simultaneous 
+playback; when playing all the sound effects, you may not have channels left to
+use for ambient sounds.
+Music
+Music helps to set the tone and establish the pace of your game. Think about what 
+kind of music will harmonize with the world and the gameplay that you’re plan-
+ning. Music sends strong cultural messages, and those must also ﬁ t thematically 
+with the rest of the game. A pentatonic scale composition for the shamisen (a tradi-
+tional Japanese lute) might work well in a medieval Japanese adventure game, but it 
+would certainly sound out of place in a futuristic high-tech game. You will proba-
+bly collaborate with an audio director to choose or compose music for the game. 
+Many larger commercial games now use licensed music from famous bands.
+The music doesn’t have to support the game world at every moment; you can 
+choose music to create a contrasting effect at times. The introductory movie for 
+StarCraft uses classical opera as its theme, set against scenes in which admirals 
+calmly discuss the war situation as they prepare to abandon the men on the planet 
+below to their fate. The choice of music accentuates the contrast between the opu-
+lence and calm of the admiral’s bridge and the hell of war on the surface. In a 
+simpler example, the tempo of the music in certain levels of Sonic the Hedgehog is 
+out of sync with the pace of the level, which, in a subtle way, makes the game 
+harder to play. Don’t overuse these techniques, however; the rarer they are, the 
+more effective they are.
+In the real world, few pieces of music last as long as an hour, but players may hear 
+the same music for several hours at a stretch in a game. Whatever you choose, be 
+sure it can tolerate repetition. Avoid background music with a wide dynamic range; 
+the louder parts will become intrusive and remind the player that the music 
+repeats itself.
+For some years, the game industry has experimented with the difﬁ cult problem 
+of writing music that changes dynamically in response to current game situations, 
+a technique called adaptive music. Adaptive music must follow and even anticipate 
+unpredictable situations. Creating adaptive music remains an experimental technique 
+for the moment. On the other hand, game musicians have become extraordinarily 
+skilled at layering—writing separate but harmonizing pieces of music that the audio 
+engine delivers simultaneously by mixing them together at different levels of 
+TIP If you would 
+like to know more, 
+read Audio for Games: 
+Planning, Process, 
+and Production, by 
+Alexander Brandon 
+(Brandon, 2004) and 
+The Fat Man on Game 
+Audio: Tasty Morsels 
+of Sonic Goodness, by 
+George “The Fat Man” 
+Sanger (Sanger, 2003).
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+233
+ CHAPTER 8
+volume. The engine determines which piece should be most clearly heard depend-
+ing on what happens in the game.
+Dialog and Voiceover Narration
+Just about any kind of game can use spoken material to provide information, 
+whether it’s narration, dialog, commentary in sports games, units responding to 
+orders in strategy games, and so on. From a user interface standpoint, you should 
+be aware of two key things that set spoken words apart from other forms of audio 
+feedback:
+■ Repetitive spoken content rapidly becomes tiresome. The longer the sentence, 
+the worse the problem. To solve this, write and record multiple versions for each 
+line that is likely to be repeated. You may frequently repeat short clips such as “Aye 
+aye, sir” and “Strike three!” (though you should still record several variants), but if 
+you want to deliver a longer sentence such as, “Sire, your peasants are revolting!” 
+you must either have a large number of variants available or, better yet, play the 
+sentence only once when the problem ﬁ rst occurs and then use visual feedback for 
+as long as the problem continues. 
+■ Writing and acting must be good. You cannot emphasize this enough to your 
+writers and audio people. The quality of writing in the vast majority of games 
+ranges from terrible to barely passable, and the voice acting is frequently worse 
+than the writing. Players tolerate a sound effect that’s not quite right, but an actor 
+who can’t act instantly destroys immersion. Don’t use actors whose voices don’t 
+work thematically with the material, either. You wouldn’t use the voice of an 
+Englishman in a game set in the Old West, so don’t use an American in a game
+set in medieval times. The American accent didn’t exist then. Don’t try to get an 
+actor to fake a foreign accent, either; hire a native speaker.
+Input Devices
+So far, this book has placed little emphasis on the game machine’s hardware, 
+because the variety of processors, display screens, data storage, and audio devices 
+makes it impossible to address the topic comprehensively. In the case of input 
+devices, however, certain standards have evolved. It is critically important that
+you understand the capabilities, strengths, and weaknesses of the various devices 
+because they constitute the means by which your player will actually project his 
+commands into the game. Designing for them well makes the difference between 
+seamless gameplay and a frustrating experience.
+This section concentrates on the most common types of input devices for hand-
+held, PC, and console games—the sorts normally shipped with the machine. It 
+doesn’t address extra-cost items such as ﬂ ight control yokes, steering wheels, rudder 
+TIP For more infor-
+mation on writing for 
+games, read Game
+Writing: Narrative Skills 
+for Videogames, edited 
+by Chris Bateman 
+(Bateman, 2006). 
+
+
+--- PAGE BREAK ---
+
+234 
+FUNDAMENTALS OF GAME DESIGN
+pedals, dance mats, ﬁ shing rods, bongo drums, cameras, and microphones. If you 
+build a game that requires these items, you limit the size of your market to a spe-
+cialist audience, and there isn’t room to discuss such issues in a work on general 
+game design. You should design for the default control devices shipped with a 
+machine if at all possible. Only support extra-cost devices if using them signiﬁ -
+cantly enhances the player’s experience, or if you are intentionally designing a 
+technology-driven game to exploit the device.
+For most of their history, input devices for personal computers differed greatly from 
+those of game consoles, so the two were best discussed separately. Console games 
+never used analog joysticks; PC games never used D-pads. Now, both types of 
+machines can use either, so we’ll look at the various input devices independently
+of the platforms.
+Terminology
+The following discussion uses the game industry’s standard terminology for the 
+kinds of data that control devices send to the processor as the result of player 
+inputs. You may ﬁ nd some familiar terms that nevertheless require explanation, 
+because the game industry uses those terms in ways that may differ from what 
+you’re used to.
+Most input devices—the mouse being a notable exception—default to a neutral 
+position. To send a signal to the game, the user must push, pull, grasp, or press the 
+device to deﬂ ect it, and a spring-loaded mechanism returns it to the neutral posi-
+tion when the player releases the device. Joysticks and D-pads return to center; 
+buttons and keys return to the off state.
+A device that can return only two speciﬁ c signals is called a binary device, the sig-
+nals generally being interpreted as off and on. Another common kind of input 
+device transmits a value from a range of many possible values and the industry, for 
+historical reasons, calls these analog devices. Any game control device can be classed 
+as either analog or binary, though all of the technology is digital.
+Don’t confuse the type of data (binary or analog) with the dimensionality of the 
+device. A one-dimensional device transmits one datum, and a two-dimensional 
+device transmits two data, and so on, regardless of whether they transmit binary
+or analog data.
+A device that returns data about its current position as measured from the neutral 
+position provides absolute values. Such a device—a joystick, for example—can 
+travel only a limited distance in any direction, and so it transmits values in a range 
+from zero to its maximum.
+Other devices offer effectively unlimited travel and have no neutral position. These 
+return relative values, that is, the relative distance that the device has traveled from 
+its previous position. Mouse wheels and track balls are examples; the player may 
+rotate them indeﬁ nitely.
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+235
+ CHAPTER 8
+Three-Dimensional Input Devices
+A three-dimensional device delivers three data values simultaneously. Such devices 
+are rare but are becoming more common as the game industry begins to adopt 
+motion-sensing devices like the Wii Remote.
+ACCELEROMETERS
+An accelerometer is not a switch or button that the player directly manipulates. It is 
+an electronic device that measures the rate of acceleration it experiences. Game 
+hardware manufacturers build accelerometers into controllers such as the Wii 
+Remote so the player can wave the controller around rather than simply hold it and 
+press buttons. With the data from multiple accelerometers, you can compute how 
+far and how fast the player moves the remote, and in what direction. The Nintendo 
+Wii Remote and Nunchuck, and the Apple iPhone, are the best-known devices that 
+use accelerometers in gaming.
+When an accelerometer is at rest with respect to the Earth (sitting still on a table, 
+for example), it reports the force of gravity. This means that you can also use an 
+accelerometer as a tilt sensor. If the acceleration of gravity appears to change direc-
+tion, it means the device has been tilted with respect to the ground. You can also 
+detect if the player has turned it upside down: The direction of the acceleration of 
+gravity will be reversed.
+An accelerometer returns absolute acceleration information. If it were in zero grav-
+ity and undergoing no acceleration, it would return zero in all three dimensions. 
+GLOBAL POSITIONING SYSTEMS
+Global positioning systems have become commonplace in high-end mobile phones, 
+and it won’t be long before they are ubiquitous in phones, personal digital assis-
+tants (PDAs), and handheld gaming devices. A GPS returns the device’s latitude and 
+longitude on the surface of the Earth, as well as the altitude above sea level. The 
+player uses a GPS as input to a game by moving the GPS around in the environ-
+ment. The UK-based art collective Blast Theory has constructed several augmented 
+reality games that use global positioning systems. Players travel around a cityscape 
+on foot, carrying a GPS-enabled device that helps them play the game.
+GPS devices return absolute positional information. By taking measurements over 
+time, you can use this data to compute the player’s speed and direction.
+GPS devices have two signiﬁ cant drawbacks at the moment. First, because they 
+need to receive data from satellites orbiting the Earth, they only work in areas 
+where they can easily receive the satellites’ transmissions—usually outdoors. 
+Second, the current generation of GPS technology is only accurate to within
+several meters, so they’re only useful on a large scale. The European Galileo satel-
+lite navigation system, which is due to come online in 2013, is designed to be 
+accurate to the 1-meter range.
+NOTE Some devices 
+built for non-gaming 
+applications need to 
+measure acceleration 
+in only one or two 
+dimensions, so they 
+contain simpler accel-
+erometers. However, 
+motion-sensitive gam-
+ing devices routinely 
+use accelerometers 
+capable of measuring 
+acceleration in all 
+three spatial dimen-
+sions so they can 
+detect movement in 
+every direction. They 
+provide three accelera-
+tion data at a time.
+
+
+--- PAGE BREAK ---
+
+236 
+FUNDAMENTALS OF GAME DESIGN
+A REVOLUTIONARY DEVICE: THE NINTENDO WII REMOTE
+In the past few years, no piece of hardware has changed the landscape of commercial 
+video gaming as dramatically as the Nintendo Wii and its motion-sensitive controller, the 
+Wii Remote (often shortened to Wiimote). It implements a number of signiﬁ cant innovations:
+• A three-dimensional accelerometer reports how the player is moving the remote.
+• An infrared transmitter positioned near the player’s TV and an infrared camera in the 
+Wii Remote allow a Wii game to compute the remote’s position relative to the TV. Wii 
+games know where the remote is in the room, and approximately where it is pointing. 
+As a pointing device, it is not as precise as a mouse, however.
+• The remote contains a speaker, so it can make appropriate sounds (golf club, tennis 
+racket, gun) right in the player’s hand.
+• The relatively small number of buttons on the Wii Remote (as compared to traditional 
+controllers such as the PS3 SIXAXIS) makes the remote much less daunting to inex-
+perienced players.
+• Because the remote uses Bluetooth wireless to communicate with the computer, play-
+ers can move around with it as much as they like (as long as they don’t move too far 
+from the Wii). This allows for much more active games than the traditional wired con-
+troller does.
+• The Wii Remote contains a small amount of memory, which lets players store data 
+(such as avatar attributes) in the remote itself. A player can use his Wii Remote on 
+another player’s Wii machine, and the data he stored will be available to the game.
+The Wii Remote also includes several conventional controller features: a D-pad, a trigger, 
+several buttons, and a vibration feature. The Nunchuck, an additional device for the play-
+er’s other hand, provides another accelerometer, an analog joystick, and two more 
+buttons. A new accessory for the Wii Remote, the Wii Motion Plus, adds an angular rate 
+sensor to the basic remote. This device provides information about the way the remote 
+turns as it moves and makes it more accurate.
+No less important than the Wii Remote’s innovations are the games that support it. 
+Nintendo deliberately made the Wii Sports games that ship with the Wii easy to learn and 
+very forgiving. In the tennis game, for example, the player’s avatar automatically runs to 
+where the ball will land. All the player has to do is wave the controller to deliver a fore-
+hand or a backhand. The ease of playing these games has made them accessible to many 
+people who would never have considered playing video games before. Wii consoles have 
+been installed in nursing homes, because the motion-based interaction encourages elderly 
+people to exercise. They’re also being used as physical therapy for people recovering 
+from injuries. Playing a Wii game is much more appealing than doing repetitive exercises.
+continues on next page
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+237
+ CHAPTER 8
+A REVOLUTIONARY DEVICE: THE NINTENDO WII REMOTE
+continued
+No less important than the Wii Remote’s innovations are the games that support it. 
+Nintendo deliberately made the Wii Sports games that ship with the Wii easy to learn and 
+very forgiving. In the tennis game, for example, the player’s avatar automatically runs to 
+where the ball will land. All the player has to do is wave the controller to deliver a fore-
+hand or a backhand. The ease of playing these games has made them accessible to many 
+people who would never have considered playing video games before. Wii consoles have 
+been installed in nursing homes, because the motion-based interaction encourages elderly 
+people to exercise. They’re also being used as physical therapy for people recovering 
+from injuries. Playing a Wii game is much more appealing than doing repetitive exercises.
+The Wii Remote works very well in games that map a player’s physical activity directly 
+onto the avatar’s activity in the game world, such as action, sports, and driving games. It 
+is less successful with games that traditionally use a mouse, such as role-playing, strat-
+egy, and construction and management games. If you want your players to control your 
+game with the Wii Remote (which works with PCs as well as the Wii itself), you should 
+design the game for the Wii Remote from the beginning. 
+Two-Dimensional Input Devices
+Two-dimensional input devices allow the player to send two data values to the 
+game at one time from a single device.
+DIRECTIONAL PADS (D-PADS)
+Directional pads (D-pads) are the most familiar form of directional control mecha-
+nism on game machines and are still offered by many smaller handheld machines 
+as the only two-dimensional input device. Console and PC controllers often supply 
+a D-pad in addition to a joystick to provide backward compatibility with older 
+software.
+A D-pad is a circular or cross-shaped input device on a game controller constructed 
+with binary switches at the top, bottom, left, and right edges. The D-pad rocks 
+slightly about its central point and, when pressed at any edge, turns on either one 
+switch or, if the player presses between two adjacent switches, two. It can, therefore, 
+send directional information to the game in eight possible directions: up, down, 
+left, and right with each of the individual sensors, and upper-left, upper-right, 
+lower-left, and lower-right when the player triggers two sensors together. (In Figure 
+8.2, the cross-shaped device on the upper-left face of the controller is a D-pad.)
+
+
+--- PAGE BREAK ---
+
+238 
+FUNDAMENTALS OF GAME DESIGN
+The D-pad gives the player a crude level of control over a vehicle or avatar; she is 
+able to make the vehicle move in any of the eight major directions but not in any 
+other. You should use D-pads for directional control only if you have no better 
+device available. D-pads do remain useful alongside a joystick; you can assign func-
+tions to the D-pad that require less subtle control, such as scrolling the main view 
+window in one of the eight directions, which leaves the joystick free for such tasks 
+as avatar navigation control.
+JOYSTICKS
+A joystick is a single vertical stick anchored at the bottom that can be tilted a
+limited amount in any direction. The joystick is spring-loaded and returns to its 
+central position if the player lets go of it. When the game software checks the posi-
+tion of the joystick, it returns two absolute data: an X-value indicating tilt to the 
+left or right, and a Y-value indicating the tilt forward or back.
+A joystick offers a ﬁ ner degree of control than a D-pad does. The Sony SIXAXIS 
+controller in Figure 8.2 features two small joysticks (the circular objects at the bot-
+tom) as well as a D-pad.
+Joysticks make ideal steering controls for vehicles. To return to a default activity—
+ﬂ ying straight and level, for instance—the player only has to allow the joystick to 
+return to the neutral position. Since joysticks may travel only a limited amount in 
+any direction, they allow the player to set a direction and a rate of movement. The 
+UI interprets the degree of tilt as indicating the rate. For instance, moving a joy-
+FIGURE 8.2
+The Sony SIXAXIS 
+controller
+NOTE Modern joy-
+sticks built for use with 
+combat ﬂ ight simula-
+tors may include a 
+large number of other 
+controller buttons as 
+well. All these ulti-
+mately amount either 
+to binary buttons or 
+sliders. This section is 
+concerned only with 
+the tilting action of the 
+basic device.
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+239
+ CHAPTER 8
+stick to the left causes an airplane to roll to the left; moving it farther left causes 
+the airplane to roll faster.
+Joysticks don’t work well for precise pointing because when the player lets go, the 
+joystick returns to center, which naturally causes it to point somewhere else. To 
+allow the player to point a cursor at an object and leave it there while she does some-
+thing else, use a mouse. Efforts to port mouse-based games to console machines, 
+substituting a joystick for the mouse, have an extremely poor success rate.
+THE MOUSE (OR TRACKBALL)
+We’re all familiar with mice from our experiences with personal computers. A 
+mouse returns two data values that consist of X- and Y-values, but these are relative
+data, indicating how far the player moved the mouse relative to its previous loca-
+tion. A mouse offers more precise positioning than a joystick and unlimited travel 
+in any direction on the two-dimensional plane in which it operates. This unlimited 
+relative movement makes a mouse ideal for controlling things that can rotate indef-
+initely in place, so ﬁ rst-person PC games virtually always use mice to control the 
+direction in which the avatar looks. Because it stays where it is put, a mouse is 
+invaluable for interfaces in which the player needs to let go of the pointing device 
+to do something else.
+Note that when a mouse is used speciﬁ cally to control a cursor on the screen, its 
+driver software converts the mouse’s native relative data into absolute data for the 
+cursor position. This choice of either absolute or relative modes lends the mouse 
+great ﬂ exibility.
+A mouse wheel constitutes a separate knob with unlimited movement that also 
+functions as a controller button when pressed. Not all mice come with mouse 
+wheels, however, so you cannot count on players having them. If you support the 
+mouse wheel, supply alternative controls.
+The mouse’s lack of a neutral position makes it weak as a steering mechanism for 
+vehicles that need a default behavior—driving straight or ﬂ ying straight and level. 
+The player must ﬁ nd the vehicle’s straight or level position herself rather than 
+allowing the device to snap back into neutral. You may want to designate an extra 
+controller button that returns the vehicle to its default state if the mouse will be 
+your primary control option.
+Designers ﬁ nd that mice are generally more ﬂ exible input devices than joysticks, 
+but players ﬁ nd them more tiring to use for long periods.
+TOUCH-SENSITIVE DEVICES
+PDAs, the Nintendo DS machine, and the Apple iPhone offer the player a touch-
+sensitive screen, and laptop personal computers usually come with a touch pad 
+below the keyboard. These devices return absolute analog X and Y positions to 
+indicate where they are touched, as a mouse cursor does. Unlike a mouse, you can 
+
+
+--- PAGE BREAK ---
+
+240 
+FUNDAMENTALS OF GAME DESIGN
+make a touch-sensitive device’s cursor return to a neutral position whenever you 
+detect that the player has stopped touching the device. Touch-sensitive screens may 
+be manipulated by the ﬁ ngers or a stylus; touch pads usually cannot detect a stylus, 
+and must be touched with the ﬁ ngers, which tends to make ﬁ ngers sore after long use.
+Early touch-sensitive screens could only detect one touch at a time, but the Apple 
+iPhone has perfected the multi-touch interface, which allows the user to touch it in 
+several locations at once. This is likely to become increasingly common on new 
+handheld devices. The problem of sore ﬁ ngers after extended play remains.
+One-Dimensional Input Devices
+One-dimensional input devices send a single value to the game. Ordinary control-
+ler buttons and keys send binary values; knobs, sliders, and pressure-sensitive 
+buttons send analog values.
+CONTROLLER BUTTONS AND KEYS
+A controller button or a keyboard key sends a single binary value at a time: on when 
+pressed and off when released. Despite this simplicity, you can use buttons and 
+keys in a variety of ways:
+■ One-shot actions. Treat the on signal as a trigger, a message to the game to per-
+form some action immediately (ignoring the off signal). The action occurs only 
+once, when the player presses the button; to perform it twice, he must press the 
+button again. You might use this to let players ﬁ re a handgun, ﬁ ring once each 
+time they hit the button.
+■ Repeating actions. The on signal tells the game to begin some action and to 
+repeat it until it receives the off signal from the same button at a repetition rate 
+determined by the software. You could let the players ﬁ re a machine gun continu-
+ously from button press to button release.
+■ Continuous actions. The button’s on signal initiates a continuous action, and its 
+off signal ends it. Golf games use this to give a player control over how hard the 
+golfer swings the club; the player presses the button to start the golfer’s backswing 
+and releases the button to begin the swing itself; the longer the backswing, the 
+harder the golfer hits the ball. Some football games allow the player to tap the but-
+ton quickly to throw a short pass or to hold it down for a moment before release to 
+throw a long pass, with the length of time between a button’s on and off signals 
+determining the distance thrown.
+Console game controllers feature anywhere from one to about ten buttons. Buttons 
+on the top face of the controller, to be pressed with the thumbs, are known as face 
+buttons. Others, known as shoulder buttons, appear on the part of the controller facing
+away from the player, under the index ﬁ ngers. Faced with large numbers of buttons,
+the player can ﬁ nd it quite difﬁ cult to remember what they all do. Here, as elsewhere,
+be sure to maintain consistency from one gameplay mode to another, and if an 
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+241
+ CHAPTER 8
+industrystandard has evolved for your game’s genre, do not depart from it without 
+good reason.
+Personal computer keyboards have 110 keys, allowing for very broad user interfaces 
+indeed. Be sure to assign actions to keys in such a way that the letter printed on the 
+key becomes a mnemonic for the action, for example, F for ﬂ aps or B for brakes. 
+Players themselves can, if you implement the feature, assign actions to keys, so they 
+don’t have to select those functions with mouse clicks. 
+KNOBS, SLIDERS, AND PRESSURE-SENSITIVE BUTTONS
+You rarely ﬁ nd knobs (also sometimes called Pong paddles for historical reasons) 
+nowadays, although the mouse wheel functions as a knob. Limited-travel knobs 
+can move only so far, like a volume knob on a stereo, and return an absolute value. 
+Unlimited-travel knobs, including the mouse wheel, may be spun continuously and 
+return relative data. Knobs are generally not self-centering; they stay where the 
+user puts them. Knobs, especially large ones, offer ﬁ ne unidimensional control.
+A slider is a small handle that moves along a slot in the controller, which constrains 
+its travel. It returns an absolute position and stays where the player puts it. You ﬁ nd 
+sliders usually used as adjuncts to joysticks for ﬂ ight simulators; the slider controls 
+the throttle for the engine, letting the player set his speed and leave it there.
+A few controllers, such as the Nintendo GameCube controller, include analog pres-
+sure-sensitive buttons that, instead of transmitting a binary on or off value, send
+a number that indicates how hard the player presses. This gives the player a ﬁ ner 
+degree of control than an ordinary binary controller button. The trigger buttons
+on the Xbox controller also return analog values. You can think of them as spring-
+loaded sliders that return to a zero point when released.
+COMPASSES
+Like global positioning systems, compasses are mostly useful for augmented reality 
+games played outdoors. A digital compass returns a single numeric value, the direc-
+tion in degrees that a handheld device is facing with respect to true north. If the 
+player holding it turns the device in a different direction, the compass detects it. 
+Later versions of the Apple iPhone include a compass.
+Navigation Mechanisms
+Navigation mechanisms allow the player to tell a character, vehicle, or other mobile 
+unit how to move. This section uses the term avatar to refer to anything that the 
+player controls directly, including vehicles. It also uses the word steering to describe 
+the act of directly controlling both vehicles and characters, even though the idea of 
+steering a walking character may sound a little odd. UI designers usually ﬁ nd creat-
+ing vehicle navigation systems easier than creating ones for characters because input 
+devices more closely resemble a vehicle’s controls than they do an avatar’s body.
+TIP Don’t try to 
+convert a game de-
+signed for a knob to 
+work with a joystick. 
+The joystick’s combi-
+nation of limited travel 
+and self-centering 
+contradicts the game’s 
+original design. The 
+arcade game Tempest
+used a large, heavy 
+knob that could be 
+spun continuously; 
+when ported to a 
+console machine with 
+a joystick, players 
+enjoyed the game less 
+despite the improved 
+graphics.
+
+
+--- PAGE BREAK ---
+
+242 
+FUNDAMENTALS OF GAME DESIGN
+A navigation mechanism establishes a relationship between the way the player 
+moves the controls and the way the avatar responds on the screen. The player learns 
+this relationship and uses it until it becomes automatic. When a player gives move-
+ment commands, the avatar must respond in a consistent and predictable way. 
+Anything that disrupts the player’s understanding of the control relationship, such 
+as a sudden change of camera angles, may cause the player to make a steering error.
+This section assumes that players steer using a joystick except where otherwise 
+indicated; for most purposes, you may consider a joystick interchangeable with a 
+D-pad but offering ﬁ ner control. Joystick directions are referred to as up (forward or 
+away from the player), down (towards the player), left, and right. Steering wheels 
+for cars or control yokes for aircraft aren’t covered here because they should be 
+self-explanatory. 
+If the player designates a point in the landscape and the character or vehicle moves 
+to that target without further player control, the game uses point-and-click navigation.
+Screen-Oriented Steering
+In screen-oriented steering, when the player moves the joystick up, the avatar 
+moves toward the top of the screen. Implementation details vary somewhat 
+depending on the camera model. This section documents several major variants.
+TOP-DOWN AND ISOMETRIC PERSPECTIVES
+In a top-down or isometric perspective in which the player sees the avatar from 
+above, moving the joystick up, down, left, or right causes the avatar to instantly 
+turn and face the corresponding edge of the screen, and then move in that direc-
+tion. Classic arcade games that used a top-down perspective, such as Gauntlet, use 
+this simplest of all steering methods.
+2D SIDE-SCROLLING GAMES
+In traditional side-scrollers, the joystick controls left and right movement as it does 
+for the top-down perspective. The player controls the avatar’s vertical jumps to 
+platforms using a separate controller button. Moving the joystick up can augment 
+the effect of the jump button; moving the joystick down may be left undeﬁ ned; 
+and because the game world is 2D, the avatar cannot move away from or toward 
+the player.
+3D GAMES
+Three-dimensional games usually use avatar-oriented rather than screen-oriented 
+steering to provide a consistent set of controls regardless of camera angle, but rare 
+exceptions do exist. Crash Bandicoot provides the best-known example. When the 
+player pushes the joystick up, the avatar moves toward the top of the screen, which 
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+243
+ CHAPTER 8
+is also forward into the 3D environment, away from the player. Moving the joystick 
+down makes the avatar turn to face the player and move toward him through the 
+3D environment. Pushing the joystick left or right makes the avatar turn to face 
+and then move in that direction.
+Unlike avatar-oriented steering, in this model, left and right cause the avatar to 
+move in those directions while the camera continues to face forward and to show 
+the avatar from the side. In this respect, Crash Bandicoot feels rather like a side-
+scroller with an additional dimension. In avatar-oriented steering, addressed next, 
+left and right cause the avatar to turn and face in those directions but not to move
+while the camera swings around to remain behind him.
+Avatar-Oriented Steering
+In avatar-oriented steering, the only suitable model for ﬁ rst-person games, pushing 
+the joystick up causes the avatar to move forward in whatever direction she cur-
+rently faces, regardless of her orientation to the screen. However, implementation 
+of avatar-oriented steering varies somewhat from one device to another, so the fol-
+lowing sections treat these devices individually.
+Avatar-oriented steering remains consistent regardless of the camera model. It pres-
+ents a slight disadvantage in games using aerial perspectives: Avatar-oriented 
+steering can be rather disorienting when the avatar faces the bottom of the screen, 
+yet the player must push the joystick up to make the avatar walk down to the bot-
+tom of the screen.
+JOYSTICK AND D-PAD CONTROLS
+As stated earlier, pushing the joystick up makes the avatar move forward in what-
+ever direction she faces. Pushing the joystick down makes the avatar move 
+backward away from the direction she faces, while continuing to face the original 
+direction; that is, she walks backward. In some vehicle simulators, down applies the 
+brakes rather than reversing the direction of movement, and the player must press 
+a separate controller button to put the vehicle in reverse. Pushing the joystick to 
+the left or right makes the avatar turn to face toward the left or right or turns the 
+wheels of a vehicle. The avatar does not move in the environment if the joystick 
+moves directly to left or right; the player must push the joystick diagonally to get 
+forward (or backward) motion in addition to a change of direction. This feels more 
+natural with vehicles than it does with characters.
+MOUSE-BASED CONTROL
+With mouse-based navigation, now standard for ﬁ rst-person PC games, the mouse 
+only controls the direction in which the avatar faces, and the player uses the key-
+board to make the avatar move. Moving the mouse left or right causes the avatar to 
+turn in place, to the left or the right, and to a degree in proportion to the distance 
+
+
+--- PAGE BREAK ---
+
+244 
+FUNDAMENTALS OF GAME DESIGN
+the mouse moves. Up and down mouse movements tilt the camera up or down, 
+which becomes important if the player wants the avatar to climb or descend, but 
+these commands do not move the avatar. Considerably more ﬂ exible than a joy-
+stick-based system, mouse-based navigation allows the player to look around 
+without moving the character.
+Keys on the PC’s keyboard control movement. The standard arrangement for play-
+ers who use their right hands for the mouse and left hands for the keyboard uses
+W to produce forward movement in the direction the avatar currently faces; move-
+ment continues as long as the player holds the key down. S works similarly for 
+moving backward (or applying the brakes). A and D produce movement at right 
+angles to the direction the avatar faces, left or right respectively, thus producing 
+the feeling of sliding sideways while facing forward. This sideways movement is 
+often called straﬁ ng. Left-handed players usually use the arrow keys or the I, J, K, 
+and L keys, whose layout mimics the W, A, S, and D keys.
+Flying
+Flying presents a further complication because it involves moving through three 
+dimensions whereas a two-dimensional input device such as a joystick offers con-
+trol in only two. Control over movement in the third dimension must be handled 
+by a separate mechanism, either extra controller buttons or an additional joystick. 
+How you implement this depends on the nature of the aircraft itself, generally 
+using the mechanisms in real aircraft as your model. Navigational controls in mod-
+ern ﬂ ying games are almost always intended for the ﬁ rst-person perspective from 
+inside the cockpit. (See Chapter 17 for further details.)
+FIXED-WING AIRCRAFT
+The player maneuvers the aircraft using the joystick to pitch (the equivalent of a 
+camera’s tilt) or roll the aircraft, and the engine pulls the plane in the direction the 
+nose faces. A throttle control, generally a slider or keys that increase and decrease 
+the engine speed by ﬁ xed increments, sets the rate of forward movement. When 
+ﬂ ying straight and level, forward on the joystick pushes the nose down, producing 
+descent, and back pulls the nose up, causing it to climb. Left on the joystick causes 
+the plane to roll to the left while remaining on the same course; right rolls it to the 
+right in the same manner. To turn in the horizontal plane, the pilot rolls the air-
+craft in the desired direction and pulls the joystick back at the same time, so the 
+nose follows the direction of the roll, producing a banked turn. When the joystick 
+returns to center, the plane should ﬂ y straight and level at a speed determined by 
+the throttle.
+HELICOPTERS
+Game user interfaces typically simplify helicopter navigation, which is more com-
+plicated than ﬂ ying ﬁ xed-wing aircraft. The joystick controls turning and forward 
+
+
+--- PAGE BREAK ---
+
+USER INTERFACES 
+245
+ CHAPTER 8
+or backward movement, and a slider control or keys cause the helicopter to ascend 
+or descend. Left on the joystick causes the helicopter to turn counterclockwise 
+about its vertical axis but not to actually go in that direction unless it is also mov-
+ing forward. Right causes the equivalent rotation to the right. Forward propels the 
+helicopter forward, and back the reverse. When the joystick returns to center, the 
+helicopter should gradually slow down through air friction until it remains hover-
+ing above a ﬁ xed point in the landscape. A separate key set or slider controls 
+vertical movement.
+SPACECRAFT
+Most designers treat spacecraft as they would ﬁ xed-wing aircraft, although in one 
+variant left or right on the joystick causes the vehicle to yaw (the equivalent of pan-
+ning a camera), turning about its vertical axis to face in a different direction, rather 
+than rolling.
+Point-and-Click Navigation
+Aerial or context-sensitive camera models in which the player can clearly see his 
+avatar, party, or units as well as a good deal of the surrounding environment can 
+use point-and-click navigation. In a game with a multipresent or party-based inter-
+action model, the player ﬁ rst chooses which unit or units should move (unnecessary
+in an avatar-based model), then in all cases the player selects a destination in the 
+environment, and the unit or avatar moves to that location automatically using a 
+pathﬁ nding algorithm (an artiﬁ cial intelligence technique to avoid obstacles). 
+Typically the player can select one of two speeds: When the player selects a loca-
+tion, the avatar walks to it, but if he holds down a special key while selecting the 
+location, the avatar runs rather than walks.
+This technique is most often used in real-time strategy and party-based role-play-
+ing games in which many units may need to be given their own paths and the 
+player does not have time to control them all precisely. If a unit cannot get to the 
+location the player designated, that unit either goes as far as it can and then stops 
+or, upon receipt of the command, warns the player that it cannot proceed to an 
+inaccessible destination.
+Using point-and-click navigation, the player can indicate precisely where he wants 
+the unit to end up without concerning himself about avoiding obstacles, a conve-
+nience in cluttered environments where the player may not clearly see which 
+objects actually block the path. It is also helpful in context-sensitive camera models 
+because the player cannot always see clearly how the avatar should get from one 
+place to another and often has no freedom to move the camera.
+At times, it can be a disadvantage that the player cannot control the path that the 
+unit takes, so allow the player to designate intermediate points, called waypoints,
+that the unit must pass through one by one on its way to the ﬁ nal destination. 
+NOTE Real helicop-
+ters can also slide 
+sideways while facing 
+forward; to implement 
+this would require 
+extra controls, which 
+few games do.
+
+
+--- PAGE BREAK ---
+
+246 
+FUNDAMENTALS OF GAME DESIGN
+Waypoints enable the player to plot a route for the unit and so exercise some con-
+trol over how the units get to where they are going.
+Allowing for Customization
+One of the most useful, and at the same time easiest to design, features you can 
+offer your player is to allow him to customize his input devices to suit himself. 
+Normally you handle this via a shell menu, although a few PC games store the 
+information in a text ﬁ le that the player can edit. These are two of the most com-
+monly offered customizations:
+■ Swap left and right mouse buttons. If the mouse has more than one button, 
+left-handed and right-handed players may need different layouts. Providing a mir-
+ror image of your standard layout takes little trouble, so don’t make players go 
+through a function-reassignment process just for this; give them a feature that 
+allows them to simply swap the current assignments.
+■ Swap the up and down directions of the mouse or joystick in ﬁ rst-person 3D 
+games. Some players like to push the mouse or joystick up to make their avatar 
+look up (an idea borrowed from screen-oriented steering in 2D games); others like 
+to pull it down to look up (an idea borrowed from airplane joysticks). Let the player 
+play as she prefers.
+The term degrees of freedom refers to the number of possible dimensions that an 
+input device can move through. An ordinary key or button has one degree of
+freedom: It can only move up and down. A joystick or mouse has two degrees
+of freedom: It can move up and down, left and right. The Wii Remote has three 
+degrees of freedom. If two devices, both binary or both analog (see the discussion 
+in “Input Devices” earlier), have the same degree of freedom, you can generally
+let the player interchange them, although there will be practical difﬁ culties if one 
+device is self-centering and the other is not or if one allows unlimited travel and 
+the other does not. When exchanging assignments between two devices not identi-
+cal in every way, some functionality or convenience is almost always lost.
+Almost all games assign some of their player actions to particular keys or buttons. 
+Your game should include a key reassignment shell menu that allows players to 
+assign actions to the keys they prefer. If your game includes menus, also allow
+the player to assign menu items to keys so he can select them quickly without 
+using the mouse. You may need to enforce some requirements: If the game requires 
+a particular action to be playable (for example, the ﬁ re-weapon action in a shooter 
+game), warn the player if he tries to exit the shell menu with the action still 
+unassigned.
+
+
+--- PAGE BREAK ---
+

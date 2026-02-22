@@ -1,0 +1,1089 @@
+CONSTRUCTION AND MANAGEMENT SIMULATIONS 
+545
+ CHAPTER 18
+Design Practice QUESTIONS
+1. What process is the player going to manage? What actions will the player take in 
+managing that process?
+2. What resources exist in this process? For each resource, how is it produced, con-
+sumed, stored, transported, and converted into other resources? Is it tangible, 
+intangible, or a hybrid? Is it limited or unlimited? What determines its production 
+and consumption rates?
+3. Which resources can the player manipulate and which can she not?
+4. Will the process settle into a balanced state or will it run down if not tended by 
+the player? Will disasters affect it?
+5. What will the player be constructing, and what function does the constructed 
+item have? Will objects be purchased whole or planned and built over time? What 
+does each item that the player can construct cost and how long does it take to build?
+6. Can the player demolish or sell things that she builds? Does demolition cost or 
+earn resources for the player?
+7. Will the game have scenarios with victory conditions? What are they like?
+8. What is the player’s perspective and interaction model with the game? Is there
+a way to get inside the things she builds?
+9. What analytical tools are provided to help her understand the workings of the 
+simulation?
+10. Is the simulated population modeled as individuals or as a statistical aggregate? 
+If they are individuals, what is their behavior model? Are there multiple types of 
+individuals? Can the player read their minds?
+11. Will the game have advisors? What will they advise about?
+12. Is this game a pure business simulation? Accounting and ﬁ nance are often con-
+sidered rather dull, so what makes this compelling? Does the game have a setting? 
+If not, how can it be made visually interesting?
+13. Is the game a hybrid with other sorts of games? What other elements in the 
+game make it a hybrid (strategic problems, action challenges, puzzles, and so on)? 
+How do they affect the way the game is controlled?
+
+
+--- PAGE BREAK ---
+
+Adventure Games
+Adventure games are seldom a technological challenge to build, but what they lack 
+in technological challenges they make up for in creative ones. As the designer of an 
+adventure game, it’s your job to bring not just a story but a world to life—a world in 
+which a story is taking place. Your talents at creating places, characters, plots, dia-
+log, and puzzles will be tested as in no other genre. Because the adventure game is 
+not limited by ﬂ ying or shooting or commanding troops in battle—indeed, it isn’t 
+bound by any particular mode of interaction—it has the greatest potential for 
+creativity of any genre.
+This chapter deﬁ nes adventure games and covers the history and evolution of these 
+games from text-based to today’s hybrids. We’ll explore the features common to 
+adventure games and the gameplay mechanics that deﬁ ne the genre in depth. We’ll 
+cover puzzle structure, game ﬂ ow, dialog, and language, all of which form 
+integral parts of the adventure game. The chapter ﬁ nishes with a discussion of the 
+art and user interface that is unique to this genre.
+What Are Adventure Games?
+The thirst for adventure is the vent which Destiny offers; a war, a crusade, a gold mine, a 
+new country, speak to the imagination and offer swing and play to the conﬁ ned powers.
+—RALPH WALDO EMERSON, “BOSTON,” IN NATURAL HISTORY OF THE INTELLECT, 1893
+The term adventure game is a bit misleading because a lot of games about being 
+adventurous aren’t adventure games—and a lot of adventure games aren’t about 
+adventures, at least in the fairy-tale sense of going forth to seek one’s fortune. The 
+reason for the term is historical. Adventure game is really short for Adventure-type 
+game, meaning a game similar to the one named Adventure (sometimes referred to 
+as Colossal Cave). All adventure games are conceptual descendants of the original 
+Adventure, although nowadays they include many features that Adventure lacked.
+Adventure games are quite different from most other games on the market. An 
+adventure game isn’t a competition or a simulation. An adventure game doesn’t 
+offer a process to manage or an opponent to defeat through strategy and tactics. 
+Instead, an adventure game is an interactive story about a character whom the 
+player controls. This character is the player’s avatar, but he’s more than merely a 
+representative of the player. He is a ﬁ ctional person in his own right, a protagonist,
+CHAPTER 19
+546
+
+
+--- PAGE BREAK ---
+
+ADVENTURE GAMES 
+547
+ CHAPTER 19
+ the hero of the story. A few adventure games have been made (most recently, 
+Dreamfall) in which the player switches from one avatar to another at different 
+points in the game, but they are not the norm.
+ADVENTURE GAME An adventure game is an interactive story about a protagonist 
+character who is played by the player. Storytelling and exploration are essential 
+elements of the game. Puzzle solving and conceptual challenges make up the majority 
+of the gameplay. Combat, economic management, and action challenges are reduced or 
+nonexistent.
+This deﬁ nition doesn’t mean that there is no conﬂ ict in adventure games (although 
+many adventure games have none)—only that combat is not a primary activity. 
+Adventure games seldom have an internal economy. All the relationships within 
+the game are symbolic rather than numeric. Manipulating or optimizing an eco-
+nomic system forms no part of the adventure game experience; this (among other 
+things) sets them apart from role-playing games.
+The Growth of Adventure Games
+Adventure games were highly popular in the early days of personal computers. The 
+earliest ones were text-only, which made them inexpensive to develop and allowed 
+great scope for both the designer’s and the player’s imaginations. A group of stu-
+dents at MIT, inspired by the original Adventure, wrote a much larger adventure 
+game named Zork on the mainframe there. Soon afterward, they converted it to 
+run on personal computers and founded a company, Infocom, devoted to develop-
+ing text adventures. Infocom published games about all kinds of things: fantasy 
+magic, ﬁ lm noir detective stories, exploration of an ancient Egyptian pyramid, and 
+so on.
+The original Adventure didn’t have any plot; it just offered a space to explore and 
+puzzles to solve. With minor exceptions, its world did not change as time passed. 
+But it wasn’t long before games began to explore the notion of interactive storytelling,
+which Chapter 7, “Storytelling and Narrative,” discusses in detail. 
+As soon as personal computers began to develop graphics capability (the very earli-
+est were text-only), developers started to add graphics to adventure games, and the 
+games really took off. LucasArts and Sierra On-Line dominated the genre and for a 
+while produced the best-looking, richest games on the market: funny, scary, myste-
+rious, and fascinating. Adventure games provided challenges and explored areas 
+that other genres didn’t touch. Myst, a point-and-click graphic adventure, was for 
+many years the best-selling personal computer game of all time. (It was later sup-
+planted by The Sims.)
+Adventure Games Today
+In the past few years, the market for adventure games has grown less steadily than 
+the market for other genres. Adventure games depend less on display technology 
+
+
+--- PAGE BREAK ---
+
+548 
+FUNDAMENTALS OF GAME DESIGN
+than fast-paced action games do; as a result, they get less attention from the gam-
+ing press, contributing to a misconception that the adventure game genre is dead. 
+In fact, adventure games are alive and well; they’re just not as highly publicized as 
+their high-adrenaline cousins.
+The ﬁ rst graphical adventure games came with gorgeously painted but static back-
+drops for every scene that looked much like theatrical stage sets. Players could see a 
+lot of things but could touch only a few of them. But when graphics technology 
+began to render every object in three dimensions and it became possible to move 
+freely among them, the world became much more immediate and alive. Many 
+adventure games now display a 3D world.
+The static-backdrop adventure game is still around, but nowadays it may use scenes 
+created with 3D-rendering software and ray tracing rather than pixel painting. 
+Myst, the ﬁ rst commercial game to use 3D-rendered backgrounds, owes some of its 
+success to its sophisticated graphics.
+Other genres are now adopting the puzzle and storytelling features that were once 
+unique to the adventure genre.
+ACTION-ADVENTURES
+The arrival of 3D hardware also gave rise to a new sort of game, a hybrid of action 
+game and adventure game called, unsurprisingly, an action-adventure. The action-
+adventure is faster paced than a pure adventure game and includes physical as well 
+as conceptual challenges. Indiana Jones and the Infernal Machine provides a good 
+example of the type. The modern Zelda games might be considered another, although 
+with their levels and bosses, they are closer to being pure action games. Exactly 
+when a game stops being an adventure game and becomes an action game is a mat-
+ter of interpretation. Some might consider the Tomb Raider games to be action-
+adventures because they include puzzles, but the puzzles are quite simple, and the 
+games rely so heavily on physical challenges that they are really action games.
+Many adventure game purists don’t care for action-adventures; generally, they dis-
+like any sort of physical challenge or time pressure. If you plan to make your game 
+an action-adventure, you should be aware that, although your design might appeal 
+to some action gamers who might not otherwise buy your game, you might also 
+discourage some adventure gamers who would. Without doubt, however, action-
+adventure hybrids are now more popular than traditional adventure games.
+THE REPLAYABILITY QUESTION
+At ﬁ rst glance, the lack of replayability seems the greatest disadvantage of adven-
+ture games. Most adventure games consist of a sequence of puzzles, each of which 
+has a single solution; when you know the solution, there’s not much challenge in 
+playing it again. An adventure game that requires 40 hours to ﬁ nish the ﬁ rst time 
+might take only 4 hours the second time.
+
+
+--- PAGE BREAK ---
+
+ADVENTURE GAMES 
+549
+ CHAPTER 19
+To ameliorate this problem, consider making puzzle sequences or challenges that 
+allow the player a choice of solutions. The consequences of the player’s choices can 
+affect not only the game she is playing but also the story itself. The player who 
+chooses to blow up the gate blocking her way might accidentally hurt someone in 
+the process and be chased out of town. The player who needs a speciﬁ c key might 
+have to steal it and be chased because she’s a thief. Offering alternative solutions 
+adds to the replayability of the game. Adventure game puzzle design and challenges 
+are discussed later in this chapter.
+In practice, however, replayability isn’t much of a problem. Research shows that a 
+great many players never ﬁ nish these games at all; even if the game offers 30 or 40 
+hours of gameplay, many players play for only 15 or 20. This suggests that if they 
+can’t replay a 40-hour game for another 40 hours, it’s unlikely to affect their pur-
+chasing decision. Provided that the game gives good value for the money the ﬁ rst 
+time around, it doesn’t necessarily need to be replayable.
+Game Features
+In adventure games, the player’s avatar visits an explorable area containing a vari-
+ety of puzzles or problems to solve. Solving these problems opens new areas for 
+exploration or advances the storyline, giving the player new information and
+new problems to solve. Exploring the environment and manipulating items in it 
+are essential elements of an adventure game. Many players also enjoy interacting 
+with a wide variety of characters. The more different kinds of people your game 
+contains, the richer it will be—a quality that adventure games share with role-
+playing games.
+Adventure games typically offer only a few gameplay modes. Unlike sports games, 
+with all of the associated team-management functions, or war games, with associ-
+ated battle-planning modes, adventure games don’t need a lot of specialized 
+screens. Apart from the need to look at a map or the avatar’s inventory or to exam-
+ine objects closely, the player always sees and interacts with the world in the same 
+way, and that doesn’t change from one end of the game to the other.
+Setting and Emotional Tone
+In some kinds of games, such as chess and Quake, the setting is almost irrelevant. 
+Serious players ignore the idea that chess is a medieval war game or that Quake
+involves space marines on an alien planet. They concentrate on the bare essentials 
+of the gameplay: strategy in the former case and blazing action in the latter. If the 
+setting intrudes, it is only a distraction.
+Adventure games reverse this situation. The setting contributes more to the enter-
+tainment value of an adventure game than settings in any other genre. Whether 
+it’s grim and depressing, fantastic and outlandish, or funny and cheerful, the 
+
+
+--- PAGE BREAK ---
+
+550 
+FUNDAMENTALS OF GAME DESIGN
+setting creates the world the player explores and lives in. For many players, the set-
+ting is the reason for playing adventure games in the ﬁ rst place.
+The majority of computer games offer little emotional subtlety. Games of pure strat-
+egy have no emotional content at all; action games and war games have little more. 
+Nor do most single-player games inspire complex emotions in the player. “Yippee!” 
+and “Damn!” are about the limit of it—exhilaration and frustration, respectively. 
+Role-playing games (RPGs), with their deeper stories, offer greater opportunities for 
+emotional expression, but even when their designers take advantage of this depth, 
+the emotion tends to get lost in a morass of bookkeeping. Multiplayer games are an 
+exception; their social context allows for richer interactions because they take place 
+among real people.
+Adventure games are always single-player games, so they can’t rely on social inter-
+actions to create richness. They don’t have intricate strategy, high-speed action, or 
+management details to occupy the player’s attention. The games move more slowly, 
+which gives designers the chance to create a world with a distinct emotional tone. 
+Good examples from the past and present are Phantasmagoria, one of the ﬁ rst 
+graphical horror games; the Myst series, with its surreal buildings and empty 
+spaces; and Shadow of the Colossus’s vast and beautiful landscapes, which make it 
+distinctly more than an ordinary action-adventure.
+Interaction Model
+Adventure games always use an avatar-based interaction model because the 
+designer wants to put the player inside a story. However, the nature of the avatar in 
+adventure games has changed over the years. The early games Adventure and Myst
+used nonspeciﬁ c avatars, an idea discussed in Chapter 6, “Character Development.” 
+In effect, the games pretended that the player was the avatar.
+Eventually, however, game designers abandoned this model so that they could develop 
+games in which the avatar possessed a personality of his own, someone who belonged 
+in the game world rather than being a visitor there. Sierra On-Line’s Leisure Suit Larry
+series and Revolution Software’s Broken Sword games are good examples. In these 
+games, the player can see his avatar walking around, interacting with the world.
+Camera Model
+The preferred camera model of graphical adventure games is changing. The con-
+text-sensitive approach is traditional, but third- and ﬁ rst-person games are 
+becoming increasingly common. This section discusses the advantages and disad-
+vantages of these approaches.
+CONTEXT-SENSITIVE MODEL
+Using a context-sensitive model, the game depicts the avatar from whatever camera 
+angle is most appropriate for her current location in the game world. If the avatar 
+NOTE The oldest 
+graphical adventure 
+games used static 
+painted backdrops, 
+not a freely-moving 
+camera in a 3D space, 
+to display each scene. 
+Many still do. The 
+painted backdrop 
+still qualiﬁ es as a 
+context-sensitive cam-
+era model, however, 
+because the camera 
+angle changes as the 
+avatar moves from 
+scene to scene.
+
+
+--- PAGE BREAK ---
+
+ADVENTURE GAMES 
+551
+ CHAPTER 19
+moves to a new location that is signiﬁ cantly different from the previous one, the 
+camera behavior takes this into account. For example, going from indoors to out-
+doors, the camera might move farther away from the avatar to show more of the 
+environment.
+In the early days of graphic adventure games, the camera angles tended to be quite 
+dull, as in Figure 19.1, from Leisure Suit Larry in the Land of the Lounge Lizards.
+As display hardware improved, game development required more artists and the 
+quality of the artwork improved considerably. Today the game’s art director 
+chooses a camera position designed to show off each location and activity to best 
+effect. Compare Figure 19.1 with Figure 19.2 from A Vampyre Story.
+FIGURE 19.1 
+A scene in the ﬁ rst 
+Leisure Suit Larry game
+FIGURE 19.2 
+A scene in A Vampyre 
+Story. The lowered 
+camera position 
+accentuates the main 
+character’s height. 
+
+
+--- PAGE BREAK ---
+
+552
+FUNDAMENTALS OF GAME DESIGN
+A context-sensitive perspective lets you (or the art director) play cinematographer, 
+using camera angles, composition, and lighting to enhance the story. Use these 
+techniques with discretion, however. A light touch is best. If you watch movies 
+closely, you’ll notice that the majority of shots use a pretty straightforward camera 
+angle. Movie directors switch to an unusual angle when they have a particular 
+point to make, such as showing that the protagonist is alone, or in a high place.
+THE SECRET OF MONKEY ISLAND
+The Secret of Monkey Island, now nearly 20 years old, remains worth studying because it 
+spawned a highly successful franchise. Although it is ostensibly set on a Caribbean island 
+in the 1700s and concerns a young man who wants to be a pirate, the game features 
+anachronistic touches and is played for laughs. In that respect, it seems a lot like certain 
+Disney animated ﬁ lms—The Jungle Book, for example—although slightly edgier.
+When Ron Gilbert, the designer of The Secret of Monkey Island, started work on the 
+game, he had already created an adventure game engine called SCUMM, an acronym for 
+“Script Creation Utility for Maniac Mansion” (an earlier LucasArts adventure game). 
+SCUMM represented an important innovation for graphic adventure games: It put the 
+possible actions on the screen so players no longer had to guess what their options were, 
+and it did away with typing. More important for the developers, SCUMM enabled them to 
+create new adventure games easily without programming them from scratch each time. 
+Three of the ﬁ ve Monkey Island games used the SCUMM utility in addition to Maniac
+Mansion itself and several other LucasArts games.
+The Secret of Monkey Island includes a number of other innovations as well, most notably 
+an insult-driven sword ﬁ ght between the avatar, Guybrush Threepwood, and a master 
+swordswoman. Rather than making the ﬁ ght a physical challenge, which would have 
+required a lot of additional programming and would have turned off some players, 
+Gilbert chose to use (and make fun of) the way adversaries always insult one another in 
+old swashbuckling movies. When his adversary insults Guybrush, the player must choose 
+an appropriate comeback quip. Choosing a good comeback gives Guybrush advantage in 
+the ﬁ ght; choosing the wrong one forces Guybrush to retreat. For Guybrush to win the 
+ﬁ ght, he must choose enough correct quips. The insults themselves contain clues as to 
+which reply is correct, so players don’t have to ﬁ nd out by trial and error.
+It’s this kind of lateral thinking about the design that separates great adventure games 
+from merely good ones. The Monkey Island series belongs among the greats. The origi-
+nal game has since been remade with higher quality graphics and has been released as 
+The Secret of Monkey Island: Special Edition.
+
+
+--- PAGE BREAK ---
+
+ADVENTURE GAMES 
+553
+ CHAPTER 19
+FIRST-PERSON PERSPECTIVE
+One of the most famous graphic adventure games of all, Myst, used a ﬁ rst-person
+perspective. You may be familiar with the look of contemporary ﬁ rst-person games, 
+but unlike these, Myst did not render a three-dimensional game world in real time 
+even though it used a ﬁ rst-person perspective. The Myst world consisted of a large 
+number of prerendered still frames that appeared one at a time as the avatar walked 
+around. Prerendering made ﬁ nely detailed and highly atmospheric images possible. 
+On the other hand, Myst couldn’t depict continuously moving objects or changes 
+in the sunlight as time passed, and the number of angles from which the player 
+could look at things was limited. The world was rich but static.
+A real-time 3D ﬁ rst-person perspective gives the player the best sense of being in 
+the world but doesn’t let the player see his avatar unless he happens upon some 
+functioning reﬂ ective surface in the game world. This perspective also tends to 
+encourage a more action-oriented approach to playing the game, running around 
+without paying much attention to the surroundings. Because much of the enter-
+tainment of an adventure game comes from seeing the avatar explore the world 
+and interact with other characters, the ﬁ rst-person perspective doesn’t offer as 
+many opportunities for visual drama as other perspectives do.
+THIRD-PERSON PERSPECTIVE
+The third-person perspective keeps the player’s avatar constantly in view, as in 
+Indiana Jones and the Emperor’s Tomb, an action-adventure hybrid. This perspective 
+is common for action-adventures in which the player might need to react quickly 
+(see Figure 19.3).
+If the camera in the third-person perspective always remains behind the avatar’s 
+back, however, the view can become rather dull and doesn’t let the player appreci-
+ate the environment. And unlike pure action games in which the avatar’s actions 
+FIGURE 19.3 
+Indiana Jones and the 
+Emperor’s Tomb. This 
+is the typical action-
+adventure perspective. 
+
+
+--- PAGE BREAK ---
+
+554 
+FUNDAMENTALS OF GAME DESIGN
+and motivations are simple, adventure games sometimes need camera perspectives 
+that allow for more subtle situations. In Figure 19.4, from Gabriel Knight 3, Gabriel 
+hides to see when the maid leaves the room.
+The later Gabriel Knight games also allowed the player to move the camera around 
+somewhat (see Figure 19.5)—as do most of the better action games. This mimics 
+how a real person can turn his head to look in a given direction without moving 
+his whole body.
+Player Roles
+In most video games, the player’s role is largely deﬁ ned by the challenges offered, 
+whether as an athlete in a sports game, a pilot in a ﬂ ight simulator, or a martial arts 
+expert in a ﬁ ghting game. But adventure games can be ﬁ lled with all kinds of 
+FIGURE 19.4 
+Gabriel Knight 3 in 
+a context-sensitive 
+camera angle
+FIGURE 19.5 
+Gabriel Knight as seen 
+from a player-adjusted 
+camera position. 
+The Volkswagen bus 
+would not be visible 
+if the camera were 
+behind him. 
+
+
+--- PAGE BREAK ---
+
+ADVENTURE GAMES 
+555
+ CHAPTER 19
+puzzles and problems unrelated to the player’s stated role. Indiana Jones is suppos-
+edly an archaeologist, but we don’t see him digging very much. The role of the 
+player in an adventure game arises not out of the challenges (unless you speciﬁ cally 
+want it to), but out of the story. The player can still be a pilot, if that’s what the 
+story requires, but that doesn’t necessarily guarantee that she’ll get to ﬂ y a plane. 
+And she might be anything else or nothing in particular—just an ordinary person 
+living in an extraordinary situation.
+A good many adventure games do connect the player’s role with the game’s activi-
+ties, however. Almost all adventure games treat the story as a journey (see the 
+section “The Story as a Journey” in Chapter 7), mapping the plot of the story onto 
+physical travel through the game world, so the player’s role often involves travel or 
+investigation: explorer, detective, hunter, conquistador, and so on.
+Be sure that the player’s role is suitable for the genre, however, or it could be frus-
+trating for the player. Heart of China, an otherwise straightforward adventure game, 
+included a poorly implemented 3D tank simulator. To get beyond a speciﬁ c point, 
+the player had to use the tank simulator successfully. This created a real problem; 
+adventure game enthusiasts seldom play vehicle simulations, and many could not 
+get past that point. The obligatory action element spoiled the game for them.
+Story and Spatial Structure
+Because adventure games map a story onto a space, they establish a relationship 
+between different locations in the world and different parts of the story. Over the 
+years, the nature of this relationship has evolved. The earliest adventure games, 
+including the original Adventure, emphasized exploration at the expense of story. 
+The game provided few cues that could give the player a sense of time passing—
+that is, of making progress through a story toward an ending. The game simply 
+gave her a large space and told her to wander around. Structurally, the game looked 
+rather like the drawing in Figure 19.6.
+S
+E
+FIGURE 19.6 
+The structure of early 
+adventure games. Each 
+circle represents a 
+room. S is the starting 
+room, and E is the end. 
+
+
+--- PAGE BREAK ---
+
+556 
+FUNDAMENTALS OF GAME DESIGN
+As adventure games became larger and began to include a more detailed story, 
+designers started to break them into chapters (see Figure 19.7). The player could 
+wander around all he liked in the area devoted to a given chapter, but when he 
+moved on to the next chapter, the story advanced and there was no way back. This 
+made the story more linear, which made it both easier to write for and easier to pro-
+gram. If the player needed to take a particular object from one chapter to the next, 
+the story would not let him progress until that object was in his inventory. This 
+arrangement is functionally identical to the foldback story structure I describe in 
+Chapter 7. In a foldback story, the player has some dramatic freedom, but his 
+options eventually narrow to a single inevitable event before they branch out 
+again. In adventure games, this inevitable event is normally the transition to the 
+next chapter.
+S
+E
+With the arrival of 3D graphics and the action-adventure, the stories became more 
+linear still. Areas occasionally offered simple side branches but few complex spaces 
+to explore. The space in an action-adventure is structured more like that of an 
+indoor ﬁ rst-person shooter (see Figure 19.8), because action-adventures emphasize 
+conﬂ ict challenges (often shooting and ﬁ ghting) over exploration. A good many 
+action-adventures have a lot more action than they do adventuring.
+S
+E
+FIGURE 19.7 
+The structure of 
+story-driven adventure 
+games
+FIGURE 19.8 
+The structure of action-
+adventure games
+Chapter 1
+Chapter 2
+Chapter 3
+
+
+--- PAGE BREAK ---
+
+ADVENTURE GAMES 
+557
+ CHAPTER 19
+Storytelling
+Chapter 7 discusses storytelling at length. This section reiterates a few of the key 
+points and talks about their signiﬁ cance in adventure games, because adventure 
+games rely on storytelling more than any other genre.
+DRAMATIC TENSION
+Dramatic tension, which arises from an unresolved situation or problem, is what 
+holds the reader’s attention and keeps her around to see how the story comes out.
+To create dramatic tension, start by presenting the problem. In adventure games, 
+this often happens in a cut-scene right at the beginning of the game. The meaning 
+of the scene doesn’t have to be immediately clear; mystery and uncertainty may 
+help set the mood for your story. For example, The Longest Journey begins when 
+April Ryan, the player’s avatar and heroine of the game, has been having increas-
+ingly vivid nightmares whose meaning she does not understand. At the beginning 
+of the game, she has no goal other than to ﬁ nd out why she’s having nightmares. 
+Later, dramatic tension increases as the player learns the source of those night-
+mares and new problems emerge.
+The resolution of dramatic tension occurs at a moment called the dramatic climax, 
+usually near the end of the story. Shorter stories frequently have only one source of 
+dramatic tension and one dramatic climax; longer stories can have several, of pro-
+gressively increasing importance. An extremely long story can have several major 
+dramatic climaxes at intervals, tied together by a common theme, setting, or char-
+acters. Richard Wagner’s cycle of four operas, The Ring of the Nibelungs, is one such 
+extended work. Each opera is a self-contained story with its own dramatic climax, 
+although some characters carry over from one opera to the next, and all of the 
+operas concern the fate of the same magic ring.
+Because adventure games are usually much longer than movies or short stories, you 
+will probably want to create several different dramatic climaxes as well—each one 
+resolving a current or immediate problem until the last climax, which should 
+resolve the overall problem of the whole story. In the adventure game, dramatic 
+tension is created through the combination of dramatic storytelling and interactive 
+puzzles. Impending doom that can only be stopped by the player’s intervention 
+can provide a dramatic point to the story, as long as the player doesn’t feel as 
+though the tension is contrived.
+As an adventure game designer, you can use puzzles to create a minor form of dra-
+matic tension. However, puzzles of the types designers usually employ (as the later 
+section “Challenges” describes) alone are not enough to keep the player actively 
+interested in the story for the length of the game. Puzzles present small, individual 
+problems. Your story needs a larger problem that underpins the whole story, some-
+thing that, even if it isn’t revealed to the player at the beginning of the game, is the 
+reason that there is a story.
+TIP Remember the 
+adage from creative 
+writing: show, don’t 
+tell. Set the mood and 
+amplify the tension in 
+your story using music, 
+well-chosen color pal-
+ettes, camera angles, 
+lighting, and architec-
+ture. Never say that 
+something is scary, 
+make it scary. 
+
+
+--- PAGE BREAK ---
+
+558 
+FUNDAMENTALS OF GAME DESIGN
+THE HEROIC QUEST
+The majority of adventure games fall into the category of heroic quests, each one a 
+mission by a single individual to accomplish some great (or, in the case of Leisure 
+Suit Larry, not-so-great) feat. You can imagine adventure games structured along 
+other lines but will ﬁ nd few on the market that don’t adhere to the heroic quest 
+scenario. Although it’s possible to write an adventure game based on a detailed 
+character study, no one has done so as a commercial product.
+The heroic quest traditionally involves a movement from the familiar to the unfa-
+miliar and from a time of low danger to a time of great danger. The biggest, most 
+dramatic climax you offer the player should be the last major climax in the game 
+because anything that follows is likely to seem irrelevant. Remember that the boss 
+enemies appear at the ends of levels in action games; if you defeat the Lord of 
+Terror, it feels anticlimactic and rather unfair to have to ﬁ ght his second-in-com-
+mand afterward.
+Occasionally exceptions to this structure arise, such as in stories in which the hero 
+is abducted at the beginning, escapes, and must return to his home. However, in 
+these stories, the protagonist’s struggles don’t get easier and easier until he just 
+strolls in happily. He often returns home to ﬁ nd that things have changed for the 
+worse and must be corrected or that he must leave again to hunt down his abductor.
+None of this means that there can’t ever be periods of quiet; in fact, there should 
+be. In both of J. R. R. Tolkien’s most famous books, The Hobbit and The Lord of the 
+Rings, periods of great danger alternate with periods of safety and rest for the 
+heroes, during which they regain their strength. A long story that consists of noth-
+ing but action will feel unrealistic and silly after a while.
+The works of Joseph Campbell and Christopher Vogler discuss the heroic quest at 
+length. (See the references for details.)
+THE PROBLEM OF DEATH
+For many years, game designers have debated the question of whether adventure 
+games should allow the player to make a fatal mistake. Some adventure games 
+proudly advertise on their boxes that the avatar can’t ever die; the manuals of other 
+games warn that the player might encounter mortal danger. In some respects, this 
+seems like a strange thing to worry about. After all, avatars routinely die in action 
+games and in ﬂ ight simulator crashes, so why shouldn’t they be able to die in 
+adventure games?
+The nature of the gameplay makes the question controversial. In a ﬁ rst-person 
+shooter or a military ﬂ ight simulator, it’s obvious that the avatar is in mortal peril 
+all the time. In fact, in games of most genres, it’s win or lose, kill or be killed by 
+clearly marked enemies, all the time. Adventure games differ because they seldom 
+provide an explicitly declared enemy; instead, the game encourages the player to go 
+everywhere and touch everything. If you tell the player to explore the world and 
+
+
+--- PAGE BREAK ---
+
+ADVENTURE GAMES 
+559
+ CHAPTER 19
+then you ﬁ ll it with deathtraps, he’s in for a frustrating time. Nowadays, most 
+adventure games adopt a “fair warning” approach, making it clear when an object 
+or action threatens danger and (usually) offering a way of neutralizing or circum-
+venting that danger. If you put a dragon in a cave, it’s a nice touch to litter the 
+entrance with the bones of earlier adventurers. That ought to get the point across.
+Most adventure games supply a save-game feature, so death isn’t necessarily cata-
+strophic; on the other hand, stopping to save the game does tend to hurt the 
+player’s feeling of immersion. Adventure games shouldn’t be so dangerous that the 
+player needs to save all the time. If you are going to let the player’s avatar be killed 
+in your game, make sure to use an autosave feature to save the game at intervals, 
+which allows the player to restore it later, even if he hasn’t explicitly saved it. The 
+player doesn’t have to know that the game is being saved for him; telling him only 
+harms the suspension of disbelief.
+Challenges
+The majority of challenges in an adventure game are conceptual: puzzles that can 
+only be solved by lateral thinking. The following list of a few popular puzzles—of 
+the many types available—will help get you started:
+■ Finding keys to locked doors. Locked door refers to any obstruction that pre-
+vents progress and a key is any object that removes the obstruction. Because this 
+type of puzzle is so common, the challenge for you as a designer is to give players 
+enough variety that the door-and-key puzzles don’t all seem the same.
+■ Figuring out mysterious machines. This is, in effect, a combination lock 
+instead of a lock with a key. The player manipulates a variety of knobs to make a 
+variety of indicators show the correct reading. Try to make the presence of these 
+knobs reasonably plausible—too many adventure games include mysterious 
+machines that clearly function only as puzzles, not as realistic parts of the game 
+world.
+■ Obtaining inaccessible objects. In this kind of puzzle, the player can see but 
+not reach an object, which may be a treasure or a key to open some door elsewhere 
+in the game world (remember that this doesn’t need to be an actual key). The 
+player must ﬁ nd a clever way of reaching the object, perhaps by building some 
+device that gives her access.
+■ Manipulating people. Sometimes an obstruction is not a physical object but a 
+person, and the trick is to ﬁ nd out what makes the person go away or lets the player 
+pass. If it’s a simple question of giving the obstructor something he wants, then the 
+problem is really just a lock-and-key puzzle. For a more creative approach, create a 
+puzzle in which the person must be either defeated or distracted. The player should 
+have to talk to him to learn his weaknesses.
+
+
+--- PAGE BREAK ---
+
+560 
+FUNDAMENTALS OF GAME DESIGN
+■ Navigating mazes. Use mazes—confusing areas that make it difﬁ cult for the 
+player to know where she is or where to go—sparingly. Making a bad maze is easy; 
+making an interesting maze is difﬁ cult. A maze should always contain clues that an 
+observant player can notice and use to help her learn her way around.
+■ Decoding cryptic messages. Many players enjoy decoding messages, as long as 
+you give sufﬁ cient clues to help out.
+■ Solving memorization puzzles. These puzzles require the player to remember 
+where something is—a variant of the game Concentration. She can usually defeat 
+these by taking notes, but that’s reasonable enough; it’s how we remember things 
+anyway. The real challenge for you as the designer is to create a realistic reason for 
+a memorization puzzle to be in the game.
+■ Collecting things. The player must ﬁ nd a number of objects. These may be the 
+scattered pieces of a larger object, a set of related items (such as 12 identical gems), 
+or simply miscellaneous treasures. Make the player meet challenges to reveal or 
+retrieve these items; simply ﬁ nding and picking them up isn’t really a challenge.
+■ Doing detective work. Instead of solving a puzzle per se, the player ﬁ gures out a 
+sequence of events from clues and interviews with witnesses. The situation doesn’t 
+necessarily have to involve a crime; you could use any unknown event. Detective 
+work forms the basis for many police-procedure games.
+■ Understanding social problems. This doesn’t refer to inﬂ ation or unemploy-
+ment. The challenges of understanding and perhaps inﬂ uencing the relationships 
+between people make up a little-explored aspect of adventure game design. Most 
+adventure games limit characters to very simple, mechanical states of mind. If we 
+devote a little more effort, people, rather than objects, could become the primary 
+subject of adventure games, and this would make the games much more 
+interesting.
+When designing puzzles, try to allow for lateral thinking of the players. If there’s 
+more than one way to solve a puzzle, don’t arbitrarily restrict the player to your pre-
+ferred method. Obviously, you can’t build in multiple solutions to every puzzle, but 
+if the player tries something entirely logical and there’s no good reason why it 
+doesn’t work, she’s going to be frustrated. Only play-testing can tell you whether a 
+puzzle is too hard or too easy, and you can’t adjust an adventure game’s difﬁ culty 
+by tweaking some numbers the way you can adjust the difﬁ culty of games in some 
+other genres.
+Conversations with Nonplayer Characters
+From the original Adventure onward, adventure game designers have faced the prob-
+lem of how to create realistic NPCs. Computer role-playing game (CRPG) designers 
+must address this problem, too, but in most CRPGs, an NPC’s conversation is 
+deﬁ ned by the character’s role: blacksmith, healer, tavern keeper, and so on. The 
+
+
+--- PAGE BREAK ---
+
+ADVENTURE GAMES 
+561
+ CHAPTER 19
+player doesn’t expect to be able to discuss arms and armor with a tavern keeper 
+(although the games might be more interesting and certainly less formulaic if he 
+could). But because adventure games are interactive stories, players expect the char-
+acters in them to be more like humans and less mechanical.
+A good many games try to sidestep the problem entirely by setting the game in 
+worlds with extremely few, if any, people. This certainly creates a mysterious
+atmosphere, but it suits only a limited range of stories. Imagine how Rick’s bar
+in Casablanca would feel if it weren’t full of people drinking and gambling. A
+world with no people seems artiﬁ cial and sterile.
+A few early text-based games tried to implement parsers that could understand lim-
+ited English sentences as typed by the player, but these seldom succeeded. NPCs 
+either said, “I don’t understand that,” or gave absurd answers when the player asked 
+a perfectly reasonable question; this left the impression that the NPCs were 
+drugged or mentally ill.
+In the end, most adventure game designers gave up on trying to create the impres-
+sion that the player could talk to anyone about anything and devised the scripted 
+conversation, a mechanism that became the de facto standard for both adventure 
+games and CRPGs. Chapter 7 discussed scripted conversations in detail.
+Mapping
+When playing text adventures, players usually needed to make maps for themselves 
+as they went along, because they found it difﬁ cult to remember how the rooms in 
+the game world related to one another. With the arrival of graphical adventures, 
+mapping became less critical because the graphics provide cues about how the play-
+er’s current location relates to other areas in the world. However, it’s still a good 
+idea to give the player a map. A few games deliberately deny the player a map to 
+make the game more difﬁ cult, but this is poor design. There’s not a lot of fun in 
+being lost. If you force the player to make his own map, he has to constantly look 
+away from the screen to a sketchpad at his side; that’s a tedious business that rap-
+idly destroys suspension of disbelief.
+The map that you give the player doesn’t have to be complete at the beginning of 
+the game; it can start out empty and be ﬁ lled in as the player moves around, a pro-
+cess called automapping. It’s also a good idea to give the player a compass to tell him 
+which direction he’s facing, unless the map orients itself for him. You can also include 
+the map as an item to be found in the game, along the lines of a treasure map. 
+Automapping destroys the challenge imposed by mazes, but mazes are one of the 
+most overused and least-enjoyed features of adventure games. Unless you have a 
+strong reason for including a maze (such as re-creating the adventures of Theseus 
+in the Minotaur’s labyrinth) and can construct one that’s really clever and fun to 
+be in, don’t do it. If you strongly feel you should have a maze, consider making it 
+an optional mini-game.
+NOTE The most 
+ambitious effort to 
+create a parser that 
+understands natural 
+language in video 
+games is the experi-
+mental game Façade.
+The player takes the 
+role of a friend of a 
+bickering couple, and 
+can inﬂ uence their 
+relationship by speak-
+ing to them (through 
+typed sentences) in 
+plain English. You can 
+download Façade free 
+of charge at www.
+interactivestory.net.
+
+
+--- PAGE BREAK ---
+
+562 
+FUNDAMENTALS OF GAME DESIGN
+Journal Keeping
+Another common feature of adventure games—one that is conceptually similar to 
+automapping—is automatic journal keeping. The game ﬁ lls in a journal with text as 
+the player goes along, recording important events or information she uncovers. If 
+the game includes a convoluted plot or large numbers of characters, the journal can 
+be an invaluable reference tool for the player. Let her call it up and look at it at any 
+reasonable time (though not, perhaps, while hanging over the edge of a cliff or 
+being interrogated by a villain). As with conversations with NPCs, the journal gives 
+you an opportunity to deﬁ ne the avatar’s character through his use of language. 
+Journals are ideal for games in which the player must collect informational clues, 
+such as mysteries in the Nancy Drew series.
+A Few Things to Avoid
+As adventure games evolved, designers created many different kinds of puzzles and 
+experiences for the player. Some of these are extremely clever, such as the insult-
+driven sword ﬁ ght in The Secret of Monkey Island. A good many others, however, 
+proved to be only tiresome time wasters, obstacles that add no entertainment value 
+to the game.
+PUZZLES SOLVABLE ONLY BY TRIAL AND ERROR
+If you give the player a puzzle that has a ﬁ xed number of possible solutions of equal 
+probability (in effect, a combination lock), but no hints about which solution is 
+right, then the player simply has to try them all. The Infocom text adventure Inﬁ del
+included a puzzle like this: The player had to line up four statues of Egyptian god-
+desses in the correct order, but there were no clues about what the correct order 
+might be. The player could do nothing but try all 24 possible combinations and 
+keep track of the ones she had already tried. There’s not much fun in that. Instead, 
+ﬁ nd clever ways to provide the clues.
+CONCEPTUAL NON SEQUITURS
+This is a variant of the trial-and-error puzzle, a problem whose solution requires 
+thinking so lateral that it’s completely irrational. The term describes something 
+along the lines of “put the sombrero on the bulldozer” or “sharpen the headphones 
+with the banana.” A few games try to get away with this by claiming that it’s surre-
+alism, but true surrealism is informed by some kind of underlying point; it’s not 
+just random weirdness. Chapter 12, “General Principles of Level Design,” discusses 
+conceptual non sequiturs at greater length.
+A variant of this is the opposite-reaction puzzle, one whose solution turns out to be 
+the exact opposite of what you’d expect. In the original Adventure, the player could 
+drive away a menacing snake by releasing a little bird from its cage. Fortunately, at 
+that point in Adventure, the player didn’t have many options, so he usually found 
+
+
+--- PAGE BREAK ---
+
+ADVENTURE GAMES 
+563
+ CHAPTER 19
+the solution quickly. But unless you design an entire game on this principle, players 
+may see it as just an annoying gimmick.
+ILLOGICAL SPACES
+Illogical spaces were a classic challenge in text adventures. If you went north from 
+room A, you got to room B, but if you went south from room B, you didn’t neces-
+sarily go back to room A. Modern games use teleporters to provide a similar effect; 
+the player may step out of a teleporter with no idea where it has taken her. In such 
+a space, the player simply has to wander around taking notes until she can ﬁ gure 
+out the relationships among the various locations. Unless you offer some clues, this 
+is another puzzle that can be solved only by trial and error.
+PUZZLES REQUIRING OUTSIDE KNOWLEDGE
+Many adventure games include references to things outside the game world for 
+comic effect, but those references shouldn’t be part of a puzzle. A game that 
+requires the player to know information from a source other than itself is unfair. 
+For example, Haunt offered puzzles that only players familiar with the movie Monty 
+Python and the Holy Grail could solve. It didn’t really matter because Haunt was a 
+game made by a student for fun, but in a commercial game, such puzzles would be 
+unreasonable unless you explicitly make it clear that the game requires the player 
+to know trivial facts. If you want to make humorous references to popular TV 
+shows, movies, and so on, do them in narrative events or in an NPC’s conversation 
+rather than as solutions to puzzles. Beware, though: Cultural references age quickly 
+and will make the game seem dated after a few years.
+You have to be even more careful when developing games for foreign markets 
+because other countries don’t always have the same idioms. For instance, the 
+action, “Wear the lampshade on my head,” could cause other characters in the 
+game to assume that the player’s avatar is drunk, which might be desirable in 
+the context of the story. However, wearing a lampshade as a sign of drunkenness is 
+an American cultural idiom that might not be understood in, say, Japan. Again, it’s 
+OK to make cultural references in your game; just be careful about requiring the 
+user to understand them in order to win.
+CLICK-THE-RIGHT-PIXEL PUZZLES
+A few adventure games with point-and-click user interfaces require the player to 
+click a tiny and inconspicuous area of the screen to advance the story for no partic-
+ular reason except that that particular pixel is difﬁ cult to ﬁ nd. This is lazy design—
+a cheap way of creating an obstacle for the player without any entertainment value. 
+Indiana Jones and the Holy Grail, for example, requires the player to click exactly on 
+one pixel during the end game in order to duck under a swinging blade. For most 
+players, this is a tedious and irritating solution to a well-known movie sequence.
+
+
+--- PAGE BREAK ---
+
+564 
+FUNDAMENTALS OF GAME DESIGN
+TOO MANY BACKWARD PUZZLES
+A backward puzzle is one in which the player ﬁ nds the solution before ﬁ nding the 
+puzzle itself. She ﬁ nds a key but doesn’t yet know of any locked doors. However, 
+she picks it up and carries it around with her all the time, just in case. When she 
+does eventually ﬁ nd a locked door, she immediately has the solution, which means 
+it’s not much of a puzzle. By including a large number of backward puzzles, you 
+force the player to carry around a big inventory of stuff that she has no idea why 
+she’s carrying. It encourages players to pick up everything they see whether they 
+need it or not, which is now considered an outdated mechanic and harmful to the 
+game’s immersion. A few backward puzzles are OK; a world full is poor design.
+You may run across situations where you didn’t intend to insert a backward puzzle 
+in your game, but the player ﬁ nds the solution before ﬁ nding the puzzle because 
+it’s difﬁ cult to predict in what order the player will traverse the terrain of the game. 
+It’s not always possible to prevent the player from ﬁ nding the solution ﬁ rst because 
+the solution has to be available, but it can be inconspicuous—a poster on a wall full 
+of posters or an object in a trash can. Be aware, however, that inconspicuous is not 
+the same as obscure or nonsensical. If the key to a puzzle involves ﬁ nding a live mon-
+key, the monkey shouldn’t turn out to be locked in a freezer.
+TOO MANY FEDEX PUZZLES
+A FedEx puzzle is one that you solve by picking up an object from one place and tak-
+ing it to a different place, as if you were a courier. Of course, carrying objects 
+around until you ﬁ nd a place to use them is a common feature of adventure games, 
+but some games consist of little else. This gets dull after a while, especially if the 
+solution to a puzzle consists only of fetching and carrying without any lateral 
+thinking or other activity. Liven up the game with a variety of puzzles and tasks. 
+Create objects that have a variety of different uses, such as Indy’s bullwhip in 
+Indiana Jones and the Infernal Machine, or objects that are left over from one puzzle 
+but have a part to play in another.
+The Presentation Layer
+Adventure games, more than most other genres, try to hide the fact that the player 
+is using a computer. When compared to vehicle simulators, sports games, or RPGs, 
+adventure games offer very simple user interfaces. The player needs to move through 
+the world, talk to NPCs, and manipulate or collect objects using intuitive com-
+mands or actions that do not interfere with his sense of immersion in the story.
+Avatar Movement
+The movement interface that you design depends considerably on the perspective 
+you choose. When playing from a ﬁ rst-person or third-person perspective, the 
+
+
+--- PAGE BREAK ---
+
+ADVENTURE GAMES 
+565
+ CHAPTER 19
+player needs a way of steering her avatar around the world, as in an action game. 
+Chapter 13, “Action Games,” includes a discussion of avatar movement in games 
+featuring ﬁ rst- and third-person perspectives.
+Games featuring context-sensitive perspective commonly use one of two user inter-
+faces: point-and-click or direct control.
+POINT-AND-CLICK INTERFACES
+In this user interface, the player clicks with a mouse cursor somewhere on the 
+screen. If the corresponding location in the game is accessible, the avatar walks to 
+it. If the player clicks an active object, the avatar walks to that object and picks it 
+up or manipulates it in an appropriate way. The section “Manipulating Objects” 
+later in this chapter discusses object management more extensively. The disadvan-
+tage of a point-and-click UI is that the player can easily point to areas that aren’t 
+accessible to the avatar (halfway up a cliff for example). Sometimes an area that 
+looks as if it should be perfectly accessible is actually inaccessible, which can be 
+frustrating for the player.
+The point-and-click interface is an indirect control mechanism and was for many 
+years the de facto standard for adventure games. It makes the player feel as if the 
+avatar is a person separate from himself rather than a puppet whose every move-
+ment is directly controlled, and this contributes to the depth of the character. First 
+the player clicks, then the avatar walks—if she can; if she can’t, she will usually say 
+so aloud. It works well in traditional adventure games with no action challenges. 
+However, because traditional adventures are increasingly rare and action-adventure 
+hybrids have become more common, the point-and-click interface is gradually 
+being replaced by direct control interfaces.
+DIRECT CONTROL INTERFACES
+In a direct control user interface, the player steers the avatar around the game 
+world, rather like driving a car. On a console controller, the joystick or D-pad nor-
+mally manages this; on a personal computer, the mouse or keyboard steers the 
+avatar as in an action game. This is now the standard for action-adventure games, 
+whether in third-person or context-sensitive camera models. A few more traditional 
+adventure games have started to adopt a direct-control interface also. Grim Fandango
+from LucasArts is one that uses a context-sensitive camera model, which is rather 
+unusual. See the sections “Screen-Oriented Steering” and “Avatar-Oriented 
+Steering” in Chapter 8, “User Interfaces.”
+MOVEMENT SPEED
+No matter what camera model or user interface you choose, you should implement 
+both walk and run movement modes so the player can move slowly through unfa-
+miliar spaces and quickly through familiar ones. If the game requires the player to 
+move repeatedly through areas he already knows well, the player may ﬁ nd 
+
+
+--- PAGE BREAK ---
+
+566 
+FUNDAMENTALS OF GAME DESIGN
+watching the avatar walk deliberately from place to place boring. On the other 
+hand, if you offer a rich, detailed world and your game expects the player to exam-
+ine everything closely for clues, the user interface must make slow and accurate 
+movement possible.
+Manipulating Objects
+Determining how the player should manipulate objects presents one of the greatest 
+challenges of designing an adventure game. The player typically must ﬁ gure out 
+what to do with particular objects to solve puzzles and advance the game. In text 
+adventures, this amounts to guessing the correct verb. Play often produces inter-
+changes that look like this:
+> OPEN DOOR
+The door is locked, but it looks pretty ﬂ imsy.
+> BREAK DOOR
+I don’t know how to do that.
+> SMASH DOOR
+I don’t know how to do that.
+> HIT DOOR
+I don’t know how to do that.
+> KICK DOOR
+The door ﬂ ies open.
+Sometimes this is fun; a lot of the time it isn’t. In graphic adventure games in 
+which the player uses a mouse or a handheld controller, designers no longer face 
+this sort of problem but still have to decide how to allow the player to manipulate 
+objects. The following sections outline some approaches.
+IDENTIFYING ACTIVE OBJECTS
+With the advent of 3D-modeled worlds and powerful physics engines, just about 
+every object that’s not part of the scenery can, theoretically, be manipulated or 
+picked up by the avatar. However, most objects in a scene don’t actually play a role 
+in the story; they’re just part of the set decoration. The player needs a way of recog-
+nizing the active objects in a particular location. Text adventures used to print a 
+list of active objects. Graphic adventures typically use one of four mechanisms:
+■ Hunt and click. Active objects don’t look any different from anything else; the 
+player simply has to click everything in the scene to see which parts are active. 
+This makes the scene look realistic, but the player may ﬁ nd it annoying, especially 
+if some active objects are small or partially hidden. Designers have generally aban-
+doned this method in favor of the following ones.
+
+
+--- PAGE BREAK ---
+
+ADVENTURE GAMES 
+567
+ CHAPTER 19
+■ Permanently highlighted objects. The active objects in a scene appear perma-
+nently highlighted to make them stand out from the background. You can do this 
+in a number of ways; for example, make them slightly brighter than the rest of the 
+scene or surround them by a line of light or dark pixels. The moment the scene 
+appears on the screen, the player can tell which objects are active. It’s convenient, 
+if artiﬁ cial. Children’s games often use this method.
+■ Dynamically highlighted objects. The active objects in a scene normally look 
+like part of the background but appear highlighted when the mouse cursor passes 
+over them. You can, for example, change the shape of the mouse cursor, have the 
+object light up, or have the object’s name appear momentarily. It still requires the 
+player to do some hunting, but hunting is much easier than hunting and clicking; 
+a quick wave of the cursor tells the player if there’s an active object nearby.
+■ Focus-of-attention highlighting. This mechanism is typically used with hand-
+held controllers when the player doesn’t have a cursor. As the avatar moves around, 
+the focus of his attention changes depending on the direction he is looking. Whatever 
+active object lies directly in front of him commands the focus of his attention and 
+appears highlighted. When he turns away, this highlighting disappears. If two active 
+objects are close together, however, the player may ﬁ nd it tricky to point the avatar 
+in exactly the right direction to put the focus of attention on the desired object.
+ONE-BUTTON ACTIONS
+In a graphic adventure game played with a handheld controller, designers often 
+assign one button of the controller to a generic use or manipulate function. The 
+player moves the avatar near the object and presses the use button for obvious 
+functions such as opening a door or throwing a switch; the player can always count 
+on the button to do the right thing with an object, whatever that might be. Some 
+mouse-based games use a similar mechanism, such that clicking an object causes 
+the appropriate action. Players ﬁ nd such games easy to play because there’s no 
+guessing about what can be done. However, because there can be only one action 
+per object, this method doesn’t allow the designer to do as much to challenge the 
+player’s lateral thinking.
+MENU-DRIVEN ACTIONS
+A number of games use a menu to allow the player to select which action to take 
+and which object to manipulate (see Figure 19.9). This gives the player a clear pic-
+ture of available choices, but the presence of the menu makes the game feel more 
+like a software tool and less like a fantasy adventure.
+In another variant, right-clicking an object makes a pop-up menu appear, showing 
+a series of icons that represent the actions take, use, examine, and possibly others 
+(see Figure 19.10). The player left-clicks one of the icons to perform the desired 
+action. This mechanism in effect shows the player all the available verbs that can 
+be used with that particular object and lets him pick one.
+
+
+--- PAGE BREAK ---
+
+568 
+FUNDAMENTALS OF GAME DESIGN
+FIGURE 19.9 
+The action menu in 
+The Secret of Monkey 
+Island
+FIGURE 19.10 
+The pop-up menu in 
+The Longest Journey
+(at right, under tent). 
+Note that the icons 
+are an eye, a mouth,
+and a hand, meaning 
+look at, talk to, and 
+manipulate.
+
+
+--- PAGE BREAK ---
+
+ADVENTURE GAMES 
+569
+ CHAPTER 19
+MANAGING INVENTORY
+Adventure games have always required the player to pick things up and carry them 
+around until they’re needed later. Most games present the player with a visible 
+inventory mechanism—usually a box that pops up on the screen and shows every-
+thing that the avatar is currently carrying. A box with a ﬁ xed size on the screen 
+creates a natural limit on the amount a player can carry. When the box is full, she 
+can’t put anything else in it unless she takes something out ﬁ rst. It may help to 
+give the avatar a natural container in which things can be carried—a backpack, 
+saddlebags, or the like—so that the inventory mechanism is a close-up view of the 
+container and its contents.
+The player will need to stop frequently for inventory management tasks, so you 
+should make adding, removing, and viewing inventory items as easy as possible. 
+You could choose to devote a part of the screen to the inventory all the time. 
+Players ﬁ nd this easy to work with, although it tends to remind the player that she’s 
+using a computer, and unless you sacriﬁ ce a lot of screen area or implement a 
+scrollbar, the inventory area can’t be very big.
+Most designers choose to give the player an inventory mechanism that she can 
+open and close on demand. She should be able to do this with a single keystroke or 
+button click. The mechanism should not obscure the whole screen—that feels like 
+a major mode change and tends to compromise suspension of disbelief. The game 
+should allow the player to drag objects into and out of the inventory bag or box 
+quickly and efﬁ ciently. The Longest Journey included convenient shortcut keys that 
+allowed players to change the object currently being held in the avatar’s hand 
+without opening the inventory box. Allowing the player to manage the inventory 
+with such shortcut keys also means that you won’t have to create animations of the 
+avatar picking up and dropping every possible item in the game. Asheron’s Call, an 
+online CRPG, includes pick up and drop animations but doesn’t actually show the 
+object in the avatar’s hand.
+Most adventure games feature inventories, but not all. Loom, which was designed to 
+be especially accessible to people who are not already familiar with adventure games,
+doesn’t require the player to keep an inventory. Instead, the player performs all 
+actions in the game by spinning musical spells on a distaff, which is the only object
+he carries (see Figure 19.11). Although short and considered by die-hard adventur-
+ers to be too easy, Loom remains one of the most imaginative and beautifully 
+executed adventure games ever created. (Note, too, the clever pun: The game com-
+bines the idea of a walking staff, a distaff, and a musical staff in a single object.)
+NOTE You can allow 
+the avatar to carry 
+an unlimited number 
+of items just for the 
+humor value of it. In 
+Haunt, a noncom-
+mercial text adventure, 
+the player could walk 
+through a haunted 
+house wearing a 
+wetsuit and carrying 
+a stereo, an antique 
+chair, an oil painting, 
+and anything else he 
+found.
+
+
+--- PAGE BREAK ---
+

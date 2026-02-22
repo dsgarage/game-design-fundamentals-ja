@@ -1,0 +1,1573 @@
+28
+FUNDAMENTALS OF GAME DESIGN
+Design Practice EXERCISES
+1. Create a competitive game for two players and a ball that does not involve 
+throwing it or kicking it. Prove that it is a game by showing how it contains all the 
+essential elements.
+2. Using a chessboard and the types of pieces and moves available in chess, devise 
+a cooperative game of some kind for two people, in which they must work together 
+to achieve a victory condition. (You do not need to use the starting conditions of 
+chess, nor all the pieces.) Document the rules and the victory condition.
+3. Deﬁ ne a competitive game with a single winner, for an unlimited number of 
+players, in which only creative actions are available. Be sure to document the ter-
+mination and victory conditions.
+4. Describe the elements of the gameplay in each of the following games: backgam-
+mon, poker, bowling, and Botticelli. (Use the Internet to look up the rules if you do 
+not know them.)
+5. List examples not already mentioned in this book of video games designed for 
+single-player, multiplayer local, and multiplayer distributed play. Explain how the 
+games’ design supports these different modes.
+Design Practice QUESTIONS
+1. As a potential designer, do you see yourself as an artist, an engineer, a crafts-
+man, or something else? Why do you see yourself that way?
+2. Do you agree or disagree with the deﬁ nition of a game? If you disagree, what 
+would you add, remove, or change?
+3. We have deﬁ ned gameplay strictly in terms of challenges and actions, leaving out 
+the game world or the story. Do you feel that this is appropriate? Why or why not?
+4. Why is it fair if one athlete trains to become better but not fair if he takes drugs 
+to become better? What does this say about our notions of fairness?
+5. We’ve listed only the most important things that computers bring to gaming. 
+What other things can you think of?
+6. The list of ways that video games entertain people is only a beginning. What 
+else would you add?
+
+
+--- PAGE BREAK ---
+
+ CHAPTER 2
+Design Components 
+and Processes
+Game design is the process of
+■ Imagining a game
+■ Deﬁ ning the way it works
+■  Describing the elements that make up the game (conceptual, functional, artistic, 
+and others)
+■  Transmitting information about the game to the team who will build it
+A game designer’s job includes all of these tasks. This chapter begins by discussing 
+an approach called player-centric game design. Then you learn about the central 
+components of any video game—the core mechanics and the user interface (UI)—
+and you see how these components are deﬁ ned in the design process. Finally, we 
+explore the various job roles on a design team and some of the qualities that it 
+takes to be a game designer.
+In the video game industry, all but the smallest games are designed by teams of 
+anywhere from 3 to 20 people. (The entire development team is often much larger, 
+but we’re only concerned with the design team.) This book is written as if you are 
+the lead designer, responsible for overseeing everything. If your team is small, or if 
+you are designing alone, you may perform many of the different design roles your-
+self. This text is written as if you are designing for a home console machine or a 
+personal computer, although much of the material here is applicable to any game 
+device.
+An Approach to the Task
+Over the years, people have tried many approaches to game design, and some of 
+them are better than others. A few tend to result in catastrophic failures. This book 
+teaches you a way to think about what you are actually trying to accomplish so 
+that you’ll be more likely to succeed than fail.
+29
+CHAPTER 2
+
+
+--- PAGE BREAK ---
+
+30 
+FUNDAMENTALS OF GAME DESIGN
+Art, Engineering, or Craft?
+Some people like to think of game design as an art, a process of imagination that 
+draws on a mysterious wellspring of creativity. They think of game designers as art-
+ists, and they suppose that game designers spend their time indulging in ﬂ ights of 
+imagination. Other people, often more mathematically or technologically oriented, 
+see game design as a type of engineering. They concentrate on the methodology for 
+determining and balancing the rules of play. Game design to these people is a set of 
+techniques. Aesthetics are a minor consideration.
+Each of these views is incomplete. Game design is not purely an art because it is not 
+primarily a means of aesthetic expression. Nor is game design an act of pure engi-
+neering. It’s not bound by rigorous standards or formal methods. The goal of a 
+game is to entertain through play, and designing a game requires both creativity 
+and careful planning.
+Interactive entertainment is an art form, but like ﬁ lm and television, it is a collab-
+orative art form. In fact, it is far more collaborative than either of those media, and 
+development companies seldom grant the game designer the level of creative con-
+trol that a ﬁ lm director enjoys. Consequently, no single person on a design team is 
+entitled to call himself the artist. Designing games is a craft, like cinematography or 
+costume design. A game includes both artistic and functional elements: It must be 
+aesthetically pleasing, but it also must work well and be enjoyable to play. The 
+greatest games—the ones whose reputations spread like wildﬁ re and that continue 
+to be played and discussed long after their contemporaries are forgotten—combine 
+their artistic and functional elements brilliantly, achieving a quality for which the 
+best word is elegance. Elegance is the sign of craftsmanship of the highest order.
+The Player-Centric Approach
+This book teaches you an approach called player-centric game design. This approach 
+helps you produce an enjoyable game, which, in turn, helps it be a commercially 
+successful one. Many other factors affect the commercial success of a game as well: 
+marketing, distribution, and the experience of the development team. These are 
+beyond the control of the game designer, so no design or development methodol-
+ogy can guarantee a hit. However, a well-designed game undoubtedly has a better 
+chance of being a hit than a poorly designed one.
+ PLAYER-CENTRIC GAME DESIGN is a philosophy of design in which the designer envisions
+a representative player of a game the designer wants to create. The designer then 
+undertakes two key obligations to that player:
+■  The duty to entertain: A game’s primary function is to entertain the player, and it is 
+the designer’s obligation to create a game that does so. Other motivations are secondary.
+■  The duty to empathize: To design a game that entertains the player, the designer 
+must imagine that he is the player and must build the game to meet the player’s desires 
+and preferences for entertainment. 
+NOTE Game design 
+is a craft, combining 
+both aesthetic and 
+functional elements. 
+Craftsmanship of a 
+high quality produces 
+elegance. 
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+31
+ CHAPTER 2
+You can adapt the ﬁ rst obligation, the duty to entertain, somewhat if you’re design-
+ing the game for education, research, advertising, political, or other purposes, but 
+for recreational video games it is imperative. If a player is going to spend time and 
+money on your game, your ﬁ rst concern must be to see that he enjoys himself. This 
+means that entertaining the player takes priority over your own desire to express 
+yourself creatively. You must have a creative vision for your game, but if some 
+aspect of your vision is incompatible with entertaining the player, you should mod-
+ify or eliminate it.
+The second obligation, the duty to empathize, requires you to place yourself in the 
+position of a representative player and imagine what it is like to play your game. 
+You must mentally become the player and stand in his shoes. For every design deci-
+sion that you make—and there will be thousands—you must ask yourself how it 
+meets the player’s desires and preferences about interactive entertainment. Note 
+the mention of a representative player. It is up to you to decide what that means, but 
+this hypothetical being must bear some resemblance to the customers whom you 
+want to actually buy the game. Smart game designers conduct audience research if 
+they’re planning to make a game for an audience that they don’t know much about.
+When you employ player-centric game design, you need to think about how the 
+player will react to everything in your game: its artwork, its user interface, its game-
+play, and so on. But that is only the surface. At a deeper level, you must understand 
+what the player wants from the entire experience you are offering—what motivates 
+her to play your game at all? To design a game around the player, you must have a 
+clear answer to the following questions: Who is your player, anyway? What does 
+she like and dislike? Why did she buy your game? The answer is also inﬂ uenced by 
+the game concept that you choose for your game. Chapter 3, “Game Concepts,” dis-
+cusses both player-centric design and game concepts in more detail.
+This process of empathizing with your player is one of the aspects that differenti-
+ates games from presentational forms of entertainment. With books, paintings, 
+music, and movies, it is considered artistically virtuous to create your work without 
+worrying about how it is received, and it’s thought to be rather mercenary to mod-
+ify the content based on sales considerations. But with a video game—whether you 
+think of it as a work of art or not—you must think about the player’s feelings about 
+the game, because the player participates in the game with both thought and action.
+There are two common misconceptions about player-centric design that you 
+must avoid.
+MISCONCEPTION 1: I AM MY OWN TYPICAL PLAYER.
+For years, designers built video games, in effect, for themselves. They assumed that 
+whatever they liked, their customers would also like. Because most designers were 
+young males, they took it for granted that their customer base was also made up of 
+young males. That was indeed true for a long time, but now it is a dangerous fal-
+lacy. As the market for games expands beyond the traditional gamer, you must be 
+
+
+--- PAGE BREAK ---
+
+32 
+FUNDAMENTALS OF GAME DESIGN
+able to design games for other kinds of players. In the player-centric approach, this 
+means learning to think like your intended players, whoever they may be: little 
+girls, old men, busy mothers, and so on. You cannot assume that players like what 
+you like. Rather, you must learn to design for what they like. (You may also ﬁ nd that 
+you grow to like a game that you didn’t think you would as you work to design it!)
+One of the most common mistakes that male designers make is to assume that 
+male and female players are alike, when in fact they often have different priorities 
+and preferences. For an excellent discussion of how to reach female players without 
+alienating male ones, read Gender Inclusive Game Design, by Sheri Graner Ray (Ray, 
+2003). With every design decision, ask yourself, “What if the player is female?” 
+Does your decision apply equally to her? 
+A few game developers argue that they don’t want to work on any game that they 
+personally wouldn’t want to play—that if a game doesn’t appeal to them, they 
+won’t have any “passion” for it and won’t do a good job. Taken to its logical conclu-
+sion, that means we would never have games for young children, because young 
+children can’t build games for themselves. Insisting that you must have passion for 
+your game or you can’t do a good job on it is a very self-centered approach—the 
+opposite of player-centric design. Professionalism is just as important as passion. 
+Professionalism is the willingness to work hard to do a good job because that’s what 
+you’re paid for, regardless of whether you would choose to play your game for 
+entertainment. If you are a true professional, you can create a brilliant game for an 
+audience other than yourself. Kaye Elling, the former art manager at Blitz Games, 
+revealed in a lecture to the Animex International Festival of Animation and 
+Computer Games that the design team on the game Bratz: Rock Angelz—a game 
+intended for 10-year-old girls—consisted entirely of adult men. The game was a
+big success in spite of this, because the designers learned how to think like their 
+intended players. They talked to girls and women, studied other products that girls 
+like, and took seriously their duty to empathize (Elling, 2006).
+DESIGN RULE You Are Not Your Player
+Do not assume that you epitomize your typical player. Player-centric game design requires 
+you to imagine what it is like to be your player, even if that person is someone very differ-
+ent from you.
+MISCONCEPTION 2: THE PLAYER IS MY OPPONENT.
+Because arcade (coin-op) games have been around a long time, some of the techniques 
+of arcade game design have crept into other genres where they are not appropriate. 
+Arcade games make money by getting the player to put in more coins. Consequently, 
+they are designed to be hard to play for more than a few minutes and to continu-
+ally threaten the player with losing the game. This places considerable constraints 
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+33
+ CHAPTER 2
+on the designer’s freedom to tell a story or to modulate the difﬁ culty of the game-
+play. The famous Japanese designer Shigeru Miyamoto, who invented the arcade 
+game Donkey Kong (and with it the entire Mario franchise), eventually abandoned 
+arcade game design because he found it too limiting.
+The arcade model encourages the game designer to think of the player as an oppo-
+nent. It suggests that the designer’s job is to create obstacles for the player, to make 
+it hard for the player to win the game. This is a profoundly wrongheaded approach 
+to game design. It does not take into account the player’s interests or motivations 
+for playing. It tends to equate “hard” with “fun.” And it ignores the potential of 
+creative games, which may not include obstacles at all. Game design is about much 
+more than creating challenges.
+If you are working on multiplayer competitive games, in which the players provide 
+the challenge for each other, you’re less likely to make this mistake. But it’s an easy 
+trap to fall into when you’re designing single-player games because it’s up to you to 
+provide the challenges. Never lose sight of the fact that your design goal is to enter-
+tain the player by a variety of means, not simply to oppose her forward progress 
+through the game. 
+Your duty to empathize with the player also includes an obligation not to be 
+unduly arbitrary or capricious toward her. You can build in random factors that 
+may make the game harder (like being dealt a bad hand of cards), and that’s all 
+right if players understand that they might have better luck next time. But doing 
+things like causing a player to lose a long game entirely at random, without any 
+way to avoid it, is bad design. It shows a lack of empathy. 
+DESIGN RULE The Player Is Not Your Opponent
+Do not think of the player as your opponent. Game design is about entertaining the player, 
+not opposing the player. There are many ways to entertain a player.
+Other Motivations That Inﬂ uence Design
+In the commercial game industry, video games are always built for entertainment, 
+but even so, several factors can inﬂ uence the way a game is designed. This section 
+examines some of them.
+When a company chooses to build a game speciﬁ cally for a particular market and 
+to include certain elements in its design speciﬁ cally to increase sales within that 
+market, that game is said to be market-driven. You might think that any game made 
+for sale should be market-driven. Experience shows, however, that most market-
+driven games aren’t very good. You can’t make a brilliant game simply by throwing 
+in all the most popular kinds of gameplay. If you try, you get a game that doesn’t 
+
+
+--- PAGE BREAK ---
+
+34 
+FUNDAMENTALS OF GAME DESIGN
+feel as if it’s about anything in particular. The best games are expressions of the 
+designer’s vision, which makes them stand out from other games.
+The opposite of a market-driven game is a designer-driven game. In designer-driven 
+games, the designer retains all creative control and takes a personal role in every 
+creative decision, no matter how small. Usually he does this because he’s convinced 
+that his own creative instincts are superior to anyone else’s. This approach ignores 
+the beneﬁ ts of play-testing or other people’s collective wisdom, and the result is 
+usually a botched game. Daikatana is an often-cited example.
+Many publishers commission games to exploit a license: a particular intellectual 
+property such as a book (The Lord of the Rings), movie (Die Hard), or sports trade-
+mark (NHL Hockey). These can be enormously lucrative. As a designer, you work 
+creatively with characters and a world that already exists, and you make a contribution
+to the canon of materials about that world. One downside of designing licensed 
+games is that you don’t have as much creative freedom as you do designing a game 
+entirely from your own imagination. The owners of the license insist on the right 
+to approve your game before it ships, as well as the right to demand that you change
+things they don’t like. In addition, there is always a risk of complacency. A great 
+license alone is not enough to guarantee success. The game must be just as good as 
+if it didn’t have a license.
+A technology-driven game is designed to show off a particular technological achieve-
+ment, most often something to do with graphics or a piece of hardware. For example,
+in addition to entertaining the player, Crytek’s game Crysis is intended to show off 
+Crytek’s 3D graphics engine and encourage other developers to use it. Console 
+manufacturers often write technology-driven games when they release a new plat-
+form to show everyone the features of their machine. The main risk in designing a 
+technology-driven game is that you’ll spend too much time concentrating on the 
+technology and not enough on making sure your game is really enjoyable. As with 
+a hot license, a hot technology alone is not enough to guarantee success.
+Art-driven games are comparatively rare. An art-driven game exists to show off 
+someone’s artwork and aesthetic sensibilities. Although such games are visually 
+innovative, they’re seldom very good because the designer has spent more time 
+thinking about ways to present his material than about the player’s experience of 
+the game. A game must have enjoyable gameplay as well as great visuals. Myst is a 
+game that got this right; it is an art-driven game with strong gameplay.
+Integrating for Entertainment
+When one particular motivation drives the development of a game, the result is 
+often a substandard product. A good designer seeks not to maximize one character-
+istic at the expense of others but to integrate them all in support of a higher goal: 
+entertaining the player.
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+35
+ CHAPTER 2
+■ A game must present an imaginative, coherent experience, so the designer must 
+have a vision.
+■ A game must sell well, so the designer must consider the audience’s preferences.
+■ A game with a license must pay back the license’s cost, so the designer must 
+understand what beneﬁ ts this license brings and exploit them to the game’s best 
+advantage.
+■ A game must offer an intelligent challenge and a smooth, seamless experience, 
+so the designer must understand the technology.
+■ A game must be attractive, so the designer must think about its aesthetic style.
+Player-centric game design means testing every element and every feature against 
+the standard: Does this contribute to the player’s enjoyment? Does it entertain her? 
+If so, it stays; if not, you should consider eliminating it. There’s no easy formula for 
+deciding this; the main thing is to make the effort. As Brian Moriarty said in the 
+section quoted in Chapter 1, “Games and Video Games,” too many designers “pile 
+on gratuitous features just so that they can boast about them,” which means 
+they’re not designing player-centrically.
+There are sometimes reasons for including features that don’t directly entertain: 
+They might be necessary to make other parts of the game work, or they might be 
+required by the licensor. But you should regard them with great suspicion and do 
+your best to minimize their impact on the player.
+The Key Components of Video Games
+Chapter 1 looked at what a game is and what gameplay is. But where does gameplay 
+come from, and how does the player interact with it? In order to create gameplay 
+and offer it to the player, you need to make sure your video game is composed of 
+two key components. These are not technical components but conceptual ones. 
+They are the core mechanics and the user interface. Some games also use a third 
+important component called the storytelling engine, but we will deal with it in 
+Chapter 7, “Storytelling and Narrative.” This section introduces the core mechanics 
+and the user interface and shows how they work together to produce entertain-
+ment. Each of these components has a complete chapter devoted to it later in the 
+book, so the discussion here is limited to deﬁ ning their functions, not explaining 
+how to design them.
+Core Mechanics
+One of a game designer’s tasks is to turn the general rules of the game into a sym-
+bolic and mathematical model that can be implemented algorithmically. This 
+model is called the core mechanics of the game. The model is more speciﬁ c than the 
+rules. For example, the general rules might say, “Caterpillars move faster than 
+
+
+--- PAGE BREAK ---
+
+36 
+FUNDAMENTALS OF GAME DESIGN
+snails,” but the core mechanics state exactly how fast each moves in centimeters 
+per minute. The programmers then turn the core mechanics into algorithms and 
+write the software that implements the algorithms. This book doesn’t address tech-
+nical design or programming but concentrates on the ﬁ rst part of the process, 
+creating the core mechanics. Chapter 10, “Core Mechanics,” addresses this process 
+at length. 
+The core mechanics are at the heart of any game because they generate the game-
+play. They deﬁ ne the challenges that the game can offer and the actions that the 
+player can take to meet those challenges. The core mechanics also determine the 
+effect of the player’s actions upon the game world. The mechanics state the condi-
+tions for achieving the goals of the game and what consequences follow from 
+succeeding or failing to achieve them. In a conventional game, the players are 
+aware of the core mechanics because the players must implement the rules. In a 
+video game, the core mechanics are hidden from the players. The players experi-
+ence them only through play. If the players play the game over and over, they 
+eventually become aware of the game’s mechanistic nature and learn to optimize 
+their play to beat the game.
+One quality of the core mechanics is their degree of realism. A simulation, in the for-
+mal sense, is a mathematical or symbolic model of a real-world situation, created 
+for the purpose of studying real-world problems. If it is to have any validity, the 
+simulation must represent some part of the real world as closely as possible (though 
+aspects of it may need to be simpliﬁ ed). A game, on the other hand, is created for 
+the purpose of entertainment. Even if it represents the real world to some degree, it 
+always includes compromises to make it more playable and more fun. For example, 
+a real army requires a large general staff to make sure the army has all the ammuni-
+tion and supplies it needs. In a game, a single player has to manage everything, so 
+to avoid overwhelming him, the designer abstracts these logistical considerations 
+out of the model—that is to say, out of the core mechanics. The player simply pre-
+tends that soldiers never need food or sleep, and they never run out of ammunition.
+All games fall along a continuum between the abstract and the representational.
+Pac-Man is a purely abstract game; it’s not a simulation of anything real. Its location 
+is imaginary, and its rules are arbitrary. Grand Prix Legends is a highly representa-
+tional game: It accurately simulates the extraordinary danger of driving racing cars 
+before the spoiler was invented. Although no game is completely realistic, gamers 
+(and game developers) often refer to this variable quality of games as their degree 
+of realism. For the most part, however, this book uses the terms abstract and repre-
+sentational to characterize games at opposite ends of the realism scale.
+You decide what degree of realism your game will have when you decide upon its 
+concept. The decision you make determines how complex the core mechanics are.
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+37
+ CHAPTER 2
+User Interface
+The concept of a user interface should be familiar to you from computer software 
+generally, but in a game the user interface has a more complex role. Most computer 
+programs are tools of some kind: word-processing tools, web-browsing tools, paint-
+ing tools, and so on. They are designed to be as efﬁ cient as possible and to present 
+the user’s work clearly. Games are different because the player’s actions are not sup-
+posed to be as efﬁ cient as possible; they are obstructed by the challenges of the 
+game. Most games also hide information from the player, revealing it only as the 
+player advances. A game’s user interface is supposed to entertain as well as to 
+facilitate.
+The user interface mediates between the core mechanics of the game and the player 
+(see Figure 2.1). It takes the challenges that are generated by the core mechanics 
+(driving a racing car, for example) and turns them into graphics on the screen and 
+sound from the speakers. It also turns the player’s button presses and movements 
+on the keyboard or controller into actions within the context of the game. If it does 
+this smoothly and naturally, the player comes to associate the button press with 
+the action. She no longer has to think, “I must press button A to apply the brakes.” 
+Instead she thinks, “Brakes!” and presses button A automatically. The user interface 
+interprets the button press as the braking action and informs the core mechanics; 
+the core mechanics determine the effect of the braking and send an instruction 
+back to the user interface telling it to show the result. The user interface adjusts the 
+animation to show the car slowing down and presents it to the player. All this hap-
+pens in a fraction of a second.
+Because the user interface lies between the player and the core mechanics, it is 
+sometimes referred to as the presentation layer.
+The user interface does more than display the outputs and receive the inputs. It 
+also presents the story of the game, if there is any, and creates the sensory embodi-
+ment of the game world—all the images and sounds of the world and, if the game 
+machine has a vibrating controller, the vibrations of the world, too. All the artwork 
+and all the audio of the game are part of its user interface, its presentation layer. 
+Two essential features of the user interface of a game are its camera model and its 
+interaction model, as shown in Figure 2.2.
+FIGURE 2.1
+The relationships 
+among the core 
+mechanics, the user 
+interface, and the 
+player
+PLAYER
+USER 
+INTERFACE
+CORE 
+MECHANICS
+Inputs
+Actions
+Outputs
+Challenges
+
+
+--- PAGE BREAK ---
+
+38 
+FUNDAMENTALS OF GAME DESIGN
+INTERACTION MODELS
+The user interface turns the player’s inputs on the hardware into actions within the 
+game world. The relationship between the player’s inputs and the resulting actions 
+is dictated by the game’s interaction model. The model determines how the player 
+projects her will, her choices, and her commands, into the game. In particular, it 
+deﬁ nes what she may and may not act upon at any given moment. Video games use 
+a number of standard interaction models, including multipresence, avatar-based 
+models, contestant models, and so on. In a multipresent model, for example, the 
+player can act on different parts of the game world whenever she wants to, reach-
+ing “into” it from the “outside.” In an avatar-based model, the player is represented 
+by a character who already is inside the game world, and the player acts on the 
+world through that character. Just as the visible parts of a game’s user interface 
+change during play, a game can have more than one interaction model depending 
+on what is happening at the time. Chapter 8, “User Interfaces,” discusses interac-
+tion models at greater length.
+CAMERA MODELS
+If a game includes a simulated physical space, or game world, then it almost certainly
+uses graphics to display that space to the player. The user interface must display the 
+space from a particular angle or point of view. Designers usually imagine that a 
+hypothetical camera is pointed at the virtual space, creating the image that the 
+player sees. The system that controls the behavior of this imaginary camera is 
+called the camera model. To deﬁ ne the camera model, think about how you want 
+the player to view the game world and specify a system in your design documents 
+that the programmers can implement.
+Camera models come in two types, static and dynamic. Early arcade games, and 
+many small games today, use a static camera model in which the camera always 
+shows the virtual space from a ﬁ xed perspective. As gaming hardware has grown 
+more powerful, however, game developers have begun to create dynamic camera 
+models. In these models, the camera moves in response to player actions or events 
+in the game world. Dynamic camera models require more effort to design and 
+implement, but they make the player’s experience livelier and more cinematic.
+FIGURE 2.2
+Camera model and 
+interaction model are 
+features of the user 
+interface.
+NOTE This book’s 
+previous edition used 
+the word perspective 
+to describe the virtual 
+camera, but that term 
+doesn’t adequately 
+describe the behavior 
+of the new dynamic 
+cameras. This edition 
+uses camera model as 
+a more general term 
+for the behavior of the 
+game’s virtual camera. 
+We’ll still use perspec-
+tive to talk about the 
+actual position and 
+angle of the camera.
+PLAYER
+CORE 
+MECHANICS
+Inputs
+Actions
+Outputs
+Challenges
+INTERACTION 
+MODEL
+USER INTERFACE
+GAMEPLAY
+CAMERA
+MODEL
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+39
+ CHAPTER 2
+If a game doesn’t have a virtual space (for example, if it’s a business simulation 
+that’s mostly about money), the term camera model doesn’t apply, and you have
+to explain the layout of your screen in your design documents in more detail.
+The most commonly used camera models are ﬁ rst person and third person for pre-
+senting 3D game worlds and top-down, side-scrolling, and isometric for presenting 
+2D worlds. Chapter 4, “Game Worlds,” discusses the question of game world dimen-
+sionality. Chapter 8 addresses the merits of the different camera models.
+GAMES WITHOUT GRAPHICS
+Many of the early computer games were text-based, designed to be played on a printing 
+terminal attached to a mainframe computer. Text-only games still exist in the form of 
+quizzes or trivia games, especially for small devices such as cell phones. Interactive ﬁ c-
+tion—text-only adventure games—has long since ceased to be a commercial genre, but 
+it is still popular with a small group of hobbyists. Blind players can play text-only games 
+using text-to-speech synthesizers. Also, a very small number of experimental audio-only 
+games are intended for the blind.
+The Structure of a Video Game
+You now know how the core mechanics of a game work with the user interface to 
+create gameplay for the player. A game seldom presents all its challenges at one 
+time, however, nor does it permit the player to take all actions at all times. Instead, 
+most video games present a subset of their complete gameplay, often with a partic-
+ular user interface to support it. Both the gameplay available and the user interface 
+change from time to time as the player meets new challenges or views the game 
+world from a different point of view. These changes sometimes occur in response to 
+something the player has done, and at other times they occur automatically when 
+the core mechanics have determined that they should. How and why the changes 
+occur are determined by the game’s structure. The structure is made up of gameplay 
+modes, a vitally important concept in game design, and shell menus. This section 
+explores gameplay modes and shell menus and discusses how they interact to form 
+the structure.
+Gameplay Modes
+If a game is to be coherent, the challenges and actions available to the player at any 
+given time should be conceptually related to one another. In hand-to-hand com-
+bat, for example, the player should be able to move around, wield his weapons, 
+quaff a healing potion (though that may entail some risk), and perhaps run away or 
+surrender. He should not be able to pull out a map or sit down to inventory his 
+
+
+--- PAGE BREAK ---
+
+40 
+FUNDAMENTALS OF GAME DESIGN
+assets, even if those are actions he may take at other times in the game. Likewise, a 
+racecar driver should not be able to adjust the suspension of the car while driving it 
+or drive the car while it’s in the shop.
+In short, unless a game is very simple, not all the challenges and actions that it 
+offers make sense at all times. The player only experiences a subset of all the game-
+play, usually derived from the real-world activity (ﬁ ghting, driving, constructing, 
+and so on) that the game is simulating at that moment. The user interface, too, 
+must be designed to facilitate whatever activity is taking place. The graphics dis-
+played for driving a racing car are necessarily different from those used for tuning 
+it up in the shop. The camera and interaction models are different as well. When 
+driving, the vehicle is the player’s avatar on the racetrack, and the player usually 
+sees the world from the cockpit; when tuning up the car, the player has omnipres-
+ent control over all of its parts, but the rest of the game world (the racetrack) is not 
+accessible.
+This combination of related items—available gameplay and supporting user
+interface at a given point in the game—collectively describe something called a 
+gameplay mode. See Figure 2.3 for an illustration. In a given gameplay mode, the 
+features of the game combine to give the player a certain experience that feels dif-
+ferent from other parts of the game; that is, other gameplay modes. Because the 
+game offers only a subset of all its challenges and actions in a given gameplay 
+mode, the player is focused on a limited number of goals.
+The concept of the gameplay mode is central to the process of designing video 
+games. Here is the formal deﬁ nition:
+GAMEPLAY MODE A gameplay mode consists of the particular subset of a game’s total 
+gameplay that is available at any one time in the game, plus the user interface that 
+presents that subset of the gameplay to the player.
+A game can be in only one gameplay mode at a time. When either the gameplay 
+available to the player or the user interface (or both) changes signiﬁ cantly, the 
+game has left one mode and entered another. A change to the user interface 
+FIGURE 2.3
+The large dashed box 
+represents the game-
+play mode.
+PLAYER
+CAMERA 
+MODEL
+CORE 
+MECHANICS
+Inputs
+Actions
+Outputs
+Challenges
+INTERACTION 
+MODEL
+USER INTERFACE
+GAMEPLAY
+GAMEPLAY MODE
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+41
+ CHAPTER 2
+qualiﬁ es as a change of mode because such changes redirect the player’s focus of 
+attention and cause him to start thinking about different challenges. Also, if the 
+mapping between the controls on the input device and the actions in the game 
+changes sharply, the player probably thinks of it as a new mode.
+GAMEPLAY MODES IN AMERICAN FOOTBALL
+Video games about American football have many rapid and complex mode switches, 
+especially when you’re playing the offensive team; that is, the team that has the ball. The 
+mapping between the buttons on the controller and the actions they produce in the game 
+changes on a second-by-second basis. Here is the sequence necessary to select and exe-
+cute a pass play in Madden NFL:
+1. Choose the offensive formation you want to use on the next play from a menu.
+2. Choose the play you want to call from another menu.
+3. Take control of the quarterback. Call signals at the line of scrimmage. During this 
+period only one man, who is not the quarterback, may move under the player’s control. 
+Snap the ball to the quarterback.
+4. Drop back from the line of scrimmage and look for an open receiver. Choose one and 
+press the appropriate button to pass the ball to the chosen receiver.
+5. Take control of the chosen receiver and run to the place where the ball will come 
+down. Press the appropriate button to try to catch the ball.
+6. Run toward the goal line. At this point you may not throw the ball again.
+This process requires six different gameplay modes in the space of about 45 seconds.
+Many of the earliest arcade games have only one gameplay mode. In Asteroids, for 
+example, you ﬂ y a spaceship around a ﬁ eld of asteroids, trying to avoid being hit by 
+one and shooting at them to break them up and disintegrate them. The camera 
+model and the interaction model never change, nor does the function of the con-
+trols. When you have destroyed an entire screenful of asteroids, you get a new 
+screenful that moves somewhat faster, but that is all. From time to time an enemy 
+spaceship appears and shoots at you, presenting new challenges (to avoid being 
+shot and to shoot the enemy), but because nothing else changes, it isn’t really a 
+new gameplay mode. On the other hand, in Pac-Man you are chased by dangerous 
+ghosts until you eat a large dot on the playﬁ eld. For a short period after that, the 
+ghosts are vulnerable and they run away from you. Because this represents a signiﬁ -
+cant change to the gameplay (and is a key part of the game’s strategy), it can be 
+considered a new gameplay mode even though the user interface does not change. 
+As the designer, it’s up to you to decide when the gameplay or the user interface has 
+changed enough to be a new gameplay mode.
+
+
+--- PAGE BREAK ---
+
+42 
+FUNDAMENTALS OF GAME DESIGN
+Figures 2.4 and 2.5 are screen shots from Empire: Total War illustrating two very 
+different modes. Note that the on-screen indicators and menu items are entirely 
+different in the two modes. The ﬁ rst, a turn-based campaign mode, shows an aerial 
+perspective of a landscape. The player uses this mode for building cities, raising 
+armies, and other strategic activities. The second, for ﬁ ghting sea battles in real 
+time, shows ship-to-ship combat. You cannot manage the entire empire from sea 
+battle mode; you can only ﬁ ght other ships such as the ones visible in the picture. 
+The sea battle mode is essentially tactical.
+Not all gameplay modes offer challenges that the player must meet immediately.
+A strategy menu in a sports game is a gameplay mode because the player must 
+choose the best strategy to help her win the game even though play is temporarily 
+suspended while the player uses the menu. A character creation screen in a role-
+playing game or an inventory management screen in an adventure game both 
+qualify as gameplay modes. A player’s actions there inﬂ uence the challenges she 
+faces when she returns to regular play.
+FIGURE 2.4
+Campaign mode in 
+Empire: Total War
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+43
+ CHAPTER 2
+Shell Menus and Screens
+Whenever the player is taking actions that inﬂ uence the game world, that is, actu-
+ally playing the game, the game is in a gameplay mode. However, most games also 
+have several other modes in which the player cannot affect the game world, but can 
+make other changes. These modes are collectively called shell menus because the 
+player usually encounters them before and after playing the game itself (they are a 
+“shell” around the game, outside the magic circle). Examples of the kinds of activi-
+ties available in a shell menu include loading and saving the game, setting the 
+audio volume and screen resolution, and reconﬁ guring the input devices for the 
+player’s convenience. A pause menu in a game is also a shell menu unless it lets
+the player take some action that affects the game world (such as making strategic 
+adjustments in a sports game), in which case it is a gameplay mode. Noninteractive 
+sequences such as title screens or credits screens are called shell screens. 
+The Game Structure
+The gameplay modes and shell menus of the game, and the relationships among 
+them, collectively make up the structure of the game. For example, in a car racing 
+game, driving the car into the pit causes the game to switch from the driving mode 
+to the pit stop mode. When the work of the pit crew is ﬁ nished, the game switches 
+FIGURE 2.5
+Sea battle mode in 
+Empire: Total War
+TIP If a player can 
+take an action that 
+inﬂ uences the core 
+mechanics—even if
+that inﬂ uence is de-
+ferred—the game is
+in a gameplay mode.
+If he cannot, the game 
+is in a shell menu or 
+shell screen. 
+
+
+--- PAGE BREAK ---
+
+44 
+FUNDAMENTALS OF GAME DESIGN
+back to the driving mode. Pressing the Start button on the controller while driving 
+brings up a pause menu, and so on. You need to document these details for the rest 
+of the development team.
+To document the structure, you can begin by making a list of all the modes and 
+menus in the game. You must also include a description of when and why the game 
+switches from one mode or menu to another: what event, or menu selection, causes 
+it to change. Each mode or menu description should include a list of other modes 
+and menus it can switch to and, for each possible switch, a notation about what 
+causes it.
+You can document the relationships among all the modes and menus by simply 
+listing them all in a text editor. However, the result isn’t easy to follow. A better 
+approach is to document the structure of a game with a ﬂ owboard, a combination
+of ﬂ owchart and storyboard. This type of diagram is described in the section 
+“Flowboard,” later in this chapter. 
+Normally, a game moves among its shell menus in response to player actions and 
+nothing else, although arcade games often display an attract loop that repeatedly 
+shows a title screen, a short noninteractive video of a game in progress, and a
+high score table. During actual play, a game changes from one gameplay mode to 
+another in response to player actions, or automatically as the circumstances of the 
+game require. For example, in a soccer game, certain violations of the rules result in 
+a penalty kick, in which a single athlete on one team tries to kick the ball past the 
+opposing team’s goalie and into the goal and the other athletes on both teams play 
+no role. This is clearly a gameplay mode different from normal play. The game 
+enters the penalty kick mode not in response to a speciﬁ c player choice but because 
+a rule has been violated.
+The Stages of the Design Process
+Now that you have learned about the player-centric approach to game design and 
+the key components and structure of a video game, you are ready to start thinking 
+about how to go about designing one. Unfortunately, there are so many kinds of 
+video games in the world that it is impossible to deﬁ ne a simple step-by-step process 
+that produces a single design document all ready for people to turn into content 
+and code. Furthermore, unless a game is very small, it is not possible to create a 
+complete design and then code it up afterward. That is how the game industry built 
+games in the 1980s, but experience has shown that large games must be designed 
+and constructed in an iterative process, with repeated playtesting and tuning, and 
+occasional modiﬁ cations to the design, throughout development. However, not all 
+parts of the design process can be revisited. Some, such as the choice of concept, 
+audience, and genre, should be decided once at the beginning and should not 
+change thereafter. The process is therefore divided into three major parts:
+NOTE A video game 
+is always in either a 
+gameplay mode or a 
+shell menu or screen. 
+The gameplay modes 
+and shell screens, 
+and the relationships 
+among them, collec-
+tively make up the 
+game structure. 
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+45
+ CHAPTER 2
+■ The concept stage, which you perform ﬁ rst and whose results do not change
+■ The elaboration stage, in which you add most of the design details and reﬁ ne 
+your decisions through prototyping and playtesting
+■ The tuning stage, at which point no new features may be added, but you can 
+make small adjustments to polish the game
+This book uses the term elaboration stage rather than development stage because the 
+latter runs the risk of being confused with game development. Figure 2.6 shows the 
+three stages of the design process.
+Each of these stages includes a number of design tasks. In the sections that follow, 
+we look at each stage and the different tasks that you perform in each.
+Chris Bateman and Richard Boon discuss the relative merits of various design pro-
+cesses in Chapter 1 of their book 21st Century Game Design (Bateman and Boon, 
+2006). Look at it for further discussion on the subject.
+The Concept Stage
+Client 2: Do I take it that you are proposing to slaughter our tenants?
+Mr. Wiggin: Does that not ﬁ t in with your plans?
+Client 1: Not really. We asked for a simple block of ﬂ ats.
+Mr. Wiggin: Oh. I hadn’t fully divined your attitude towards the tenants.
+You see I mainly design slaughterhouses.
+—MONTY PYTHON’S FLYING CIRCUS, “THE ARCHITECT SKETCH”
+In the concept stage of game design, you make decisions that you live with for the 
+life of the project. This stage establishes things about the game that are so funda-
+mental, changing them later would wreak havoc on the development process 
+because a great deal of the work done to implement the game would have to be 
+thrown away. It’s like constructing a building: You can revise the color scheme
+and the lighting design while it’s still under construction, but you can’t decide that 
+you really wanted an airport instead of a hotel once the foundations are poured.
+FIGURE 2.6
+Three stages of the 
+design process
+NOTE Unfortunately, 
+the game industry 
+has not yet adopted 
+standard names for 
+its design elements, 
+processes, and docu-
+ments. This book uses 
+terms that other pro-
+fessional developers 
+would generally rec-
+ognize, but you cannot 
+expect any given 
+company to use these 
+terms exactly the way 
+they are used here. 
+If you get confused, 
+please see the Glossary
+at the end of the book 
+for the deﬁ nitions of 
+terms used in the book.
+CONCEPT STAGE
+ELABORATION 
+STAGE
+TUNING STAGE
+
+
+--- PAGE BREAK ---
+
+46 
+FUNDAMENTALS OF GAME DESIGN
+CONCEPT VERSUS PREPRODUCTION
+Be sure that you don’t confuse the concept stage of design with the preproduction stage 
+of game development. Preproduction is a process borrowed from ﬁ lmmaking. It’s a plan-
+ning stage of game development during which a developer is deciding what sort of game 
+to make, testing some of those ideas, and ﬁ guring out the budget, schedule, and staff 
+requirements. Preproduction ends when the funding agency, usually a publisher, gives 
+the game the green light to proceed to full production. By that time, the concept stage of 
+design is already over and the elaboration stage has begun. In fact, quite a lot of design 
+work gets done during preproduction because that’s how the team decides what the 
+game will be. The concept stage of design usually requires only a few weeks; the prepro-
+duction stage of development can go on for several months.
+GETTING A CONCEPT
+All game designs must begin with a game concept; that is, a general idea of how 
+you intend to entertain someone through gameplay and, at a deeper level, why you 
+believe it will be a compelling experience. Many different considerations inﬂ uence 
+your plans for the game concept. Part of creating a game concept includes deciding 
+what genre your game ﬁ ts into, if any. Deﬁ ning and reﬁ ning a game concept is 
+described in detail in Chapter 3.
+DEFINING AN AUDIENCE
+Once you know what kind of experience you want to present, you have to think 
+about who would enjoy that experience. In a commercial environment, publishers 
+sometimes deﬁ ne their audience—a “target market”—and then think of a concept 
+for a game to sell to them. In any case, the choices you make here have important 
+consequences for your game because, in player-centric design, you test every design 
+decision against your hypothetical representative player to be sure that the decision 
+helps to entertain your target audience.
+DETERMINING THE PLAYER’S ROLE
+In an abstract video game, the player doesn’t get immersed in a ﬁ ctional game 
+world and so doesn’t have much of a role. He is simply a player playing the game 
+for its own sake. But in a representational game, the player does a lot more pretend-
+ing. He pretends to believe in the game world, the avatar, and the situations the 
+game puts him in. In such games, the player plays a role, and as a designer it is up 
+to you to deﬁ ne what that role is. It could be an athlete, a general, a dancer, an 
+explorer, a business tycoon, or any of a million other things that people fantasize 
+about doing. Sometimes the roles in a game are multifaceted: In a sports game, the 
+player often changes roles from an athlete on the ﬁ eld, to the coach planning strat-
+egy, to the general manager hiring and trading players. You must be able to explain 
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+47
+ CHAPTER 2
+the player’s role clearly, because the role a game offers is part of how publishers 
+decide whether to fund that game, as well as how players decide whether to buy it.
+FULFILLING THE DREAM
+Abstract video games have arbitrary rules, so the player seldom has any pre-
+conceptions about what the game will, or won’t, allow her to do. Representational 
+video games, however, take place in a world that is at least somewhat familiar, and 
+the player comes to the game with certain expectations and hopes. Representational
+games are about fulﬁ lling dreams—dreams of achievement, of power, of creation, or 
+simply of doing certain things and having certain experiences.
+Once you have a game concept, a role, and an audience in mind, it’s time to begin 
+thinking about how you will fulﬁ ll your player’s dream. What is the essence of
+the experience that you are going to offer? What kinds of challenges does the player 
+expect to face, and what kinds of actions does she expect to perform? Deciding 
+what it means to fulﬁ ll the dream is the ﬁ rst step on the road to deﬁ ning the game-
+play itself.
+DESIGN RULE Concept Elements Are Permanent
+You must not make changes to the concept elements of your game—the game concept, 
+audience, player’s role, and dream that it fulﬁ lls—once you have started into the elabora-
+tion stage of design.
+The Elaboration Stage
+Once you have made the fundamental decisions about your game in the concept 
+stage, it’s time to move into the elaboration stage of design. At this point, your 
+design work begins to move from the general to the speciﬁ c; from the theoretical to 
+the concrete. In the elaboration stage, you normally begin working with a small 
+development team to construct a prototype of the game. If you are planning to 
+incorporate radically new ideas or new technology, your team may also build a test 
+bed or technical demonstration to try them out. From this point on, you may take 
+your design ideas and have the development team implement them in the proto-
+type to see how they work in practice. Based on what you learn, you can then go 
+back and reﬁ ne them.
+At some point during the elaboration stage, your game (you hope!) gets the green 
+light from a funding agency and proceeds to full production.
+When you begin the elaboration stage, if you have a team of several people, it 
+becomes possible to begin working on the design tasks in parallel. Once you all 
+agree upon the fundamentals of the game, each designer can start work on a
+particular area of responsibility.
+
+
+--- PAGE BREAK ---
+
+48 
+FUNDAMENTALS OF GAME DESIGN
+This process of iterative reﬁ nement is not an excuse to introduce major changes 
+into the game late in its development, nor to tweak it endlessly without ever declar-
+ing it ﬁ nished. Your goal is to build and ship a completed product.
+THE DANGER OF IRRESOLUTION
+The transition from the concept to the elaboration stage of design is a critical time. At 
+this point, the most important decisions are “set in stone,” so to speak; the foundations 
+are poured. Some designers are reluctant to make this transition; they say they’re “keep-
+ing their options open.” They’re afraid that they might have made a bad decision or that 
+they might have overlooked something. The consequences of this irresolution are usually 
+disastrous. If the most critical details are still shifting as the game goes into full produc-
+tion, the development team is never entirely sure what it’s trying to build. The designer 
+keeps coming around and asking for changes that require huge revisions to the code and 
+content. Production becomes slow and inefﬁ cient. It’s a sure sign of a lack of vision and 
+conﬁ dence. Projects that get into this quagmire are usually cancelled rather than 
+completed.
+DEFINING THE PRIMARY GAMEPLAY MODE
+The ﬁ rst task after you have locked down your concept is to deﬁ ne the primary 
+gameplay mode of the game, the mode in which the player spends the majority of 
+his time. Most games have one gameplay mode that is clearly the primary one. In a 
+car racing game, it’s driving the car. Tuning the car up in the shop is a secondary 
+mode. In war games, the primary gameplay mode is usually tactical—ﬁ ghting bat-
+tles. War games often have a strategic mode as well, in which the player plans 
+battles or chooses areas to conquer on a map, but he generally spends much less 
+time doing that than he does ﬁ ghting.
+At this point it’s not necessary to deﬁ ne every detail. The main things to work on 
+are the components that make up the mode: the perspective in which the player 
+views the game world, the interaction model in which he inﬂ uences the game 
+world, the challenges the world presents to him in that mode, and the actions 
+available to him to overcome those challenges. Get those decisions down on paper, 
+and then you can move on to the details of exactly how this is to happen.
+DESIGNING THE PROTAGONIST
+If your game is to have a single main character who is the protagonist (whether or 
+not the interaction model is avatar-based), it is essential that you design this char-
+acter early on. You want the player to like and to identify with the protagonist, to 
+care about what happens to her. If the perspective you chose for the primary game-
+play mode was anything other than ﬁ rst person, the player is going to spend a lot 
+of time looking at this character, so it’s important that she be fun to watch. You 
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+49
+ CHAPTER 2
+must think about how she looks and also about how she behaves: what actions she 
+is capable of, what emotions her face and body language can register, and what 
+kind of language and vocabulary she uses. Chapter 6, “Character Development,” 
+discusses these issues in depth.
+DEFINING THE GAME WORLD
+The game world is where your game takes place, and deﬁ ning it can be an enor-
+mous task. If the game world is based on the real world (as in a ﬂ ight simulator, for 
+example), then you can use photographs and maps of real places in order to create 
+its appearance. But if it’s a fantasy or science ﬁ ction world, you have to rely on your 
+imagination. And establishing the look and feel is only part of the task. There are 
+many dimensions to a game world: physical, temporal, environmental, emotional, 
+and ethical. All these qualities exist to serve and support the gameplay of your 
+game, but they also entertain in their own right. Chapter 4 addresses these issues. 
+DESIGNING THE CORE MECHANICS
+Once you have a sense of the kinds of challenges and actions that you want to 
+include in the primary gameplay mode, you can begin thinking about how the core 
+mechanics create those challenges and implement the actions. For example, if you 
+plan to challenge the player to accumulate money, you have to deﬁ ne where the 
+money comes from and what the player has to do to get hold of it. If you challenge 
+the player to play a sport, you must think about all the athletic characteristics—
+speed, strength, acceleration, accuracy, and so on—that sport requires. If your 
+challenges involve symbolic rather than numeric relationships, as in a puzzle game, 
+you have to think about what those symbols are and how they are manipulated. 
+Chapter 10 explains how to create this critical part of your game. 
+CREATING ADDITIONAL MODES
+As you decide upon your game concept, you may realize that you need more
+than one gameplay mode—for example, you want to include separate strategic
+and tactical modes in a war game or manage income and expenditures in a busi-
+ness simulation. Or you may discover that you need additional modes while you 
+are deﬁ ning the primary gameplay mode and core mechanics. Now that you’re in 
+the elaboration stage, design the additional modes: their perspective, interaction 
+model, and gameplay. You must also document what causes your game to move 
+from mode to mode—the structure of your game, as described earlier in this chapter.
+Do not create additional modes unnecessarily. Every extra mode requires more 
+design work, more artwork, more programming, and more testing. It also compli-
+cates your game. Each mode should add to the player’s entertainment and serve an 
+important purpose that the game genuinely needs.
+
+
+--- PAGE BREAK ---
+
+50 
+FUNDAMENTALS OF GAME DESIGN
+DESIGNING LEVELS
+Level design is the process of constructing the experience that the game offers 
+directly to the player, using the components provided by the game design: the 
+characters, challenges, actions, game world, core mechanics, and storyline if there 
+is one. These components don’t have to be completely ﬁ nished in order for level 
+design to begin, but enough must be in place for a level designer to have something 
+to work with. In the early part of the elaboration stage, the level designers work to 
+create a typical ﬁ rst playable level. This level should not be the ﬁ rst one that the 
+player encounters because the ﬁ rst level in the game is atypical as the player is still 
+learning to play the game. Rather, it’s called ﬁ rst playable because it’s the ﬁ rst one 
+the level designers create.
+Creating a working ﬁ rst playable level is an important milestone in the develop-
+ment of a game because it means that testers can begin testing it. See Chapter 12, 
+“General Principles of Level Design,” for an overview of the level design process.
+WRITING THE STORY
+Small video games seldom bother with a story, but large ones usually include a 
+story of some kind. Stories help to keep the player interested and involved. They 
+give her a reason to go on to the next level, to see what happens next. A story
+may be integrated with the gameplay in a number of different ways. Your story
+may occur within the levels as the player plays or it may simply be a transition 
+mechanism between the levels—a reward for completing a level. The story may
+be embedded, with prewritten narrative chunks, or emergent, arising out of the 
+core mechanics. It may be linear and independent of the player’s actions, or it
+may go in different directions based on the player’s choices. Chapter 7 addresses
+all these issues in detail. However you choose to do it, you deﬁ ne the story during 
+the elaboration stage, usually in close conjunction with level design.
+BUILD, TEST, AND ITERATE
+The great game designer Mark Cerny (Spyro the Dragon, Jak and Daxter) asserts that 
+during the preproduction process of development, you should build, test, and then 
+throw away no less than four different prototypes of your game. This may be 
+extreme, but the underlying principle is correct. Video games must be prototyped 
+before they can be built for real, and they must be tested at every step along the 
+way. Each new idea must be constructed and tried out, preferably in a quick-and-
+dirty fashion ﬁ rst, before it is incorporated into the completed product. Cerny also 
+argues that none of the materials you create for prototyping should ever ﬁ nd their 
+way into the ﬁ nal product—or at least, that you should never count on it. By hav-
+ing a ﬁ rm rule to this effect, you free your programmers and artists to work quickly 
+to build the test bed, secure in the knowledge that they won’t have to debug it later. 
+If they’re trying to build maintainable code or ﬁ nal-quality artwork during the pre-
+production stage of development, the testing process takes far longer than it 
+should.
+NOTE Plan to throw 
+away all sound, art, 
+and code created for 
+a prototype. That way 
+your artists, audio 
+people, and program-
+mers can work quickly 
+without worrying about 
+having to debug their 
+content later. Trying 
+to build production-
+quality assets during 
+preproduction just 
+slows the process down. 
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+51
+ CHAPTER 2
+Once development shifts from preproduction to production, the team begins to 
+work on material that will go out to the customer, and it has to be built with special 
+care. However, you still can’t simply design something, hand your design off to the 
+programmers, and forget it. Everything you design must be built, tested, and 
+reﬁ ned as you go. This is why in modern game development testers are brought in 
+right from the beginning of a project rather than at the end as they used to be.
+GAME DEVELOPMENT/SCRUM MANAGEMENT PROCESS
+In the last few years, many game development teams both large and small have begun to 
+implement a project management process called Scrum. (Scrum is not an acronym; the 
+term is borrowed from the sport of rugby.) The Scrum process helps a team organize and 
+track its progress toward completing some body of work, usually creating a new product. 
+In the Scrum process, the team creates and tests updated, working versions of their prod-
+uct in short iterations called sprints. Each sprint lasts from one to four weeks. The team 
+constantly examines and adjusts their progress so as to efﬁ ciently achieve both their 
+interim and ﬁ nal goals. This enables them to identify and ﬁ x problems early on. In addi-
+tion, the team holds a very brief meeting every day, and all problems must be 
+revealed—nothing is held back. When a team is committed to the Scrum methodology, 
+the managers have a clear picture of what is going on at all times, which helps to make 
+sure the work is done on time.
+This book is about game design, not game development, so it does not discuss project 
+management or Scrum in more detail. Also, Scrum is intended more for actually building 
+products, especially software, than for design. However, you should certainly learn about 
+it if you aspire to become a commercial game developer. For additional information, read 
+the book Agile Project Management with Scrum by Ken Schwaber (Schwaber, 2004). You’ll 
+ﬁ nd many more Scrum resources on the Internet. 
+For more information about the details of managing game development, see Game 
+Architecture and Design by Rollings and Morris (Rollings and Morris, 2003).
+The Tuning Stage
+When you went from the concept stage to the elaboration stage, you locked down 
+the game concept—the foundations of the game. During the elaboration stage, you 
+ﬂ eshed out the concept and added new features as necessary. At some point, how-
+ever, a time comes when the entire design must be locked—that is, no more features
+may be added to the game—and you enter the tuning stage. This transition is 
+sometimes called feature lock. There’s no good way to know exactly when this is.
+
+
+--- PAGE BREAK ---
+
+52
+FUNDAMENTALS OF GAME DESIGN
+It’s usually dictated by the schedule. If it is going to take all the remaining time left 
+to complete and debug the game as the design stands, then clearly you can’t add 
+anything more to the design without making the project late! However, that is 
+more of a reactive than a proactive approach to the issue. You should really lock
+the design at the point at which you feel that it is complete and harmonious, even 
+if there is time for more design work.
+Once you have locked the design, you still have work to do. Design work enters the 
+tuning stage, during which you can make small adjustments to the levels and core 
+mechanics of the game as long as you don’t introduce any new features. This stage, 
+more than any other, is what makes the difference between a merely good game 
+and a truly great one. Tune and polish your game until it’s perfect. Polishing is a 
+subtractive process, not an additive one. You’re not putting on new bells and whis-
+tles but removing imperfections and making the game shine.
+The Game Design Team Roles
+A large video game is almost always designed by a team. Unlike Hollywood, in 
+which guilds and unions deﬁ ne the job roles, the game industry’s job titles and 
+responsibilities are not standardized from one company to another. Companies 
+tend to give people titles and tasks in accordance with their abilities and, more 
+important, the needs of a project. However, over the years a few roles have evolved 
+whose responsibilities are largely similar regardless of what game or project they are 
+part of.
+■ Lead Designer. This person oversees the overall design of the game and is 
+responsible for making sure that it is complete and coherent. She is the “keeper of 
+the vision” at the highest and most abstract level. She also evangelizes the game to 
+others both inside and outside the company and is often called upon to serve as a 
+spokesperson for the project. Not all the lead designer’s work is creative. As the 
+head of a team, she trades away creativity for authority, and her primary role is to 
+make sure that the design work is getting done and the other team members are 
+doing their jobs properly. A project has only one lead designer.
+■ Game Designer. The game designer deﬁ nes and documents how the game actu-
+ally works: its gameplay and its core mechanics. Game designers also conduct 
+background research and assemble data that the game may need. On a large proj-
+ect, these jobs may be split up among several game designers, all reporting to the 
+lead designer.
+■ Level Designer/World Builder. Level designers take the essential components 
+of the game provided by the other designers—the user interface, core mechanics, 
+and gameplay—and use those components to design and construct the individual 
+levels that the player will play through in the course of a game. Level design used 
+to be considered an inferior position to game designer, but modern level designers 
+frequently need to be able to build 3D models and program in scripting languages. 
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+53
+ CHAPTER 2
+As a result, level design is now a specialized skill, or set of skills, and is considered 
+just as important as game design. A project usually has several level designers 
+reporting either to a lead level designer or to the lead designer.
+■ User Interface Designer. If a project includes user interface design as a sepa-
+rate role, it’s performed by one or more people responsible for designing the layout 
+of the screen in the various gameplay modes of the game and deﬁ ning the function 
+of the input devices. In large, complex games, this can easily be a full-time task. An 
+otherwise brilliant game can be ruined by a bad user interface, so it is a good idea 
+to have a specialist on board. (See Figure 2.7 for a notorious example.) Large devel-
+opers are increasingly turning to usability experts from other software industries to 
+help them test and reﬁ ne their interfaces.
+■ Writer. Writers are responsible for creating the instructional or ﬁ ctional content 
+of the game: introductory material, back story, dialog, cut-scenes (noninteractive 
+narrative video clips), and so on. Writers do not, generally speaking, do technical 
+writing—that is the responsibility of the game designers. Few games require a full-
+time writer; the work is often subcontracted to a freelancer or done by one of the 
+other designers.
+Two other positions have a large amount of creative inﬂ uence on a game, although 
+they do not normally report to the lead designer. Rather, they are people with whom 
+a game designer can expect to have a lot of interaction over the course of a project.
+■ Art Director. The art director, who may also be called the lead artist, manages 
+production of all the visual assets in the game: models, textures, sprites, animations, 
+FIGURE 2.7
+Trespasser: Jurassic 
+Park was an innovative 
+game ruined by an 
+awkward and buggy 
+user interface.
+
+
+--- PAGE BREAK ---
+
+54 
+FUNDAMENTALS OF GAME DESIGN
+user interface elements, and so on. The art director also plays a major role in creat-
+ing and enforcing the visual style of the game. Within the team hierarchy, the art 
+director is usually at the same level as the lead designer, so it is imperative that the 
+two of them have a good working relationship and similar goals for the project.
+■ Audio Director. Like the art director, the audio director of a game oversees pro-
+duction of all the audible assets in the game: music, ambient sounds, effects, and 
+dialog or narration. Typically there is not as much of this material as there is of art-
+work, so the audio director may be working on several projects at once. Audio is 
+critical to creating a mood for the game, and the lead designer and audio director 
+work together to establish what kinds of sounds are needed to produce it.
+DESIGN RULE Don’t Design by Committee
+Do not treat the design work as a democratic process in which each person’s opinion has 
+equal value (“design by committee”). One person must have the authority to make ﬁ nal 
+decisions, and the others must acknowledge this person’s authority.
+GAME IDEA VERSUS DESIGN DECISION
+Here’s a game idea: “Dragons should protect their eggs.”
+Here’s a design decision: “Whenever they have eggs in their nests, female dragons do 
+not move beyond visual range from the nest. If an enemy approaches within 50 meters of 
+the nest, the dragon abandons any other activity and returns to the nest to defend the 
+eggs. She does not leave the nest until no enemy has been within the 50-meter radius 
+for at least 30 seconds. She defends the eggs to her death.”
+See the difference? This is what creating design documents is about.
+The Game Design Documents
+As part of their job, game designers produce a series of documents to tell others 
+about their game design. Exactly what documents they produce and what the doc-
+uments are for vary from designer to designer and project to project—but they 
+usually follow a common thread.
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+55
+ CHAPTER 2
+Why Do We Need Documents?
+Beginning game programmers often make the mistake of thinking up a game and 
+then diving in and starting to program it right away. In modern commercial game 
+development, however, this kind of ad hoc approach is disastrous. Different proj-
+ects require different degrees of formality, but all serious game companies now 
+insist on having some kind of written documentation as design work progresses.
+A key part of game design is transmitting the design to other members of the team. 
+In practice, a lot of that communication takes place not through the documents 
+themselves but during team meetings and conversations over lunch. That doesn’t 
+mean that there’s no point in writing design documents, however. The documents 
+record decisions made and agreed upon orally; they create a paper trail. More 
+important, the process of writing a document turns a vague idea into an explicit 
+plan. Even if no one reads it at all, an idea written down is a decision made, a con-
+clusion reached. If a feature of a game is not described in writing, there’s a good 
+chance that it has been overlooked and that someone will have to make it up on 
+the ﬂ y—or, worse, that each part of the team will have a different idea of what they 
+intended to do. It’s far easier and cheaper to correct a design error before writing 
+any code or creating any artwork. Depending on the size of the game, wise devel-
+opers allot anywhere from one to six months for pure design work before starting 
+on development, usually in combination with some throwaway prototype for test-
+ing gameplay ideas.
+Types of Design Documents
+This section is a short introduction to the various types of documents a game 
+designer might create: the high concept, game treatment, character design, world 
+design, and story or level progression documents, as well as the ﬂ owboard and the 
+game script. Each of these is deﬁ ned in the following sections. This isn’t an exhaus-
+tive list, nor does every project need all of the items on the list. Rather, these are 
+some of the most common ones.
+The high concept and game treatment documents are sales tools, designed to help 
+communicate the game concept to a funding agency such as a publisher. They are 
+usually written in a word processor such as Microsoft Word and distributed in 
+paper form. The other documents used to be written in a word processor as well, 
+but it is increasingly common in the game industry to create them as pages on an 
+internal company website or wiki. As long as you can keep the website secure, it’s a 
+good way of documenting a game design so that all the members of the team can 
+access it, and you can update it easily. Once the wiki software is installed on the 
+company server, the whole team can edit the content using only a browser. Be sure 
+you have revision control and backups so that you can revert to a previous edition 
+if someone deletes a page by accident.
+You can ﬁ nd samples (or pointers to samples) of design documents on the book’s 
+companion website at www.peachpit.com/fgd2.
+
+
+--- PAGE BREAK ---
+
+56 
+FUNDAMENTALS OF GAME DESIGN
+HIGH CONCEPT DOCUMENT
+The high concept document is not a document from which to build the game. Just as 
+the purpose of a résumé is to get you a job interview, the purpose of a high concept 
+document is to get you a hearing from someone, a producer or publishing executive. 
+It puts your key ideas down on paper in a bite-size chunk that he can read in a few 
+minutes. Like a résumé, it should be short—not more than two to four pages long.
+It’s also worthwhile to write high concept documents for yourself, to record ideas 
+that you might want to work on in the future.
+GAME TREATMENT DOCUMENT
+A game treatment document presents the game in a broad outline to someone who’s 
+already interested in it and wants to hear more about it. Like a high concept docu-
+ment, it’s primarily a sales tool. The treatment is designed both to satisfy initial 
+curiosity and to stimulate real enthusiasm for the game. When you give a presenta-
+tion about your game to a potential publisher, you should hand him the game 
+treatment at the end so he has something to take away and look at, something that 
+ﬂ oats around his ofﬁ ce and reminds him of your game. Your goal at this point is to 
+get funding, either to create a more thorough design or a prototype or (preferably!) 
+to develop the entire game.
+The game treatment is still a simple document—almost a brochure that sums up 
+the basic ideas in the game. A good way of picturing what to write in a treatment
+is to imagine that you are making a website to help sell your game; then throw in 
+some business and development details for good measure.
+CHARACTER DESIGN DOCUMENT
+A character design document is speciﬁ cally intended to record the design of one char-
+acter who appears in your game, most often an avatar. Its primary purpose is to 
+show the character’s appearance and above all her moveset—a list of animations 
+that documents how she moves, both voluntarily and involuntarily. It should 
+include plenty of concept art of the character in different poses and with different 
+facial expressions. In addition, it should include background information about the 
+character that helps inform future decisions: her history, values, likes and dislikes, 
+strengths and weaknesses, and so on. Chapter 6 discusses character design in detail. 
+WORLD DESIGN DOCUMENT
+The world design document is the basis for building all the art and audio that portray 
+your game world. It’s not a precise list of everything in the game but, rather, back-
+ground information about the kinds of things the world contains. If you have a 
+large landscape or cityscape, for example, the world design document should include
+a map. You need not supply every detail, just a general overview. The level design-
+ers and artists use this information to create the actual content. Be sure also to note 
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+57
+ CHAPTER 2
+the sources of ambient sounds in the world so the audio designers can build them 
+in at the appropriate locations.
+The world design document should also document the “feel” of the world, its aes-
+thetic style and emotional tone. If you want to arouse particular emotions through 
+images and music, indicate how you will do so here.
+FLOWBOARD
+A ﬂ owboard is, as the name suggests, a cross between a ﬂ owchart and a storyboard. 
+Storyboards are linear documents used by ﬁ lmmakers to plan a series of shots; ﬂ ow-
+charts are used by programmers (though rarely nowadays) to document an algorithm. 
+A ﬂ owboard combines these two ideas to document the structure of a game.
+Although you can create a ﬂ owboard in an editor such as Microsoft Visio, it’s actu-
+ally quicker and easier to make one on several sheets of paper and stick them on a 
+large blank wall. Use each sheet of paper to document one gameplay mode or shell 
+menu. On each page, write the name of the mode clearly at the top. Then, in the 
+center of the page, draw a quick sketch of the screen as it appears in the mode, 
+showing the perspective that the camera model implements and the user interface 
+items that appear on it. Leave plenty of space around the edges. Off to the sides of 
+the sketch, document the menu items and inputs available to the player and what 
+they do. You can also list the challenges that arise in that mode, although that’s 
+less important—the key thing is to indicate the player actions that are available. 
+Then draw arrows leading to the other gameplay modes or shell menus and indi-
+cate under what circumstances the game makes a transition from the current mode 
+to the next one. By creating one mode per page and putting them up on the wall, 
+you allow everyone in the ofﬁ ce to see the structure of the game. You can also eas-
+ily make revisions by adding new sheets and marking up the existing ones.
+STORY AND LEVEL PROGRESSION DOCUMENT
+This document records the large-scale story of your game, if it has one, and the way 
+the levels progress from one to the next. If you’re making a small game with only 
+one level (such as a board game in computerized form) or a game with no story, 
+you need not create this document. However, if the game has more than one level, 
+or the player experiences a distinct sense of progress throughout the game, then 
+you need such a document. You’re not trying to record everything that can happen 
+in the game, but rather a general outline of the player’s experience from beginning 
+to end. If the game’s story branches based upon the player’s actions, this is the 
+place to document it and indicate what decisions cause the game to take one path 
+rather than another. Here also you indicate how the player experiences the story: 
+whether it’s told via cut-scenes, mission brieﬁ ngs, dialog, or other narrative elements.
+Bear in mind that the story or level progression is not the same as the game’s struc-
+ture. An entire story can take place in only one gameplay mode; likewise, a game 
+can have many different gameplay modes but no story at all. Although the game 
+TIP The game 
+structure and the 
+game story or level 
+progression are not 
+the same thing! Don’t 
+confuse them. The 
+structure deﬁ nes the 
+relationships among 
+the gameplay modes, 
+documenting when 
+and why the game 
+changes from mode 
+to mode. The story or 
+level progression de-
+scribes how the player 
+experiences a sense 
+of progress from the 
+beginning of the game 
+to the end.
+
+
+--- PAGE BREAK ---
+
+58 
+FUNDAMENTALS OF GAME DESIGN
+changes from mode to mode over time, and the story also progresses over time,
+the two are not necessarily related.
+THE GAME SCRIPT
+Back when games were smaller, it was common to incorporate all the preceding 
+documents except for the high concept and treatment into a single massive tome, 
+the game script (or “bible”). As games have gotten larger, the industry has tended 
+to break out the character, world, and story documentation into individual docu-
+ments to make them more manageable. The game script documents a key area not 
+covered by the other documents: the rules and core mechanics of the game.
+As a good rule of thumb, the game script should enable you to play the game. That 
+is, it should specify the rules of play in enough detail that you could, in theory, 
+play the game without the use of a computer—maybe as a (complicated) board 
+game or tabletop role-playing game. This doesn’t mean you should actually sit 
+down and play it as such, but it should theoretically be possible to do so, based 
+solely on the game script document. Sitting down and playing paper versions of 
+game ideas is a very inexpensive way of getting valuable feedback on your game 
+design. For designers without huge teams and equally huge budgets, paper-play test-
+ing is an invaluable tool.
+The game script does not include the technical design, though it may include the 
+target machine and minimum technical speciﬁ cations. It should not address how 
+to build or implement the game software. The technical design document, if there 
+is one, is usually based on the game script and is written by the lead programmer or 
+technical director for the game. Technical design is beyond the scope of this book. 
+If you want to know more about technical design, read Game Architecture and Design
+by Rollings and Morris (Rollings and Morris, 2003).
+The Anatomy of a Game Designer
+Like all crafts, game design requires both talent and skill. Talent is innate, but skill 
+is learned. Effective game designers require a wide base of skills. The following sec-
+tions discuss some of the most useful skills for the professional game designer. 
+Don’t be discouraged if you don’t possess all of them. It’s a wish list—the character-
+istics of a hypothetical “ideal designer.”
+Imagination
+A game exists in an artiﬁ cial universe, a make-believe place governed by make-
+believe rules. Imagination is essential to creating this place. It comes in various forms:
+■ Visual and auditory imagination enables you to think of new buildings, trees, 
+animals, creatures, clothing, and people—how they look and sound.
+NOTE Imagination 
+does not consist only 
+of the ability to invent 
+new things. It’s also 
+valuable to be able to 
+look at an old idea and 
+breathe new life into it 
+with a fresh approach. 
+J.K. Rowling does this 
+brilliantly in her Harry 
+Potter novels. She still 
+has witches ﬂ ying on 
+broomsticks, but she 
+invented the sport of 
+Quidditch, which is 
+played while ﬂ ying
+on them.
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+59
+ CHAPTER 2
+■ Dramatic imagination is required for the development of good characters, plots, 
+scenes, motivations, emotions, climaxes, and conclusions.
+■ Conceptual imagination is about relationships between ideas, their interactions, 
+and dependencies.
+■ Lateral thinking is the process of looking for alternative answers, taking an 
+unexpected route to solve a problem.
+■ Deduction is the process of reasoning from a creative decision you’ve made to its 
+possible consequences. Deduction isn’t ordinarily thought of as imagination, but 
+the conclusions you arrive at produce new material for your game.
+Technical Awareness
+Technical awareness is a general understanding of how computer programs, partic-
+ularly games, actually work. You don’t have to be a software engineer, but it is 
+extremely valuable to have had a little programming experience. Level designers, 
+in particular, often need to be able to program in simple scripting languages. Get to 
+know the technical capabilities of your target platform. You must also be aware of 
+what your machine cannot do so that you don’t create unworkable designs. For 
+example, many low-end mobile phones don’t have enough processing power to do 
+3D rendering. 
+Analytical Competence
+Analytical competence is the ability to study and dissect something: an idea, a 
+problem, or an entire game design. No design is perfect from the start; game design 
+is a process of iterative reﬁ nement. Consequently, you must be able to recognize the 
+good and bad parts of a design for what they are.
+One example of an analytical task is detecting dominant (that is, unbeatable or 
+nearly unbeatable) strategies at the design phase and weeding them out before they 
+get into the code, as in the infamous Red Alert “tank rush.” In Command & Conquer: 
+Red Alert, tanks on the Soviet side are so much more effective than any other unit 
+that an experienced player can dedicate all production to cranking out a few tanks 
+and then immediately storm the opposition base before the enemy has a chance to 
+get a production line set up.
+Mathematical Competence
+Designers must have basic math skills, including trigonometry and the simpler 
+principles of probability. Balancing games that feature complex internal economies, 
+such as business simulations or real-time strategy games, can require you to spend a 
+lot of time looking at numbers. You don’t need a PhD in mathematics, but you 
+should be comfortable with the subject. You may be able to handle most of the 
+requirements with a spreadsheet program such as Microsoft Excel.
+
+
+--- PAGE BREAK ---
+
+60 
+FUNDAMENTALS OF GAME DESIGN
+Aesthetic Competence
+Although you need not be an artist, you should have a general aesthetic compe-
+tence and some sense of style. Far too many games are visual clones of one another, 
+depending on stereotypes and clichés rather than real imagination. It’s up to you 
+(along with your lead artist) to set the visual tone of the game and to create a con-
+sistent, harmonious look.
+Expand your aesthetic horizons as much as you can. Learn a little about the funda-
+mentals of art: the principles of composition, and which colors coordinate and 
+which clash. Find out about famous art movements—Art Nouveau, Surrealism, 
+Impressionism—and how they changed the way we see things. Watch movies that 
+are famous for their visual style, such as Metropolis or Blade Runner. Then move on 
+to the more practical arts: architecture, interior decoration, industrial design. The 
+more aesthetic experience you have, the more likely you are to produce an artisti-
+cally innovative product.
+General Knowledge and the Ability to Research
+The most imaginative game designers are those who have been broadly educated 
+and are interested in a wide variety of things. It helps to be well versed in such top-
+ics as history, literature, art, science, and political affairs. More important, you 
+must know how to research the subject of your game. It’s tempting just to use a 
+search engine on the Internet, but that’s not very efﬁ cient because the information 
+it presents is haphazard and disorganized and might not be reliable. The encyclope-
+dia is a better place to start for any given subject. From there, you can increase your 
+knowledge of a particular area by moving on to more specialized books or TV 
+documentaries.
+Writing Skills
+A professional game designer actually spends most of his time writing, so a designer
+must have good writing skills. This means being clear, concise, accurate, and unam-
+biguous. Apart from having to write several detailed documents for each design, 
+you might be expected to produce the story narrative or dialog—especially if the 
+budget won’t stretch to include a scriptwriter.
+Design writing comes in several forms:
+■ Technical writing is the process of documenting the design in preparation for 
+development. The essential mechanisms of the game have to be answered unam-
+biguously and precisely.
+■ Fiction writing (narrative) creates the story of the game as a whole—a critical 
+part of the design process if the game has a strong storyline. Some of this material 
+may appear in the ﬁ nished product as text or voiceover narration. The game’s man-
+ual, if there is one, often includes ﬁ ctional material as well.
+
+
+--- PAGE BREAK ---
+
+DESIGN COMPONENTS AND PROCESSES 
+61
+ CHAPTER 2
+■ Dialog writing (drama) is needed for audio voiceovers and cinematic material. 
+Dialog conveys character, and it also can form part of the plot. A class in playwrit-
+ing or screenwriting teaches you a lot about writing dialog.
+A designer must be able to convey the details of the design to the rest of the team, 
+create the textual and spoken material that appears in the game, and help sell the 
+idea to a publisher. Good writing skills are essential to accomplish these things 
+successfully.
+Drawing Skills
+Some skill at basic drawing and sketching is highly valuable, although not abso-
+lutely required for a designer if you have a concept artist to work with. The vast 
+majority of computer games rely heavily on visual content, and drawings are essen-
+tial when you’re pitching a product to a third party. Game-publishing executives 
+are interested in a hot concept, a hot market, or a hot license, but only pictures 
+really excite them. The images remain in their memories long after they forget the 
+details.
+The Ability to Synthesize
+Synthesis, in this context, means bringing together different ideas and construct-
+ing something new from them. Different people on the development team and at 
+the publishing company have concerns about their own areas of expertise (pro-
+gramming, art, music, and so on), and their opinions pull and push the design in 
+different directions. A professional game designer must be able to synthesize a con-
+sistent, holistic vision of a game from this variety of opinions. As the designer, you 
+may be tempted to seek sole ownership of the vision and insist that things must be 
+exactly as you imagined them. You must resist the temptation to do that, for two 
+reasons:
+■ First, you must allow your team some ownership of the vision as well, or its 
+members won’t have any motivation or enthusiasm for the project. No one builds 
+computer games solely for the money; we’re all here so that we can contribute 
+creatively.
+■ Second, a designer who can’t deliver in a team environment, no matter how 
+visionary she may be, doesn’t stay employed for long. You must be able to work
+successfully with other people.
+Game design always requires compromise. Compromise means more than just 
+negotiating with other people, however; it also means working within the prevail-
+ing circumstances. In many cases, you are given a task that limits you to designing 
+a genre clone or a heavily restricted licensed property. On a commercial project, 
+you are almost certainly told, rather than get to choose, the target hardware upon 
+which your game will run. Your project always has a desired budget and schedule 
+
+
+--- PAGE BREAK ---
+

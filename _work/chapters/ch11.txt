@@ -1,0 +1,1473 @@
+CORE MECHANICS 
+323
+ CHAPTER 10
+7. Are there any global mechanics in the game? What mechanic governs the way 
+the game changes from mode to mode?
+8. For each entity and resource, does it come into the game world at a source, or 
+does it start off in a game world that does not provide a source for additional enti-
+ties or resources? If it does come in at a source, what mechanics control the 
+production rate of the source?
+9. For each entity and resource, does it go out of the game world at a drain, or does 
+it all remain in the game world and never leave? If it does go out at a drain, what 
+conditions cause it to drain?
+10. What conversion processes exist in your world? What trader processes exist? Do 
+any feedback loops or mutual dependencies exist? What means have you provided 
+to break or prevent deadlocks?
+11. Can your game get into a state of equilibrium, static or dynamic? Does it include 
+any form of decay or entropy that prevents states of equilibrium from forming?
+12. How do mechanics create active challenges? Do you need to establish any 
+mechanics to detect if a challenge has been surmounted?
+13. How do mechanics implement actions? For each action that may arrive from the 
+user interface, how do the core mechanics react?
+14. For autonomous entities such as nonplayer characters, what mechanics control 
+their behavior? What mechanics deﬁ ne their AI?
+
+
+--- PAGE BREAK ---
+
+Game Balancing
+To be enjoyable, a game must be balanced well—it must be neither too easy nor too 
+hard, and it must feel fair, both to players competing against each other and to the 
+individual player on his own. In this chapter, you’ll learn what qualities a well-bal-
+anced game has, and how to balance your own. We’ll begin by examining dominant 
+strategies and how to avoid them. We’ll look at ways to set up and balance both 
+transitive and intransitive relationships among player choices and how to make them 
+simultaneously interesting and well balanced. We’ll also look at ways to incorpo-
+rate chance into games in such a way that the game still rewards the better player.
+The bulk of the chapter examines two major issues of balance: fairness and difﬁ -
+culty. The meaning of fairness differs between player-versus-player and player-
+versus-environment games, and we’ll address each separately. The question of 
+difﬁ culty applies primarily to player-versus-environment games, and this chapter 
+will expand upon ideas in Chapter 9, “Gameplay,” explaining the various factors 
+that affect the player’s perception of difﬁ culty and how to manage those factors.
+Next we’ll look at the role of positive feedback in games: how to use it and how to 
+control it. Finally, we’ll brieﬂ y investigate the problems of stagnation, trivialities, 
+and how to design your game in order to make the tuning stage of the process easier.
+What Is a Balanced Game?
+So divinely is the world organized that every one of us, in our place and time, is in balance 
+with everything else.
+—JOHANN WOLFGANG VON GOETHE
+As with so many other game design concepts, the conventional notion of balance
+deﬁ es formalization. In the most general sense, a balanced game is fair to the player 
+(or players), is neither too easy nor too hard, and makes the skill of the player the 
+most important factor in determining his success. In practice, several different 
+game features combine to produce these qualities, and game balancing refers to
+a collection of design and tuning processes that create those qualities in a game 
+under development.
+The concept of balance differs considerably depending upon whether we speak of 
+games in which a player plays against one or more opponents (whether human 
+players or artiﬁ cial opponents implemented by software) or of games in which a 
+player faces challenges posed by the game world, without an opponent. The ﬁ rst 
+CHAPTER 11
+324
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+325
+ CHAPTER 11
+type of game, in which the player faces one or more opponents (even artiﬁ cial 
+ones), is called a player-versus-player (PvP) game. The second type is a player-versus-
+environment (PvE) game. As you look at the techniques for balancing a game, note 
+how they differ between PvP and PvE games.
+A well-balanced game of either type, PvP or PvE, possesses the following 
+characteristics:
+■ The game provides meaningful choices. If the game allows the player to 
+choose from several possible strategies for approaching the game’s challenges, no 
+strategy should be so much more effective than the others that there is no point in 
+ever using a different one. If such a dominant strategy exists, it indicates a poorly 
+balanced game. When a game gives a player a choice of strategies, each strategy 
+must have a reasonable chance of producing victory. The later section “Avoiding 
+Dominant Strategies” discusses such strategies.
+■ The role of chance is not so great that player skill becomes irrelevant. This 
+does not mean that a player cannot have bad luck, but in the long run—over the 
+course of a long game or over the course of many short games—a better player 
+should be more successful than a poor one.
+A well-balanced PvP game also possesses the following qualities:
+■ The players perceive the game to be fair. As Chapter 1, “Games and Video 
+Games,” explained, the exact meaning of fairness varies among different players. 
+The later “Making PvP Games Fair” section addresses this further.
+■ Any player who falls behind early in the game gets a reasonable opportu-
+nity to catch up again before the game ends. The deﬁ nitions of early in the game
+and a reasonable opportunity vary depending on how long the designer expects a 
+game to last. If a player falls behind in the ﬁ rst 10 minutes of a 2-hour game and 
+the rules give him no chance to catch up, most players would perceive that game as 
+unfair, and a game designer would describe that game as poorly balanced. Similarly, 
+a game that the designer intends to last 2 hours but that someone invariably wins 
+in 15 minutes also gives other players no time to catch up or even to test their skill. 
+These imbalances often indicate problems with positive feedback, a game feature 
+that the later section “Understanding Positive Feedback” discusses.
+■ The game seldom or never results in a stalemate, particularly among players 
+of unequal ability. A stalemate disappoints players because their efforts produce no 
+victor. If stalemates occur frequently among players of unequal ability, the game 
+violates the principle that player skill should inﬂ uence the outcome more than any 
+other factor. Chess, though a well-balanced game, can still end in a stalemate, but 
+this seldom happens between players of unequal ability. Other games, such as back-
+gammon, make stalemates impossible. “Understanding Positive Feedback” 
+addresses this.
+
+
+--- PAGE BREAK ---
+
+326 
+FUNDAMENTALS OF GAME DESIGN
+In a well-balanced PvE game, these characteristics should be evident:
+■ The player perceives the game to be fair. In a PvE game, the player’s percep-
+tion of fairness involves a number of factors and is complicated by the absence of 
+an opponent. The later section “Making PvE Games Fair” addresses these issues.
+■ The game’s level of difﬁ culty must be consistent. The perceived difﬁ culty of the 
+game’s challenges (described later) remains within a reasonable range so as not to 
+surprise the player with abrupt jumps or drops. The perceived difﬁ culty may be low 
+or high but should not change suddenly, especially within a single game level. The 
+later section “Managing Difﬁ culty” discusses this in detail. 
+To balance your game, you need to use certain design and tuning techniques to be 
+sure the game exhibits these properties. The remainder of the chapter discusses 
+these techniques.
+Avoiding Dominant Strategies
+A strategy is a plan for playing a game, usually according to a principle or approach 
+that the player believes is likely to produce success. One player may favor an aggres-
+sive approach while another may depend on a defensive approach, for instance, but 
+each thinks her strategy has the better chance of bringing victory. The term domi-
+nant strategy, which comes from formal game theory, refers to a strategy that 
+reliably produces the best outcome a player may achieve, no matter what her oppo-
+nent does. Dominant strategies are undesirable because once a player discovers one, 
+she never has any reason to use any other strategy. It makes all other choices point-
+less and thus limits the fun the player can have with such a game. Still worse is a 
+dominant strategy that one player may use but another player may not, which can 
+occur in asymmetric games (the later section “Balancing Asymmetric Games” dis-
+cusses this scenario). When that occurs, the dominant strategy not only obviates 
+other strategies, it makes the game unfair. Designing your game’s mechanics to 
+avoid a dominant strategy is, therefore, an essential part of game balancing.
+Sometimes one single choice can be a dominant strategy, if that one choice gives 
+the player enough of an advantage. This section refers to player strategies, options, 
+and choices interchangeably because any of these may cause one strategy to domi-
+nate all others.
+Strategies that avoid loss or prevent an opponent from scoring points can also qual-
+ify as dominant. Prior to 1955, a basketball team could use endless delaying tactics 
+to kill time on the clock to preserve their lead—a dominant strategy because it pre-
+vented the other side from getting control of the ball and scoring. Leagues imple-
+mented the shot clock to force the team with possession in such situations to shoot 
+the ball, thus creating more opportunities for their opponents to get it back.
+NOTE The term domi-
+nant strategy doesn’t 
+mean that the player 
+who uses it always 
+dominates her oppo-
+nent. It means that the 
+strategy is superior to 
+all the other strategies 
+a player has available. 
+A player using a domi-
+nant strategy can still 
+lose through bad luck.
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+327
+ CHAPTER 11
+Dominant Strategies in Video Games
+Video games seldom permit players to use strategies so strongly dominant that
+they absolutely guarantee victory, although some, whether PvP or PvE games,
+allow powerful strategies that give the player little reason to use any other. By far 
+the best-known dominant strategy in any PvP video game is the tank rush in 
+Westwood’s Command & Conquer: Red Alert. An experienced player playing as the 
+Soviet side can devote all of his energies to producing a large force of tanks in the 
+early part of the game, then use those tanks to attack the nascent enemy base en 
+masse. Against an unprepared opponent, this almost always produces a victory; an 
+experienced opponent can prepare for the onslaught, but the tank rush remains so 
+effective that it takes the fun out of the game. Many players add an additional rule 
+to the game—no tank rushes allowed—just to balance this problem.
+Several editions of Madden NFL included unstoppable offensive plays that guaran-
+teed success against an AI-controlled opponent. Fighting games, too, are especially 
+prone to dominant strategies. In both ﬁ ghting games and football games, the large 
+numbers of possible combinations of offensive and defensive actions makes it difﬁ -
+cult to test them all. Badly designed characters can also result in dominant strategies;
+in Super Street Fighter II Turbo, the secret character Akuma’s unbeatable attack, the 
+air ﬁ reball, leaves the rest of the characters with no chance. Tournament matches 
+ban the use of Akuma to ensure fair play.
+The next few sections discuss ways that dominant strategies can emerge in a video 
+game and how to avoid them or remove them by using balancing methods.
+TRANSITIVE RELATIONSHIPS AMONG PLAYER OPTIONS
+The term transitive describes a relationship among three or more entities so that if
+A stands in a certain relationship to B, and B stands in the same relationship to C, 
+then A stands in the same relationship to C also. If you may correctly draw this 
+conclusion, the relationship displays a property called transitivity. Greater than in 
+arithmetic provides an example of a transitive relationship: If A is greater than B, 
+and B is greater than C, then A is greater than C.
+If a transitive relationship exists among a player’s strategic options, then option A is 
+better than option B, and option B is better than option C. Why, then, would a player 
+ever use option C? Selecting option A becomes a dominant strategy. To use a con-
+crete example, if you design a game so that an aggressive strategy is always better 
+than a defensive one and a defensive strategy is always better than a stealthy one, a 
+smart player always chooses the aggressive strategy—it is superior to all the others.
+To correct this imbalance, you may impose direct costs on using each strategy, costs 
+that counteract the superiority of the stronger strategies and so give players a rea-
+son to consider the (formerly) weaker strategies as well. To draw an analogy, a lot of 
+kids who would like to ride horses have to ride bikes instead because, even though 
+horses are more fun to ride, they cost a lot of money.
+
+
+--- PAGE BREAK ---
+
+328 
+FUNDAMENTALS OF GAME DESIGN
+Suppose you build a road-racing game in which players vie to earn the most prize 
+money available over a series of races. You offer the player the chance to buy one of 
+three cars made by three different manufacturers, such as Ford, Dodge, and 
+Chevrolet. To make this a meaningful choice, you decide to create some variety 
+among the cars so that the Ford is faster than the Dodge, and the Dodge is faster 
+than the Chevrolet. If they all cost the same amount and their performance is iden-
+tical in other ways, choosing the Ford constitutes a dominant strategy. However, if 
+you price each car in proportion to its advantage so that the Ford costs the most 
+and the Chevrolet costs the least, the game regains balance. Because the players’ 
+goal is to earn money, not merely to win races, the ﬁ nancial disadvantage of the 
+faster car offsets its speed advantage if you set the costs correctly.
+Setting up direct costs that exactly counter the advantages of certain choices does 
+balance the game, but such a clear and obvious balancing mechanism produces a 
+game that seems rather bland. The player can see that there’s no real difference 
+among the choices. To create a more interesting choice for the player, you can 
+instead impose shadow costs. Shadow cost, a term from economic theory, refers to 
+secondary, or hidden, costs that lie behind the apparent costs of goods or services. 
+For our purposes, a shadow cost is one that the designer creates but doesn’t warn 
+the player about explicitly. It serves to balance the game without being blatant 
+about the mechanisms. For instance, giving the Ford a smaller fuel tank that 
+requires the car to stop to refuel more often in the road race could counter its speed 
+advantage. The smaller fuel tank serves as a shadow cost that the player becomes 
+aware of through repeated play.
+You can hide a shadow cost completely by building it into the mechanics and not 
+documenting it in the game’s manual—for instance, not telling the players how big 
+the fuel tanks in the cars are so they have to ﬁ nd it out through trial and error. 
+More often, a shadow cost is available to the player but not obvious. Continuing 
+the same example, the player might be able to learn the sizes of the fuel tanks by 
+comparing the numbers on the fuel gauges in each car, but the instructions for the 
+game don’t draw attention to it. Another classic example is a weapon that does a 
+great deal of damage but has a slow rate of ﬁ re. The slow rate of ﬁ re is a shadow cost 
+that the player only discovers once she starts to use the weapon.
+Players of PvE games often feel that entirely hidden shadow costs are unfair 
+because the player cannot know what costs lurk behind the scenes or learn to com-
+pensate for them. For example, if a game reduces a character’s accuracy at throwing 
+a javelin in proportion to the weight of the character’s backpack (on the theory 
+that throwing a javelin while wearing a heavy backpack is bound to be rather 
+uncertain) but never explains this to the player in the manual or anywhere else, 
+the player can’t learn to compensate for it. He ﬁ nds that his accuracy worsens at 
+times, but he can’t understand why. If he does ﬁ gure it out, he will probably cry 
+foul and post a warning on an Internet gaming forum for the beneﬁ t of other play-
+ers. A number of game publishers deliberately hide shadow costs from the players 
+TIP If you give a 
+player an option that 
+appears to be clearly 
+superior to his other 
+options, you can bal-
+ance this by imposing 
+a higher direct (visible) 
+cost for choosing that 
+option, or a shadow 
+(hidden) cost.
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+329
+ CHAPTER 11
+but reveal the costs in printed strategy guides that the player must pay extra for. 
+This is an abusive practice.
+In practice, designers most often use transitive relationships to upgrade a player’s 
+powers during her progress through the game. The player begins with a single 
+option, the weakest, and works her way up to better ones. In other words, she starts 
+with the Chevrolet, then receives the Dodge as a reward for good performance, and 
+later still receives the Ford. This creates positive feedback, which is covered in a 
+later section. If you also make it possible for a player to lose her upgrade due to poor 
+performance—going back to the Dodge after a bad performance in the Ford—you 
+can create an interesting progression/regression dynamic that can lead to some taut 
+and suspenseful gameplay. Take care to ensure that the player can reestablish her 
+previous level once she does well again.
+INTRANSITIVE RELATIONSHIPS (ROCK-PAPER-SCISSORS)
+If the relationship between strategies or other player options is intransitive, then
+just because A beats B and B beats C, you can’t assume that A also beats C. Game 
+professionals use intransitive relationship to mean not merely a lack of transitivity 
+but an explicit loop in which option A beats option B, B beats C, and C beats A
+(see Figure 11.1). The game rock-paper-scissors (also called scissors-paper-stone
+and Rochambeau) works that way: Paper beats rock, rock beats scissors, scissors
+beat paper. This results in a balanced, three-way intransitive relationship (although 
+intransitive relationships are not conﬁ ned to systems of only three entities).
+Rock
+Paper
+Scissors
+FIGURE 11.1
+A three-way 
+intransitive relation-
+ship, with arrows 
+indicating which 
+option beats another
+
+
+--- PAGE BREAK ---
+
+330 
+FUNDAMENTALS OF GAME DESIGN
+The rock-paper-scissors (or RPS) mechanism is a classic design technique for avoid-
+ing dominant strategies and forms the basis for balancing player strategies in many 
+games. Designer David Sirlin pointed out in his article “Rock, Paper and Scissors in 
+Strategy Games” that Virtua Fighter 3 includes RPS relationships among general 
+types of moves available to the player: Attacking moves beat throwing moves, 
+throwing moves beat blocking moves, and blocking moves beat attacking moves 
+(Sirlin, 2000). The Ancient Art of War, an early example of a video game that 
+includes an RPS relationship, offers players three unit types: knights, archers, and 
+barbarians. Knights have an advantage over barbarians, barbarians over archers, 
+and archers over knights.
+As Chapter 14, “Strategy Games,” explains further, a direct implementation of the 
+RPS model without any modiﬁ cations fails to meet the needs of modern war games 
+due to its simplicity. It doesn’t offer any interesting choices—there’s no reason to 
+choose any one unit or strategy over any of the others. However, as Sirlin points 
+out, you can adjust the system to produce different beneﬁ ts. If you give the player 
+different amounts of money for winning with rock, paper, or scissors, players have 
+to think not only about which object their opponent might choose but which 
+choice earns the most money.
+Now imagine a system in which instead of just allowing each choice to beat 
+another in all circumstances, as in rock-paper-scissors, one choice is marginally 
+better than others in some circumstances but not in others. You can make this 
+adjustment in the core mechanics of your game, and it need not be a war game. For 
+example, suppose you set up a race between a lizard, a frog, and a mouse. The liz-
+ard does best on rocky ground; the frog does best in swamps; and the mouse does 
+best on grassy ground. If you design the mechanics such that these advantages 
+remain slight rather than overwhelming, it will take a while for the players to learn 
+about the system of advantages. Make the race course a complex mixture of rocks, 
+grassland, and swamps, and give players partial but not total freedom over the 
+routes they take. Add some shadow costs: The frog is generally slower than the oth-
+ers overall; the mouse has to stop for air every 15 seconds while swimming; and the 
+lizard slows down sharply at transitions between types of ground. If you set these 
+values carefully, your game remains balanced, and players will have some interest-
+ing decisions to make about which creature they would rather play with.
+ORTHOGONAL UNIT DIFFERENTIATION
+In his lecture at the 2003 Game Developers’ Conference, “Orthogonal Unit 
+Differentiation,” game designer Harvey Smith argued that each type of unit a 
+player can control in a game (a car, a soldier, an RPG character, or anything else the 
+player can command) should be orthogonally different from all the others (Smith, 
+2003). By orthogonal, he meant that each kind of unit should be unlike the others 
+in a different dimension, not simply more or less powerful when measuring in one 
+dimension. The example of the Ford, Dodge, and Chevy in the preceding section 
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+331
+ CHAPTER 11
+differentiates between them in the same dimension—speed—so they are not 
+orthogonally different.
+To make the player’s choice of units more interesting and to offer her a larger vari-
+ety of strategies, Smith suggests that units should not only differ in the magnitude 
+of their power at performing one task, as the Fords and Dodges did, but also should 
+display entirely different qualities. Ideally, every type of unit should possess capa-
+bilities that no other unit has, and this gives each type a distinct role to play in the 
+game. Otherwise, there’s little point in including a weaker unit in the game except 
+as part of an upgrade path to a stronger one.
+The more diverse the types of challenges in your game, the easier you will ﬁ nd it 
+to create orthogonally differentiated unit types. In a realistic car racing game, all 
+the cars face the same challenge and must be constructed to similar standards, 
+which makes racing games a poor ﬁ eld for examples of orthogonal differentiation. 
+Player success depends more on driving skill than on the attributes of their cars, 
+which is appropriate for a racing game. In a war game, however, opportunities to 
+create orthogonally differentiated units abound. Some units may ﬂ y or travel on 
+water, whereas others may not; some may transport other units; some may possess 
+ranged weapons and others only hand-to-hand weapons; and so on. You cannot 
+directly compare the advantages of a unit that wields hand-to-hand weapons with 
+the advantages of one that heals the wounded: These qualities make the player’s 
+choices more interesting, and success in the game consists of deploying the appro-
+priate combination of units to defeat the enemy’s forces.
+Orthogonally differentiated units also help to prevent dominant strategies from 
+arising if you deﬁ ne the victory condition in such a way that the player must use a 
+variety of different units in order to win the game. Many inexperienced chess play-
+ers rely on using the queen aggressively, wrongly believing this a dominant strategy 
+because she is the most powerful piece on the board. In fact, however, each type of 
+chess piece plays a role and they work cooperatively. The queen cannot control the 
+board alone; she needs the help of the other pieces. The types of pieces exhibit 
+enough diversity to keep games interesting and prevent dominant strategies.
+Dominant Strategies in PvE Games
+As Chapter 9 explained, most games offer a large number of different types of chal-
+lenges but a somewhat smaller number of actions with which to overcome them. 
+One action may overcome several different types of challenges. This encourages 
+players to experiment to ﬁ nd the right action or combination of actions to sur-
+mount each type of challenge, whereas only offering one unique action for each 
+type of challenge makes for a dull game.
+Implementing fewer actions does introduce a potential problem, however. By creat-
+ing actions that can overcome several different kinds of challenges, you risk 
+accidentally creating exploits, actions so powerful because of a weakness in the 
+design that the player becomes unstoppable. This occasionally happens 
+
+
+--- PAGE BREAK ---
+
+332 
+FUNDAMENTALS OF GAME DESIGN
+when players use an action in a way that you did not expect. For example, in an old 
+side-scrolling space-shooter game on the Super Nintendo Entertainment System 
+(which this book does not name to avoid embarrassing the individuals responsible), 
+the player could, after upgrading her weapons to a certain level, make her way 
+through the rest of the game without ever losing a life by traveling as low on the 
+screen as possible and keeping her ﬁ nger on the ﬁ re button. Although clearly unin-
+tended, this position made her invulnerable to enemy attacks.
+No one has yet invented a way to prevent these problems other than through play-
+testing, trying as many actions and as many combinations as possible on each 
+challenge. The smaller the number of actions that you implement in your game, 
+the less likely you are to introduce a dominant strategy by accident because you 
+will be able to test them all rigorously. Be especially careful with powerups and spe-
+cial actions that give the player more power than usual; these require extra testing.
+Incorporating the Element of Chance
+The role of chance varies enormously from game to game. Some games, such as 
+checkers, make no use of chance at all; in others, such as craps, chance is all-impor-
+tant. We’ve seen that skill, not chance, must be the primary factor in determining 
+the player’s success. If chance plays a role, how can we ensure that the more skillful 
+player wins? Here are several recommendations.
+■ Use chance sparingly. Design the game so that chance affects only a minority 
+of the player actions that lead to victory and the majority of actions depend on 
+skill. This is the simplest solution, but it’s not suitable for all types of games.
+If chance is to play a larger role in the game, balance its effects as follows:
+■ Use chance in frequent challenges with small risks and rewards rather than 
+infrequent challenges with large risks and rewards. Poker provides a good example. 
+Chance plays a large role in each hand, but smart players don’t bet large amounts 
+on a single hand; they count on the cumulative effect of good play over many 
+hands. Player skill remains the major factor that determines winners if a game includes
+enough hands. This approach also appears in war games, in which chance plays a 
+role in the mechanics governing combat between individual units (although not a 
+large role) but plays no direct role in the victory and loss conditions of the mission. 
+The inﬂ uence of chance on victory and loss occurs frequently but only on a small 
+scale, so good luck tends to cancel out bad luck over time, leaving skill to deter-
+mine long-term results.
+■ Allow the player to choose actions to use the odds to his advantage. If the 
+player knows the probabilities that signiﬁ cant events will occur, he can make deci-
+sions that he believes will be to his advantage. Even in a game in which chance 
+plays an enormous role, such as craps, the player may choose to bet on different 
+outcomes that he believes more or less probable. His skill in making decisions in his 
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+333
+ CHAPTER 11
+favor on the basis of the odds thus plays a role in determining his success. Video 
+games seldom tell players the odds explicitly, but with experience, players come to 
+learn the odds and make good decisions. If a player has no possibility of acquiring 
+knowledge of the odds and gets no opportunity to decide whether to take a risk, 
+chance plays too large a role.
+■ Allow the player to decide how much to risk. Allow the player to choose how 
+much he places at risk at frequent intervals. By offering the player this choice, you 
+give him more control over his resources and so tend to reward skill. This again 
+becomes critically important in gambling games, as in the game of poker. If you do 
+not let the player choose how much to risk on any given challenge that involves 
+chance, then the game should not risk too much on his behalf. In a war game, for 
+example, chance typically affects the accuracy of each shot. By sending a unit into 
+combat, the player risks a few health points on each shot and cannot choose how 
+many points he risks. However, he almost always has the option to withdraw the 
+unit from combat (retreat); the number of points at risk is seldom very large; and 
+one shot typically affects only one unit.
+Put simply, don’t use chance to determine large issues unless the player explicitly 
+chooses to take large risks (and has the option not to).
+Making PvP Games Fair
+Part of your job includes making sure that your game is fair and that players per-
+ceive it to be fair. Fairness means something different in PvP games than it does in 
+PvE games, so we’ll examine them separately. Players generally consider a PvP game 
+to be fair if they believe (1) the rules give each player an equal chance of winning 
+when play begins and (2) the rules do not give advantage or disadvantage to players 
+unequally during the game in ways that they cannot inﬂ uence or prevent apart 
+from the operation of chance (in moderation).
+Balancing Games with Symmetry
+In designing a PvP game, you must decide early on if you want the game to be
+symmetric or asymmetric. Chapter 1  introduced the concept of symmetry; see
+the section “Symmetry and Asymmetry” there for a refresher if you need one. The 
+concept doesn’t apply to PvE games; all PvE games are asymmetric because there is 
+only one player.
+You will ﬁ nd it easiest to create a PvP game that players perceive as fair if you make 
+the game symmetric. Each player begins with the same resources, has the same 
+options available to her, faces the same challenges, and tries to achieve the same 
+victory condition. The vast majority of traditional games (chess, backgammon, 
+Othello, and so on) follow this pattern. So, too, does Monopoly, in which each player 
+begins with $1,500 and all launch their tokens from the “Go” square. One player 
+
+
+--- PAGE BREAK ---
+
+334 
+FUNDAMENTALS OF GAME DESIGN
+gets to go ﬁ rst, but because a random roll of the dice controls who begins the game, 
+players accept this as fair. (See the sidebar “Who Goes First”? in Chapter 1 for fur-
+ther discussion.)
+So long as whatever you do for one player you do for all the others, your game will 
+remain fair, and little else needs to be said. However, video game players generally 
+consider symmetric games rather uninteresting. Symmetric games don’t allow play-
+ers to control different forces and study their relative strengths and weaknesses the 
+way asymmetric games do. Symmetric games also feel rather contrived, because lit-
+tle in the real world is symmetric.
+In PvP games, dominant strategies most often occur under asymmetric rules (the 
+next section addresses those issues), but a dominant strategy can also occur in sym-
+metric games. Because all players start with symmetric attributes and positions, 
+they all may use this superior strategy, so it does not create an unfair advantage for 
+one player. Nevertheless, such a strategy leaves the players with only one good 
+option, so the game isn’t as fun as it could be.
+Balancing Asymmetric Games
+Asymmetric PvP games run a greater risk of suffering from dominant strategies 
+because the players effectively play by different rules. In Fox and Geese, which 
+Chapter 1 describes, one player controls a single fox on the game board while the 
+other player controls 11 geese (see Figure 1.3). The fox may move in any direction 
+and jump over the geese, while the geese may only move toward the fox. The vic-
+tory condition for the fox is to jump over all the geese (removing them from the 
+board), whereas the victory condition for the geese is to trap the fox so that it can-
+not move. Thus, the rules provide entirely different units, available actions, and 
+victory conditions for each side. In designing an asymmetric game, you must test 
+the mechanics for each type of competitor against every other possible type of 
+competitor to make sure that none has a dominant strategy that confers an advan-
+tage over all his opponents. This lengthy and involved procedure makes it more 
+likely that a mistake will get past the testers.
+In addition to the risk of dominant strategies emerging, players often disagree on 
+the fairness of an asymmetric game. It becomes much harder to judge whether a 
+game really gives all players an equal chance of winning and doesn’t disadvantage 
+any player who plays by different rules or with different resources. These arguments 
+often result in variants—alternative versions of the rules—which arise to rectify 
+what players see as problems. Several variants of Fox and Geese have emerged: one 
+that puts more geese on the board, one that includes two foxes instead of one, one 
+that lets the geese move backward as well as forward, and so forth.
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+335
+ CHAPTER 11
+CHEATING AI AND SECRET ASYMMETRY
+In a single-player PvP game, the player takes on an artiﬁ cial opponent and tries to 
+defeat it in exactly the same way she would a human player. Sometimes the single-player 
+competition mode in a PvP game is just an added feature in an otherwise multiplayer 
+PvP game. When a game is designed this way, the player naturally tends to assume that 
+the artiﬁ cial opponent plays by the same rules that a human player would play by in 
+its place.
+Unfortunately, the AI in many games isn’t good enough to beat a human opponent on 
+equal terms. AI can beat most human players in games such as chess and checkers but 
+has a harder time with Go and a very hard time with complex war games. To help the AI, 
+designers occasionally let it cheat. Some classic cheats include allowing the AI to see 
+units that should be hidden by the fog of war; making the AI-controlled units tougher 
+than the player’s units, while claiming that they are identical; or giving the artiﬁ cial 
+opponent a faster production rate for valuable resources than the player gets for the 
+same resources. In effect, what the player thinks is a symmetric game is secretly asym-
+metric; the artiﬁ cial opponent plays by different rules.
+You should only use this approach as a last resort. Although it can produce a well-
+balanced single-player PvP game, players hate it when they discover that the AI is 
+cheating against them (and with enough effort, they will discover it eventually). A better 
+solution is to be open about the artiﬁ cial opponent’s advantages and build them into a 
+set of different difﬁ culty levels for the player to choose from. This allows the player to 
+decide for himself how tough an opponent he wants to face, and the game doesn’t have 
+to pretend to be symmetric.
+THE POINT ASSIGNMENT SYSTEM
+You can balance a more complex asymmetric game than Fox and Geese by giving 
+the players identical quantities of raw materials at the beginning of the game and 
+then letting them choose what units to build using the raw materials. The Macintosh
+game Spectre allows players to design a tank by assigning points to three attributes: 
+speed, armor (defensive strength), and shot power (offensive strength). Each player 
+gets the same number of points, so none has a built-in advantage, but each can 
+construct a tank that matches his own preferred style of play.
+The point distribution system, while generally fair, doesn’t absolutely guarantee 
+that no dominant strategy will emerge. The risk always exists that one particular 
+combination of features may be superior to any other combination. To help prevent 
+this, the attributes to which the player can assign points should be orthogonally 
+related. One attribute should not affect the domain of another attribute. Having 
+two closely related attributes, such as health and armor, undermines the point sys-
+tem. The player should not be able to gain the same effect by pumping points into 
+one attribute as she can by pumping the points into another.
+
+
+--- PAGE BREAK ---
+
+336 
+FUNDAMENTALS OF GAME DESIGN
+Also, make sure that spending a point on one attribute magniﬁ es the unit’s power 
+in that dimension to the same degree that it magniﬁ es powers in other dimensions 
+if the player spends that point on any other attributes. This means that, for exam-
+ple, if the player can spend 10 points on strength to double the unit’s strength, 
+spending 10 points on intelligence should not multiply the unit’s intelligence by 
+1000. If using a point on intelligence produces a signiﬁ cantly greater chance of 
+winning than using it on strength, a dominant strategy will emerge: Players will 
+always put all their points into intelligence.
+THE EXAMPLE OF STARCRAFT
+StarCraft offers the most well-balanced combination of asymmetric features in any 
+war game available, which explains why, despite being over 10 years old, it remains 
+a favorite at gaming tournaments. The game offers players a choice of three races 
+called the Terrans (or humans), the Protoss, and the Zerg. Each race produces ﬂ ying 
+attack units, construction units, small infantry units, and so on. Most important, 
+building these units carries approximately equivalent costs, in terms of raw materi-
+als needed: A Zerg, a Protoss, and a Terran each must use similar amounts of 
+resources to build units that provide equivalent ﬁ ghting power. The capabilities of 
+the units, however, vary from race to race; therefore, the game is asymmetric. The 
+Terran construction unit can repair damaged units, so assigning additional con-
+struction units to a job can speed repairs. Damaged Zerg units may heal themselves 
+without a repair unit, but only at a ﬁ xed rate. Protoss units possess both health, 
+which cannot be replaced by any means, and shields, which the Protoss may 
+recharge at special locations. Because Protoss units possess both health and shields, 
+they usually cost about twice as much as their counterparts in the other races.
+StarCraft is an excellent example of a well-balanced asymmetric game, and well 
+worth taking the time to study. Buy a strategy guide for the game and read about 
+the attributes of the units. Notice how their costs tend to balance their abilities. 
+The balance in StarCraft makes use of both direct costs (computed from the amount 
+of raw material required to build a unit) and shadow costs—hidden weaknesses.
+Balance Issues for Persistent Worlds
+Persistent worlds are multiplayer online games that run continuously, offering a 
+game world that persists even if a player is not logged in. Chapter 21, “Online 
+Games,” discusses persistent worlds but this section addresses a couple of issues
+in the context of balancing.
+Persistent worlds are never symmetric and are always intrinsically unbalanced 
+because long-time players accumulate signiﬁ cant resources and experience that put 
+newcomers at a disadvantage. As a result, online games must provide protection and 
+encouragement for beginning players. Most now allow players to avoid PvP combat 
+unless they speciﬁ cally want to engage in it (Chapter 21 addresses this at further 
+length), but online games must also give new players a chance to earn resources, 
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+337
+ CHAPTER 11
+explore areas without ﬁ nding them already crowded by others, take up interesting 
+occupations, and so on. A persistent world cannot be a zero-sum game: New 
+resources must constantly ﬂ ow into it from outside for new players to ﬁ nd.
+The designers of persistent worlds, unlike designers of standalone games, can rebal-
+ance on the ﬂ y, changing the rules after their customers begin play. Such rule 
+changes, while sometimes necessary, tend to cause howls of outrage from players 
+who have optimized their play according to the existing rules and enjoy the game 
+as it stands. Most persistent world games have had to implement rule changes this 
+way to rectify design errors and to correct imbalances.
+In spite of such changes, the persistent world Asheron’s Call remains fundamentally 
+unbalanced in favor of magic users. Apparently that’s what the magic users want, 
+and obviously the publishers want to hold their audience. In this case, designers 
+balance the game in such a way that the majority of players enjoy the game in the 
+way they like to play it rather than in such a way as to make the game objectively 
+fair. The aim of this balance involves ongoing sales and politics more than it 
+involves equal distribution of resources or opportunities—but as a designer, you 
+may be required to consider how market forces call for a different kind of balance.
+Making PvE Games Fair
+Because the challenges in PvE games come from the environment rather than from 
+other players, making a fair game involves more than giving all players equal 
+opportunities to succeed. In general, players expect a fair PvE game to exhibit qual-
+ities enumerated in the following list. Some may not appear to have much to do 
+with balance, but we’ll look at them here because they constitute part of a player’s 
+notion of fairness.
+■ The game should offer the player challenges at a consistent maximum level 
+of difﬁ culty, with no sudden spikes. Players regard sudden spikes in difﬁ culty as 
+unfair. The next section, “Managing Difﬁ culty,” is devoted to this important issue.
+■ The player should not suddenly lose the game without warning and through 
+no fault of his own. So-called learn-by-dying designs, once commonplace, are now 
+considered unfair. The Immortal, an old Electronic Arts game, notoriously requires 
+the player to learn by dying. Fortunately, it allows players to restart the game indef-
+initely without having to start over at the beginning, but repeated character death 
+still isn’t much fun. You can easily avoid this by providing the player with adequate 
+warnings of dangers ahead.
+■ A stalemate should not occur. Stalemates can result from deadlock (see Chapter 
+10, “Core Mechanics”) or from other combinations of circumstances that prevent 
+the player from winning or losing. If a player fails to pick up a critical item in an 
+adventure game and then passes through a one-way door that prevents him from 
+retrieving the item, he’s in a stalemate. He hasn’t lost the game, but he can’t win it 
+
+
+--- PAGE BREAK ---
+
+338 
+FUNDAMENTALS OF GAME DESIGN
+either. Well-designed games don’t let the player proceed without the item. Some 
+don’t let players put items down once they have picked them up, just to help avoid 
+this problem. Study your mechanics carefully to see if the game can ever enter a 
+state that completely precludes victory but does not meet a loss condition. If it can, 
+you should either change that state to a loss condition or—preferably—redesign the 
+mechanics to prevent the game from ever getting into that state.
+■ The game doesn’t ask the player to make critical decisions without adequate 
+information. The ZX Spectrum game Monty on the Run by Gremlin Graphics 
+required the player to choose at the beginning of the game exactly ﬁ ve items to 
+take with her as she tried to escape her pursuers. Unfortunately, it gave her no clues 
+about which items she needed; she could ﬁ nd out only by trial and error. Give play-
+ers the information they need.
+■ All the factual knowledge required to win the game should be contained 
+within the game. Players should not have to do research outside the game world to 
+win a game, with the sole exception of trivia games. Chapter 9 discusses this at 
+greater length. 
+■ The game should not require the player to meet challenges not normally 
+presented in the game’s genre (such as a formal logic puzzle in a ﬂ ight simulator). 
+If the game belongs to a hybrid genre, you must make this clear before the player 
+starts to play.
+Managing Difﬁ culty
+Psychologist Mihaly Csikszentmihalyi observed that people performing tasks enter 
+an enjoyable state of peak productivity, which he calls ﬂ ow, when (among other 
+things) their abilities balance the difﬁ culty of the tasks they face. If the challenges 
+are too difﬁ cult, people become anxious; if the challenges are too easy, people 
+become bored (Csikszentmihalyi, 1991). Csikszentmihalyi’s observations apply to 
+games as well as to other tasks. Balancing a game, then, includes managing the dif-
+ﬁ culty of its challenges to try to keep the players within the ﬂ ow state—the point at 
+which their abilities just match the problems they face. This provides another 
+example of the player-centric approach: Your goal is not simply to set a level of dif-
+ﬁ culty but to think about how to adjust that difﬁ culty to maximize the player’s 
+enjoyment. See Figure 11.2 for an illustration.
+Chapter 9, in the section “Skill, Stress, and Difﬁ culty” examined two factors, the 
+intrinsic skill required (ISR) to overcome a challenge and the stress placed on the 
+player by time pressure, that combine to form the absolute difﬁ culty of the chal-
+lenge. The remainder of this section extends the discussion of difﬁ culty to take 
+into account two additional factors, ultimately arriving at the idea of perceived difﬁ -
+culty—the type that matters to the player. As the preceding section explained, the 
+perceived difﬁ culty of a well-balanced game must remain within a certain range 
+and not have sudden spikes or dips.
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+339
+ CHAPTER 11
+Difficulty
+Anxiety
+Boredom
+F L O W
+Player Ability
+Because game challenges fall into many extremely different domains—physical 
+coordination, factual knowledge, formal logic, pattern recognition, and so forth—
+there’s no way to compare difﬁ culty across these domains. Even within a given 
+domain, such as factual knowledge challenges, it may be hard to decide when one 
+challenge is more difﬁ cult than another; questions of fact that some audiences ﬁ nd 
+hard are easy for other audiences. Most Americans would be unable to answer 
+many factual knowledge questions about the history of Angola, and 8-year-olds 
+would certainly struggle with complex logic puzzles. Consequently, the following 
+discussion makes no reference to any audience or unit of measure.
+Factors Outside the Designer’s Control
+In managing the difﬁ culty of a game, you command a number of factors, but a few 
+remain outside your knowledge or control. You cannot know how much time the 
+player has already spent playing other games similar to yours—or, more accurately, 
+facing challenges similar to those that you offer. This factor is called previous experi-
+ence. (The experience the player gains while playing your game is called in-game 
+experience.)
+You also cannot know how much native talent the player brings to the game: hand-
+eye coordination, reasoning faculties, and so on. As a result, we can’t include either 
+previous experience or native talent in our calculation of perceived difﬁ culty. We 
+look into these factors when we come to the question of difﬁ culty modes in the 
+later section “Establishing Difﬁ culty Modes.”
+Finally, in multiplayer games, the skill of the player’s opponents plays the greatest 
+role in determining how hard it is to beat them, and you do not control that. 
+FIGURE 11.2 
+The balance 
+between difﬁ culty 
+and ability, producing 
+Csikszentmihalyi’s 
+idea of ﬂ ow
+
+
+--- PAGE BREAK ---
+
+340 
+FUNDAMENTALS OF GAME DESIGN
+Consequently, you don’t have to put as much effort into managing difﬁ culty 
+throughout the game, so long as the game is fair. You still have to set the difﬁ culty 
+of individual challenges posed by the environment in a multiplayer game, however. 
+The height of the basketball hoop and the size of the rim determine how hard it is 
+to shoot a ball through the hoop in absolute terms, but how hard it is to win the 
+game depends on the quality of the opposing team.
+OFFERING CHEATS TO THE PLAYER
+Many games try to account for differences in previous experience and native talent 
+among the players by offering so-called cheats: hidden options that the player may use 
+to gain an extra advantage. Cheats originally arose as a convenience feature for game 
+testers, allowing them to jump ahead in the game, bypass certain challenges, and so on, 
+so that they could go quickly to the part of the game they needed to test. Eventually 
+designers realized that players could beneﬁ t from cheats too, and they began to leave the 
+cheats as hidden features in the shipped version of the product. This practice is now so 
+widespread that it has become standard.
+In spite of its ubiquity, however, if your design depends on the use of cheats, your game 
+is poorly balanced. If a player cannot get through a game without using a cheat, the 
+game is too hard. Instead of offering a hidden cheat that the player must search the 
+Internet to discover, simply build the cheat in as a normal feature of the game’s easiest 
+difﬁ culty mode and leave it out of the harder modes.
+Types of Difﬁ culty
+Players care most about perceived difﬁ culty; what matters is how hard the player 
+ﬁ nds surmounting a given challenge. To design a challenge at your target level of 
+perceived difﬁ culty, you must take into account four factors: intrinsic skill required 
+and stress, both introduced in Chapter 9, as well as power provided and in-game 
+experience, deﬁ ned shortly. We’ll also examine absolute difﬁ culty and relative dif-
+ﬁ culty, concepts that are helpful when you are trying to gauge in advance how 
+difﬁ cult players will ﬁ nd the challenges you design for them.
+ABSOLUTE DIFFICULTY
+To judge the absolute difﬁ culty of a challenge, compare the amounts of intrinsic skill 
+required to meet the challenges and the stress that the challenge imposes on a triv-
+ial challenge of the same type. For instance, in an action game, a trivial enemy 
+would stand still, could not harm the avatar, and could be killed with one punch. If 
+you design another enemy that takes more effort to kill (because it has more health 
+points), that moves around (requiring more intrinsic skill to hit), and that hits the 
+avatar back (thereby placing the player under time pressure—stress—to kill the 
+enemy before the enemy kills the avatar), you can be conﬁ dent you have designed 
+NOTE The designer 
+controls four key 
+factors that create 
+perceived difﬁ culty: 
+intrinsic skill required, 
+stress, power provided 
+by the game, and 
+in-game experience. 
+The major factors the 
+designer cannot control 
+are previous experience 
+and native talent. 
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+341
+ CHAPTER 11
+an enemy more difﬁ cult to defeat, in absolute terms, than the trivial enemy that 
+established the baseline. In effect, the absolute difﬁ culty of a challenge equals the 
+intrinsic skill required and the stress of the challenge compared to the trivial case.
+You will ﬁ nd the concept of absolute difﬁ culty useful when you need to compare 
+the difﬁ culty levels of different challenges. In general, if one enemy has twice as 
+many health points as another, all other things being equal, it survives twice as 
+long under assault, making it twice as hard to defeat.
+RELATIVE DIFFICULTY AND POWER PROVIDED
+You cannot determine how the player perceives the difﬁ culty of a challenge 
+through absolute difﬁ culty alone. You must also take into account two more fac-
+tors. The ﬁ rst is the amount of power that the game gives to the player to meet the 
+challenge. Power provided measures, by means appropriate to the situation, the play-
+er’s strength: the health and powers of his avatar, the size and makeup of his army, 
+the performance characteristics of his racing car, or whatever factors apply. In the 
+simple example described in the previous section, power provided would refer to 
+the amount of damage the avatar can do when hitting the enemy and the avatar’s 
+resistance to damage: the number of health points that he has to lose before dying. 
+The relative difﬁ culty is the difﬁ culty of a challenge relative to the player’s power to 
+meet that challenge. For example, in an RPG, a player playing a level 1 knight will 
+ﬁ nd it much harder, in absolute terms, to defeat a large enemy than a small one. 
+But a player playing a level 5 knight won’t ﬁ nd it nearly so hard to defeat that same 
+large enemy because the game provides a level 5 knight with so much more power 
+than it provides a level 1 knight.
+If the power the game provides to the player doesn’t change throughout the game, 
+then you may ignore this distinction between absolute and relative difﬁ culty. But 
+most games include an upgrade progression whereby the player gains power as the 
+game progresses because the new powers keep the player interested in the game and 
+give her the feeling of accomplishing more. As a result, when level designers build 
+challenges into the game world, they must also take into account the power pro-
+vided to the player to meet those challenges. The level designers have to know, for 
+example, that by the time the player reaches the fourth level, he will have earned 
+three major weapon upgrades and a faster vehicle, so they set the difﬁ culty of the 
+fourth level’s challenges relative to that level of power provided. To simplify man-
+aging the difﬁ culty, many games don’t allow the player to carry powers over from 
+level to level; instead, the level designers themselves set the amount of power pro-
+vided separately for each level and take it into account accordingly as they devise 
+challenges. In persistent worlds, in which each individual player has his own 
+amount of power provided, earned through his earlier play, the game must either 
+warn players in advance against trying a mission that is too hard or ﬂ atly exclude 
+them from such missions.
+NOTE Power pro-
+vided is not related 
+to native talent: It is 
+a factor you control. 
+In some games, the 
+power provided may 
+change through the 
+action of positive
+feedback.
+
+
+--- PAGE BREAK ---
+
+342 
+FUNDAMENTALS OF GAME DESIGN
+PERCEIVED DIFFICULTY AND IN-GAME EXPERIENCE
+As they progress through a game, players learn to use the game’s user interface 
+more efﬁ ciently, and they learn at an intuitive level how the core mechanics of the 
+game work. In-game experience at meeting any particular type of challenge may be 
+measured by the amount of time the player has already spent meeting similar chal-
+lenges within your game. (Remember that you cannot know how much previous 
+experience the player has playing other games.) The more in-game experience a 
+player has, the easier he perceives a given type of challenge to be. Thus, when the 
+level designers build a challenge into a level, they must take into account the play-
+er’s amount of in-game experience with the same type of challenge. If the player 
+already has a lot of in-game experience with challenges of that type, the level 
+designers should consider raising the challenge’s absolute difﬁ culty to compensate.
+The perceived difﬁ culty of a challenge—the difﬁ culty that the player actually senses, 
+and the type we are most concerned with—consists of the relative difﬁ culty minus 
+the player’s experience at meeting such challenges. Remembering that relative difﬁ -
+culty is absolute difﬁ culty minus power provided, we can put all these factors 
+together into a single equation such that
+perceived difﬁ culty = absolute difﬁ culty - (power provided + in-game experience)
+Note that there are no units of measurement for these variables, so if you want to 
+compute actual values for them, you will have to ﬁ nd a way to measure their quan-
+tities based on the challenges that you plan to include in your game. The equation 
+serves more as a useful principle for you to understand than as a value you can 
+really compute.
+Creating a Difﬁ culty Progression
+In a balanced game, the perceived difﬁ culty of challenges presented to the player 
+either should not change or should rise, so the player feels that later challenges 
+present greater difﬁ culty than those at the beginning. (If a game becomes easier to 
+play, players will deﬁ nitely feel that the game is unbalanced.) In order to achieve 
+this, you have to take into account the player’s increasing in-game experience and 
+build in appropriate increases in absolute difﬁ culty. If you wish to, you can also 
+build in increases in the power provided by the game. Figure 11.3 shows this pro-
+gression graphically. Notice the gap between the absolute and relative levels of 
+difﬁ culty. This gap represents power provided by the game to meet challenges, 
+which widens steadily as the player gains power.
+The gap between relative difﬁ culty and perceived difﬁ culty on the graph represents 
+the player’s increasing in-game experience as she plays. At the beginning of the 
+game, the perceived difﬁ culty exactly equals the relative difﬁ culty because the 
+player has no in-game experience at all. As time goes on, her perception changes as 
+she gets more practice.
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+343
+ CHAPTER 11
+Difficulty
+Time
+Absolute
+Difficulty
+Relative
+Difficulty
+Perceived
+Difficulty
+Power
+Provided to
+Meet
+Challenges
+In-Game
+Experience
+the Player
+Has Had
+If the available power grows at exactly the same rate as the absolute difﬁ culty goes 
+up, the relative difﬁ culty will be a ﬂ at line, as illustrated in Figure 11.4 (next page). 
+In that case, a level 5 knight would ﬁ nd it exactly as hard to kill a level 5 troll in 
+the middle of the game as a level 1 knight would ﬁ nd it to kill a level 1
+troll at the beginning of the game. But relative difﬁ culty should not be a ﬂ at line 
+because when you factor in the player’s increasing in-game experience, the per-
+ceived difﬁ culty actually goes down—the game gets easier. Aim to increase the 
+absolute difﬁ culty of the challenges somewhat faster than you increase the avail-
+able power to meet them. The gap between absolute and relative difﬁ culty widens 
+only slowly.
+WHEN PERCEIVED DIFFICULTY SHOULD NOT CHANGE
+The perceived difﬁ culty throughout the game should either remain ﬂ at or should rise. 
+In most games, it rises. For some players, however, it should remain ﬂ at or rise only very 
+slowly. Young children and casual gamers have a lower tolerance for frustration than 
+older and more hardcore players. Mobility-impaired players may not get as much beneﬁ t 
+from increasing experience as fully able players in games with physical coordination 
+challenges. If you are making a game speciﬁ cally for these groups, try to keep the per-
+ceived difﬁ culty level nearly ﬂ at throughout the course of the game.
+TIP In a long game, 
+relative difﬁ culty must 
+increase over time to 
+counteract the player’s 
+growing in-game 
+experience, or he will 
+perceive the game as 
+getting easier and 
+easier. 
+FIGURE 11.3
+Absolute, relative, 
+and perceived levels 
+of difﬁ culty
+
+
+--- PAGE BREAK ---
+
+344 
+FUNDAMENTALS OF GAME DESIGN
+Difficulty
+Time
+Absolute
+Difficulty
+Relative
+Difficulty
+Perceived
+Difficulty
+Power
+Provided to
+Meet
+Challenges
+In-Game
+Experience
+the Player
+Has Had
+Even if the perceived difﬁ culty of a game rises only slowly, you do want the player 
+to feel he attains bigger and bigger accomplishments as he goes. To achieve this, 
+you must take into account all the factors pertaining to difﬁ culty already discussed. 
+Use the following guidelines:
+■ Increase the absolute difﬁ culty of challenges over time.
+■ Increase the power available to the player to meet those challenges at a some-
+what lower rate. (See the later section “Understanding Positive Feedback.”)
+■ Be sure the player doesn’t gain experience so fast that challenges start to feel as 
+if they’re getting easier rather than harder. Space challenges so that their relative 
+difﬁ culty increases slightly faster than the in-game experience increases.
+■ Play-test your game to look for any dramatic spikes or dips in the perceived difﬁ -
+culty of its challenges so you can iron them out. A sharp, unanticipated rise in the 
+game’s difﬁ culty will discourage many players and may prevent them from ﬁ nish-
+ing the game even if the difﬁ culty quickly falls again.
+■ Start each game level at a perceived difﬁ culty somewhat lower than that at 
+which the preceding level ended, and increase the difﬁ culty during the course of 
+each level as well. Each game level should also take a little longer to play through 
+and have a slightly steeper rate of difﬁ culty growth than the one before. A graph 
+explains this process best; Figure 11.5 illustrates a game with only ﬁ ve levels. This 
+FIGURE 11.4
+If relative difﬁ culty 
+is ﬂ at, perceived 
+difﬁ culty goes down 
+as the player gains 
+experience. 
+NOTE In a game 
+with more than ﬁ ve 
+levels, the rate of 
+difﬁ culty should not 
+increase as steeply as 
+that shown in Figure 
+11.5. Also note that the 
+ﬁ gure doesn’t illustrat-
+ing the pacing within 
+a level, only the 
+general progress of 
+the whole game.
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+345
+ CHAPTER 11
+sawtooth shape creates good pacing over the course of the game. Chapter 12, 
+“General Principles of Level Design,” discusses pacing at greater length. 
+Perceived Difficulty
+Time
+Level 1
+Level 2
+Level 3
+Level 4
+Level 5
+DESIGN RULE Don’t Jump Difﬁ culty from Level to Level
+Do not introduce sudden difﬁ culty jumps between the end of one level and the beginning 
+of the next. There is a good chance the player saved the game after completing the previ-
+ous level and has not played it for some time, so she might have lost some of the beneﬁ t 
+of her experience.
+Establishing Difﬁ culty Modes
+In creating a single-player game, you should allow the player to choose how difﬁ -
+cult the game will be, typically with three options labeled easy, normal, and hard, 
+or similar terms. When players make this choice, they’re playing in a difﬁ culty mode,
+such as easy mode or normal mode. (Don’t confuse these with gameplay modes.)
+Multiplayer games don’t always offer different difﬁ culty modes because in many 
+multiplayer games the player’s skill determines how hard it is for others to beat her 
+or for her to beat them. But in multiplayer games in which the environment itself 
+sets challenges for the players, such as a road race, the players may want to choose 
+the difﬁ culty of the environment’s challenges—to select easy, normal, or hard 
+courses to race on, for example.
+When you create a game that offers the player a choice of multiple difﬁ culty 
+modes, in effect you promise that the perceived difﬁ culty of the game will never
+go above a certain point throughout a game level. 
+How you adjust the difﬁ culty of challenges for different modes depends on the 
+challenges and on the genre of your game. In action and action-adventure games, 
+FIGURE 11.5
+A sawtooth difﬁ culty 
+progression across 
+multiple game levels
+
+
+--- PAGE BREAK ---
+
+346 
+FUNDAMENTALS OF GAME DESIGN
+for example, designers normally give the enemies more health, allow them to do 
+more damage, and make them more numerous. Designers also sometimes adjust 
+the AI of enemies and artiﬁ cial opponents, making them smarter or more aware of 
+threats. Chapter 9 discusses how to adjust the absolute difﬁ culty of different kinds 
+of challenges.
+WHY OFFER DIFFICULTY MODES?
+Offering multiple difﬁ culty modes allows the player to set the difﬁ culty of the game in 
+keeping with the two factors you cannot know or control: the player’s previous experi-
+ence with similar types of games and the player’s native talent. Although nobody buys a 
+game speciﬁ cally because it offers multiple difﬁ culty modes, a great many people don’t
+buy games that they think might be too hard for them to play. Including multiple difﬁ -
+culty modes increases the market for your game by making it accessible to a broader 
+range of players. In addition, difﬁ culty modes give the player better value for the money 
+at comparatively little development cost. Once players complete the game in an easy 
+mode, they might enjoy playing it again in a harder mode. If it has only one mode, 
+they’re less likely to enjoy playing through it a second time.
+Not all genres are suited to difﬁ culty modes, and some designers feel that they are an 
+outdated way to handle the variation in the players’ native talent and previous experi-
+ence. An alternative is to use techniques of dynamic difﬁ culty adjustment (DDA), also 
+sometimes called adaptive difﬁ culty. (Dynamic difﬁ culty adjustment appears in a later 
+sidebar.) Although it might be desirable to only use DDA in an ideal world, in practice not 
+all teams have the resources to build and tune a DDA system. Furthermore, players like 
+having difﬁ culty modes and are used to them—which is a good reason to offer them.
+DESIGN RULE Easy Mode Means Easy!
+Some games, usually those built by game developers who are also hardcore gamers, offer 
+the player an easy mode that isn’t really easy at all. If you’re going to call it “Easy Mode,” 
+it really should be easy for even an inexperienced player. Players choose Easy Mode for a 
+reason; if they want a more challenging experience, they can choose a harder mode. Don’t 
+assume that you know what “easy” is. Try your game out on some inexperienced players 
+and see how they react, then tune your Easy Mode for them.
+In some cases, you may not be able to adjust the difﬁ culty level of a challenge at 
+all. With something like a static obstacle, such as a cliff the avatar must climb, the 
+challenge is built into the shape of the cliff, and adjusting its difﬁ culty would mean 
+redesigning the landscape on the ﬂ y. Instead, give the player an alternative route 
+that avoids the cliff climb in the easiest mode, but lock off the easy route in the 
+harder modes.
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+347
+ CHAPTER 11
+DYNAMIC DIFFICULTY ADJUSTMENT
+Over the years, game designers have made a number of efforts to create games that 
+detect the player’s level of skill and adapt themselves to change the player’s experience 
+accordingly. Several approaches have been tried:
+• The ﬁ rst-person shooter game Max Payne automatically adjusts the strength of
+enemies and the amount of aiming assistance provided to the player based on his
+performance. The changes work to keep the player’s experience at an appropriate
+level of difﬁ culty, but they are transparent to the user.
+• Half-Life 2 checks the state of the avatar’s health and ammunition when he breaks 
+open a crate in the game world, and adjusts the contents of the crate accordingly. If he
+is healthy and well supplied, he might ﬁ nd little or nothing, but if he is short of one of 
+these resources, he might ﬁ nd medical kits or spare ammunition.
+• The racing game Burnout 2: Point of Impact automatically changes the performance of 
+computer-controlled drivers to keep them near the player’s car regardless of how well or 
+poorly she does. No matter what the skill level of the player, this approach ensures a 
+close race.
+• Crash Bandicoot, an action game, offers the player extra shields against attack if he 
+fails to get through a certain section too many times in a row. Players ﬁ nd this mechanism 
+rather obvious. Furthermore, rather than being a global system like Max Payne’s, it had 
+to be implemented separately for each region of the game where it offered extra shields. 
+• Madden NFL 09 gives the player a series of explicit tests in its “Virtual Training 
+Center,” then adjusts the difﬁ culty of the gameplay in the real game based on his perfor-
+mance in the tests.
+• God of War, another action game, detects when the player is dying frequently and 
+offers him the chance to play again in a lower difﬁ culty mode. In this case, the game 
+doesn’t adapt its difﬁ culty; it simply offers the player the chance to choose an easier mode. 
+Some players complain that they ﬁ nd this patronizing; presumably others ﬁ nd it a relief.
+DDA systems such as those used in Max Payne and Burnout 2 are the subject of consider-
+able debate within the game industry and for the moment remain experiments rather 
+than standard industry techniques. Some designers believe that no automated system 
+can accurately predict how hard a player wants his experience to be, so they should not 
+even be tried. In fact, as with everything else in game development, there are tradeoffs. 
+Good DDA systems are time-consuming to build and tune, but they can signiﬁ cantly 
+enhance the player’s experience if done well.
+continues on next page
+
+
+--- PAGE BREAK ---
+
+348 
+FUNDAMENTALS OF GAME DESIGN
+DYNAMIC DIFFICULTY ADJUSTMENT
+continued
+You should not try to implement a DDA system in a beginner-level project. Learn to build 
+and tune games in the conventional way ﬁ rst. However, if you are a more advanced 
+designer or you have been assigned the task of developing one, consider the following: 
+Any DDA system requires two mechanics: a performance-evaluation system to measure 
+how well the player is doing, and an adjustment mechanism to change the difﬁ culty of 
+the challenges he faces. How you do this will naturally depend a great deal on the kinds 
+of challenges you’re offering. 
+• Don’t use DDA as a substitute for ordinary difﬁ culty modes that the player can set. 
+Players like to have the freedom to limit the maximum difﬁ culty level of the game.
+• Make it optional, a feature the player can accept or reject. DDA systems are often used 
+in conjunction with player-settable difﬁ culty modes.
+• Use it to make the game harder but not easier. It is generally simpler to make a game 
+more difﬁ cult than to make it easier. To make a game easier under computer control, the 
+software has to determine the reason for the player’s failure, which isn’t always clear or 
+measurable. Making a game harder doesn’t depend as heavily on the computer’s under-
+standing of the reasons for the player’s success.
+• Never arbitrarily take something away from the player, especially something that he 
+feels he’s earned. It’s OK to give the enemies more weapons; it’s not OK to take weapons 
+away from the player.
+• Keep it subtle—this is the most important advice of all. The best DDA systems are 
+the ones the players never even notice. Max Payne is a good example; God of War is a 
+bad one.
+As long as your adaptive-difﬁ culty system remains an optional means of making the 
+game extra challenging for the hardcore player, it will be less prone to the problems 
+observed with such systems because the player cannot manipulate it to her advantage, 
+and she can switch it off if it becomes a problem.
+DDA is an advanced design topic, and there isn’t room to cover all its nuances here. You 
+can read more about the subject in the Gamasutra article “Difﬁ culty Modes and Dynamic 
+Difﬁ culty Adjustment” (Adams, 2008).
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+349
+ CHAPTER 11
+Understanding Positive Feedback
+Positive feedback occurs when a player’s achievement causes changes to the state of 
+the game that make a subsequent achievement easier, which in turn makes further 
+achievements easier still, and so on. The term does not refer to the effect of increas-
+ing experience but to a phenomenon of the core mechanics that occurs even if the 
+player’s performance does not improve with experience. The core mechanics often 
+reward achievements with assets that the player can convert into power to make 
+further achievements easier. Figure 11.6 shows a feedback relationship diagram.
+Monopoly, as usual, provides a classic example. When a player achieves a monopoly 
+by buying a group of related properties, the player may charge higher rents to any 
+opponent who lands on these properties—the owner’s reward for the achievement. 
+The player may then use the money to purchase more property and collect more 
+monopolies, thus producing a better chance of earning still more money.
+Some games feature an even closer relationship between achievement and power in 
+which the player’s reward for achievement is power. The reward doesn’t come in an 
+intermediate form, such as money, that must be converted into power by buying a 
+weapon or a spell. Whichever side loses a piece in a game of chess then plays with a 
+depleted force, so the player who takes the piece obtains more power relative to his 
+opponent. In PvP games such as chess, achieving the lead often confers some 
+advantage upon the leader that makes it easy for her to stay in the lead and difﬁ cult 
+for the others to overtake her.
+Not all games include positive feedback. If overcoming challenges does not produce 
+a reward that the player can use to help him overcome further challenges, no feed-
+back cycle exists. In a javelin competition, a good throw of the javelin does not 
+produce additional power that inﬂ uences subsequent throws.
+earns…
+Achievement
+Reward
+Power
+eases…
+next…
+can be traded 
+for more…
+FIGURE 11.6
+The positive feedback 
+relationship among 
+achievements, 
+rewards, and power 
+
+
+--- PAGE BREAK ---
+
+350 
+FUNDAMENTALS OF GAME DESIGN
+Beneﬁ ts of Positive Feedback
+Positive feedback can beneﬁ t your game in two ways:
+■ Positive feedback discourages stalemate. A well-balanced PvP game should 
+only rarely result in a stalemate, and PvE games should never end in stalemate. 
+Positive feedback tends to bring games to an end because a player who takes a 
+decided lead becomes unstoppable.
+■ Positive feedback rewards success and provides that reward in a useful form 
+rather than a purely cosmetic form, such as a higher score. Even though the per-
+ceived difﬁ culty of challenges may increase, thus requiring the player to work 
+harder nearer the end of the game, she still feels rewarded by a sense of power and 
+growth at being able to do things she could not do at the beginning of the game. 
+Because avatar growth is one of the key goals in role-playing games, the positive 
+feedback cycle serves as the central design feature of the internal economy of com-
+puter role-playing games.
+Controlling Positive Feedback
+Although positive feedback generally beneﬁ ts by helping bring a game to an appro-
+priately timed end, especially in PvP games that involve direct conﬂ ict between the 
+players, you must not allow positive feedback to operate so quickly that the game 
+ends too soon or a player who falls behind never has any chance to catch up. Part 
+of balancing your game will consist of adjusting your positive feedback cycle to pre-
+vent these problems.
+Here are six different ways of controlling the rate of positive feedback:
+■ Don’t provide too much power as a reward for success. In chess, taking one
+of the opponent’s pieces gives the player an added measure of power. In shogi 
+(Japanese chess), the player can then add that piece to his own side, acquiring even 
+more power. Introducing the piece directly would give the player too great an 
+advantage; instead, it comes in as a weaker piece, which somewhat reduces the size 
+of the reward. Similarly, in many war games, such as Warcraft, a player can destroy 
+enemy factories, but he cannot capture them and use them to produce weapons for 
+his own side. If he could do that, he would become unstoppable too quickly. (In 
+real wars, armies often destroy their own production facilities and materiel to pre-
+vent them falling into enemy hands for precisely this reason.)
+■ Introduce negative feedback. Negative feedback associates a cost with achieve-
+ment to counteract the beneﬁ t—a negative reward, in other words. You may do this 
+explicitly or allow it to happen automatically as a function of the gameplay. In 
+Dungeon Keeper, the player can convert enemy creatures to ﬁ ght for her own side, 
+but once she does so, she has to provide food, money, and living space for them—
+explicit costs associated with adding them to her army. In the pool game eight ball, 
+the greater the lead a player has on his opponent, the more difﬁ cult it becomes to 
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+351
+ CHAPTER 11
+sink shots because he has fewer balls to target on the table, and his opponent has 
+more balls left to get in the way. Pool doesn’t include positive feedback to help the 
+leader, so this negative feedback actually tends to keep games close.
+■ Raise the absolute difﬁ culty level of challenges as the player proceeds. This 
+approach applies primarily to PvE games such as role-playing games. As the player 
+gains experience points and treasure through successful combat, he obtains more 
+and more power through positive feedback. In order to continue to offer him 
+meaningful challenges, increase the strength and numbers of the enemy. Defeating 
+stronger enemies yields larger rewards, so the cycle continues. Near the end of the 
+game, he ﬁ ghts enemies hundreds of times more difﬁ cult to beat—in absolute terms—
+than those that he fought at the beginning, and this gives him a great sense of 
+accomplishment. But because you have matched the absolute difﬁ culty of the chal-
+lenges to the power you provide, the perceived difﬁ culty remains under control.
+■ Allow collusion against the leader. In games with three or more players, you 
+can write the rules in such a way that the other players can collaborate against the 
+player in the lead. The collaborating forces may be sufﬁ cient to overcome the 
+effects of positive feedback when the power of a single player might not be. 
+Diplomacy encourages collusion—forming alliances is the main point of the game.
+■ Deﬁ ne victory in terms unrelated to the feedback cycle. If you deﬁ ne the vic-
+tory condition of your game explicitly in terms of player rewards, power, or success 
+at achievements that make up parts of the positive feedback cycle, then positive 
+feedback will hasten victory. But you can also deﬁ ne victory in other terms. Taking 
+a piece in chess confers an advantage to whichever player took it, but the victory 
+condition in chess requires the player to checkmate his opponent’s king, not to 
+take the most pieces. Although a player may achieve the victory condition more 
+easily with more pieces, it can also be useful to sacriﬁ ce a piece for strategic 
+reasons.
+■ Use the effects of chance to reduce the size of the player’s rewards. Role-
+playing games do this to some degree by randomly varying the amount of loot that 
+enemies yield to the player when they are defeated. By occasionally giving players a 
+lower reward for their achievements, you slow down positive feedback.
+Positive Feedback in Action
+The set of graphs in Figure 11.7 illustrates the effects of positive feedback, or its 
+absence, in a variety of circumstances. Each graph shows the state of a hypothetical 
+game between two players, A and B, over time. When the curve passes above the 
+center line and into A’s area, A leads; when it goes below the center, B leads. When 
+the curve reaches the dotted line on one side or the other, the game ends and the 
+player indicated wins.
+
+
+--- PAGE BREAK ---
+
+352
+FUNDAMENTALS OF GAME DESIGN
+FIGURE 11.7 Graphs showing the effects of different adjustments to positive feedback
+Consider the following observations about these graphs:
+■ Graph 1 represents a game, such as a sprint foot race, in which no feedback loop 
+exists to augment player power. A, the faster runner, wins.
+■ Graph 2’s game lasts only a short time. B takes the lead and wins almost
+immediately. A’s few efforts to catch up allow A to gain ground temporarily but 
+ultimately fail. This graph describes an unfair game, badly balanced in favor of B.
+■ Graph 3 depicts a stalemate, with neither side ever getting far enough ahead for 
+positive feedback to take hold and lead to victory. The game probably involves little 
+positive feedback (or possibly none) and closely matched competitors.
+■ Graph 4 shows a game with fairly balanced rules but one in which positive feed-
+back operates too quickly. B goes ahead, then A, then B again, and then A goes 
+ahead just enough for a dramatic positive feedback cycle to make A unstoppable.
+■ Graph 5 indicates a game with a feedback cycle such that being in the lead 
+becomes a profound disadvantage, the effect of powerful negative feedback. A
+and B gain substantial leads and then alternately fall substantially behind so that 
+the graph shows wild swings. Mario Kart and other multiplayer local games not 
+intended to be taken too seriously sometimes use this mechanism.
+■ Graph 6 shows an ideal game progression: The lead changes hands and both 
+players have a good chance of winning the game for a while, but eventually A’s 
+superior play places her in a leading position that she never yields. The action of 
+positive feedback ensures that B, the less-skilled player, cannot catch up, although 
+B has a pretty good chance for about two-thirds of the game and perhaps could 
+have won if A’s attention had wavered; that is, the outcome wasn’t a foregone 
+conclusion.
+A
+B
+1. Sprint foot race
+(no feedback)
+A
+B
+2. Unbalanced rules in
+B’s favor
+A
+B
+3. Stalemate (insufficient
+feedback to produce victory)
+A
+B
+4. Balanced rules, but
+feedback operates too fast
+A
+B
+5. Wild swings in the lead
+(powerful negative feedback)
+A
+B
+6. Ideal game progression
+(lead changes hands, better
+player wins eventually)
+
+
+--- PAGE BREAK ---
+
+GAME BALANCING 
+353
+ CHAPTER 11
+Other Balance Considerations
+This section addresses two undesirable qualities of unbalanced games, stagnation 
+and triviality, that you should seek to avoid.
+Avoiding Stagnation
+Stagnation occurs in a PvE game when the game leaves the player in a position
+in which he simply does not know what to do next; he believes that he is stuck. 
+(Don’t confuse this with a stalemate, a situation in which the players cannot go
+on no matter what.) Stagnation tends to be a result of a design that doesn’t give
+the player enough information to proceed. First-person shooters that require a 
+player to run all over the place trying to ﬁ nd the hidden switch that opens the
+level exit, after having killed all her opponents, stagnate. Once the player kills all 
+the opponents, the level exit should be obvious.
+Stagnation seldom occurs in PvP games because such games almost always put the 
+competitors in direct conﬂ ict with one another and provide them with means to 
+act against each other’s forces. Stagnation occasionally happens when one player’s 
+forces are so reduced that there is little he can do. But because he usually loses the 
+game soon afterward, this doesn’t represent a serious stagnation problem. The most 
+common complaint about stagnation in PvP games occurs in scenarios where the 
+victory condition requires a player to destroy all enemy units, and one last enemy 
+unit (often not even a combat unit) remains hidden in an obscure location. You 
+can avoid this by setting a different victory condition, such as to destroy the ene-
+my’s headquarters instead of all his units.
+Stagnation can be difﬁ cult to avoid in a sprawling action-adventure with so many 
+different combinations and conﬁ gurations that you can’t reliably anticipate what 
+the player may or may not try. However, you can still give the players information 
+as they progress:
+■ Tackle stagnation passively by hiding in plain sight clues about how to proceed.
+■ Tackle stagnation actively by having the game detect when the player wanders 
+around aimlessly; make the game provide a few gentle nudges to guide her in the 
+right direction.
+Never let the player feel bewildered. If he has to resort to outside assistance in order 
+to proceed—whether by cheating, reading a strategy guide, or looking up the 
+answers on the web—your game contains a design ﬂ aw.
+Avoiding Trivialities
+Players don’t want to be bogged down in minutiae when they can be directing the 
+big decisions. Forcing the player to decide where to store the gold when she must 
+try to build an army and plan a campaign strategy merely distracts her with 
+
+
+--- PAGE BREAK ---
+
+354 
+FUNDAMENTALS OF GAME DESIGN
+uninteresting details. It moves the player out of the ﬂ ow state and into boredom. 
+Likewise, any gameplay decision that has no real effect on the game world, or any 
+decision that requires the player to pick from a slate of options that includes only 
+one reasonable option, is trivial. Let the computer handle it. (This doesn’t apply to 
+non-gameplay decisions, such as self-expressive acts—choosing a team color may 
+not affect the gameplay, but the player should still be allowed to do it.)
+Sid Meier’s Alpha Centauri handles this magniﬁ cently. In this game, the player can 
+choose to handle every decision from overall control of the planet all the way 
+down to production and direction of individual units, or she can let a computer-
+controlled manager control her bases and her units. This accommodates players 
+who want to micromanage every aspect of the game as well as those interested
+only in grand strategy. This is a superior design because it gives the player a choice. 
+Other games force the player to do all the micromanagement, whether she wants
+to or not.
+Triviality can add to the player’s enjoyment when you use it well and not too often. 
+Consider a cops and robbers game. The player’s avatar, a police ofﬁ cer, patrols the 
+city as usual, on the lookout for crime, when he spots a group of suspicious-looking 
+characters on the corner. He stops the car, and they immediately run down an 
+alleyway and vanish; the player won’t meet these particular characters again, and 
+they do not form part of the game’s story. These characters provide local color 
+rather than part of the gameplay. If you don’t lead the player too far down the 
+wrong path, you can use such trivial interaction to give the impression that there
+is more to the city than meets the eye.
+Design to Make Tuning Easy
+In the later stages of game development, you will spend a great deal of time tweak-
+ing and tuning your game to improve its balance and remove any dominant 
+strategies or difﬁ culty spikes that may have crept in. Here you’ll ﬁ nd a few sugges-
+tions to make this process easier.
+Chapter 10 explains that you should seek to generalize when you can, to create a 
+set of mechanics that apply to a wide variety of entities rather than creating sepa-
+rate mechanics for each entity. So, for example, in any game that involves combat, 
+try to create one set of mechanics that governs combat between units regardless of 
+what types of units the combat involves. Not only does this simplify the program-
+ming—the developers can concentrate on implementing the core mechanics and 
+then adding entities on top of those core rules, rather than coding each entity sepa-
+rately—it also simpliﬁ es tuning the design.
+If each entity has its own mechanics, the mechanics for each entity must be tuned 
+separately, which could potentially cause balance problems. If you use generalized 
+mechanics as described in “Look for Patterns, Then Generalize” in Chapter 10, 
+
+
+--- PAGE BREAK ---
+

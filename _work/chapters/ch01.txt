@@ -1,0 +1,1268 @@
+■ Chapter 1: Games and Video Games
+■ Chapter 2: Design Components and Processes
+■ Chapter 3: Game Concepts
+■ Chapter 4: Game Worlds
+■ Chapter 5: Creative and Expressive Play
+■ Chapter 6: Character Development
+■ Chapter 7: Storytelling and Narrative
+■ Chapter 8: User Interfaces
+■ Chapter 9: Gameplay
+■ Chapter 10: Core Mechanics
+■ Chapter 11: Game Balancing
+■ Chapter 12: General Principles of Level Design
+PART ONE
+1
+
+
+--- PAGE BREAK ---
+
+Games and Video Games
+Before discussing game design, we have to establish what games are and how they 
+work. You might think that everybody knows what a game is, but there are so 
+many kinds of games in the world that it’s best not to make assumptions based on 
+personal experience alone. We’ll start by identifying the essential elements that a 
+game must have, and then deﬁ ne what a game is based on those elements. Then 
+we’ll go on to discuss what computers bring to gaming and how video games are 
+different from conventional games. Finally, we’ll look at the speciﬁ c ways in which 
+video games entertain people and note some other enjoyable features of video 
+games that you must learn how to design.
+What Is a Game?
+Work consists of whatever a body is obliged to do, and . . . Play consists of whatever a 
+body is not obliged to do.
+—MARK TWAIN, THE ADVENTURES OF TOM SAWYER
+Games arise from the human desire for play and from our capacity to pretend. Play
+is a wide category of nonessential, and usually recreational, human activities that 
+are often socially signiﬁ cant as well. Pretending is the mental ability to establish a 
+notional reality that the pretender knows is different from the real world and that 
+the pretender can create, abandon, or change at will. Playing and pretending are 
+essential elements of playing games. Both have been studied extensively as cultural 
+and psychological phenomena.
+Toys, Puzzles, and Games 
+In English, we use the word play to describe how we entertain ourselves with toys, 
+puzzles, and games—although with puzzles, we more frequently say that we solve
+them. However, even though we use the same word, we do not engage in play with 
+all types of entertainment in the same way. What differentiates these types of play 
+is the presence, or absence, of rules and goals.
+Rules are instructions that dictate how to play. A toy does not come with any rules 
+about the right way to play with it, nor does it come with a particular goal that you 
+as a player should try to achieve. You may play with a ball or a stick any way you 
+like. In fact, you may pretend that it is something else entirely. Toys that model 
+other objects (such as a baby doll that resembles a real baby) might suggest an 
+CHAPTER 1
+2
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+3
+ CHAPTER 1
+appropriate way to play, but the suggestion is not a rule. In fact, young children
+get special enjoyment by playing with toys in a way that subverts their intended 
+purpose, such as treating a doll as a car.
+If you add a distinct goal to playing—a particular objective that you are trying to 
+achieve—then the article being played with is not a toy but a puzzle. Puzzles have 
+one rule that deﬁ nes the goal, but they seldom have rules that dictate how you 
+must get to the goal. Some approaches might be fruitless, but none are actually 
+prohibited.
+A game includes both rules and a goal. Playing a game requires pretending and it is 
+a more structured activity than playing with toys or puzzles. As such, it requires 
+more maturity. As children develop longer attention spans, they start to play with 
+puzzles and then to play games. Multiplayer games also require social cooperation, 
+another thing that children learn to do as they mature.
+The Deﬁ nition of a Game
+Deﬁ ning any term that refers to a broad class of human behaviors is a tricky business,
+because if anyone can ﬁ nd a single counterexample, the deﬁ nition is inaccurate. 
+Efforts to ﬁ nd unassailable deﬁ nitions of such terms usually produce results so gen-
+eral as to be useless for practical purposes. The alternative is to acknowledge that a 
+deﬁ nition is not rigorous but serves as a convenient description to cover the major-
+ity of cases. In this book, we’ll use the following nonrigorous deﬁ nition of a game:
+GAME A game is a type of play activity, conducted in the context of a pretended reality, 
+in which the participant(s) try to achieve at least one arbitrary, nontrivial goal by 
+acting in accordance with rules.
+There may be exceptions—activities that someone would instantly recognize as a 
+game but that don’t conform to this deﬁ nition. So be it. The deﬁ nition is intended 
+to be practical rather than complete.
+OTHER VIEWS
+Many people in ﬁ elds as diverse as anthropology, philosophy, history, and of course, 
+game design have attempted to deﬁ ne the word game over the years. In Rules of Play,
+Salen and Zimmerman examine several of these deﬁ nitions (Salen and Zimmerman, 2003, 
+pp. 73–80). Most, but not all, make some reference to rules, goals, play, and pretending. 
+Some include other elements such as decision-making or the quality of being a system. 
+This book doesn’t try to refute or rebut any of these; it just presents a new deﬁ nition to stand 
+beside the others. Note that some commentators, such as Raph Koster in A Theory of Fun for 
+Game Design, disparage the distinctions between toys, puzzles, and games as irrelevant 
+(Koster, 2004, p. 36). However, it is important to address them in an introductory text.
+NOTE The essential 
+elements of a game are 
+rules, goals, play, and 
+pretending. 
+
+
+--- PAGE BREAK ---
+
+4
+FUNDAMENTALS OF GAME DESIGN
+The Essential Elements of a Game
+The essential elements of a game are play, pretending, a goal, and rules. The deﬁ ni-
+tion refers to each of these elements and includes some additional conditions as 
+well. In the next few sections, we’ll look at each of these elements and their signiﬁ -
+cance in the deﬁ nition more closely.
+PLAY
+Play is a participatory form of entertainment, whereas books, ﬁ lms, and theater are 
+presentational forms. When you read a book, the author entertains you; when you 
+play, you entertain yourself. A book doesn’t change, no matter how often you read 
+it, but when you play, you make choices that affect the course of events.
+Theoreticians of literature and drama often argue that reading or watching is a con-
+scious, active process and that the audience is an active participant in those forms 
+of entertainment. The theoreticians have a point, but the issue here is with the actual
+content and not the interpretation of the content. With the rare exception of some 
+experimental works, the audience does not actually create or change the content of 
+a book or a play, even if their comprehension or interpretation does change over 
+time. Reading a book or watching a play is not passive, but it is not interactive in the 
+sense of modifying the text.
+In contrast, each time you play a game, you can make different choices and have a 
+different experience. Play ultimately includes the freedom to act and the freedom 
+to choose how you act. This freedom is not unlimited, however. Your choices are 
+constrained by the rules, and this requires you to be clever, imaginative, or skillful 
+in your play.
+This book will continue to use the term play despite the fact that you can play 
+games for a serious purpose such as learning or research.
+PRETENDING
+David: Is this a game, or is it real?
+Joshua: What’s the difference?
+—EXCHANGE BETWEEN A BOY AND HIS COMPUTER FROM THE MOVIE WARGAMES
+Pretending is the act of creating a notional reality in the mind, which is one
+element of our deﬁ nition of a game. Another name for the reality created by
+pretending is the magic circle. This is an idea that Dutch historian Johan Huizinga 
+originally identiﬁ ed in his book Homo Ludens (Huizinga, 1971) and expanded
+upon at some length in later theories of play. The magic circle is related to the
+concept of imaginary worlds in ﬁ ction and drama, and Huizinga also felt that it 
+was connected to ceremonial, spiritual, legal, and other activities. For our purposes, 
+NOTE Games are in-
+teractive. They require 
+active players whose 
+participation changes 
+the course of events. 
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+5
+ CHAPTER 1
+however, the magic circle simply refers to the boundary that divides ideas and 
+activities that are meaningful in the game from those that are meaningful in
+the real world. In other words, it deﬁ nes the boundary between reality and 
+make-believe.
+THE MAGIC CIRCLE
+Huizinga did not use the term magic circle as a generic name for the concept. His text 
+actually refers to the play-ground, or a physical space for play, of which he considers the 
+tennis court, the court of law, the stage, the magic circle (a sacred outdoor space for wor-
+ship in “primitive” religions), the temple, and many others to be examples. However, 
+theoreticians of play have since adopted the term magic circle to refer to the mental uni-
+verse established when a player pretends. That is the sense that this book uses.
+Players can even pretend things in the magic circle that are impossible in the real 
+world (for example, “Let’s pretend that I’m moving at the speed of light.”). Figure 1.1
+illustrates the magic circle.
+The deﬁ nition of a game used the term pretended reality rather than magic circle
+because the former is self-explanatory and the latter is not. However, from now
+on, we’ll refer to the magic circle because it is the more widely accepted term.
+In single-player games, the player establishes the magic circle simply by choosing to 
+play. In multiplayer games, players agree upon a convention, which in turn establishes 
+the magic circle. In other words, they all pretend together, and more important, they 
+all agree to pretend the same things; that is, to accept the same rules. Although the 
+pretended reality can seem very real to a deeply immersed player, it is still only a 
+convention and can be renounced by the player refusing to play.
+At ﬁ rst glance, you might not think much pretending is involved in a physical 
+game like soccer. After all, the players aren’t pretending to be someone else, and 
+their actions are real-world actions. Even so, the players assign artiﬁ cial signiﬁ cance 
+to the situations and events in the game, and this is an act of pretending. Figure 1.2
+illustrates the idea. In the real world, kicking a ball into a net is meaningless, but 
+FIGURE 1.1
+The magic circle, sepa-
+rating the real world 
+from the pretended 
+reality 
+NOTE Within the 
+magic circle, the play-
+ers agree to attach a 
+temporary, artiﬁ cial 
+signiﬁ cance to situa-
+tions and events in the 
+game. The magic circle 
+comes into existence 
+when the players join 
+the game—in effect, 
+when they agree to 
+abide by the rules. It 
+disappears again when 
+they abandon the game 
+or the game ends. 
+GAME CONCEPTS, 
+SITUATIONS, AND 
+EVENTS
+REAL WORLD 
+CONCEPTS, 
+SITUATIONS, 
+AND EVENTS
+THE MAGIC CIRCLE
+THE REAL WORLD
+
+
+--- PAGE BREAK ---
+
+6
+FUNDAMENTALS OF GAME DESIGN
+for the duration of a soccer game, the players (and spectators) pretend that kicking 
+the ball into the net is a good thing to do and that it beneﬁ ts the team that success-
+fully achieves it. Accepting and abiding by the rules is part of the pretending we do 
+when we play a game.
+The distinction between the real world and the pretended reality is not always 
+clear. If the events in the game are also meaningful in the real world, the magic
+circle becomes blurred. For example, various Mesoamerican Indian peoples used to 
+participate in the ball-court game, a public activity that was superﬁ cially similar to 
+basketball. From carvings that depict the game, it appears that the losers may have 
+been ritually sacriﬁ ced to the gods. If so, the game was literally a matter of life and 
+death—a matter of great importance in the real world. In spite of this, the ball-court
+game was not just a raw struggle for survival; it was played according to rules.
+Gambling, too, blurs the magic circle because when you gamble, you bet real 
+money on the outcome of a game. The process of gambling may or may not be an 
+intrinsic part of the game itself. On the one hand, you can choose to play domi-
+noes for money, but you can also play for matchsticks, or nothing at all. On the 
+other hand, betting money in craps is an intrinsic part of the game; if you don’t 
+place a bet, you’re not participating.
+A GOAL
+A game must have a goal (or object; these terms are used interchangeably through-
+out the book), and it can have more than one. As observed previously, goalless play 
+is not the same as game play. Even creative, noncompetitive play still has a goal: 
+creation. Others take this requirement for a goal even further. For example, in Rules 
+of Play, Salen and Zimmerman (Salen and Zimmerman, 2003, p. 80) require that a 
+game have a “quantiﬁ able outcome.” This deﬁ nition is too restrictive. Consider an 
+activity in which the participants collaborate to make a drawing of a scene in a lim-
+ited time, with each one holding a crayon of a different color. This activity is clearly
+a game—it includes rules, a goal, play, and pretending, and the results vary depend-
+ing on the decisions of the players—but its outcome is not quantiﬁ able. Similarly, 
+the object of SimCity is to build and manage a city without going bankrupt, and as 
+long as the player does not go bankrupt, the game continues indeﬁ nitely without 
+any outcome. In fact, the object of a game need not even be achievable, so long as 
+SCORING A GOAL
+THE MAGIC CIRCLE
+KICKING A 
+BALL INTO 
+THE NET
+THE REAL WORLD
+FIGURE 1.2
+We pretend that real-
+world events have 
+special meanings 
+inside the magic circle. 
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+7
+ CHAPTER 1
+the players try to achieve it. Most early arcade games, such as Space Invaders and 
+Breakout, gave the players an unachievable goal.
+The goal of the game is deﬁ ned by the rules and is arbitrary because the game 
+designers can deﬁ ne it any way they like. The goal of the children’s card game Go 
+Fish is to obtain books—collections of four cards of the same suit—but the deﬁ ni-
+tion of what is to be collected could be changed by changing the rules. A book has 
+no intrinsic real-world importance; it’s just a particular collection of cards. But 
+within the context of a game of Go Fish, a book has a symbolic importance because 
+the rules state that assembling it is a goal on the way to victory. The goal must be 
+nontrivial because a game must include some element of challenge. Even in a game 
+of pure chance such as craps or roulette, the players must learn to understand the 
+odds and place bets that will most likely beneﬁ t them. Similarly, in a creative game, 
+creation itself challenges the players. To do well requires skill. If the object can be 
+achieved in a single moment, without either physical or mental effort, then the 
+activity is not really a game. For example, children sometimes do a rudimentary 
+form of gambling called Odds and Evens. Each ﬂ ips a coin of identical value. If the 
+results are odd (don’t match), one child takes both coins; if they are even (do 
+match), the other does. The odds are exactly 50 percent and there is no way to 
+improve them; in fact, there is no decision-making at all. This does not qualify as
+a game under the deﬁ nition because it does not include a challenge. The object is 
+trivial and the process momentary. It is a form of betting, but not a game.
+The rules of a game frequently characterize the game’s goal as a victory condition—
+an unambiguous situation within the game at which point one or more of the 
+players are declared the winners. For example, the victory condition for chess states 
+that the ﬁ rst player to checkmate his opponent’s king (an unambiguous situation) 
+is the winner. In timed sports such as basketball, the victory condition states that 
+when time runs out (the unambiguous situation), whichever team has the most 
+points wins the game and the other team loses. Game designers can also establish 
+additional rules about ties and tie-breaking mechanisms if they think it is impor-
+tant to have a clear winner.
+The rule that determines when the game is over is called the termination condition.
+In two-player games, the termination condition is usually taken for granted: The 
+game ends when one player achieves victory. Note that the victory condition does 
+not necessarily end the game, however. In a game with more than two players, play 
+can continue to determine who comes in second, third, and so on. A foot race 
+(which is a game according to the deﬁ nition) does not end when the ﬁ rst runner 
+crosses the ﬁ nish line; it continues until the last runner does.
+A strange game. The only winning move is not to play.
+—JOSHUA, IN THE MOVIE WARGAMES
+Not all games include a victory condition. Some establish only a loss condition, a sit-
+uation that indicates the end of the game by specifying which player has lost. Such 
+a game can never be won, only abandoned. The RollerCoaster Tycoon game is a good 
+NOTE There must be 
+some challenge (non-
+trivial effort) involved 
+in trying to achieve a 
+game’s goal. The dif-
+ﬁ culty of a challenge 
+is perceived differently 
+by different players, 
+however. 
+NOTE The concepts 
+of winning and losing 
+are not essential to 
+games, but they make 
+a game more exciting. 
+A game must have a 
+goal, but the goal need 
+not be characterized as 
+victory or defeat. 
+
+
+--- PAGE BREAK ---
+
+8
+FUNDAMENTALS OF GAME DESIGN
+example: You can lose the game by running out of money and having your theme 
+park collapse, but you cannot win it.
+The rules and the goal of a game are entirely contained within the magic circle,
+but the concept of winning and losing transcends it to affect the real world as
+well. Winning is perceived as a meritorious achievement, and after the game is 
+over, players take pride in having won. Winning can also earn real-world beneﬁ ts 
+such as material rewards. But you don’t have to include the ideas of victory and 
+defeat in a game. They’re optional elements that make the game more exciting
+and meaningful to the players.
+THE RULES
+Rules are deﬁ nitions and instructions that the players agree to accept for the dura-
+tion of the game. Every game has rules, even if these rules are unwritten or taken 
+for granted.
+Rules serve several functions. They establish the object of the game and the mean-
+ings of the different activities and events that take place within the magic circle. 
+They also create a contextual framework that enables the players to know which 
+activities are permitted and to evaluate which course of action will best help them 
+achieve their goal. Among the things that the rules deﬁ ne are the following:
+■ The semiotics of the game are the meanings and relationships of the various 
+symbols that the game employs. Some symbols, such as innings and outs in base-
+ball, are purely abstract. Others, such as armies in Risk, have a parallel in the real 
+world that helps us to understand them. This book won’t go into the theory of 
+game semiotics in detail. It is a complex issue and the subject of ongoing research, 
+but it is beyond the scope of an introductory work.
+■ The gameplay consists of the challenges and actions the game offers the player.
+■ The sequence of play is the progression of activities that make up the game.
+■ The goal(s) of the game is also known as the objective of the game and is 
+deﬁ ned by the rules.
+■ The termination condition, as described in the previous section, is the condi-
+tion that ends the game (if it has one).
+■ Metarules are rules about the rules. These might indicate under what circum-
+stances the rules can change or when exceptions to them are allowed.
+As a designer, the main thing that you need to know is that rules are deﬁ nitions 
+and instructions that have meaning within the magic circle and that you are free 
+to invent abstract symbols and concepts as necessary to create a game. You must, 
+however, make them comprehensible to the players!
+The only permanent rule in Calvinball is that you can’t play it the same way twice!
+—CALVIN, IN CALVIN AND HOBBES BY BILL WATTERSON
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+9
+ CHAPTER 1
+The rules need not be especially orderly; they are, after all, arbitrary. However, they 
+should be unambiguous to avoid arguments over interpretation, and they should 
+be coherent with no conﬂ icts among them. If it is possible for conﬂ icts to arise, the 
+rules should include a metarule for determining which rule prevails. Ambiguous or 
+conﬂ icting rules are a sign of bad game design.
+Things That a Game Is Not
+Note that the deﬁ nition of a game does not mention competition or conﬂ ict. Formal 
+game theory (a branch of mathematics) requires that there be a conﬂ ict of interest 
+among the players: that is, that one or more of them is trying to oppose the activi-
+ties of one or more of the others as they try to achieve their goal while preventing 
+the others from achieving theirs. For example, Rules of Play (Salen and Zimmerman, 
+2003, p. 80) describes a game as an “artiﬁ cial conﬂ ict.” Although this concept is 
+essential to game theory, it’s too restrictive a deﬁ nition for our purposes because
+it excludes creative games and purely cooperative games. The “Competition and 
+Cooperation” section later in this chapter addresses those issues; for now, be aware 
+that games require achievement but not necessarily the opposition of forces.
+As a game designer, you should take a broad view of games. Think of a game as an 
+activity rather than as a system of rules, as some theorists do. Although all games 
+require rules, rules alone do not make a game. For a game to exist, it must be played;
+otherwise it is simply a theoretical abstraction. If you think of a game as an activ-
+ity, it focuses your attention on the player—the person for whom the game is 
+made—rather than on the rules.
+Note also that the deﬁ nition does not refer to entertainment or recreation. People 
+most often play games for entertainment, but they sometimes play games for study, 
+practice, or training in a serious subject. In this context, the deﬁ nition of play 
+becomes a bit vague because your boss can require that you “play” a game as part 
+of your “work” (and if you’re being paid to design games, you certainly should).
+In any case, clearly people don’t play games only for entertainment.
+Finally, the deﬁ nition doesn’t say anything about fun. Good games are fun and bad 
+games are not, generally speaking, but fun is an emotional response to playing a 
+game, not intrinsic to the game itself. Just because a game is not fun doesn’t mean 
+that it’s not a game. In any case, as you will see later in this chapter, fun is too nar-
+row a concept to encompass all that games can do for the player.
+Gameplay
+Many have tried to deﬁ ne what gameplay is over the years. Game designer Sid 
+Meier’s famous deﬁ nition in Game Architecture and Design is “a series of interesting 
+choices” (Rollings and Morris, 2003, p. 61). Another designer, Dino Dini, deﬁ nes it 
+as “interaction that entertains” (Dini, 2004, p. 31). Although neither of these is 
+obviously wrong, these deﬁ nitions are too general for practical use and not much 
+
+
+--- PAGE BREAK ---
+
+10
+FUNDAMENTALS OF GAME DESIGN
+help as you learn how to design a game. Again, this book uses a nonrigorous deﬁ ni-
+tion that might not cover all possible cases but that provides a basis for thinking 
+about game design. The deﬁ nition hinges on challenges and actions, so we look at 
+them ﬁ rst.
+CHALLENGES
+A challenge is any task set for the player that is nontrivial to accomplish. Overcoming
+a challenge must require either mental or physical effort. Challenges can be as sim-
+ple as getting a ball through a hoop or as complex as making a business proﬁ table. 
+Challenges can be unique, recurring, or continuing. In action video games, players 
+frequently face a recurring challenge to defeat a number of identical enemies, and 
+then having done so, they must overcome a unique challenge to defeat a particular 
+boss enemy. In a combat ﬂ ight simulator, shooting down enemy planes is a recur-
+ring challenge, whereas avoiding being hit by them is a continuing challenge. The 
+players must do both at once to be successful.
+You can also deﬁ ne a challenge in terms of other, smaller challenges. For example, 
+you can give your player an overall challenge of completing an obstacle course, and 
+you can set up the obstacle course in terms of smaller challenges such as climbing 
+over a fence, crawling under a barrier, jumping across a gap, and so on. The largest 
+challenge of all in a game is to achieve its goal, but unless the game is extremely 
+simple (such as tic-tac-toe), the players always have to surmount other challenges 
+along the way.
+Most challenges in a game are direct obstacles to achieving the goal, although 
+games might include optional challenges as well. You can include optional chal-
+lenges to help the player practice or simply to provide more things for the player to 
+do. In sports games, a team needs only to score more goals than its opponent(s) to 
+win the game, but the team may consider an optional challenge to prevent the 
+opposing team from ever scoring at all.
+The challenges in a game are established by the rules, although the rules don’t 
+always specify them precisely. In some cases, the players must ﬁ gure out what the 
+challenges are by thinking logically about the rules or by playing the game a few 
+times. For example, the rules of Othello (Reversi) state only how pieces are con-
+verted from one color to another and that the object of the game is to have the 
+most pieces of your own color when the board is ﬁ lled. As you play the game, how-
+ever, you discover that the corner spaces on the board are extremely valuable 
+because they can never be converted to your opponent’s color. Gaining control of
+a corner space is one of the major challenges of the game, but it’s not spelled out 
+explicitly in the rules.
+A challenge must be nontrivial, but that doesn’t mean that it must be difﬁ cult. 
+Young children and inexperienced players often prefer to play games with easy 
+challenges.
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+11
+ CHAPTER 1
+ACTIONS
+The rules specify what actions the players may take to overcome the challenges and 
+achieve the goal of the game. The rules deﬁ ne not only what actions are allowed 
+but also which ones are prohibited and which ones are required and under what 
+circumstances. Games also permit optional actions that are not required to sur-
+mount a challenge but add to the player’s enjoyment in other ways. For example,
+in the Grand Theft Auto games, you can listen to the radio in the car.
+Many conventional games allow any action that is not prohibited by the rules. For 
+example, in paintball, you may run, jump, crouch, crawl, climb, or make any other 
+movement that you can think of to take enemy ground. Because video games are 
+implemented by computer software, however, they can allow only actions that are 
+built into the game. A video game offers a player a ﬁ xed suite of actions to choose 
+from, which limits the number of ways in which a player can attack a challenge.
+THE DEFINITION OF GAMEPLAY
+Combining the concepts of challenges and actions produces the following deﬁ nition:
+GAMEPLAY Gameplay consists of:
+■  The challenges that a player must face to arrive at the object of the game.
+■  The actions that the player is permitted to take to address those challenges.
+This deﬁ nition lies at the heart of game design. Gameplay consists of challenges 
+and actions, and you will see this idea continually throughout the rest of the book. 
+As a designer, you must create them both together. It’s not enough to invent inter-
+esting challenges without the actions that will surmount them, nor is it enough to 
+think of exciting actions without the challenges that they are intended to address. 
+Games do sometimes permit additional actions that are not intended to solve a 
+challenge, but the essence of gameplay is the challenge/action relationship.
+Fantasy and imagination play an important role in entertaining the player, and 
+some designers consider them to be elements of gameplay; in other words, the act 
+of pretending that you are a pilot or a princess is an explicit part of the gameplay. 
+However, these elements unnecessarily complicate the deﬁ nition of gameplay. A 
+challenge might imply a fantasy role (if you’re trying to ﬂ y a plane, you must be a 
+pilot), but you should deﬁ ne the player’s fantasy independently of the gameplay for 
+reasons that the next chapter explains.
+Fairness
+Generally speaking, players expect that the rules will guarantee that the game is 
+fair. Different societies, and indeed individual players, have varying notions of 
+what is and is not fair. Fairness is not an essential element of a game but a cultur-
+ally constructed notion that lies outside the magic circle. It is, in fact, a social 
+
+
+--- PAGE BREAK ---
+
+12 
+FUNDAMENTALS OF GAME DESIGN
+metarule that the players can use to pass judgment on the rules themselves. Players 
+sometimes spontaneously decide to change the rules of a game during play if they 
+perceive that the rules are unfair or that the rules are permitting unfair behavior. 
+For all the players to enjoy a game, they must all be in general agreement about 
+what constitutes fair play.
+CHANGING THE RULES
+Whether the rules can be changed during play is usually determined by an often-unwritten 
+social convention, but in some cases, the rules themselves describe the procedure for 
+changing the rules. Games in which rules can be changed usually deﬁ ne two types of 
+rules: the mutable (changeable) and the immutable. The immutable rules include instruc-
+tions about when and how the mutable rules may be changed. Nomic, created by 
+philosopher Peter Suber, is such a game.
+It is particularly important that the players perceive a video game to be fair because,
+unlike conventional games, video games seldom give the players any way to change 
+the rules if the players don’t like them. One widely accepted deﬁ nition of fairness is 
+that all the players in a multiplayer game must have an equal chance of winning at 
+the beginning of the game. The simplest way to achieve this is to make the game 
+symmetric, as you’ll see in the next section. In single-player video games, fairness 
+is a complex issue that has to do with balance and with meeting players’ expecta-
+tions. Chapter 11, “Game Balancing,” discusses this at much greater length. 
+Symmetry and Asymmetry
+In a symmetric game, all the players play by the same rules and try to achieve the 
+same victory condition. Basketball is a symmetric game. The initial conditions, the 
+actions allowed, and the victory condition are identical for both teams. Many tradi-
+tional games such as chess and backgammon are symmetric in every respect except 
+for the fact that one player must move ﬁ rst.
+WHO GOES FIRST?
+In turn-based games, the fact that one player moves ﬁ rst can confer an advantage to one 
+side or the other. For example, in tic-tac-toe among experienced players, only the person 
+who goes ﬁ rst can win. However, if a game is designed in such a way that the advantage 
+of going ﬁ rst is slight or nonexistent, this asymmetry can be ignored. In chess, only the 
+weakest pieces on the board, pawns or knights, can move on the ﬁ rst turn, and they
+cannot move very far or establish a dominant position. The asymmetry of going ﬁ rst is 
+considered irrelevant, so for practical purposes chess is a symmetric game.
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+13
+ CHAPTER 1
+People usually feel that if all players start in the same state, they all have an equal 
+chance of winning. This assumes that the deﬁ nition of fairness ignores the differ-
+ences in the players’ skill levels. Occasionally, people agree that a highly skilled 
+player must take a handicap—that is, they impose a disadvantage on a skilled player 
+to give the less-skilled players a better chance of winning. Amateur golf is the best-
+known example: Poor players are allotted a certain number of strokes per match 
+that do not count against their score. On the other hand, professional golf, in 
+which prize money is at stake, does not use this system and is purely symmetric.
+In an asymmetric game, different players may play by different rules and try to 
+achieve different victory conditions. Many games that represent real-world situa-
+tions (for example, war games based on historical events) are asymmetric. If you 
+play a war game about World War II, one side is the Axis and one is the Allied
+powers. The two sides necessarily begin at different locations on the map, with
+different numbers of troops and different kinds of weapons. As a result, it is often 
+necessary for the two sides to have different objectives to make the game fair.
+In asymmetric games, it is much more difﬁ cult to determine in advance whether 
+players of equal skill have an equal chance of winning. As a result, people often 
+adjust the rules of asymmetric games to suit their own notions of fairness. Figure 1.3
+shows an asymmetric medieval board game called Fox and Geese. One player 
+moves the fox (F) and the other moves the geese (G). 
+The players take turns each moving one piece. The objective for the fox is to jump 
+over the geese and remove them from the board, while the objective for the geese is 
+to push the fox into a corner so that it cannot move. The geese cannot jump over 
+the fox. Several variants of this game exist because people have adjusted the rules 
+to align it closer to their sense of fairness. Some versions have two foxes; other ver-
+sions have smaller numbers of geese; in some, the geese may not move on the 
+diagonal lines, and so on.
+FIGURE 1.3
+Fox and Geese: an 
+asymmetric medieval 
+board game 
+
+
+--- PAGE BREAK ---
+
+14 
+FUNDAMENTALS OF GAME DESIGN
+Competition and Cooperation
+Competition occurs when players have conﬂ icting interests; that is, when the
+players try to accomplish mutually exclusive goals. Cooperation occurs when the 
+players try to achieve the same or related goals by working together. Players who 
+are trying to achieve different, unrelated goals that are not mutually exclusive are 
+neither competing nor cooperating—they are not really playing the same game. 
+Competition modes are ways to build cooperation and competition into games:
+■ Two-player competitive (“you versus me”) is the best-known mode; this is 
+found in the most ancient games such as chess and backgammon.
+■ Multiplayer competitive (“everyone for himself”) is familiar from games such 
+as Monopoly, poker, and of course, many individual sports such as track and ﬁ eld 
+athletics. This is also known as deathmatch, although the term is usually only used 
+in shooter games.
+■ Multiplayer cooperative (“all of us together”) occurs when all the players 
+cooperate to accomplish the same goal. Conventional cooperative games are some-
+what rare, but they are more common in video games. Many games, such as LEGO
+Star Wars, offer a two-player cooperative mode as a variant of their normal single-
+player mode. Gauntlet was a wonderful four-player cooperative arcade video game. 
+■ Team-based (“us versus them”) mode occurs when the members of a team 
+cooperate, and the team collectively competes against one or more other teams. 
+This mode is familiar to fans of soccer and many other team sports as well as part-
+ner games such as bridge.
+■ Single-player (“me versus the situation”) is familiar to those who play solitaire 
+card games as well as the vast majority of arcade and other video games such as the 
+Mario series from Nintendo.
+■ Hybrid competition modes occur in a few games such as Diplomacy. Such 
+games speciﬁ cally permit cooperation at times, even if the overall context of the 
+game is competitive. In Diplomacy, players may coordinate their strategies, but they 
+also may renege on their agreements to their own advantage if they wish. Monopoly,
+by contrast, does not permit cooperation because it gives the cooperating players 
+too much of an advantage against the others.
+Many video games let the players choose a competition mode at the beginning of 
+the game: single-player, team-based, or multiplayer competitive. A choice of compe-
+tition modes broadens the market for these games but adds considerably to the 
+work of designing them. In several cases, the designers clearly found one mode 
+more interesting than another, adding the others as an afterthought. For example, 
+Dungeon Keeper was a brilliant single-player game but was not well designed for 
+multiplayer play.
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+15
+ CHAPTER 1
+Conventional Games Versus Video Games
+A game designer should be able to design all kinds of games, not just video games. 
+A game designer must have a thorough understanding of the essential elements—
+play, rules, goals, and so on—and should be able to design an enjoyable game with 
+nothing but paper and pencil. That’s part of the reason the beginning of this chap-
+ter included so much material on games in general. However, the purpose of this 
+book is to teach you to design video games, and from now on it concentrates on 
+that (although it will still sometimes refer to conventional games such as Monopoly
+when they illustrate a point particularly well). If you’d like to learn more about
+general game design, read Rules of Play by Salen and Zimmerman (Salen and 
+Zimmerman, 2003).
+You now know the formal deﬁ nition of a game, but from this point on, we’ll use 
+the word game in an informal sense to refer to the game software. Phrases like “the 
+game is smart” or “the game offers the player certain options” mean the software, 
+not the play activity itself. 
+Video games are a subset of the universe of all games. A video game is a game medi-
+ated by a computer, whether the computer is installed in a tiny keychain device 
+such as a Tamagotchi or in a huge electronic play environment at a theme park. 
+The computer enables video games to borrow entertainment techniques from other 
+media such as books, ﬁ lm, karaoke, and so on. This section looks at what the com-
+puter brings to gaming.
+Hiding the Rules
+Unlike conventional games, video games do not require written rules. The game 
+still has rules, but the machine implements and enforces them for the players. The 
+players do not need to even know exactly what the rules are, although they do 
+need to be told how to play. In most video games, the computer sets the boundary 
+of the magic circle because player actions are meaningful in the game only if the 
+machine can detect them with its input devices. The computer also determines 
+when the player reaches the goal. It adjudicates victory and defeat if those concepts 
+are programmed into the game.
+This means players no longer have to think about the game as a game. A player
+contemplating an action can simply try it, without having to read the rules to see 
+whether the game permits it. This lets players become much more deeply immersed 
+in the game, to see it not as a temporary artiﬁ cial environment with arbitrary rules, 
+but as an alternate universe of which the player is a part.
+Hiding the rules has one big disadvantage. If the players don’t know the rules, they 
+don’t know how to optimize their choices. They can learn the rules only by playing 
+the game. This is a reasonable design technique provided that the game includes 
+hints about how to play it and what to expect. However, some video games force 
+NOTE The most 
+important beneﬁ t com-
+puters bring to gaming 
+is that the computer 
+relieves the players of 
+the burden of person-
+ally implementing the 
+rules. This frees the 
+players to become as 
+deeply immersed in a 
+video game as they can 
+in other forms of enter-
+tainment. 
+
+
+--- PAGE BREAK ---
+
+16
+FUNDAMENTALS OF GAME DESIGN
+the player to learn by trial and error, which can make the game extremely frustrat-
+ing. Many people deeply dislike having to learn by trial and error, and requiring a 
+player to do so limits the market for that game to those players who are able to tol-
+erate the frustration.
+DESIGN RULE Avoid Trial and Error
+Provide adequate clues that enable players to deduce the correct resolution to a problem. 
+Avoid creating challenges that they can surmount only by trial and error. (Challenges that 
+require physical skill and that may be overcome with practice are an exception.)
+Setting the Pace
+In conventional games that don’t use a timer, either the players or an independent 
+referee sets the pace of the game—the rate at which the events required by the rules 
+take place. In effect, it is up to the players to make the game go. In video games, the 
+computer sets the pace and makes the game go. Unless speciﬁ cally waiting for the 
+player’s input, the computer keeps the game moving forward at whatever pace the 
+designer has set. This allows us to design fast and furious games that constantly 
+throw enemies or other challenges at the players, or to design slow and deliberative 
+games in which the players can stop to think for as long as they want. Games can 
+also modulate the pace, giving players a rest between periods of intense activity.
+Presenting a Game World
+Because a game world is ﬁ ctional—a fantasy world—the game designer can include 
+imaginary people, places, and situations. The players can think of themselves as 
+make-believe characters in a make-believe place. With conventional games, this 
+takes place primarily in the player’s imagination, although printed boards, cards, 
+and so on can help. 
+Video games can go much further. By using a screen and speakers, video games 
+present a ﬁ ctional world the players can sense directly. Until recently, the poor
+state of computer graphics meant that the players had to use a lot of imagination, 
+and of course, text-based computer games still intentionally rely on the players’ 
+imaginations. However, it has always been a goal of game developers to present 
+game worlds that seem as real as the ﬁ ctional worlds in television or ﬁ lm. Although 
+we still have a great deal of work to do, this goal is in sight. Modern video games 
+are full of pictures, animation, movies, music, dialog, sound effects, and so on that 
+conventional games cannot possibly provide. In fact, video games have become so 
+photorealistic in recent years that some designers now experiment with a wider 
+range of visual styles such as Impressionism, traditional Japanese brush painting, 
+and so on.
+NOTE Video games 
+can present a designer’s 
+ﬁ ctional game worlds 
+to the player more 
+directly than board 
+games can, just as 
+ﬁ lms can present a ﬁ lm 
+director’s imaginary 
+worlds more directly 
+than books can. This 
+principle enables video 
+games to entertain 
+players in a wider 
+variety of ways than 
+conventional games do. 
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+17
+ CHAPTER 1
+At the fringes of the video game industry, some people are also making games of 
+augmented reality, or mixed reality, in which computers are used in conjunction with 
+real-world activities to play a game. Such games often use cellular telephones, video 
+cameras, or global positioning systems as well as web servers and a browser-based 
+interface for some of the players. This book doesn’t discuss how to design such 
+games, but use the resources in the references if you’re interested in learning more.
+Creating Artiﬁ cial Intelligence
+In 1959, IBM scientist Arthur Samuels devised a program that played checkers 
+(Samuels, 1959). The program could also learn from its mistakes, and eventually it 
+became good enough to beat expert human players. Much of the earliest research 
+on artiﬁ cial intelligence and games was of this sort as computer scientists tried to 
+create artiﬁ cial opponents that could play traditional games as competently as 
+humans could. Artiﬁ cial intelligence (AI) lets us play multiplayer games even when 
+we don’t have other people to play with.
+However, AI brings considerably more to video gaming than artiﬁ cial opponents 
+for traditional games. Game developers use AI techniques for the following:
+■ Strategy. This means determining the optimal action to take by considering the 
+possible consequences of a variety of available actions. Samuels’s checker-playing 
+program did this, but checkers is a game of perfect information, which means there 
+is no hidden information and no element of chance. Modern video games usually 
+have both hidden information and a large element of chance, so a strategy is more 
+difﬁ cult to compute.
+■ Pathﬁ nding. This means ﬁ nding the most advantageous routes through a simu-
+lated landscape ﬁ lled with obstacles.
+■ Natural language parsing. Despite decades of research, computers still cannot 
+understand ordinary written or spoken language well, but researchers are still very 
+interested in using it for games. When this problem is solved, players will be able to 
+give commands using natural sentences.
+■ Natural language generation. Video games currently produce language by 
+playing combinations of previously recorded phrases or sentences. At the moment, 
+they cannot generate language on their own. In time perhaps they will, which will 
+make simulated people seem far more realistic. In the meantime, games use AI to 
+select a sentence from their library of prerecorded material that is most appropriate 
+for the current game situation.
+■ Pattern recognition. This valuable technique has numerous applications 
+including voice recognition, face recognition, pattern detection in ongoing pro-
+cesses, and pattern detection in player behavior. Human poker players use pattern 
+recognition to establish a correlation between their opponent’s behavior and their 
+
+
+--- PAGE BREAK ---
+
+18 
+FUNDAMENTALS OF GAME DESIGN
+opponent’s cards, which players can use to their advantage later. Eventually, a com-
+puter might be programmed to do the same thing.
+■ Simulated people and creatures. Many games use simple AI techniques to cre-
+ate a behavioral model for simulated people or creatures. The simulated character 
+seems to respond intelligently to the human player’s actions, at least within certain 
+limits. The models are seldom complex, and a player can usually tell the difference 
+between a simulated person and a real one within a few minutes. Simulating 
+human beings is the most difﬁ cult and also the most important problem in game 
+AI research.
+Most current video games do not, in fact, contain much real AI. The point of video 
+games is to entertain, not to simulate intelligence in depth, so they usually contain 
+just enough AI to make the player feel as if the software is reasonably smart. The 
+players—who are already immersed in the make-believe world anyway—are often 
+happy to give the game credit for intelligence that it doesn’t really possess. However,
+we can’t afford to rely on this. Sometimes the AI fails, and the game breaks the 
+players’ immersion by doing something startlingly unintelligent; we need to
+continue to improve our AI so this doesn’t happen. The future looks promising. 
+Technological advances in both hardware and software are allowing designers to 
+create increasingly sophisticated artiﬁ cial opponents and simulated characters. 
+Artiﬁ cial intelligence is one of the most important areas of research in game 
+development.
+How Video Games Entertain
+At its most elementary level, game design consists of inventing and documenting 
+the elements of a game. However, games don’t exist in a vacuum; people create 
+them to serve a purpose. That purpose might be training or study, but most often 
+games are meant to entertain. You cannot become a successful game designer sim-
+ply by creating games in the abstract. To make games for entertainment, you must 
+learn to be an entertainer. This section looks at how games entertain people.
+Different people enjoy different things, so we have both grand opera and motorcy-
+cle races as well as long, slow adventure games and short, frenetic arcade games. As 
+a well-rounded game designer, you should be able to create games that entertain in 
+a variety of ways.
+DESIGN RULE You Can’t Please Everyone
+It is not possible to design an ideal game that pleases everyone, because everyone does 
+not enjoy the same thing. Do not try.
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+19
+ CHAPTER 1
+Gameplay
+Games provide gameplay, that is, challenges and actions that entertain. People 
+enjoy a challenge, as long as they have a reasonable expectation of being able to 
+accomplish it. People will also try a challenge that they have almost no expectation 
+of meeting if the risk is low and the reward is high. Challenge creates tension and 
+drama. At the simplest level, presenting players with a challenge amounts to asking 
+the question, “Can you do it?” They’ll enjoy trying to prove that they can.
+People also enjoy executing the actions that the game offers. It’s fun to ﬂ y a plane, 
+shoot a riﬂ e, design clothing, build a castle, or sing and dance. Video games let us 
+do many things that are impossible or too expensive to do in real life, which is an 
+important part of their appeal. The actions don’t all have to be tied to a speciﬁ c 
+challenge; some things are fun to do even if they don’t affect the outcome of the 
+game. Many children’s video games include toy-like elements to play with that 
+ring, light up, change color, and so on.
+DESIGN RULE Gameplay Comes First
+Gameplay is the primary source of entertainment in all video games. When designing a 
+game, it is the ﬁ rst thing to consider.
+Table 1.1 lists several types of challenges that video games offer, along with classic 
+examples from individual games or game series.
+CHALLENGE T YPE
+CLASSIC EXAMPLE
+Physical Coordination Challenges
+Speed and reaction time
+Tetris
+Accuracy or precision (steering, shooting) 
+Need for Speed
+Timing and rhythm
+Dance Dance Revolution
+Learning combination moves
+Street Fighter II
+Formal Logic Challenges
+Deduction and decoding
+Minesweeper
+Pattern Recognition Challenges
+Static patterns
+Brain Age
+Patterns of movement and change
+Sonic the Hedgehog, behavior patterns
+of enemies
+TABLE 1.1 
+Video Game Challenges
+
+
+--- PAGE BREAK ---
+
+20
+FUNDAMENTALS OF GAME DESIGN
+CHALLENGE T YPE
+CLASSIC EXAMPLE
+Time Pressure
+Beating the clock
+Frogger
+Achieving something before someone else 
+IndyCar Racing 
+Memory and Knowledge Challenges
+Trivia
+You Don’t Know Jack
+Recollection of objects or patterns
+Brain Age
+Exploration Challenges
+Identifying spatial relationships
+Descent, navigating in three dimensions
+Finding keys (unlocking any space)
+Ultima
+Finding hidden passages
+Doom
+Mazes and illogical spaces
+Zork
+Conﬂ ict
+Strategy, tactics, and logistics
+Warcraft, commanding armies
+Survival
+Pac-Man, avoiding being caught
+Reduction of enemy forces
+Space Invaders, killing aliens
+Defending vulnerable items or units
+Ico, looking after a little girl who can’t ﬁ ght
+Stealth
+Thief: The Dark Project, avoiding being seen
+Economic Challenges
+Accumulating resources or points (growth)
+Civilization
+Establishing efﬁ cient production systems
+The Settlers 
+Achieving balance or stability in a system
+SimEarth
+Caring for living things
+The Sims
+Conceptual Reasoning Challenges
+Sifting clues from red herrings
+Law and Order, solving crimes
+Detecting hidden meanings
+Planescape: Torment, understanding char-
+acters’ motivations from vague hints
+Understanding social relationships
+Façade, reconciling a quarreling couple
+Lateral thinking
+The Incredible Machine, building a machine 
+from limited parts
+Creation/Construction Challenges
+Aesthetic success (beauty or elegance)
+The Sims, assembling a photo album
+Construction with a functional goal
+SimCity
+TABLE 1.1  continued
+Video Game Challenges
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+21
+ CHAPTER 1
+Aesthetics
+Video games are an art form, so aesthetics are a part of their design. This doesn’t 
+mean a game has to be beautiful, any more than a ﬁ lm or a painting has to be 
+beautiful. Rather, it must be designed with a sense of style and created with artistic 
+skill. A game with clumsy animation, a muddy soundtrack, trite dialog, or sloppy 
+artwork will disappoint players even if its gameplay is good.
+Aesthetic considerations go beyond the game world, though. The interface graph-
+ics—buttons, numbers, type fonts, and so on—must complement the game world 
+to create a consistent experience. Even the way the game responds to the player’s 
+button presses can be judged aesthetically. Animations should move smoothly and 
+naturally; a slow, jerky, or unpredictable response feels awkward. The physics of 
+moving objects should look natural—or at least credible. Speed, accuracy, and grace 
+are all part of a game’s aesthetic appeal.
+DESIGN RULE Aesthetics Are Important Too
+An ugly or awkward video game is a bad one, no matter how innovative its design or 
+impressive its technology. Part of your job is to give your players aesthetic pleasure.
+Harmony
+Good games and game worlds possess harmony, which is the feeling that all parts of 
+the game belong to a single, coherent whole. This quality was ﬁ rst identiﬁ ed by game
+designer Brian Moriarty. In his lecture, “Listen: The Potential of Shared Hallucinations,
+(Moriarty, 1997) Moriarty explained the concept of harmony as follows:
+Harmony isn’t something you can fake. You don’t need anyone to tell you if it’s there or 
+not. Nobody can sell it to you, it’s not an intellectual exercise. It’s a sensual, intuitive 
+experience. It’s something you feel. How do you achieve that feeling that everything 
+works together? Where do you get this harmony stuff?
+Well, I’m here to tell you that it doesn’t come from design committees. It doesn’t come 
+from focus groups or market surveys. It doesn’t come from cool technology or expensive 
+marketing. And it never happens by accident or by luck. Games with harmony emerge 
+from a fundamental note of clear intention. From design decisions based on an ineffable
+sense of proportion and rightness. Its presence produces an emotional resonance with its 
+audience. A sense of inner unity that has nothing to do with what or how you did 
+something, it has something to do with why. Myst and Gemstone both have harmony. 
+They have it because their makers had a vision of the experience they were trying to 
+achieve and the conﬁ dence to attain it. They laid down a solid, ambient groove that 
+players and their respective markets can relate to emotionally. They resisted the urge to 
+
+
+--- PAGE BREAK ---
+
+22
+FUNDAMENTALS OF GAME DESIGN
+overbuild. They didn’t pile on a lot of gratuitous features just so they could boast about 
+them. And they resisted the temptation to employ inappropriate emotional effects. 
+Effects like shock violence, bad language, inside humor.
+You know, the suspension of disbelief is fragile. It’s hard to achieve it and hard to maintain.
+One bit of unnecessary gore, one hip colloquialism, one reference to anything outside 
+the imaginary world you’ve created is enough to destroy that world. These cheap effects 
+are the most common indicators of a lack of vision or conﬁ dence. People who put this 
+stuff into their games are not working hard enough.
+Harmony is an essential quality of a game’s aesthetic appeal. With every design 
+decision you make, you should ask yourself whether the result is in harmony with 
+your overall vision. Too many games have elements that seem bolted on, last-min-
+ute ideas that somebody thought would be cool to include. Although every game 
+design requires compromises, an important part of your job as a designer is to min-
+imize the false notes or off-key elements that compromises tend to create.
+DESIGN RULE Strive for Harmony
+A good game is a harmonious game. Try to ﬁ nd a way to make every aspect of your game 
+ﬁ t together into a coherent, integrated whole.
+Storytelling
+Many games incorporate some kind of story as part of the entertainment. In con-
+ventional games, players can ﬁ nd it difﬁ cult to become immersed in a story because 
+the players must also implement the rules. Stopping to implement the rules inter-
+rupts the players’ sense of being in another place or being actors in a plot. Video 
+games can mix storylike entertainment and gamelike entertainment almost seam-
+lessly. To some extent, they can make players feel as if they are inside a story, affecting
+its ﬂ ow of events. This has enormous implications for game design and is one of the 
+reasons that video games are more than simply a new kind of game; they are a 
+completely new medium. Many video games—even those that involve the most fre-
+netic action—now include elements of storytelling. Chapter 7, “Storytelling and 
+Narrative,” will discuss this concept in detail.
+In fact, storytelling is so powerful as an entertainment device that one genre of 
+video game—the adventure game—is starting to move away from the formal con-
+cept of a game entirely. Although we still call them games, adventure games are in 
+fact a new hybrid form of interactive entertainment—the interactive story. Chapter 
+19, “Adventure Games,” discusses this and other aspects of adventure games in 
+more detail. As time goes on, we can expect to see more new kinds of game/story/
+play experiences emerge that defy conventional descriptions. Video games aren’t 
+just games any more.
+NOTE Storytelling 
+enables video games to 
+entertain the player in 
+ways that conventional 
+games cannot and 
+permits the creation 
+of a new, hybrid form 
+of entertainment: the 
+interactive story. 
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+23
+ CHAPTER 1
+Risks and Rewards
+Risks and rewards as sources of entertainment are most familiar to us from gam-
+bling. You risk money by placing a bet, and you are rewarded with more money if 
+you win the bet. However, risk and reward are key parts of any kind of competitive 
+gameplay, even if no money is at stake. Whenever you play a competitive game, 
+you risk losing in the hope that you will get the reward of winning. Risk and 
+reward also occur on a smaller scale within the game. In a war game, when you 
+choose a place to begin an attack, you risk the attack’s being detected and repulsed, 
+but if you are successful, you are rewarded by controlling new territory or depleting 
+the enemy’s resources. In Monopoly, you risk money by purchasing a property in the 
+hope that you will be rewarded with income from rents later on.
+Risk is produced by uncertainty. If a player knows exactly what the consequences 
+of an action will be, then there is no risk. In gambling, the uncertainty is often 
+produced by chance (which way will the dice fall?), but other features produce 
+uncertainty as well. A game might have hidden information (where are the enemy’s 
+troops hiding?) revealed only after you take the risk. Even in a game such as chess, 
+which has no hidden information and no element of chance, not knowing what 
+your opponent will do produces uncertainty.
+The risk/reward mechanism makes gameplay more exciting. Gameplay is entertain-
+ing all by itself because it lets the player attempt the challenges and perform the 
+actions, but adding risks and rewards raises the level of tension and makes success 
+or failure more meaningful.
+A game should always reward achievement, whether it was risky or not. The more 
+difﬁ cult the achievement, the bigger the reward should be. Rewards can take vari-
+ous forms. Usually they advance the player’s interests somehow, either by giving 
+him something tangible that helps him play (such as money or a key to a locked 
+area) or something intangible but still valuable, such as a strategic advantage. 
+However, rewards don’t have to affect the gameplay. Games that include a story 
+reward the player’s achievements by advancing the plot of the story by presenting
+a little more of it, often in a noninteractive video sequence. Games for children 
+often reward achievements with ﬂ ashing lights and ringing sounds.
+Players’ attitudes toward risk-taking vary. Some take an aggressive, inherently risky 
+approach, whereas others prefer a defensive approach in which they try to mini-
+mize risk. You can design your game to suit one style or the other or try to balance 
+the game so that neither really has an advantage.
+DESIGN RULE Risks Need Rewards
+A risk must always be accompanied by a reward. Otherwise the player has no incentive to 
+take the risk.
+NOTE Playing a game 
+is intrinsically enter-
+taining, but adding 
+risks and rewards to 
+a game makes it more 
+exciting. 
+
+
+--- PAGE BREAK ---
+
+24
+FUNDAMENTALS OF GAME DESIGN
+Novelty
+People enjoy novelty: new things to see, to hear, and to do. Early video games were 
+extremely repetitive and developed an unfortunate reputation for being monoto-
+nous. Nowadays, however, video games can offer more variety and content than 
+any traditional game, no matter how complex. Not only can video games give the 
+player new worlds to play in, but they can easily change the gameplay as the game 
+progresses. So, for example, Battleﬁ eld 1942 not only lets the player play as a foot 
+soldier (one of several types, in fact), but also allows him to hop in a tank, an air-
+plane, or a ship and play from those perspectives.
+Novelty can even be an end in itself. In the WarioWare series from Nintendo, the 
+player must play dozens of strange microgames, each of which lasts only a few sec-
+onds. Their constantly changing goals and graphical styles make WarioWare quite 
+challenging, if rather disorienting. There aren’t many games like this on the market, 
+however. Novelty alone is not enough to sustain player interest. Most games rely 
+more on theme-and-variations approaches—introducing a new element and giving 
+the player the chance to explore it for a while before introducing the next one.
+Learning
+Learning doesn’t mean “edutainment” or educational software here. Learning is an 
+aspect of playing a game, even just for entertainment, and people enjoy the learn-
+ing process. This is the central thesis of Raph Koster’s book, A Theory of Fun for 
+Game Design (Koster, 2004). Although some of the things Koster says conﬂ ict with 
+ideas in this book, A Theory of Fun for Game Design is well worth reading. In the 
+case of conventional games, the players have to learn the rules and then learn how 
+to optimize their chances of winning. In video games, the players don’t have a 
+guide to the rules, so they have to learn how the game works by playing it. If you’re 
+playing a classic arcade game, over time you learn the movement and attack pat-
+terns of your enemies and ﬁ gure out when they’re vulnerable to a counterattack. 
+Then you come across a new enemy and have to learn a new pattern. So long as a 
+game keeps offering you new things to learn, it remains enjoyable—assuming it 
+was enjoyable to begin with! After you have learned everything about a game and 
+have complete mastery over it, you might start to think that the game is boring. 
+Koster asserts that this is inevitable, which is why people eventually abandon a 
+game and pick up a new one. (This is more true of single-player games than it is of 
+multiplayer games, because in multiplayer games the unpredictability of human 
+opponents keeps them fresh.)
+Learning isn’t always easy, and it isn’t guaranteed to be fun, as we all remember 
+from our days in school. People enjoy learning when at least one of two conditions 
+is met: (1) it takes place in an enjoyable context, and (2) it provides useful mastery. 
+A game should always provide an enjoyable context for learning; if it doesn’t, 
+there’s something wrong with the game. A game should also offer useful mastery; 
+the things that players learn should help them play the game more successfully. For 
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+25
+ CHAPTER 1
+further discussion of this issue, consider reading James Paul Gee’s books, What 
+Video Games Have to Teach Us About Learning and Literacy (Gee, 2004) and Why Video 
+Games Are Good for Your Soul (Gee, 2005).
+Creative and Expressive Play
+People love to design and create things, whether clothing, creatures, buildings,
+cities, or planets. They also love to customize a basic template of some kind to 
+reﬂ ect their own choices. This activity can directly inﬂ uence the gameplay (a 
+player chooses a model of car to drive in a racing game) or can be purely cosmetic 
+(a player chooses a color for the car). If a personal choice affects the gameplay, play-
+ers won’t always select the option the designer might consider the best option, even 
+if they’re told which one it is. They often choose one that they like regardless of the 
+consequences. That’s how strong the appeal of self-expression is.
+As video game machines become more powerful and games begin to reach a wider 
+audience, creative and self-expressive play become increasingly important. Research 
+shows that girls and women are often more motivated by a desire to express them-
+selves through play than by a desire to defeat others in competition. Chapter 5, 
+“Creative and Expressive Play,” is entirely devoted to the design issues of creative 
+and expressive play.
+Immersion
+…it was agreed, that my endeavours should be directed to persons and characters 
+supernatural, or at least romantic, yet so as to transfer from our inward nature a human 
+interest and a semblance of truth sufﬁ cient to procure for these shadows of imagination 
+that willing suspension of disbelief for the moment, which constitutes poetic faith.
+—SAMUEL TAYLOR COLERIDGE, BIOGRAPHIA LITTERARIA, CHAPTER XIV
+Coleridge was originally referring not to immersion but to an absence of skepti-
+cism. He wanted people who read his poems to accept the poems’ romantic, 
+imaginary people (“shadows of imagination”) on “poetic faith,” without asking 
+questions. However, the term suspension of disbelief, as used by the game industry, 
+has come to mean immersion: losing track of the outside world. Immersion is the 
+feeling of being submerged in a form of entertainment, or rather, being unaware 
+that you are experiencing an artiﬁ cial world. When you are immersed in a book, 
+movie, or game, you devote all your attention to it and it seems real. You have lost 
+track of the boundaries of the magic circle. The pretended reality in which you are 
+immersed seems as real as, or at least as meaningful as, the real world.
+This feeling of immersion is deeply and satisfyingly entertaining to some players; 
+others prefer not to become immersed and to remember that it’s only a game while 
+they play. People who take the game seriously ﬁ nd interruptions that break their 
+sense of immersion jarring and disappointing. This is part of the reason that har-
+mony is so important.
+
+
+--- PAGE BREAK ---
+
+26
+FUNDAMENTALS OF GAME DESIGN
+Players become immersed in games in several ways:
+■ Tactical immersion is the sense of being “in the groove” in high-speed action 
+games. It’s sometimes called the Tetris trance. When playing such a game, the 
+action is so fast that your brain has no time for anything else. You don’t have time 
+to think about strategy or a story line; the game is mostly about survival. To encourage
+tactical immersion, you must offer the player dozens of small challenges that can 
+each be met in a fraction of a second. These small challenges must be fairly similar 
+to one another—such as in an arcade shooter. Abrupt changes in the gameplay 
+destroy tactical immersion.
+■ Strategic immersion occurs when you are deeply involved in trying to win a 
+game, like the immersion of the chess master: observing, calculating, and plan-
+ning. You don’t think about a story, characters, or the game world but focus strictly 
+on optimizing your choices. To experience strategic immersion, the players must 
+understand the rules of the game clearly so that they can plan actions to their max-
+imum advantage. Strategic immersion breaks down if a game confronts players 
+with a situation they have never seen before or if the game contains too many 
+unpredictable elements. Unexpected or erratic behavior makes it impossible to plan.
+■ Narrative immersion is the feeling of being inside a story, completely involved 
+and accepting the world and events of the story as real. It is the same immersion as 
+that produced by a good book or movie, but in video games, the player is also an 
+actor within the story. Good storytelling—interesting characters, exciting plots, 
+dramatic situations—produces narrative immersion. Bad storytelling—two-dimen-
+sional characters, implausible plots, or trite situations—destroys narrative 
+immersion, and so does gameplay that is inappropriate in the context of the story. 
+If a player is immersed in a story about being a dancer, the gameplay should be 
+about dancing, not about ﬂ ying a plane or commanding an army.
+You cannot create immersion purely by design. The game must also be attractive 
+and well constructed, or its ﬂ aws break the player’s sense of immersion. Also, you 
+cannot design a game that pleases everyone, and players do not become immersed 
+in a game they don’t like. If you want to create an immersive game, you ﬁ rst must 
+have a clear understanding of how your player likes to be entertained, then deliver 
+the best entertainment experience that you can. Chapter 3, “Game Concepts,” dis-
+cusses the question of understanding your hypothetical player in more detail.
+Socializing
+Most conventional games are multiplayer games, so since the earliest times, gaming 
+has been a social activity. People love to play video games together too, and tech-
+nology gives them lots of ways to do it:
+■ Multiplayer local gaming means two or more people playing together in one 
+place. It’s classic home console play for more than one person. Each player has his 
+
+
+--- PAGE BREAK ---
+
+GAMES AND VIDEO GAMES 
+27
+ CHAPTER 1
+own controller, but they all look at the same screen. In some games the screen is 
+split, and each player looks at her own part of it; in others, the players all see the 
+same game world together.
+■ Networked play, also called multiplayer distributed gaming, refers to people 
+playing against other people over a network at distributed locations. This is the way 
+people play games over the Internet. To communicate with each other, they have to 
+have a voice connection or type messages as they play.
+■ LAN parties are events in which a group of people all get together in one room, 
+but each has his own computer hooked to the others by a local area network (LAN). 
+This way they can talk to each other, but they can’t see each other’s screens.
+■ Group play occurs when a group of people get together in one room to play a 
+single-player game. The player using the controller at any given time is said to be in 
+the “hot seat,” and the other players watch and offer advice. Players usually hand 
+off the controller from one to the next as the gameplay changes, so as to have the 
+person most skilled at the current challenges play during that part of the game. 
+This style of play is particularly popular with children.
+When designing a multiplayer game, it’s important to think about the social aspect 
+of entertaining people. By offering them chat mechanisms, bulletin boards, and 
+other community-building facilities, you can extend the game’s entertainment far 
+beyond the gameplay alone. For more information about designing online games, 
+see Chapter 21, “Online Games.”
+Summary
+In this chapter, you have learned that play, pretending, a goal, and rules are the 
+essential elements of a game, and you’ve learned how they work together to create 
+the experience of playing one. You have been taught to think of gameplay in terms 
+of challenges and actions, and you have looked at such important issues as winning 
+and losing, fairness, competition, and cooperation. You should now be aware of 
+some of the special beneﬁ ts that computers bring to playing games and the mani-
+fold ways that video games entertain people. With this as a foundation, you’re 
+ready to proceed to the next chapter. There, you’ll learn how games are structured, 
+an approach to designing them, and what it takes to be a game designer.
+
+
+--- PAGE BREAK ---
+

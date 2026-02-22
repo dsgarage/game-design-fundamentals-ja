@@ -1,0 +1,476 @@
+114 
+FUNDAMENTALS OF GAME DESIGN
+4. What range of choices am I offering my player? Are there both violent and non-
+violent ways to accomplish something? Is the player rewarded in any way for 
+minimizing casualties, or is he punished for ignoring them?
+5. In many games, the end—winning the game—justiﬁ es any means that the game 
+allows. Do I want to deﬁ ne the victory conditions in such a way that not all means 
+are acceptable?
+6. Are any other ethical questions present in my game world? Can my player lie, 
+cheat, steal, break promises, or double-cross anyone? Can she abuse, torture, or 
+enslave anyone? Are there positive or negative consequences for these actions?
+7. Does my world contain any ethical ambiguities or moral dilemmas? How does 
+making one choice over another affect the player, the plot, and the gameplay?
+8. How realistic is my portrayal of violence? Does the realism appropriately serve 
+the entertainment value of the game?
+
+
+--- PAGE BREAK ---
+
+ CHAPTER 5
+Creative and 
+Expressive Play
+Playing any game involves an element of self-expression because the decisions a 
+player makes reﬂ ect his play style: cautious or reckless, aggressive or defensive, and 
+so on. Video games can let players express themselves in the ways traditional games 
+always have and in a variety of other ways as well. This chapter examines several 
+types of creative play that you can build into a game: self-deﬁ ning play, in which 
+players modify the avatar that represents them in the game; constrained creative 
+play, in which players may exercise their creativity but only within certain limits; 
+freeform, or unconstrained, creative play; and storytelling, in which players present 
+other players with a drama of their own invention. We end the chapter by brieﬂ y 
+discussing some features you may wish to include that allow players to modify your 
+game for their own entertainment: level editors, mods, and bots.
+Self-Deﬁ ning Play
+When a player selects a token to represent herself in Monopoly, she chooses an ava-
+tar and so engages in an act of self-deﬁ nition. Many games allow the player to 
+choose an avatar from a number of different ones available and to customize the 
+avatar in various ways. Because the avatar represents the player in the game world, 
+these activities are called self-deﬁ ning play. Players greatly enjoy deﬁ ning them-
+selves, choosing an avatar that either resembles them physically (if it’s a human 
+character) or that is a fantasy ﬁ gure with whom they identify. Female players in 
+particular like to choose or design avatars and dislike having to play with avatars 
+that they ﬁ nd unappealing. Boys and men are more willing to play with a default 
+avatar the game supplies.
+Forms of Personality Expression
+Self-deﬁ ning play gives the player an opportunity to project his personality into 
+the game world by means other than gameplay choices. It takes several forms:
+■ Avatar selection allows the player to choose from a number of predeﬁ ned avatars, 
+usually at the beginning of the game. These avatars are most often humanoid char-
+acters, but in driving and ﬂ ying games, they’re vehicles. Many driving games start the 
+player with a small selection of cars, motorcycles, or whatever vehicles are involved
+CHAPTER 5
+115
+
+
+--- PAGE BREAK ---
+
+116
+FUNDAMENTALS OF GAME DESIGN
+ and make new choices available as the player’s performance improves. You can let 
+the player purchase a new car with winnings earned in previous races, for example. 
+The right to choose a new and more powerful avatar serves as a reward to some players.
+■ Avatar customization allows the player to modify the appearance or abilities of 
+his avatar by selecting interchangeable features. In role-playing games, this often 
+takes the form of giving the avatar new skills, clothing, weapons, and armor. In 
+driving games, the customizable features may include the paint color of the car and 
+its engine, transmission, tires, and brakes. Customization can occur both at the 
+beginning of the game and through upgrades awarded or purchased as the game 
+goes on. In this way, a player creates a unique character of his own design.
+■ Avatar construction gives the player the greatest freedom of all; he can con-
+struct his avatar from the ground up, choosing every detail from a set of available 
+options. Usually offered in role-playing games, avatar construction allows the 
+player to choose such features as the sex, body type, skin color, and clothing of the 
+avatar, as well as the avatar’s strength, intelligence, dexterity, and other functional 
+qualities. The online RPG Lord of the Rings Online offers a particularly extensive ava-
+tar construction feature, as does the single-player RPG The Elder Scrolls IV: Oblivion
+for the PC.
+Understanding Attributes
+The qualities that a player modiﬁ es when constructing or customizing an avatar are 
+called attributes. Chapter 10, “Core Mechanics,” discusses attributes in more detail, 
+but for now, it’s enough to know that an attribute is any quality that helps to 
+describe something else. Hair color is an attribute of a person. Maximum airspeed is 
+an attribute of an aircraft. The computer can represent an attribute as a numeric 
+value (such as maximum airspeed) or a symbolic value (such as hair color). All 
+attributes in a video game must be characterized in one of these two ways. Even if 
+you create an attribute intended to describe something that we normally think of 
+as unquantiﬁ able, like smell, ultimately it will come down to either a numeric or a 
+symbolic value.
+You can divide attributes in a game into those that affect the gameplay, which are 
+called functional attributes, and those that don’t affect the gameplay, which are 
+called cosmetic attributes. (Some designers prefer the term aesthetic attributes, but the 
+meaning is the same.) The next two sections examine these types more closely.
+FUNCTIONAL ATTRIBUTES
+Functional attributes inﬂ uence the gameplay through interactions with the core 
+mechanics. Functional attributes can be further divided into characterization attri-
+butes, which deﬁ ne fundamental aspects of a character and change slowly or not at 
+all, and status attributes, which give the current status of the character and may 
+change frequently. For example, maximum airspeed is a characterization attribute
+
+
+--- PAGE BREAK ---
+
+CREATIVE AND  EXPRESSIVE PLAY 
+117
+ CHAPTER 5
+of an aircraft, while current airspeed is a status attribute. For the purposes of creative 
+play, we’re interested in the characterization attributes. 
+You have probably heard of the six characterization attributes used in Dungeons & 
+Dragons: strength, dexterity, intelligence, wisdom, charisma, and constitution. Each 
+of these attributes affects a character’s ability to perform certain actions in the 
+game: ﬁ ght, cast magic spells, charm others, withstand poisons, and many other 
+tasks. When a Dungeons & Dragons player creates a character, she receives a certain 
+number of points (usually obtained by rolling dice) to distribute among these attri-
+butes. How she distributes them—giving more to dexterity and less to intelligence, 
+for instance—establishes the character’s strengths and weaknesses. These strengths 
+and weaknesses, in turn, determine how the player must play with the character to 
+be successful in the game: taking advantage of the strengths and avoiding situa-
+tions in which the weaknesses render the player vulnerable.
+When a player sets the characterization attributes of her character, the player 
+deﬁ nes herself in a creative way. Hardcore players, whose main interest is in win-
+ning, tend to look for the setting that gives them the greatest advantage in the 
+game—that is, to optimize the attributes’ inﬂ uence on the core mechanics. Casual 
+players either don’t worry about the assignments much, or they select settings that 
+allow for interesting role-playing. A character who is highly charismatic but physi-
+cally weak, for example, has to be played quite differently from a conventional 
+warrior.
+If you allow players to assign any legitimate value to their functional attributes, 
+some players will set up their attributes in the best possible conﬁ guration, and the 
+game will be very easy for them. Many designers don’t like this, because they see 
+the players as their opponents. However, that’s a bad reason to disallow it; your 
+goal is to entertain the player, not to oppose him. However, you can legitimately 
+prevent the players from maximizing all their attributes if it might introduce bugs 
+into your game or make the game difﬁ cult to test. Instead, consider the following 
+approaches:
+■ Give players a ﬁ xed or random number of points to assign among all their attri-
+butes, as in Dungeons & Dragons. This allows them to make interesting choices and 
+create an avatar who reﬂ ects their own personality or fantasies without unbalanc-
+ing the game. If you generate a random number of points for the player, use a 
+nonuniform distribution as Dungeons & Dragons does in order to avoid producing 
+unusually strong or weak characters. See “Random Numbers and the Gaussian 
+Curve” in Chapter 10.
+■ Include a set of default, or recommended, settings so players who want to get 
+started quickly can do so without spending a lot of time setting attributes. This is 
+especially valuable for players who don’t understand how the attributes affect the 
+gameplay anyway. They will ﬁ nd it frustrating to be required to set attributes when 
+they don’t know how the attributes affect the game and all they want to do is get 
+into the game and start playing. They will appreciate being given a reasonable default.
+NOTE If the player’s 
+choice of avatar or 
+attribute settings 
+will have an effect on 
+the gameplay, you 
+must make the con-
+sequences of those 
+choices reasonably 
+clear to the player. If 
+you require the player 
+to make this decision 
+before play begins, 
+either all choices 
+must provide an equal 
+chance of winning 
+(even if the fastest way 
+to win varies from one 
+choice to another), 
+or you should clearly 
+mark the choices that 
+make the gameplay 
+easier or harder. Don’t 
+force your players to 
+choose an avatar or set 
+its attributes without 
+telling them how those 
+choices will affect their 
+chances of winning. 
+
+
+--- PAGE BREAK ---
+
+118 
+FUNDAMENTALS OF GAME DESIGN
+■ Allow players to earn the right to set their character’s functional attributes any 
+way they like by completing the game with constrained attributes ﬁ rst. You can 
+also offer this right explicitly as a cheat feature of the game, so players will know 
+they’re getting an unusual advantage.
+Dungeons & Dragons provides one of the most familiar examples of player-adjustable 
+functional attributes, but many, many games use them. First-person shooters typi-
+cally give the player a choice of weapons, and when a player chooses a sniper riﬂ e 
+over a submachine gun, she is saying something important about her character and 
+the way she will play the game.
+COSMETIC ATTRIBUTES
+Cosmetic attributes don’t have any effect on the player’s ability to perform actions
+or overcome challenges; that is, they’re not part of the core mechanics of the game. 
+Cosmetic attributes exist to let the player deﬁ ne himself in the game world, to 
+bring his own personal style to the avatar. The paint color of a racing car has no 
+effect on the car’s performance characteristics, but the player is apt to enjoy the 
+game more if he can choose a color that he likes. One cosmetic attribute—shape—
+differentiates the tokens in Monopoly.
+SHOULD SEX BE A FUNCTIONAL
+ATTRIBUTE OR A COSMETIC ATTRIBUTE?
+Should the sex of an avatar have an effect on gameplay? Because men generally have 
+more upper-body strength than women do and women are generally more dexterous 
+than men are, you may be tempted to build these qualities directly into your core 
+mechanics: to restrict the strength of female avatars and to restrict the dexterity of
+male ones.
+However, unless you’re making an extremely realistic simulation game, it’s better not to 
+associate bonuses or penalties with one sex or the other. First, although men as a group 
+are generally stronger than women, it is not true that all men are stronger than all 
+women. Women who exercise are often stronger than men who don’t, and men who play 
+the piano are usually more dexterous than women who don’t. There are always exceptions 
+and overlaps. Second, video games provide a form of escapism. Players like to imagine 
+themselves doing things that they can’t do in the real world. If you impose real-world 
+rules on what is meant to be their fantasy experience, you take some of the fun out of it.
+It’s better to allow the players to construct their avatars to suit their own styles of play 
+rather than to establish an arbitrary standard connected to gender. Leave gender as a 
+cosmetic attribute and let the players adjust their functional attributes, such as strength 
+and dexterity, independently.
+
+
+--- PAGE BREAK ---
+
+CREATIVE AND  EXPRESSIVE PLAY 
+119
+ CHAPTER 5
+In multiplayer video games, cosmetic attributes can play a more important role 
+because other players rely on visual appearances to make decisions. A few years ago, 
+some bright player in a ﬁ rst-person shooter game got the idea to design an avatar 
+that looked exactly like a crate. The other players assumed that they were looking 
+at an actual crate, so they ignored it and then were surprised when they were shot 
+by someone in a room that apparently contained only a crate. In online role-play-
+ing games, players also use cosmetic attributes to identify themselves as members 
+of a particular clan or group.
+Cosmetic attributes make a game more fun at a low implementation cost. Because 
+they don’t affect the gameplay, they don’t have to be tested and balanced as thor-
+oughly as a functional attribute. Just be sure that your cosmetic attributes really are
+cosmetic. Avatar body size may sound like a cosmetic attribute, but if you later 
+decide to take it into account when performing combat calculations (bigger people 
+make bigger targets, for instance), then size becomes a functional attribute after all.
+Typical cosmetic attributes for human characters include headgear, clothing, shoes, 
+jewelry, hair color, eye color, skin color, and body type or size. Players typically cus-
+tomize paint color and decals or insignia of vehicles.
+Creative Play
+Many games offer the player the chance to design or build something. In the
+Caesar series, it’s a Roman city; in Spore, it’s a creature. People enjoy designing and 
+building things, and this kind of play is the main point of construction and man-
+agement simulations.
+If you offer creative play, you should allow players to save their creations at any 
+time and reload them to continue working on them. You should also let players 
+print their creations out, take screenshots, copy them to other players’ machines, 
+and upload them to web sites. Sharing creations contributes to the fun.
+Computerized creative play falls into two categories, constrained creative play and 
+freeform creative play. A computerized game necessarily restricts creative play to 
+whatever domain the game supports—painting, composing music, animation, and 
+so on. In freeform creative play, few or no rules limit what the player can do within 
+the conﬁ nes of the game world, although play remains constrained by the domain, 
+the set of actions that the user interface offers, and the machine’s physical 
+limitations.
+Constrained Creative Play
+If the player may only create within artiﬁ cial constraints imposed by the rules, her 
+activity is called constrained creative play. Constraining creativity may sound unde-
+sirable, but it really just provides a structure for the player’s creativity. This type of 
+gameplay grows out of some familiar ideas: the expressive power offered by 
+
+
+--- PAGE BREAK ---
+
+120 
+FUNDAMENTALS OF GAME DESIGN
+creativity tools; the growth in the number of actions available to a player as games 
+progress; and the fact that players must overcome challenges in order to succeed. 
+These may be combined in various ways, as the next two sections discuss.
+PLAY LIMITED BY AN ECONOMY
+In SimCity, the player can’t build a whole city immediately; it costs money to zone 
+each empty plot of land, and he can use only the money he has available. As his 
+city prospers, he earns more money and so can establish new neighborhoods. Once 
+he gets enough money, new features such as stadiums and airports, which were too 
+expensive in the early stages of the game, become available to him. So long as the 
+player continues to produce economic growth, he can make his city ever larger and 
+add more and more facilities.
+Construction and management simulations routinely implement this system of 
+structuring the player’s creativity. The player must successfully manage an econ-
+omy to construct larger creations and also to get additional creative power. This is
+a system closely related to that found in role-playing games, in which players must 
+gain experience to learn new magic spells, and to that found in strategy games, in 
+which players must harvest resources to perform the research necessary to get bet-
+ter weapons. In those genres, the economy of the game limits the player’s ability to 
+have adventures and ﬁ ght wars; in creativity games, the economy limits the play-
+er’s ability to create. The primary challenge in such games is successful economic 
+management, with creative power serving as the reward for success.
+This system rewards skill, granting players more exciting and powerful tools once 
+they master the tools they already have. Educational software also uses this 
+mechanism.
+CREATING TO PHYSICAL STANDARDS
+Another approach to constrained creative play gives players all the tools and 
+resources they would like but requires them to construct an object that meets cer-
+tain requirements, usually having to do with making the object perform a 
+function. For example, Spore from Maxis lets players design and build virtual crea-
+tures that then interact with creatures created by other players. The player gets a set 
+of standard parts including arms and legs, eyes and ears, and weapons such as 
+claws. Once the player constructs a creature, she turns it loose in the game world to 
+ﬁ ght or socialize with other creatures, and she can add additional features as she 
+earns “DNA points.” Although Spore can animate almost anything no matter how 
+odd-looking, it does impose some physical standards: every creature must have a 
+backbone and be a land animal. The game offers no way to create a creature with 
+an exoskeleton, like an insect, or no skeleton at all, like an octopus. 
+
+
+--- PAGE BREAK ---
+
+CREATIVE AND  EXPRESSIVE PLAY 
+121
+ CHAPTER 5
+The RollerCoaster Tycoon series requires the player to construct roller coasters in a 
+theme park. The roller coaster must be designed in such a way that it doesn’t crash 
+or make the (virtual) riders sick but is still exciting to ride. RollerCoaster Tycoon com-
+bines the challenge of meeting physical standards with an economic challenge: 
+Each element of the theme park costs money, and the player must stay within a 
+budget. 
+Whenever you require the player to build to a standard and test his construction, 
+when he fails he needs to know why—otherwise he can’t learn the principles upon 
+which you based the standards. RollerCoaster Tycoon 2 includes a feature to show the 
+player how high and how steep the different segments of the coaster are, so he can 
+ﬁ gure it out with a little experimentation. See Figure 5.1.
+CREATING TO AESTHETIC STANDARDS
+With an adequate physics simulation, any game can test a player’s creativity against 
+a physical standard. An architecture game can test a building both for structural 
+integrity and also for usability—rooms with no way to get into them are useless.
+Aesthetics present a much larger problem, because they don’t consist of a set of uni-
+versal laws in the way that Newtonian physics does. To test the aesthetic quality of 
+a player’s creations, you have to set some standards of your own. Consider some of 
+the following options:
+FIGURE 5.1 
+RollerCoaster
+Tycoon 2’s coaster-
+design screen
+
+
+--- PAGE BREAK ---
+
+122 
+FUNDAMENTALS OF GAME DESIGN
+■ Test against a ﬁ xed set of rules that you establish. A game about clothing 
+design could include well-known rules about color combinations, not mixing 
+stripes with polka dots, and using fabric textures that harmonize and complement 
+each other. This system rewards players who know the rules and conform to them. 
+It’s good for teaching the basics, but it doesn’t encourage brilliant but unconven-
+tional combinations. Ubisoft’s Imagine: Fashion Designer does something similar by 
+requiring the player to design clothing for an AI “client.” Unfortunately, the game 
+offers no way for the player to ﬁ nd out exactly what the client wants. If the client 
+refuses to accept a design, he doesn’t say why, so the player has to ﬁ nd out by trial 
+and error—a serious design ﬂ aw. If you plan to test the player’s creations against 
+ﬁ xed rules, you must provide a way for the player to ﬁ nd out what the rules are by 
+some better means than trial and error.
+■ Create a system of trends that the player can research. If you want to make a 
+game in which creative challenges change over time, the way fashion trends 
+change from year to year, design a system in which the standard against which you 
+measure the player’s work ﬂ uctuates. Each attribute of the player’s product could be 
+tested against a trend with its own rate of variation, so—using the clothing exam-
+ple again—hemlines might move up and down over a 10-year period, and preferred 
+fabrics might change from synthetics to natural ﬁ bers over a 20-year period. The 
+periodicity should never be completely regular or predictable, however. The trend 
+information should be hidden from the player but partially accessible via a research 
+process. When I ran a series of game design workshops on this theme, participants 
+suggested several options for doing this research. The player, in the role of a fashion 
+designer, could attend parties within the game and listen to computer-generated 
+gossip, some of which would include clues about current trends; he could read auto-
+matically created fashion magazines and newspapers for clues; or he could even 
+break into other fashion designers’ workshops to ﬁ nd out about their works in 
+progress.
+■ Allow the public to vote online. You can let the players upload their creations 
+to a web site and let the community vote on them. For example, The Sims 2: H&M 
+Fashion Runway allows players to vote on clothing created in The Sims 2. This sys-
+tem relieves the computer of the responsibility for determining the aesthetic 
+quality of the player’s creations, but it signiﬁ cantly lengthens the time scale of the 
+game—the player may have to wait hours or days until the votes come in unless 
+the game has a large player base. You will also have to build a secure system that 
+rewards players for voting and prevents vote rigging.
+Freeform Creative Play and Sandbox Mode
+If a game lets the player use all the facilities that it offers without any restrictions 
+on the amount of time or resources available (other than those imposed by techno-
+logical limitations), then it supports freeform creative play. Many games that normally
+offer constrained creative play also include a special mode that removes ordinary 
+constraints. This mode is called the sandbox mode. Sandbox mode lets the player do 
+
+
+--- PAGE BREAK ---
+
+CREATIVE AND  EXPRESSIVE PLAY 
+123
+ CHAPTER 5
+whatever he wants but usually doesn’t offer the same rewards as the constrained 
+mode—and may not offer any rewards at all. In this mode, the game resembles a 
+tool more than a conventional video game.
+The ﬁ rst RollerCoaster Tycoon game did not include a sandbox mode, and reviews of 
+the game cited it as a deﬁ ciency. The developers added a sandbox mode to the later 
+editions. Generally speaking, if you are making a game that offers creative play, 
+you should include a sandbox mode if you can. Players enjoy them, and because 
+sandbox modes don’t interact much (if at all) with the game’s core mechanics, they 
+are fairly easy to tune.
+Two particularly interesting, though very early, forms of freeform creative play 
+appeared in Pinball Construction Set and Adventure Construction Set. These games 
+allowed the player to construct games that he or someone else could play. Much of 
+the fun came from trying out the resulting game to see how it played and making 
+reﬁ nements—in effect, they permitted game development (within quite restricted 
+domains) without all the work of full-scale development.
+Storytelling Play
+Some players enjoy creating stories of their own, using features provided by a game, 
+which they can then distribute online for others to read. The Movies, by Lionhead 
+Software, stands as the most ambitious project of this kind to date. The purpose of 
+the game is to let people make their own movies and share them online. Stunt 
+Island, from Disney Interactive, also enables people to ﬁ lm their own movies, but it 
+concentrates on stunts involving vehicles rather than actors. More important, The 
+Movies, unlike Stunt Island, allows players to export movies so they can edit their 
+ﬁ lms using external tools such as Adobe Premiere Pro. The movies in Stunt Island
+can be viewed only within the game itself and can not be exported because the 
+game does not actually capture the images but simply re-creates the scene using
+the game engine for each viewing.
+The Movies offers more expressive power than any other storytelling game yet 
+made, but it does require a lot of effort from the players. If you want to make a 
+game with similar features, you will have to work with the programmers to design 
+a system that allows players to set up cameras in the game world, record the images 
+and sounds generated by the game engine, and edit them.
+However, you don’t have to go that far. The Sims proved to be a huge success with a 
+much simpler storytelling mechanism: Players can create characters and construct 
+houses for them to live in and then initiate events by giving commands to the 
+characters. The Sims also lets players capture screen shots from the game, put cap-
+tions under them, organize them into storyboards, and upload them to a web site 
+for others to see. Telling stories this way requires much less complex software than 
+The Movies uses, and the players don’t have to know how to edit video.
+
+
+--- PAGE BREAK ---
+
+124 
+FUNDAMENTALS OF GAME DESIGN
+An even easier solution involves generating a log of the player’s activities in text 
+form. She can then edit this log any way she likes, turning her raw game actions 
+and dialog into narrative form.
+Game Modiﬁ cations
+To give your players the utmost creative freedom with your game, you can permit 
+them to modify the game itself—to redesign it themselves. Game modiﬁ cations, or 
+mods, are extremely popular with the hardcore gamer community and almost an 
+obligatory feature of any large multiplayer networked game (apart from server-
+based games such as World of Warcraft).
+Providing the player with mod-building tools also makes good business sense. Your 
+game’s original content can keep people interested for only a certain amount of 
+time, but if people can build mods that use your game engine (as they can with the 
+Unreal and Half-Life 2 engines), people will continue to buy your game just to be 
+able to play the mods.
+Allowing for mods is more of a programmer’s problem than a designer’s problem, 
+so this book does not discuss them in much detail.
+Level Editors
+A level editor allows players to construct their own levels for a game. Some level 
+editors permit players only to deﬁ ne a new landscape; others allow them to deﬁ ne 
+new characters as well; and a few go so far as to permit rebuilding the entire game. 
+Generally, however, a good level editor lets the player construct a completely new 
+landscape, place challenges in it, and write scripts that the game engine can oper-
+ate. If you work on a large game for commercial sale, your team will almost 
+certainly include tools programmers who will build a level editor for the level 
+designers to use. To make the level editor available to the players, rather than useful 
+only as an in-house tool, you must make sure it is as robust and well designed as 
+the game software itself. Two superb level editors that you should study are the 2D 
+StarCraft Campaign Editor, which is included with StarCraft, and the Hammer 3D 
+editor that comes with Half-Life 2. For further reading about level editors and other 
+design tools, see Richard Rouse’s article “Designing Design Tools” in the Gamasutra
+developers’ webzine (Rouse, 2000).
+Bots
+A bot is an artiﬁ cially intelligent opponent that the player can program for himself. 
+(Bot also has a secondary meaning: a program that help players cheat at multiplayer 
+networked games. This section is about the other kind.) By building bots, players 
+can create tougher and smarter opponents than those that normally ship with the 
+game (usually a ﬁ rst-person shooter). Some players use bots as sparring partners for 
+
+
+--- PAGE BREAK ---
+

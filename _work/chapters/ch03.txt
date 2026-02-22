@@ -1,0 +1,847 @@
+DESIGN COMPONENTS AND PROCESSES 
+63
+ CHAPTER 2
+Design Practice EXERCISES
+In these exercises, you document existing games for practice. Your instructor may 
+require that you do so with certain particular games that he is familiar with, and 
+he sets the expected scope of the work—the amount of material he wants to see. 
+Use a document template from the companion website or one supplied by your 
+instructor.
+1. Document the primary gameplay mode of a reasonably simple game that you 
+like. Be sure to include a sketch of the screen, including the camera model and user 
+interface; a list of all the buttons and menu items available in that mode; and a list 
+of the other modes that this mode can switch to. Describe the challenges and 
+actions that make up the mode.
+2. Take a classic, well-known arcade game with a small number of gameplay modes 
+and shell menus, and create a ﬂ owboard for it. (As you cannot hand in an entire 
+wall of pages, create a miniature version with two or three gameplay modes per 
+sheet.)
+3. Document the level progression of a well-known game that you have played all 
+the way through, such as StarCraft or Fallout 3. (If the game does not have explicit 
+levels, as in Half-Life, document major areas or sections of the game.) Describe the 
+game world in each level and the types of challenges that it presents. If the levels 
+are integrated into a story, explain how each level supports or relates to the story.
+4. Research one of the following art or design styles from history and write a short 
+paper to explain how it might help to establish an emotional tone in a video game: 
+Impressionism, Constructivism, Symbolism, Pop Art, Art Deco, Art Nouveau. Back 
+up your argument with examples from famous paintings or other works in that style.
+Design Practice QUESTIONS
+1. What are the strengths and weaknesses of player-centric game design? In what 
+ways might it conﬂ ict with other requirements imposed on the game or with the 
+desires of the game designer?
+2. Do you feel that the list of qualities in an ideal game designer is complete? What 
+other qualities might you add? Are there any that you would remove?
+3. The list of members of a design team does not include a lead programmer. 
+Should it? Suggest some arguments for and against.
+
+
+--- PAGE BREAK ---
+
+Game Concepts
+Designing a video game begins with an idea. This chapter discusses how to turn 
+that idea into a game concept, a more ﬂ eshed-out version of the idea that can be 
+used as the basis for further discussion and development. Creating a game concept 
+is what you do in the concept stage of game design. Your goal at this point should 
+be to write the high concept document that Chapter 2, “Design Components and 
+Processes,” discussed. To do this, you don’t have to have all the details worked out 
+yet, but you do need to understand clearly what your game is about, and you must 
+be able to answer certain essential questions about the game itself, the player’s role 
+in it, and the target audience. Here, we look at how to make those decisions.
+Getting an Idea
+You can ﬁ nd game ideas almost anywhere but only if you’re looking for them. 
+Creativity is an active, not a passive, process. Look everywhere; some of the most 
+unexpected things can hide a game idea. Viva Piñata, for instance, is a slightly odd 
+but highly successful game about “breeding” living piñatas.
+One idea isn’t enough. It’s a common misconception that a brilliant game idea will 
+make you a fortune. In fact, this occurs extremely rarely. Even if you think you have 
+the game idea of the century, you should always look out for more. Make a note of 
+each one and go on. If one seems especially promising, then start to expand and 
+reﬁ ne it, but don’t let that prevent you from thinking about other games as well. 
+Dreaming the Dream
+A lot of computer games are light entertainment, designed to while away a few 
+minutes with a puzzle or a simple challenge. But larger, richer games begin with a 
+dream. If you’ve ever thought to yourself, “I wish I could… ” or “Imagine what it 
+would be like to…,” then you’ve taken an important step on the road to creating a 
+computer game. Computers can create almost any sort of visual experience you can 
+imagine, even experiences that are physically impossible in the real world. The 
+design of a computer game begins with the question, “What dream am I going to 
+fulﬁ ll?”
+Perhaps it’s a dream of exploring a dungeon infested with monsters. Perhaps it’s a 
+dream of coaching a football team. Perhaps it’s a dream of being a fashion designer. 
+But before you do anything else, you must dream the dream. Understand it. Feel it. 
+Know who else dreams it and why.
+CHAPTER 3
+64
+
+
+--- PAGE BREAK ---
+
+GAME CONCEPTS 
+65
+ CHAPTER 3
+Game Ideas from Other Media
+Books, movies, television, and other entertainment media can be great sources of 
+inspiration for game ideas, so long as the ideas include plenty of activity. Cop 
+shows from the 1970s inspired the game Interstate ’76 (see Figure 3.1). Movies such 
+as the James Bond series often inspire games. Any story containing exciting action 
+with something important at stake can form the kernel of a game. Think over the 
+books you’ve read and the movies you’ve seen and ask yourself whether any of the 
+activities in them could serve as the basis for a game.
+You can’t, of course, steal other people’s intellectual property. Even if the Pirates of 
+the Caribbean ride at Disneyland seems like the basis for a great game, you can’t 
+make it without Disney’s approval. But you can certainly make a lighthearted game 
+about pirates—as LucasArts did with its Monkey Island series.
+You should also look beyond the usual science ﬁ ction and fantasy genres and 
+beyond the usual sources like novels and movies. How about poetry? Beowulf’s
+epic battle with the monster Grendel and then his even more terrible battle with 
+Grendel’s mother in a cave at the bottom of a lake sound like the basis for a game. 
+“The Charge of the Light Brigade” might make you wonder about cavalry tactics. 
+Would a game based on cavalry warfare be interesting to anyone? It’s worth think-
+ing about.
+FIGURE 3.1
+Interstate ’76 was 
+a great game 
+inspired by another 
+medium—television.
+
+
+--- PAGE BREAK ---
+
+66 
+FUNDAMENTALS OF GAME DESIGN
+Game ideas can crop up in all sorts of unlikely places. The smash-hit game fran-
+chise The Sims was partly inspired by a nonﬁ ction book by Christopher Alexander 
+called A Pattern Language (Alexander, 1977), which is about the way people’s lives 
+are affected by the design of their houses. Just as great scientists look at even the 
+most common things in the world—light, air, gravity—and ask how they work, 
+great game designers are always looking at the world and wondering what parts of 
+it they can make into a game. The trick to ﬁ nding original ideas, beyond the elf-
+and-wizard combinations that have been done so often, is to develop a game 
+designer’s instincts, to look for the fun and challenge even in things that don’t 
+sound like games at all.
+Game Ideas from Other Games
+A great many people who play computer games want to design them as well. When 
+you play a lot of games, you develop a sense of how they work and what their good 
+and bad points are. Playing games is a valuable experience for a game designer. It 
+gives you insight and lets you compare and contrast the features of different games.
+Sometimes new game ideas are motivated by a desire to improve an existing game. 
+We think, “If I had designed this game, I would have….” To learn from other 
+games, you have to pay attention as you play. Don’t just play them for fun; look at 
+them seriously and think about how they work. Take notes especially of things that 
+you like or don’t like and of features that seem to work particularly well or not well 
+at all. How do resources ﬂ ow into the game? How do they ﬂ ow out? How much of 
+your success comes from luck? How much from skill?
+As creative people, our instinct is to devise totally new kinds of games that have 
+never been seen before. Unfortunately, publishers want games that they are sure 
+they can sell, and that usually means variations of existing games, perhaps with a 
+new twist that can be used in marketing. This explains why we keep seeing sequels 
+and thinly disguised copies of earlier games. As designers, we have to learn to bal-
+ance the tension between our own desire to innovate and the publisher’s need for 
+the comfortably familiar. Leonardo da Vinci warned against persistent imitation,
+in his Treatise on Painting:
+The painter will produce pictures of little merit if he takes the work of others as his 
+standard; but if he will apply himself to learn from the objects of nature he will produce 
+good results. This we see was the case with the painters who came after the Romans, 
+for they continually imitated each other, and from age to age their art steadily 
+declined…. It is safer to go directly to the works of nature than to those which have 
+been imitated from her originals, with great deterioration and thereby to acquire a
+bad method, for he who has access to the fountain does not go to the water pot.
+Deriving game ideas from other games tends to produce games that look or work 
+alike. Studying other games is an excellent way to learn how they function, but if 
+pursued exclusively, imitation produces similarity and, ultimately, mediocrity. The 
+
+
+--- PAGE BREAK ---
+
+GAME CONCEPTS 
+67
+ CHAPTER 3
+greatest games break new ground. They’re unlike anything seen on the store 
+shelves before.
+Communicating Your Dream to Others
+A dream is a fantasy that you have by yourself; a computer game is something that 
+you make for someone else. You and your development team are entertainers. If 
+your game is in a well-known genre and setting (for example, a World War II ﬂ ight 
+simulator), you can be pretty certain that a number of people already share your 
+dream. But if your game is in a new setting (a futuristic city of your imagination, 
+for example)—and especially if you are opening up a new genre—you have to be 
+very careful and thorough in communicating your dream to others. Some of the 
+ﬁ rst questions a publishing executive is going to ask you are, “Why would anyone 
+want to play this game?” and “What’s going to make someone buy this game 
+instead of another?”
+So what does it mean to entertain someone? Many people think entertainment is 
+synonymous with having fun, but even that isn’t completely straightforward. 
+People have fun in all kinds of ways. Some of those ways involve hard work, such 
+as gardening or building a new deck. Some of them involve frustration, such as 
+solving a puzzle. Some, such as athletic competitions, even involve pain. One per-
+son’s entertainment is another person’s insufferable boredom. To build a game that 
+entertains, you must know who it will entertain and how. Chapter 1, “Games and 
+Video Games,” discussed a variety of ways in which video games entertain people. 
+Keep them in mind as your work takes you from dream to game.
+From Idea to Game Concept
+Chapter 2 described a game concept as “a general idea of how you intend to enter-
+tain someone through gameplay.” That description was accurate enough for an 
+overview, but to discuss game concepts in detail, we need a more complete 
+explanation.
+A game concept is a description of a game detailed enough to begin discussing it as 
+a potential commercial product—a piece of software that the public might want to 
+buy. It should include, at a minimum, the following key points:
+■ A high concept statement, which is a two- or three-sentence description of what 
+the game is about. Here’s a high concept statement for a game about street football: 
+The game at its grittiest. No pads, no helmets, no refs, no ﬁ eld. Just you and the 
+guys, a ball, and a lot of concrete.
+■ The player’s role(s) in the game, if the game is representational enough to have 
+roles. If the player will have an avatar, describe the avatar character brieﬂ y.
+
+
+--- PAGE BREAK ---
+
+68 
+FUNDAMENTALS OF GAME DESIGN
+■ A proposed primary gameplay mode, including camera model, interaction 
+model, and general types of challenges the player(s) will experience in that mode.
+■ The genre of the game or, if you think it is a hybrid, which features it will
+incorporate from the different genres to which it belongs. If it is an entirely new 
+kind of game, include an explanation of why its gameplay doesn’t ﬁ t into any
+existing genre.
+■ A description of the target audience for the game.
+■ The name of the machine on which the game will run and details of any special 
+equipment the game will require (for example, a camera or dance mat).
+■ The licenses that the game will exploit, if any.
+■ The competition modes that the game will support: single-, dual-, or multi-
+player; competitive or cooperative.
+■ A general summary of how the game will progress from beginning to end, 
+including a few ideas for levels or missions and a synopsis of the storyline, if the 
+game has one.
+■ A short description of the game world.
+You should put all these items into a high concept document. This chapter dis-
+cusses how to think about these issues, except for a few that are self-explanatory or 
+are covered in earlier chapters. You can see a sample high concept document on the 
+companion website.
+In a commercial environment, a publisher wants to see several additional details: 
+the game’s potential competition, the unique selling points (often abbreviated USPs) 
+that make your game stand out in the marketplace, and possible marketing strate-
+gies and related merchandising opportunities.
+As you can see, a game concept is much more than an idea. It is an idea that you 
+have thought about and begun to develop. A game concept contains enough detail 
+that you can begin discussing how it will feel to play the game and what further 
+design work you need to create the game.
+The Player’s Role
+To understand your own game and to explain it to others, you must know what the 
+player will do, and in a sense, what the player will be in the game world—what her 
+role is. These are the ﬁ rst questions you face in creating your game concept.
+What Is the Player Going to Do?
+It’s sometimes tempting to start thinking about a game in terms of its setting or its 
+characters. For example, “Wouldn’t it be fun to play a game set in ancient Rome?” 
+
+
+--- PAGE BREAK ---
+
+GAME CONCEPTS 
+69
+ CHAPTER 3
+or “Wouldn’t it be fun to play a game as Indiana Jones?” These are reasonable ideas, 
+and of course many games have been made from both of them. However, you can-
+not make a game from a setting or character alone. The ﬁ rst step toward turning 
+the idea into a game concept is to answer the question, “What is the player going to 
+do?”
+This is the single most important question you can ask yourself at the concept 
+stage. You don’t have to assign activities to input devices yet (“the X button kicks 
+and the O button punches”), but you do have to know the activities that you want 
+to offer the player—the verbs of the game. For games in some genres, the answer is 
+simple and obvious: drive a race car or ﬁ ght in a boxing match. For games in other 
+genres, such as role-playing games, the question may have many answers: explore, 
+ﬁ ght, cast spells, collect objects, buy and sell, talk to dragons.
+Video games allow someone to play—that is, to act. The player has purchased the 
+game in order to do something, not just to see, hear, or read something. Interactivity
+is the raison d’être of all gaming; it is what sets gaming apart from presentational 
+forms of entertainment such as books and movies. The correct answer to the ques-
+tion, “Wouldn’t it be fun to play a game set in ancient Rome?” is another question: 
+“Yes, it would. What kinds of things could a player do in ancient Rome?” The more 
+precise you are, the better. Avoid generalities such as “the player builds a city,” and 
+think of the exact verbs to assign to the input devices: buy land, sell land, con-
+struct a road, and so on.
+DESIGN RULE Think About Player Actions First
+Do not start designing the story, avatar, game world, artwork, or anything else until you 
+have answered the question “What is the player going to do?”
+Deﬁ ning the Role
+Playing a game, especially board games and computer games, often involves play-
+ing a role of some sort. In Monopoly, the role is real estate tycoon. In From Russia 
+with Love, the role is James Bond. Deﬁ ning the player’s role in the game world is a 
+key part of deﬁ ning your game’s concept. If the player’s role is difﬁ cult to describe, 
+that role might be difﬁ cult for the player to grasp as well, and that may indicate 
+conceptual problems with the game. This doesn’t mean that the role always has to 
+be simple or that the player sticks to just one role per game. In many sports games, 
+for example, the player can be an athlete, a coach, or the general manager. In team 
+games, the player often switches from one athlete to another as play progresses.
+Shifting roles work well in a sports game because the game’s audience understands 
+them, but if your game takes place in a less familiar world with less familiar objec-
+tives, you must make the roles especially clear. If the player’s role changes from 
+
+
+--- PAGE BREAK ---
+
+70
+FUNDAMENTALS OF GAME DESIGN
+time to time—especially involuntarily—the player must know why it changed and 
+how to adapt to the new circumstances.
+If you explain the player’s role clearly, it helps him understand what he’s trying to 
+achieve and what rules govern the game. In America’s Army, for instance, the player 
+takes on the role of a real-world soldier. Real soldiers can’t just shoot anything that 
+moves; they have to obey rules of engagement. By telling the player that the role is 
+based on reality rather than fantasy, the game designer ensures that the player 
+knows his actions will have to be more cautious than in the usual frenetic shooter.
+In deﬁ ning the player’s role, you face the question of how realistic you want your 
+game to be. At the concept stage, you need not—and should not—start deﬁ ning
+the details of the core mechanics and the presentation layer, but you should have
+a general idea of whether you want your game to be abstract or representational. 
+Other considerations, such as the target audience (discussed in the section 
+“Deﬁ ning Your Target Audience,” later in this chapter) may inﬂ uence that decision.
+Choosing a Genre
+In describing movies or books, the term genre refers to the content of the work. 
+Historical ﬁ ction, romance ﬁ ction, spy ﬁ ction, and so on are genres of popular ﬁ c-
+tion. With video games, however, genre refers to the types of challenges that a game 
+offers. In games, the genres are independent of the content. Action games are one 
+genre; they are set in the Old West, in a fantasy world, or in outer space, and they 
+are still all action games. In his lecture “Imagining New Game Styles” at the 2005 
+Futureplay conference, the designer and commentator Greg Costikyan wrote that 
+he prefers the term game style rather than game genre to avoid this difference in 
+meaning among the different media (Costikyan, 2005), but this book will continue 
+to use genre because it is more widely recognized.
+GENRE A genre is a category of games characterized by a particular set of challenges, 
+regardless of setting or game-world content.
+The Classic Game Genres
+As you ﬂ esh out your concept, consider whether or not it falls into one of the classic 
+video game genre descriptions that follow. Later chapters look at these genres in 
+detail, examining each to see how it differs from the others and what special 
+design considerations apply to it. For now, here’s a brief introduction to the genres.
+■ Action games include physical challenges. They may also incorporate puzzles, 
+races, and a variety of conﬂ ict challenges, typically among a small number of char-
+acters. Action games often contain simple economic challenges as well, usually 
+involving collecting objects. They seldom include strategic or conceptual chal-
+lenges. Action games may be further subdivided into a variety of sub-genres. Two
+of the best known are shooter games and ﬁ ghting games.
+TIP The easier it is 
+to explain the player’s 
+role, the easier it is 
+for the publisher, the 
+retailer, and the cus-
+tomer to understand 
+it… and to decide to 
+spend money on it. 
+
+
+--- PAGE BREAK ---
+
+GAME CONCEPTS 
+71
+ CHAPTER 3
+■ Strategy games include strategic (naturally), tactical, and sometimes logistical 
+challenges. They may also offer economic and exploration challenges to lengthen 
+the game and give it more variety. Once in a while, they also have a physical chal-
+lenge thrown in for spice, but this often annoys strategically minded players.
+■ Most role-playing games involve tactical, logistical, and exploration challenges. 
+They also include economic challenges because the games usually involve collect-
+ing loot and trading it in for better weapons. They sometimes include puzzles and 
+conceptual challenges, but rarely physical ones.
+■ Real-world simulations include sports games and vehicle simulations, including 
+military vehicles. They involve mostly physical and tactical challenges but not 
+exploration, economic, or conceptual ones.
+■ Construction and management games such as RollerCoaster Tycoon primarily 
+offer economic and conceptual challenges. Only rarely do they involve conﬂ ict or 
+exploration, and they almost never include physical challenges.
+■ Adventure games chieﬂ y provide exploration and puzzle-solving. They some-
+times contain conceptual challenges as well. Adventure games may include a 
+physical challenge also, but only rarely.
+■ Puzzle games offer logic challenges and conceptual challenges almost exclu-
+sively, although occasionally there’s time pressure or an action element.
+You will probably ﬁ nd that it’s much easier to design a game that ﬁ ts within one 
+well-known genre than it is to design one outside of any existing genre. If you 
+choose to design in an existing genre, you can study the many games that already 
+belong to it for inspiration. You will also know which challenges to concentrate on 
+and which to leave out.
+Hybrid Games
+Some games cross genres, combining features not typically found together. This 
+occasionally happens when two people on the design team want the game to 
+belong to different genres, and they compromise by including challenges from 
+both. Crossing genres is also sometimes an effort to appeal to a larger audience by 
+including elements that audiences for both genres like. By far the most successful 
+hybrid is the action-adventure, as seen in the more recent Legend of Zelda games. 
+(The earlier 2D Zelda games were almost entirely action games.) Action-adventures 
+are still mostly action, but they include a story and puzzles that give them some of 
+the qualities of adventure games. Although it can add ﬂ avor and interest to a game, 
+crossing genres is a risky move. Rather than appealing to two groups, you might 
+end up appealing to neither. Many players (and game reviewers) prefer particular 
+genres and don’t want to be confronted by challenges of a kind that they normally 
+avoid. Retailers who plan to purchase a certain number of games from each genre 
+for their stores might not know on which shelf to put the game, and so will shy 
+away from it entirely.
+
+
+--- PAGE BREAK ---
+
+72 
+FUNDAMENTALS OF GAME DESIGN
+However, you should not allow these genre descriptions to circumscribe your cre-
+ativity—especially at the concept stage. If you have a wholly new, never-before-seen 
+type of game in mind, design it as you envision it; don’t try to shoehorn it into a 
+genre to which it doesn’t belong. A game needs to be true to itself, so a truly hybrid 
+game may need to mix challenges that aren’t typically presented together. But 
+don’t mix characteristics of different genres without good reason; a game should 
+cross genres only if it genuinely needs to as part of the gameplay. A ﬂ ight simulator 
+with a logic puzzle inserted in the middle of the game just to make the game differ-
+ent from other ﬂ ight simulators will only annoy ﬂ ight sim fans.
+Deﬁ ning Your Target Audience
+Many game designers make the mistake of thinking that all players enjoy the same 
+things that the designer enjoys, so the designer has only to examine his own expe-
+rience to know how to make a game entertaining. This is dangerous hubris. We 
+make video games to entertain an audience. You must think about wh o your audi-
+ence is and what they like.
+Unless you have been commissioned by a single individual, you design a game for a 
+class of people, not for one person. At this early stage, you must think about your 
+audience broadly, as a group of people that you hope will enjoy your game. One of the 
+ﬁ rst questions a publisher will ask you is, “Who will buy this game?” Think carefully 
+about the answer. What characteristics are your players likely to have in common? 
+What things set them apart from other gamers? What challenges do they enjoy? 
+More important, what challenges do they not enjoy? What interests them, bores 
+them, frustrates them, excites them, frightens them, and offends them? Answer 
+these questions, and keep the answers close at hand as you design your game.
+THE PLAYER-CENTRIC PHILOSOPHY AND THE TARGET AUDIENCE
+As Chapter 2 explained, the player-centric philosophy of game design requires that you 
+think about how your design decisions affect a representative player’s experience of the 
+game. This approach ensures that your decisions serve the player’s interests ﬁ rst, espe-
+cially in the later stages of development when you are often tempted to make decisions 
+based on cost or convenience.
+A game concept is not complete without a statement describing its intended audience.
+Deﬁ ning a target audience is not the same as player-centric design. You can apply 
+the player-centric approach only after you have deﬁ ned the target audience. You 
+must begin by asking yourself the question, “Who am I trying to entertain?” Once 
+you have that answer, you can use it to apply the player-centric approach to other 
+design issues, asking yourself, “Does this feature entertain a representative player 
+from my target audience?”
+
+
+--- PAGE BREAK ---
+
+GAME CONCEPTS 
+73
+ CHAPTER 3
+Dangers of Binary Thinking
+You can’t make a game for everyone, so your target audience is necessarily a subset 
+of all possible players, a subset determined by your answers to the questions “Who 
+will enjoy this game?” and “What kinds of challenges do they like?” As you answer 
+these questions, you may be tempted to assume that the people in one category 
+(adult men, for example) are a special audience that has nothing in common with 
+people in other categories (adult women, children, teenagers, and so on). This is 
+binary thinking: assuming that if group A likes a thing, everyone outside that group 
+won’t like it. It’s unsound reasoning and may actually cause you to lose part of your 
+potential customer base, as the following sections demonstrate.
+REASONING STATISTICALLY ABOUT PLAYER GROUPS
+Suppose you ask a group of players to rate their level of interest in a particular game 
+on a scale of 0 to 10, with 0 representing no interest at all and 10 being fanatical 
+enthusiasm. Like many phenomena, the overall population’s level of interest resembles 
+a bell-shaped curve, with small numbers of people at the extremes and the majority 
+somewhere in the middle. If you graph the responses of men and women separately, 
+you may ﬁ nd for a given game that the two groups have different arithmetic means; 
+that is, the centers of their bell-shaped curves fall at different places on the graph.
+Figure 3.2 shows this phenomenon. For the hypothetical game in question, men’s 
+mean level of interest is at about 5.5, while women’s mean level of interest is at 4.5.
+FIGURE 3.2
+Reported level of 
+interest in a game
+on a 0–10 scale
+Number of respondents 
+reporting to a given level 
+of interest in a game.
+Data from women
+Data from men
+0
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+Number of men 
+reporting an interest 
+level of 6.
+Number of women 
+reporting an interest 
+level of 6.
+
+
+--- PAGE BREAK ---
+
+74 
+FUNDAMENTALS OF GAME DESIGN
+Note that while the graph does support the statement, “Men have a higher level of 
+interest in this game than women do,” in fact, a large area of overlap indicates that 
+a signiﬁ cant portion of the women surveyed are interested in the game as well. 
+Furthermore, the number of women reporting an interest level of 6 is about two-
+thirds that of the number of men reporting the same interest level. In other words, 
+two-ﬁ fths of all the people reporting an interest level of 6 are women—far too 
+many to simply ignore.
+This is only a hypothetical example. With some games, the level of overlap may be 
+small, and there is no point in trying to reach out to an audience that simply isn’t 
+there. A game for ﬁ ve-year-olds won’t appeal to many ﬁ fteen-year-olds. The point, 
+however, is that for most ordinary games there is some overlap among different
+populations. It is foolish to ignore, or worse yet, offend a minority audience simply 
+because it is in the minority, without knowing how many people fall into that cate-
+gory. If you ignore or repel a signiﬁ cant minority, you’re throwing money away, 
+something your publisher won’t thank you for.
+STRIVE FOR INCLUSIVENESS, NOT UNIVERSALITY
+You cannot make a game that appeals to everyone by throwing in a hodgepodge of 
+features because group A likes some of them and group B likes others. If you do, 
+you will produce a game that has too many features and no harmony. For instance, 
+you can’t make a game that appeals to action fans, to strategy fans, and to fans of 
+management simulations by combining kung fu, chess, and Monopoly—the result 
+would be a mess that appeals to none of them. On the other hand, you can include 
+a storyline in a ﬁ ghting game so long as the storyline doesn’t interfere with the 
+gameplay. The storyline adds depth to the game without driving away its key mar-
+ket of ﬁ ghting-game enthusiasts, and it might attract the interest of people who 
+otherwise wouldn’t pay any attention to a ﬁ ghting game. Heavenly Sword and God
+of War are good examples. 
+Certain groups are turned off by particular content or features. For example, 
+women don’t much care for material that portrays them as brainless sex objects; 
+parents won’t buy games for their kids if the games are nothing but blood and gore; 
+members of minority races (and many in the majority too) are naturally offended 
+by racist content. These are the most obvious examples, but there are more subtle 
+ones as well. Women are generally more sensitive to the aesthetics of a game than 
+men are, and they are less likely to buy a game with ugly artwork. Some players 
+have no interest in narrative material and are put off if they are forced to watch it 
+in a genre that doesn’t normally include narratives. (This is why the storyline in 
+the kung fu game, mentioned earlier, shouldn’t interfere with the gameplay.) These 
+examples illustrate the effects of exclusionary material—content or features that 
+serve to drive players away from a game that they otherwise might like. Your goal 
+should be to make the best game that you can about your chosen subject, while 
+avoiding exclusionary material that reduces the size of your audience.
+
+
+--- PAGE BREAK ---
+
+GAME CONCEPTS 
+75
+ CHAPTER 3
+DESIGN RULE Keep Exclusionary Material Out of Your Game
+To reach a large audience while still creating a harmonious, coherent game, don’t try to 
+attract everyone by adding unrelated features. Instead, work to avoid repelling people 
+who might otherwise be attracted.
+Core Versus Casual
+The most signiﬁ cant distinction among player types is not between console-game 
+players and computer-game players, nor between men and women, nor even 
+between children and adults. The most signiﬁ cant distinction is between hardcore 
+(usually just shortened to “core”) gamers and casual gamers.
+Core gamers play a lot of games. Games are more than light entertainment to 
+them; games are a hobby that demands time and money. Core gamers subscribe to 
+game magazines, chat on game bulletin boards, and build fan websites about their 
+favorite games. Above all, core gamers play for the exhilaration of defeating the 
+game. They tolerate frustration well because of the charge they get out of ﬁ nally 
+winning. The greater the obstacle, the greater the sense of achievement. Core gam-
+ers thrive on competition. They don’t like games that are easy; they like games that 
+are challenging.
+By comparison, casual gamers play for the sheer enjoyment of the experience. If the 
+game stops being enjoyable or becomes frustrating, the casual gamer stops playing. 
+For the casual gamer, playing a game must be entertaining, whether it’s competitive or 
+not. A casual gamer is simply not willing to spend hours learning complex controls or 
+getting killed again and again until he ﬁ nds the one weak point in an otherwise invin-
+cible enemy; he feels that he has better things to do with his time. To design a game 
+for casual gamers, you have to give them a sense of rapid progress and achievement.
+In reality, of course, there are as many types of gamer as there are games; everyone 
+has a reason for playing computer games. But the casual/core distinction is a very 
+powerful one. If you design a game speciﬁ cally for one group, you almost certainly 
+won’t have a lot of sales to the other group. A few very well-designed games man-
+age to appeal to both: Goldeneye, for example, can be played happily by both core 
+and casual gamers. Core gamers can set the game at the highest difﬁ culty level and 
+drive themselves crazy trying to cut 15 seconds off the last time it took to play a 
+mission. Casual gamers can set the game at the easiest level and blast away, enjoy-
+ing the game’s smooth controls and visual detail.
+Other Distinctions
+Several other groups exhibit particular trends in their game-playing preferences, 
+and a brief list follows. Note that this section is about choosing a target audience, 
+
+
+--- PAGE BREAK ---
+
+76 
+FUNDAMENTALS OF GAME DESIGN
+not about actually designing a game for one. If you want to make your game partic-
+ularly appealing to a special group, see Appendix A, “Designing to Appeal to 
+Particular Groups.” 
+■ Men and women. Men and women are not nearly as different as various works 
+of pop psychology like us to believe. A large number of games are made with only 
+male players in mind, but it doesn’t take much to make them more appealing to 
+women as well. See Sheri Graner Ray’s Gender Inclusive Game Design for a thorough 
+discussion of the subject (Ray, 2003).
+■ Children and adults. Children’s gaming preferences and abilities differ much 
+more sharply from those of adults than men’s differ from women’s. Children have 
+different motor and cognitive skills, different attention spans, and different lin-
+guistic abilities, and all of these change dramatically as children grow up. Most 
+important, however, games designed for children must be appealing and acceptable 
+to their parents as well. There is a vast amount of research on creating entertain-
+ment for children. If you’re interested in targeting this market speciﬁ cally, you 
+might start with Chapter 9 of the book Digital Storytelling: A Creator’s Guide to 
+Interactive Entertainment by Carolyn Handler Miller (Miller, 2004).
+■ Boys and girls. For years, the male-dominated game industry had a precon-
+ceived notion that girls didn’t play video games, so the designers didn’t bother to 
+think about girls. This idea was wrong, however. Girls were playing video games, in 
+spite of the industry’s neglect. Still, boys’ and girls’ interests differ more widely than 
+men’s and women’s do, and making games that appeal to girls requires knowledge 
+that few designers have. Appendix A contains a discussion about games for girls.
+■ Players with disabilities. A number of developers are working to improve the 
+accessibility of video games to players with disabilities. Although few games are 
+made speciﬁ cally for people with special needs, it is easy and inexpensive to make 
+games more accessible. You can make your game available to the deaf by including 
+subtitles for spoken dialog and providing visual as well as auditory cues for particu-
+lar events; you can allow players with visual impairments to adjust the contrast of 
+the screen and the font size of any text in the game. 
+■ Players of other cultures. The process of adapting a game for sale in a country 
+other than the one for which it was made is called localization. The process involves 
+more than just translating the text to a different language and rerecording the 
+audio; for the game to be a hit, you must take numerous cultural factors into 
+account. It is far easier to make a game enjoyable to people in other countries if you 
+plan it that way and consider them a part of your target audience from the begin-
+ning. Designing for localization is outside the scope of this book, but if you want a 
+worldwide market, you must take the time to research the subject.
+Progression Considerations
+If your game will be a long one, the player will need a sense of progress through it. 
+At this stage of game design, you must decide what will provide that sense of progress: 
+
+
+--- PAGE BREAK ---
+
+GAME CONCEPTS 
+77
+ CHAPTER 3
+levels, a story, or both. Will your game be so large that it should be divided into lev-
+els? Will your levels be unrelated, and all available to the player at any time, or will 
+they be organized into a sequential or branching conﬁ guration, in which complet-
+ing a level makes the next one available? What types of conditions will determine 
+when a player has completed a level? The genre that you have chosen will help you 
+to determine your answers.
+The other question is whether you want a story. Stories give games a context and a 
+goal. Some genres, such as sports and puzzle games, don’t usually include stories 
+because their context is self-explanatory. In other genres, such as role-playing 
+and adventure games, the story is a large part of the game’s entertainment. 
+Representational games frequently have a story; abstract games generally don’t, 
+although Ms. Pac-Man was an exception in a small way. Stories about abstract char-
+acters are seldom very involving.
+If you do choose to have a story in your game, you don’t have to know exactly what 
+narrative content you want to include at the concept-formation stage. All you need 
+to know is whether you want a story and, if so, what its overall direction will be. 
+You should be able to summarize it in a sentence or two; for example: “Jack Jones, 
+leader of a secret anti-drug task force, will conduct a series of raids against the drug 
+barons, ending in an apocalyptic battle in the cocaine ﬁ elds of Colombia. Along 
+the way, some of the people he encounters will not be quite what they seem.” 
+Errors in the storyline are much easier to correct than errors in the gameplay, and 
+gamers will forgive story errors more quickly as well. Make sure you understand 
+your game ﬁ rst; then build your story into it.
+DESIGN RULE The Story Comes Later
+Do not spend a lot of time devising a story at the concept stage. This is a cardinal error 
+frequently made by people who are more used to presentational media such as books and 
+ﬁ lm. You must concentrate most of your efforts on the gameplay at this point.
+Types of Game Machines
+When you ﬁ rst start ﬂ eshing out your game concept, you should concentrate
+on the dream, the player’s role, and the target audience. However, a game concept 
+is not complete without a statement about which machine (or machines) the game 
+runs on. Some genres of games are better suited to one kind of machine than 
+another, and all machines have features and performance characteristics—input
+and output devices, processor speed, storage space—that deﬁ ne the scope of the 
+game. You need to know the strengths and weaknesses of the different types of 
+machines and how their owners use them.
+
+
+--- PAGE BREAK ---
+
+78
+FUNDAMENTALS OF GAME DESIGN
+Throughout this book you’ll see many references to PCs—personal computers. The 
+IBM PC and its clones, running the Windows operating system, are by far the most 
+popular personal computers for gaming. However, when you see the term PC, you 
+shouldn’t assume that it only means IBM PC clones running Windows. Developers 
+also make games for the Macintosh and for machines running the Linux operating 
+system, and these qualify as PCs too.
+Home Game Consoles
+A home game console is usually set up in the living room or a bedroom. The player 
+sits or stands holding a dedicated controller 3 to 6 feet away from the television 
+that serves as its display. Although modern high deﬁ nition digital televisions are a 
+great improvement over the analog sets that the early consoles used, the player is 
+still too far from the screen to see small details or to read ﬁ ne print conveniently. 
+This means that games designed for the home console machine are seldom as intri-
+cate as the typical personal computer game. The graphics have to be simpler and 
+bolder, and the control method and user interface must be manageable with the 
+controller provided. A mouse can point much more precisely than most controllers, 
+even ones with analog joysticks. Still, you are guaranteed that every machine ships 
+with a standardized controller, which means you don’t have to do the large amount 
+of conﬁ guration testing that games for the PC require.
+Because several people see the television at once, and because all consoles allow for 
+at least two controllers, console machines are excellent for multiplayer games in 
+which all the players look at the same screen. This means that every player can see 
+what every other player is doing on the screen, which is something you need to 
+consider when designing some games. 
+Nothing has changed the home console landscape more in the last few years than 
+the arrival of the Nintendo Wii, with its revolutionary motion-sensitive controller. 
+Many casual players ﬁ nd the vast array of buttons and joysticks on the traditional 
+game controller daunting. The Wii has made video games intuitive and easy to 
+learn, with the result that Wii machines are being used in all sorts of unexpected 
+ways—as therapy for injured, disabled, and elderly people, for example.
+Generally speaking, hardware developers create a much larger variety of input 
+devices for console machines, such as the Guitar Hero controller, than they do for the 
+PC. Because the console manufacturers rigorously test any device with their logo on 
+it, you can be conﬁ dent that these devices are compatible with their machines. PC 
+manufacturers cannot prevent third parties from creating additional hardware for 
+their machines, so you cannot be as conﬁ dent that off-brand input devices will 
+work correctly with your PC game—you will simply have to test them.  Chapter 8, 
+“User Interfaces,” addresses designing for a variety of controllers in more detail.
+Home consoles tend to have graphics display hardware of comparable power to the 
+graphics hardware in personal computers but slower central processing units and 
+less RAM than personal computers. Because consoles sell for $200–$400 once they 
+
+
+--- PAGE BREAK ---
+
+GAME CONCEPTS 
+79
+ CHAPTER 3
+have been available for a year or so, the manufacturer has to cut the hardware design 
+to the bone to keep the cost down. This means that, as computing devices, the most
+expensive console is always less powerful than the most expensive personal computer,
+and more difﬁ cult to program. On the other hand, their low price means that far 
+more consoles are in players’ hands, which creates a larger market for their games.
+The home console differs from the personal computer in another important way. 
+Console manufacturers won’t let just anyone make a game for their machine. You 
+have to have a license from the manufacturer and their approval for your game 
+idea—and they tend to be reluctant to approve anything controversial. Once the 
+game is ready, you also have to submit it to the manufacturer for extensive testing 
+before releasing it. Nintendo instituted these policies after the video game industry 
+was nearly destroyed in the early 1980s by a ﬂ ood of low-quality, buggy games 
+(mostly made for the Atari VCS console). Nowadays, all the console manufacturers 
+have policies similar to Nintendo’s. When developing for personal computers, you 
+aren’t constrained this way. You can create any game you want, without anyone’s 
+permission, on any subject you like. Obviously some publishers won’t publish 
+games that they feel might be offensive, and many countries have censorship laws 
+that explicitly prohibit certain content. But the PC is an open platform; you can 
+build games for personal computers without being bound by any contractual 
+limitations.
+In the last few years, a partial convergence has taken place between the home con-
+sole and the PC. Consoles now routinely include hard disk drives that enable the 
+player to store far more data than before, and they all include networking capabil-
+ity as well. Services such as Xbox LIVE have begun to network console machines, 
+although this is not yet the standard way that people play. The single-player or 
+multiplayer local experience is still the most common one.
+Personal Computers
+A personal computer (PC) can be set up away from the communal living space, on 
+a computer desk. In this case, the player has a keyboard, a mouse, possibly a joy-
+stick, and (more rarely) a dedicated game controller such as those on console 
+machines. The player sits 12 to 18 inches away from a relatively small (compared to 
+the television) high-resolution display. The high resolution means that the game 
+can have subtle, detailed graphics. The mouse allows precision pointing and a more 
+complex user interface. The keyboard enables the player to enter text conveniently 
+and send messages to other players over a network, something that is nearly impos-
+sible with console machines.
+The personal computer is quite awkward for more than one person to use. The con-
+trols of a PC are all designed for one individual, and even the furniture it usually 
+sits on—a desk—is intended for solitary use. PC games are rarely designed for more 
+than one person to play on a single machine. On the other hand, a PC is very likely 
+to be connected to the Internet, whereas consoles only recently got this capability. 
+The PC is still the machine of choice for multiplayer networked games.
+
+
+--- PAGE BREAK ---
+
+80 
+FUNDAMENTALS OF GAME DESIGN
+The great boon of PC development is that anyone can program one; you don’t have 
+to get a license from the manufacturer or buy an expensive development station. 
+Consequently, personal computers are at the cutting edge of innovation in com-
+puter gaming. They’re the platform of choice for small-scale, low-demand projects, 
+interactive art, and other experimental forms of interactive entertainment.
+The great bane of PC development is that no two machines are alike. Because 
+they’re customizable, millions of conﬁ gurations are possible. In the early days of 
+the game industry, this was a real nightmare for programmers. Fortunately, the 
+Windows and Macintosh operating systems have solved many of these problems by 
+isolating the programs from the hardware. Still, games tend to require more from 
+the machine than other applications do, and conﬁ guration conﬂ icts still occur.
+PC games may be divided into two general and quite different categories: stand-
+alone games, which the player installs on his machine like any other program, and 
+browser-based games that run inside a web browser such as Safari or Internet Explorer.
+STAND-ALONE GAMES
+A stand-alone PC game can use the full power of the PC, assuming the player isn’t 
+running any other applications at the same time. Of all games played on consumer 
+equipment, stand-alone PC games can be the most visually spectacular. Home 
+game consoles are sold in distinct hardware “generations,” and a given manufactur-
+er’s machine won’t change until the next generation. By contrast, personal 
+computers evolve constantly, so game developers can take advantage of the latest 
+hardware innovations. Crytek’s Crysis is a good example of a game that requires a 
+very powerful machine for a player to enjoy it fully. 
+This doesn’t mean that stand-alone PC games always demand high-end equipment, 
+or that they should; it only means that if you want to develop for the highest-end 
+gear, you should build stand-alone PC games. That choice usually limits the size of 
+your market to the truly dedicated hobbyist gamer. On the other hand, many 
+stand-alone games are aimed at the middle of the range and do very well. Most 
+edutainment games are stand-alone games because it’s easier for a parent to help a 
+young child with a keyboard and mouse than a handheld controller.
+BROWSER-BASED GAMES
+Browser-based games are a rapidly growing sector of the game market. They have 
+one huge advantage over stand-alone games: Because they run in a web browser, 
+they are isolated from the machine’s hardware. A browser-based game can run on a 
+Windows PC, Macintosh, or Linux machine with no modiﬁ cations. This advantage 
+comes at a price, however; browser-based games cannot take full advantage of 
+the machine’s capabilities, and this usually includes 3D rendering. Most browser-
+based games—and there are thousands—are 2D games aimed at the casual player. 
+They are often written in Java or Adobe’s ActionScript language, which works with 
+Flash Player.
+
+
+--- PAGE BREAK ---
+
+GAME CONCEPTS 
+81
+ CHAPTER 3
+Beginning with browser-based games is an excellent way to get started building 
+small games, because you don’t have to know much about the machine’s hardware.
+Handheld Game Machines
+Handheld game machines are a hugely popular and very inexpensive form of enter-
+tainment, used in the West mainly by children. (In Japan, signiﬁ cant numbers of 
+adults use them too.) Handhelds support few add-on features; the input and output 
+devices are usually ﬁ xed. These machines have a smaller number of buttons than a 
+console controller does and only a small LCD screen. Their CPUs are slower than 
+their console counterparts but still have enough CPU speed to run sophisticated 
+games. The Sony PSP represented a huge jump in the power and display quality of 
+handheld game machines.
+The cheapest handheld machines offer a ﬁ xed set of built-in games, but the more 
+versatile handhelds accept games stored on ROM cartridges, and the PSP now sup-
+ports a small optical disk. Cartridges store much less data than the CD-ROMs or 
+DVD discs that home consoles and computers use. Designing for a cartridge 
+machine places severe limits on the amount of video, audio, graphics, and anima-
+tion you can include in the game. Because they’re solid-state electronics, though, 
+the data on a cartridge is available instantly. There’s no delay in loading data, as 
+there is with optical media devices.
+The handheld game market is potentially lucrative, but creating a game for one 
+tests your skills as a designer. With less storage space, you have to rely on gameplay 
+rather than content to provide the entertainment. And as with home console 
+machines, to develop for handheld game machines you must have a license from 
+the manufacturer. (The Pocket PC and other personal digital assistants belong to a 
+different category because they are not, strictly speaking, game machines. The later 
+section “Other Devices” deals with them.)
+Mobile Phones and Wireless Devices
+Mobile phones now have enough computing power to play decent games. 
+Unfortunately, it has proven difﬁ cult to ﬁ nd a reliably proﬁ table business model. 
+The public is reluctant to pay much money for games on mobile phones. Skins and 
+ringtones account for most of the money being made in mobile phone content at 
+the moment. But the worst thing about developing for mobile phones is the utter 
+lack of standardization. The screens are all different sizes and color depths; the pro-
+cessors are different; the operating systems are different. Even the layout of the 
+buttons is nonstandard, making it difﬁ cult to be certain what user interface design 
+is convenient across a range of phones.
+However, mobile phones and other wireless devices such as the Nintendo DS do 
+have one distinct advantage over traditional game handhelds: Wireless devices per-
+mit portable networked play. Players can compete against other people while riding 
+on trains or waiting for an appointment. Setting up a networked game on mobile 
+
+
+--- PAGE BREAK ---
+

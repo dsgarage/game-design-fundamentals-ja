@@ -1,0 +1,1111 @@
+452 
+FUNDAMENTALS OF GAME DESIGN
+3. Will the game include challenges other than conﬂ ict, such as exploration or eco-
+nomic management? How will they work with the conﬂ ict challenges?
+4. Some games, such as Go, are about control of territory rather than destruction of 
+units per se. If this is true of your game, how is territory seized and how is it 
+retained (or retaken)? What methods are used to indicate to the player who owns a 
+particular region?
+5. If the game involves units in combat, what are the units and what are their key 
+characteristics (health, speed, range, rate of ﬁ re, and so on.) and limitations?
+6. Is the player given a ﬁ xed number of units at the beginning, as with most strat-
+egy board games such as chess, or is there a production mechanism? If there is a 
+production mechanism, what are the production times and costs of each unit, and 
+what (if anything) is consumed by production? If something is consumed by pro-
+duction, where does it come from in the ﬁ rst place?
+7. Real-time strategy games are prone to certain dominant strategies such as the 
+race for resources hidden in the landscape. These blunt approaches tend to over-
+whelm more subtle strategic details. Can you devise a way to predict and avoid them?
+8. Does the game include upgrades or a technology tree? If so, what are the 
+upgrades and how are they obtained? What does it add to the player’s experience of 
+the game?
+9. Does the game include logistics (maintenance of supply lines)? What supplies 
+must be provided, and what happens if supply lines are broken? Does the supply 
+mechanism include any abstractions to simplify it?
+10. What is the game’s setting, if any? If the units are unfamiliar to the player, what 
+visual cues or other cues will you use to indicate the difference between, for exam-
+ple, a dragoon, a cuirassier, and a grenadier?
+11. Is the game a large-scale one with hundreds or thousands of units or a small-
+scale one with tens of units? How will this affect the player’s perception of the 
+units? What user interface features will the player need to manage them?
+12. How much can the player see? Does the terrain have to be explored? Will the 
+game include the fog of war?
+13. If you can get a copy, take a look at the level editor supplied with Warcraft III.
+Which of the level-building features (triggers, timed events, and so on) would you 
+like to include in your game?
+14. Strategy games require particularly powerful AI, especially if the game is sup-
+posed to play in general circumstances and not just prebuilt and prebalanced levels. 
+Given the rules of the game, what goals should the AI work toward, and how 
+should they choose the actions to achieve those goals?
+
+
+--- PAGE BREAK ---
+
+ CHAPTER 15
+453
+Role-Playing Games
+Role-playing games allow players to interact with a game world in a wider variety of 
+ways than most other genres do, and to play a richer role than many games allow. 
+Most role-playing games also offer an experience impossible in the real world: a 
+sense of growing from an ordinary person into a superhero with amazing powers. 
+Other genres usually provide players with these powers immediately, but in a role-
+playing game, the player earns them through successful play and gets to choose 
+which particular abilities he wants to cultivate. This chapter ﬁ rst deﬁ nes the role-
+playing genre and then describes the unique gameplay features, modes, and 
+mechanics of this type of game. The chapter focuses on single-player role-playing 
+games that use both avatar-based and party-based interaction models. (Chapter 21, 
+“Online Games,” discusses online multiplayer games, including role-playing ones.)
+In addition, we’ll look at the world, story, and settings common to role-playing 
+games and delve into the attributes of the avatars and other characters involved in 
+the game. We’ll also look at the various game modes and some special issues for 
+designing the user interface of a role-playing game.
+Unfortunately, there isn’t room for more than a general overview of role-playing 
+games. They include more different types of gameplay than most other genres and 
+have the second most complicated user interfaces. (Construction and management 
+simulations have the dubious honor of the most complicated user interfaces.) For a 
+more detailed discussion of the subject, read Neal and Jana Hallford’s Swords and 
+Circuitry (Hallford and Hallford, 2001).
+What Are Role-Playing Games?
+Computerized role-playing games are an outgrowth of the original noncomputer-
+ized, pencil-and-paper role-playing games, of which Dungeons & Dragons is by far 
+the most famous example. (For simplicity’s sake, this book calls computerized role-
+playing games CRPGs and the noncomputerized kind tabletop RPGs to distinguish 
+them from each other.) The object of both kinds of games, computerized and oth-
+erwise, is to experience a series of adventures in an imaginary world, through an 
+avatar character or a small group of characters whose skills and powers grow as 
+time goes on. A group of characters who go on these adventures together in an RPG 
+is universally called a party.
+CHAPTER 15
+
+
+--- PAGE BREAK ---
+
+454 
+FUNDAMENTALS OF GAME DESIGN
+In tabletop games, the adventures, usually characterized as quests to achieve some 
+goal, are devised and staged by one player acting in a special role as the game master
+or dungeon master (this book uses the term game master or GM). The tabletop games’ 
+rules are complex by comparison to other noncomputerized games. Almost all the 
+game activity takes place in the players’ imaginations; only a few props or visual 
+materials depict the game world. Consequently, the players may propose to take 
+almost any action that they can think of, and the GM must decide whether the 
+action is permitted within the rules and determine its consequences. In general, 
+tabletop RPGs are permissive rather than restrictive, and any reasonable action is 
+allowed—with the deﬁ nition of reasonable being the privilege of the GM. The pro-
+cess involves a certain amount of ad-hoc rule making.
+In CRPGs, the computer implements the rules, performs the activities of the game 
+master, and presents the game world on the screen. Because the computer can offer 
+the players only a ﬁ xed set of actions to take and can’t invent new rules on the ﬂ y, 
+CRPGs aren’t as ﬂ exible as the tabletop games. However, because the players do not 
+have to implement the rules and the graphics are often stunningly beautiful, CRPGs 
+are somewhat more accessible and attractive to the novice player than tabletop RPGs.
+Multiplayer online RPGs also sometimes include human GMs who work within the 
+conﬁ nes of the computer-controlled rules. The GM acts similarly to a GM for a 
+board game, modifying situations and keeping the game fresh. Chapter 21 covers 
+multiplayer online RPGs.
+A key aspect of tabletop RPGs is, as the name suggests, role-playing—that is, impro-
+visational drama in which each player plays the role of his avatar character and the 
+GM plays the roles of any NPCs. Emotional relationships can arise and change 
+among the characters as the players play their respective roles. A good role-playing 
+experience depends on the imaginations and acting skills of the players. For the 
+most part, however, CRPGs have only borrowed the general themes and core 
+mechanics from the tabletop games and not the role-playing activity itself. Single-
+player CRPGs don’t yet have the power to simulate NPCs with the acting skill of a 
+human GM. Role-playing in single-player RPGs is therefore limited to holding con-
+versations with NPCs by means of a dialog tree, a technique that Chapter 7, 
+“Storytelling and Narrative,” discussed in detail.
+In contrast, multiplayer online RPGs do allow real role-playing between characters 
+because the players can type messages to each other on the computer’s keyboard 
+and sometimes even talk to each other via a microphone and speakers.
+The essential parts of a computer role-playing game, then, are the quest or story of 
+the game and character growth. The quests usually require combat, and the rules of 
+the game are designed to support it. The rules also deﬁ ne how character growth 
+occurs. Creating a successful CRPG depends on providing a captivating story and a 
+rewarding character growth path.
+
+
+--- PAGE BREAK ---
+
+ROLE-PLAYING GAMES 
+455
+ CHAPTER 15
+ROLE-PLAYING GAME A role-playing game is one in which the player controls one or more 
+characters, typically designed by the player, and guides them through a series of quests 
+managed by the computer. Victory consists of completing these quests. Character 
+growth in power and abilities is a key feature of the genre. Typical challenges include 
+tactical combat, logistics, economic growth, exploration, and puzzle solving. Physical 
+coordination challenges are rare except in RPG-action hybrids.
+CRPGs have elements in common with many other genres; it is the way in which 
+they implement them, and the combinations in which they occur, that set them 
+apart. Because CRPGs include so many types of challenges, it’s not unusual for peo-
+ple to make hybrids.
+War Games
+CRPGs and war games both include combat and a set of rules for determining how 
+it takes place. However, CRPGs differ from war games in that CRPGs are about a 
+small group of heterogeneous characters (and sometimes only one), almost always 
+implemented as living humanoids, rather than a large group of often identical 
+units such as tanks or airplanes. Unlike CRPGs, war games seldom keep track of the 
+growth of individual units, and role-playing games don’t normally have factories 
+that can produce more units.
+The Heroes of Might and Magic series crosses the CRPG and war game genres. The 
+games include both individual heroes and troops who have to be managed in large 
+battles.
+Action Games
+Action games frequently test the player’s physical skills; CRPGs never used to, but 
+physical challenges are becoming more common in CRPGs. The Elder Scrolls games, 
+Morrowind and Oblivion, are both action-CRPG hybrids. They feature a single avatar 
+and a user interface much simpliﬁ ed from the traditional party-based model. 
+CRPGs include a lot of non–action-related activities such as buying and selling, as 
+well as conversations with other characters in which the player has a choice of dia-
+log. These activities are rare in action games.
+Adventure Games
+Like adventure games, CRPGs often have rich storylines with highly detailed char-
+acters. Both types of games also involve a lot of exploration. However, in modern 
+adventure games the player’s avatar is a highly speciﬁ c character provided by the 
+game, whereas most CRPGs allow the player to deﬁ ne his own avatar or party of 
+characters. Adventure games also tend to concentrate on one character, not a party 
+of them. Adventure games traditionally offer puzzles rather than combat chal-
+lenges, and their characters are seldom deﬁ ned by numeric attributes as in CRPGs. 
+
+
+--- PAGE BREAK ---
+
+456 
+FUNDAMENTALS OF GAME DESIGN
+If any character growth occurs in adventure games, it is of a personal or psycholog-
+ical nature rather than in numerically measured abilities such as strength, speed, 
+and dexterity. CRPGs have a complex internal economy, and much of the growth 
+that takes place consists of increasing these numbers.
+The Final Fantasy games could be considered hybrids of CRPG and adventure. 
+Battles are turn-based, requiring no action skills, and they have some of the most 
+vivid stories and most beloved characters of any games made.
+Game Features
+In order for the story to progress and the characters to develop, the characters have 
+to have something to do; therefore, exploring and combat make up a big part of 
+most CRPGs. In most such games, the stories and challenges are prescripted, so the 
+player experiences the same things each time he plays. In a few cases, individual 
+levels are randomized on each play, which makes the games more replayable—well-
+known examples include the Diablo series and a rather extraordinary game called 
+NetHack (see Figure 15.1).
+FIGURE 15.1 
+NetHack (Windows 
+user interface shown) 
+TIP The earliest 
+versions of NetHack
+were entirely text-
+based, as were the 
+wonderful adventure 
+games from Infocom 
+(which are still avail-
+able). Graphics impress 
+the player, but words 
+stimulate his imagina-
+tion. Never forget the 
+power of words. 
+
+
+--- PAGE BREAK ---
+
+ROLE-PLAYING GAMES 
+457
+ CHAPTER 15
+NetHack is very small, so it contains almost no story. However, the character devel-
+opment, adventuring, exploration, and combat elements of the game are remarkable
+for its size. NetHack can offer so much variety because it doesn’t have to display 
+events with graphics; it simply describes them with text. Later designers success-
+fully applied its basic game mechanic to other products. The original Diablo from 
+Blizzard owed more than a little of its success to that design.
+Themes
+CRPGs generally allow the player to experience a pivotal role in solving some 
+hugely important problem. The premise of most role-playing games can be summed
+up in the statement: “Only YOU can save the world!”—or the tribe or city or what-
+ever level of society is threatened. However, saving the world is a cliché, an 
+adolescent power fantasy that has been terribly overused in this genre. Consider 
+some alternative quests that could have a secondary consequence of saving the 
+world but need not:
+■ Find and punish the person responsible for a loved one’s murder.
+■ Learn the secret behind your hidden parentage.
+■ Rescue the kidnapped princess/prince.
+■ Find and reassemble the long-lost pieces of the magic object.
+■ Destroy the dangerous object.
+■ Find the evidence that will exonerate you from a false accusation.
+■ Transport the valuable object past the people trying to seize it.
+■ Try to get home after having been abducted.
+While these are all very familiar themes, at least they’re not speciﬁ cally about sav-
+ing the world.
+PLANESCAPE: TORMENT
+I strongly encourage you to take a look at Planescape: Torment (if you can’t ﬁ nd a copy, at 
+least read the reviews and commentary available online). The premise of this unusual 
+game has nothing to do with the typical quest to solve some enormous problem; rather, it 
+is to discover something about the avatar’s past—initially, just his name, which at the 
+beginning of the story, the player does not know. The game is actually about the psycho-
+logical growth of an individual rather than saving the world, but even so, there is plenty 
+of combat, exploration, trading, and all the other traditional RPG challenges along the way.
+
+
+--- PAGE BREAK ---
+
+458 
+FUNDAMENTALS OF GAME DESIGN
+Progression
+RPGs almost always tell a story, characterized as a long quest in pursuit of some 
+important goal. The quest is broken down into a number of episodes that progress 
+in a linear sequence, each with its own subquest and major challenge at the end. 
+These end-of-episode challenges (almost always combat with a powerful enemy) are 
+analogous to the boss characters at the ends of levels in action games. The story 
+maps onto exploration—a journey, in other words—and each episode takes the 
+player to a new location. Unlike in linear games such as rail-shooters or side-
+scrollers, it’s often possible to go back to a previously visited location, though there 
+may no longer be anything worthwhile to do there. A few games take the party 
+back to a previously visited location for a new episode; when they do this, it’s often 
+markedly different in order to give the player new things to do. In Planescape: 
+Torment, the town of Curst is destroyed while the party is away.
+In order to progress from one episode to the next, the player’s party has to have 
+enough strength to overcome whatever major challenge lies at the end of the cur-
+rent episode. This won’t be possible right away (even if the player knows where the 
+challenge is), so the activities during the chapter help the characters to grow strong 
+enough.
+Because the story of the game is intimately bound up with the game world itself, 
+the section “The Game World and Story” later in this chapter addresses storytelling 
+in CRPGs.
+In addition to the quests that lie along the main storyline, there are also optional 
+side quests that are unrelated to the main ones. These are not thrust upon the player 
+but must be sought out. Visible or audible cues inform the player that one of the 
+NPCs in the game has a problem that the party can help solve; if the party goes up 
+and talks to her, the player learns of the side quest and can choose to accept or 
+reject it. Normally there’s no penalty for refusing one apart from the missed oppor-
+tunity to have another adventure and earn some more experience. Players can 
+usually abandon a side quest without penalty as well.
+Side quests seldom carry over from episode to episode. (If a quest does so, it’s usu-
+ally related to the main story rather than being a side quest.) Figure 15.2 illustrates 
+the general progression of a CRPG.
+MAIN
+STORY
+MAIN
+STORY
+Location
+Location
+Location
+Optional
+Quest
+Optional
+Quest
+FIGURE 15.2 
+Typical CRPG 
+progression
+
+
+--- PAGE BREAK ---
+
+ROLE-PLAYING GAMES 
+459
+ CHAPTER 15
+Gameplay Modes
+Because CRPGs try to duplicate (within limits) the ﬂ exibility of tabletop role-play-
+ing games, they offer more kinds of activities than any other genre. Among these 
+activities are exploration, tactical combat, stealth operations, conversation, buying 
+and selling, and inventory management.
+CRPGs typically use four major gameplay modes and a variable number of minor 
+ones. The major modes are exploration and combat, conversation, trade, and
+inventory management. The minor modes are character creation (only used at the 
+beginning of the game), character upgrade screens, and skill tree management.
+The next four sections describe the major modes brieﬂ y.
+EXPLORATION AND COMBAT
+In older computer games, exploration was often a gameplay mode separate from 
+combat, and the two modes had different camera models. Modern games combine 
+them into a single mode. Traditional party-based RPGs often use an isometric per-
+spective so the player can see the whole party. Figure 15.3 is from Baldur’s Gate II: 
+Throne of Bhaal, which illustrates this isometric perspective.
+Notice the complexity of the user interface, with buttons along three sides of the 
+screen as well as a scrolling text window at the bottom.
+FIGURE 15.3 
+Baldur’s Gate II: 
+Throne of Bhaal with 
+an isometric perspec-
+tive showing several 
+party members as well 
+as a number of NPCs
+
+
+--- PAGE BREAK ---
+
+460 
+FUNDAMENTALS OF GAME DESIGN
+If the game has only one character, ﬁ rst- or third-person perspectives are common; 
+see the section “Camera Model” later in this chapter.
+The actions available in the exploration and combat mode include selecting one or 
+more characters in the party, setting a formation in which they will move together, 
+designating a location for them to walk or run to, designating NPCs for them to 
+attack or to talk to, picking up objects, and exercising special skills such as casting 
+magic spells or searching for traps. The buttons to the lower right in Figure 15.3 are 
+for setting a formation.
+CONVERSATION
+Conversation modes often use the same perspective on the game world as the 
+exploration and combat mode but replace the exploration- and combat-related user 
+interface features with a dialog-display mechanism. Occasionally, they switch the 
+perspective to a close-up view of the other character in the conversation or display 
+the character in a pop-up window.
+CRPGs almost always manage conversations via the dialog tree mechanism that 
+Chapter 7 describes. The player selects an NPC in the game world to speak to. A 
+window opens, presenting a list of things that the avatar can say to the NPC. The 
+player chooses one, and depending on what her choice is, the NPC replies, some-
+times in text but often with an audio recording as well. Sometimes a scrolling 
+window records the content of the conversation so that the player can go back and 
+see what was said for as long as the conversation continues, or it may be recorded 
+in a log or journal the player can bring up later. Asking the right questions or say-
+ing the right things elicits useful information from the NPC and sometimes gains 
+experience points for the player as well.
+Figure 15.4 shows the conversation mode in Arcanum: Of Steamworks and Magick 
+Obscura. A portrait of the person being spoken to appears in a window at the bot-
+tom, along with some information about how he is reacting to the situation. 
+Immediately above the portrait, superimposed on the game world, are two lines of 
+text. These are lines of dialog from which the player may choose. Above them, the 
+NPC’s most recent speech appears adjacent to the character.
+Conversations almost always take place between the avatar character and just one 
+other person. Conversations with more than one person become complicated 
+because the dialog window must indicate to whom each statement is addressed.
+
+
+--- PAGE BREAK ---
+
+ROLE-PLAYING GAMES 
+461
+ CHAPTER 15
+TRADE
+Any buying or selling of items in the game takes place in a specialized trading 
+mode. Most games in this genre have towns or settlements with friendly NPCs—
+blacksmiths, healers, and so on—who run businesses that offer to buy or sell goods 
+and services. The interface is similar to the conversation mode interface, with a 
+view of the shop, sometimes an image of the person the avatar bargains with, and 
+often a list or a set of images of all the available items. The player can choose to buy 
+an item or sell an item he already owns to get more money and can often bargain 
+with the shopkeeper. Items purchased go directly into the avatar’s inventory.
+INVENTORY
+The inventory mode lets the player manage the objects that a given character is car-
+rying around. Because CRPGs tend to include large numbers of objects, players 
+need a system for keeping track of them and trading them among characters.
+It’s not realistic to simulate the actual packing of items into a backpack, and in any 
+case, most games allow characters to carry more than would be credible if they 
+were real people. Instead, a typical solution is to divide the character’s carrying 
+capacity into an array of boxes. Each box can carry one type of item. Large items 
+take up several adjacent boxes. If an item is small enough, a single box can store 
+FIGURE 15.4 
+Arcanum: Of 
+Steamworks and 
+Magick Obscura
+conversation
+
+
+--- PAGE BREAK ---
+
+462 
+FUNDAMENTALS OF GAME DESIGN
+several of them, up to some maximum limit. Money, usually gold coins, will ﬁ t in a 
+box with so many hundred coins per container. Figure 15.5 shows the inventory 
+mode for Dungeon Siege II, which appears as a pop-up window over the main game 
+world.
+Item weight may be a secondary constraint. No matter how many boxes the player 
+has free, his character can carry only so many lead weights around. The BioWare 
+games assess a penalty on a character’s speed if he is carrying more than a certain 
+weight, and above another threshold the character cannot move at all. Money is 
+often exempt from the weight limit because having to store it whenever the player 
+ﬁ nds a big treasure hoard is annoying.
+The player usually spends a disproportionate amount of time micromanaging the 
+contents of the inventory, so inventory management becomes disproportionately 
+important. Often, this task breaks a cardinal rule of human-computer interaction: 
+Don’t force the player to perform a menial task best handled by the computer. A 
+simpler solution is to display a simple table of the items in the inventory, without 
+requiring the player to organize them in space. A pair of indicators, one for the 
+total weight of the inventory and one for the total volume, could tell the player 
+how much room he has left and how much more weight he can carry.
+FIGURE 15.5 
+The inventory mode in 
+Dungeon Siege II
+
+
+--- PAGE BREAK ---
+
+ROLE-PLAYING GAMES 
+463
+ CHAPTER 15
+Core Mechanics
+During play, most of the actions in an RPG consist of the player designating a char-
+acter to attempt some particular activity. The player must then roll dice (in video 
+games, the computer simulates this) to determine whether the attempt was success-
+ful or not. The rules governing success and failure for a particular activity describe 
+how to test the die roll against one or more of the character attributes. For example, 
+consider the following situation: Johnny Rock, the warrior, wants to smash down a 
+Consider the situation in Figure 15.6. The player has found a staff but cannot put it in 
+his inventory because he doesn’t have enough free boxes in the right conﬁ guration. The 
+staff takes up 4 boxes in a 1 × 4 conﬁ guration, and the longest space he has available is 1 
+× 3. If he moves the apple in the top space, however, he will have a space of 1 × 4 and will
+be able to store the staff. The question to ask should be: Is this activity fun for the player?
+Probably not; therefore, the computer should handle it automatically. Note that an adequate
+4 × 1 horizontal space is available. Why can’t the staff simply rotate 90 degrees and ﬁ t into
+the 4 × 1 gap at the bottom? Most CRPGs cannot handle that simple situation. What will 
+happen if the player ﬁ nds a staff that requires a 1 × 5 space, when the storage space avai-
+able consists of a 4 × 4 grid of boxes? In the real world, we could place it diagonally in the
+pack, but CRPG inventory-maintenance systems generally cannot accommodate that action.
+To resolve this, consider two possibilities. First, allow the player to turn rectangular 
+objects sideways when putting them in the inventory, perhaps with a single button click 
+that toggles the object between vertical and horizontal orientations. The staff in Figure 15.6
+would easily ﬁ t along the bottom row if the player could turn it sideways. Second, and more
+difﬁ cult to implement, design a system that automatically moves the inventory contents 
+around to keep all the free space together—rather like defragmentin a hard disk drive.
+THE RECTANGULAR INVENTORY PROBLEM
+FIGURE 15.6 
+An inventory problem
+
+
+--- PAGE BREAK ---
+
+464 
+FUNDAMENTALS OF GAME DESIGN
+door. He has a strength of 17, and rules state that he must roll three six-sided dice 
+and add their values. If he rolls higher than his strength, he fails to break the door. 
+If he rolls lower than or equal to his strength, then the door splinters to pieces.
+This play mechanic forms the basis of all the combat and most other activities in 
+the game as well. As the character’s attributes go up, the probability that a charac-
+ter will be successful at a given activity improves. Because character growth is a key 
+element of all RPGs, their core mechanics are designed around the character 
+attributes.
+Rolling Dice
+Adding dice together is a pretty good way of generating random numbers in role-
+playing games. It means that most of the time a player will get a middling die roll, 
+and only rarely will she get an extremely good die roll or an extremely bad one. 
+However, as a designer you must understand the probability distributions of the 
+possible die rolls when you’re assigning difﬁ culty levels to tasks in the game 
+because those chances are not evenly distributed. As Chapter 10 explained, the 
+chance of rolling an 18 with three six-sided dice is less than one-half of 1 percent. 
+If you specify that a task requires a die roll of 18, it will almost never happen. On 
+the other hand, if you specify that it requires a die roll of less than 18, it will almost 
+certainly happen—over 99.5 percent of the time. Know your probabilities!
+Character Attributes
+There isn’t space in this book to give any more than a general introduction to 
+implementing characters in CRPGs. If you haven’t played any kind of role-playing 
+game before, take a look at the Dungeons & Dragons Player’s Handbook (Wizards RPG 
+Team, 2008) for an introduction to how one particular game system describes and 
+designs characters. Although character attributes vary from game to game, many 
+games borrow from, and sometimes expand upon, those in Dungeons & Dragons
+because they are the oldest and most players are familiar with them.
+Remember that in Chapter 5, “Creative and Expressive Play,” the section “Self-
+Deﬁ ning Play” divides attributes into functional attributes and cosmetic attributes
+and further subdivided the functional attributes into characterization attributes and 
+status attributes. We’ll look into these next.
+CHARACTERIZATION ATTRIBUTES
+Characterization attributes determine the general abilities and qualities of a charac-
+ter and change only infrequently; status attributes describe the current state of a 
+character and may change often. Choose attributes for your game based on the 
+actions that you want characters to be able to take. The attributes will determine 
+whether the character can in fact perform those actions and if so, how well, how 
+quickly, how powerfully, and with what probability of success. For instance, in the 
+TIP If you haven’t 
+already done so, 
+please read the 
+ection “Random
+Numbers and the 
+Gaussian Curve” in 
+Chapter 10, “Core 
+Mechanics.” 
+
+
+--- PAGE BREAK ---
+
+ROLE-PLAYING GAMES 
+465
+ CHAPTER 15
+Dungeons & Dragons system, the dexterity attribute determines how likely it is that
+ a character will be able to pick someone’s pocket without detection.
+Here is a brief overview of some particular types of characterization attributes that 
+you may wish to consider:
+■ Race is an unfortunate misnomer, as most games (rightly) do not distinguish 
+among the conventional human racial classiﬁ cations (Caucasian, Native American, 
+South Asian, and so on) except as a cosmetic attribute. In RPGs, race refers to 
+groups of real and fantasy humanoids such as humans, dwarves, elves, giants, and 
+so on. A better term would be species, but race is the term established by conven-
+tion. Attributes connected with race usually govern the general body type and 
+appearance of a character; they may also imply limits on the upper bounds of his 
+strength or other physical attributes. Some games limit particular races’ ability to 
+perform certain types of activities.
+■ Sex naturally determines a character’s body type and may determine with 
+whom the character may form romantic relationships, if the game includes them. 
+(Many games assume that all their characters are heterosexual; The Sims is an 
+unusual departure in this regard.) Otherwise, sex is almost always a cosmetic attri-
+bute rather than a functional one.
+DESIGN RULE No Sex Discrimination!
+Do not place restrictions on a character’s abilities on the basis of his or her sex, such as 
+limiting the strength of female characters simply because such limits are commonly 
+accepted ideas in the real world. If a player wants to play a six-foot-six woman with the 
+strength of Arnold Schwarzenegger, she should be allowed to. See the sidebar “Should 
+Sex Be a Functional Attribute or a Cosmetic Attribute?” in Chapter 5 for more discussion.
+■ Character class is a form of specialization that permits the character to perform 
+certain actions (for instance, the Spellcaster class may perform magic spells), gain 
+particular skills, and improve certain attributes while limiting the growth of oth-
+ers. The object is to encourage, or even require, the player to create specialized 
+rather than generalized characters. This in turn compels the player to set up a bal-
+anced party containing a mixture of character classes, which is an additional 
+challenge. Effectively, a character’s class determines his role in the party. Typical 
+classes include ﬁ ghters, spellcasters, thieves (with special stealth abilities), and cler-
+ics (with special healing abilities). You can undoubtedly think of others.
+While character class is a traditional feature of tabletop RPGs, it is not essential, and it 
+sometimes produces absurdities, such as a wizard whose class restrictions prevent 
+him from using a kitchen knife. Not all games use character classes. If you want to 
+implement classes, it would be better to deﬁ ne them in terms of limits on a character’s 
+ability to improve certain skills rather than absolute prohibitions on certain activities.
+
+
+--- PAGE BREAK ---
+
+466 
+FUNDAMENTALS OF GAME DESIGN
+■ Physical attributes such as height, weight, strength, dexterity, endurance, max-
+imum speed, maximum health, and so on determine how a character performs while 
+moving, carrying weight, and during combat. Armor class is a commonly used physical 
+attribute that contributes to the formula that determines whether a character will be 
+hit by an enemy attack; it is roughly equivalent to defensive dodging in war games.
+■ Mental attributes such as intelligence and sanity affect the character’s ability to 
+learn or reason and to withstand disturbing or horrifying situations. Because a 
+player may be more (or less) intelligent than his character is, it’s difﬁ cult to enforce 
+intelligence except by ﬁ at. Some game systems use intelligence levels to place limits 
+on the ability to cast certain kinds of magic spells.
+■ Moral attributes determine the character’s attitudes toward justice and exploit-
+ing others; in simple terms, the extent to which he is good or evil. It might be 
+worthwhile to design a more subtle system of morality, however. Some people who 
+think nothing of stealing wouldn’t dream of abusing an animal—and vice versa.
+■ Social attributes determine a character’s social attitudes and ability to get along 
+with others. Examples might be charismatic, nurturing, or leadership abilities. You 
+might also use social attributes to describe such things as a character’s degree of 
+xenophobia or his conversational skill. When a character engages in conversations, 
+you can design the dialog engine so that it does not give an inarticulate character 
+as many things to say as a more articulate character.
+Some games—for example, in the case of the Fallout series—allow the player to 
+establish the values of a primary set of characterization attributes, then calculate 
+the values of a second set based on those in the primary set. In Fallout 3 (and its 
+predecessors), the primary set of attributes includes strength, perception, endur-
+ance, charisma, agility, intelligence, and luck. The secondary set of attributes 
+includes hit points (that is, maximum possible health, calculated from strength 
+and endurance), armor class (based on agility), and so on. The Fallout series has 
+particularly well-designed core mechanics.
+STATUS ATTRIBUTES, EXPERIENCE, AND CHARACTER LEVELS
+In CRPGs, a character’s status attributes typically identify the character’s location, 
+health, state of needs (like a need for food or rest), relationships with other charac-
+ters, inventory of items owned or carried, and any other value that may change 
+from moment to moment.
+Among the most commonly implemented status attributes are two related ones 
+that effectively measure the character’s growth: experience points, often abbreviated 
+XP, and character level. Experience points are earned by successfully defeating ene-
+mies in combat and by other activities that the designer feels represent important 
+achievements in the context of the game’s story. Usually these consist of complet-
+ing quests or conducting successful negotiations with NPCs via dialog. In a tabletop 
+RPG, XP are awarded by the game master; in a CRPG, they are awarded by the com-
+puter when it detects a particular event.
+
+
+--- PAGE BREAK ---
+
+ROLE-PLAYING GAMES 
+467
+ CHAPTER 15
+DESIGN RULE Don’t Penalize Low Health
+Do not reduce the ﬁ ghting ability of a character because she has low health. This is gen-
+erally a bad idea in strategy games; for RPGs, it is a design rule, because the number of 
+characters that the player controls is smaller and the consequences are more damaging. 
+If you penalize wounded characters, whoever gets in the ﬁ rst solid blow in a ﬁ ght has a 
+big advantage. See the section “Health, Morale, and Fighting Efﬁ ciency” in Chapter 14, 
+“Strategy Games,” for further discussion.
+Typically, XP have no intrinsic value and cannot be traded for anything else; they 
+are simply a measure of progress, almost like a score. However, when a character 
+achieves a certain level of XP, the character’s level goes up a notch. The thresholds 
+are sometimes determined by the character’s class. Achieving a new character level 
+(called leveling up) usually gives the player an opportunity to raise one or more of 
+his characterization attributes. In many games, the player earns a certain number 
+of points, often two or three, that he can add to whichever characterization attri-
+butes he is most interested in improving.
+If you implement character classes with different thresholds for leveling up, you 
+should make this clear to the player before he has to commit himself to a given class.
+COSMETIC ATTRIBUTES
+Because part of the appeal of role-playing is the ability to play as a character of 
+one’s own design, CRPGs often have a great many cosmetic attributes. They add 
+variety but don’t inﬂ uence the gameplay. Cosmetic attributes include such things 
+as hair, skin, and eye color; facial features and body shapes within a particular race; 
+clothing and jewelry that doesn’t function as armor or have magic powers; tattoos, 
+piercings, and other body modiﬁ cations; and talismans, pets, or other distinctive 
+objects that a person might keep nearby, such as Indiana Jones’s hat. In online role-
+playing games, rare examples of such objects are highly sought after and command 
+high prices within the game economy, even if they serve no function in the game’s 
+combat challenges. Cosmetic attributes add richness to the play experience; the 
+more of them that you can afford, the better—although they are not a substitute 
+for good gameplay.
+
+
+--- PAGE BREAK ---
+
+468 
+FUNDAMENTALS OF GAME DESIGN
+WHY DO WE HAVE CHARACTER LEVELS?
+The notion of character levels is so ingrained in the culture of role-playing that most 
+players take it for granted. However, there’s no intrinsic mathematical reason why we, as 
+game designers, should implement character levels. We already have experience points 
+as a measure of character growth; why have levels as well? 
+Levels are convenient in tabletop RPGs because they reduce the amount of bookkeeping 
+required by the player and the GM: A character’s characterization attributes change only 
+when the character levels up, except in rare circumstances. However, now that we have 
+computers to simplify the bookkeeping for us, that in itself is not a sufﬁ cient reason to 
+use character levels. It’s perfectly possible for the computer to gradually give the player 
+additional powers on a continuing basis every time he earns some more experience. 
+By using a system based on fractional values rather than integers, characters can experi-
+ence steady continuous growth rather than big “stairstep” jumps in power.
+The big jumps resulting from leveling up also harm the player’s immersion; they’re artiﬁ cial 
+and don’t correctly model the increases in strength that a real person would experience 
+in a training regimen, for example. It would be interesting to see a level-less role-playing 
+game in which the player became aware of his gradually increasing strength without 
+knowing what the actual numbers were. Such a game might appeal to an audience who 
+prefers an immersive storylike experience over knowing their character’s precise numeric 
+state; a hybrid of adventure game and RPG, perhaps.
+However, there are good entertainment reasons for including character levels in an RPG. 
+First, the levels give players a quick method of comparing the relative strengths of differ-
+ent characters, especially enemies. This is unrealistic but useful when the player is trying 
+to decide whether to include a particular character in the adventuring part or whether to 
+attack an enemy character. Because most games don’t display a character’s strength 
+visually, the player needs some other way of judging it, and the level provides that. 
+Second, character levels provide players with a goal to work toward and a sense of 
+achievement when it has been attained. Being granted points that they may add to their 
+attributes feels like they are being given a reward, too. Finally, the leveling-up process 
+lets the players decide where they want to distribute their new points, allowing them to 
+upgrade their character as they see ﬁ t. If the system was continuously increasing their 
+attributes, they wouldn’t have as much control, nor would they notice the difference 
+so much.
+In short, character levels reduce the realism of a game but offer a number of useful 
+compensations.
+
+
+--- PAGE BREAK ---
+
+ROLE-PLAYING GAMES 
+469
+ CHAPTER 15
+Magic and Its Equivalents
+Magic is such a distinctive aspect of role-playing games that we’ll look at it in a sep-
+arate section. Note that for magic you can substitute psychic powers, spiritual power,
+mental energy, or any other concept that allows characters to inﬂ uence the world, 
+themselves, or other characters, by means not available to us in real life. Science ﬁ c-
+tion games often posit advanced technology that is, as Arthur C. Clarke observed, 
+indistinguishable from magic.
+The use of magic is commonly restricted to a particular class of characters, often 
+called mages, magic-users, or spellcasters. The purpose of this arrangement is to estab-
+lish complementary classes of characters, one that is good at conventional physical 
+combat and one that is good at magical combat, which encourages the players to 
+create mixed parties containing members of both classes.
+In tabletop RPGs, where it’s up to the GM to decide what is and isn’t possible, play-
+ers can imagine all kinds of interesting things to do with magic. CRPGs are 
+unfortunately limited by the fact that the software has to know how to implement 
+any spell—and of course players expect a visible manifestation of the spell as well, 
+which means creating animation and sound to go with it. Magic is most often used 
+as a weapon or a shield and as a means of temporarily improving the values of the 
+party characters’ attributes and harming the attributes of enemies.
+Because magic doesn’t exist in the real world, you can’t assume that your player 
+will know how it works in your game world. If you include magic in your game, you 
+must deﬁ ne what kinds of things magic does and how to invoke it. You must also 
+create a way to limit the amount of magic available, just as characters must have 
+limited strength and health. Typically, when a spellcaster uses magic, he does so in 
+a particular instance called casting a spell, the effects of which are usually immedi-
+ate. (Few spells in games take time to begin working.) Some spells are over and 
+done with right away, more or less corresponding to a shot in a strategy game; oth-
+ers may have a lasting effect that ends after a certain amount of time. The effects of 
+magic spells are almost never permanent in games. Permanent changes are too sig-
+niﬁ cant to happen frequently, so any permanent change is normally made by the 
+leveling-up process.
+Dungeons & Dragons uses a rather awkward system for placing limits on magic, 
+requiring a character to “memorize” spells which, once cast, disappear from the 
+character’s “memory” in the same way that a gun consumes ammunition. The 
+character must have time to rest and rememorize the spells before she can use them 
+again. This was convenient in tabletop games where the players had to keep track 
+of their spells by hand. Now that computers can do the bookkeeping, however, 
+most designers prefer another system in which each spell consumes a certain 
+amount of magical power, or mana, when it is cast. A character’s deﬁ nition includes 
+a status attribute for the amount of mana the character has at the moment and a 
+characterization attribute for the maximum amount that she may have. Drinking 
+magic potions or simply waiting for time to pass may restore the mana. This system 
+
+
+--- PAGE BREAK ---
+
+470 
+FUNDAMENTALS OF GAME DESIGN
+permits the character to cast any combination of spells that she knows, as often as 
+she likes, until her mana is gone.
+Skills and Special Capabilities
+In addition to the basic human-like characteristics—strength, intelligence, beauty, 
+and so on—most RPGs let characters use and improve special skills and capabilities. 
+CRPGs allow the player’s character to learn new skills over time, a rarity in other 
+genres. The best-designed games allow the player to attempt to learn as many skills 
+as she wants, restricted only by the time available, though her character’s aptitude 
+in that skill will be based on previously assigned characterization attributes. You 
+may want to allow characters to specialize, especially if the character practices a set 
+of interrelated skills, while unpracticed skills gradually decline. For example, learn-
+ing one skill, basic carpentry, could provide a solid basis for developing another, 
+such as constructing buildings, whereas learning basic gardening would not.
+OBTAINING NEW SKILLS
+Skills are somewhat analogous to the unit upgrades of strategy games; like unit 
+upgrades, they allow a character to do something that he could not do before or
+to do it more effectively. The unit upgrade process in a strategy game is typically 
+called research, whereas in a CRPG, acquisition of a skill is called learning. 
+Sometimes a new skill (or the right to choose a new skill) is simply granted as
+a reward for having achieved a certain amount of experience. However, you can 
+also require the player to seek out a mentor NPC who will teach the new skill to the 
+character in exchange for money—similar to the cost of research in strategy games.
+The analogy between skills in CRPGs and unit upgrades in strategy games is not 
+exact, however, for the following reasons:
+■ In CRPGs, a skill earned by a character is permanent and stays with that charac-
+ter as long as he lives (and usually survives reincarnation as well). In strategy 
+games, a unit upgrade ordinarily lasts only for the duration of the current mission 
+or level.
+■ In a strategy game, an upgrade normally applies to all units of a given type, or 
+sometimes to the player’s entire army and economic system. In a CRPG, a new skill 
+applies to exactly one character, the one who learned the skill. It’s the difference 
+between an industrial and a personal advance. CRPG skills are individual, like the 
+ability to play music, rather than industrial, like an improved engine. Each charac-
+ter has to have his own record of skills learned to date.
+■ CRPG skill upgrades usually happen instantly, whereas research in a strategy 
+game normally takes time. Although instant learning is completely unrealistic for 
+something like archery or playing music, nobody wants to sit and watch while her 
+character practices. Strategy game research doesn’t have this problem because 
+research happens parallel to other activities.
+
+
+--- PAGE BREAK ---
+
+ROLE-PLAYING GAMES 
+471
+ CHAPTER 15
+USING SKILL TREES
+Skills are usually organized into a skill tree, a growth path analogous to the tech tree
+that Chapter 14 discussed. As with tech trees, learning a particular skill in the tree 
+makes subsequent, more advanced skills available. Other than that and the differ-
+ences in the previous section, they’re really quite similar. Take a look at the 
+discussion of tech trees in Chapter 14 for some other ideas on things you can do 
+with skill trees.
+Figure 15.7 illustrates the idea of skill trees as implemented in Diablo II. The right 
+side of the screen shows a skill tree, one of three different trees for a single charac-
+ter, an Amazon. The tree currently shown is labeled “Passive and Magic Skills.” 
+(The other two available for this character are “Javelin and Spear Skills” and “Bow 
+and Crossbow Skills.”) Each icon represents a skill that may be learned, with the 
+ones that are required ﬁ rst at the top (this tree is upside down). The arrows leading 
+from icon to icon show the progression. An unlearned skill appears in dark grey, 
+such as the horned helmet at the lower left of the tree. Skills that have been learned 
+are shown in white.
+Players earn skill points in Diablo II through experience, and may learn a new skill 
+or improve an existing one by assigning the skill points to one of the skills in the 
+tree. The “Skill Choices Remaining” box at the upper right indicates that the player 
+has two skill points available to assign to one of the skills. The small boxes next to 
+FIGURE 15.7 
+One of the skill trees 
+for the Amazon 
+character in Diablo II
+(right side)
+
+
+--- PAGE BREAK ---
+
+472 
+FUNDAMENTALS OF GAME DESIGN
+each icon hold the number of skill points for that skill so far; each additional point 
+strengthens the effect of the skill during play.
+Character Design
+The design of tabletop RPGs allows the player to create her own avatar character 
+before the game begins. Most CRPGs follow this model, particularly multiplayer 
+online RPGs. Single-player CRPGs sometimes allow the player to create not only an 
+avatar character but all the members of the party. Others let the player create only 
+the avatar, then add further, predeﬁ ned characters to the party as the player 
+encounters them in the game world.
+ADVANTAGES AND DISADVANTAGES
+OF PREDEFINED AVATARS
+A small number of single-player games come with predeﬁ ned avatar characters that the 
+player may initially customize in only a limited number of ways. This system constrains 
+the player to use the given characters, which players who want complete freedom may 
+not like. However, it has the great advantage that it enables you to tell a story in which 
+the avatar already has a past and relationships with other characters when the game 
+begins. Because you already know something about the avatar, you can build those 
+details into the quests that the player will face. If you know nothing about the avatar 
+(because he doesn’t exist until the player creates him), you must make all the quests
+and other interactions in the game generic so they work for any kind of avatar. See the 
+section “Speciﬁ c and Nonspeciﬁ c Avatars” in Chapter 6, and the sidebar “Character-Agnostic
+Plots and King of Dragon Pass” in Chapter 7, for further discussion.
+Typically, players set their cosmetic attributes any way they like: name, gender, hair 
+color, clothing, and so on. They can also choose their character’s race, class, and 
+moral attributes if the game implements such features. For other characterization 
+attributes, the usual mechanism is to allow the players to roll simulated dice to gen-
+erate a number of points and then allow them to distribute the points among their 
+attributes however they see ﬁ t. This lets them concentrate their points in whichever 
+attribute they’re most interested in developing. Players are sometimes allowed to 
+ask for a new die roll if the ﬁ rst one is too low.
+The Game World and Story
+Once you know what the player is going to do, you need to think about where he’s 
+going to do it. You should design the setting before the story. This advice is the 
+opposite of that normally given to writers; the setting of a role-playing game is 
+essentially a vast playground to adventure in. Decide what kind of environment
+is suitable for the sorts of activities you have in mind.
+
+
+--- PAGE BREAK ---
+
+ROLE-PLAYING GAMES 
+473
+ CHAPTER 15
+Settings
+CRPG game worlds tend to be set in fantasy and science ﬁ ction universes because 
+both offer players opportunities to do things that they can’t do in real life: use 
+magic in the former case and use advanced technology in the latter. They also 
+make possible a huge variety of enemies, aliens, and monsters that don’t exist in 
+the real world. Finally, such settings make the unrealistic rate of growth that game 
+characters experience more plausible. If you were to set a role-playing game in the 
+present day with ordinary humans as characters, it would be difﬁ cult to believe 
+that within a few weeks of game time they could become dozens of times stronger 
+or more resistant to injury than they were at the beginning. Even if you’re the 
+strongest man on Earth, you can still be killed by a single bullet and everyone 
+knows it. Fantasy and science ﬁ ction settings help players suspend their disbelief 
+about these things.
+This is not to say that you must choose only a science ﬁ ction or fantasy setting for 
+your CRPG. You could, for example, create a role-playing game about a police ofﬁ -
+cer or a spy whose character grows by acquiring new skills such as forensic 
+examination or using bugging devices rather than weapons and magic. In such a 
+game, you could easily set your story in the present day or the near future.
+No matter what setting you choose, however, you must spend a lot of time and 
+effort making it appealing to explore. This is more true of CRPGs than any other 
+genre except adventure games and action-adventure hybrids. In an action game, 
+the player is often moving too fast to appreciate the landscape much; and in a strat-
+egy game, he’s often too busy commanding his armies and building his defenses. A 
+CRPG is a slower-paced game, so players have time to look around. Novel and dra-
+matic scenery is an important part of how these games entertain.
+A recent trend with CRPGs, evidenced by Neverwinter Nights, Elder Scrolls III: 
+Morrowind, and Arcanum: Of Steamworks and Magick Obscura, is that an editor within 
+the game lets more involved players create their own scripted adventures in the 
+game world.
+This is a trend to be encouraged because it extends the sales life of the game, which 
+in turn increases sales. Neverwinter Nights takes this to the extreme, allowing play-
+ers to edit an adventure in real-time as other players journey through it.
+Chapter 4, “Game Worlds,” discusses the creative work you need to do to design 
+your setting.
+Story
+Once you have a setting, you need to decide what will happen there—the story of 
+the game. A CRPG story is seldom simply a straightforward quest in the style of 
+Lord of the Rings; it’s also a mystery. It’s a problem to be solved but also a riddle to 
+be unraveled. The objective bring back the really valuable treasure is not sufﬁ cient to 
+sustain player interest for long.
+
+
+--- PAGE BREAK ---
+
+474 
+FUNDAMENTALS OF GAME DESIGN
+The story of a CRPG is far longer than a movie or short story; it’s more like a novel, 
+and a pretty big novel at that. Consequently, much of the advice about length and 
+pacing of screenplays and stories for beginning writers doesn’t apply to CRPGs. 
+Furthermore, the player has the option to take (or to ignore!) numerous side quests, 
+something that never happens in a movie.
+Begin by deciding on the game’s overall quest—that is, its ending. The player need 
+not know exactly what this quest is until late in the game; usually the quest that he 
+believes he’s pursuing at the beginning is not the real quest. (To use an example 
+from literature, The Maltese Falcon begins with Brigid O’Shaughnessy walking into 
+detective Sam Spade’s ofﬁ ce and asking him for help in ﬁ nding her sister. Later he 
+discovers that there is no sister and she really wants him to help her ﬁ nd the Maltese 
+Falcon.) You may want to have more than one possible ending to the overall quest 
+(success, failure, or varying outcomes in between), but they should all be related.
+Once you know the overall quest, then you have to decide how to get the player 
+from wherever he starts to the end. Stories in CRPGs are typically presented as a 
+journey through a landscape, with each episode of the story taking place in a dif-
+ferent region. Work out the details of this journey, episode by episode, and all the 
+new things and people that the player will discover along the way. There should be 
+a number of twists and turns in the story—complicating factors that give the player 
+more things to think about and to do. Common plot elements include long-lost rel-
+atives appearing unexpectedly; enemies who turn out to be friends, and vice versa; 
+clues that lead to dead ends (or to unexpected changes); lost treasures coming to 
+light in unexpected places; hidden heirs to a kingdom; and so on. Most of these will
+seem like clichés if you do not carefully handle them, so if you use them, look for 
+ways to make them fresh and new. Or create situations that are the opposite of what
+someone would ordinarily expect—the heir to a kingdom seeking not to obtain his 
+crown but running away to avoid the onerous duties of monarchy, for example.
+Once you have an overall story, complete with locations, adventures, and plot 
+twists, then you can start adding side quests to give the player more experience. 
+These should be shorter adventures that the player can accept, reject, or abandon 
+without affecting the main storyline. However, they should still feel as if they’re in 
+keeping with the player’s overall goals. One of the weaknesses of many CRPGs is 
+that they start the player off on some vast life-or-death quest, then perpetually 
+offer him opportunities to abandon it and just be a mercenary, treasure-hunter,
+or errand boy. Try to make your side quests feel as if they are helping the player 
+achieve his overall goals, even if only indirectly. For instance, suppose the player 
+needs a speciﬁ c valuable object in order to get past the challenge at the end of an 
+episode and the only way to get it is to buy it. If he then accepts a number of side 
+quests to earn the money, the side quests are helping him to pursue his main goal 
+even though their own content is unrelated.
+You will probably need to do some noninteractive exposition to set the stage—
+either an opening movie, voiceover narrative, or scrolling text story. If the avatar 
+character is partially predeﬁ ned, you can include some of her history in the 
+TIP Don’t think of 
+side quests as mere 
+ﬁ ller material around 
+your main story. Side 
+quests should be 
+just as enjoyable as 
+the main story, and 
+you should not force 
+the player down any 
+particular path. Re-
+member that your goal 
+is to give the player 
+interesting things to do 
+while playing his role 
+in the game world. 
+
+
+--- PAGE BREAK ---
+
+ROLE-PLAYING GAMES 
+475
+ CHAPTER 15
+opening exposition; if the avatar is deﬁ ned entirely by the player, then the opening 
+exposition cannot make reference to the avatar except in very general terms. You 
+may want to have the opening exposition concentrate on the game world or the 
+reason for the major quest in the game instead of the avatar.
+You’ll need to write the opening carefully to be mysterious yet enticing. The bal-
+ance between what you reveal and what you withhold has to be just right in order 
+to induce the player to probe further. If you’re too mysterious, the player will have 
+no reason to investigate the game world because he won’t know what he’s supposed 
+to be doing, or why. If you tell too much, however, the player will be irritated 
+because he wants to get started playing.
+OPENING STORIES
+Let’s look at two examples of opening stories in CRPGs and mine them for the balance of 
+what is told and what is withheld.
+Planescape: Torment
+You awaken, frigid and confused, and realize you’re lying on a stone table. Scanning the 
+room, you see only stone tables like yours and a sign that reads “The Mortuary.” You 
+aren’t dead, so why are you here and, more important, who are you? Your thoughts are 
+interrupted by the approach of a ﬂ oating skull that starts talking! It informs you that you 
+just died again. What does it mean, again?
+This opening is a particularly good example of minimizing exposition and maximizing 
+mystery. Planescape: Torment is unusual in that the opening of the game presents only a 
+mystery and not a quest. From the opening, the player can surmise that his avatar once 
+had a normal life and that something strange has happened to cause him to become a 
+cursed immortal. This is an interesting theme because of the inherent human fascination 
+with mortality. Planescape poses the question: Who wouldn’t want to be an immortal, no 
+matter what the price? During play, the player discovers that sometimes the price of 
+immortality is too high; the overall goal of the game is to undo the damage that caused 
+the character to become immortal. The game also has several different endings based on 
+decisions the player makes near the end, among which is to—intentionally—die.
+Fallout
+The setting: A subterranean fallout shelter houses a thousand people after a nuclear 
+holocaust. It’s been nearly 80 years, and you still don’t have any idea what’s out there. 
+Sure you’ve sent out volunteer scouts, but none of them returned.
+Now your water recycler has failed. Rationing has begun, but someone must leave the 
+vault to get a replacement microchip for the water recycler and look for other survivors.
+And you drew the short straw.
+continues on next page
+NOTE See Chapter 7 
+for more information 
+on game stories.
+
+
+--- PAGE BREAK ---
+
+476 
+FUNDAMENTALS OF GAME DESIGN
+OPENING STORIES
+continued
+At the beginning of this game, the player ﬁ nds his character locked outside of his vault, 
+Vault 13. The immediate priority is survival. It’s dangerous outside the vault, and there is 
+no way to return without the water chip. Fortunately for the player, it looks like the water 
+chip will be easy to obtain. Vault 15 is only a day or two away, and provided that he can 
+survive that long, it should be a reasonably easy matter to obtain a new chip.
+Fallout’s story begins with a seemingly simple quest, but no apparent mystery. As the 
+game goes on, complications arise: The water chip cannot be obtained from Vault 15. 
+Vault 15 stands in ruins and the control room lies under tons of rock. This false ending 
+approach is used more than once in Fallout. When the character does ﬁ nally get another 
+water chip and returns to Vault 13, he realizes that Vault 15 was attacked—and that his 
+actions have now revealed the location of his home vault to the same attackers. The 
+adventure continues with the player now compelled to destroy the forces that threaten 
+his home vault.
+The opening uses the popular theme of returning home to good effect. The ironic twist at 
+the end of the game, that his experiences in the outside world have changed the charac-
+ter so much that he cannot return to his home vault, is an excellent example of 
+storytelling in a role-playing game.
+The Presentation Layer
+Like strategy games, CRPGs have complicated core mechanics, and the player needs 
+access to a large amount of information. In addition to the game world, the player 
+needs to see critical information about the health (and possibly mana status) of 
+each member of the party. Spellcasting characters require a menu of the spells that 
+they currently have available.
+Interaction Model
+The interaction model for most single-player CRPGs is party-based, with the player 
+controlling the activities of a small group of people who generally stay close 
+together. In a few cases, most notably the Diablo games, the player controls a single 
+avatar. In multiplayer online games, the interaction model is always avatar-based, 
+though the player may have a familiar—a pet or companion who is also under the 
+player’s control.
+
+
+--- PAGE BREAK ---
+
+ROLE-PLAYING GAMES 
+477
+ CHAPTER 15
+Camera Model
+The interaction model you choose to implement determines what camera model 
+works for you. With an avatar-based model, either ﬁ rst- or third-person perspective 
+is possible in 3D games, and many games offer both. The ﬁ rst-person perspective is 
+useful for talking with other characters and moving fast through terrain; the third-
+person is more useful when the player wants to see her avatar ﬁ ghting, casting 
+spells, and so on. Elder Scrolls III: Morrowind is a good example of a game that pro-
+vides both (see Figure 15.8).
+If you are using a party-based model, you will probably want an aerial perspective 
+so the player can see all the members of the party at once and position them as he 
+wishes in combat. The aerial perspective also lets the player see more of the sur-
+rounding terrain, which helps characters explore and allows one character to scout 
+a little way ahead for danger while still leaving the others visible on the screen. The 
+isometric perspective was once the de facto standard for party-based play, but with 
+the advent of 3D games, context-sensitive and free-roaming camera models are now 
+commonplace.
+FIGURE 15.8 
+Elder Scrolls III: 
+Morrowind in the 
+third-person 
+perspective
+
+
+--- PAGE BREAK ---
+
+478 
+FUNDAMENTALS OF GAME DESIGN
+User Interface
+CRPGs usually permit a much greater range of possible actions for the player than 
+games of other genres. Consequently, there is a corresponding increase in the com-
+plexity of the interface. Most PC titles offer an interface in which the player uses 
+the mouse to click icons—though some still offer a keyboard-only interface—while 
+console titles tend to duplicate the functionality of a mouse using analog 
+controllers.
+Figure 15.9, from Knights of the Old Republic II: The Sith Lords, illustrates some of the 
+complexities of CRPG interfaces. Contrast this with Figure 13.2 (right side) for a 
+traditional action game, and with Figure 14.2 for a strategy game. Figure 15.9 
+includes all the following elements: a mini-map (upper left); details about the cur-
+rent health and status of an enemy (left center); combat options during battle 
+(lower left and center); party portraits (lower right); and buttons for switching to 
+other gameplay modes such as character and inventory management (upper right).
+VISIBLE VERSUS HIDDEN MECHANICS
+The ﬁ rst computerized games based on the Dungeons & Dragons system displayed 
+actual die rolls on the screen so that the player could be conﬁ dent that the games 
+were following the real D&D rules. That was over 20 years ago, and nowadays the 
+FIGURE 15.9 
+Knights of the Old 
+Republic II: The Sith 
+Lords during a combat 
+sequence
+TIP See Chapter 8, 
+“User Interfaces,” for 
+more information on 
+user interface design. 
+Much of the advice in 
+that chapter is directly 
+applicable to CRPGs. 
+
+
+--- PAGE BREAK ---
+

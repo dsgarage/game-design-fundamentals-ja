@@ -1,0 +1,699 @@
+526
+FUNDAMENTALS OF GAME DESIGN
+4. What are the competition modes and victory conditions in the game? If this is a 
+military vehicle, what sorts of missions are available for it? If it is a civilian one, 
+what kinds of things can it do besides simply racing (if anything)?
+5. What settings are available for the vehicle to travel through? Even a ﬂ ight simu-
+lator needs ground to look at below.
+6. What camera views are appropriate for this vehicle? If it is a military vehicle, are 
+there special camera views that assist in ﬁ ghting? Can the player record and even 
+edit instant replays so as to relive and show off his triumphs?
+7. How will you map the many controls of a plane or even a car onto the input 
+devices available to the player? What aspects of the vehicle’s controls will need to 
+be simpliﬁ ed? Which can afford to have simple on-off buttons and which require 
+analog controls?
+8. If a vehicle is capable of steering in a direction different from that in which it 
+shoots, how can the player control both at once conveniently?
+9. What navigational facilities is the player going to need in order to know where 
+he is (radar screen, overlay map, separate map mode that pauses the game, and so 
+on)?
+10. What artiﬁ cial intelligence is needed to create suitable opponents in the game’s 
+competitive modes? What sorts of things will the artiﬁ cial opponents need to man-
+age? Will they be smart enough to take advantage of superior speed, acceleration, 
+cornering ability, braking ability?
+11. Do you want to create a sense of speed for the player? If so, how will you create 
+it? (Remember, you can use both visual and audible cues.) 
+
+
+--- PAGE BREAK ---
+
+ CHAPTER 18
+Construction and 
+Management Simulations
+Construction and management simulations (CMS) offer players the chance to build 
+things, such as anthills or cities, while operating within economic constraints. In 
+this chapter you’ll learn about the gameplay of construction and management, and 
+consider the unique actions and challenges these games provide. You’ll also study 
+user interfaces in these kinds of games. As an example, we will spend time discuss-
+ing SimCity, which was the ﬁ rst successful CMS.
+Although they do not involve construction, we’ll also look at pure business simula-
+tions, games that focus on managing economic processes. The section on hybrid 
+games examines titles such as Age of Empires; hybrid games blend certain qualities 
+of CMSs and war games. Although Chapter 14, “Strategy Games,” addresses war 
+games, some hybrid games include interesting economic elements as well; we’ll 
+refer to them throughout this chapter where appropriate.
+What Are Construction and Management 
+Simulations?
+Construction and management simulations (CMSs) are games about processes. The 
+player’s goal is not to defeat an enemy but to build something within the context 
+of an ongoing process. The better the player understands and controls the process, 
+the more success she has at building. CMSs typically include both a free-form con-
+struction mode, in which the player can build things any way she likes, and 
+prebuilt scenarios for her to manage.
+CONSTRUCTION AND MANAGEMENT SIMULATIONS A construction and management 
+simulation is a game in which the majority of challenges are economic and concern 
+growth. Construction activity is an essential element of any CMS. Pattern recognition 
+and exploration challenges may also be present. CMSs avoid physical coordination and 
+conﬂ ict challenges, unless they are hybrids with another genre.
+527
+CHAPTER 18
+
+
+--- PAGE BREAK ---
+
+528
+FUNDAMENTALS OF GAME DESIGN
+The ﬁ rst really successful computerized construction and management simulation 
+was SimCity, which proved that computer games don’t need high-speed action or 
+violence to succeed. SimCity succeeds in part because it does not have these proper-
+ties and, therefore, appeals to a broad audience. We’ll examine SimCity in some 
+detail later in the chapter.
+Game Features
+CMSs let the player construct and manage some organized system that he can build 
+up from constituent parts—a city, a building, an anthill, or whatever the game per-
+mits him to design. Most CMSs offer two sets of tools: one set for building and one 
+set for managing. Building is generally considered easy, but managing can be tricky 
+indeed.
+The Player’s Role
+When designing any game, the ﬁ rst question you have to ask yourself is: What is 
+the player going to do? The answer to this question usually takes the form of a clear 
+statement of the player’s role in the game: pilot, adventurer, irradiated hedgehog, 
+and so on. In a CMS, however, it’s not as easy to deﬁ ne the player’s role because 
+that role seldom corresponds to an actual activity in real life. The mayor of a city 
+doesn’t really lay out its streets or make zoning decisions personally.
+A CMS appeals to the player because he gets to make something of his own. 
+Working carefully, tending and tweaking, he can build a tiny settlement on the 
+banks of the Tiber and turn it into the glorious city that was Rome. Not the origi-
+nal Rome or the game designer’s Rome but the player’s Rome—Rome as it would 
+have been if the player had been in command. The desire to create is in the heart 
+of all CMS players. To design a good construction and management simulation, 
+understand that desire.
+Progression
+Unlike most other genres, CMSs usually don’t include progression from level to 
+level or a story of any kind. They may offer a set of scenarios for the player to play 
+in, with varying degrees of difﬁ culty, but one scenario doesn’t necessarily have any 
+relationship to the previous or next one.
+Because many CMSs don’t impose a victory condition, there’s little sense of prog-
+ress toward an end. In fact, many CMSs don’t necessarily end at all. As long as the 
+player avoids the loss condition (typically bankruptcy), the game can go on forever.
+
+
+--- PAGE BREAK ---
+
+CONSTRUCTION AND MANAGEMENT SIMULATIONS 
+529
+ CHAPTER 18
+SIMCITY, THE MOST FAMOUS CMS OF ALL
+Although it isn’t the oldest CMS, SimCity has inspired every CMS that has come after it. 
+Published by Maxis (now a part of Electronic Arts) originally for the Commodore 64, 
+SimCity achieved its greatest success on the IBM PC, and players can now try the ﬁ rst 
+version of the game free on the web. (Visit http://simcity.ea.com/play/simcity_classic.php 
+if you’re interested. Note that the web version does not include all the features of the 
+original game.) A host of other games in the same mold followed—SimAnt, SimTower, 
+SimFarm, and so on—which met with varying degrees of success.
+The object of SimCity is to build a city and attract people (called sims) to live and work 
+there. The basic economic unit is money, which the player can spend in various ways to 
+improve the city. The player’s primary task is to zone tracts of land into one of three 
+types: residential, commercial, or industrial. As people move into the city, their occupa-
+tion of these areas begins to produce tax revenue, thereby replenishing the city’s coffers. 
+This produces a straightforward positive feedback loop: Zoning costs money, but occu-
+pied zones produce more money, thereby enabling the player to do more zoning.
+The positive feedback is kept in check by other demands on the city’s purse. Sims will not 
+move into a region simply because it has been zoned; it needs other amenities as well. 
+Foremost among these is electricity, so the player has to buy power plants and electrical 
+lines to provide it. The sims also need a way to travel from the residential zones to the 
+industrial zones to work and to the commercial zones to shop. This requires road and rail 
+networks, which also cost money. If the roads are inadequate to meet the trafﬁ c or if the 
+sims have to travel too far to work, they will begin to move out of the city, resulting in a 
+loss of tax revenue. Finally, when the city reaches certain population thresholds, the sims 
+begin to demand expensive amenities: a sports stadium, an airport, and so on. Again, if 
+the player doesn’t provide these, the sims begin to leave.
+In addition to the electricity, roads, and civic amenities, the player pays for other com-
+mon services, such as ﬁ re protection and police. Fires break out from time to time; left 
+unchecked, they destroy the buildings and leave the land unzoned. To combat this, the 
+player must build and maintain ﬁ re stations. Crime takes place in industrial areas, 
+depressing property values and reducing tax revenues. Building police stations, at yet 
+more cost, suppresses crime. Industrial areas and roads also cause air pollution, which 
+further depresses the value of nearby residential property. The player cannot reduce air 
+pollution; he simply has to keep industrial and residential areas separate.
+The game’s algorithm mathematically determines the value of each area. A zoned area 
+with parks or a river nearby will be worth more than a similar area that lacks these ben-
+eﬁ ts. The more valuable a zone is, the more sims move in and the more tax revenues the 
+zone produces. The player can build parks and situate residential zones near woods and 
+rivers to increase their attractiveness.
+continues on next page
+
+
+--- PAGE BREAK ---
+
+530 
+FUNDAMENTALS OF GAME DESIGN
+SIMCITY, THE MOST FAMOUS CMS OF ALL
+continued
+The original SimCity, though now an old game, serves as an excellent model to study (see 
+Figure 18.1). Because it was designed for low-performance machines, it couldn’t be too 
+complex, so its internal economy is easy to understand.
+FIGURE 18.1 The original SimCity
+Gameplay
+The challenges in a CMS are largely economic. The player must understand how 
+the internal economy of the game works and how to manipulate it to produce eco-
+nomic growth. Growth provides the resources required for the construction that is 
+usually the overall goal of the game. The game’s actions consist of activities that 
+stimulate growth and ways of using the resources that the player earns.
+INDIRECT CONTROL
+The majority of CMSs are games of indirect control. The game simulates a process 
+that the player can alter only in limited ways, and the player learns by trial and 
+error how the changes that he makes affect the functioning of the process. The 
+game may offer simulated people (see the section “Simulating Individuals” later in 
+this chapter), but they are usually autonomous. Their behavior model governs what 
+they do, and while they respond to stimuli, the player can’t give them direct orders.
+In contrast, a war game is a game of direct control. The player tells his troops 
+exactly where to go and what to do, and the troops do it. The simulated soldiers 
+demonstrate little or no autonomous behavior. If the player tells them to stand and 
+wait someplace, they wait there forever.
+
+
+--- PAGE BREAK ---
+
+CONSTRUCTION AND MANAGEMENT SIMULATIONS 
+531
+ CHAPTER 18
+However, the dividing line between direct and indirect control is a fuzzy one. 
+Certain player activities, such as choosing where to build something, constitute 
+direct control of the game. Others, such as trying to boost sales by reducing prices, 
+are classed as indirect control. Reducing prices is a direct action with respect to the 
+prices themselves, but not with respect to sales; the (hoped for) consequent rise in 
+sales is the result of the player’s indirect control of the game.
+CONSTRUCTION
+In most CMSs, construction itself is not challenging: The player clicks the mouse 
+on a location, and something appears there. The challenge is in obtaining the 
+resources needed for the construction. Construction lets the player exercise her 
+imagination and create something unique and personal. Accordingly, you, as the 
+designer, need to ﬁ nd a way to make the user interface for construction easy and 
+enjoyable to use.
+Construction mechanisms in CMSs tend to be of two types: purchase-and-place or 
+plan-and-build. Games in which construction is the primary activity tend to use the 
+purchase-and-place mechanism; games in which the player alternates between con-
+struction and management modes are more likely to use the plan-and-build 
+mechanism.
+In the purchase-and-place construction mechanism, when the player buys an 
+object (a segment of wall, say), the game deducts the resources to build that object 
+from stockpiles, and the object immediately appears in a designated location. This 
+lets the player build rapidly, adding pieces like using LEGO blocks. You should use 
+this mechanism if construction is the primary activity in your game. The activity 
+needs to be easy and continuous, not something the player has to wait for. This is 
+how SimCity works: Zoning property and constructing civic amenities such as 
+police stations and airports happens instantly because zoning and constructing
+are the primary activities in the game.
+The plan-and-build mechanism is more often seen in games in which the player 
+does a little construction, then some management, then more construction, and so 
+on. In plan-and-build, the player marks out an area in which new construction will 
+appear. The game sometimes displays the new building in a ghostly, semitranspar-
+ent form to indicate that it is under construction. However, construction takes 
+time. If the game includes simulated people, you might be able to see them at work 
+on the building; if those people stop work, the building might be left in a partially 
+completed state. You will ﬁ nd plan-and-build in strategy-CMS hybrids where the 
+player may be under threat of invasion and time is of the essence.
+In plan-and-build, you don’t have to remove all the required resources from storage 
+at once because the construction takes place over time. In the Settlers series, wood 
+and stone have to be transported a little at a time from stockpiles to the construc-
+tion site. This puts an extra burden on the player to manage his resource ﬂ ow but 
+also gives him more control. In contrast, the Age of Empires series uses 
+
+
+--- PAGE BREAK ---
+
+532 
+FUNDAMENTALS OF GAME DESIGN
+plan-and-build but deducts the resources necessary for construction immediately 
+when it is planned. Resources drain out of the game instead of being transported to 
+the site. Although this is unrealistic, it means that the player can build something 
+only after he deﬁ nitely has enough resources for it, and he doesn’t have to worry 
+about moving resources from point to point.
+Dungeon Keeper, another hybrid, makes a particularly interesting example because 
+construction is actually excavation; it takes place underground, and the player 
+can’t see the area he is digging into. Excavations often encounter immovable
+rock or lead to previously unknown caves, underground rivers, or pools of lava. 
+Excavation is also irreversible; the game offers no way to close an excavated area. 
+This encourages players to be cautious. Suddenly digging an opening into an area 
+full of enemy creatures is a major hazard of the game.
+FUNCTIONAL CONSTRUCTION CHALLENGES
+Construction and demolition is easy in most games: point, click, and it happens, so long 
+as the resources required are available. If you want to make the process more of a chal-
+lenge, you can impose constraints on how things may be constructed and test to see 
+whether the construction meets some required standard. The game Bridge It, for 
+instance, requires its player to use certain predeﬁ ned bridge elements—towers, beams, 
+cables, and a roadway—to construct a bridge across a body of water. It also requires that 
+the bridge actually support a load moving across it (see Figure 18.2). See the section 
+“Constrained Creative Play” in Chapter 5, “Creative and Expressive Play,” for more infor-
+mation about construction challenges. 
+FIGURE 18.2 Bridge It challenges the player to build a functional bridge. 
+This one was a failure. (Image courtesy Chronic Logic and Auran.)
+
+
+--- PAGE BREAK ---
+
+CONSTRUCTION AND MANAGEMENT SIMULATIONS 
+533
+ CHAPTER 18
+DEMOLITION
+In addition to letting your players construct things, you might need to give them a 
+way to demolish things. A big part of the fun the player gets from a CMS is building 
+the city, theme park, or other entity the way she wants to build it. If construction 
+decisions are irreversible, then the player cannot change her mind or react to new 
+circumstances. This might be OK for strategy games (many war games, for example, 
+allow you to build factories and defenses but not to demolish them), but in CMSs, 
+forbidding demolition prevents the player from exercising her full creative freedom.
+You should consider whether you want demolition to cost something, cost nothing, 
+or actually earn money. If it costs money to demolish something, you are, in effect, 
+penalizing the player for changing her mind and perhaps encouraging her to plan 
+more carefully in the future. She loses not only her initial construction cost for the 
+item but the demolition costs as well. If demolition costs nothing, the player loses 
+only her construction costs. If she actually gets something back, it’s usually called 
+selling the item or structure rather than demolishing it, an arrangement that further 
+reduces the price the player pays for changing her mind. If she can sell a structure 
+back for exactly as much as she paid, there is no net cost at all for building a thing 
+and destroying it later. CMSs rarely work this way because to do so removes some 
+of the challenge of managing their resources. Players can build madly, secure in the 
+knowledge that they can always get their money back by selling.
+Victory and Loss Conditions
+A good many CMSs do not provide any victory condition; the player simply builds 
+whatever she likes as effectively as she can within the constraints of the system. 
+These games might well provide a loss condition, however. For example, total 
+depletion of resources (or, in monetary terms, bankruptcy) is the loss condition in 
+Monopoly. Victory in Monopoly consists simply of bankrupting all the other players; 
+that is, forcing all the other players to meet the loss condition so that the last one 
+left is declared the victor.
+If you do want to deﬁ ne a victory condition, it’s best to do it in the context of a pre-
+deﬁ ned scenario that you have created for the player rather than a free-form 
+construction mode. Give the player a partially constructed city (or whatever) and a 
+set of initial conditions, and then deﬁ ne the victory condition as achieving some 
+other condition. It could be as simple as “To win, your enterprise must be worth $5 
+billion,” or it can be as complex as you like. You can also start the player in rapidly 
+deteriorating conditions and challenge her to turn them around or simply to sur-
+vive for a certain length of time.
+Competition Modes
+CMSs are almost always single-player games. It’s possible to make them into multi-
+player competitions, but competition discourages the kind of creative experimentation 
+
+
+--- PAGE BREAK ---
+
+534 
+FUNDAMENTALS OF GAME DESIGN
+that CMSs are designed to support. If the players are sharing a game world and 
+competing for the same resources, such as land or minerals hidden in the environ-
+ment, the game becomes a race to see who can grab the most, ignoring the other 
+aspects of play. If the players are operating in separated game worlds and have sym-
+metric starting and victory conditions, the game tends to be about optimizing 
+efﬁ ciency. If the conditions are asymmetric, the game will be difﬁ cult to balance.
+CMSs let the player be playful, to build and experiment in the world you’ve given 
+him. That’s seldom consistent with competition. One major exception is in hybrid 
+games, those that have a military element as well as construction and management 
+elements. The section “Hybrid Games” later in this chapter discusses these.
+Simulating Individuals
+Many CMSs simulate the behavior of a group of people (or ants in the case of 
+SimAnt) within an environment managed by the player. Games such as the original 
+SimCity, which handle a large number of people, model behavior statistically rather 
+than keeping separate values for each person. However, you might want to simulate 
+the actions of particular individuals that the player can see moving around, as the 
+modern versions of SimCity do. This will make your game a good deal more enter-
+taining because the player can take an interest in the actions and progress of 
+speciﬁ c people. It appeals to a voyeuristic impulse and makes the consequences
+of the player’s decisions seem more personal. It’s particularly effective when the 
+player can actually see unhappy people packing up and leaving.
+Modeling individuals rather than statistical aggregates adds considerably to your 
+design job. You will need to create a behavioral model and determine what aspects 
+of the individual’s condition the player will be trying to optimize. For example, 
+many such games include a single-valued variable that tracks a character’s degree of 
+happiness or unhappiness and a set of needs that the simulated character desires to 
+fulﬁ ll. Fulﬁ llment may come as the result of the character’s autonomous action 
+(driving from home to work fulﬁ lls the need to get to work) or from action taken 
+by the player (building a school fulﬁ lls the characters’ need for educational oppor-
+tunity). If a need goes unfulﬁ lled, either through a problem that arises within the 
+simulation (trafﬁ c jams prevent the person from getting to work) or because the 
+player fails to act (no school has been built), there should be a negative conse-
+quence of some kind (the simulated person becomes unhappy).
+Modeling individuals relieves you of the job of creating a statistical model because 
+the behavior of the individuals collectively provides the statistics, but balancing 
+such a game is a more intricate task. You will probably discover emergent behav-
+iors; that is, unanticipated consequences of design decisions. Some of these will be 
+fascinating and almost seem like intelligence, but others will clearly be degenerate: 
+simulated people locked in a tight behavioral loop, for example, only ever doing 
+one or two things because your needs mechanism isn’t balanced properly.
+
+
+--- PAGE BREAK ---
+
+CONSTRUCTION AND MANAGEMENT SIMULATIONS 
+535
+ CHAPTER 18
+Behavioral modeling is too big a subject for us to address comprehensively here. 
+Consult the references for further reading.
+Mind Reading
+If your game allows the player to select a simulated character—usually done by 
+clicking the character with the mouse—you can offer another useful analytical 
+tool: mind reading. To let the player know what’s on that individual’s mind, pop up 
+an icon or even a whole dialog box showing the character’s internal state: current 
+goal, degree of happiness, or whatever data might be useful to the player. This lets 
+the player get a quick, rough sense of how the people feel without having to turn to 
+a chart or a graph.
+Advisors
+Another tool commonly found in CMSs is the advisor: a game character who pops 
+up from time to time and gives the player advice (see Figure 18.3). Because prob-
+lems are often local to one area of the map, the player might be looking at another 
+area when trouble occurs and not see it until it grows severe. By creating an advi-
+sor, you can warn the player of problem conditions wherever they occur. You might 
+also consider including a screen button or menu item that moves the camera to the 
+location of the most recently reported problem.
+FIGURE 18.3 
+Theme Park World.
+Note the advisor in the 
+lower right corner. 
+
+
+--- PAGE BREAK ---
+
+536 
+FUNDAMENTALS OF GAME DESIGN
+In addition to warning of emergencies, an advisor can give the player information 
+about the general state of the game: “The people need more food,” or “Prices are 
+too high.” This lets the player know of global problems without requiring her to 
+consult the analytical tools.
+To design an advisor, deﬁ ne both the local and the global problems that you think 
+are important to let the player know about and then set the threshold levels at 
+which the advisor will pop up. If the advisor will interrupt the player or say some-
+thing aloud, don’t set these thresholds too low, or the constant interruptions will 
+become irritating. You should also make it possible for the player to turn off the 
+advisor or to consult it only when he wants to. Playing without the advisor adds an 
+extra challenge to the game.
+Pure Business Simulations
+Pure business simulations allow players to construct only ﬁ nancial fortunes, not 
+visible worlds. A game like Theme Park World is a business simulation because it’s 
+about attracting customers and making proﬁ ts, but because the player builds struc-
+tures that exist in the virtual world, it is not a pure business simulation. Compare 
+that with the game Hollywood Mogul, for example, which is a pure business simula-
+tion about the business of making movies. It consists only of a series of menu 
+screens about hiring stars and making deals. The player never sees a set or a cam-
+era. Mr . Bigshot, shown in Figure 18.4, is a fairly simple stock-market simulation 
+and is even more abstract than Hollywood Mogul.
+Most of the challenges of designing a pure business simulation are the same as for 
+any other management simulation: You must devise an economy and mechanisms 
+for manipulating it. The real trick is to ﬁ nd some way of making the subject visu-
+ally interesting. Spreadsheets and pie charts have limited appeal, so if you’re going 
+to do a management simulation without a construction element, try to give it some 
+kind of a setting or ﬁ nd a visual representation of the process that will make it 
+attractive and compelling. Mr. Bigshot accomplishes this with lots of animation, 
+voiceover narration, music, and cartoon characters representing the player’s oppo-
+nents; the player feels rather like a contestant on a TV game show.
+Capitalism II (see Figure 18.5), a huge, sprawling business simulation covering all 
+kinds of products and industries, develops in a different direction. In addition to 
+showing pictures of the products and all the raw materials that go into them, the 
+game allows players to construct or purchase buildings in cities, so there’s an 
+attractive SimCity-like view as well.
+Pure business simulations never have the pulse-pounding excitement of a ﬁ rst-per-
+son shooter, but fans ﬁ nd them highly enjoyable games. As the designer, you need 
+to work closely with the art director to make the essentially numeric nature of the 
+gameplay as lively as possible.
+TIP You can also 
+create an advisor fea-
+ture that consists only 
+of an indicator that 
+remains constantly on 
+the screen, displaying 
+the most urgent global 
+need at all times. It 
+doesn’t have to be a 
+character.
+
+
+--- PAGE BREAK ---
+
+CONSTRUCTION AND MANAGEMENT SIMULATIONS 
+537
+ CHAPTER 18
+FIGURE 18.5 
+Capitalism II
+FIGURE 18.4 
+Mr. Bigshot is a pure 
+business simulation 
+without a construction 
+aspect. 
+
+
+--- PAGE BREAK ---
+
+538 
+FUNDAMENTALS OF GAME DESIGN
+DESIGN RULE Avoid Runaway Proﬁ ts!
+Never let a player buy low and sell high as often as she wants without further expenditure 
+or the passage of time. She’ll use it to rack up runaway proﬁ ts. See Chapter 10, “Core 
+Mechanics,” for further discussion.
+Hybrid Games
+The Civilization, Dungeon Keeper, and Settlers series are all hybrid games, each one a 
+cross between a CMS and a war game. In addition to their economic challenges, all 
+feature exploration and conﬂ ict challenges. The military aspect of The Settlers is 
+quite simple, as it must be, because the economic aspect is exceedingly complex. 
+Dungeon Keeper begins each scenario with construction and management of a dun-
+geon complete with semiautonomous denizens. In the later stages of the scenario, 
+the player takes his army of creatures into battle, and the construction activities are 
+ﬁ nished. Control in Dungeon Keeper is a curious hybrid of direct and indirect con-
+trol in that creatures have a distinct behavior model but obey orders as long as 
+they’re happy. (Unhappy creatures disobey or even desert.) However, Dungeon 
+Keeper retains its economic challenges throughout: It’s one of the very few games
+in which the troops have to be paid, fed, and given a place to sleep.
+If you’re going to design a hybrid game, design the economic simulation ﬁ rst 
+(unless it’s really simple) and then add the other elements afterward. Because the 
+other aspects of the game usually depend on the underlying economy, a mistake in 
+the economic design can easily ruin the rest of the game. For example, a war game 
+that includes an economy for weapons production might lose all its strategic chal-
+lenge if the player can produce weapons too quickly. The player will exploit his 
+economic strength and overwhelm the opposition with sheer numbers rather than 
+strategic skill.
+Core Mechanics
+Chapter 10 introduces the concepts of resources, sources, drains, and converters. 
+Much of that material applies speciﬁ cally to CMSs, which use more kinds of 
+resources than any other genre.
+Resources
+In many CMSs, the primary resource is money. Money is usually treated as an 
+intangible resource; it is seldom seen in physical form. (Dungeon Keeper is an excep-
+tion: Gold has to be mined and transported back to a treasury, and the player must 
+expand the treasury when it gets full.)
+
+
+--- PAGE BREAK ---
+
+CONSTRUCTION AND MANAGEMENT SIMULATIONS 
+539
+ CHAPTER 18
+People are the other major resource in most CMSs. They are above all a source of 
+tax money or labor. Most CMSs simulate people only as workers; children and the 
+elderly don’t contribute to the economy of the game and so are not simulated. 
+What sets people apart from other kinds of resources is that they have feelings:
+In many games, they have to be kept happy, or they either leave or fail to act as 
+desired. Consequently, managing their happiness becomes a big part of the game-
+play, as the earlier section “Simulating Individuals” discusses.
+Building materials are generally treated as tangible entities for games that imple-
+ment the plan-and-build construction mechanic, described earlier. Those that 
+implement the purchase-and-place mechanic don’t need to treat building materials 
+as tangible, and some don’t make building materials a resource at all, going directly 
+from money to constructed objects.
+One game that treats all resources as tangible, including money, is The Settlers from 
+Blue Byte Software. In The Settlers, every kind of resource (and there are many) 
+must be transported from where it is produced either to storage areas or directly to 
+places where it is consumed. Grain, for instance, must be carried from the grain 
+farm to the windmill for grinding; the ﬂ our must be carried from the windmill to 
+the bakery; and the bread must be carried from the bakery to the mines, where the 
+miners eat it.
+Table 18.1 lists some resources you commonly ﬁ nd in construction and manage-
+ment simulations and how their sources and drains appear to the player.
+RESOURCE
+SOURCE
+DRAIN
+Money
+Taxation on people or gold mines 
+in the environment
+Purchases and construction
+People
+Immigration and reproduction
+Emigration and death
+Food
+Farms
+People eating
+Labor
+People
+Construction activities
+Land
+Part of the environment; 
+claimed as it is explored 
+No drain, but only a limited 
+amount is available
+Construction materials, 
+such as wood
+Found in raw form in the 
+environment, such as trees 
+Converted into buildings by 
+construction activities 
+Buildings
+Constructed from money, 
+materials, and labor 
+Destroyed by demolition or 
+disasters
+The Construction Converter
+Construction is a conversion activity that changes labor, money, and materials into 
+buildings (or whatever the CMS constructs). Construction happens only when the 
+player wants it to, so she controls the spending, and she can usually defer 
+TABLE 18.1 
+Common Resources 
+and Their Sources 
+and Drains
+
+
+--- PAGE BREAK ---
+
+540 
+FUNDAMENTALS OF GAME DESIGN
+construction until such time as she can afford it. Although it drains money, the 
+player can see immediately what she gets in return, and in any case, it’s an invest-
+ment because the constructed object does something useful in the economy.
+Drains and Maintenance
+A drain is a feature that takes a resource out of the game for good. Decay is the usual 
+drain in construction and management simulations: Buildings or other entities 
+wear out and have to be replaced, which costs money. In SimCity, for instance, the 
+roads wear out and have to be repaved. If the player doesn’t repave them, the sims 
+start to emigrate because they can’t get to work.
+The player has to manage the repaving in SimCity personally, but in many games, 
+these maintenance tasks are automated so the player only has to pay for them with-
+out actually performing them. Maintenance annoys some players, who would 
+rather buy something once and never have to worry about it again. However, main-
+tenance is an important game balancing tool; it drains resources and prevents the 
+player from building proﬁ ts endlessly. If you characterize maintenance as an ongo-
+ing cost rather than a purchase of assets, it makes more sense. Paying employees is 
+a maintenance cost. You can’t own employees, but you have to pay their wages on
+a continuing basis; if you stop paying them, they stop working.
+You may want to give the player the power to turn off or adjust the level of auto-
+matically managed maintenance (and suffer the attendant consequences) so that 
+he can make use of the money for something else that he needs in a hurry. 
+Stronghold 2, a game about managing a medieval castle and its inhabitants, allows 
+the player to set his peasants’ food rations to one of ﬁ ve levels: none, half, normal, 
+extra, and double. With these settings, he can manage the peasants’ food consump-
+tion, which is one of the drains in the game.
+Disasters
+Decay is a continuous drain that the player may or may not have to act upon, 
+depending on whether you allow automatic maintenance. For a more dramatic 
+effect that forces the player to act, you can include disasters. SimCity puts more 
+pressure on the player by having ﬁ res, tornadoes, and monster invasions crop up 
+periodically, doing considerable damage. If the player does not take action to repair 
+the damage (which costs money), the city dies, not just through the destruction of 
+buildings, but also through the loss of needed infrastructure such as roads and 
+electrical lines. Disasters need not be natural ones, of course. In a good many 
+games, the disaster is invasion by hostile armies.
+
+
+--- PAGE BREAK ---
+
+CONSTRUCTION AND MANAGEMENT SIMULATIONS 
+541
+ CHAPTER 18
+THEME PARK, A DISGUSTING EXAMPLE OF POSITIVE FEEDBACK
+Bullfrog Productions’ CMS Theme Park lets the player build a single theme park, ride by 
+ride, into an empire of theme parks around the world. In addition to buying the rides, 
+which attract visitors, the player builds shops and restaurants to extract money from them 
+and hires maintenance and cleaning staff to keep the rides working and the park clean.
+Each visitor to the park has a number of attributes: how much money he has, how hungry 
+or thirsty he is, and so on. One of these attributes is his current degree of nausea. If a 
+visitor becomes nauseated enough, he vomits, leaving a mess on the ground that has to 
+be cleaned up. Nausea can be caused by three things: riding a particularly violent ride, 
+being near an unclean bathroom, and—you guessed it—being near someone else’s 
+vomit. In a crowded park, if the player hasn’t hired enough cleaning staff to deal with 
+bathrooms and vomit, visitors create a chain-reaction of vomiting. This does nothing for 
+the reputation of the park and tends to hurt future ticket sales but it does inject a degree 
+of juvenile comic relief into an otherwise straightforward business simulation.
+The Game World
+It’s easy enough to say that CMSs focus on processes, but the processes must be 
+meaningfully displayed on a computer screen and must ﬁ re the player’s imagina-
+tion. To do either, you must have an attractive setting. CMSs take place in a 
+simulated physical space, usually an outdoor world viewed from an aerial perspec-
+tive in which the players can construct buildings or other objects. In the Caesar 
+series, the player builds an ancient Roman town, so the setting is a landscape near 
+a river. In the Civilization games, the player explores a world while at the same time 
+advancing a civilization both culturally and technologically, so its setting is an 
+entire continent or several of them.
+CMSs are often set in 2D or 2.5D (layered 2D) worlds, even if they’re actually 
+implemented with a 3D engine. Using a 2D world simpliﬁ es things for the player. 
+Just as strategy games remove the logistics so that the player can concentrate on 
+strategy (because he doesn’t have a staff to help him), so do CMSs remove the third 
+dimension so that the player can concentrate on planning without worrying about 
+the exact details (again because he doesn’t have a staff to help him). When a player 
+lays down a water pipe from a reservoir to a neighborhood, he doesn’t want to have 
+to worry about whether the pipe goes over or under the subway system. He just 
+wants it to get where it needs to go.
+NOTE  A few pure 
+business simulations 
+don’t take place in
+a physical setting. The 
+interaction model of 
+Mr. Bigshot, discussed 
+earlier, is contestant-
+based and doesn’t use 
+a location.
+
+
+--- PAGE BREAK ---
+
+542 
+FUNDAMENTALS OF GAME DESIGN
+The Presentation Layer
+The emotional tone of a CMS game world—as evoked through sounds, art, and ani-
+mation—should beﬁ t its theme of creativity and growth. A pure CMS set in a grim, 
+decaying world wouldn’t be very popular. (As in several other respects, Dungeon Keeper
+is an exception, but it is also a hybrid, not a pure CMS.) The player will also want a
+clear, unobstructed view of things; fog, darkness, and shadows won’t help. The artwork
+of CMSs is often reminiscent of the ligne claire style pioneered by the Belgian author
+Hergé for his Tintin books: clean, strong lines, ﬂ at shading, and uniform lighting.
+Interaction Model
+The player is almost always multipresent in a CMS because she needs to see what is 
+happening all over the game world. It’s difﬁ cult to control a large-scale process from 
+the inside, where you can’t see everything that’s going on. Most CMSs don’t give the 
+player any kind of avatar. However, players do like to see what the worlds they’re 
+building look like from the inside, so games sometimes implement a walkthrough 
+mode that lets players walk around the world in a ﬁ rst-person perspective. Dungeon 
+Keeper is ordinarily played in a multipresent mode, but it is also possible for the 
+player to take temporary control of a creature in her dungeon, walk it around, and 
+view the game world through the creature’s eyes. This feature, while occasionally 
+useful in the military aspects of Dungeon Keeper, is not at all helpful in the manage-
+ment aspects. In short, walkthrough mode is entertaining and the player will enjoy 
+it, but the primary interaction model in a CMS needs to be multipresent.
+Camera Model
+The camera model in a CMS naturally depends on what you are simulating. Most 
+CMSs simulate a process taking place over a land area—whether it’s a city, a farm, 
+or an entire planet. As a result, these games tend to use an isometric perspective. 
+The early games were all tile-based, and some still are on smaller devices, but for 
+the most part, modern CMSs now use 3D environments. This has the advantage 
+that players can zoom in and out and move the camera freely, which lets them see 
+a broad overview most of the time, then focus on a local problem when one arises.
+If your game simulates a process taking place in a three-dimensional space, you might
+ﬁ nd it useful to divide the space into layers to make it easier for the player to navigate
+around the game world. It’s also helpful to provide a button that returns the camera
+instantly to a default perspective so that the player can reorient himself if he gets lost.
+User Interface
+Because CMSs aren’t trying to create an illusion of reality in the way that ﬁ rst-per-
+son shooters or ﬂ ight simulators do, their user interfaces can be more computerlike, 
+using pull-down menus and rows of buttons along the edges of the screen. CMS 
+games emphasize convenience over verisimilitude.
+TIP CMS games need 
+a pointing device—
+a mouse or stylus. 
+A small number of 
+CMSs have been ported 
+to machines that use 
+joysticks, but the 
+result is never really 
+satisfactory. The Wii 
+controller can also be 
+used, but is not really 
+as efﬁ cient as a mouse.
+
+
+--- PAGE BREAK ---
+

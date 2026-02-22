@@ -1,0 +1,203 @@
+<mxfile>
+  <diagram name="ストーリー構造の比較" id="diagram4">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Title -->
+        <mxCell id="title" value="ゲームにおけるストーリー構造の比較" style="text;html=1;fontSize=22;fontStyle=1;align=center;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="250" y="15" width="600" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Section 1: Linear -->
+        <mxCell id="lin_bg" value="" style="rounded=1;fillColor=#E8F5E9;strokeColor=#A5D6A7;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="75" width="1020" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="lin_title" value="1. 線形ストーリー（Linear）" style="text;html=1;fontSize=16;fontStyle=1;fontColor=#1B5E20;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="85" width="300" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- Linear nodes -->
+        <mxCell id="l1" value="開始" style="ellipse;fillColor=#2E7D32;fontColor=#fff;fontSize=12;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="135" width="70" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="l2" value="Act 1" style="ellipse;fillColor=#388E3C;fontColor=#fff;fontSize=12;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="135" width="70" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="l3" value="Act 2" style="ellipse;fillColor=#43A047;fontColor=#fff;fontSize=12;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="135" width="70" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="l4" value="Act 3" style="ellipse;fillColor=#4CAF50;fontColor=#fff;fontSize=12;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="135" width="70" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="l5" value="結末" style="ellipse;fillColor=#66BB6A;fontColor=#fff;fontSize=12;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="135" width="70" height="45" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="la1" style="strokeWidth=3;endArrow=block;endFill=1;strokeColor=#2E7D32;" edge="1" source="l1" target="l2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="la2" style="strokeWidth=3;endArrow=block;endFill=1;strokeColor=#2E7D32;" edge="1" source="l2" target="l3" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="la3" style="strokeWidth=3;endArrow=block;endFill=1;strokeColor=#2E7D32;" edge="1" source="l3" target="l4" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="la4" style="strokeWidth=3;endArrow=block;endFill=1;strokeColor=#2E7D32;" edge="1" source="l4" target="l5" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="lin_info" value="" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C8E6C9;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="115" width="320" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="lin_char" value="特徴" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="735" y="120" width="50" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="lin_d1" value="  一本道。全プレイヤーが同じ体験" style="text;html=1;fontSize=10;fontColor=#555;align=left;" vertex="1" parent="1">
+          <mxGeometry x="730" y="142" width="290" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="lin_d2" value="  演出・ペーシングの制御が容易" style="text;html=1;fontSize=10;fontColor=#555;align=left;" vertex="1" parent="1">
+          <mxGeometry x="730" y="160" width="290" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="lin_d3" value="  リプレイ性は低い" style="text;html=1;fontSize=10;fontColor=#555;align=left;" vertex="1" parent="1">
+          <mxGeometry x="730" y="178" width="290" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="lin_ex" value="例: Half-Life, Uncharted, The Last of Us" style="text;html=1;fontSize=10;fontStyle=2;fontColor=#888;align=left;" vertex="1" parent="1">
+          <mxGeometry x="730" y="200" width="290" height="18" as="geometry"/>
+        </mxCell>
+
+        <!-- Section 2: Branching -->
+        <mxCell id="br_bg" value="" style="rounded=1;fillColor=#FFF3E0;strokeColor=#FFCC80;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="265" width="1020" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="br_title" value="2. 分岐ストーリー（Branching）" style="text;html=1;fontSize=16;fontStyle=1;fontColor=#E65100;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="275" width="350" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- Branching nodes -->
+        <mxCell id="b1" value="開始" style="ellipse;fillColor=#E65100;fontColor=#fff;fontSize=11;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="330" width="65" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="b2a" value="選択A" style="ellipse;fillColor=#F57C00;fontColor=#fff;fontSize=10;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="310" width="65" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="b2b" value="選択B" style="ellipse;fillColor=#F57C00;fontColor=#fff;fontSize=10;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="370" width="65" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="b3a" value="End1" style="ellipse;fillColor=#FFB74D;fontColor=#fff;fontSize=10;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="290" width="55" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="b3b" value="End2" style="ellipse;fillColor=#FFB74D;fontColor=#fff;fontSize=10;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="340" width="55" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="b3c" value="End3" style="ellipse;fillColor=#FFB74D;fontColor=#fff;fontSize=10;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="390" width="55" height="35" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ba1" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#E65100;" edge="1" source="b1" target="b2a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ba2" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#E65100;" edge="1" source="b1" target="b2b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ba3" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#F57C00;" edge="1" source="b2a" target="b3a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ba4" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#F57C00;" edge="1" source="b2a" target="b3b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ba5" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#F57C00;" edge="1" source="b2b" target="b3c" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Branching choice label -->
+        <mxCell id="br_choice" value="選択" style="text;html=1;fontSize=10;fontStyle=2;fontColor=#E65100;align=center;labelBackgroundColor=#FFF3E0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="315" width="40" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="br_info" value="" style="rounded=1;fillColor=#FFFFFF;strokeColor=#FFE0B2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="305" width="540" height="145" as="geometry"/>
+        </mxCell>
+        <mxCell id="br_char" value="特徴" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="515" y="310" width="50" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="br_d1" value="  プレイヤーの選択で物語が分岐" style="text;html=1;fontSize=10;fontColor=#555;align=left;" vertex="1" parent="1">
+          <mxGeometry x="510" y="332" width="290" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="br_d2" value="  複数エンディングでリプレイ性が高い" style="text;html=1;fontSize=10;fontColor=#555;align=left;" vertex="1" parent="1">
+          <mxGeometry x="510" y="350" width="290" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="br_d3" value="  制作コストが指数的に増大（分岐数 x シーン数）" style="text;html=1;fontSize=10;fontColor=#555;align=left;" vertex="1" parent="1">
+          <mxGeometry x="510" y="368" width="350" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="br_warn" value="  &#x26A0; 大半のプレイヤーは1周しか遊ばない問題" style="text;html=1;fontSize=10;fontColor=#C62828;align=left;" vertex="1" parent="1">
+          <mxGeometry x="510" y="390" width="350" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="br_ex" value="例: Detroit: Become Human, Heavy Rain, Until Dawn" style="text;html=1;fontSize=10;fontStyle=2;fontColor=#888;align=left;" vertex="1" parent="1">
+          <mxGeometry x="510" y="415" width="380" height="18" as="geometry"/>
+        </mxCell>
+
+        <!-- Section 3: Foldback -->
+        <mxCell id="fb_bg" value="" style="rounded=1;fillColor=#F3E5F5;strokeColor=#CE93D8;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="495" width="1020" height="230" as="geometry"/>
+        </mxCell>
+        <mxCell id="fb_title" value="3. フォールドバック構造（Foldback）" style="text;html=1;fontSize=16;fontStyle=1;fontColor=#6A1B9A;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="505" width="400" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="fb_rec" value="推奨" style="rounded=1;fillColor=#6A1B9A;fontColor=#fff;fontSize=10;fontStyle=1;arcSize=30;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="508" width="45" height="22" as="geometry"/>
+        </mxCell>
+
+        <!-- Foldback nodes -->
+        <mxCell id="f_start" value="開始" style="ellipse;fillColor=#6A1B9A;fontColor=#fff;fontSize=11;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="570" width="65" height="40" as="geometry"/>
+        </mxCell>
+        <!-- Branch 1 -->
+        <mxCell id="f_b1a" value="a" style="ellipse;fillColor=#AB47BC;fontColor=#fff;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="555" width="35" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="f_b1b" value="b" style="ellipse;fillColor=#AB47BC;fontColor=#fff;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="600" width="35" height="30" as="geometry"/>
+        </mxCell>
+        <!-- Inevitable 1 -->
+        <mxCell id="f_inv1" value="必須&#xa;イベント" style="ellipse;fillColor=#4A148C;fontColor=#fff;fontSize=10;fontStyle=1;strokeColor=#CE93D8;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="560" width="70" height="45" as="geometry"/>
+        </mxCell>
+        <!-- Branch 2 -->
+        <mxCell id="f_b2a" value="c" style="ellipse;fillColor=#AB47BC;fontColor=#fff;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="555" width="35" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="f_b2b" value="d" style="ellipse;fillColor=#AB47BC;fontColor=#fff;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="600" width="35" height="30" as="geometry"/>
+        </mxCell>
+        <!-- Inevitable 2 / End -->
+        <mxCell id="f_inv2" value="結末" style="ellipse;fillColor=#4A148C;fontColor=#fff;fontSize=11;fontStyle=1;strokeColor=#CE93D8;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="560" width="65" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Foldback edges -->
+        <mxCell id="fa1" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#6A1B9A;" edge="1" source="f_start" target="f_b1a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fa2" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#6A1B9A;" edge="1" source="f_start" target="f_b1b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fa3" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#6A1B9A;" edge="1" source="f_b1a" target="f_inv1" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fa4" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#6A1B9A;" edge="1" source="f_b1b" target="f_inv1" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fa5" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#6A1B9A;" edge="1" source="f_inv1" target="f_b2a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fa6" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#6A1B9A;" edge="1" source="f_inv1" target="f_b2b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fa7" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#6A1B9A;" edge="1" source="f_b2a" target="f_inv2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fa8" style="strokeWidth=2;endArrow=block;endFill=1;strokeColor=#6A1B9A;" edge="1" source="f_b2b" target="f_inv2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Foldback labels -->
+        <mxCell id="fb_lbl_branch" value="分岐" style="text;html=1;fontSize=9;fontColor=#AB47BC;fontStyle=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="150" y="540" width="35" height="15" as="geometry"/>
+        </mxCell>
+        <mxCell id="fb_lbl_conv" value="収束" style="text;html=1;fontSize=9;fontColor=#4A148C;fontStyle=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="250" y="540" width="35" height="15" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="fb_info" value="" style="rounded=1;fillColor=#FFFFFF;strokeColor=#E1BEE7;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="630" y="540" width="410" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="fb_char" value="特徴" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#6A1B9A;" vertex="1" parent="1">
+          <mxGeometry x="645" y="545" width="50" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="fb_d1" value="  分岐 → 収束 を繰り返す構造" style="text;html=1;fontSize=10;fontColor=#555;align=left;" vertex="1" parent="1">
+          <mxGeometry x="640" y="567" width="380" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="fb_d2" value="  重要イベントは全プレイヤーが体験（品質保証）" style="text;html=1;fontSize=10;fontColor=#555;align=left;" vertex="1" parent="1">
+          <mxGeometry x="640" y="585" width="380" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="fb_d3" value="  間の道程はプレイヤーの自由度を確保" style="text;html=1;fontSize=10;fontColor=#555;align=left;" vertex="1" parent="1">
+          <mxGeometry x="640" y="603" width="380" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="fb_d4" value="  自由度とコスト効率を両立する最適解" style="text;html=1;fontSize=10;fontColor=#2E7D32;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="640" y="625" width="380" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="fb_ex" value="例: Mass Effect, The Witcher, Life is Strange" style="text;html=1;fontSize=10;fontStyle=2;fontColor=#888;align=left;" vertex="1" parent="1">
+          <mxGeometry x="640" y="655" width="380" height="18" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

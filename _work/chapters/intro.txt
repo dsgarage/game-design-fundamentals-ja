@@ -1,0 +1,224 @@
+CONTENTS 
+xiii
+A Designing to Appeal to Particular Groups . . . . . . . . . . . . . . . . . . . . . . . . . . . .619
+Reaching Adult Women  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 619
+Designing for Children . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 621
+Games for Girls . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 623
+Accessibility Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 628
+1 Glossary  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .633
+1 References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 652
+1 Index  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 658
+
+
+--- PAGE BREAK ---
+
+Welcome to Fundamentals of Game Design, Second Edition—an 
+updated version of the original Fundamentals of Game Design,
+which was itself based upon an earlier book called Andrew Rollings 
+and Ernest Adams on Game Design. I hope you enjoy this book and 
+ﬁ nd it both informative and helpful.
+In the past three years, the ﬁ eld of interactive entertainment has 
+changed in a number of ways, and I felt it was time to update the 
+book to reﬂ ect them. Most signiﬁ cant among these changes has 
+been the arrival of the Nintendo Wii with its motion-sensitive con-
+troller; the Apple iPhone with its multitouch screen; the huge 
+success of Guitar Hero and other music-based games; and Spore with 
+its unique concept of “massively single-player online gaming.” I 
+have addressed these advances where appropriate in this new edi-
+tion. Unfortunately, Microsoft’s Project Natal—a camera-based 
+motion-sensitive control system—is still too new and experimental 
+at the moment to get more than a brief mention. 
+INTRODUCTION
+xiv
+
+
+--- PAGE BREAK ---
+
+INTRODUCTION 
+xv
+INTRODUCTION
+If you already own the previous edition, you’ll notice that Fundamentals, Second 
+Edition is still organized the same way. I have retained, and tried to enhance, the 
+practical approach of the previous work. The book remains unashamedly commer-
+cial, generally avoiding academic theory and debate. I assume that you want to 
+make video games for sale, and a certain amount of the discussion relates to ques-
+tions of markets and target audiences.
+Another change has been the departure of my co-author on the previous edition, 
+Andrew Rollings. It was Andrew who ﬁ rst gave me the opportunity to work on a 
+book about game design, and I’m forever grateful to him for that. Andrew was too 
+busy to contribute to this edition, and not much of his original prose remains. Any 
+errors or omissions you ﬁ nd should be laid at my door and not his.
+Fundamentals of Game Design Second Edition is entirely about game design. It does 
+not cover programming, art, animation, music, audio engineering, or writing. Nor 
+is it about project management, budgeting, scheduling, or producing. A budding 
+game designer should learn something about all of these subjects, and I encourage 
+you to consult other books to broaden your education as much as you can. All the 
+greatest game designers are Renaissance men and women, interested in everything. 
+Each chapter ends with a section called “Design Practice,” consisting of two subsec-
+tions. In Part One, “The Elements of Game Design,” the “Design Practice” sections 
+include exercises that your instructor may assign to you (or that you may do on 
+your own, if you’re not a student). In Part Two, “The Genres of Games,” each chap-
+ter (except the last one) includes instructions for doing a case study of a famous 
+game from the genre that the chapter addresses. Finally, all the chapters include a 
+series of discussion or design questions that you should ask yourself about the game 
+that you’re designing.
+Why So Many Tabletop Games and Old Video Games?
+As you read, you will notice that I frequently refer to tabletop games—card games 
+such as poker, board games such as Monopoly, and so on. I do this for three reasons. 
+First, those games are likely to be familiar to the largest number of people. Not all 
+of my readers will have played computer games such as Max Payne, and some will 
+be too young to remember Adventure, but everyone has heard of chess. Second, sim-
+pler, noncomputerized games tend to be designed around a single principle, so they 
+serve to illustrate that principle well. Finally, I feel that the essence of game design 
+has little to do with the game’s delivery medium. The principles common to all 
+good games are independent of the means by which they are presented.
+I also refer again and again to certain video games even though they may not be 
+recent releases. The book is ﬁ lled with references to Super Mario Bros., Tomb Raider,
+Half-Life, StarCraft, Planescape: Torment, Civilization, SimCity, The Secret of Monkey 
+
+
+--- PAGE BREAK ---
+
+xvi 
+FUNDAMENTALS OF GAME DESIGN
+Island, Tetris, and even Space Invaders. Old or not, these are outstanding examples of 
+their genres—among the greatest games of all time. And many are actually series 
+rather than individual games; you can buy the latest edition and play it for your-
+self. They all reward study.
+Who Is This Book For?
+This book is aimed at anyone who is interested in designing video and computer 
+games but doesn’t know how to begin. More speciﬁ cally, it is intended for univer-
+sity students and junior professionals in the game industry. Although it is a general, 
+introductory text, more experienced professionals may ﬁ nd it a useful reference
+as well.
+My only explicit prerequisite for reading the book is some knowledge of video 
+games, especially the more famous ones. It would be impossible to write a book on 
+game design for someone who has never played a game; I have to assume basic 
+familiarity with video games and game hardware. For a thorough and deeply 
+insightful history of video games, read Steven Poole’s Trigger Happy: Videogames and 
+the Entertainment Revolution (Poole, 2004).
+I do expect that you are able to write succinctly and unambiguously; this skill is an 
+absolute requirement for a game designer, and many of the exercises are writing 
+assignments. I also expect you to be familiar with basic high school algebra and 
+probability; you’ll ﬁ nd this especially important when you study the chapters on 
+core mechanics, game balancing, and strategy games.
+The book assumes that you are designing an entire game by yourself. I have two 
+reasons for taking this approach. First, to become a skilled game designer, you 
+should be familiar with all aspects of design, so I cover the subject as if you will do 
+it all. Second, even if you do have a team of designers, I cannot tell you how to 
+structure or manage your team beyond a few generalities. The way you divide up 
+their responsibilities will depend a great deal on the kind of game you are design-
+ing and the skills of the individuals on the team. From the standpoint of teaching 
+the material, it is simplest to write it as if one person will do all the work.
+How Is This Book Organized?
+Fundamentals of Game Design, Second Edition is divided into two parts. The ﬁ rst 
+twelve chapters are about designing games in general: what a game is, how it works, 
+and what kinds of decisions you have to make to create one. The next eight chap-
+ters are about different genres of games and the design considerations peculiar to 
+each genre. The ﬁ nal chapter addresses some of the special design considerations of 
+online gaming.
+TIP To get the most 
+out of the book while 
+you’re actually working 
+on a game design, be 
+sure to ask yourself the 
+questions at the end of 
+each chapter.
+
+
+--- PAGE BREAK ---
+
+INTRODUCTION 
+xvii
+INTRODUCTION
+Part One: The Elements of Game Design
+Chapter 1 introduces games in general and video games in particular, including 
+formal deﬁ nitions of the terms game and gameplay. It also discusses what computers 
+bring to games and lists the important ways that video games entertain.
+Chapter 2 introduces the key components of a video game: the core mechanics, 
+user interface, and storytelling engine. It also presents the concept of a gameplay 
+mode and the structure of a video game. The last half of the chapter is devoted to 
+the practice of game design, including my recommended approach, player-centric 
+design.
+Chapter 3 is about game concepts: where the idea for a game comes from and how 
+to reﬁ ne the idea. The audience and the target hardware (the machine the game 
+will run on) both have a strong inﬂ uence on the direction the game will take.
+Chapter 4 speaks to the game’s setting and world: the place where the gameplay 
+happens and the way things work there. As the designer, you’re the god of your 
+world, and it’s up to you to deﬁ ne its concepts of time and space, mechanics, and 
+natural laws, as well as many other things: its logic, emotions, culture, and values.
+Chapter 5 addresses creative and expressive play, listing different ways your game 
+can support the players’ creativity and self-expression.
+Chapter 6 addresses character design, inventing the people or beings who populate 
+your game world—especially the character who will represent the player there (his 
+avatar), if there is one. Every successful entertainer from Homer onward has under-
+stood the importance of having an appealing protagonist.
+Chapter 7 delves into the problems of storytelling and narrative, introducing the 
+issues of linear, branching, and foldback story structures. It also discusses a number 
+of related issues such as scripted conversations and episodic story structures.
+Chapter 8 is about user interface design: the way the player experiences and interacts 
+with the game world. A bad user interface can kill an otherwise brilliant game, so 
+you must get this right.
+Chapter 9 discusses gameplay, the heart of the player’s mental experience of a 
+game. The gameplay consists of the challenges the player faces and the actions he 
+takes to overcome them. It also analyzes the nature of difﬁ culty in gameplay.
+Chapter 10 looks at the core mechanics of a game, especially its internal economy, 
+and the ﬂ ow of resources (money, points, ammunition, or whatever) throughout 
+the game.
+Chapter 11 considers the issue of game balancing, the process of making multi-
+player games fair to all players and controlling the difﬁ culty of single-player games.
+
+
+--- PAGE BREAK ---
+
+xviii 
+FUNDAMENTALS OF GAME DESIGN
+Chapter 12 introduces the general principles of level design, both universal princi-
+ples and genre-speciﬁ c ones. It also considers a variety of level layouts and proposes 
+a process for level design.
+Part Two: The Genres of Games
+Chapter 13 is about the earliest, and still most popular, genre of interactive enter-
+tainment: action games. This genre may be divided into numerous subgenres such 
+as shooter games, ﬁ ghting games, platformers, and others, which the chapter 
+addresses in as much detail as there is room for.
+Chapter 14 discusses another genre that has been part of gaming since the begin-
+ning: strategy games, both real-time and turn-based.
+Chapter 15 is about role-playing games, a natural outgrowth of pencil and paper 
+games such as Dungeons & Dragons.
+Chapter 16 looks at sports games, which have a number of peculiar design chal-
+lenges. The actual contest itself is designed by others; the trick is to map human 
+athletic activities onto a screen and control devices.
+Chapter 17 addresses vehicle simulations: cars, planes, boats, and other, more 
+exotic modes of transportation such as tanks.
+Chapter 18 is about construction and management simulations in which the player 
+tries to build and maintain something—a city, a theme park, a planet—within the 
+limitations of an economic system.
+Chapter 19 explores adventure games, an old and unique genre of gaming given 
+new life by the creation of a hybrid type, the action-adventure.
+Chapter 20 examines two other genres of games: artiﬁ cial life and puzzle games.
+Chapter 21 looks at online gaming, which is not a genre but a technology. Online 
+games enable people to play with, or against, each other in numbers from two up 
+to hundreds of thousands. Playing against real people that you cannot see has 
+enormous consequences for the game’s design. The second half of the chapter 
+addresses the particular problems of persistent worlds like World of Warcraft.
+The Glossary deﬁ nes many of the game design terms that appear in italics through-
+out the book. 
+Appendix A discusses designing to appeal to particular target audiences: hardcore 
+players and casual players; men and women; children in general and girls in partic-
+ular. It also includes a section on accessibility issues for players with impairments 
+of various kinds.
+
+
+--- PAGE BREAK ---
+
+INTRODUCTION 
+xix
+INTRODUCTION
+Companion Web Site
+At www.peachpit.com/fgd2 you’ll ﬁ nd design document templates, a list of sugges-
+tions for further reading, and materials for instructors. This material may be 
+updated periodically, so make sure you have the latest versions.
+
+
+--- PAGE BREAK ---
+

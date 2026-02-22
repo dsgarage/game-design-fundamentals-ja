@@ -1,0 +1,1930 @@
+154 
+FUNDAMENTALS OF GAME DESIGN
+7. What about the avatar will intrigue and interest the player?
+8. What about the avatar will encourage the player to like him?
+9. How will the avatar change and grow throughout the game? Physically, emo-
+tionally, intellectually? Or will he remain essentially static?
+10. Do the characters correspond to any of Campbell’s mythic archetypes? Or do 
+they have less archetypal, more complex roles to play, and if so, what are they?
+11. What sorts of sounds will each character in your game make? What sorts of 
+music are appropriate for them? How will your choices of sounds and music sup-
+port the way you want the player to feel about each character?
+12. How do the character’s grammar, vocabulary, tone of voice, and speech patterns 
+contribute to the player’s understanding of the character?
+
+
+--- PAGE BREAK ---
+
+ CHAPTER 7
+155
+Storytelling and Narrative
+Storytelling is a feature of daily experience. We do it without thinking about it 
+when we recount some experience we have had, whether it is the story of how the 
+golf match went with our friends, or a ﬁ ction made up for story time with our chil-
+dren. We also consume stories continually—ﬁ ctional ones through novels, movies, 
+plays, and television; nonﬁ ctional ones through books, documentaries, and the 
+news media.
+Video games often include ﬁ ctional stories that go beyond the events of the games 
+themselves. Game designers add stories to enhance a game’s entertainment value, 
+to keep the player interested in a long game, and to help sell the game to prospec-
+tive customers.
+This chapter looks at how to weave a story into a game. It focuses mostly on games 
+that rely heavily on stories, though the chapter covers stories within all genres. 
+We’ll examine what makes a good story and how to keep the stories from over-
+whelming the gameplay of a video game. The terms interactive story and narrative
+are deﬁ ned, followed by a discussion of linear and nonlinear storytelling and 
+mechanisms you can use to advance the plot. Then we’ll address scripted conversa-
+tions, which allow the player to participate in dialog with nonplayer characters 
+(NPCs). The chapter concludes with the topic of episodic storytelling in games, 
+which the Internet has helped to make possible.
+Why Put Stories in Games?
+Game designers, game theorists, and players have debated the subject of stories in 
+games for many years, disputing issues such as whether stories belong in games at 
+all and, if so, what these stories should be like and how they should work (see “The 
+Great Debate” sidebar). Many players want a story along with their gameplay, and 
+some game genres—role-playing games, action-adventures, and above all adventure 
+games—deﬁ nitely require one. Whether a story will improve a game depends on 
+the genre and how rich a story you want to tell. Although a story won’t help in all 
+cases, here are four good reasons for including a story in your game:
+■ Stories can add signiﬁ cantly to the entertainment that a game offers. 
+Without a story, a game is a competition: exciting, but artiﬁ cial. A story gives the 
+competition a context, and it facilitates the essential act of pretending that all 
+games require. A story provides greater emotional satisfaction by providing a sense 
+of progress toward a dramatically meaningful, rather than an abstract, goal.
+CHAPTER 7
+
+
+--- PAGE BREAK ---
+
+156 
+FUNDAMENTALS OF GAME DESIGN
+■ Stories attract a wider audience. The added entertainment value of a story will, 
+in turn, attract more people to a game. Many players need a story to motivate them 
+to play; if the game offers only challenges and no story, they won’t buy it. Although 
+adding a story makes development of the game cost more, it also makes the game 
+appeal to more people. On the other hand, players who don’t need a story are free 
+to ignore it—provided that the story is not intrusive.
+■ Stories help keep players interested in long games. Simple, quick games such 
+as Bejeweled don’t need a story and would probably feel a bit odd if one were tacked 
+on; that would be like adding a story onto a game of checkers or tic-tac-toe. In a 
+short game, getting a high score provides all the reward the player needs. But in a 
+long game—one that lasts for many hours or even days—simply racking up points 
+isn’t enough reason for most players to carry on. Furthermore, stories offer novelty. 
+A long game needs variety, or it begins to feel repetitive and boring; a compelling 
+story provides that variety.
+■ Stories help to sell the game. It’s difﬁ cult to show gameplay via printed posters, 
+magazine ads, and the box the game comes in. Gameplay, as an active process, isn’t 
+always easy to explain in words or static pictures. But your publisher’s marketing 
+department can depict characters and situations from your game’s story and even 
+print part of the story itself in their advertising materials.
+This book can’t teach you the fundamentals of good storytelling; you can choose 
+from many hundreds of books and classes on creative writing for that. Instead, 
+we’ll look at the ways that stories may be incorporated into video games and how 
+interactive stories differ from traditional ones. Designing characters, an important 
+part of any kind of storytelling, is covered in depth in Chapter 6, “Character 
+Development.”
+There isn’t one right way to include a story in a game; how you do it depends on 
+what kind of entertainment experience you want to deliver and what kind of player 
+you want to serve. 
+The type of game you choose to build will determine whether it needs a story and, 
+if so, how long and how rich that story should be. A simple game such as Space
+Invaders requires only a one-line backstory and nothing else: “Aliens are invading 
+Earth, and only you can stop them.” Indeed, such a game should not include any 
+more story than that; a story only distracts the player from the frenetic gameplay. 
+At the other end of the spectrum, adventure games such as Dreamfall and Discworld 
+Noir offer stories as involved as any novel. These games cannot exist without their 
+stories; storytelling offers up to half the entertainment in the game. 
+A few games allow the storytelling to overshadow the gameplay and give the player 
+little to do. This was a common mistake when the industry ﬁ rst began to make 
+video games based on movie or book franchises. Critics and players uniformly con-
+sidered them poor games because they violated the design rule that Gameplay 
+Comes First. A designer must always keep that design rule in mind, no matter where 
+the original franchise idea came from.
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+157
+ CHAPTER 7
+THE GREAT DEBATE
+Among theoreticians, interactive storytelling is the single most hotly debated issue in 
+all of game design. What does interactive storytelling actually mean? Is such a thing 
+possible? Should we do it? How should we do it? What are we trying to achieve by doing 
+it? How can we determine if we’re doing it well? And the problem gets worse: The game 
+industry doesn’t even know what to call it. Interactive storytelling, interactive narrative, 
+interactive drama, interactive ﬁ ction, and storyplaying have all been proposed. In the 
+1990s, the academic community began to consider the issue and drew its own battle 
+lines. The narratologists (people who study narrative) conducted ﬁ erce and often impen-
+etrable arguments with the ludologists (people who study games and play) in the learned 
+pages of scholarly journals. Search the Internet for “interactive narrative” and you will 
+be overwhelmed by a confusing tide of conﬂ icting verbiage.
+These interesting and sometimes important arguments may eventually change the industry, 
+but in the meantime you need to build a game. Use the principle of player-centric design, 
+and don’t worry about the theoretical arguments. Build a story into your game if you 
+believe it will help to entertain the player, and don’t build one in if it won’t.
+The following factors affect how much of a story a game should include, and you 
+should take them into account when you make your decision:
+■ Length. As the previous section said, the longer a game, the more it beneﬁ ts 
+from a story. A story can tie the disparate events of a longer game into a single con-
+tinuous experience and keep the player’s interest.
+■ Characters. If the game focuses on individual people (or at least, characters the 
+player can identify with, whether human or not) then it can beneﬁ t from a story. If 
+the game revolves around large numbers of fairly anonymous people—such as the 
+visitors in Theme Park—then adding a story won’t be easy.
+■ Degree of realism. Abstract games don’t lend themselves to storytelling; repre-
+sentational ones often do. You may ﬁ nd it difﬁ cult to write a compelling story 
+about a purely artiﬁ cial set of relationships and problems, while a realistic game 
+can often beneﬁ t from a story. This rule does not hold in all cases: Highly realistic 
+vehicle simulators and sports games usually don’t include stories because the prem-
+ise of the game doesn’t require one; on the other hand, Ms. Pac-Man, an abstract 
+game, did tell a cute little story because the game included characters.
+■ Emotional richness. Ordinary single-player gameplay seldom inspires any but a 
+few emotions: pleasure in success; frustration at failure; determination, perhaps; 
+and occasionally an aha! moment when the player ﬁ gures out a puzzle. Deeper 
+emotions can come only when the player identiﬁ es with characters and their prob-
+lems, which happens within a well-written story. If you want to inspire a greater 
+variety of emotions, you need to write a story to do it.
+NOTE There is no 
+single “right” way to 
+design an interactive 
+story. Each approach 
+has strengths and 
+weaknesses. Choose 
+the one that best 
+serves the player’s 
+entertainment.
+
+
+--- PAGE BREAK ---
+
+158 
+FUNDAMENTALS OF GAME DESIGN
+You may also want to include a story to set your game apart from games using simi-
+lar gameplay mechanics. The gameplay of Half-Life is virtually identical to that of 
+any other ﬁ rst-person shooter, but the story sets it apart.
+Key Concepts
+Before we look at the design processes required to put a story into your game, you 
+need to understand a number of key concepts, because they come up again and 
+again throughout the discussion.
+Story
+In the loosest deﬁ nition, a story is an account of a series of events, either historical 
+or ﬁ ctitious. On that basis, a few people would say that every game contains a story 
+because the action of the game can be described afterward. Although theoretically 
+correct, this position isn’t very useful to a game designer. The description of a Tetris
+game would be a supremely uninteresting story because of the game’s endless repe-
+tition and its lack of emotional content, apart from the player’s own feelings. It is 
+so bad a story as to be not worth telling. If you’re going to incorporate stories into 
+games, they should be good stories.
+REQUIREMENTS OF GOOD STORIES
+For the purpose of putting good stories into games, we need to expand the original 
+deﬁ nition beyond “an account of a series of events.” A minimally acceptable story, 
+then, must be credible, coherent, and dramatically meaningful.
+You can be the last member of the human race left alive, or you can invent a time 
+machine, but not both.
+—KEN PERLIN, PROFESSOR AT NEW YORK UNIVERSITY
+Credible simply means that people can believe the story, although in the case of
+ﬁ ction, they may have to suspend some disbelief to make belief possible. Many fan-
+tasy and science ﬁ ction stories incredible in real-world terms, become perfectly 
+believable once the reader accepts their premises. Even fantasy and science ﬁ ction 
+stories mustn’t push it too far, as the quotation from Ken Perlin illustrates. They 
+must also offer characters that the audience can sympathize with, identify with,
+or recognize as convincing. If a character isn’t believable, the story is ﬂ awed. 
+Humorous stories don’t have to be as credible as serious ones. Different audiences 
+also tolerate varying levels of credibility, so you should test your story on several 
+people to see if they ﬁ nd it believable.
+Coherent means that the events in a story must not be irrelevant or arbitrary but must 
+harmonize to create a pleasing whole. Even if some events are not related by cause 
+and effect or some events just add color, all events still have to belong in the story. 
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+159
+ CHAPTER 7
+A story about the Apollo space program that included events from the ﬁ rst-century 
+Roman invasion of Judea would be incoherent because the Roman invasion of Judea 
+had no connection at all with the Apollo program. On the other hand, if the story 
+of the Apollo program included a scene of Galileo building his telescope, that could 
+be harmonious because Galileo’s use of the telescope to study the heavens represents 
+an important milestone in astronomy that ultimately led to the moon landings.
+To be dramatically meaningful, the story’s events have to involve something, or pref-
+erably someone, the listener cares about. The story must be constructed in such a 
+way as to encourage the listener to take an interest in, and preferably identify with, 
+one or more of the story’s characters. When a game tells a story, the dramatically 
+meaningful events may be explicitly planned by the writer, or they may arise natu-
+rally out of the process of playing. Either way, all events must contribute to the 
+player’s involvement in the story through identiﬁ cation with characters and inter-
+est in what happens to those characters. See the “Dramatic Tension and Gameplay 
+Tension” section later in this chapter.
+INTERACTIVE STORIES
+In English, stories—even those set in the future—are normally written using the 
+past tense. An interactive story, on the other hand, takes place now, with the
+player in the middle of the series of events, moving forward through those events. 
+Furthermore, the player’s actions form part of the story itself, which makes an 
+interactive story very different from a story presented to a passive audience. In
+fact, an interactive story includes three kinds of events:
+■ Player events are actions performed directly by the player. In addition to giving 
+the player actions to perform as part of gameplay—actions intended to overcome 
+challenges—you can give the player additional actions to perform as part of the 
+story. Role-playing by talking to other characters, for example, might serve the 
+needs of the story even if overcoming the game’s challenges does not require talk-
+ing. If the player’s actions can affect the plot of the story and change its future, 
+they’re called dramatic actions. Some player actions are not dramatic, however: 
+Some player events aimed at overcoming challenges may not affect the plot.
+■ In-game events are events initiated by the core mechanics of the game. These 
+events may be responses to the player’s actions (such as a trap that snaps when the 
+player steps on a particular stone) or independent of the player’s actions (such as a 
+simulated guard character checking to see that the castle doors are locked). The 
+player might be able to intentionally cause these events to occur, to change the way 
+they occur, or to prevent them entirely—which is part of what makes the story 
+interactive.
+■ Narrative events are events whose content the player cannot change, although 
+he may be able to change whether they occur or not. A narrative event narrates 
+some action to the player; he does not interact with it. Narrative events are described
+in the “Narrative” section following this one.
+NOTE A good story 
+must, at minimum, 
+be a credible and 
+coherent account of 
+dramatically meaning-
+ful events. 
+
+
+--- PAGE BREAK ---
+
+160 
+FUNDAMENTALS OF GAME DESIGN
+With this in mind, consider the following formal deﬁ nition of an interactive story.
+INTERACTIVE STORY An interactive story is a story that the player interacts with by 
+contributing actions to it. A story may be interactive even if the player’s actions cannot 
+change the direction of the plot.
+This deﬁ nition of an interactive story differs from those of many other designers, 
+who often assert that if the player’s actions do not change the direction of the plot 
+(that is, the plot is linear) the story is not interactive. The power to change the 
+direction of the plot—the story’s future events—is called agency. Some designers 
+feel that if a game with a story does not offer the player agency, it can’t be said to 
+be a truly interactive story. This is a misconception, because it ignores the role of 
+the player’s own actions in forming his experience of the game. A player still feels 
+as if he is interacting with a story even if his actions do not change future events. 
+The player contributes to the sequence of events, and that is what matters.
+Consider a situation in which a player must ﬁ nd a way to get past a security guard 
+to enter a building. You can give the player several ways to accomplish this: 
+through violence, or trickery, or patience—waiting until the security guard goes off 
+shift. No matter which approach the player chooses, he still enters the building 
+through the same door and encounters the same things on the other side. If his 
+decision does not actually affect the future events of the story, he has no agency. 
+But his decision about how to get through the door contributes to the plot; his own 
+actions are part of his experience of the game. This is how a story can be linear and 
+still be interactive.
+We discuss the distinction between stories that cannot be changed and those that 
+can be changed in the sections “Linear Stories” and “Nonlinear Stories” later in 
+this chapter.
+Notice that the deﬁ nition does not say anything about quality. Remember that to 
+be a good story, a story’s events must be credible, coherent, and dramatically mean-
+ingful. The player’s actions constitute events in the story, so the more that those 
+actions are credible, coherent, and dramatically meaningful events, the better the 
+story will be. (Even an action that is not a dramatic action—one that changes the 
+plot, as explained earlier—can still be dramatically meaningful; that is, it can be 
+about something the player cares about.) When designing an interactive story, you 
+shouldn’t give the player things to do that don’t credibly belong in the story; the 
+result will be incoherent. In the Grand Theft Auto series, the player can’t set up a 
+charity for the homeless, and in the Police Quest series he can’t steal cars.
+In most games with an interactive story, the player’s actions move the plot along. 
+When the player overcomes a challenge, the game responds with the next event in 
+the story. If the player doesn’t overcome a challenge, either the story comes to a 
+premature end (as it would when, say, the avatar dies in the attempt) or the story 
+simply fails to advance—the player doesn’t see future story events until he manages 
+to get past the speciﬁ c obstacle. However, there are exceptions to this arrangement; 
+in some games the story progresses whether or not the player meets the game’s 
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+161
+ CHAPTER 7
+challenges. The section “Mechanisms for Advancing the Plot” addresses this issue 
+in detail later.
+Narrative
+The deﬁ nition of narrative is open to debate, but this book uses a deﬁ nition that 
+conforms pretty closely to that used by theorists of storytelling. Narrative consists 
+of the text or the discourse produced by the act of narration. In an interactive story, 
+narrative is the part of the story that you, the designer, narrate to your player—as 
+opposed to those actions that the player performs, or those events that the core 
+mechanics create.
+NARRATIVE The term narrative refers to story events that are narrated—that is, told or 
+shown—by the game to the player. Narrative consists of the noninteractive, 
+presentational part of the story.
+THE ROLE OF NARRATIVE
+The primary function of narrative in a video game is to present events over which 
+the player has no control. Typically these events consist of things that happen to 
+the avatar that the player cannot prevent and events that happen when the avatar 
+is not present, but we still want the player to see or to know about them. Scenes 
+depicting success or failure are usually narrative events.
+Narrative also lets you show the player a prolog to the game or the current level if 
+you want to. It not only introduces the player to the situation in the game—the 
+game’s main challenge—but also to the game world itself. When a football game 
+shows the athletes running onto the ﬁ eld at the beginning of the game, that’s a 
+narrative event that the player can’t change. It simply creates context. Although the 
+sights and sounds of your game—the graphics and audio—create the immediate 
+physical embodiment of your game’s world (how the world looks), they can’t 
+explain its history and culture (why it looks that way). If you don’t design that
+culture and history, the game world will feel like a theme park: all false fronts and
+a thin veneer over the game’s mechanics. To establish a feeling of richness and 
+depth, you must create a background, and you can reveal some of that through
+narration. Narrative very often serves as a reward when the player achieves a major 
+goal of the game—he gets to see a movie or read more of the story he’s playing 
+through. Players who don’t like stories in games usually ignore these narrative 
+moments, but many players enjoy them a great deal. 
+COMMONLY USED NARRATIVE BLOCKS
+Many video games use blocks of narrative material—brief episodes of noninterac-
+tive content—to tell parts of the story. Designers commonly use a narrative block as 
+an opening sequence, to introduce the story at the beginning of the game; as an 
+ending sequence, to wrap up the story when the player completes the game; as an 
+
+
+--- PAGE BREAK ---
+
+162 
+FUNDAMENTALS OF GAME DESIGN
+interlevel sequence that often takes the form of a brieﬁ ng about what the player 
+will encounter in the next level (or chapter or mission); or in the form of cut-scenes,
+that is, short noninteractive sequences presented during play that interrupt it 
+momentarily.
+The game Half-Life, for example, begins with a movie in which Gordon Freeman, 
+the player’s avatar, takes a tram ride through the Black Mesa research complex 
+while a voice explains why he is there. This opening sequence introduces the game 
+world and sets the stage for the experience to follow.
+Narrative blocks presented between levels tend to last from 30 seconds to 4 or 5 
+minutes. Those at the beginning and end of the game are sometimes longer still, 
+because they provide important narrative bookends to the entire experience. In 
+Halo 2, the introduction scene is more than 5 minutes long.
+Cut-scenes during play, on the other hand, should be shorter because they inter-
+rupt the ﬂ ow and rhythm of the player’s actions. Players who like fast-moving 
+genres such as real-time strategy games or action-adventures are annoyed if you 
+keep them listening or watching for too long without giving them something to 
+do. Players of slower-moving games such as adventure games or role-playing games 
+tolerate long cut-scenes better.
+DESIGN RULE  Noninteractive Sequences
+Must Be Interruptible
+All narrative material must be interruptible by the player. Provide a button that allows 
+players to skip the sequence and go on to whatever follows, even if the sequence contains 
+important information that players need to know to win the game. A player who has 
+played the game before already knows what the narrative contains.
+FORMS OF NARRATIVE
+Narrative in a video game can take many forms. A prerendered movie, a cut-scene
+displayed by the graphics engine, scrolling text that introduces a mission, voice-
+over commentary that explains the backstory of the game, or even a long monolog 
+by a character can all be considered narrative elements of the game.
+There’s one exception to the deﬁ nition of narrative. A single, prerecorded line of 
+dialog spoken by a game character might be considered to be narrative because the 
+player can’t change it as it is being played back. However, dialog in games usually 
+occurs in an interactive context, with the player choosing a line for her character
+to say, and the game choosing, based on what the player’s avatar said, an appropri-
+ate line in response. Therefore, individual lines of dialog are not narrative. A long,
+noninteractive dialog between NPCs, on the other hand, qualiﬁ es as narrative.
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+163
+ CHAPTER 7
+BALANCING NARRATIVE AND GAMEPLAY
+Because playing games is an active process and watching a narrative is a passive 
+one, the player notices the difference between them. A simple arcade game such as 
+Tempest presents no narrative—it is entirely gameplay. A novel or a movie offers no 
+gameplay—it is entirely narrative. The more narrative you include, the more the 
+player sits doing nothing, simply observing your story.
+But players don’t play games in order to watch movies; they play in order to act. 
+Any game that includes narrative elements must ﬁ nd an appropriate balance 
+between the player’s desire to act and the designer’s need to narrate. If you offer too 
+much narrative and too little gameplay, players will feel that your game gives bad 
+value for the money they paid. Players pay for the opportunity to act out a fantasy. 
+If most of your game’s content is noninteractive, they’ll feel cheated—they won’t 
+get the experience that they paid for.
+Too much narrative also tends to make the game feel as if it’s on rails, the player’s 
+actions serving only to move the game toward a predestined conclusion. Unless 
+you’ve written a game with multiple endings, the conclusion is predestined, but 
+you want to make the player feel as if he actively participates in the story. When 
+the designer takes over too much of the telling, the player feels as if he’s being led 
+by the nose. He doesn’t have the freedom to play the game in his own way, to cre-
+ate his own experience for himself.
+The raison d’être of all computer gaming is interactivity: giving the player something 
+to do. The trick, then, is to provide enough narrative to enrich the game world and 
+motivate the player but not so much as to inhibit his freedom to meet the game’s 
+challenges in whatever way he chooses. Consider this paraphrase of the words of 
+the wizard Gandalf in The Lord of the Rings: “We cannot choose the times in which 
+we live. All we can decide is what to do with the time that is given us.” The player 
+cannot decide the world in which he plays; that is for you to determine. But he 
+must have the freedom to act within that world, or there is no point in playing.
+DESIGN RULE Do Not Seize Control of the Avatar
+When you create your game’s narrative segments, try to avoid seizing control of the play-
+er’s avatar, and above all, do not make the avatar do something that the player might not 
+choose to do. In too many games, the narrative suddenly takes over and makes the avatar 
+get into a ﬁ ght, walk into danger unnecessarily, or say something stupid that the player 
+would never choose to say. It is fair to change the world around the avatar in response to 
+the player’s actions; it is less fair to take control of the avatar away from the player.
+
+
+--- PAGE BREAK ---
+
+164 
+FUNDAMENTALS OF GAME DESIGN
+Dramatic Tension and Gameplay Tension
+Many designers are led astray by a false analogy between two superﬁ cially similar 
+concepts, dramatic tension and gameplay tension. This section deﬁ nes these terms, 
+discusses their role in entertaining the player, and explains why you shouldn’t
+confuse them.
+DRAMATIC TENSION
+When a reader reads (or a viewer watches) a story, she feels dramatic tension, the 
+sense that something important is at stake coupled with a desire to know what
+happens next. (Screenwriters call this conﬂ ict, but game developers use conﬂ ict to 
+refer to the opposition of hostile forces in a game and prefer dramatic tension,
+which is more accurate in any case.) Dramatic tension is the essence of storytelling, 
+whatever the medium. Cliffhangers—exciting situations at the ends of book chap-
+ters or TV shows that remain unresolved until the next chapter or episode—
+increase the audience’s sense of dramatic tension and ensure they stick around to 
+see the situation resolve. At the climactic event of a story, the action turns, so that 
+instead of the tension mounting, the tension begins to fall.
+GAMEPLAY TENSION
+When a player plays a game, he feels gameplay tension, also a sense that something 
+important is at stake and a desire to know what happens next. But gameplay ten-
+sion arises from a different source than dramatic tension does; it comes from the 
+player’s desire to overcome a challenge and his uncertainty about whether he will 
+succeed or fail. In multiplayer games, the player’s uncertainty about what his oppo-
+nents will do next also creates gameplay tension.
+THE FALSE ANALOGY
+Game designers have tended to perceive an analogy between dramatic tension and 
+gameplay tension, as if the two terms simply denoted the same feeling. However, 
+the analogy is a false one. Dramatic tension depends on the reader’s identiﬁ cation 
+with a character (or several of them) and curiosity about what will happen to that 
+character. Gameplay tension does not require any characters. A darts player feels 
+gameplay tension in wondering whether he can hit the bull’s-eye, but that situation 
+provides dramatic tension only if the outcome matters to a character in the context 
+of a story.
+A key difference between dramatic tension and gameplay tension lies in the differ-
+ing abilities of these feelings to persist in the face of randomness and repetition.
+Randomness means unpredictable and arbitrary changes in the course of events. 
+Repetition refers to identical (or extremely similar) events occurring at different 
+times in the progress of the story or game.
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+165
+ CHAPTER 7
+Dramatic tension, and reader interest in the dramatic subject, fades in the presence 
+of both randomness and repetition. If the events in a story seem random—accidental
+and unrelated to one another—the reader wonders why he is bothering to read it. 
+Likewise, no story should include identical events that repeat themselves more than 
+once or twice. If a police ofﬁ cer knocks on a potential witness’s door and there’s 
+nobody home, he shouldn’t have to do it more than once or twice before he gets an 
+answer. Having this happen again and again in a story would make it boring. In 
+some circumstances repetition can be played for laughs, if not overdone—in The 
+Secret of Monkey Island, every time the hero escapes from a hut in which he is con-
+ﬁ ned, the natives put a bigger lock on the door until the door looks like a bank 
+vault. But even this is not completely repetitive, because each lock the natives add 
+looks different.
+Gameplay tension, on the other hand, easily tolerates both randomness and repeti-
+tion for much longer. Poker and Tetris include a lot of randomness and repetition, 
+yet they retain their gameplay tension.
+Consider the following dialog from the British television science ﬁ ction comedy 
+Red Dwarf. Arnold Rimmer, sitting around one evening with his roommate, Dave 
+Lister, recounts every detail of a game of Risk, die-roll by die-roll, that he played 10 
+years earlier. Lister asks him repeatedly to shut up, and Rimmer can’t understand 
+why.
+RIMMER: But I thought that was because I hadn’t got to the really interesting bit.
+LISTER: What really interesting bit?
+RIMMER: Ah well, that was about two hours later, after he’d thrown a three and a two 
+and I’d thrown a four and a one. I picked up the dice… 
+LISTER: Hang on Rimmer, hang on… the really interesting bit is exactly the same as the 
+dull bit.
+RIMMER: You don’t know what I did with the dice though, do you? For all you know, I 
+could have jammed them up his nostrils, head-butted him on the nose and they could have 
+blasted out of his ears. That would’ve been quite interesting.
+LISTER: OK, Rimmer. What did you do with the dice?
+RIMMER: I threw a ﬁ ve and a two.
+LISTER: And that’s the really interesting bit?
+RIMMER: Well, it was interesting to me, it got me into Irkutsk.
+—RED DWARF SERIES 4, EPISODE 6, “MELTDOWN”
+Two lines in this exchange illustrate the point quite clearly. Lister says, “The really 
+interesting bit is exactly the same as the dull bit,” and later Rimmer says, “Well, it 
+was interesting to me, it got me into Irkutsk.” Like Tetris, Risk is full of repetition 
+and randomness. Rimmer believes that it’s interesting because he confuses the 
+gameplay tension that he felt—will I conquer Irkutsk?—with dramatic tension.
+
+
+--- PAGE BREAK ---
+
+166 
+FUNDAMENTALS OF GAME DESIGN
+DESIGN RULE  Randomness and Repetition
+Destroy Dramatic Tension
+The narrative events in a game’s story must not occur randomly or arbitrarily, nor should 
+the narrative repeat itself, even if the play itself is repetitive.
+The Storytelling Engine
+To design a game that includes a story, you must interweave the gameplay—the 
+actions taken to overcome the game’s challenges—with the narrative events of the 
+story. Narrative events must be interspersed among the gameplay events in such a 
+way that all events feel related to each other and part of a single sequence that 
+entertains the player. If the gameplay concerns exactly the same subject matter as 
+the narrative—and it should, in order to present a coherent and harmonious 
+whole—then the entire experience, play and narrative together, will feel like one 
+continuous story.
+The storytelling engine does the weaving. Chapter 2, “Design Components and 
+Processes,” introduced the storytelling engine brieﬂ y as the third major component 
+of a video game along with the core mechanics and the user interface. Unlike the 
+other two, the storytelling engine is optional; if the game doesn’t tell a story, it 
+doesn’t have a storytelling engine.
+Just as the core mechanics generate the gameplay, the storytelling engine manages 
+the interweaving of narrative events into the game. The core mechanics oversee the 
+player’s progress through the game’s challenges; the storytelling engine oversees 
+the player’s progress through the game’s story. The storytelling engine and core 
+mechanics must work together to create a single, seamless experience.
+Figure 7.1 illustrates the relationship between the storytelling engine, core 
+mechanics, user interface, and player. Notice that Figure 7.1 resembles Figure 2.1 
+from Chapter 2. Figure 2.1 showed how the core mechanics produce and manage 
+gameplay. Figure 7.1 shows how both the core mechanics and storytelling engine 
+together produce the experience of interacting with a story.
+As the section “Interactive Stories” explained earlier, an interactive story contains 
+three types of events: player events, in-game events, and narrative events. The core 
+mechanics manage the player events and in-game events, as the ﬁ gure shows. The 
+storytelling engine manages the narrative events. However, the storytelling engine 
+does more than just play movies or cut-scenes; it also keeps track of the progress of 
+the story and determines what part of the plot should come next.
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+167
+ CHAPTER 7
+Notice that a double-headed arrow labeled Triggers connects the storytelling engine 
+to the core mechanics in Figure 7.1. At times, the core mechanics may determine 
+that the interaction should stop and the storytelling engine should present some 
+narrative—for instance, when a player completes a level. The core mechanics send a 
+message to the storytelling engine saying that the player ﬁ nished the level and the 
+storytelling engine should now display any interlevel narrative events. Likewise, 
+the storytelling engine can send a trigger back to the core mechanics when a narra-
+tive event ﬁ nishes (or when the player interrupts a narrative event), telling the core 
+mechanics to resume play.
+The storytelling engine doesn’t sit idle during play, however. As the player pro-
+gresses, the mechanics continually send triggers to the storytelling engine—that
+way, the storytelling engine can keep up with what’s going on. If, for example, the 
+player makes a key decision that will affect the story later on, the core mechanics 
+inform the storytelling engine of the decision.
+Similarly, during play the storytelling engine can determine that the story has 
+reached a critical plot point and trigger the core mechanics to cause changes to the 
+internal economy of the game. Suppose the story says, “When the avatar reaches 
+the bridge, he will be attacked by a highwayman in a cut-scene and robbed of all 
+his property.” The core mechanics, tracking the player’s progress through the game 
+world, send a message to the storytelling engine, “The avatar has reached the bridge.” 
+The storytelling engine detects that this is a key point, halts play, and displays a 
+cut-scene showing the robbery. Then it transmits a message back to the core mechan-
+ics saying, “Transfer the avatar’s inventory to the highwayman and resume play.”
+Normally, the level designers do the work that actually implements such events in 
+the game. Among the level designer’s tools for level-building will be a mechanism 
+FIGURE 7.1
+The relationship 
+between storytelling 
+engine, core mechan-
+ics, and user interface
+CORE MECHANICS
+STORYTELLING ENGINE
+USER INTERFACE
+PLAYER
+Outputs
+Narrative Events
+In-Game Events
+Triggers
+Player Events
+Inputs
+
+
+--- PAGE BREAK ---
+
+168 
+FUNDAMENTALS OF GAME DESIGN
+for detecting the avatar’s position and for triggering both the cut-scene and the 
+transfer of the avatar’s property. At the moment, a development company cannot 
+license a storytelling engine from a middleware company the way it can license a 
+graphics engine or a physics engine, but that may change. Still, at a conceptual 
+level it will help you to design the story and its interaction with the gameplay if 
+you think of these events in terms of triggers sent between the two separate com-
+ponents, the core mechanics and the storytelling engine.
+As you can see, the storytelling engine plays a critical role in weaving the gameplay 
+and narrative together to create the whole experience. The rest of this chapter refers 
+to the storytelling engine frequently.
+Linear Stories
+From the earliest days of computer gaming, designers have been intrigued by the 
+idea of agency: letting the player inﬂ uence the plot and change the outcome. 
+Game developers refer to stories that the player cannot change as linear stories and 
+those that the player can change as nonlinear stories. The next section addresses 
+nonlinear stories.
+A linear story in a video game looks similar to a linear story in any other medium, 
+in that the player cannot change the plot or the ending of the story. In a game, 
+however, the player still faces challenges as she goes through the story, and in fact 
+the challenges form part of the story itself. Thus, a linear story in a game is still an 
+interactive story, but the player’s interactions are limited to contributing actions. 
+Still, many games use this format. Consider Half-Life and StarCraft: Both tell linear 
+stories, the outcome of which the player cannot change, but the player performs 
+many actions as part of the story along the way.
+Creating linear stories offers many advantages, which explains why, after a ﬂ urry of 
+experimentation with nonlinear ones in the 1990s, the game industry largely 
+returned to this practice. Linear stories do have disadvantages as well, however. 
+Here are some of the pros and cons to consider when designing your own story.
+■ Linear stories require less content than nonlinear ones. If a player can only 
+ever experience one ﬁ xed sequence of events, you only need to create material for 
+those events. Developing the game using a linear story requires less time and money.
+■ The storytelling engine is simpler. The storytelling engine managing a linear 
+story has to keep track of only a single sequence of plot events. Because the player 
+cannot change the course of events, the storytelling engine doesn’t need to record 
+critical decisions that the player makes: There aren’t any. The storytelling engine 
+will be easier to implement in software if you use a linear story.
+■ Linear stories are less prone to bugs and absurdities. If the sequence of events 
+remains the same regardless of players’ actions, you can guarantee that the story 
+makes sense. On the other hand, if you allow the sequence of events to vary—that 
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+169
+ CHAPTER 7
+is, you present a nonlinear story—you introduce the risk of error. The storytelling 
+engine must guarantee that the events make sense. If the player wrecks a car during 
+play in a game with a nonlinear story, the storytelling engine must ensure that the 
+game does not present any subsequent gameplay or narrative material that shows 
+the car undamaged. If you’re not careful, you can introduce what the ﬁ lm industry 
+calls continuity errors: things that look different from the way they should look, 
+given the events of preceding scenes, because narrative material can’t change to 
+keep up with game events. Linear stories don’t incur this risk. If a car is wrecked as 
+part of the story, it stays wrecked; if it mustn’t be wrecked, then you must not give 
+the player any way to wreck it.
+■ Linear stories deny the player agency. The player may have freedom to do a lot 
+of things in the game, but none of it inﬂ uences the story apart from causing it to 
+progress. As the previous consideration said, if the story requires a functional car 
+throughout, then the gameplay cannot allow the player to wreck the car. The sec-
+tion “Endings,” later in this chapter, discusses this issue in more depth.
+■ Linear stories are capable of greater emotional power. From a creative stand-
+point, this is one of their greatest advantages. The section “Emotional Limits of 
+Nonlinear Stories” explains this point in more detail later in this chapter.
+Note that if you want to tell a strictly linear story, that decision will have conse-
+quences for any story you plan to treat as a journey (as many are). See the section 
+“The Story as a Journey” later in this chapter.
+Nonlinear Stories
+If you allow the player to inﬂ uence future events and change the direction of the 
+story, then the story is nonlinear. This chapter examines two of the most common 
+structures for nonlinear stories—branching stories and foldback stories—in detail in 
+the next two sections. A third approach, emergent narrative, is more of a research 
+problem than a standard industry mechanism, and we’ll discuss it brieﬂ y. After 
+that we’ll look at a new hybrid technique that shows great promise for the future of 
+interactive storytelling. Finally, we’ll study an important issue for any teller of non-
+linear stories: How many endings should the story have?
+Branching Stories
+A branching story allows the player to have a different experience each time he plays 
+the game. The story offers not one plot line but many that split off from each other 
+at different points. As the designer, you decide on the different possible plot lines 
+and how they relate to each other. During play, the storytelling engine keeps track 
+of which plot line the player is following at any given time. When the story reaches 
+a branch point—a place where the current plot line subdivides—the core mechanics 
+must send a trigger to the storytelling engine to tell it which of the possible 
+branches of the story the player will follow next.
+
+
+--- PAGE BREAK ---
+
+170 
+FUNDAMENTALS OF GAME DESIGN
+Game events—either player events or in-game events generated by the core 
+mechanics (such as an action taken by an AI-driven NPC)—determine which 
+branch the story will take. Player events that inﬂ uence the direction of the story 
+fall into two categories: efforts to overcome a challenge or decisions that the story 
+asks the player to make. Branch points connected with player decisions have one 
+branch for each option that you offer to the player. Typically, branch points associ-
+ated with challenges have only two branches leading on from the branch point, 
+one for success and one for failure, though you can also create different numbers of 
+branches for different degrees of success if you want to. We’ll consider the emo-
+tional consequences of branches based on challenges versus those based on choices 
+in the later section “Endings.”
+IMMEDIATE, DEFERRED, AND CUMULATIVE INFLUENCE
+If an event in the game causes the plot to branch right away, that event has an 
+immediate inﬂ uence on the story. This is the most common kind of branch and the 
+easiest to implement. The player makes an irrevocable decision—which road to 
+take, for example—and the story promptly reﬂ ects his choice.
+However, sometimes the player can make a decision early in the game that inﬂ u-
+ences a branch point much later, in which case that decision has deferred inﬂ uence, 
+or he can make a whole series of decisions throughout the game that cumulatively 
+affect a branch point, such that his actions and decisions, taken together, have 
+cumulative inﬂ uence.
+If you use deferred or cumulative inﬂ uence, you must make it clear to the player 
+what the possible consequences of his decisions will be. It’s unfair to give the player 
+a choice early in the game without warning that this choice will have long-term 
+repercussions, and then change the direction of the story hours or days later based 
+on that choice. Furthermore, if he wants to change his mind, he has to reload the 
+game all the way back at the point where he ﬁ rst made the choice, choose differ-
+ently, and then play all the way through the game again. (That’s assuming he still 
+has a save point there to reload from.) And he can only do this at all if he realizes 
+how his decisions affected the current branch, which may not be obvious.
+For example, if you allow a player to choose right at the beginning of a role-playing 
+game whether he will play as a healer character or a ﬁ ghter character, you should 
+tell him that such an important choice will have signiﬁ cant deferred consequences 
+throughout the game.
+Many role-playing games use cumulative inﬂ uence to build up a sort of reputation 
+for the player. The game keeps track of the player’s behavior over time, and if the 
+player consistently performs evil deeds, the NPCs in the game begin to treat him as 
+an evil character. Again, you should warn the player that his cumulative behavior 
+will have consequences later in the game.
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+171
+ CHAPTER 7
+Trivial decisions—which color hat will I wear?—should have only trivial conse-
+quences. If a trivial decision has a profound consequence, the player will feel 
+cheated: He didn’t know that the decision mattered and had no reason to expect it to 
+matter. Attaching important consequences to trivial decisions violates the require-
+ment that stories be credible and dramatically meaningful. The Hitchhiker’s Guide to 
+the Galaxy, a text adventure, did this for comedic and ironic purposes, but most 
+players and critics judged it to be an unreasonably difﬁ cult game for exactly this 
+reason: The player couldn’t predict what the consequences of his actions would be.
+DESIGN RULE Be Clear About Consequences
+Give players a reasonable amount of information about the possible consequences of their 
+decisions, especially if the decision’s consequences are deferred, so that they can make 
+informed choices. Don’t tie important consequences to what seem to be trivial decisions.
+THE BRANCHING STORY STRUCTURE
+A diagram of a branching story looks somewhat like a tree, although by convention 
+the root—the beginning of the story—appears at the top, so that the tree branches 
+out as it goes down the page and the story goes forward in time. Figure 7.2 shows a 
+small part of the structure of a branching story.
+START
+END 2
+END 1
+FIGURE 7.2
+Part of the structure
+of a branching story
+
+
+--- PAGE BREAK ---
+
+172 
+FUNDAMENTALS OF GAME DESIGN
+Each of the circles in Figure 7.2 represents a branch point, and each arrow repre-
+sents a branch, that is, the player’s movement along a plot line to the next branch 
+point. The storytelling engine keeps track of the player’s position in the story at 
+any given moment.
+As you look at Figure 7.2, be sure to note the following:
+■ The branch points don’t always have the same number of branches leading away 
+from them. A story can branch in any number of directions at any given point.
+■ The branches go down or sideways, but they never go back up again. The dia-
+gram depicts the possible progress of a story, and stories always move forward in 
+time, never backward. In the course of playing a single game, the plot never follows 
+the same branch or passes through the same branch point twice. This enforces the 
+rule that stories must not contain identical repeating events and helps avoid the 
+risk of continuity errors, as discussed earlier.
+■ Unlike branches on a real tree, different branches can merge; that is, different 
+plot lines can converge. Many branch points can be reached by more than one path.
+■ The diagram depicts two possible endings that may be reached by different 
+paths. The complete diagram would show additional endings farther down.
+■ The diagram shows only one start point, but in fact a story could have several 
+start points if the player made a key decision before the story actually began. The 
+player might select one of several different characters to be his avatar, and that 
+choice could determine where the story begins. Or the storytelling engine could 
+choose from among several designated start points at random just to make the 
+beginning different each time the player plays the game.
+The branching story mechanism is the classic method for creating interactive stories 
+that give players lots of agency. Branching plot lines let you tell a story in which 
+the player’s actions strongly affect the plot, and he can see the effect of his actions 
+if he plays the game more than once and makes different decisions the second 
+time through.
+DISADVANTAGES OF THE BRANCHING STORY
+Be aware of the following three serious disadvantages of the branching story mech-
+anism before you decide to use that structure for your game’s story.
+■ Branching stories are extremely expensive to implement because each branch 
+and each branch point require their own content. In Figure 7.2, a player can experi-
+ence at most six branch points in playing from the top to the bottom of the 
+ﬁ gure—not very many. That represents six player choices or challenges. After six 
+choices—for example, to take the left fork of the road, to enter the building, to go 
+upstairs instead of down, to talk to the old woman, to accept a letter she offers, to 
+leave the room—the player has barely started the game. Yet even this simpliﬁ ed 
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+173
+ CHAPTER 7
+example involves 21 branch points and 35 different branches, each of which requires
+its own story content: gameplay and narrative material. If none of the branches 
+merged again, there would be even more. This rapid growth in the number of 
+branches is called the combinatorial explosion. (Combinatorics is the ﬁ eld of math-
+ematics that studies the number of possible combinations of a set of things—in this 
+case, a set of branch points in a branching story.)
+As a result, most modern games don’t actually include much branching, and they 
+often include long periods during which the player plays but doesn’t change the 
+story. Wing Commander, a space combat simulator, contained a branching story,
+but it branched only between missions, not during them. Eventually, the Wing 
+Commander series abandoned branching storylines entirely because they proved to 
+be too expensive.
+■ Every critical event (those that affect the entire remainder of the plot) has to 
+branch into its own unique section of the tree. Suppose a character can live or 
+die at a particular branch point. If he dies, he must never be seen again, which 
+means none of the plot lines from his death onward can include him. His death 
+requires an entirely separate part of the tree that can never merge back into the 
+rest—otherwise, he might reappear after the player knows that he’s dead. If this 
+happens with two characters, the game requires four separate versions of the story: 
+a version in which both live; a version in which both die; a version in which A lives 
+and B dies; and a version in which B lives and A dies. Again, the number of possible 
+combinations explodes.
+■ The player must play the game repeatedly if he wants to see all the content. 
+If the storyline branches based on how well the player meets the game’s challenges 
+and he’s very successful, then the next time he plays he has to play badly on pur-
+pose in order to learn the dramatic consequences of his failure! A lot of players 
+would consider this to be absurd. They paid a great deal of money for the content 
+in the game, and the only way to see it all is to play badly part of the time. This fac-
+tor further contributed to the industry’s abandoning stories that branch frequently.
+If you want to make a branching story, you will have to plan out the structure in 
+the concept stage of design. You should not actually write the story at that point in 
+the design process, but you won’t be able to plan a budget or schedule for your 
+game unless you know how much content it will require, and a branching story’s 
+resource requirements expand very rapidly.
+If you ﬁ nd that these drawbacks discourage you from using a branching structure, 
+you can choose the compromise that the game industry most often uses when it 
+creates nonlinear stories today: the foldback story.
+Foldback Stories
+Foldback stories represent a compromise between branching stories and linear ones. 
+In a foldback story, the plot branches a number of times but eventually folds back to 
+
+
+--- PAGE BREAK ---
+
+174 
+FUNDAMENTALS OF GAME DESIGN
+a single, inevitable event before branching again and folding back 
+again to another inevitable event. (These are also sometimes 
+called multilinear stories.) This may happen several times before 
+the end of the story. See Figure 7.3 for a simpliﬁ ed example. The 
+Secret of Monkey Island follows this format, as do many of the
+traditional graphic adventure games.
+Most foldback stories have one ending, as shown in the ﬁ gure, but 
+this isn’t a requirement. You can construct a foldback story that 
+branches outward to multiple endings from its last inevitable event.
+Foldback stories offer players agency but in more limited amounts.
+The player believes that her decisions control the course of 
+events, and they do at times, but she cannot avoid certain events 
+no matter what she does. She may not notice this the ﬁ rst time 
+that she plays and may think that the story reﬂ ects her own 
+choices at all times. If she plays the game more than once, how-
+ever, she will suspect that some events are inevitable and that the 
+apparent control she enjoyed on the ﬁ rst play-through was an 
+illusion. This is not necessarily a bad thing and can be useful to 
+you as a storyteller. There’s no reason why an interactive story 
+must offer the player a way to avoid any event that she doesn’t 
+want to experience. After all, stories have always included the 
+occasional event that the protagonist can do nothing about. If 
+Scarlett O’Hara could have prevented Atlanta from being burned 
+in Gone with the Wind, the story would have had a very different 
+outcome and lost much of its emotional power. It’s reasonable to 
+use inevitable events to establish plot-critical situations that the 
+player cannot reasonably expect to prevent or change.
+The foldback story is the standard structure used by modern 
+games to allow the player some agency without the cost and
+complexity of a branching story. Developers routinely construct 
+the interactive stories in adventure games and role-playing games 
+as foldback stories. Of all forms of nonlinear interactive storytelling,
+it is the easiest to devise and the most commercially successful.
+If you want to create a foldback story, you should choose critical 
+turning points in the plot to be the inevitable events. They need not 
+always be large-scale events like the burning of Atlanta. They simply 
+should be events that change things forever and from which there is 
+no turning back. The hero facing his ﬁ nal challenge, for instance, 
+or the death of an important character, both work well as inevitable 
+FIGURE 7.3
+Simpliﬁ ed structure 
+of a foldback story
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+175
+ CHAPTER 7
+events. Obi-Wan Kenobi’s death, in Star Wars IV: A New Hope, works well as an inev-
+itable event.
+Emergent Narrative
+Emergent narrative, a term introduced by designer Marc LeBlanc in his lecture 
+“Formal Design Tools” at the 2000 Game Developers’ Conference, refers to story-
+telling produced entirely by player actions and in-game events (LeBlanc, 2000). 
+Emergent narrative storytelling does not contain narrative blocks (which he calls 
+embedded narrative) created by a writer. The story emerges from the act of playing. 
+There is no separate storytelling engine and no preplanned story structure, either 
+linear or branching; in principle, anything can happen at any time so long as the 
+core mechanics permit it.
+Playing The Sims can create emergent narratives because the game simulates the 
+activities of a group of characters and contains no prewritten narrative blocks. 
+However, The Sims is not really a device for telling stories to the player because it 
+gives the player so much control that he doesn’t feel as if he’s interacting with a 
+story but rather that he’s creating a story. The game is more of an authoring tool. 
+(See Chapter 5, “Creative and Expressive Play,” for further discussion of player sto-
+rytelling as a form of creative play.)
+The chief beneﬁ t of emergent narrative is that the sequence of events is not ﬁ xed 
+by a linear or branching structure, so the player enjoys more agency. He can bring 
+about any situation that the core mechanics will let him create. However, the 
+player can control the story’s events only to the extent that he can control the core 
+mechanics through his play. If the designer sets up the core mechanics in such a 
+way as to force a particular situation on the player, his experience can be just as 
+restricted as in a foldback story.
+LeBlanc himself points out that emergent narrative is not without its problems. For 
+one thing, it requires that the core mechanics be able to automatically generate 
+credible, coherent, and dramatically meaningful stories—an extremely tall order. 
+Core mechanics are deﬁ ned in terms of mathematical relationships rather than 
+human ones; how can they produce reasonable human behavior? How can you 
+make them generate emotionally satisfying stories algorithmically? At the moment, 
+with the ﬁ eld in its infancy, nobody knows. Furthermore, the core mechanics must 
+limit repetition and randomness, and at the moment, the core mechanics of most 
+games produce a lot of both. Finally, emergent narrative seems to offer nothing for 
+conventionally trained writers to do, and it might not be wise to give up on ordi-
+nary writers just yet, given the millennia of storytelling experience they represent.
+The best information available right now doesn’t reveal the existence of any com-
+mercial games that make use of purely emergent narrative without any embedded
+—that is, prewritten—material. The industry does not yet have any software that 
+generates stories good enough for commercial entertainment products. At the moment, 
+emergent narrative remains an experimental technique, part of an AI research ﬁ eld 
+known as automated storytelling, which offers great potential for the future.
+
+
+--- PAGE BREAK ---
+
+176 
+FUNDAMENTALS OF GAME DESIGN
+CHARACTER-AGNOSTIC PLOTS AND KING OF DRAGON PASS
+In most role-playing games (RPGs), the player gets to design her avatar from scratch at 
+the beginning of the game—to choose the avatar’s race, sex, profession, and many other 
+details. The game’s plot, therefore, must be character-agnostic, which is to say, the 
+details of the plot do not depend on the character. Such plots have some of the same 
+problems as plots created for nonspeciﬁ c avatars, which were introduced in Chapter 6, 
+“Character Development.” However, there is a difference. Nonspeciﬁ c avatars have no
+details the designer can work with. When a player creates an avatar, she creates those 
+details, and the core mechanics and storytelling engine can work with them.
+The plots of the stories in most RPGs aren’t very sophisticated, so for the most part this 
+doesn’t matter much. The player completes a quest, usually by killing a lot of monsters, 
+and the plot moves forward. It may branch one way if the player is choosing to role-play 
+as an evil character, and another if she is good; but it’s usually a large foldback story that 
+ends up in the same place regardless.
+The game King of Dragon Pass, published in 1999 by A-Sharp, is an important exception 
+that deserves more attention than it received. The game is set in Glorantha, the magical 
+world of the RuneQuest tabletop RPG games. Superﬁ cially, King of Dragon Pass appears 
+to be a sort of management simulation. The player spends much of her time managing 
+food production and looking after her tribe. What sets King of Dragon Pass apart, how-
+ever, is its storytelling mechanism.
+The goal of the game is to become king of an entire region known as Dragon Pass, 
+through a combination of economic growth, warfare, and diplomacy. The player leads 
+her tribe assisted by a Council of Elders, consisting of seven NPCs. Each Elder has his or 
+her own appearance, personality, and other attributes, and the player may call on any of 
+them for advice when a critical situation arises that demands a decision. The advice the 
+player gets naturally depends on the personal characteristics of the Elder that the player 
+asks—some Elders are aggressive, some timid, some diplomatic, and so on. The player 
+may also send Elders on missions of one kind and another, and the outcome of the mis-
+sion may depend on which Elder the player sends. Sending a warmonger on a diplomatic 
+mission can have disastrous consequences; sending a skilled negotiator on a purchasing 
+mission can be highly proﬁ table.
+Ordinary RPGs treat the story as a journey, and their character-agnostic plot situations 
+are normally associated with a particular location. If the player avoids visiting the loca-
+tion, she never experiences the situation. Also, most of the situations in ordinary RPGs 
+must be resolved through combat, so no matter who the player has in her party, she has 
+to ﬁ ght her way out of it one way or another.
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+177
+ CHAPTER 7
+King of Dragon Pass is different because instead of the player going to ﬁ nd adventure, 
+the adventures come to her. The player does not have an avatar who moves around, but 
+events happen to her all the same. The game maintains a huge database of character-
+agnostic situations, and a separate database of Elders (and potential replacement 
+Elders). Situations arise either at random or in response to earlier events. When a situa-
+tion occurs that requires an Elder’s attention, the player must choose which Elder will 
+deal with it. The storytelling engine reads the Elder’s attributes and computes an out-
+come from them. It narrates this outcome to the player and, if appropriate, triggers 
+another situation that was caused by the ﬁ rst one. (The database of situations in King of 
+Dragon Pass does not look like an ordinary story; rather, it is code written in a special 
+programming language devised just for this purpose.)
+This design has two beneﬁ ts. First, because each situation is character-agnostic, an 
+Elder may die with no harm to the story. That NPC simply gets removed from the data-
+base of Elders and cannot take part in any future events. There is no problem of a 
+combinatorial explosion.
+Second, and even more important, the outcome of a situation not only changes global 
+status attributes such as the state of the tribe, it can also change the attributes of the 
+Elder who was involved. The player’s choice of Elder inﬂ uences the outcome of the situa-
+tion, and the situation in turn may affect the Elder’s personality: making a callow young 
+man more wise, or humbling an arrogant warrior. This, then, may inﬂ uence subsequent 
+situations that the Elder is involved in. Just as in presentational ﬁ ction, there is an inter-
+play between characters and events that changes both.
+As a result, the game can be very different every time the player plays. The Elders she 
+chooses to surround herself with can produce much more varied results than we see in 
+the usual RPG. The player must be a good judge of character to know which Elders to use 
+for what missions. For this reason King of Dragon Pass might best be characterized as a 
+leadership simulator—but so far, it is the only one known.
+Endings
+Readers ﬁ nd the ending of a story one of its most critical emotional moments. 
+Storytellers craft their endings to evoke speciﬁ c feelings in the audience—some-
+times even in the very last sentence. But an interactive story can have multiple 
+endings. How many endings should your story have?
+Include multiple endings if you want to give the player an outcome that reﬂ ects the 
+dramatic actions he took throughout the story—those actions that actually matter 
+to the story, as opposed to actions irrelevant to the drama, such as reorganizing his 
+inventory or buying nicer clothing. However, the player’s desire for an outcome that 
+reﬂ ects his actions varies somewhat depending on what those actions were. Players’ 
+
+
+--- PAGE BREAK ---
+
+178 
+FUNDAMENTALS OF GAME DESIGN
+dramatic actions in a game may be divided into those taken to surmount a challenge
+and those in which the player makes a choice.
+PREMATURE ENDINGS DON’T COUNT!
+By ending we mean a true conclusion to the story, not a premature ending caused by the 
+player failing to meet a challenge. Although dying in the middle of a long role-playing 
+game does amount to losing the game, it’s not really the end of the story, simply an 
+interruption in the player’s experience of that story. The player will undoubtedly restart 
+the game and continue if she ﬁ nds playing the game a compelling experience. Premature 
+endings should be quick because they’re only temporary, so don’t squander resources 
+creating a lot of narrative material to accompany premature avatar death. Nor should you 
+make the player wait a long time to get started again. Many modern games don’t even 
+require the player to reload the game after a premature ending; they reload automati-
+cally for her, restarting near where she left off. Other games simply don’t let the avatar 
+die at all, to avoid the whole issue.
+CHALLENGES AND CHOICES
+Ordinary competitive games, those without stories at all, still offer more than one 
+ending: The player wins or she loses, depending on how well she played. So if the 
+player meets your game’s challenges well, you might want the story to end well, 
+and if she meets them badly, you might let the story end badly. Just as the ﬁ nal 
+score of an ordinary competitive game reﬂ ects the player’s skill in a numeric way, 
+so the outcome of the story can reﬂ ect the player’s skill in a dramatic way. In gen-
+eral, players expect that if they meet all the game’s challenges and make it to the 
+end, the story will end in some reasonably positive way, reﬂ ecting the skill that got 
+the player successfully to the end. If bad play produces a premature ending, you 
+don’t have to create a full-ﬂ edged conclusion for it. When a game’s dramatic 
+actions consist mostly of those taken to overcome challenges, players usually toler-
+ate stories that offer only one ending.
+If, on the other hand, the different possible endings reﬂ ect the player’s dramatic 
+choices—critical decisions the player made in the course of the interactive story—
+rather than her ability to overcome challenges, then the player will deﬁ nitely 
+expect her choices to affect the outcome of the story. If the game tells her that a 
+choice is important, and she ﬁ nds out that it really wasn’t, it will be distinctly dis-
+appointing. You may wish to create a number of endings to show the consequences 
+of the player’s dramatic choices. Games that include a lot of decision-making—
+especially moral choices, which feel dramatically important—should be nonlinear 
+and offer multiple endings.
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+179
+ CHAPTER 7
+WHEN TO USE MULTIPLE ENDINGS
+Devise multiple endings for your story if—and only if—each one will wrap up the 
+story in a way both dramatically meaningful and emotionally consistent with the 
+player’s choices and play. If you didn’t give the player a lot of dramatic freedom, 
+then there’s no point in giving her different endings. On the other hand, if you 
+have told the player that her actions and especially her choices are crucial to the 
+ending, then you should live up to that promise and give her whatever ending her 
+actions earn. You may have to create several endings, depending on how many crit-
+ical choices you gave the player.
+For a more detailed discussion, see the Designer’s Notebook column, “How Many 
+Endings Does a Game Need?” (Adams, 2004).
+Granularity
+Granularity, in the context of games that tell a story, refers to the frequency with 
+which the game presents elements of the narrative to the player. Consider StarCraft,
+which tells a long story that runs throughout all 30 missions available in the game 
+but generally presents narrative (in the form of conversations among the major 
+characters of the story) only between the missions. Because the missions take any-
+where from 20 minutes to over an hour to complete, the game presents narrative 
+blocks rather infrequently, so we can say that the storytelling in StarCraft exhibits 
+coarse granularity. The Wing Commander series of games also tells a story between 
+missions and so also illustrates coarse granularity.
+LucasArts’ famous adventure games—The Secret of Monkey Island and the Indiana 
+Jones series—offer the player a small amount of narrative every time she solves a 
+puzzle. This can happen as frequently as every four or ﬁ ve minutes, so the storytell-
+ing in these games shows ﬁ ne granularity. LucasArts’ games also use shorter narrative 
+blocks, generally in the form of cut-scenes or spoken exposition.
+There’s no ﬁ xed standard for what constitutes coarse or ﬁ ne granularity; you will ﬁ nd 
+the terms mostly useful for comparing the relative granularity of one game to another.
+In theory, the storytelling in a game may have inﬁ nitesimal granularity—that is, an 
+interweaving of story and gameplay with such ﬁ ne granularity that the player, 
+unaware of narrative events as separate from the rest of the game, sees the game as 
+one seamless interactive experience. Game developers have long attempted to 
+achieve this quality for interactive storytelling with varying degrees of success. 
+Generally, games come closest to reaching this goal if all story events pertain to the 
+avatar and his actions (as in Half-Life, for instance) rather than if the story includes 
+other events that the player must simply sit and watch.
+Note that different authors use granularity to refer to a variety of different game 
+design concepts: how frequently the player may take action; the degree to which 
+
+
+--- PAGE BREAK ---
+
+180 
+FUNDAMENTALS OF GAME DESIGN
+the game reﬂ ects the player’s achievements through point-scoring; and so on. 
+Because of this ambiguity, this book uses the term only with respect to interactive 
+storytelling.
+Mechanisms for Advancing the Plot
+In presentational media, the plot of a story advances at the rate at which the reader 
+reads or the display mechanism displays. In a video game, the storytelling engine 
+causes the plot to advance but not at a ﬁ xed rate and not always triggered by the 
+same mechanisms each time it advances. Different games use different triggers to 
+tell the storytelling engine to move forward. In some games, succeeding or failing 
+at a challenge triggers plot advancement. In others, the avatar’s journey through the 
+game world makes the story advance; in such games, entering a room or area may 
+act as the trigger. In a very few games, the passage of time alone makes the plot 
+advance, rather than anything the player does. The next three sections look at these 
+mechanisms more closely. Each approach brings with it strengths and weaknesses, 
+and you have to choose the one that works best for the story that you want to 
+present.
+The Story as a Series of Challenges or Choices
+In a good many games, the plot advances only when the player meets challenges or 
+makes decisions. In a war game or a vehicle simulator, completing a mission or level 
+might advance the plot. StarCraft advances the plot only when the player success-
+fully completes a level, whereas Wing Commander advances its plot at the end of 
+every mission, but the story proceeds in different directions depending on whether 
+the player succeeded or failed. In both of these coarse-grained stories, neither time 
+nor progress through space affect the plot, only the fact that the level has come to 
+an end.
+This system works well for games that involve no travel at all or those in which 
+travel itself doesn’t affect the plot. In a combat ﬂ ight simulator, the player can ﬂ y 
+all over the sky, but none of that travel inﬂ uences the story. What affects the story 
+is shooting down enemy planes or being shot down by them.
+Suspended, a text-based puzzle game from Infocom, also uses this mechanism.
+All game and story events take place in a restricted area, a small group of rooms. 
+Solving puzzles in the different rooms causes the plot to advance.
+Sometimes the trigger for advancing the story isn’t surmounting a challenge but 
+making a choice or decision. Role-playing games often give the player important 
+decisions to make, such as whether or not to join a particular guild, the conse-
+quences of which signiﬁ cantly affect the story. Once the player makes a decision—
+and decisions are often irreversible—the plot advances.
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+181
+ CHAPTER 7
+If you require the player to succeed at challenges in order to advance the plot, the 
+storytelling will be jerky, with sudden stops and starts. The player will sense that 
+the story stalls every time he’s stymied by a challenge, then starts up again when 
+he meets the challenge. That doesn’t matter much in coarse-grained stories—the 
+player only expects storytelling at long intervals anyway—but in ﬁ ne-grained ones 
+it feels rather mechanical.
+Adventure games and role-playing games use this approach, but they combine it 
+with avatar travel as a means of triggering plot advances, somewhat reducing the 
+mechanistic feel of the plot advancement. They treat the story as a journey, which 
+is the next topic.
+The Story as a Journey
+If your game involves an avatar on a journey, that is, a game in which much of the 
+activity involves moving the avatar from place to place in the game world, you may 
+choose to have the avatar’s movements trigger the storytelling engine to advance 
+the plot. Games that use this approach almost always set up obstacles to travel so 
+the avatar cannot move through the game world freely but must overcome the 
+obstacles to reach new areas. In effect, then, the story as a journey consists of a 
+series of challenges and sometimes choices—as we’ve discussed—but adds a travel 
+element: The avatar’s arrival in an area can trigger a plot advancement all by itself, 
+without any challenge or choice being involved.
+Presenting a story as a journey offers the following beneﬁ ts:
+■ It automatically provides novelty. Because the player continually sees new 
+things as he moves through the world, the experience remains fresh and interest-
+ing. The game gets the novelty that it needs to keep the player’s interest from the 
+visual appearance of the world, so you don’t have to write as much novel dramatic 
+material.
+■ It allows the player to control the pace. Most games allow the player freedom 
+to decide when to move and when to stand still. Unless the gameplay imposes a 
+time limit, the player remains free to control the pace of the story—to stop and 
+think about the characters and the game world and to explore without time pres-
+sure. The story progresses only when the player triggers that progress by moving.
+Many games use not merely a journey but speciﬁ cally the Hero’s Journey story 
+structure identiﬁ ed by folklorist Joseph Campbell. Some designers ﬁ nd the Hero’s 
+Journey’s mix of challenges and travel particularly well suited to single-player, ava-
+tar-based game designs. For more information on the Hero’s Journey, read 
+Campbell’s The Hero with a Thousand Faces (Campbell, 1972) and Christopher 
+Vogler’s discussion speciﬁ cally for writers, The Writer’s Journey (Vogler, 1998).
+If you treat the story as a journey and you make it a linear story, although the 
+player might be able to move her avatar backward through the game world, no 
+more dramatic events can occur in areas she’s already visited. For this reason, many 
+
+
+--- PAGE BREAK ---
+
+182 
+FUNDAMENTALS OF GAME DESIGN
+adventure games periodically require the player to pass through one-way doors—
+travel mechanisms that cannot be reversed, though they may take the form of 
+something other than actual doors. In The Secret of Monkey Island, the hero gets off 
+a ship and onto an island by shooting himself out of a cannon. Once off the ship, 
+there is no way back. The mechanism guarantees that the plot moves forward, 
+along with the avatar.
+Computer role-playing games routinely treat stories as journeys but use highly non-
+linear stories. The party can explore a large area, generally choosing any direction 
+at will (though the game includes mechanisms for keeping the party out of regions 
+that it isn’t yet strong enough to tackle).
+The Story as a Drama
+A small number of games treat the story as a drama that progresses at its own pace, 
+advancing with the passage of time itself. The story takes place in real time. In this 
+case, the core mechanics don’t send triggers to the storytelling engine to advance 
+the plot; rather, the storytelling engine advances the plot on its own and sends trig-
+gers to the core mechanics to indicate when it’s time to offer some gameplay.
+The game Night Trap operates as a drama. The story unfolds continuously, whether 
+or not the player takes any action. Set at a party in a suburban house, the game 
+assigns the player the goal of protecting partying teenagers from a group of invad-
+ing monsters. The house is conveniently ﬁ tted with a security system consisting of 
+closed-circuit cameras and various traps that, when the player sets them off, catch 
+and contain any monster nearby. The player watches the different rooms on the 
+security cameras and sets off the traps if a monster appears and tries to harm one of 
+the teenagers who, in typical horror-movie fashion, are extraordinarily oblivious to 
+it all. Night Trap requires the player to switch his view from camera to camera, follow-
+ing the various events of the party and looking out for the monsters. If the player 
+does nothing and a monster drags one of the kids away, the player loses points.
+Night Trap consists almost entirely of storytelling; the player’s only action is to 
+switch from one camera to another or to trigger a trap. Because the story progresses 
+whether or not the player does anything, each game always takes the same amount 
+of time to play.
+The more recent, noncommercial game Façade also presents a story as a drama. In 
+Façade, the player visits a couple of old friends and quickly realizes that their mar-
+riage is in trouble. The player can help them work through their problems—or 
+not—by engaging in dialog with them. The entire game takes place in the couple’s 
+apartment, and like Night Trap, the story progresses even if the player does nothing. 
+But the player’s actions during the game profoundly affect both the direction that 
+the story takes and its ending.
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+183
+ CHAPTER 7
+Emotional Limits of Interactive Stories
+Video games that don’t include a story, that is, games that primarily entertain via 
+the challenge and achievement of gameplay, don’t try to arouse complex emotions 
+in their audiences. They limit themselves to the thrill of victory and the agony of 
+defeat, or perhaps to the frustration of repeated failure. But with a story, you can 
+create other kinds of feelings as well. By crafting characters that the audience cares 
+about and subtle relationships among those characters, you have a chance to make 
+your audience feel (in sympathy with the characters) betrayal by a lover, satisfaction 
+at justice done, or a protective instinct for a child.
+However, the nature of the interactive medium imposes some limits on what you 
+can do. This section looks at the emotional limitations of nonlinear stories and of 
+avatar-based interaction models.
+Emotional Limits of Nonlinear Stories
+When you tell a nonlinear story, you give the player the freedom to make choices that 
+signiﬁ cantly affect the relationships among the characters, which may include 
+decisions that feel emotionally wrong—or at least that don’t conform to what you, 
+as a storyteller, would like the player to do. Suppose that you tell a story based on 
+Shakespeare’s Hamlet, but you give the player controlling Hamlet a number of options. 
+In the play, Hamlet discovers that his mother and his uncle have conspired to kill his 
+father, the king of Denmark, and usurp the throne. Hamlet’s father’s ghost appears 
+to him and demands that Hamlet seek revenge, but Hamlet is unsure of what to do.
+In your game, the player, acting as Hamlet, could simply run away and never come 
+back; he could ignore his father’s ghost and forgive his mother and uncle; he could 
+try to assassinate his uncle and assume the throne himself; or he could just kill 
+himself. None of these outcomes is quite as interesting as what Shakespeare actually 
+wrote; in fact, some of them would bring the story to a bland and unsatisfactory 
+conclusion.
+By offering the player the power to change the course of the story—or at least to 
+change the ending—you agree to accept the player’s decisions, even decisions that 
+are not ideal in ordinary storytelling terms. You cannot guarantee that the player 
+will experience the most emotionally powerful resolution you feel that your story 
+offers unless you conﬁ ne the player to a single resolution (and even then, the 
+player may prefer a different ending because individual taste varies).
+Designers often restrict otherwise nonlinear stories to a single ending simply to 
+guarantee that the players experience the emotionally meaningful outcome the 
+designer planned. That means that the player’s agency before reaching the ending 
+is merely an illusion. Players tolerate this in exchange for a satisfying ending, so 
+long as you don’t promise them that their choices will change an ending which, in 
+fact, is ﬁ xed from the start.
+
+
+--- PAGE BREAK ---
+
+184 
+FUNDAMENTALS OF GAME DESIGN
+Emotional Limits of Avatar-Based Games
+An avatar-based game is analogous to a story written in the ﬁ rst person. Reading a 
+ﬁ rst-person story, the audience knows that regardless of what happens in the story, 
+the narrator must have survived to write the story afterward. This isn’t absolutely 
+always the case—the narrator in the novel Allan Quatermain, for instance, dies near 
+the end and another character ﬁ nishes telling the story—but it does mean that 
+whatever peril the narrator got into earlier in the book, you knew he would get out 
+of it. As a result, ﬁ rst-person stories can’t create quite as much concern for the life 
+of the narrator as third-person stories can. A ﬁ rst-person story can have a depress-
+ing ending, but the narrating character cannot die prematurely.
+A similar limitation applies to avatar-based games. Players know that an avatar 
+should survive to the end of the game. Over the years, the avatar’s premature death 
+has come to signify the player’s failure to meet a challenge rather than being an 
+actual element of the story, so the death of the avatar carries almost no emotional 
+impact. The player simply reloads the game and tries again.
+If you really want to affect the player’s feelings with the death of a character, your 
+game should kill not the avatar, but one of the avatar’s friends. Two famous exam-
+ples occur in the games Planetfall and Final Fantasy VII. In Planetfall, the player’s 
+sidekick, a wisecracking robot, sacriﬁ ced himself at a critical moment to allow the 
+player to go on. Players often cite this as the ﬁ rst really emotionally meaningful 
+moment in a computer game. In Final Fantasy VII, the villain kills Aeris 
+Gainsborough, the player’s ally. Nothing the player does can prevent this, and play-
+ers often mention this death, too, as a particularly emotional moment in a game.
+Party-based interaction models offer you more freedom to kill off members of the 
+cast than avatar-based ones because the other members of the party remain to 
+carry the story along. Two different television shows serve as good examples. The 
+Fugitive could not have tolerated the death of Dr. Kimble, the hero of the show—
+equivalent to the avatar in an avatar-based game. On the other hand, the long-
+running Law and Order series about New York detectives and prosecutors has an 
+ensemble cast with no single hero. Over the many years that it has aired, the entire 
+cast has changed as one character or another has come and gone. The show contin-
+ues to run because its central premise doesn’t depend on any single individual.
+Scripted Conversations and Dialog Trees
+Natural language refers to ordinary language as spoken or written by human beings. 
+Computer scientists devised the term to contrast ordinary human language with 
+computer (or programming) languages. The extremely difﬁ cult problem of making 
+computers understand and react appropriately to natural language—whether the 
+language occurs as conversation or instruction—has puzzled artiﬁ cial intelligence 
+researchers for decades. Recent research efforts have been fruitful, but the state of 
+natural language comprehension is still not good enough for most video games.
+TIP Many of the 
+traditional rules for 
+writing good stories 
+in noninteractive 
+media don’t apply to 
+interactive media. 
+A new medium requires 
+new rules. Be wary 
+of slavishly applying 
+principles from 
+other forms (such as 
+Aristotle’s principles 
+for drama or Robert 
+McKee’s observations 
+about screenwriting) 
+to interactive stories. 
+If it doesn’t work for 
+you, throw it out!
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+185
+ CHAPTER 7
+Game designers would like to be able to include natural language in games without 
+trying to solve a decades-old research problem. We want the player to be able to 
+engage in conversations with nonplayer characters, especially in storytelling 
+games. A scripted conversation allows us to approximate this. (Note that level design 
+makes use of a technique often called “scripting” or “scripted events,” which is a 
+different, unrelated phenomenon.)
+When entering a scripted conversation, either because the player chooses to speak 
+to an NPC or an NPC chooses to speak to the player, the game enters a new game-
+play mode created speciﬁ cally for the purpose. All other actions normally become 
+unavailable. The player doesn’t speak or type his dialog but instead chooses a pre-
+written line of dialog from a menu (see Figure 7.4). When the player chooses a line 
+of dialog, the game plays or prints an appropriate response from the NPC, after 
+which the system gives the player a new menu of lines to choose from (some of 
+which may be left over from the previous menu). This process goes back and forth 
+until either the NPC refuses to speak to the player any longer or the player chooses 
+to end the conversation.
+In Figure 7.4, which was adapted from Neverwinter Nights 2, the player’s character, 
+Joshua, is talking with a character named Zaxis. The upper window displays the 
+last few exchanges from the conversation. The lower window displays Zaxis’s most 
+FIGURE 7.4
+The conversation menu 
+in Neverwinter Nights 2
+
+
+--- PAGE BREAK ---
+
+186 
+FUNDAMENTALS OF GAME DESIGN
+recent remark, plus a list of lines for the player to choose from. Notice that each 
+option is accompanied by a manner of speaking: diplomacy, bluff, intimidate, and 
+so on. This lets the player have some idea of the tone of voice his avatar would use 
+if the words were spoken aloud. Different approaches might work better with some 
+NPCs than with others. 
+As the NPC says phrases the player hasn’t heard before, the player may ask for elab-
+oration, end the conversation, or switch the subject to a different topic. Offering the 
+useful option, “Tell me again about…,” enables the player to return to an earlier point 
+in the conversation and go through the NPC’s responses again if he didn’t pay close 
+enough attention the ﬁ rst time. To end the conversation, the player chooses a line 
+clearly intended as a farewell message (“Thanks for your help. Maybe I’ll talk to you 
+again later.”), or occasionally an NPC may cut off the conversation with a line such 
+as “I don’t have anything else to tell you” or “I won’t talk to you if you’re going to 
+be rude.”
+Structure of a Dialog Tree
+Scripted conversations may be designed using a dialog tree, a branching data struc-
+ture a little like the branching story tree. In a branching story tree, each branch 
+point, or node, represents a place where the plot divides based on some factor—
+usually a player decision. In a dialog tree, each node represents a place where a 
+conversation may branch, based on the player’s decision about what he wants to 
+say. Unlike a branching story, the arrows in a dialog tree can go backward as well
+as forward because players sometimes want to repeat parts of their conversations. 
+Each node contains a menu of exchanges, and each exchange includes one line of 
+dialog available to the player and the NPC’s response to that line. From each 
+exchange, an arrow points to the next node in the tree—that is, the menu of dialog 
+options that the player will see next. In a scripted conversation, the computer dis-
+plays all the dialog options in the current menu to the player, and waits for the 
+player to choose one. When the player makes a selection, the computer plays back 
+the NPC’s response, then follows the arrow to the next menu and displays the dia-
+log options there. The conversation passes through menu after menu as the 
+conversation progresses. 
+In addition to letting the player discuss a variety of topics with a given NPC, the 
+menu system allows the player to choose from a variety of different attitudes in 
+which she says essentially the same thing, enabling her to project herself into the 
+game as, for example, aggressive, deferential, formal, or ﬂ ippant. The NPC can then 
+respond to each phrase differently, in whatever way his personality dictates. An 
+easygoing character might ﬁ nd a ﬂ ippant response amusing and may choose to 
+reveal more information to the player, while a powerful character who brooks no 
+nonsense might be offended by wisecracks and refuse to talk to the player any 
+more. (If you take this approach and the NPC’s information is vital to the plot, 
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+187
+ CHAPTER 7
+make sure that either the powerful NPC gets over his snit after a while or there’s 
+some other way for the player to obtain the information.)
+Figure 7.5 (on the following page) illustrates a brief conversation in which the 
+player is acting as a police detective, interviewing someone who may have wit-
+nessed (or possibly committed) a crime. The conversation begins at the ﬁ rst menu, 
+and in that menu the player has a choice of four approaches to the witness: polite, 
+neutral, direct, or accusatory. Each approach produces a response from the witness, 
+which then leads on to another menu of things for the player to say. Each menu 
+has its own name.
+In this example, the witness is rather uncouth, but is prepared to help the player as 
+long as the player is not too hostile to him. If the player takes a strongly aggressive 
+approach, the witness demands to see a lawyer, which ends the conversation. In 
+this case, the player will not learn some of the information that the witness has, so 
+the player will either have to re-interview the witness later, or ﬁ nd it out some 
+other way.
+Figure 7.5 includes several features that are particularly worth noting:
+■ Not all the menus in the ﬁ gure let the player ask the same question in different 
+tones. Some give the player a choice of questions to ask about different subjects. 
+The menu “Ask About Evidence,” for example, lets the player ask about gunshots, a 
+car, or a man in jogging clothes. If the witness doesn’t know anything about one of 
+these subjects, the arrow leads back to the same menu again so the player can ask 
+about a different subject.
+■ Although all the witness responses in the menu “About the Car” lead to the 
+same place (the “Follow-Up” menu), each one still provides the player with some 
+different information. 
+■ Not all questions produce unique answers. In the “Time of Bar Visit” menu, the 
+polite and neutral approaches both elicit the same answer from the witness. This is 
+perfectly allowable if there’s no particular reason to differentiate them.
+Finally, note that in Figure 7.5, the maximum number of exchanges the player can 
+have, without repetition, is eight. As with branching stories, if the menus continue 
+to branch without folding back, you will soon get a combinatorial explosion of 
+menus. In practice, they frequently converge, or link back to previous menus.
+Unfortunately, there is no industry standard system of notation or scripting for 
+designing dialog trees. Instead of creating a diagram with arrows as in Figure 7.5, you 
+may ﬁ nd it easier to write your dialog in a text ﬁ le, and instead of drawing arrows, 
+simply write “Go to Menu [menu name]” to indicate which menu should follow a 
+given response. If such factors will affect your dialog, you should sit down with 
+your programmers and devise a system of notation that will be easy for you to cre-
+ate and easy for them to understand; they have to understand all the factors and 
+when those factors come into play so they can write the software that actually 
+implements the system.
+
+
+--- PAGE BREAK ---
+
+188 
+FUNDAMENTALS OF GAME DESIGN
+CONVERSATION START
+NAME OF BAR
+TIME OF BAR VISIT
+DEMAND AN ALIBI
+ASK ABOUT EVIDENCE
+END
+END
+ABOUT THE CAR
+OBSTRUCTIVE WITNESS
+END
+FOLLOW-UP
+END
+[Polite] We need your help to solve a crime. Were you on 3rd Street last night? 
+Yeah, I was coming home from a bar.
+[Neutral] What were you doing on 3rd Street last night? 
+Getting drunk, what’s it to you?
+[Direct] We think you were involved in the shooting on 3rd Street last night. 
+Hey, no way! Violence is not my thing, man.
+[Accusatory] Keane got shot last night. We know you did it, so start talking. 
+That’s garbage, and I’m saying nothing.
+[Accusatory] That’s not what your police record says. Where were you? 
+Look, I was in a bar. 9 to midnight.
+[Sarcastic] Oh, yeah, you’re a model citizen. You got an alibi? 
+I was in a bar, OK?
+[Polite] That’s good, we’ll need the name of the bar. 
+I was in Foley’s from 9 until midnight.
+[Neutral] Yeah? What bar were you in? 
+Foley’s. I’m there every night.
+[Direct] You better not be lying. What’s the name of the bar? 
+I ain’t lying. It was Foley’s Bar.
+[Accusatory] You weren’t in any bar, you were in the alley shooting Keane. 
+No I wasn’t, and you’ve got nothing.
+[Polite] Can you tell us what time you were there, please? 
+Got there around 9, left around midnight.
+[Neutral] When did you get there, and how long did you stay? 
+Got there around 9, left around midnight.
+[Direct] You better hope Foley backs you up. When were you there? 
+9 to midnight. He’ll remember me all right.
+[Accusatory] So tell me some lies about when you were there. 
+Forget it. I want a lawyer.
+All right, that’ll do for now. Don’t leave town. 
+Thanks for nothing.
+Did you hear any shots around that time? 
+No, no shots. I’d remember shots.
+We’re trying to trace a tall man in jogging clothes. Did you see him? 
+Not that I remember.
+When you came out, did you see a blue car go by? 
+Yeah… going real fast! A sports car.
+That’s all we want to know for now. 
+Good, ’cause I got places to be, you know? 
+Did you catch a look at the license plate? 
+What, I got a photographic memory? No. 
+Do you remember the model? Foreign, domestic? 
+Maybe a Porsche. I’m not a car guy.
+Did you see the driver? 
+It was a man. That’s all I can say.
+I’ve got another question about the car. 
+Fire away.
+I need to ask you again about your alibi. 
+It’s not going to be any different.
+All right, that’ll do for now. Don’t leave town. 
+Thanks for nothing.
+[Direct] You’re the prime suspect, unless you convince us otherwise. 
+Yeah, well I was in Foley’s bar.
+[Threatening] If you know who did it, you better talk or we’ll charge you. 
+Fine, charge me. I want a lawyer.
+FIGURE 7.5 
+A small dialog tree
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+189
+ CHAPTER 7
+Design Issues for Dialog Trees
+When you create a dialog tree, you must be sure that every possible pathway 
+through the tree produces a credible conversation. If the tree is large, verifying this 
+can be a tedious and time-consuming job. If any of the arrows go back to an earlier 
+point in the conversation, you may ﬁ nd that you have to rewrite some dialog to 
+make sure that it works both for the ﬁ rst time through the tree and also for subse-
+quent times through. In the sample dialog tree, one aspect deﬁ nitely is not credible: 
+the player can ask the same question in the “Ask About Evidence” menu again and 
+again, and the witness will always give exactly the same response without complain-
+ing. This is a weakness of scripted conversations, but it is so common that it has 
+almost become a gaming convention. Players are usually willing to overlook it.
+CONDITIONAL BRANCHES AND EXCHANGES
+Dialog trees are seldom actually as simple as the sample dialog tree makes them 
+look. Figure 7.5 shows a purely ﬁ xed conversation whose content is not inﬂ uenced 
+by the core mechanics: Each player input produces exactly one response from the 
+witness. But sometimes you want other factors to determine what choices the 
+player has and how the NPCs respond. An NPC’s response won’t necessarily be rig-
+idly connected with a player’s menu choice. Some other factor, such as the level of 
+the avatar’s charisma attribute, may inﬂ uence the NPC’s reply. In order to specify 
+this in the tree, you must include a way of indicating conditional branching: some 
+text that reads (for example), “If the avatar’s charisma is greater than 12, give 
+response A, otherwise give response B.” Likewise, role-playing games that include a 
+diplomacy skill or a negotiation skill may give players with high skill levels extra 
+menu items so that they can say things that unskilled characters cannot. To specify 
+this in the tree, you would have to indicate the presence of conditional exchanges, 
+such as “If the avatar’s diplomacy attribute is greater than 10, also include…” and 
+specify an exchange that only diplomatic avatars will get to use.
+Again, a diagram with arrows may or may not be the best way to document a 
+scripted conversation with conditional content. Many developers use spreadsheets 
+to document scripted conversations because a spreadsheet program makes it easy to 
+add rows and columns as necessary while keeping the document looking tidy. If 
+you have any programming experience, you may ﬁ nd it easiest to write pseudo-
+code. Discuss it with the programmers, because whatever approach you choose, it
+is essential that they understand it in order to produce the correct results.
+
+
+--- PAGE BREAK ---
+
+190 
+FUNDAMENTALS OF GAME DESIGN
+ANOTHER APPROACH
+A completely different approach is to think of the conversation mechanism not as 
+something that moves from one menu to another with each response (as in Figure 
+7.5), but as a ﬂ exible list of options to which different exchanges may be added
+or deleted at different times. In this approach, instead of creating menus of 
+exchanges, you write each exchange separately, as an individual item, and give it
+its own name or number. Remember that an exchange consists of a player dialog 
+choice and a response from the NPC that the avatar is talking to. After each 
+exchange, instead of drawing arrows leading to a new menu, you would indicate 
+which new exchanges should be added to the current list, and which should be 
+deleted. This way you can easily add certain exchanges that remain in the conver-
+sation permanently, without having to document them in each new menu. For 
+example, you can add a “That’s all I wanted to know” exchange, which ends the 
+conversation, to the menu at the very beginning, and never delete it no matter 
+what else is said. That would enable the player to end the conversation at any 
+point. Once a subject has been raised for the ﬁ rst time, you could add a “Tell me 
+again about…” exchange to the menu, and until it is deleted, the player could 
+always ask to hear about that subject again.
+Here’s how the ﬁ rst few lines of the conversation in the sample dialog tree would 
+look using this approach. A conversation-ending dialog option, which was not in 
+Figure 7.5, has been included; it is Exchange 5.
+Beginning Action: Add exchanges 1, 2, 3, 4, and 5 to the menu.
+Exchange 1:
+Player: [Polite] “We need your help to solve a crime. Were you on 3rd Street
+last night?”
+Response: “Yeah, I was coming home from a bar.”
+Action: Delete exchanges 1, 2, 3, and 4. Add exchanges 6, 7, 8, and 9.
+Exchange 2:
+Player: [Neutral] “What were you doing on 3rd Street last night?”
+Response: “Getting drunk, what’s it to you?”
+Action: Delete exchanges 1, 2, 3, and 4. Add exchanges 6, 7, 8, and 9.
+Exchange 3:
+Player: [Direct] “We think you were involved in the shooting on 3rd Street
+last night.”
+Response: “Hey, no way! Violence is not my thing, man.”
+Action: Delete exchanges 1, 2, 3, and 4. Add exchanges 10 and 11.
+Exchange 4:
+Player: [Accusatory] “Keane got shot last night. We know you did it, so
+start talking.”
+Response: “That’s garbage, and I’m saying nothing.”
+Action: Delete exchanges 1, 2, 3, and 4. Add exchanges 12 and 13.
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+191
+ CHAPTER 7
+Exchange 5:
+Player: “That’s all we need. You can go.”
+Response: “About time.”
+Action: END.
+Exchange 6:
+Player: [Polite] “That’s good, we’ll need the name of the bar.”
+Response: “I was in Foley’s from 9 until midnight.”
+Action: Delete exchanges 6, 7, 8, and 9. Add… [exchanges from the “Ask About Evidence” 
+menu].
+Exchange 7:
+Player: [Neutral] “Yeah? What bar were you in?”
+Response: “Foley’s. I’m there every night.”
+Action: Delete exchanges 6, 7, 8, and 9. Add…  [exchanges from the “Time of Bar Visit” menu].
+Exchange 8:
+Player: [Direct] “You better not be lying. What’s the name of the bar?”
+Response: “I ain’t lying. It was Foley’s Bar.”
+Action: Delete exchanges 6, 7, 8, and 9. Add… [exchanges from the “Time of Bar Visit” menu].
+Exchange 9:
+Player: [Accusatory] “You weren’t in any bar, you were in the alley shooting Keane.”
+Response: “No I wasn’t, and you’ve got nothing.”
+Action: Delete exchanges 6, 7, 8, and 9. Add exchanges 12 and 13.
+Exchange 10:
+Player: [Sarcastic] “Oh, yeah, you’re a model citizen. You got an alibi?”
+Response: “I was in
+a bar, OK?”
+Action: Delete exchanges 10 and 11. Add exchanges 6, 7, 8, and 9.
+Exchange 11:
+Player: [Accusatory] “That’s not what your police record says. Where were you?”
+Response: “Look, I was in a bar. 9 to midnight.”
+Action: Delete exchanges 10 and 11. Add… [exchanges from the “Ask About Evidence “ menu].
+Exchange 12:
+Player: [Direct] “You’re the prime suspect, unless you convince us otherwise.”
+Response: “Yeah, well I was in Foley’s bar.”
+Action: Delete exchanges 12 and 13. Add… [exchanges from the “Time of Bar Visit” menu].
+Exchange 13:
+Player: [Threatening] “If you know who did it, you better talk or we’ll charge you.”
+Response: “Fine, charge me. I want a lawyer.”
+Action: END.
+...
+
+
+--- PAGE BREAK ---
+
+192 
+FUNDAMENTALS OF GAME DESIGN
+This approach saves you a lot of duplicated effort if there are dialog options that 
+you want to occur every time the game waits for input, such as the “I’m ﬁ nished 
+talking” option. You simply specify when they are added to the menu, and they 
+remain in the menu until they are deleted. It also lets you document conditional 
+responses, or conditional exchanges, easily by including if statements in the 
+Response and Action lines.
+The system is also powerful, because each exchange is a separate item that you can 
+add to the menu any time you want to, instead of being part of a ﬁ xed collection of 
+exchanges as in Figure 7.5. However, with this power, as always, comes some risk. 
+It’s much harder to read than a diagram like Figure 7.5, and it doesn’t document 
+exactly what’s on the screen at any given point. In order to ﬁ nd out what options 
+the player has at any point, you have to work your way through the whole conver-
+sation, keeping track of which items are added and deleted as you go.
+Beneﬁ ts of Scripted Conversations
+Although scripted conversation forces the player to say only the lines available in 
+the script, it produces a sequence of plausible remarks and replies. It also gives you 
+a way to illustrate both the avatar’s and the NPC’s personality through something 
+other than their appearance. You can write their lines in such a way that you give 
+them distinct personalities of their own. For instance, Guybrush Threepwood, the 
+hero of the Monkey Island games, uses phrases that reveal him as a wise guy who sel-
+dom takes anything seriously. The character’s vocabulary, grammar, dialect, and—
+if the game features recorded audio—tone of voice and accent provide important cues.
+The scripted conversation is not merely a mechanism for giving the player informa-
+tion, however. It’s a real part of the story, and the player’s choices can have a distinct 
+effect on the progress of the game. If an NPC asks the player to entrust him with a 
+valuable secret, then the player’s decision, whether to tell or not to tell, could have 
+far-reaching consequences. The player has to choose responses based on her assess-
+ment of the NPC’s character—to which you, the designer, must provide clues.
+For a more detailed discussion of different ways of designing scripted conversa-
+tions, read Chapter 14, “Dialogue Engines,” of the book Game Writing: Narrative 
+Skills for Videogames, edited by Chris Bateman (Bateman, 2006). Bateman points out 
+that large dialog trees can be unwieldy to work with, and he proposes some simpler 
+alternatives. He is undoubtedly correct, but for complex conversations about a vari-
+ety of subjects, the dialog tree offers you the most comprehensive scripting power.
+When to Write the Story
+A strict design rule, which ﬁ rst appeared in Chapter 3, “Game Concepts,” speciﬁ es 
+that you must not write the story during the concept stage of design but only later 
+during the elaboration stage. During the concept stage, your job is to deﬁ ne the 
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+193
+ CHAPTER 7
+player’s role and the kinds of gameplay that he will experience in that role. You 
+may make a list of episodes or levels that you would like to include in the game 
+during the concept stage, and you can think about what the player may do in each 
+level, but you must not write the whole story yet. (To reiterate, you will need to lay 
+out the structure of a branching story before you try to compute the budget for the 
+entire project, but you should not actually write the story itself.)
+We want you to wait to write the story because, until you know what gameplay the 
+game will offer, you do not know what kinds of challenges the player will face and 
+what sorts of actions she will be permitted to take. Even more important, you don’t 
+yet know what sorts of actions she won’t be able to take. It’s easy to write a story 
+that includes too many different kinds of actions—actions that the programmers 
+may not have time to implement in software. If you’ve written a story that includes 
+the player’s avatar riding a horse as well as traveling on foot and only later decide 
+not to implement horseback riding for technical reasons, you’ve wasted a lot of time.
+The task of writing the story falls into the second major stage of game design, the 
+elaboration stage. You should begin writing after you deﬁ ne the game’s primary 
+gameplay mode, and preferably after you deﬁ ne all the major gameplay modes you 
+will offer, because the details of those modes will tell you what sorts of actions the 
+player can take and under what circumstances. In reality, writing the story will be 
+an iterative process that takes place in conjunction with level design because level 
+design creates the moment-by-moment sequence of experiences that the player can 
+go through. If a game presents narrative only between levels, you can write a story 
+with large granularity, in pieces after completing the design of each level, or even 
+after all the levels are designed. But if narrative events can occur within a level, 
+then you must write the story as you design the levels.
+Other Considerations
+This section wraps up the discussion of interactive stories by addressing the frus-
+trated author syndrome and episodic and serial delivery, and includes a few thoughts
+about how the industry may tell stories in the future.
+The Frustrated Author Syndrome
+Game designers who would really rather be authors in noninteractive media—
+would-be movie directors, for example—often make a couple of key mistakes when 
+writing interactive stories. First, they tend to write linear stories while pretending to 
+themselves and to the players that the story offers more agency than it really does, 
+promising a big role for the player and then actually giving him almost none at all. 
+The game Critical Path illustrates this problem; its introduction suggests that the 
+player gets to do all kinds of exciting things when in fact its story is so rigidly linear 
+that the avatar dies every time the player deviates from the storyline in any way. 
+(Rumors say that the developers named the game Critical Path in an effort to justify 
+this weakness.)
+
+
+--- PAGE BREAK ---
+
+194 
+FUNDAMENTALS OF GAME DESIGN
+Players see the second symptom of frustrated author syndrome as they sit through 
+large quantities of narrative when they would really rather be playing. Although an 
+excellent game in other respects, The Longest Journey included one scene that con-
+sisted of 20 minutes of nonstop monolog by a nonplayer character. That would be a 
+long soliloquy even for Shakespeare! The game’s designer, Ragnar Tørnquist, who 
+originally trained as a screenwriter, admitted afterward that this was an error. Never 
+forget that players come to play—to do something. Almost any sophisticated story 
+requires some narrative, but you must parcel out narrative in reasonably sized blocks. 
+Players won’t want to sit through much more than three or four minutes of narra-
+tion at a time, and many will get frustrated long before the three-minute mark.
+DESIGN RULE Be a Game Designer, Not a Filmmaker
+Don’t design a game to show off your skills as a ﬁ lm director or an author. Design a game 
+to entertain by giving the player things to do. Always give the player more gameplay than 
+narration. The player, not the story, is the star of the show.
+Episodic Delivery
+Most of our discussion so far has concentrated on individual stories that come to a 
+deﬁ nite end. However, a publisher will hope to exploit the popularity of a hit game 
+by producing one or more sequels, a situation now so commonplace that this sec-
+tion addresses designing for it intentionally. The game industry has expressed 
+much interest in the business opportunities that episodic delivery might offer, sell-
+ing players entertainment a few hours at a time instead of in a single large chunk, 
+as games sold at retail do now.
+There are three main formats for delivering multipart stories, as the following sec-
+tions reveal. The television industry has more experience at delivering multipart 
+stories than the game industry does, so we use familiar TV terms to help illustrate 
+these three formats.
+UNLIMITED SERIES
+An unlimited series comprises a set of episodes, each consisting of a self-contained 
+story in which the plot is both introduced and resolved. A single theme or context 
+runs through the entire series but not a single plot; in fact, the stories exist so inde-
+pendently of each other that you can view episodes in any order and the story still 
+makes sense. American evening TV dramas used this format almost exclusively up 
+through the early 1980s: In each episode of Columbo, Columbo solved exactly one 
+crime. Viewers can watch each episode individually with little disadvantage. A con-
+sistent world and an overarching theme tie the series together. Because each episode
+offers a self-contained story, the producers can create as many episodes as they 
+want (see Figure 7.6).
+
+
+--- PAGE BREAK ---
+
+STORYTELLING AND NARRATIVE 
+195
+ CHAPTER 7
+The majority of games and their sequels use the unlimited series format. Each game 
+in the series contains a complete story set against a consistent world. Sometimes 
+the publicity materials claim that sequels carry on the story from the previous 
+game, but often the connection between them is ﬂ imsy; in any case the player gets 
+a thorough introduction, so even if he didn’t play the previous game, he can still 
+enjoy the current one.
+SERIALS
+A serial consists of a (theoretically) inﬁ nite sequence of episodes. In a serial, plot 
+lines extend over several episodes, developing simultaneously but at different rates 
+so that only rarely does any plot begin and end within a single episode. Consequently,
+the episodes are not self-contained, and if you see an isolated episode without see-
+ing what went before, you won’t know what’s going on. To maintain interest, each 
+episode generally ends at a critical point in a major plot strand, creating a cliff-
+hanger that the writers hope will create a strong desire to see the next episode. 
+Soap operas depend on this format.
+Serials rely on a large cast of characters who come together in smaller groups to 
+play out each of several different (and often unrelated) plot lines, of which some,
+at any one time, may be beginning, coming to a climactic point, or ending. With 
+no single overarching plot, events usually center on a group of people in a speciﬁ c 
+location or on a small group of families. Serials lack the grand sense of resolution 
+that the Hero’s Journey provides. Instead, they offer opportunities to observe differ-
+ent characters interacting under a variety of stresses. The cliffhanger at the end of 
+each episode may involve some shocking revelation or event that leaves us wonder-
+ing how a key character will react to the news or the change in situation.
+It’s a fair bet that you will see efforts to create interactive serials over the next few 
+years, because the game industry would like to ﬁ nd a way to get players hooked on 
+a story—and therefore paying to play it, episode after episode—in the same way 
+that TV viewers seem hooked on serial dramas. Each episode of such an interactive 
+serial can’t be a multihour blockbuster of the sort that the video game industry 
+makes today; these games take too long to build. TV soap operas typically lower 
+their production values and deliver short episodes frequently rather than long epi-
+sodes infrequently, and you would expect interactive serials to work the same way. 
+Figure 7.7 depicts the structure of a serial.
+FIGURE 7.6
+The structure of an 
+unlimited series
+CONSISTENT WORLD
+EPISODES
+Each episode deals with opening and resolving one major plot strand.
+
+
+--- PAGE BREAK ---
+
+196 
+FUNDAMENTALS OF GAME DESIGN
+LIMITED SERIES
+A limited series includes features of both the unlimited series and the serial. The 
+limited series often combines single-episode plot lines, begun and resolved within 
+one episode, with other plot lines that carry over from one episode to another. 
+Unlike the unlimited series or the serial, however, a limited series also maintains 
+one overarching plot line that runs throughout all episodes and eventually comes 
+to a deﬁ nite end, which is what makes the series limited. The TV show Babylon 5
+was a limited series.
+Unlike the serial, the limited series format doesn’t rely heavily on cliffhangers to 
+create interest in the subsequent episodes. Instead, the overall plot line provides the 
+driving interest, and the cliffhanger becomes only a secondary means of keeping 
+the viewer’s interest (see Figure 7.8).
+POTENTIAL AND LIMITS OF EPISODIC DELIVERY
+The industry already makes games in the unlimited series format, but it may start 
+making games in the limited series format as well to encourage players to buy the 
+whole set. Developing games as limited series will require more money and planning 
+but may prove to be worth it for a game that a publisher can be certain will be a hit. 
+The Harry Potter series of games, based on the books and movies, will probably prove 
+to be a limited series: When the overarching story ends, the series of games will 
+end just as the author plans for the series of books to end. The speed of change of 
+FIGURE 7.7
+The structure of 
+a serial
+FIGURE 7.8
+An example of a 
+limited series
+CONSISTENT WORLD
+OVERALL STORYLINE
+EPISODES
+Plot strands overlap episodes.
+CONSISTENT WORLD
+EPISODES
+Plot is continuous, Strands overlap. Episodes end on a cliffhanger.
+
+
+--- PAGE BREAK ---
+

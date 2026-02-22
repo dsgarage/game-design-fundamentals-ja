@@ -1,0 +1,1405 @@
+418 
+FUNDAMENTALS OF GAME DESIGN
+6. Will enemies appear in waves? Will there be monster generators or wildcard ene-
+mies to break up the regular progression of the waves?
+7. Will the game be broken into levels? What things will make one level different 
+from another (landscape, enemies, speed, perspective, and so on)? What about the 
+aesthetic style of things such as music and architecture? Will levels end with 
+bosses?
+8. How will the avatar’s life be managed: as ﬁ xed numbers of lives, energy bars, or 
+some combination? Can the player obtain more lives? If so, how?
+9. What powerups will there be, if any? For each one you plan to incorporate, do 
+the following: state what it does, what it looks like, what it sounds like when acti-
+vated, how or where it is to be found or obtained, how common or rare it is, how 
+long its effect lasts, and how the player will be able to identify it (by sight and the 
+sound it makes).
+10. Will the game give the player clues that allow him to anticipate challenges, or 
+must the player depend entirely on trial and error to learn his way through?
+11. Does the game involve exploring unknown territory? If so, how linear or nonlin-
+ear will it be? 
+12. Is there a feature that prevents the player from having to start over from the 
+beginning? What is it—saving and reloading, checkpoints, or something else?
+13. Is the player going to collect anything, in either large or small numbers? Can 
+collected items be exchanged for anything useful, or is the player awarded any-
+thing when particular thresholds are reached?
+14. Is there a scoring mechanism? If so, how is it computed? Does it serve any func-
+tion besides giving the player a record of achievement?
+15. What locked doors will there be, and what keys will open them?
+16. Will the game have, or need, a tutorial mode? If not, how steep do you want the 
+learning curve to be?
+17. Does the game have a victory condition other than simple survival? What is it?
+
+
+--- PAGE BREAK ---
+
+ CHAPTER 14
+Strategy Games
+This is a war universe. War all the time. That is its nature. There may be other universes 
+based on all sorts of other principles, but ours seems to be based on war and games.
+—WILLIAM BURROUGHS
+Strategy games are among the oldest in the world. Tradition puts the invention of 
+Go at around 2200 BC. The Royal Game of Ur, whose board and counters are on 
+display in the British Museum in London, dates to around 2500 BC, although 
+nobody knows what the rules were—it might only have been a game of chance.
+This chapter discusses how the principles of game design apply to strategy games, 
+concentrating on the most popular subgenre, war games. It begins with a formal 
+deﬁ nition of strategy games and then addresses in detail the features that charac-
+terize them. Next we’ll examine the types of challenges they typically offer and the 
+actions that the players may take to meet those challenges. The bulk of the chapter, 
+however, is devoted to the core mechanics of strategy games: designing the units 
+themselves; creating special capabilities, upgrades, and technology trees; and han-
+dling logistics issues. We’ll also look at the different kinds of game worlds that war 
+games are frequently set in. The chapter ends with a brief look at the various ways 
+that programmers can implement artiﬁ cial opponents in strategy games. Designers 
+don’t normally do the programming, but you should be familiar with the common 
+programming techniques.
+What Are Strategy Games?
+Strategy games challenge the player to achieve victory through planning, and spe-
+ciﬁ cally through planning a series of actions taken against one or more opponents. 
+This deﬁ nition distinguishes strategy games from puzzle games that call for plan-
+ning in the absence of conﬂ ict, and from competitive construction and management
+simulations that require planning but not direct action against an opponent. 
+Strategy games often include the reduction of enemy forces as a key goal, so most 
+strategy games are war games in greater or lesser degrees of abstraction. Checkers 
+(draughts), for example, is an abstract war game; Risk is slightly less abstract; and 
+Axis and Allies, a board game about World War II, is fairly representational. 
+However, not all strategy games focus on combat. The games Cathedral and Go are 
+about surrounding and capturing territory; Hex and TwixT are about making a con-
+tinuous line of pieces across a board; and of course tic-tac-toe (noughts and crosses) 
+is about getting three symbols in a row.
+CHAPTER 14
+419
+
+
+--- PAGE BREAK ---
+
+420 
+FUNDAMENTALS OF GAME DESIGN
+STRATEGY GAME A strategy game is one in which the majority of challenges presented 
+are strategic conﬂ ict challenges and the player may choose from a large variety of 
+potential actions or moves at most points in the game. Victory is attained by superior 
+planning and taking the optimum actions; the element of chance must not play a large 
+role. Other challenges, such as tactical, logistical, economic, and exploration challenges, 
+may also be present. Physical coordination challenges play little or no part.
+Strategy games, with their long history of play with dice, cards, and boards, natu-
+rally developed into PC games. (Console efforts so far have been few and far 
+between.) The computer provides the power to impartially manage complex rule-
+sets, a task that would detract from the fun if the player had to do the work.
+Strategy games are more symmetric than the games in other genres and so are 
+somewhat easier to balance for difﬁ culty. The resources and actions available to 
+each side are, if not identical, generally similar. You can adjust the strengths and 
+weaknesses of each side and study the probable outcomes of particular battles with 
+statistical analysis even before writing any code. Contrast this with action games in 
+which one avatar must ﬁ ght a horde of enemies or adventure games in which the 
+player must solve a number of puzzles of varying difﬁ culty. In those genres, it is 
+considerably harder to predict what the player will ﬁ nd difﬁ cult.
+Game Features
+Strategy games fall into two main subgenres: classical turn-based games and real-
+time strategy games. Pure strategy games (those that contain only conﬂ ict 
+challenges, with no economic or physical challenges) tend to be turn-based rather 
+than operating in real time. In a turn-based game, players may mull over their 
+moves, considering the beneﬁ ts of one choice over another. In board games, this 
+can result in frustrating “analysis paralysis” in which one player spends a large 
+amount of time considering each move while the others have to wait. In single-
+player computer games, this doesn’t matter—the computer doesn’t mind waiting. 
+Multiplayer turn-based computer games are often designed so that all the players 
+choose their next move simultaneously, and the machine computes and displays 
+the outcome of their actions. This cuts down substantially on the waiting time.
+Real-time strategy (RTS) games developed after turn-based games. RTSs added time 
+pressure to strategy games because everything happens at once and players do not 
+have individual turns to ponder their moves. Though they’re not as frenetic as 
+action games, RTSs require the player to keep a sharp lookout and to think quickly.
+Many books have been written about games such as chess and Risk, so we don’t 
+spend much time on abstract strategy games or those with simple rules. The vast 
+majority of computerized strategy games are representational war games with com-
+plex core mechanics, so that is where we focus our attention.
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+421
+ CHAPTER 14
+A STRATEGY GAME OF DIPLOMACY: BALANCE OF POWER
+Chris Crawford’s Balance of Power ranks among the most brilliant games of diplomatic 
+strategy ever created. The setting is the Cold War between the United States and the 
+USSR. You take one side or the other and try to increase your own nation’s geopolitical 
+prestige and sphere of inﬂ uence at the expense of your opponent by supporting the gov-
+ernments of friendly smaller countries and destabilizing or even overthrowing the 
+governments of unfriendly ones. The actions you can take include giving economic aid to 
+friendly countries, pressuring unfriendly ones through threats, signing defense and other 
+treaties, and giving direct military support, including sending in troops. If a smaller 
+country has an insurgency or a civil war going on, you can choose which side to support. 
+If the government of a hostile country falls and is replaced by a government friendly to 
+your side, you gain prestige. The victory condition is a net gain in prestige after eight 
+years have passed in the game world.
+The real excitement, however, is not in manipulating smaller countries, but in what hap-
+pens when the other side ﬁ nds out about it—particularly if you interfere in a country 
+that traditionally lies in the other side’s sphere of inﬂ uence. For each action that one 
+superpower takes, the other superpower has a chance to object. Whoever initiated the 
+action must then decide whether to insist or to back off. These events, called crises, raise 
+the stakes enormously; tremendous prestige is lost when one side backs down in a crisis. 
+However, if you push your opponents too far, the result is a nuclear war that instantly 
+ends the game. The trick is to know when you are on ﬁ rm ground and when you had bet-
+ter let the other side have its way. It’s poker with nuclear weapons.
+Each side has limited resources with which to undertake its activities. The game is asym-
+metric; the United States has more money, while the Soviets have more troops. More 
+subtle tactics, such as signing treaties and diplomatic pressure, don’t cost anything but 
+aren’t as effective. At the highest difﬁ culty level, however, they are really the only way to 
+win; sending arms and troops is too likely to provoke a holocaust.
+Balance of Power simulates geopolitics with a depth and subtlety never before seen in a 
+computer game and it is so good that, for a brief time, the U.S. State Department used it 
+to train diplomats. Crawford has written an excellent book called Balance of Power: 
+International Politics as the Ultimate Global Game that describes the core mechanics of 
+the game in detail, right down to the equations that govern particular behaviors 
+(Crawford, 1986). The book is out of print but is available online in ASCII format; see 
+“References.”
+Challenges
+As the deﬁ nition says, strategy games may include economic and exploration chal-
+lenges, but strategic conﬂ ict generally dominates in strategy games. A game that 
+includes only economic challenges without any ﬁ ghting is more properly a 
+
+
+--- PAGE BREAK ---
+
+422 
+FUNDAMENTALS OF GAME DESIGN
+construction and management simulation. For example, exploration and growth 
+do feature in StarCraft, but only to enable the player to ﬁ ght more effectively; play-
+ers must explore the area to be conquered and set up resource-processing factories 
+for converting resources into troops and vehicles.
+STRATEGIC CONFLICT
+Conﬂ ict is most often characterized as combat between groups of individual com-
+batants; by long tradition, these combatants are known as units. A unit can be 
+anything from an ancient Egyptian warrior to a Napoleonic cavalryman to an 
+imaginary spacecraft. Not all units ﬁ ght; some can be used for transport, scouting, 
+or other purposes. Units also need not be movable; a ﬁ xed gun emplacement is still 
+a unit. In most modern war games, specialized units, often portrayed as buildings, 
+are used to produce new ﬁ ghting units. These buildings generally don’t move and 
+don’t ﬁ ght, but they can be destroyed if attacked and perhaps can be repaired by 
+repair units. Although it is not an industry standard term, this chapter refers to 
+such buildings as factories. In general, the term units will mean ﬁ ghting units, not 
+factories.
+The main characteristic that distinguishes units and factories from anything else 
+on the battleﬁ eld is that they are under a player’s control and provide some beneﬁ t 
+to him, so if they die or are destroyed, that beneﬁ t is lost to the player. Units may 
+be atomic, with no individually distinguishable parts (such as an infantry soldier 
+with a riﬂ e), or compound, with separate parts that can be added and removed and 
+perhaps destroyed without completely destroying the whole unit (such as a large 
+ship with many guns). Each unit behaves according to particular performance 
+characteristics, such as how long it can survive when under attack, how rapidly it 
+can ﬁ re a weapon, or how fast it can move. The later section “Core Mechanics” dis-
+cusses these attributes in more detail.
+To give the player interesting options, almost all war games offer the player a 
+choice of different kinds of units. In chess, there are six kinds; in more representa-
+tional games, there may be dozens. Checkers starts with only one kind of unit, but 
+later in the game a new kind can appear, a king.
+Most war games seek to reproduce the classic situations and tactics of military com-
+bat, whether at particular points in history or in imaginary conﬂ icts. Depending 
+on the degree of realism offered, tactics can include ﬂ anking maneuvers, sneak 
+attacks, creating diversions, cutting off enemy supply lines, killing the superior 
+ofﬁ cers to leave the troops without leadership, taking advantage of the effects of 
+bad weather, and so on. In order for the player to use these tactics, the units and 
+the rules of the game have to be designed in such a way as to support them. If you 
+want your game to include sneak attacks, for instance, you will have to include a 
+mechanism that hides the enemy’s movements from the player. Obviously on some 
+level the computer knows everything that is happening, but you can design the 
+computer’s AI to ignore the player’s movements if the software determines that the 
+player’s units are not visible to the computer’s troops.
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+423
+ CHAPTER 14
+ALTERNATIVES TO COMBAT
+Conﬂ ict does not necessarily involve physical combat. Whereas RTS games and 
+simpler strategy games tend to focus on combat, more advanced games include ele-
+ments of diplomacy, crisis management, and espionage. For example, in Civilization 
+III, the response of the enemy leaders to diplomatic overtures depends in large part 
+on whether the player has the force to back up her tough words. Of course, diplo-
+macy isn’t all about threatening enemies—it also allows the player to form alliances 
+that can avert war and encourage trade.
+Diplomacy and espionage suit a slower-paced strategy game, one designed to be 
+played over a long period of time. The extra nuance and depth that diplomacy adds 
+to an otherwise standard strategy game is well worth the extra time and effort 
+spent designing and implementing a full-ﬂ edged system of diplomats and spies. 
+Diplomacy gives the player an extra degree of freedom that allows her to create 
+more devious and interesting game plans than would be possible otherwise.
+Strategy games nevertheless tend to reward aggressive measures more than they do 
+peaceful ones because war is easier to model than diplomacy and is more exciting 
+to watch. The consequences of war are presented as less dire than they are in the 
+real world, and the goal of the game is often domination of the world, not peaceful 
+coexistence. It would be interesting to see a strategy game whose goal was to avert 
+war and promote prosperity; the player’s role would perhaps be the secretary-
+general of the United Nations.
+EXPLORATION CHALLENGES
+Exploration lets players investigate unknown terrain in a game world. As a designer, 
+you may give the player new worlds or make creative use of the familiar world. 
+Consider X-COM: UFO Defense, which depicts the secretive invasion of Earth by 
+aliens. Players are of course familiar with the map of the Earth, but the location of 
+hidden alien bases and UFO landing sites is a mystery until the player sends out a 
+squad of soldiers to investigate.
+X-COM presents the player with a landscape shrouded in darkness, a darkness that 
+dissipates only when the player’s soldiers enter an area. This technique is used in 
+most strategy games involving exploration to increase their difﬁ culty. If the terrain 
+is generally ﬂ at, you can decide that the area to be revealed is simply a circle of a 
+certain diameter around a unit, but in hilly terrain you may wish to compute the 
+actual lines of sight for the units so that enemy units behind hills or other obstruc-
+tions remain hidden. The level design in many single-player war games uses the 
+player’s ignorance of the landscape heavily; to win a level, for instance, the player 
+may have to explore enough to ﬁ nd some key feature, such as a bridge over an 
+impassable river or a back way to sneak up on the computer player’s headquarters.
+Games often present territory that has been explored—but is not currently 
+patrolled by the player’s forces—as dim, with only landscape details and no 
+
+
+--- PAGE BREAK ---
+
+424 
+FUNDAMENTALS OF GAME DESIGN
+information about the presence of enemy units. These two techniques—unexplored 
+regions shown in black and explored but unpatrolled regions shown dimly—are 
+collectively known as the fog of war. Figure 14.1 shows the bright area currently
+visible to the player, the dimmed area that has been explored but is not currently 
+visible (due to lack of troops there to provide intelligence), and the black bulk of 
+the land that remains unexplored.
+The fog of war lends realism and excitement to the game. Because the player can-
+not see what is happening in areas where he has no troops, he could be attacked 
+unexpectedly if he does not take appropriate defensive measures. These games 
+reward those who set up guard units to warn of impending invasions and those 
+who send out scouts to ﬁ nd out where the enemy is.
+Hiding the unexplored landscape itself, however, is completely unrealistic in any 
+game set after about the year 1500. Armies haven’t had to ﬁ ght wars without a map 
+of the terrain for several centuries. Games continue to hide the landscape from the 
+player because the task of exploring makes the game more challenging. In a lot of 
+games, if the player can see the landscape clearly, he is able to plan more effectively 
+and therefore win more quickly. Many games also cheat, hiding the landscape from 
+the player but allowing the computer’s AI to see it. This gives the computer an 
+advantage that the player does not have and helps to compensate if the AI isn’t very 
+good in the ﬁ rst place. It’s a design solution to a programming problem: weak AI.
+FIGURE 14.1 
+The fog of war from 
+Civilization III
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+425
+ CHAPTER 14
+ECONOMIC CHALLENGES
+The sinews of war: a limitless supply of money.
+ 
+ 
+—CICERO
+Strategy games such as chess give the players a ﬁ xed number of units at the begin-
+ning of the game, and the players make do with what they’ve been given. Other 
+games offer a mechanism for acquiring more units as the game goes on, which 
+makes the campaign more a process of growth than of attrition. In Risk, for exam-
+ple, each player gets a number of new units at the beginning of his turn; the exact 
+amount is based on a few easily calculated factors.
+Computer strategy games allow for far more complex calculations than a human 
+being playing Risk is willing or able to perform. Designers of computer strategy 
+games frequently take advantage of this to include a richer internal economy for 
+the player to manage. Rather than starting with a large number of units at the 
+beginning of a level, the player has to obtain some resource—let’s assume it’s 
+gold—that the player can convert to units later on. This lets the player decide when 
+to buy the units and what sorts of units to purchase, and therefore, offers her 
+greater freedom to ﬁ ght the battle in whatever way she prefers.
+You can supply the players with a limited amount of gold at the beginning of a 
+level and put more gold out in the landscape for them to discover. These locations, 
+or mines, can produce either a limited or an unlimited amount of gold. If mines 
+produce an unlimited amount, the game could, in principle, go on forever; if not, 
+the game must eventually come to an end as the resource runs out.
+PREVENTING RESOURCE RUSHES
+Strategy games that place resources, such as gold, in the landscape for the players to 
+use often turn into rushes to grab the mines. Monopolizing production of resources 
+then becomes a dominant strategy, and players avoid trying any other. To prevent this, 
+make the map layout fairly symmetrical, with similar amounts of gold near each side’s 
+headquarters. If you put mines farther out in the landscape for the players to ﬁ nd, put 
+comparatively little gold in them. That makes ﬁ nding one a nice bonus but not a decisive 
+advantage.
+It is vitally important that the economic productivity of all sides be equally balanced, or 
+economic advantages will rapidly outweigh strategic skill. 
+More complicated games use several different resources; in fact, if the economy of a 
+strategy game becomes complicated enough, the game really turns into a hybrid of 
+strategy game and construction and management simulation. The Age of Empires
+and Civilization series are both really hybrids, not straight strategy games, though 
+we’ll look at the economy within Age of Empires as an example here.
+
+
+--- PAGE BREAK ---
+
+426 
+FUNDAMENTALS OF GAME DESIGN
+In Age of Empires, the player must obtain food, wood, stone, and gold, each from its 
+source, worked by units designated for the purpose and brought back to a central 
+storage area. The player spends resources to construct factories, and the factories in 
+turn produce units (which also consumes resources). The factories effectively form 
+the player’s headquarters and must be defended, adding a new conﬂ ict challenge.
+Player Actions
+In a strategy game, the player’s role is that of a commander or manager, so most 
+actions consist of giving orders to units. Each unit responds to commands accord-
+ing to the AI programming for that unit or type of unit. Giving an order is usually 
+a two-step process: First, the player selects the unit or units that will receive the 
+order, generally by clicking on it with the mouse. Then the player issues the order, 
+either by clicking somewhere in the landscape, on an enemy unit, or on a button or 
+menu item. Here’s a short list of actions and orders commonly occurring in strategy 
+games (different games will use different names for them):
+■ Move to a given location in the terrain, optionally via a series of waypoints 
+marked along the way. The unit uses pathﬁ nding AI to ﬁ nd its way there, taking the 
+quickest route while avoiding obstructions.
+■ Attack an enemy unit, which includes advancing until the enemy unit is in 
+range, then opening ﬁ re, and pursuing if the enemy retreats.
+■ Stop moving; this order countermands both attack and movement orders. 
+Because the AI for attacking usually pursues an enemy unit to the ends of the earth 
+(including right into an ambush), the player frequently needs to issue the stop 
+order.
+■ Hold a particular position, meaning attack any enemy that comes into range, 
+but do not pursue it if it retreats. The unit’s AI may include an automatic tendency 
+to attack certain enemies preferentially, or the player may have to manage this 
+directly.
+■ Establish a formation that is tactically advantageous. Loose infantry formations 
+give some protection against archery because a lot of arrows fall into empty space; 
+tight formations are best against other infantry. Warships with guns along their 
+sides can concentrate their ﬁ repower if several sail in a straight line, head to stern. 
+Tanks with guns at the front can do the same if their formation is abreast. You may 
+want to include a formation editor in your game that lets the player design forma-
+tions that he likes.
+■ Produce new units by consuming resources. This can be a command that the 
+player gives by choosing a menu item or clicking a button on an overlay, but more 
+often, the player gives the command to a speciﬁ c factory whose function is to cre-
+ate mobile units.
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+427
+ CHAPTER 14
+You might want to consider variants of these common orders, such as 
+■ Retreat, a movement towards safety that leaves the unit more vulnerable while 
+moving but goes more quickly than ordinary movement.
+■ Dash, a rapid forward movement in which the unit does not attempt to attack 
+enemies it encounters but tries to get to its destination as quickly as possible.
+■ Patrol, a cyclic movement between two or more designated points, allowing 
+units to defend more territory than the hold command permits.
+Figure 14.2 is from StarCraft showing, at the lower right of the screen, a menu of 
+mouse-clickable icons that correspond to ﬁ ve of these commands. They are, from 
+top to bottom and left to right, dash, stop, attack, patrol, and hold. The remaining 
+visible icon invokes a special capability of the currently selected unit.
+Specialized units have their own special orders, of course: building for construction 
+units, heal or repair for medical or repair units, picking up and dropping off troops 
+or supplies for transport units, and so on. The next section discusses specialized units.
+FIGURE 14.2 
+The StarCraft screen, 
+with a menu of orders 
+at the lower right
+
+
+--- PAGE BREAK ---
+
+428 
+FUNDAMENTALS OF GAME DESIGN
+Core Mechanics
+Strategy games with simple rules, such as chess, don’t have an internal economy 
+because they don’t deal in numeric quantities; either a piece is on the board or it 
+isn’t. There is no ﬂ ow of resources to manage, so their core mechanics are uncom-
+plicated. (This does not, however, mean that their strategy is uncomplicated.) In 
+war games, the internal economy centers on the production and consumption of 
+resources such as units and factories and can be very complex indeed.
+Designing Units
+The units in war games almost always fall into types, such that all units of each 
+type share a set of attributes, but some units or types of units will also have special 
+capabilities that are unique to them and give them a special role. In this section, 
+we’ll examine some design considerations for creating units.
+THE ROCK-PAPER-SCISSORS (RPS) MODEL
+The Ancient Art of War, an early real-time strategy game, ran on a 4.77 MHz IBM PC. 
+The machine did not have enough CPU power to cope with a complex model of 
+real-time combat, so the game used only three types of ﬁ ghting units and a simple 
+rock-paper-scissors rule to resolve conﬂ ict among them. The unit types were 
+knights, archers, and barbarians. (Spies, the fourth type of unit offered, could not 
+ﬁ ght.) Knights had an advantage over barbarians; barbarians had an advantage over 
+archers; and archers had an advantage over knights. The player’s challenge, as in 
+rock-paper-scissors, was to try to anticipate which units his opponent would use 
+and deploy the ones most likely to beat them. Units could be deployed in mixed 
+groups, and the player could choose different formations for them to ﬁ ght in, 
+which made the game more interesting.
+While RPS-style models are easy to implement and naturally balanced, they are 
+suited only to simple games, and you shouldn’t use these for a modern war game 
+with large numbers of unit types. You can’t balance a complex game by simply 
+declaring that some units are vulnerable to others; there are too many pairwise 
+matchups to consider. These models also don’t take into account battleﬁ eld condi-
+tions. What if the knights sneak up on the archers from behind and engage them 
+in close combat?
+Instead, create numerical attributes that describe the combat strengths and weak-
+nesses of unit types independently of whom they may ﬁ ght. The relative combat 
+effectiveness of different unit types against each other will then emerge from these 
+attributes. This system, described in the next section, permits many more types of 
+units and more interesting relationships among them.
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+429
+ CHAPTER 14
+NUMERIC ATTRIBUTES  
+Modern war games assign numeric attributes to each type of unit. Each unit of a 
+given type begins with the values that its type requires, but these values change as 
+the unit sustains damage, consumes ammunition, and so on. The system is similar 
+to that used to describe characters in role-playing games. However, RPGs tend to be 
+about small numbers of quite diverse individuals, while strategy games tend to be 
+about large numbers of fairly similar units. Consequently, RPGs use more attributes 
+than strategy games do.
+The landscape in which the battles are fought also has attributes that vary from 
+place to place and affect the activities of the units present. Forest terrain, for exam-
+ple, slows down vehicles moving through it, and deep water is impassable to all 
+units except boats. Games set on other worlds with alien landscapes might have 
+different dynamics.
+The numerical attributes most commonly used in a war game include the following:
+■ Health is measured in health points (HP). These are reduced as a unit takes dam-
+age. When a unit’s number of health points reaches zero, the unit is considered 
+destroyed and therefore disappears from the game. An atomic unit does not have 
+any pieces or parts that take damage individually, so it has only one health attri-
+bute and all damage is done to it as a whole. Compound units may have separate 
+health attributes for each of the different pieces that make them up. (A cavalry 
+unit, for example, might have one health attribute for the rider and another for the 
+horse.) The maximum amount of health that a given type of unit may have is its 
+maximum health. More robust units have a higher maximum health. Some units 
+may also have armor, also measured in health points, which can absorb a certain 
+amount of damage and protect the unit’s health. Armor, too, will have a maximum
+armor value that varies with the unit. You can either let the armor absorb all dam-
+age until the armor is destroyed (in which case it’s really just like extra health), or, 
+more realistically, you can have the armor let more and more damage get through 
+to harm the unit as the armor degrades.
+■ Units may have zero or more weapons with which to attack enemy units. (Transport 
+units typically have no weapons; tanks typically have three or four, though many 
+games limit the number of weapons per unit to one, to make the game simpler.) Each 
+weapon has attributes that describe its characteristics. When a weapon hits an enemy 
+unit, it reduces that unit’s health or armor by a certain number of health points. A 
+weapon inﬂ icts damage in individual instances called shots; the amount of damage 
+it does per shot is its shot power, expressed in HP per shot. There must be a minimum 
+period of time between shots; the number of shots per minute is the weapon’s rate 
+of ﬁ re. (This terminology comes from ﬁ rearms, but the same attributes also apply to 
+swinging a sword; some swords do more damage than others, and some can be 
+wielded more quickly than others.) If the game models ammunition consumption for 
+a certain weapon, then that weapon also has a certain amount of ammo; each shot 
+consumes one round, and the weapon ceases to operate when the number reaches zero.
+
+
+--- PAGE BREAK ---
+
+430 
+FUNDAMENTALS OF GAME DESIGN
+■ Range is the maximum distance at which a weapon can deliver damage. Some 
+units have only hand-to-hand combat weapons and can attack only adjacent units, 
+so the range of their weapons is small. A few long-range weapons, such as long-
+bows, are useless in hand-to-hand combat, and so may also need a minimum range
+rating below which they are not functional. Fixed units such as gun emplacements 
+cannot always point in all directions; if that is the case, you will need to deﬁ ne a 
+traverse arc for the unit, two numbers that indicate the starting and ending bear-
+ings. All the bearings between these two constitute an arc through which the 
+weapon may be traversed. A traverse arc of 0 to 90 degrees means the unit can ﬁ re 
+in any direction between due north and due east.
+■ Small projectiles such as bullets and arrows should hit only one enemy unit 
+each, but if your game includes large, solid projectiles like cannonballs, you will 
+have to deﬁ ne the shot mass and shot velocity of each. Their kinetic energy is great 
+enough to let them completely destroy small units and continue onward. The amount 
+of damage they can do is reduced in proportion to the mass of the units that they 
+have already hit, until they ﬁ nally stop. Explosive projectiles, on the other hand, 
+require a blast radius, a measure of the distance from their landing point to the far-
+thest point that the explosion can affect; any unit takes damage if it is within the 
+blast radius. In principle, the amount of damage done to enemy units within the 
+blast radius should be reduced by the inverse square law—that is, the shot power of 
+the projectile is reduced in proportion to the square of the target unit’s distance from 
+the center of the blast; however, you may not wish to compute to that level of detail.
+■ Accuracy is a measure of the chance that a given weapon will hit the point at 
+which it is aimed, expressed as a real number between 0 (never hits) and 1 (always 
+hits). Note that this is accuracy of aiming at a point, not hitting a unit; if a projec-
+tile is slow, the unit may not be there when the projectile arrives, even if the 
+weapon is highly accurate. Theoretical accuracy is the average accuracy of a weapon 
+under all conditions, but you may also add to or subtract from the theoretical accu-
+racy to compute the practical accuracy based on the prevailing conditions when the 
+weapon is used, such as the distance to the target, whether it’s daytime or night-
+time, and so on.
+■ Defensive dodging is a unit’s ability to successfully dodge an enemy shot; you may 
+want to restrict its meaning to dodging solid projectiles such as bullets, not blast 
+effects. Like accuracy, it should be expressed as a real number between 0 (never dodges) 
+and 1 (always dodges). If your physics model is complex enough to include the velocity 
+of shots, then defensive dodging should be less effective against faster-moving shots.
+■ Units that move have a speed at which they are currently moving and a maximum 
+speed that represents the fastest they can move over unrestricted terrain such as a 
+road. Their actual speed at a given time degrades because of the difﬁ culty of the ter-
+rain through which they are passing (a terrain attribute); difﬁ culty is expressed as a 
+real number between 0 (prohibits passage entirely) and 1 (allows maximum speed, 
+like a road). Speed should also degrade by moving uphill; the altitude of each point 
+in the landscape is another terrain attribute, and the relative altitudes of two adjacent 
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+431
+ CHAPTER 14
+regions give the steepness of the slope between them. Slopes above a certain steep-
+ness should be impassable to ordinary ground units.
+■ The turn rate describes the rate at which a unit can turn to face a new direction; 
+this applies both to moving and ﬁ xed units. The turn rate should not be so quick 
+that the turn is instantaneous, or ﬂ anking maneuvers won’t work.
+■ If you are making a highly realistic strategy game about vehicles such as tanks, 
+you might also want to include the unit’s mass, acceleration, and so on, but most 
+strategy games don’t bother. Without taking mass and acceleration into account, 
+units don’t speed up and slow down, they simply start to move at the maximum rate 
+they can over the terrain, and they stop as soon as they receive a stop command.
+■ If your game includes the fog of war, you will need to include a number that 
+describes a unit’s range of vision; scouting units might have a larger number for this 
+than other units. This value will naturally be modiﬁ ed by the altitude of the land 
+relative to the region around it.
+Note that accuracy and defensive dodging introduce an element of chance into the 
+game. To determine if a weapon hits or misses the point it is aimed at, the software 
+must choose a random number between 0 and 1; if the random number chosen is 
+below the weapon’s accuracy rating, it shoots accurately; if the random number is 
+above it, it misses. Obviously if the weapon’s accuracy rating is 1, it is completely 
+accurate. You then have to determine whether a unit being shot at dodges the shot 
+successfully (even if it is an accurate shot) by choosing another random number 
+and comparing it to the target’s defensive dodging ability.
+Naturally, the preceding is not an exhaustive list of attributes, but it covers the 
+basics. If we apply this list to The Ancient Art of War mentioned earlier, the knights 
+and barbarians have only close-combat weapons while archers have only a long-
+range weapon; barbarians have high defensive dodging (making them less 
+vulnerable to archers), whereas knights have low defensive dodging (making them 
+more vulnerable to archers); and knights have more armor and more shot power 
+than barbarians, making them superior to barbarians in hand-to-hand combat. In 
+other words, numeric attributes can duplicate the artiﬁ cial rock-paper-scissors rela-
+tionships of The Ancient Art of War, and they can create much more complex and 
+subtle relationships as well.
+DESIGN RULE No Invincible Units!
+Avoid designing any unit whose weapon range and maximum speed attributes are both 
+greater than the range and speed of any enemy unit it may face. Such a unit has the speed 
+to stay permanently out of range of its opponents and can shoot them with impunity. If it 
+is sufﬁ ciently outnumbered, its opponents may be able to trap it; but such a maneuver 
+often requires better AI than most strategy games can manage. A unit that is invincible in 
+a one-on-one conﬂ ict with every type of enemy unit will unbalance your game.
+
+
+--- PAGE BREAK ---
+
+432 
+FUNDAMENTALS OF GAME DESIGN
+SPECIAL CAPABILITIES  
+Many units in strategy games have special capabilities that strongly affect the tac-
+tics and strategy of play. Some special capabilities inﬂ uence the attributes of a unit; 
+others simply allow the unit to do things that other units cannot. Here is a short 
+list of possibilities:
+■ Stealth. A stealth unit can become invisible to enemy units. This capacity is 
+extremely valuable because it enables the unit to sneak past guards posted by the 
+enemy and attack a vulnerable point. Designers traditionally require stealth units 
+to reveal themselves when they use their weapons. Units able to attack while 
+remaining invisible would be too powerful. Some designers reserve stealth capabil-
+ity for unarmed units, which serve as scouts.
+■ Flying or sailing, that is, traversing terrain inaccessible to ordinary land-based 
+units. Aircraft and ships tend to be specialized and incapable of operating in any 
+other medium, but there is no reason you cannot create amphibious craft if you 
+want to.
+■ Repair. You can design units to repair themselves; you can also devise special 
+units that repair others—essentially, medical units. This valuable feature rewards 
+players who keep a sharp eye on the health of their units and set up systems to 
+repair them efﬁ ciently. The repair feature is especially beneﬁ cial if new units cost 
+resources to manufacture, but repairs cost nothing or at least, less than building a 
+new unit.
+■ Transport. Transport units allow the rapid conveyance of a certain number of 
+other units around the landscape. Destroying a transport unit destroys the units it 
+carries as well. Because rapid transport is a valuable feature, designers often make 
+transport units unarmed, to offset this strength by increasing the transport units’ 
+vulnerability. This requires the player to assign armed units to go with them in a 
+convoy, which lends realism to the game.
+■ Constructing buildings and producing mobile units. As the earlier section 
+“Strategic Conﬂ ict” describes, most modern war games use a construction unit to 
+build and repair factories, and the factory constructs other mobile units, often of a 
+speciﬁ c type.
+■ Leadership. Some games, especially those that represent ancient warfare, 
+include special leader units that give a ﬁ ghting bonus to other units near them or 
+under their command. This bonus is lost if the leader is killed, thus simulating the 
+loss of morale and organization that occurs in those circumstances.
+For every special capability you create for one side in a battle, you must also create 
+a capability of similar military value for the other side or a means of defeating the 
+special capability. If you give one side stealth units, you should either give the 
+other side something equally useful or give them special units that can detect 
+stealth units. The special capabilities of either side need not be symmetric—
+Carthaginians use war elephants and Romans use catapults—but there must be a 
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+433
+ CHAPTER 14
+balance between them. Otherwise one side will exploit its advantage ruthlessly and 
+the game will be no fun.
+COMPUTING THE RELATIVE VALUE OF UNITS
+If your game allows the player to purchase or construct new units, you will have to 
+decide on the relative cost of each type of unit, either in terms of the amount of 
+time that the player will have to wait for it, the resources required to purchase it, or 
+both. A unit’s cost should be a function of its military value. Of course, the value of 
+a unit depends a lot on the conditions in which it ﬁ ghts; snowmobiles are useless 
+in the desert, and infantry can’t do much against jet aircraft. However, you’ll still 
+need some kind of baseline for determining how much a unit is worth in absolute 
+terms, regardless of circumstances or what it’s up against, so that each side will pay 
+roughly the same amount for the same amount of military effectiveness.
+Following are two equations that serve as a ﬁ rst approximation of the military 
+effectiveness, and therefore the value, of a unit type. The ﬁ rst is for units designed 
+primarily for attack.
+Attack Unit Value = maximum health × shot power × rate of ﬁ re ×
+theoretical accuracy × range × maximum speed
+Very roughly, this equation reﬂ ects a unit’s ability to accurately deliver damage 
+from a distance, while surviving under ﬁ re itself. So, in comparing two types of 
+attack units, if all the factors are equal except for maximum health, the one with 
+the greater health survives longer under ﬁ re and therefore does more damage to the 
+enemy before it is destroyed. Likewise, if two units are identical except for their rate 
+of ﬁ re, the one that ﬁ res faster does more damage before it is destroyed. Speed is 
+included because it is a measure of a unit’s ability to get out of the range of another 
+enemy’s weapons. Any unit that is faster than an enemy can get in and out of 
+harm’s way quickly, allowing hit-and-run operations.
+Defensive units such as ﬁ xed gun emplacements use a slightly different equation:
+Defense Unit Value = maximum health × shot power × rate of ﬁ re × 
+× theoretical accuracy × range 2
+2
+Speed is left out because such units don’t move much and don’t generally need to; 
+they’re supposed to protect the place where they are. The range is squared because 
+a longer range means more than being able to shoot farther away; it means being 
+able to deliver ﬁ re on an area of terrain, and the area is proportional to the square of 
+the range. It is divided by two because most of the time, the enemy is in front of the 
+unit, not behind it; being able to cover the area behind the unit is less valuable.
+Warning: These equations produce completely different ranges of values and cannot be 
+used to compare the value of attacking units with defensive units. They’re only intended 
+to compare attacking units to other attacking units and defensive units to other 
+defensive units. The equations are only a ﬁ rst approximation, and you will almost 
+
+
+--- PAGE BREAK ---
+
+434 
+FUNDAMENTALS OF GAME DESIGN
+certainly want to attach weights to the various factors they include. The equations 
+also don’t take into account special capabilities such as stealth or leadership. A unit 
+with a special capability should cost more than a unit that is otherwise identical but 
+lacks that capability, but there is no rule of thumb for determining just how much 
+more it should cost. Only play-testing and tuning can produce a balanced set of units 
+for all sides in the war. Be sure to read the section “Avoiding Dominant Strategies” 
+in Chapter 11, “Game Balancing,” before setting attributes for your units.
+PRODUCTION RATES, UNIT NUMBERS, AND LANCHESTER’S LAWS
+Frederick William Lanchester founded the ﬁ eld of operations research, which stud-
+ies subjects such as logistics and production efﬁ ciency. In the course of his work, he 
+devised two laws regarding the relative strengths of enemy forces. One, Lanchester’s
+Linear Law, states that in hand-to-hand combat the relative strengths of two armies 
+are simply proportional to their numbers of troops. Since one ﬁ ghter can only ever 
+engage one other ﬁ ghter at a time, the force relationship is a simple one.
+His other law, Lanchester’s Square Law, refers to the relative strengths of forces 
+made up of units that can aim and shoot at one another from a distance and can 
+concentrate their ﬁ re. In this case, the strength differential is not proportional to 
+the sizes of the forces but to the square of their sizes. Imagine two forces, Red and 
+Blue, both made up of identical units. Blue has three times as many units as Red 
+has. It seems as if Blue is three times as strong as Red. But in fact, it’s nine times as 
+strong. Here’s why: Three Blue units are concentrating their ﬁ repower on each Red 
+unit. But Red’s ﬁ repower is also diluted over a force three times as big. Each Red unit 
+is ﬁ ring at only one Blue unit, and two other Blue units aren’t being ﬁ red upon at 
+all! The combined effect is that Blue is nine times as strong.
+What this means in practice is that masses of concentrated ﬁ repower are not only 
+effective, they’re very, very effective. For strategy games, this means that if you give 
+one side twice as many units as the other, you’re actually giving it four times the 
+advantage. You’re unlikely to do this intentionally, but it might happen by accident 
+if you don’t set the production rates of units carefully. If one side can produce units 
+faster than the other, its advantage is not the difference between the numbers of 
+units but the square of the difference—assuming that we’re talking about units 
+with ranged weapons. Hand-to-hand units still follow Lanchester’s Linear Law.
+This also means that you can’t balance the effect of one side’s having twice as 
+many units by giving the other side a twofold advantage in one of its units’ attri-
+butes. Even if you double the smaller side’s shot power, those shots are still being 
+diluted over a larger force. You have to give the smaller side a fourfold advantage in 
+shot power to compensate for the larger side’s squared numerical advantage.
+Lanchester’s laws describe battle in abstract terms. They don’t take into account 
+battleﬁ eld conditions, maneuvering, reinforcements, and so on. Nevertheless, they 
+serve as a valuable warning to game designers trying to balance strategy games: 
+NOTE Some strategy 
+games implement unit 
+AI such that when a 
+group of units ﬁ res 
+on another group, 
+the attackers will all 
+concentrate their ﬁ re 
+on the weakest enemy 
+ﬁ rst before moving on 
+to the next. This takes 
+the enemy out of action 
+more quickly, and 
+reduces the dilution 
+effect somewhat.
+NOTE Lanchester 
+was actually writ-
+ing about aerial 
+dogﬁ ghting among 
+propeller-powered 
+ﬁ ghter planes. These 
+are very “pure” battle-
+ﬁ eld conditions: There 
+is no terrain to take 
+advantage of (except for 
+clouds) and no oppor-
+tunity for resupply.
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+435
+ CHAPTER 14
+Numbers and production rates make a huge difference. It’s critically important to 
+balance your production economy well, or whichever player can turn out units 
+faster—even if those units are relatively weak—can overwhelm the other by sheer 
+numbers.
+For a somewhat more thorough discussion of Lanchester’s laws, see the “Designer’s 
+Notebook” column “Kicking Butt by the Numbers” on the Gamasutra webzine 
+(Adams, 2004).
+Health, Morale, and Fighting Efﬁ ciency
+As with almost all other genres, units in war games ﬁ ght at full efﬁ ciency until 
+their health points are gone even though that’s obviously unrealistic. Making 
+wounded or damaged units ﬁ ght at reduced efﬁ ciency introduces too powerful an 
+effect of positive feedback in favor of the dominant side. Once a unit’s efﬁ ciency 
+begins to suffer, it’s more likely to take further damage and so lose yet more efﬁ -
+ciency, resulting in a quick demise. Reducing the ﬁ ghting efﬁ ciency of damaged 
+units also produces situations in which each side has harmed the other to the point 
+that neither is able to ﬁ ght effectively. The result is a long stalemate or a boring war 
+of attrition, so in general, you should avoid this approach.
+The same is true of most mechanisms that try to implement the effects of morale. 
+In such systems, morale is represented by a number that either increases or 
+decreases an army’s ﬁ ghting effectiveness. If the number is positive, morale is high 
+and the effectiveness goes up, perhaps by improving the weapons accuracy of all 
+the units in the army. If the number is negative, morale is low and effectiveness is 
+harmed. Morale goes up when the army is doing well (that is, losing fewer units rel-
+ative to the enemy) and down if it is doing badly (losing a lot of units).
+Again, this tight loop produces too much positive feedback. If one side starts to lose 
+units, morale is lowered, ﬁ ghting effectiveness goes down, and so that side keeps on 
+losing. Furthermore, the enemy’s morale has gone up at the same time, making the 
+problem even worse. It’s better to avoid morale altogether or to give it only a small 
+role in determining ﬁ ghting effectiveness. The leadership bonus, mentioned in the 
+earlier section “Special Capabilities” is a better way to handle this; the value of the 
+bonus is not based on how well the army is doing but on whether the leader is pres-
+ent, so there is no feedback loop.
+In conﬂ icts among small numbers of compound units, such as main battle tanks
+or capital ships, you may want to allow individual weapons or other systems aboard 
+the unit to go out of commission as the unit takes damage. In a game about
+nineteenth-century naval warfare, for example, you can allow the guns aboard a 
+74-gun ship to be destroyed one by one, thus incrementally reducing the ﬁ ghting 
+capacity of the whole. The guns on a ship are analogous to the soldiers in an army, 
+and like a soldier, each gun should ﬁ ght at full strength until its hit points are gone.
+
+
+--- PAGE BREAK ---
+
+436 
+FUNDAMENTALS OF GAME DESIGN
+Upgrades and Technology Trees
+In a game with a limited number of unit types, the players can sometimes exhaust 
+the interesting battle combinations too quickly. For example, the knights, archers, 
+and barbarians of The Ancient Art of War aren’t enough to hold players’ attention 
+over many campaigns. You can make a game more interesting by adding more unit 
+types, but if all the unit types are available at the beginning of a game, the player will 
+undoubtedly concentrate on the most powerful ones and ignore the weaker ones.
+To resolve this problem, you should look for a way to introduce new units or to 
+upgrade the existing ones as the game progresses. These upgrades can improve the 
+values of units’ attributes or give the units entirely new capabilities. An upgrade 
+might occur as a reward for some achievement. In checkers, for example, moving a 
+piece to the opposite side of the board turns that piece from an ordinary unit that 
+can only move forward into a king that can move both forward and backward. 
+Because it takes a while to reach the opposite side of the board, kings don’t appear 
+until well into the game.
+RESEARCHING UPGRADES  
+Checkers is an abstract game with an arbitrary rule for upgrading units. In more 
+representational games, the unit upgrade process is often characterized as a form of 
+research that the player must initiate; it takes a certain amount of time and perhaps 
+the expenditure of some resources. If your game offers several different upgrades, 
+you may wish to organize them into a sequence, such that some upgrades become 
+available only after others have been achieved. You may also offer the player a 
+choice of upgrades to research at any given time, which gives her an interesting 
+decision to make: Which is the most advantageous upgrade to choose given the 
+units she has available and her preferred style of play? (A player who prefers a 
+defensive style, for example, may wish to choose upgrades that enhance the defen-
+sive rather than the offensive capabilities of her units.)
+SINGLE-UNIT, UNIT TYPE, AND GLOBAL UPGRADES  
+You may create a number of different types of upgrades: those that apply to a single 
+unit (such as the conversion of a piece to a king, as in checkers); those that modify 
+the capabilities of all units of a given type (such as the siege tank upgrade in StarCraft,
+which gives all tanks the ability to operate in siege-tank mode once the upgrade 
+has been researched); and those that modify the core mechanics globally (such as 
+the Hoover Dam invention in Civilization, which improves its entire society’s pro-
+ductivity and reduces pollution). In role-playing games, skill upgrades naturally 
+apply only to the individual character that has learned the skill, but in strategy 
+games it is more common to apply a unit type upgrade to all the player’s units of 
+that type simultaneously. That makes the process of retroﬁ tting the existing units 
+unnecessary, so the player doesn’t have to think about it. If you’re making a highly 
+representational war game, however, you may want to require the existing units to 
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+437
+ CHAPTER 14
+come back to headquarters to ﬁ t them with their new gun, engine, radio, or what-
+ever other feature it is that the player has researched.
+PERMANENT AND TEMPORARY UPGRADES
+In turn-based games with long, complex campaigns (such as Civilization or X-COM), 
+designers often spread the upgrades out over time, spanning several levels. Each 
+time an upgrade is achieved, it lasts for the rest of the game. These permanent 
+upgrades strongly support the player’s sense of progression through an extended 
+game. They typically occur only infrequently and represent a major achievement 
+when accomplished. Permanent upgrades are ideal for game-time periods that span 
+months or years.
+In RTS games, however, you may want to have the research and upgrade process 
+work fast enough to produce big changes in the gameplay within a single level but 
+not fast enough to carry over to the next level. These are called temporary upgrades.
+This puts more pressure on the player, who has to decide quickly whether to 
+expend resources on research or on building new units to help ﬁ ght a battle taking 
+place in real time. Dungeon Keeper is a good example of this kind of game: In each 
+level, the player’s creatures research a set of magic spells while still defending their 
+dungeon against invaders. With temporary upgrades, the player loses the beneﬁ t of 
+her research when she goes on to the next level; she has to research the technology 
+over again. This seems a bit peculiar, but it works well if you don’t think of the lev-
+els as part of a continuing story. It’s more credible if you present each level as an 
+independent scenario, unrelated to the others—as Dungeon Keeper in fact does.
+TECHNOLOGY TREES
+If your game has a large number of upgrades, you should organize them into a 
+branching tree structure, in which achieving one upgrade makes available a choice 
+of several others that are logically related to the preceding one. See Figure 14.3 for 
+an example. Achieving the steam engine, for instance, could give the player the 
+opportunity to research the railroad, steamships, or powered factories. Strategy 
+games usually characterize these advancements as technological research, so such a 
+structure is called a tech tree even though some of the upgrades may not actually be 
+technological. In role-playing games, a similar mechanism applies to upgrading a 
+character’s individual skills; in that context it is called a skill tree, but the function 
+is the same: It is a diagram of the available upgrade paths for a unit.
+Once the player chooses to research an upgrade on a particular branch, you can 
+force her to complete all the upgrades that are part of that branch before moving to 
+another branch or prevent her from ever researching upgrades on another branch. 
+So, for example, choosing to research agriculture might force the player to stick 
+with agricultural advancements, and other upgrades such as ﬁ shing or animal hus-
+bandry would be closed to her—either until the agricultural branch has been 
+completed or perhaps forever. This restriction encourages asymmetric play; if one 
+
+
+--- PAGE BREAK ---
+
+438 
+FUNDAMENTALS OF GAME DESIGN
+player chooses agriculture and another chooses ﬁ shing, each is committed to the 
+approach she has chosen. However, it will make your game tricky to balance and 
+will discourage some players. Many players, particularly women, dislike being 
+forced to make irrevocable decisions whose consequences they do not know.
+To design a tech tree, ﬁ rst think of all the upgrades that you would like to intro-
+duce in the course of the game. For each upgrade, note whether it applies to a 
+particular unit, all units of a particular type, all units in the player’s forces, or to 
+the core mechanics generally. Also note what event will trigger the upgrade—the 
+passage of a certain amount of time, the expenditure of resources, or some other 
+achievement such as defeating a particular enemy unit or arriving at a certain place 
+on the map. Once you have an idea of what upgrades you want to include, you can 
+organize them into a logical sequence or tree; a simple diagram will show which 
+upgrades lead to which others.
+As a general rule, upgrades should strengthen the player’s side and give the player 
+new choices to make. Researching horse breeding, for example, might make cavalry 
+units available for the ﬁ rst time and thus require the player to start thinking about 
+how to use them. Don’t worry too much about correctly setting the exact cost and 
+length of time required by each upgrade. Pick some numbers that feel right; you 
+will undoubtedly modify them during testing.
+FIGURE 14.3 
+Part of the tech tree 
+from Civilization III.
+Prerequisites are at the 
+left; upgrades progress 
+to the right. 
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+439
+ CHAPTER 14
+DON’T DISALLOW UPGRADES ARBITRARILY
+In order to increase the difﬁ culty of a particular level, some RTS games won’t allow the 
+player to research certain upgrades or use certain units in that level even though the 
+player knows that those upgrades or units are available in other levels. Players ﬁ nd this 
+frustrating because it feels arbitrary. Consider the following alternative methods.
+Instead of disallowing upgrades that are accessible in previous levels, change the costs 
+of the units you want to restrict on a level-by-level basis. That is, if the advanced cyber-
+marine requires a large quantity of a certain resource, then make that resource 
+extremely scarce on a level in which you really don’t want the player using cybermarines. 
+Or require that the player use those resources in some other way to achieve victory on 
+that level. Be clear about this—state it in the mission objectives. Then, if the player 
+wastes all his resources on building cybermarines instead of achieving the mission, he 
+will have only himself to blame. Another possibility is to make the restricted units costly 
+by making sure the enemy is extremely proﬁ cient in destroying that kind of unit. If, say, 
+you want to disallow ﬂ ying units, arm the computer opponent with extremely effective 
+antiaircraft weaponry.
+Ensuring that the player knows it is not wise to deploy a certain kind of unit under cer-
+tain circumstances makes for better gameplay than does simply preventing the player 
+from deploying those units. The player then appreciates and accepts the restriction as a 
+part of the game rather than resenting what seems to be an arbitrary decision by the 
+game designer.
+Logistics
+Strategy decides where to act; logistics brings the troops to this point.
+—GENERAL ANTOINE-HENRI JOMINI
+Logistics is the management of supply: the production, distribution, maintenance, 
+and replacement of personnel and materials. In real life, it’s an immensely compli-
+cated business. War games, on the other hand, tend to have simpliﬁ ed logistics. 
+This is because real armies have huge general staffs to look after such things; in a 
+war game, the player has to handle it all himself. Because the player is also busy 
+with strategy and tactics, you should simplify the logistics. The next few sections 
+discuss different aspects of logistics and how to handle them.
+SUPPLIES AND CONSUMABLE ITEMS
+For the most part, computer war games ignore the soldiers’ human needs. Soldiers 
+don’t eat and don’t sleep, so the game doesn’t track supplies such as food or sleep-
+ing bags. Similarly, vehicles don’t require fuel or spare parts. Keeping track of these 
+supplies is simply too much of a nuisance. The one major exception to this rule is 
+
+
+--- PAGE BREAK ---
+
+440 
+FUNDAMENTALS OF GAME DESIGN
+ammunition; some games track it and some don’t. In general, if ammunition is 
+cheap, doesn’t do much damage, and is quickly expended (such as arrows or bul-
+lets), you should give units an unlimited supply because it’s not fun for the player 
+to have to look after it all the time. If ammunition is particularly destructive, such 
+as nuclear weapons, then you should make it rare and expensive and keep track of 
+how much is around. To summarize it simply, “Don’t sweat the small stuff.”
+SUPPLY LINES
+A supply line is the route over which fresh troops and war materiel must be trans-
+ported from their source to where they are needed, usually the battleﬁ eld. Cutting 
+the enemy’s supply line is a classic stratagem of war; it leaves the enemy troops 
+without support and they often have to surrender when they run out of the things 
+they need. Seizing bridges is a high priority in land warfare because a bridge is 
+often a choke point through which troops and supplies must pass. Most computer 
+war games model supply lines correctly for the troops themselves; ﬁ ghting units do
+have to get from wherever they are produced (usually near their headquarters) to 
+where the action is. Few games implement supply lines for items such as food and 
+ammunition, however, for two reasons. First, supplying materiel is an additional 
+task that players may not have the time (or inclination) to manage. Second, imple-
+menting supply lines realistically means creating transport units and modeling the 
+supplies as individual objects. All this makes for a more complicated game engine 
+and requires additional CPU time to execute.
+ABSTRACTING THE DISTRIBUTION PROCESS
+To reduce these problems—yet still require the players to create the resources that 
+units need—you can make the production process concrete, but abstract the distri-
+bution process. For example, the troops in Warcraft eat food. The food is produced 
+on farms (which may be destroyed by the enemy, thereby reducing production), 
+but once the food is produced, it is magically available to all the player’s troops 
+everywhere. The existence of the troops causes the food to disappear from storage, 
+but the food doesn’t actually have to be transported to where the troops can eat it.
+This decentralization of resources can permit unrealistic strategies if you do not 
+handle it carefully. In Age of Empires, for instance, a player can send a lone peasant 
+into a remote area to build a barracks, which has the function of creating troops. 
+Assuming that it is not spotted by the enemy, the barracks immediately starts pro-
+ducing troops right on the enemy doorstep with no regard for supply lines or 
+resource distribution. Although this is an imaginative way to exploit the decentral-
+ized-resources mechanic, it harms the players’ suspension of disbelief because it’s 
+so unrealistic.
+In his regular design column for U.K.-based Develop magazine, Dave Morris sug-
+gested another alternative that rewards a player for maintaining supply lines 
+without actually requiring her to personally manage the transportation of materiel 
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+441
+ CHAPTER 14
+(Morris, 2001). Morris was the lead designer on Warrior Kings, and for that game
+he proposed a special unit called the supply wagon. Supply wagons carried food, 
+and so long as troops were near a loaded supply wagon, they regained health points 
+(which consumed the food). When the food in the wagon ran out, the supply 
+wagon automatically trundled back to the nearest friendly palace (palaces acted as 
+storehouses) for more food. Units whose supply wagon couldn’t get back to a source 
+of supplies couldn’t regain health. This rewards the player for keeping supply lines 
+open but does not actually require her to do so. (Unfortunately this idea was not 
+implemented in the ﬁ nal version of the game for lack of time.)
+ROAD-BUILDING
+Another way to abstract the distribution of supplies while still requiring the player 
+to pay some attention to them is to let the player build roads. Consider the territory 
+map in Figure 14.4.
+Town B has access to a forest—it has a road (supply line) leading directly to the for-
+est, providing a ready source of lumber. This allows Town B to build wood-based 
+units, such as catapults. Town A is linked to Town B via a road. This road provides a 
+readily available supply route between Town A and Town B. Hence, Town A has 
+exactly the same production capabilities as Town B. Anything that is available to 
+Town A is also available to Town B, and vice versa. Town C is a newly built town. 
+FIGURE 14.4 
+Resource distribution 
+via a road network
+A
+B
+C
+
+
+--- PAGE BREAK ---
+
+442 
+FUNDAMENTALS OF GAME DESIGN
+No roads have been built to Town C, so it does not have access to the resources of 
+Towns A and B until a linking road is built.
+This is the approach taken by Civilization III. Of course, it’s still not an entirely 
+accurate solution—materials are assumed to travel instantaneously along the roads. 
+(It’s interesting to note, though, that previous iterations of the Civilization series did
+implement trade caravans, but Civilization III removed that feature to improve 
+gameplay.)
+INFLUENCE MAPS
+Another option is to assume that any unit within a certain distance from a supply 
+depot can receive supplies from that depot even if no unobstructed route actually 
+exists. This is a variation of the decentralized distribution of Age of Empires. Every 
+supply depot magically transmits supplies to units within its circle of inﬂ uence, but 
+units that move beyond the range of any depot don’t get them. Designers often call 
+this inﬂ uence of objects on the terrain around them an inﬂ uence map. They usually 
+accomplish this by having the software track regions of inﬂ uence on a map that it 
+maintains internally. Most games that use inﬂ uence maps include some means of 
+displaying the areas of inﬂ uence, either continuously or at the player’s option.
+Two out of the three races in StarCraft use an inﬂ uence map to indicate where their 
+inﬂ uence has spread (although the core mechanics use these maps only to deter-
+mine where structures may be constructed and not to provide supplies to mobile 
+units). For example, the Protoss power beacons, which provide power to the Protoss 
+factories, have a limited radius of power distribution. When the player wants to 
+construct a new factory, the game displays the inﬂ uence map by color-shading the 
+landscape, showing the areas where the factory may be built.
+The Game World
+The choice of setting for your strategy game is a vital consideration because
+different players prefer different fantasies. Dress up the underlying gameplay in
+a different setting and it can feel like a totally different game. You can transplant 
+the core mechanics of a strategy game into many different settings; it’s practically
+a universal game construction kit. Will your game be set in history? The contempo-
+rary world? The future (as you anticipate it)? Or a fantasy world of your 
+imagination?
+In spite of the ease with which strategy game mechanics can be reused in a new 
+setting, you will need to keep some important distinctions in mind.
+Historical Settings
+Military strategy games, perennial favorites, tend to be set in the past—either an 
+accurately portrayed past or one in the realms of mythology. People who play 
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+443
+ CHAPTER 14
+games about historical events tend to know a lot about the pertinent history,
+and the more representational your game claims to be, the more closely they will 
+scrutinize it to see if it rings true. You can get away with a certain amount of sim-
+pliﬁ cation (as Age of Empires did) provided that you are honest about it.
+The danger here is dipping too often from the same well. So many games are set 
+during World War II that the market has become oversaturated. Customers don’t 
+want to buy the same game again and again. However, there is always room for 
+original approaches so long as you can make them compelling. You should at least 
+think about moving into less common territory; consider the Korean War, the wars 
+of Shaka Zulu, the Warring States era in Chinese history, and so on. Humanity’s 
+long and bloody history offers plenty to borrow from.
+Modern Settings
+Choosing a present-day military conﬂ ict risks generating controversy and negative 
+public opinion. Although this could gain your game some degree of notoriety, 
+unless the game itself is a superlative addition to the gaming world, the disadvan-
+tages of such exposure greatly outweigh any advantages. In 2009, game publisher 
+Konami announced, then withdrew, a game called Six Days in Fallujah, based on 
+the 2004 battle in that Iraqi city. American and British war veterans, as well as 
+peace groups, objected strongly to the game despite the designer’s plans to be both 
+accurate and respectful. (Six Days in Fallujah was actually a third-person shooter, 
+not a strategy game, but it still illustrates the risk of making a game about a sensi-
+tive subject.)
+If you want to use modern settings and weaponry, you might ﬁ nd it less controver-
+sial to make them ﬁ ctitious. Both America’s Army and Call of Duty 4: Modern Warfare 
+use ﬁ ctitious settings.
+With a modern setting, you have to address the problem of battleﬁ eld scale. It takes 
+foot infantry days to walk across a region that a jet ﬁ ghter can ﬂ y over in a few sec-
+onds. You therefore have to choose which scale your game is really designed for 
+and perhaps exclude units that don’t work well on that scale.
+Future (Science Fiction) Settings
+Science ﬁ ction (SF) settings remain popular and allow a lot of scope for invention, 
+but unless you have a compelling world to present, you run the risk that your fan-
+tasy will not capture the public’s imagination. It’s easier to base them on a success-
+ful license (Star Wars, Star Trek, Alien, and so on) than to carve out a new universe 
+for yourself. StarCraft managed it, but not everybody is so fortunate.
+From a design standpoint, the danger with science ﬁ ction games is that it is easy to 
+add fantastic components that magically solve problems—a consistent weakness of 
+the Star Trek stories, in which the chief engineer is always reversing the phase 
+
+
+--- PAGE BREAK ---
+
+444 
+FUNDAMENTALS OF GAME DESIGN
+inducers or inducing the phase reversers to get our heroes out of a jam. If you really 
+want to make a self-consistent SF universe, you’ll have to think hard about its tech-
+nology. Alternatively, you can go for humor and make a game like Strange Adventures
+in Inﬁ nite Space, a combination strategy/spaceship simulator full of goofy weapons 
+and odd features that aren’t meant to be taken seriously.
+Terminology also presents a problem in science ﬁ ction settings. Because the weap-
+ons and units don’t really exist, the player doesn’t have any idea what they can do. 
+No one can tell from the names alone whether a plasma riﬂ e is more or less power-
+ful than a photon blaster. This is one of the very few weaknesses in Sid Meier’s Alpha 
+Centauri: The player either spends a lot of time looking things up in reference 
+books or learns by trial and error. When players encounter an unfamiliar weapon 
+for the ﬁ rst time, it’s a good idea to indicate its power or value by some visual sign. 
+In fact, this advice applies to just about any game world that you can’t be sure the 
+player knows much about.
+Future settings have the same scale problems as modern battleﬁ elds. StarCraft han-
+dles this by simply stating that ﬂ ying vehicles are only about ﬁ ve times as fast as 
+foot infantry; if the foot soldiers walk at 3 miles an hour, the jet ﬁ ghters ﬂ y at 15! It 
+is grossly unrealistic, but it works. The aircraft are still the fastest vehicles in the 
+game, so their role as hit-and-run units remains consistent even though they are 
+slower than they realistically should be.
+Fantasy Settings
+The major distinction between science ﬁ ction worlds and fantasy worlds is that
+the former characterize their imaginary weapons as technological while the latter 
+characterize them as magical. Fantasy worlds, often set in a quasi-medieval envi-
+ronment, also tend to place more emphasis on close-range and hand-to-hand 
+combat (swords and arrows, not cruise missiles) and to eschew vehicles such as air-
+planes and tanks. Fantasy combat should not resemble modern combat too closely; 
+that’s not what the players want. The Warcraft series is by far the most successful 
+group of strategy games set in a fantasy world, and well worth studying. But it 
+would be nice to see a lot more games set in worlds other than northern European 
+mythology. Skip the elves and trolls and look to the folk tales of India, Africa, the 
+Americas, and Australasia for inspiration.
+The Presentation Layer
+Strategy games often have extremely complicated core mechanics. Consequently, 
+the design of the presentation layer is critical, even more so if the game is in real 
+time and the player is under time pressure. The interface must present complicated 
+information in clear, well-organized ways so that the player can grasp it easily. If 
+you don’t design the presentation well, the large amount of information available 
+can make the game overwhelming, especially to inexperienced players.
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+445
+ CHAPTER 14
+Interaction Model
+For strategy games, the interaction model tends to be on a large scale. Rarely do you 
+ﬁ nd a strategy game with a single avatar, although the PC version of Battlezone (not 
+to be confused with the original coin-op) is a notable exception. Generally, the 
+player indirectly controls the units under his command while enjoying a godlike 
+view of the game world. The true interaction model, in this instance, is related to 
+the scale of the world. How many units does the player control? Is it a small squad, 
+or is it a large army?
+The feel of a small squad is much more personal and intimate than a large army. 
+The player can explore the personalities of the units more and tends to care more 
+about the individual fates of his units. Also, with smaller groups, individual charac-
+ters may improve their skills and abilities as the game goes along. The X-COM series 
+of games is particularly strong in this area—the player controls several small squads 
+of about 20 soldiers each, small enough so that the player can keep a handle on 
+each individual member. Incidentally, in these games, the player can also build up 
+a team of noncombat units by recruiting one at a time the scientists that research 
+the alien technology.
+For larger-scale games, it is too hard for the player to keep track of every single unit 
+in the army, although some games do attempt this. Civilization III, for example, 
+allows units to upgrade from Recruit to Veteran to Elite status, a simple progression 
+that players can easily understand. Others, such as Warcraft III, designate a small 
+number of units as Heroes. A Hero has special abilities and requires personal atten-
+tion from the player. The player can easily focus his attention on the small number 
+of Heroes while treating the ﬁ ghters in the other squads in the army as undifferen-
+tiated groups.
+Camera Model
+For many years, computer strategy games displayed their game worlds in two 
+dimensions as seen from above, effectively treating the video screen like a map or a 
+tabletop game board. Later games adopted an isometric perspective in which build-
+ings and units appeared to stand up above the surface of the landscape, although 
+the underlying model of the world was still 2D. With the arrival of 3D display 
+engines, strategy games began to include fully three-dimensional worlds with 3D 
+modeled hills, valleys, and other landscape features, as well as 3D modeled units.
+Regardless of the display technology, players of strategy games need to see the big 
+picture, the overall view of the game world. The player cannot plan an effective 
+strategy if she is forced to view the world from one avatar point of view. Unless 
+you’re trying to model what warfare was like for a general of ancient times—back 
+when generals fought alongside their troops—you should choose some form of aer-
+ial perspective. The player will also ﬁ nd it valuable if you allow her some control 
+over the camera so that she can zoom out to see the whole battleﬁ eld or zoom in 
+
+
+--- PAGE BREAK ---
+
+446 
+FUNDAMENTALS OF GAME DESIGN
+on a particular ﬁ ght and move the camera around to different points of view. See 
+the Total War series for a good example. A few games implement intelligent cameras 
+that automatically move to locations where particularly important events are tak-
+ing place, but if you do this, be sure the player can turn it off. In a strategy game, 
+especially a real-time one, the player needs control over what she’s seeing.
+User Interface
+The problem in designing the user interface of a strategy game is that the player 
+must be able to control action at different scales— from that of the whole army to 
+the individual ﬁ ghter. Presenting such different kinds of information seamlessly 
+without breaking the ﬂ ow of the game can prove difﬁ cult.
+Most strategy games present different kinds of data in separate windows in much 
+the same manner as a windowed operating system. Most games do not offer all the 
+window-management features of an operating system, however, nor do they use 
+the operating system’s visual style. No designer wants her game to look like just 
+another business or productivity application. Assuming that you take a windowed 
+approach, try to ensure that, within reason, the windows behave as the player 
+would expect. Make buttons clear, concise, and recognizable. If a button is not 
+appropriate for a given unit—a movement command for a building, for instance—
+leave it visible but dim it, or apply a gray to indicate that it can’t be used, or if 
+possible remove the button from the window for units that can’t use it.
+Remember to cater to both experienced and inexperienced players. Inexperienced 
+players need clear and easy ways to ﬁ nd commands, whereas more advanced play-
+ers need quick access. You may also consider providing separate levels of 
+command—a beginner mode and an advanced mode—so that the player can issue 
+more complex commands as he becomes more experienced. For the advanced play-
+ers, provide keyboard shortcuts for every command in the game.
+Ensure that your game presents the user with sets of commands grouped by func-
+tion. SimCity 4, though not a strategy game, provides an excellent example of a 
+well-planned user interface in this regard. A nested sequence of menus ensures that 
+related commands are displayed together. At the top level, the player can choose 
+between mayor mode and god mode. Mayor mode provides standard commands for 
+building the city grouped by functions such as those pertaining to roads, to water, 
+or to civic buildings. God mode provides an unrelated set of commands that allow 
+the player to unleash all sorts of fantastical and supernatural events upon her 
+unsuspecting sims.
+Artiﬁ cial Opponents
+Single-player strategy games often present the ﬁ ction that the player is opposed by 
+another player like himself, who makes moves just the way the player does. In war 
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+447
+ CHAPTER 14
+games, it’s fun to think of pitting one’s wits against an enemy general. The old 
+Electronic Arts war game Patton vs. Rommel explicitly encourages this fantasy; the 
+player takes the role of one general and the computer takes the other. However, it is
+only a fantasy, of course; the opponent it provides is artiﬁ cial, implemented by AI 
+techniques. This section includes a brief introduction to some of the AI used to cre-
+ate artiﬁ cial opponents in strategy games. As the designer, you won’t have to write 
+the software, but you should be aware of the strengths and weaknesses of several 
+approaches.
+Game Tree Search
+In turn-based games such as checkers, chess, or Go, each player has a number of 
+choices—possible moves that he can make—at each turn. You choose your move, 
+then your opponent makes his move from the choices available to him, and then 
+it’s back to you with a new set of possible moves, and so on. If you draw a graph of 
+this, showing how the options branch out at every turn, it looks like a tree, so the 
+set of all possible future moves is called the game tree.
+With simple games, artiﬁ cial opponents search through the game tree, looking
+for the moves that produce the most advantageous result. The fewer choices there 
+are, the easier this is. With tic-tac-toe, the problem is trivial; with checkers, it is 
+comparatively easy; with chess, it is quite difﬁ cult; and with Go, no one has yet 
+managed to build a computer game that can play as well as a master human player. 
+In Go, the board is large and the player can play nearly anywhere, so the number of 
+possible future moves is simply astronomical. In addition, unlike in chess, it is very 
+difﬁ cult to evaluate whether a potential move is good or bad; it depends too much 
+on other moves.
+As a designer, do not expect to use game-tree search in any but the simplest of 
+games. The length of time it will take for the computer to compute a good move 
+increases exponentially with the number of possible moves available.
+Neural Nets
+A neural net is a program that simulates, in a simpliﬁ ed form, the behavior of brain 
+cells, or neurons. The details are too complex to discuss here, but put simply, a neu-
+ral net mimics the brain’s ability to recognize and correctly identify patterns of 
+data. This is how we learn to tell an apple from an orange, for example: Our brains 
+learn the visual patterns that apples and oranges fall into. Like the brain, a neural 
+network has to be taught to recognize the pattern; after that, and with repeated 
+exposure, the brain or the neural network identiﬁ es the pattern correctly.
+Some efforts have been made to teach neural nets to learn to play strategy games by 
+recognizing patterns of play that lead to success. Although this technique is worthy 
+of further research, you shouldn’t count on it. Neural nets take a long time to learn, 
+and the process doesn’t work well for complex patterns of information, such as the 
+
+
+--- PAGE BREAK ---
+
+448 
+FUNDAMENTALS OF GAME DESIGN
+dozens of possible choices available to a player in a modern war game. Furthermore, 
+because of the way neural networks store data, there is no way to tell what the data 
+actually mean. You can’t teach the network a new pattern simply by tweaking the 
+numbers stored inside it; you have to start over again from the beginning.
+Hierarchical Finite State Machines
+In the absence of orders, go ﬁ nd something and kill it.
+—ERWIN ROMMEL
+Hierarchical ﬁ nite state machines have proven to be the most successful mechanism 
+for creating artiﬁ cially intelligent opponents in war games because they can handle 
+large numbers of units and produce seemingly intelligent, coordinated behavior.
+WHAT IS A FINITE STATE MACHINE?  
+A ﬁ nite state machine (FSM) is a conceptual machine rather than a real piece of 
+mechanical engineering. Its rules establish a simple behavioral system for an indi-
+vidual automated character, such as a unit in a war game. The unit can inhabit a 
+limited number of states (such as scouting, guarding, pursuing, and retreating), 
+and it’s only ever in one state at a time. As long as the unit is in a given state, it per-
+forms a particular activity. Certain events cause it to make a transition to a new state, 
+after which it starts performing a new activity. Here’s an example from real life.
+In 1960, researchers at Johns Hopkins University built a little robot called the 
+Hopkins Beast. The only thing the robot did was wander around the computing 
+laboratory. When its batteries got low, it would start to search for an electrical out-
+let with its photocell eye. (Electrical outlets were the only object that it could 
+recognize.) If it found an outlet, it would plug itself in until its batteries recharged. 
+Then it would set off wandering again. So the Hopkins Beast possessed only three 
+possible states: wandering, searching, and recharging. Its initial state was always 
+wandering. The only thing that would cause a transition to searching was a low 
+battery. When it detected that its battery was low, it would transition to the search-
+ing state, turn on its eye, and continue to move through the halls. Once it detected 
+an outlet, it would transition to the recharging state and plug itself in. Once it 
+detected that it was charged up, the Beast would transition back to the wandering 
+state. It would unplug itself and start wandering again.
+The Hopkins Beast was extremely simple, but you get the idea. You can use FSMs to 
+deﬁ ne the behavior of units. One state should be a default for that unit type—nor-
+mally, holding its current position or patrolling (General Rommel’s advice notwith-
+standing). For each state that you deﬁ ne, you must indicate how the unit behaves in 
+that state and list all the things that will cause it to transition to a new state. FSMs 
+have a weakness in that they can’t walk and chew gum at the same time—that is, 
+they can only be in one state at a time, so a single individual can’t work on two 
+things at once. However, the units in war games seldom need to do this anyway.
+
+
+--- PAGE BREAK ---
+
+STRATEGY GAMES 
+449
+ CHAPTER 14
+For more information about designing FSMs, read the chapter “Fundamental AI 
+Technologies” in Core Techniques and Algorithms in Game Programming by Daniel 
+Sánchez-Crespo Dalmau (Dalmau, 2004). Although it is a book on programming 
+the text is very accessible to non-programmers.
+HIERARCHICAL FINITE STATE MACHINES IN GAMES
+A hierarchical ﬁ nite state machine (hFSM) actually consists of several different 
+FSMs, and the ones higher up in the hierarchy give orders to the ones lower 
+down—that is, the controlling hFSMs send signals to those lower down in the hier-
+archy, ordering them to change states. An artiﬁ cially intelligent opponent in such a 
+system chooses a top-level goal, such as “take and hold this hill,” and delegates the 
+tasks required to achieve the overall goal to subordinate FSMs that further delegate 
+down to the individual unit level.
+This is the way commands move down through a real army. The captain decides that 
+he needs to take a hill and so delegates different activities to different platoons under 
+him: providing covering ﬁ re, creating a diversion, and so on. If done properly, the 
+platoons each have a different goal and won’t get in each others’ way. The sergeant 
+in each platoon then commands his individual men to achieve the platoon’s goal 
+in the same way that the captain commanded the sergeants. Each of the men then 
+tries to achieve his own goal by executing the command he has been given. In a 
+video game, each man has his own FSM that determines his behavior. The FSM reacts 
+to changing conditions on the battleﬁ eld (for example, “The unit I was told to attack 
+is dead, so I will look for another one to attack”) and also to orders received from 
+the superior FSM, that is, the sergeant’s FSM that governs the platoon as a whole (for 
+example, “Your mission is accomplished, so cease ﬁ re and guard your position”).
+The nice thing about hFSMs is that they produce emergent behavior—that is, they 
+may cause units to behave in ways that are not explicitly programmed into the 
+rules. hFSMs also allow you to design the AI from the top down, creating large-
+scale strategies that are made up of individual smaller-scale strategies. hFSMs are 
+not restricted to combat, either: You can also use them to achieve economic goals, 
+directing worker units to produce different resources as needed and telling them to 
+stop when they’ve stockpiled enough.
+DESIGN RULE Don’t Ask AI to Micromanage Troops
+You may be tempted to try to create large-scale AI systems that coordinate the movements 
+of individual units right from the top—a sort of micromanagement. Don’t do this; the 
+result will be as unwieldy in your game as it would be in real life if a general tried to tell 
+each individual soldier what to do. Create intelligent behaviors for each level of the hier-
+archy, and intelligent results will emerge.
+
+
+--- PAGE BREAK ---
+

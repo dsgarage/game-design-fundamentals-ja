@@ -1,0 +1,1180 @@
+126 
+FUNDAMENTALS OF GAME DESIGN
+player can use the item he constructs to earn money. Your instructor will inform 
+you of the scope of the exercise.
+3. Choose a domain in which the player must construct something to meet an 
+aesthetic standard for which a known set of aesthetic rules exists in the real world, 
+such as architecture, clothing design, music, interior decoration, landscaping, or 
+a domain that your instructor assigns. Research your chosen domain to learn its 
+aesthetic rules. (Because many such rules change over time, you may choose a period 
+from history if you can ﬁ nd adequate documentation.) Be careful not to confuse 
+rules about usability with those about aesthetics. Write a short paper explaining 
+your domain, including the range of choices that the player may make in construct-
+ing something, and document the aesthetic rules. Provide references to your sources.
+Design Practice QUESTIONS
+1. What features do you want to include to allow the player to deﬁ ne herself in the 
+game: avatar selection, customization, or creation from the ground up? What attri-
+butes can she change, if any?
+2. How will you make clear to the player the possible consequences of his avatar 
+customization decisions so that he can make informed choices? Where will you 
+provide this information?
+3. If you offer creative play, what will its domain be? What limitations will the 
+machine impose?
+4. Do you plan to offer constrained creative play? If so, what will be the constrain-
+ing factor or factors—economics, physics, or aesthetics? Will the game provide a 
+growth path to gradually free the player of constraints? In the case of aesthetics, 
+how will you implement an aesthetic judgment mechanism, and how will the 
+results of that judgment become clear to the player? Will aesthetically appealing 
+creations earn more money, win prizes, produce points, or gain some other reward?
+5. Will you offer freeform creative play? If so, will it be part of ordinary play, or 
+will it be a separate sandbox mode? If you do offer freeform creative play, can the 
+player’s creations affect the gameplay?
+6. Does your game include features for storytelling play? What will they be? How 
+can you seamlessly integrate such features into the rest of the game?
+7. Do you plan to allow mods? What will you let players modify? Can they create 
+new levels, bots, or narrative material? What tools will you want to ship to support 
+these activities?
+8. How will you create a sense of community between the players and allow them 
+to share their creations with others?
+
+
+--- PAGE BREAK ---
+
+ CHAPTER 6
+127
+Character Development
+It is our choices, Harry, that show what we truly are, far more than our abilities.
+—J. K. ROWLING, HARRY POTTER AND THE CHAMBER OF SECRETS
+Character design is an important aspect of telling stories and evoking an emotional 
+response in both stories and games. Whether it’s based on the visual look of the 
+character or the emotional depth of the back story, the character we play and 
+those we interact with help make the game world believable to us. Heroes, villains, 
+innocents in distress, and bystanders: Without these characters to carry us forward, 
+the game would be an empty shell.
+This chapter looks at how to design compelling and believable characters. We’ll 
+start by examining the characteristics of the avatar character, both player-designed 
+and built-in. Next we’ll look at the issues inherent in gender-speciﬁ c character 
+design, paying attention to the common game stereotypes you should avoid. We’ll 
+also look at the attributes associated with characters—visual, behavioral, and audi-
+ble—and how you can use them to design your own characters. We’ll also talk 
+about the difference between art-driven character design and story-driven character 
+design and why you might prefer one over the other. A section on the importance 
+of good audio design for your characters concludes the chapter.
+The Goals of Character Design
+In many genres, games structure gameplay around characters. Action games (espe-
+cially the ﬁ ghting and platform subgenres), adventure games, action-adventure 
+hybrids, and role-playing games all use characters extensively to entertain. Players 
+need well-designed characters to identify with and care about—heroes to cheer and 
+villains to boo. The best games also include complex characters who aren’t heroes 
+or villains but fall somewhere in between, characters designed to intrigue the 
+player or make the player think. If characters aren’t interesting or appealing, the 
+game is less enjoyable.
+Many factors combine to determine the degree to which a character appeals to peo-
+ple. A character need not be attractive in the conventional sense of being pleasant 
+to look at, but he must be competently constructed—well drawn or well described. 
+His various attributes should work together harmoniously; his body, clothing, 
+voice, animations, facial expressions, and other characteristics should all join to 
+express him and his role clearly to the player. (Disharmonious elements can be 
+introduced for humor’s sake, however, as with the cute but foul-mouthed squirrel 
+CHAPTER 6
+
+
+--- PAGE BREAK ---
+
+128 
+FUNDAMENTALS OF GAME DESIGN
+in the Conker series.) Characters should be distinctive rather than derivative. Even a 
+stereotypical character should have something that sets him apart from others of 
+the same type.
+A good character should also be credible. Players come to know a character through 
+her appearance and actions, and if that character then does something at odds with 
+her apparent persona, players won’t believe it. An evil demon from the underworld 
+can’t be seen worrying about orphans. For that matter, neither can James Bond. 
+Simple characters must be consistent. Richer characters, with more human frailties, 
+may be more inconsistent, but even so, players must feel that the character holds 
+certain core values that she will not violate.
+Avatar characters have an extra burden: The player must want to step into their 
+shoes, to identify with them, and to play as them. The next section discusses ava-
+tars in more detail.
+Important business considerations enter into character design as well. Customers 
+identify many games by their key characters; that’s why so many games take their 
+name directly from their characters, from Pac-Man to the latest in the Ratchet & 
+Clank series. Good characters occupy what the marketing people call mindshare,
+consumer awareness of a product or brand. You can use the character in a book, 
+movie, or TV series; you can sell clothes and toys based on a character; you can use 
+a character to advertise other products. It’s more difﬁ cult to license a game’s world 
+or its gameplay than its characters.
+The goal of character design, then, is to create characters that people ﬁ nd appealing
+(even if the character is a villain, like Darth Vader), that people can believe in, and 
+that the player can identify with (particularly in the case of avatar characters). If 
+possible, the character should do these things well enough, and be distinctive 
+enough, to be highly memorable to the players.
+The Relationship Between Player and Avatar
+Lara Croft is attractive because of, not despite of, her glossy blankness—that hyper-perfect, 
+shiny, computer look. She is an abstraction, an animated conglomeration of sexual and 
+attitudinal signs—breasts, hotpants, shades, thigh holsters—whose very blankness 
+encourages the viewer’s psychological projection. Beyond the bare facts of her biography, 
+her perfect vacuity means we can make Lara Croft into whoever we want her to be.
+—STEVEN POOLE, “LARA’S STORY”
+The game industry uses the term avatar to refer to a character in a game who serves 
+as a protagonist under the player’s control. (The original term is Sanskrit and in the 
+Hindu religion refers to the bodily incarnation of a god.) Most action and action-
+adventure games provide exactly one avatar. Many role-playing games allow the 
+player to manage a party of characters and switch control from one to another, but 
+if winning a role-playing game is contingent upon the survival of a particular 
+TIP A good character 
+is the most ﬁ nancially 
+valuable part of any 
+video game’s intellec-
+tual property. 
+
+
+--- PAGE BREAK ---
+
+CHARACTER DEVELOPMENT 
+129
+ CHAPTER 6
+member of the party, then that character is effectively the player’s avatar (though 
+some games require that more than one character survive). The player usually sees 
+the avatar onscreen more than any other character if the game is presented in the 
+third person. Displaying the avatar requires the largest number of animations, which 
+must also be the smoothest animations, or you risk annoying the player. The avatar’s 
+movements must be attractive, not clumsy, unless clumsiness is part of the avatar’s 
+character.
+The nature of the player’s relationship with the avatar varies considerably from 
+game to game. Whether the player designed the avatar herself, whether the game 
+displays the avatar as a visible and audible presence, how the player controls the 
+avatar’s movements, and many other factors inﬂ uence that relationship.
+Player-Designed Avatar Characters
+While most games have an established character as the player’s avatar, role-playing 
+games, especially multiplayer online ones, almost always give players considerable 
+freedom to design an avatar to their own speciﬁ cations. They can choose the ava-
+tar’s race, sex, body type, hair, clothing, and other physical attributes, as well as a 
+large number of other details, such as strength and dexterity, that have a direct 
+effect on the way the avatar performs in challenging situations. (For more informa-
+tion on these attributes, see Chapter 15, “Role-Playing Games.”) Figure 6.1 shows 
+an example character creation screen from The Lord of the Rings Online. In such 
+games, the avatar is a sort of mask the player wears, a persona she adopts for the 
+purposes of the game. Because the player herself designs the avatar, the avatar has 
+no personality other than what the player chooses to create. In such games, then, 
+your task as a game designer is not to create avatars for the players but to provide 
+the necessary tools to allow players to create avatars for themselves. The more 
+opportunities for personal expression you can offer, the more the players will enjoy 
+exercising their creativity.
+FIGURE 6.1
+The Lord of the Rings Online
+gives the player many 
+options for designing her 
+own avatar. 
+
+
+--- PAGE BREAK ---
+
+130 
+FUNDAMENTALS OF GAME DESIGN
+Speciﬁ c and Nonspeciﬁ c Avatars
+In games in which the player does not get to design or choose an avatar but must 
+use one supplied by the game, the relationship between the player and the avatar 
+varies depending on how completely you, the designer, speciﬁ ed the avatar’s 
+appearance and other qualities.
+The earliest adventure games, which were text-based, were written as if the player 
+himself inhabited the game world. However, because the game didn’t know anything 
+about the player, it couldn’t depict him or say much about him. Such avatars were 
+nonspeciﬁ c—that is, the designer didn’t specify anything about them. Myst is an 
+early example of a graphical game with a nonspeciﬁ c avatar.
+The nonspeciﬁ c avatar does not belong entirely to the past, however. Gordon 
+Freeman, the hero of Half-Life, does not speak and is never even seen in the game 
+(although he does appear on the box). The designers did this deliberately; Half-Life,
+a ﬁ rst-person shooter in a world with no mirrors, offers Gordon as an empty shell 
+for the player to inhabit.
+However, game designers soon began to ﬁ nd this model too limiting. They wanted 
+to develop games in which the avatar had a personality of his own and was some-
+one who belonged in the game world rather than just being a visitor there. It’s 
+awkward to write a story around a character whose personality the designer knows 
+nothing about. Besides, designers often want to show the avatar on the screen. As 
+soon as you depict a person visually, he begins to exhibit some individuality. 
+Modern games with strong storylines use detailed characters who have histories 
+and personalities of their own. Max Payne, the lead character in the series of the 
+same name, comes equipped with a past and a number of personal relationships 
+that affect his life. Nancy Drew from the many Nancy Drew games (and of course 
+all the books that preceded them) is another good example. These are speciﬁ c ava-
+tars, and the player’s relationship with them is more complex than it is with a 
+nonspeciﬁ c avatar. The player is not the avatar—clearly the player is not Nancy 
+Drew—yet the player controls the avatar, so in what sense is the avatar still Nancy 
+Drew? With a speciﬁ c avatar, the player’s relationship to her is more like that of the 
+reader’s relationship to the hero of a novel. The reader is not the hero, but the 
+reader does identify with her: The reader wants to know what will happen to the 
+hero, hopes that things will turn out well for her, and so on. The difference is that 
+in a game, the player can help and guide the hero rather than just read about her. 
+But—at least in some games—the speciﬁ c avatar is also free to reject the player’s 
+guidance. If the player asks April Ryan (from The Longest Journey) to do something 
+dangerous, she refuses with comments such as, “That doesn’t seem like a good 
+idea.” Speciﬁ c avatars sometimes have minds of their own.
+Between the two extremes of nonspeciﬁ c and speciﬁ c avatars lies a middle ground in 
+which the avatar is only partially characterized—speciﬁ ed to a certain degree but not 
+fully detailed. For many games, especially those without strong stories, it’s better to 
+create the avatar as a sort of cartoonish ﬁ gure (even if he’s depicted realistically). Many 
+
+
+--- PAGE BREAK ---
+
+CHARACTER DEVELOPMENT 
+131
+ CHAPTER 6
+avatars in action games ﬁ t this description. Mario isn’t a real plumber, he’s a cartoon 
+plumber in the same way that Bugs Bunny is a cartoon rabbit rather than a real one. 
+Lara Croft, too, has more looks than personality; she’s a stand-in for the player, not a 
+three-dimensional human being. Generally speaking, the more perfectly photorealistic 
+a character is, the more the players will tend to regard him or her as someone other 
+than themselves, an independent human being, and expect them to behave as such. 
+This isn’t always a good thing, as it causes players to exercise more critical judgment 
+than we might want them to. Nobody objects to a cartoon plumber jumping on car-
+toon turtles, but they probably would if both Mario and the turtles were photorealistic. 
+The Effects of Different Control Mechanisms
+The way a player feels about an avatar depends somewhat on how the player con-
+trols the avatar in the game. In the case of Nancy Drew and the avatars in all other 
+point-and-click adventure and computer role-playing games, the player’s control is 
+indirect; he doesn’t steer the avatar around but points to where he wants the avatar 
+to go, and the avatar walks there of her own accord. The player feels more like a dis-
+embodied guide and friend than a personal inhabitant of the game world.
+Lara Croft and Mario, in contrast, are under direct control: The player steers their 
+bodies through the game world, running, swimming, jumping, and ﬁ ghting as nec-
+essary. The player becomes them and revels in the abilities that they have that he 
+does not. But he doesn’t worry too much about their feelings. That’s partly because 
+Lara and Mario are only partially speciﬁ ed, but it’s also because exercising so much 
+control makes them more like puppets than people.
+Male and Female Players and Characters
+Early in the history of video games, some designers were concerned that male players 
+(who used to make up the majority of the market) would be unwilling to play female 
+avatars: Men might ﬁ nd identifying with a female character somehow threatening. 
+Lara Croft (Figure 6.2) demonstrated that this is not a problem, at least as long as the 
+character is acting in a role that men are comfortable with. Lara engages in tradition-
+ally masculine activities, so men are happy to enter the game as Lara. They might be less 
+comfortable with an avatar who engaged in more traditionally feminine activities.
+Women, of course, are expected to identify with male heroes routinely, a state of 
+affairs predating computer games. Until recently, few books, movies, TV shows, or 
+video games about adventurous activities featured female heroes, and they’re still 
+very much in the minority. Women justiﬁ ably get tired of playing male heroes, and 
+they appreciate the opportunity to play as female characters. At the same time, 
+however, women aren’t that interested in playing male-fantasy characters like Rayne 
+from the BloodRayne series; such characters are so extreme that it discourages identi-
+ﬁ cation with them. Heather from Silent Hill 3 (Figure 6.3) provides a better example; 
+she looks like a real woman, not a walking lingerie advertisement. The Appendix, 
+“Designing to Appeal to Particular Groups,” addresses this issue further.
+
+
+--- PAGE BREAK ---
+
+132 
+FUNDAMENTALS OF GAME DESIGN
+FIGURE 6.2
+Lara Croft (seen here in 
+Tomb Raider: 
+Underworld) is adven-
+turous but 
+hypersexualized. 
+FIGURE 6.3
+Heather, from Silent 
+Hill 3, looks like a 
+real person. 
+
+
+--- PAGE BREAK ---
+
+CHARACTER DEVELOPMENT 
+133
+ CHAPTER 6
+In general, male players don’t actually identify with their avatars as much as female 
+players do. Men are more willing to take the default avatar provided by the game 
+and happily run with it. Women tend to see an avatar as an extension of their own 
+personalities and an opportunity for self-expression. One of the best things you 
+can do to make your game more attractive to female players is to permit them to 
+customize the avatar—to choose his or her clothes, accessories, and weapons (if 
+any). Role-playing games, especially online ones, offer some of the most powerful 
+customization features.
+When possible, it’s nice to give the player a choice of male or female avatars, but 
+this is seldom practical in games with complex storylines. Writing material that 
+works with either sex can be difﬁ cult, and doing so requires creating more content, 
+which costs more money.
+Designing Your Avatar Character
+As you design the avatar for your game, think about how you want the player to 
+relate to him. Do you want an entirely nonspeciﬁ c avatar, really no more than a 
+control mechanism for the player; a partially-speciﬁ ed avatar, which the player sees 
+and knows a little about, but who doesn’t have an inner life; or a fully speciﬁ ed 
+avatar, separate from the player, an individual with a personality of his own? The 
+more detail you supply, the more independent your avatar will be. Consider psy-
+chological and social detail as well as visual detail. How much will he talk? The 
+more a person talks, the more we know about him; the more we know, the more he 
+becomes differentiated from us. Gordon Freeman never talks; Mario and Lara Croft 
+don’t talk much; April Ryan talks a lot. Gordon is the player; Mario and Lara are 
+representatives of the player; April is a person in her own right.
+Also think about how the player will control your avatar: directly or indirectly? 
+Your decision will have a profound impact on the player’s identiﬁ cation with the 
+avatar. With indirect control, the avatar is distinctly someone else, with a mind of 
+his own; with direct control, the avatar is to some degree a puppet. Your job is to 
+ﬁ nd the right balance for each particular game, to create an avatar whose character-
+istics serve your goals for the player-avatar relationship.
+Design an interesting and likeable avatar using the techniques introduced in this 
+chapter. The player will see the avatar all the time; it must be a character the player 
+can identify with and must possess qualities he is likely to appreciate, such as brav-
+ery, intelligence, decency, and a sense of humor.
+Worst of all would be to create an avatar with qualities that players actively dislike. 
+Squall Leonhart, the protagonist of Final Fantasy VIII, seemed at ﬁ rst to be self-
+absorbed and obnoxious, and those players who weren’t willing to put up with his 
+attitude stopped playing the game. This is one reason designers make games with 
+only semispeciﬁ c characters. Link, from the Zelda series, is a semispeciﬁ c character 
+(though perhaps a little more detailed than Mario). We don’t know enough about 
+Link to form much of an opinion of his character, either positive or negative.
+
+
+--- PAGE BREAK ---
+
+134 
+FUNDAMENTALS OF GAME DESIGN
+Visual Appearances
+In modern video games, almost all the characters have a visible manifestation in 
+the game. The exceptions are nonspeciﬁ c avatars who view the world only in the 
+ﬁ rst-person perspective (like Gordon Freeman) and disembodied characters who 
+sometimes speak to the character (via headphones, telepathy, or other means) but 
+are never seen. In all other cases, you will need to display your characters, and the 
+way those characters look will have an enormous impact on the way players feel 
+about them.
+Many designers, especially those who are visually inclined, start to create a charac-
+ter by thinking about her visual appearance ﬁ rst. If the character doesn’t exhibit a 
+complex personality and she doesn’t change much during the course of the game—
+either behaviorally or visually—then this is often the best way to do it. Such an 
+approach is called art-driven character design. It works well for games with fairly sim-
+ple, cartoonlike characters. Art-driven design also makes a lot of sense if you hope 
+to exploit the character in a number of other media besides video games: comic 
+books and toys, for example.
+Story-driven character design, an alternative to art-driven, is deﬁ ned in the section 
+that follows this. You will use both visual and behavioral design techniques when 
+creating your character, but every designer works well with one design develop-
+ment pattern as a primary approach.
+Character Physical Types
+We’ll begin with the basic body types of game characters, and some of the ways 
+that they may be depicted.
+HUMANOIDS, NONHUMANOIDS, AND HYBRIDS
+Characters in video games fall into three general categories: human or humanoid; 
+nonhumanoid; and hybrids. (A small number of characters appear as disembodied 
+voices or animate objects, but they aren’t included here because this section is spe-
+ciﬁ cally about visual design.) Humanoid characters have two arms, two legs, and 
+one head, and their bodies and faces are organized like a human’s. The more you 
+deviate from this arrangement, the less human a character seems. Truly human 
+characters can have either realistic human proportions or exaggerated ones in a 
+cartoon style, but if you use cartoon proportions, you should use a cartoon drawing 
+style as well. A photorealistic human with exaggerated proportions will read as dis-
+turbingly deformed.
+Nonhumanoid characters include those shaped like vehicles or machines (often 
+indicated by the presence of metal and wheels), animals, or monsters. In the Star 
+Wars universe, R2-D2 is clearly a machine, albeit one with endearing qualities. R2 
+has three legs with wheels on the bottom, a variety of mechanical appendages, and 
+
+
+--- PAGE BREAK ---
+
+CHARACTER DEVELOPMENT 
+135
+ CHAPTER 6
+a head, but no real face. The Daleks of Doctor Who are also machines, at least as 
+seen from the outside, for similar reasons. Animals, even imaginary ones, look 
+organic; the presence of wings or more than two legs distinguishes them from 
+humanoids. Skin covered with fur, scales, or feathers further sets them apart. Many 
+video game characters, such as Crash Bandicoot, have animal-like heads but humanoid
+bodies; they’re still classiﬁ ed as humanoids rather than animals. Designers often 
+modify the faces of animal-like humanoids, shortening the muzzle and bringing 
+the eyes to the front, to make them more like humans as well.
+Monsters are distinguished by such characteristics as signiﬁ cantly asymmetric bod-
+ies, a different facial arrangement (eyes below the nose or jaws that move sideways, 
+for example), and extreme proportions. Many of their qualities are borrowed from 
+orders of animals that humans in some societies ﬁ nd frightening or repulsive: rep-
+tiles, insects, and the more bizarre sea creatures. Claws, fangs, oozing slime, and an 
+armorlike exoskeleton all add to a monster’s appearance of alienness and danger. 
+The creature from the Alien movies exhibited all of these distinguishing features.
+Hybrids include beings such as mermaids or human/machine combinations. 
+Davros, the creator of the Daleks, has a humanoid torso and head but a mechanical 
+bottom half. The Borg from Star Trek and C-3PO from Star Wars read as humanoids 
+rather than true hybrids, however, because they still follow the rules for humans: 
+two arms, two legs, and one head in the appropriate conﬁ guration. Cylons, from 
+the popular Battlestar Galactica series, are hybrid machines/humans. In the latest 
+incarnation of this show, they push the boundaries of how visuals can deceive the 
+viewer as to what is human and what is not.
+CARTOONLIKE QUALITIES
+Relatively few art-driven characters are drawn with ordinary proportions or with 
+photorealistic features. Rather, they are exaggerated in various ways that should be 
+familiar to you from comic books and cartoons. These exaggerations serve as con-
+venient symbols to indicate a character stereotype. Four of the most common are 
+cool, tough, cute, and goofy. A character isn’t always limited to one of these qualities, 
+however; he can sometimes shift from one to another as circumstances require.
+■ Cool characters never get too upset about anything. The essence of cool is 
+detachment. If something irritates them, it’s only for a moment. A rebellious atti-
+tude toward authority often accompanies cool. Cool characters often wear sunglasses
+and their body language is languid; when not doing anything else, they slouch. 
+Frequently clever or wisecracking, cool characters may, depending on the situation, 
+use their wits rather than brute force to overcome an obstacle. Ratchet, from the 
+Ratchet & Clank series, exempliﬁ es the cool character. Though cool characters are 
+often drawn as insouciant when standing still, their game actions (jumping, run-
+ning) are usually fast and focused.
+■ Tough characters exemplify physical aggression. Often male—although Lara 
+Croft would be classed as a tough character—they are frequently drawn with 
+
+
+--- PAGE BREAK ---
+
+136 
+FUNDAMENTALS OF GAME DESIGN
+exaggerated height and bulk. They use large, expansive gestures and tend to talk 
+with their ﬁ sts. Tough characters are frequently hypersexualized as well (see the next 
+section). Ryu, from the Street Fighter series, is a tough character. Yosemite Sam is a 
+tough character whose small stature leavens his toughness with a comic quality. 
+Animations for tough characters are usually big and abrupt, fast moving and 
+aggressive. Postures that lean forward, implying motion and action even where 
+there is none, are common.
+■ Cute characters are drawn with the proportions of human babies or baby ani-
+mals: large eyes and oversized heads. They have rounded rather than angular 
+bodies, dress in light colors, and have a general demeanor of cheerfulness, although 
+they may exhibit moments of irritation or determination. Mario is the ultimate 
+cute video game character. Animations of cute characters usually allow characters 
+to achieve things that they physically could not accomplish in the real world: 
+jumping wide gaps, climbing long ropes, ﬁ ring weapons larger than themselves. 
+They usually look innocent and detached.
+■ Goofy characters have slightly odd proportions and funny-looking, inefﬁ cient 
+walks and other movements. Their behavior is largely comedic. Like cool charac-
+ters, they are seldom upset by anything for long, but their physical awkwardness 
+means that they are deﬁ nitely not cool. The Disney character named Goofy is
+a perfect example; among video games, Crash Bandicoot is a goofy character. 
+Animations for a goofy character in a game sometimes include the gooﬁ ness, as 
+long as it doesn’t affect the player’s experience of the play. Tripping while running 
+can be humorous, but if the character dies because of the visual joke, the player 
+won’t appreciate it. Instead, save the humor for cut-scenes or idle moments where 
+there is no game impact.
+These are of course far from all the cartoonlike character types possible; consider the 
+mock-heroism of Dudley Do-Right and George of the Jungle, the twisted evil of the 
+witch in Snow White, and so on. Figure 6.4 shows a variety of cartoonlike characters.
+Note that for the most part, these are Western classiﬁ cations. Art styles vary wildly 
+among different cultures, particularly for characters. Japanese animation often uses 
+large eyes and tiny mouths for characters, but the mouths sometimes swell to huge 
+sizes when they shout, which looks grotesque to Americans. The animé style also 
+sometimes gives cute childlike faces to sexually provocative women, producing—to 
+Western eyes at least—somewhat disturbing results. European cartoon characters 
+often seem ugly and strange to Americans, too. Asterix and Tintin, two exceptions, 
+enjoy huge worldwide success. If you want your game to sell in a number of differ-
+ent countries, study those countries’ native cartoon and comic styles closely to make 
+sure you don’t violate local expectations.
+The design of art-driven characters depends considerably on the target audience. 
+For example, the adjectives cute and scary mean different things to a 5-year-old and 
+a 25-year-old. Doom-style monsters certainly won’t go down well in a Mario-esque 
+adventure.
+
+
+--- PAGE BREAK ---
+
+CHARACTER DEVELOPMENT 
+137
+ CHAPTER 6
+COOL WITHOUT ATTITUDE
+Kids hate goody-two-shoes characters just as much as parents dislike characters with 
+foul attitudes—but just because a character doesn’t cop an attitude with authority ﬁ g-
+ures doesn’t make him a goody-two-shoes. The Scooby Doo kids provide a pretty good 
+example of characters who retain their appeal with kids despite not being rebellious. 
+Kids like to identify with the characters’ intelligence, bravery, and resourcefulness. 
+Scooby is funny, too, because despite his large size, he is a coward. But because he’s a 
+dog and not a child, Scooby doesn’t get picked on or treated with contempt for being 
+scared. This is a very clever piece of character design: Children know that no matter how 
+scary the situation is, Scooby is even more scared than they are, so they can feel virtuous 
+for being braver than he is.
+Conker’s Bad Fur Day presented an interesting twist on this rule. Rare, the game’s 
+developer, transplanted their cute children’s characters into a game for adults (or 
+rather, adolescent boys), full of bad language and vulgar jokes. But it’s a one-way 
+transformation; you wouldn’t want to insert the jokes into a game genuinely 
+intended for children.
+HYPERSEXUALIZED CHARACTERS
+Hypersexualization refers to the practice of exaggerating the sexual attributes of 
+men and women in order to make them more sexually appealing, at least to 
+FIGURE 6.4
+Several cartoon 
+characters from 
+video games and 
+other media
+
+
+--- PAGE BREAK ---
+
+138 
+FUNDAMENTALS OF GAME DESIGN
+teenagers. Male characters get extra-broad chests and shoulders, huge muscles, 
+prominent jaws, and oversized hands and feet. Female characters get enormous 
+breasts, extremely narrow waists, and wide hips. Skimpy clothing lets them display 
+their physical attributes as much as possible, and sexually suggestive poses further 
+drive the point home (as if there were any doubt). Both sexes boast unrealistic 
+height, with heads that seem disproportionately small and with extra-long legs. 
+High heels often further exaggerate women’s height.
+Kratos, from the God of War games, typiﬁ es the hypersexualized male character,
+as do most of the male characters in ﬁ ghting games. Lara Croft is the best-known 
+example of a hypersexualized female character among the hundreds populating 
+any number of video games. Comic book superheroes (male and female) are also 
+traditionally hypersexualized, a quality that got comic books into trouble with the 
+U.S. Congress in the 1950s.
+Such characters obviously sell well to young men and teenage boys, but by now 
+these images are clichéd. So many stereotypical he-men and babes have been cre-
+ated over the years that it’s difﬁ cult to tell them apart, and any new game that 
+relies on such images runs the risk of being lumped in with all the others. This
+may actually obscure any technological or game design advances you have made. 
+Finally, hypersexualized characters really appeal only to a puerile audience. They 
+actively discourage older players, who’ve seen it all before, and female players. Strip 
+clubs are male preserves; a character that looks as if she just stepped out of one 
+sends clear signals that female players are not wanted or welcome. (To give her her 
+due, Lara Croft’s hiking boots, backpack, and khaki clothing do set her apart from 
+the common run of women clad in chain mail bikinis or skintight leather.)
+In short, avoid hypersexualizing characters just for their titillation value. It limits 
+your market and seldom adds much. You might get away with it if it’s intentionally 
+done for laughs; putting Cate Archer into a 1960s retro catsuit worked out well for 
+the designers of No One Lives Forever because of the game’s humorous context. But 
+No One Lives Forever was also an excellent game in its own right. Big breasts won’t 
+sell a poor game, as the developers of Space Bunnies Must Die! discovered.
+Clothing, Weapons, Symbolic Objects, and Names
+When designing ordinary human beings, body shape is only the beginning. In
+the real world, we have only a limited ability to change our bodies, so instead we 
+express our personal style through things that we hang on the outsides of our
+bodies: clothing and accessories. In a video game, the player can more easily see 
+who is who—especially important in situations requiring snap decisions, like a 
+shooter game—if characters’ clothing and props uniquely identify them. Indiana 
+Jones wears a certain hat and khaki clothes, and he carries a bullwhip. Darth 
+Vader’s ﬂ owing black cape, forbidding helmet, and even the sound of his breathing 
+instantly set him apart from everyone else in the Star Wars universe. Crucial for 
+avatars, this rule applies to a lesser extent to minor characters.
+NOTE In 1954, 
+American psychiatrist 
+Frederic Wertham 
+published a book 
+titled Seduction of 
+the Innocent, in which 
+he alleged the bulging 
+muscles and tight 
+clothing of comic-
+book superheroes 
+promoted homosexu-
+ality and that Wonder 
+Woman’s strength 
+and independence 
+meant that she must 
+be a lesbian. Following 
+Congressional investi-
+gations, the American 
+comics industry self-
+censored its products 
+for many years.
+
+
+--- PAGE BREAK ---
+
+CHARACTER DEVELOPMENT 
+139
+ CHAPTER 6
+CONCEPT ART AND MODEL SHEETS
+Concept art consists of drawings made early in the design process to give people an idea 
+of what something in the game will look like—most often, a character. Many people 
+involved in the game design, development, and production process will need such pic-
+tures. This includes everyone from the programmers (who might need to see a vehicle 
+before they can correctly model its performance characteristics in software) to the mar-
+keting department (who will want to know what images they can use to help sell the 
+game). By creating a number of different versions of a character, you can compare their 
+different qualities and choose the one you like the best to be implemented by the game’s 
+modeling and animation teams.
+Concept art shouldn’t take too long to draw—minutes, not hours. The object isn’t to pro-
+duce ﬁ nal artwork; the concept drawings shouldn’t end up in the ﬁ nal product at all. 
+Rather, its purpose is to explain and inspire.
+Figure 6.5 shows a character drawn by artist Björn Hurri. Told only to draw an imaginary 
+Mongol horsewoman as the hero of an action-adventure game, and without any reference 
+materials, he made a number of key decisions about her age, features, clothing, and 
+weapons, all of which are visible in the picture. Her emotional temperament comes 
+through in the image as well—this is not a woman to be triﬂ ed with. Good concept art 
+like this deﬁ nitely bears out the old adage that a picture is worth a thousand words.
+FIGURE 6.5
+Concept art of a 
+fantasy Mongol 
+horsewoman. 
+Courtesy of Björn Hurri.
+
+
+--- PAGE BREAK ---
+
+140 
+FUNDAMENTALS OF GAME DESIGN
+Another visualization tool that you should consider using is the model sheet, a traditional 
+animator’s device. A model sheet shows a number of different poses for a single charac-
+ter all on one page, representing different emotions and attitudes through his or her 
+facial expression and body language. This lets you compare one with another and gives 
+you more of an overall feel for the character than a single image can do. Figure 6.6 is a 
+model sheet from The Act, a coin-op game by Cecropia Inc. that uses hand-drawn 
+animation.
+A character’s choice of weapons tells a lot about him, too. On the one hand, a meat 
+cleaver or an axe is a tool repurposed for use as a weapon, so it suggests crude and 
+bloody, violence. On the other hand, a rapier’s thin elegance suggests a dueling aris-
+tocrat. Indiana Jones can use his bullwhip to get himself out of all kinds of scrapes; 
+it’s a symbol of his resourcefulness. That he generally prefers the nonlethal bull-
+whip and carries a pistol only as a backup (in the movies, anyway) sends the 
+message that he’d rather not kill if he doesn’t have to.
+Hairstyles and jewelry tend to remain the same in games even when clothing 
+changes. Both function as good identiﬁ ers if you make them visible and distinctive 
+enough. Jewelry, in particular, has a long history of magic, meaning, or mysticism: 
+consider the signiﬁ cance of wedding rings, military medals, the cruciﬁ xes of 
+FIGURE 6.6
+A model sheet of the Edgar character from The Act. 
+Copyright © 2005 by Cecropia Inc. All rights reserved.
+
+
+--- PAGE BREAK ---
+
+CHARACTER DEVELOPMENT 
+141
+ CHAPTER 6
+Christianity, and the steel bracelets of the Sikhs. If you want a magical power or 
+status transferred to another character, you can easily do it by transferring a crown, 
+ring or chain of gold, or gems. You don’t necessarily have to give jewelry a mean-
+ing; as long as it’s visually distinctive, it will help to identify the character and 
+deﬁ ne his style.
+DESIGN RULE Don’t Add Too Much Detail
+Don’t overwork a character by adding too many distinctive visual features. Two or three is 
+usually enough—more than that and he will start to look ridiculous. 
+You can also give your characters distinctive names and ethnicities if appropriate. 
+Consider how the men of Sergeant Rock’s Easy Company in the old DC Comics 
+World War II series reﬂ ected the ethnic diversity of America with names such as 
+Dino Manelli, Izzy Cohen, and “Reb” Farmer—not to mention the square-jawed 
+American hero, Sgt. Frank Rock.
+There is a ﬂ ip side to using such obvious names. Naming your characters in such
+a fashion lends them a cartoonlike style. This may be exactly what you need for 
+some games, but for others it is not necessarily such a good ﬁ t. If realism is your 
+aim, for instance, then such an unrealistic collection of names, each obviously
+chosen to represent an ethnicity or a stereotypical group, cheapens the ﬁ nal result. 
+Names do not have to spell out explicitly the character’s persona. The name of 
+Sylvester Boots, the hero of Anachronox, says little or nothing about his personality, 
+though his nickname, Sly, is altogether more revealing. Lara Croft’s name, although 
+it does not immediately seem to indicate anything about the character, does (to 
+English sensibilities, at least) imply a degree of upper-class Englishness.
+Color Palette
+As you work on your character’s appearance, also think about creating a color pal-
+ette for him—speciﬁ cally, for his clothing. People in games seldom change clothes, 
+which saves money on art development and helps to keep them visually distinc-
+tive. In the early Tomb Raider games, Lara Croft wore a teal-colored shirt unique
+to her; no other object or character used that color. If you spotted teal, you’d
+found Lara. Comic-book superheroes furnish another particularly strong example. 
+Superman wears a lot of red in his cape, boots, and shorts; blue in his suit; and a 
+small amount of yellow in his belt and S logo. Batman wears dark blue, black, and 
+again a small amount of yellow as the background to his logo. Characters can share 
+a palette if the proportions of the colors vary from individual to individual.
+Choose your color palette to reﬂ ect your character’s attitudes and emotional temper-
+ament. As upholder of “truth, justice, and the American way,” Superman’s colors are 
+
+
+--- PAGE BREAK ---
+
+142 
+FUNDAMENTALS OF GAME DESIGN
+bright and cheery; the red and blue of his uniform recall the American ﬂ ag. Batman, 
+the Dark Knight of Gotham City—a much grittier, more run-down place than 
+Superman’s Metropolis—dresses in more somber colors.
+Sidekicks
+Hero characters are sometimes accompanied by sidekicks. A tough hero may travel 
+with a cute sidekick (or vice versa) to provide some variety and comic relief. The 
+cheerful look of Miles “Tails” Prower, the two-tailed fox who accompanies Sonic 
+the Hedgehog, complements Sonic’s expression of determination and mischief. 
+Sidekicks appear in many action games: Jak and Daxter, Ratchet & Clank, and so on. 
+Link from the Zelda series has had various sidekicks. Banjo and Kazooie were, in 
+Banjo-Kazooie, really only one avatar; they could only work together (Kazooie rode 
+around inside Banjo’s backpack). Later in the series, they began to operate indepen-
+dently some of the time.
+Sidekicks offer several beneﬁ ts. They allow you to give the player additional moves 
+and other actions that would not be believable in a single character; they extend 
+the emotional range of the game by showing the player a character with a different 
+personality from the hero; and they can give the player information she wouldn’t 
+necessarily get any other way. Link’s fairy in The Legend of Zelda: Ocarina of Time,
+for example, doesn’t do very much, but she offers valuable advice at key points in 
+the game.
+Additional Visual Design Resources
+This is not a book about drawing or modeling, so it can’t address the actual tech-
+niques of creating character artwork. However, these crafts are an essential part of 
+the process of character design, especially if you prefer the art-driven approach. If 
+you would like to know more, consult Game Character Development with Maya, by 
+Antony Ward (Ward, 2004), and Digital Character Animation 3, by George Maestri 
+(Maestri, 2006).
+You don’t have to purchase expensive software to learn to draw and model charac-
+ters. There are many free tools available. Among the best are GIMP, the GNU Image 
+Manipulation Program, for editing bitmap pictures; Inkscape, for editing vector 
+graphics (line drawings); and Blender, a 3D modeling tool that approaches the 
+quality of some packages costing thousands of dollars. 
+Character Depth
+The visual appearance of a character makes the most immediate impact on the 
+player, and you can convey a lot of information about the character through his 
+appearance, but you can’t convey everything. Nor does his appearance necessarily 
+determine what role he will play in a story, how he will behave in different 
+
+
+--- PAGE BREAK ---
+
+CHARACTER DEVELOPMENT 
+143
+ CHAPTER 6
+situations, or how he will interact with the game’s core mechanics. To address 
+those issues, you have to give your attention to deeper questions about who the 
+character is and how he behaves.
+If you begin your character design with the character’s role, personality, and
+behavior rather than his appearance, you are doing story-driven character design. In 
+story-driven design, you decide these things ﬁ rst and only then let the artists begin 
+to develop a physical appearance for the character. Artists often like to work from a 
+detailed description; it helps them to understand and visualize the character.
+Even games that you would not expect to have fully developed characters can gain 
+much by including them. Consider the multiformat title SSX Tricky, shown in Figure 
+6.7. This is an extreme sports snowboarding game that pays attention to character 
+development. The player can make friends, foster rivalries, and enhance her charac-
+ter throughout the game. The addition of these storylike elements makes it more 
+than a simple sports game. The player chooses a character and begins to identify with 
+her. This creates a greater sense of immersion in the game, and best of all, it’s not 
+prescripted. The player chooses her own friends—or enemies—from the other char-
+acters at will, and her choices do affect the gameplay. You can be sure that the 
+people you antagonize will try their hardest to sabotage your run, and there will be 
+a few sharp words exchanged at the ﬁ nish line.
+Admittedly, it’s not complex interpersonal interaction, and it could be taken fur-
+ther, but it’s refreshing to see real character development attempted in the sort of 
+games for which it has never before been considered. Interaction between charac-
+ters is one of the most interesting aspects of stories—sometimes more so than the 
+actual plot. Although a plot details the path of a story (which is covered in the next 
+chapter), the characters’ interactions add the ﬂ avor and subtlety that differentiate a 
+well-crafted story from a ﬁ fth-grade English composition assignment.
+FIGURE 6.7
+SSX Tricky is a sports 
+game that includes 
+real character 
+development. 
+
+
+--- PAGE BREAK ---
+
+144 
+FUNDAMENTALS OF GAME DESIGN
+Role, Attitudes, and Values
+Every character in a story plays a role, just as every character in a movie plays a role 
+even if only as an extra. The moment a character appears for any reason, the audi-
+ence needs to know something about him. For minor characters, appearance and 
+voice may convey all the information the audience needs—we don’t need a detailed 
+biography of the coffee-shop waitress who only appears for 30 seconds.
+Major characters need richer personalities, however, and to design them you will 
+have to envision the character in your head and then answer a large number of 
+questions about them. In his 2001 article “Building Character: An Analysis of 
+Character Creation,” designer Steve Meretzky recommends that you create a char-
+acter background paper, or backgrounder, for each one. You don’t necessarily have
+to write it in narrative form; lists of qualities will do. The main thing is to get the 
+information down on paper so that it’s documented somewhere. Meretzky suggests 
+that you consider the following:
+Where was the character born?
+What was his or her family life like 
+as a kid?
+What was his education?
+Where does he live now?
+Describe his job.
+Describe his ﬁ nances.
+Describe his taste in clothes, books, mov-
+ies, etc.
+What are his favorite foods?
+What are his favorite activities?
+What are his hobbies?
+Describe any particular personality traits 
+and how they manifest.
+Is he shy or outgoing? 
+Greedy or giving?
+Does he have quirks?
+Does he have superstitions?
+Does he have phobias?
+What were the traumatic moments 
+in his life?
+What were his biggest triumphs?
+Describe his important past romances.
+Describe his current romantic 
+involvement or involvements.
+How does he treat friends? Lovers? 
+Bosses? Servants?
+Describe his political beliefs, past 
+and present.
+Describe his religious beliefs, past 
+and present.
+What are his interesting or important 
+possessions?
+Does he have any pets?
+Does he have unusual talents?
+What’s the best thing that could 
+happen to him?
+The worst thing?
+Does he drink tea or coffee?
+Obviously, this list is intended primarily for documenting ordinary humans, not 
+sentient robo-camels or creatures of the underworld; if you set your game in the 
+
+
+--- PAGE BREAK ---
+
+CHARACTER DEVELOPMENT 
+145
+ CHAPTER 6
+realm of fantasy, you’ll have to adjust the list of considerations as necessary. But in 
+all cases, your goal is to become the world expert on this character, to know every-
+thing worth knowing about him. Try to imagine how he will behave in a variety of 
+situations.
+Once you know the answers to these questions, you can begin to think about how 
+they will manifest themselves in your game’s story. If your character is slightly dis-
+honest, say—a small-time crook but not a villain—how will you make this clear to 
+the player? One of the cardinal rules of ﬁ ction writing is that you should show—
+rather than tell—things about the characters to the reader. This goes double for 
+video games, in which players expect to be interacting most of the time and show 
+little tolerance for expository material. How, then, will you show your characters’ 
+personalities? Consider these three factors: appearance, language, and behavior. The 
+earlier section “Visual Appearances” deals with the ﬁ rst of these; the later section 
+“Audio Desi gn” addresses language. Appearance and language quickly and directly 
+establish character but may produce stereotypes if you’re not careful. The third
+factor, behavior, is the most subtle way of conveying character to the audience. 
+Appearances can be deceiving, and deeds matter more than words. But establishing 
+character through behavior takes longer; you must give the player the opportunity 
+to observe a character’s actions. What will your character do, what events might he 
+get caught up in that will cause him to display his true nature?
+Attributes
+Chapter 5, “Creative and Expressive Play,” ﬁ rst introduced attributes, and this sec-
+tion discusses attributes of characters. Attributes are the data values that describe a 
+character in some way: her location, state of health, property, emotional condition, 
+relationships with others, and so on. Attributes are symbolic or numerical variables 
+that can change as the player plays the game. Functional attributes form part of the 
+game’s core mechanics, but deciding on appropriate values is also a part of charac-
+ter design.
+Attributes can be divided into those that change frequently and by large amounts, 
+and those that change infrequently and by only small amounts or not at all. The 
+former are called status attributes because they give the current status of the charac-
+ter, which can change often. The latter are called characterization attributes because 
+they deﬁ ne the bedrock details of a character’s personality, which—unless the 
+character is mentally ill—shouldn’t change much. These are not industry standard 
+terms (the industry has not yet settled on a standard), but you should ﬁ nd them 
+useful. In the Dungeons & Dragons universe, hit points (or health) is a status attri-
+bute; it changes moment by moment during a ﬁ ght. Constitution is a characterization
+attribute referring to the character’s overall degree of hardiness and resistance to 
+injury or poison; it changes rarely or not at all.
+In the past, most video games limited characters’ attributes to physical details such 
+as their health and inventory. In recent years, more games have made an effort to 
+
+
+--- PAGE BREAK ---
+
+146 
+FUNDAMENTALS OF GAME DESIGN
+model social relationships and emotional states. The standout example of the latter 
+is The Sims, a game simulating the behavior of people living in a suburban neigh-
+borhood. A set of characterization attributes for each character (called a sim)
+determines, in part, its afﬁ nity for other sims; those with conﬂ icting qualities 
+won’t get along well if forced to interact. The original version of the game called 
+those attributes neat, outgoing, active, playful, and nice. Status attributes named 
+hunger, comfort, hygiene, bladder, energy, fun, social, and room represented sims’ 
+personal needs, which could be met by directing them to perform appropriate 
+activities (such as visiting a neighbor or taking a shower) or by improving their sur-
+roundings. An overall happiness value went up or down depending on whether the 
+sim’s needs were being met. Few games had ever bothered to measure their charac-
+ters’ happiness before!
+The Sims’s model was simple but more sophisticated than anything that had yet 
+been tried. As games get more complex and their stories get richer, there will 
+undoubtedly be much more detailed models of human emotional states and 
+relationships.
+Deﬁ ning your characters’ attributes is part of character design, but the attributes that 
+a character needs depend entirely upon the genre and the nature of the gameplay. 
+The chapters in Part Two, “The Genres of Games,” discuss the character attributes 
+appropriate in each genre. 
+Character Dimensionality
+In everyday language, people often speak disparagingly of characters in books and 
+movies as two-dimensional. By this they mean that the character isn’t very inter-
+esting, doesn’t grow or change, doesn’t feel fully human, or adheres to a stereotype 
+without any nuances. This criticism usually applies to heroes and villains; it’s not 
+realistic to expect everyone who appears in a story to be a fully rounded character 
+with his own quirks and foibles.
+This book proposes a slightly more formal use of the idea of character dimensional-
+ity, which may help you deﬁ ne characters for computer games. Characters may be 
+classiﬁ ed into four groups: zero-, one-, two-, and three-dimensional. A character’s 
+degree of emotional sophistication and the ways in which his behavior changes in 
+response to emotional changes determine his degree of dimensionality. Here we’ll 
+examine each group in terms of the kinds of characters found in The Lord of the 
+Rings, simply because that story is so well known.
+■ Zero-dimensional characters exhibit only discrete emotional states. A zero-
+dimensional character may exhibit any number of such states, but there is no 
+continuum of states; that is, the character’s emotional state never moves smoothly 
+from one state into another or shows evidence of being in two states at the same 
+time; there is no such thing as “mixed feelings.” The nameless orcs in The Lord of 
+the Rings feel only two emotions: hate and fear. The orcs hate the heroes and attack 
+NOTE Books and 
+movies about small 
+groups of people 
+sometimes manage 
+to achieve a thorough 
+realization of virtually 
+the entire cast of char-
+acters; see Thornton 
+Wilder’s The Bridge of 
+San Luis Rey or Gabriel 
+García Márquez’s One 
+Hundred Years of Soli-
+tude for examples.
+
+
+--- PAGE BREAK ---
+
+CHARACTER DEVELOPMENT 
+147
+ CHAPTER 6
+whenever they feel they outnumber their enemies, and they fear the heroes and run
+away whenever they feel vulnerable or outnumbered. This minimal level of emotional
+variability is typical of the enemies in a simple shooter game (see Figure 6.8).
+The emotional simplicity of zero-dimensional characters can make them comic. 
+The characters in classic Warner Brothers cartoons—Bugs Bunny, Sylvester, and so 
+on—change almost instantaneously from one extreme emotion to another.
+■
+One-dimensional characters have only a single variable to characterize a 
+changing feeling or attitude; in other respects their character is largely ﬁ xed. In 
+The Lord of the Rings, the dwarf Gimli is hostile and suspicious toward elves at ﬁ rst, 
+but over time his respect for the elf Legolas grows until they are boon companions. 
+His other attitudes don’t change much. The movies make him a more one-dimen-
+sional character than the book does (see Figure 6.9).
+■ Two-dimensional characters are described by multiple variables that express their 
+impulses, but those impulses don’t conﬂ ict. Such variables are called orthogonal; that 
+is, they describe completely different domains, which permits no emotional ambigu-
+ity. In The Lord of the Rings, Denethor is a two-dimensional character. He has a variety 
+of strong emotions—pride, contempt, despair—but he never faces a moral dilemma. 
+His senses of duty and tradition trump all other considerations, even when they are 
+wildly inappropriate (see Figure 6.10).
+■ Three-dimensional characters have multiple emotional states that can produce 
+conﬂ icting impulses. This state of affairs distresses and confuses them, sometimes 
+causing them to behave in inconsistent ways. Most of the major characters in The 
+Lord of the Rings are three-dimensional, especially those who are tempted by the 
+Ring. Frodo and, above all, Gollum are three-dimensional; Gollum’s conﬂ icting 
+desires have driven him mad (see Figure 6.11).
+FIGURE 6.9
+One-dimensional 
+characters have a sin-
+gle variable that 
+describes an emotion 
+that changes over time.
+DISHONEST
+OFFENSIVE
+HONEST
+POLITE
+antipathy
+HATE
+sympathy
+neutrality
+LOVE
+HATE
+FEAR
+FIGURE 6.10
+Two-dimensional
+characters have multi-
+ple, non-conﬂ icting 
+impulses.
+FIGURE 6.8
+Zero-dimensional 
+characters have
+binary emotional 
+states with no mixed 
+feelings. They may 
+have more than two.
+
+
+--- PAGE BREAK ---
+
+148 
+FUNDAMENTALS OF GAME DESIGN
+If you plan to allow conﬂ icting emotional states to exist in a character, then you 
+must decide how this conﬂ ict manifests itself so that the player perceives it. At any 
+given time, one state will dominate, but if the character really is of two minds 
+about something, his behavior may become erratic as one emotion dominates and 
+then another. For example, a person doing something he really doesn’t want to do 
+may be visibly reluctant, change his mind in the middle, or even subconsciously 
+take some action that sabotages his own efforts. There isn’t space to discuss this 
+issue in depth here, but you will have to think long and hard about how to portray 
+your characters’ mixed feelings, and you should also discuss the problem with both 
+your programmers (who will have to implement the necessary algorithms) and 
+your artists (who will have to create animations showing, for example, reluctance 
+or uncertainty).
+Both the game industry and the playing public would beneﬁ t from more games 
+with three-dimensional characters. April Ryan in The Longest Journey and The 
+Nameless One in Planescape: Torment both face a number of moral dilemmas and 
+questions about what it means to be who they are. This kind of writing helps to 
+improve the public perception of our medium as an art form worthy of serious 
+consideration.
+Character Growth
+If a game aspires to be more than a simple adventure, if it seeks to have a meaning-
+ful story and not just a series of exciting episodes, then it must include character 
+growth of some kind.
+The way in which character growth takes place varies by genre. Action games typi-
+cally restrict growth to new moves and new powerups; the character’s mental state 
+does not change. Adventure games, which depend on strong characters and plots, 
+allow for a more literary type of change: personal and emotional growth, unrelated 
+to gameplay. Role-playing games focus on character growth as one of the game’s 
+top-level challenges. Role-playing games offer several dimensions for growth:
+FIGURE 6.11
+Three-dimensional 
+characters can have 
+conﬂ icting impulses 
+that produce inconsis-
+tent behavior. 
+antipathy
+psychopathy
+HATE
+sympathy
+neutrality
+LOVE
+
+
+--- PAGE BREAK ---
+
+CHARACTER DEVELOPMENT 
+149
+ CHAPTER 6
+personal, if the story is rich enough; skills, such as the ability to use magic or
+weapons; and strength, intelligence, or any number of such character attributes.
+To build character growth into your game, you’ll have to decide which characters 
+will grow (most often the hero, if there is one) and how they will grow. Physically? 
+Intellectually? Morally? Emotionally? Games use physical growth, in abilities and 
+powers, more than any other kind of growth because it is easy to implement and 
+show to the player.
+Then ask yourself how you will implement this growth within the game—through 
+changes in numeric or symbolic attributes, or through changes in the plot of the 
+story, or some other means? How will growth affect the gameplay, if at all? Finally, 
+how will it be represented to the player? Some of your options include displaying 
+numbers on the screen to show the growth (the crudest method), changing the 
+character’s appearance, changing the actions available to the player if the character 
+is an avatar, and showing that the character has matured by changing his language 
+and behavior (a more subtle method).
+Character Archetypes
+In his book The Hero with a Thousand Faces (Campbell, 1972), folklore scholar 
+Joseph Campbell identiﬁ ed a pattern that many stories follow, which he called the 
+Hero’s Journey. Stories that follow this pattern frequently include archetypal charac-
+ters—that is, characters of types that have been fundamental to storytelling since 
+the days of myth, that are found in the stories of virtually all cultures, and that 
+may even be fundamental to the human psyche. These characters assist or impede 
+the hero in various ways on his journey. In Banjo-Kazooie, for example, Bottles the 
+mole teaches the protagonists (and thereby the player) a number of things they 
+need to know to fulﬁ ll their quest, so he ﬁ ts neatly into the archetype of the mentor
+character. 
+There isn’t room to discuss each of Campbell’s character archetypes here, but 
+Christopher Vogler’s book The Writer’s Journey (Vogler, 1998) gives a condensed 
+treatment of Joseph Campbell’s work for screenwriters and discusses archetypes in 
+depth. For how to make best use of characters who represent these archetypes in 
+your own games, refer to The Writer’s Journey.
+You should not implement character archetypes slavishly, nor must a game have all 
+or even any of them. Video games do not necessarily have to be heroic journeys, 
+and good characters don’t have to ﬁ t into neat little boxes.
+Audio Design
+Audio design, both sound effects and language, is also a part of character design. 
+You will need to work with your team’s audio director—and sometimes defer to her 
+experience—to ﬁ nd the right effects and voice for your character.
+NOTE The psychol-
+ogist Carl Jung 
+originated the concept 
+of character archetypes, 
+and although his work 
+is increasingly out of 
+fashion in psychological 
+circles, students of the 
+humanities and litera-
+ture still ﬁ nd it useful.
+
+
+--- PAGE BREAK ---
+
+150 
+FUNDAMENTALS OF GAME DESIGN
+Sound Effects and Music
+The sounds a character makes tell us something about her personality, even if she 
+doesn’t speak. Sounds—anything from a gunshot, to a shouted “Hi-yah!” accompa-
+nying a karate chop, to a verbal “Aye, aye, sir”—conﬁ rm acceptance of the player’s 
+command. Sounds also signal injury, damage, or death. The sound of a punch that 
+we’re all familiar with from the movies is in fact quite unrealistic, but we’re used to 
+it and we know what that THWAP! means when we hear it. Likewise, drowning 
+people don’t really go “glug glug glug,” but that’s what we expect. Much of sound 
+design involves meeting psychological expectations. Deep sounds suggest slow and 
+strong characters; high sounds suggest light and fast ones. The tone of the sound a 
+thing makes should conﬁ rm and harmonize with its visual texture: metallic objects 
+make metallic sounds. As usual, however, incongruity can be funny, so you can mis-
+match sounds and visuals on purpose for comedic effect. As you deﬁ ne your character’s 
+movements and behaviors, think about what sounds should be associated with her.
+As the audio gear in computers and home consoles has improved, game developers 
+have begun to create musical themes associated with speciﬁ c characters, just as the 
+movies have for decades. John Williams is a master at creating themes for ﬁ lm char-
+acters and situations. Everyone remembers the themes from Star Wars: the Imperial 
+March that accompanies Darth Vader, with its harsh, discordant trumpets; Princess 
+Leia’s love theme; the main title theme that represents the Rebel Alliance generally. 
+Even Jabba the Hutt has a theme. This book can’t teach you music composition, but 
+you should be aware of certain common techniques. Evil or bizarre characters often 
+get themes in a minor key; good or heroic ones get themes in a major key. Instruments 
+playing in unison, especially to a monotonous rhythm, suggest enforced conformity, 
+another characteristic of the Imperial March. These are, of course, traditional Western 
+notions; music for an Indian audience would be different. However, Western domi-
+nance of the video game industry has meant that even games made in Japan follow 
+similar rules. The music from the Final Fantasy series has become particularly popular. 
+If you’re involved in designing the game sounds and their technical implementa-
+tion, be sure that you keep music, sound effects, and dialog or spoken narration in 
+separate sound ﬁ les that the game mixes together during playback. This is impor-
+tant for two reasons. First, if the game is ever localized into another language, it 
+will be necessary to replace the spoken audio. If the dialog is already mixed into 
+the music, the sound ﬁ les in the new language will have to be remixed with the 
+music before they can be added to the game. It’s much easier just to drop in a new 
+ﬁ le of spoken audio and let the game mix it.
+Second, the music and sound effects should have separate volume controls in the 
+game for the beneﬁ t of the hearing-impaired. Players with a condition called tinni-
+tus ﬁ nd that music prevents them from hearing the sound effects properly, and 
+that makes it more difﬁ cult to play the game. Keep the two separate so the players 
+can turn the music off if they need to. For more on music and sound effects in 
+video games, read Game Sound: An Introduction to the History, Theory, and Practice
+of Video Game Music and Sound Design, by Karen Collins (Collins, 2008).
+
+
+--- PAGE BREAK ---
+
+CHARACTER DEVELOPMENT 
+151
+ CHAPTER 6
+Voice and Language
+The way a character speaks conveys an enormous amount of information. This 
+breaks down into various elements:
+■ Vocabulary indicates the age, social class, and level of education of the character. 
+People who don’t read much seldom employ big vocabularies. Teenagers always use 
+a slang vocabulary of their own in order to exclude adults. Beware, however: If you 
+use too much current slang, your game will sound dated six months after publica-
+tion. Conversely, period slang can help set a game in a different time—calling a gun 
+a roscoe promptly suggests the hardboiled detective ﬁ ction of the 1930s and 1940s. 
+In all cases, a light touch is best unless you’re deliberately trying to be funny.
+■ Grammar and sentence construction also convey information about education 
+and class; bad grammar reveals bad schooling. Although it’s not really valid, we 
+associate articulateness and long, complex sentences with intelligence.
+■ Accent initially tells us something about a person’s place of origin and social 
+class. City people and country people speak differently the world over. Accent is 
+also, unfortunately, thought of as an indicator of intelligence. (This can backﬁ re; 
+smart lawyers from the American South occasionally play up their southern accents 
+to fool their northern opponents into thinking they’re not as bright as they really 
+are.) Avoid the “dumb redneck” stereotype; it is as offensive in its way as the “dumb 
+Negro” stereotypes of 1930s radio plays were.
+■ Delivery refers to the speed and tone of the person’s speech. Slow speech is—
+again, mistakenly—often associated with a lack of intelligence, unless the speaker 
+is an Eastern mystic, in which case slow speech can be mistaken for wisdom. Try to 
+steer clear of stereotypes. Speed and tone can still work for you, indicating your 
+characters’ excitement, boredom, anxiety, or suspicion. The speaker’s tone conveys 
+an attitude or emotional state: friendly, hostile, cynical, guarded, and so on.
+■ Vocal quirks include things like a stutter (Porky Pig), lisp (Sylvester the cat), and 
+catchphrases that identify a character (“Eh… what’s up, doc?” from Bugs Bunny).
+Consider how The Simpsons deﬁ nes its characters’ education, intelligence, and inter-
+ests through language. Homer’s limited vocabulary and simple sentences show that 
+he’s not well educated; the kinds of things he says indicate that his interests are 
+chieﬂ y food and beer. Marge’s middle-sized vocabulary goes with her middle-class 
+outlook on life; from her statements we see that she’s concerned with work, friends, 
+and her children. Lisa is the scholar of the family, interested in reading, writing, 
+and music; she has an unusually rich vocabulary for her age and speaks in long, 
+complex sentences. Bart’s use of language varies considerably based on his situation, 
+from moronically crude when he’s playing a practical joke to quite sophisticated 
+when he’s making an ironic observation. Bart is a carefree hedonist but self-aware 
+enough to know it and even comment on it. He’s a postmodern sort of character.
+StarCraft, which draws on a variety of American accents to create several different 
+types of characters, exhibits some of the most interesting uses of language in games 
+
+
+--- PAGE BREAK ---
+

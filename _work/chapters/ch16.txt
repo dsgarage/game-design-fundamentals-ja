@@ -1,0 +1,942 @@
+ROLE-PLAYING GAMES 
+481
+ CHAPTER 15
+Design Practice QUESTIONS
+1. Which type of game are you going to create? Is it going to be heavy on story (as 
+in the Final Fantasy games), or will character advancement and combat be the main 
+thrust (as in NetHack)?
+2. If it is story-based, how will you structure the quests? One big overarching quest 
+with side quests or a more free-form approach? This will have an impact on the dif-
+ﬁ culty of production and the feel of the game.
+3. What is the setting for your game? Are you going for the standard science ﬁ ction/
+fantasy fare, or are you using something else? Are you using a licensed work? Are you 
+convinced that your setting is different yet recognizable enough to be compelling?
+4. How will your world function? What are the underlying rules for the way the 
+world works? Are they self-consistent and logical? Are they based on a preexisting 
+system (as in Baldur’s Gate)?
+5. Is the player going to be given a group of avatars, or will he be responsible for a 
+single character? Will his character be conﬁ gurable (as in Arcanum), or will he be 
+forced to take a predeﬁ ned role (as in Anachronox)?
+6. What will be the primary focus of your game? Will it be uncovering the story, 
+improving the player’s character, or combat and exploration? The majority of 
+games attempt to cover all these bases equally, but some exceptional ones have 
+focused more on one aspect, such as Anachronox and Diablo II. This affects the pace 
+of your game.
+7. What camera model will you use in your game? Will you use isometric 3D (as in 
+the older BioWare games) or will you use a fully 3D engine (as in Fallout 3)? Will 
+you use something else entirely?
+8. Is your game going to include a magic system? How is this magic system going 
+to be constructed? Will it be based on preexisting concepts, familiar regimes (such 
+as law/chaos/good/evil) or something completely new? Will it be internally self-
+consistent or not? How will it be balanced with nonmagic forces within the game?
+9. How will you handle inventory management within the game?
+10. And ﬁ nally, will your player’s character end up saving the world? Are you sure 
+you want to do that? Can you think of anything slightly more original (as in 
+Vampire: The Masquerade—Bloodlines, for example)?
+
+
+--- PAGE BREAK ---
+
+CHAPTER 16
+482
+Sports Games
+Sports games create a special challenge for the game designer. So many people play 
+or watch sports that they come to a video game with high expectations about what 
+the game will be like, and a designer must learn to meet those expectations. Sports 
+games are one of the most popular genres in all of video gaming, and a well-tuned 
+game can turn into a highly enjoyable, and proﬁ table, product line.
+This chapter discusses how the principles of game design apply to sports games. 
+We’ll begin by formally deﬁ ning sports games and then address in detail the fea-
+tures that characterize them. We’ll also talk about the legal issues you’ll encounter 
+if you make a game with a team or league license. Most of the chapter is dedicated 
+to the structure of sports games: the types of gameplay, the problems of mapping 
+actions to user input devices, and the design of athlete AIs for a rewarding experi-
+ence. For a designer, sports games offer the unique challenge of simulating well-
+known game mechanics while at the same time modifying those mechanics to 
+work with the video game hardware their players are using.
+What Are Sports Games?
+Two things only the people anxiously desire: bread and the circus games.
+—JUVENAL
+Unlike most other games, which take place in a world the player knows little about, 
+sports games simulate a world the player knows a lot about: sporting events as they 
+are in real life. No one has ever really led an army of elves into combat, and only a 
+small number of people know how it feels to ﬂ y an F-16 ﬁ ghter jet, but a great many 
+people know what professional football looks like and how the game is played. 
+Sports games encourage direct comparison with the real world.
+Not all sports games are ultrarealistic, of course. Some, such as Electronic Arts’ old 
+Sega Genesis game Mutant League Football, are fantasy games even though they are 
+based on real sports. Others, such as Midway’s Blitz football series, simplify a sport 
+and deliberately make it more extreme for dramatic purposes. Most of these kinds 
+of games are designed to appeal to kids, who might not know much about the real 
+sport. But for dedicated fans, the game must be a reasonably accurate depiction of 
+the real thing, and fans will see any deviation as a ﬂ aw.
+SPORTS GAME A sports game simulates some aspect of a real or imaginary athletic sport, 
+whether it is playing in matches, managing a team or career, or both. Match play uses 
+physical and strategic challenges; the management challenges are chieﬂ y economic.
+
+
+--- PAGE BREAK ---
+
+SPORTS GAMES 
+483
+ CHAPTER 16
+This chapter discusses athletic sports, as opposed to sports such as motor racing. 
+Although racing games are often sold in the sports category, from a design stand-
+point, they really belong in Chapter 17, “Vehicle Simulations.”
+Game Features
+Most sports games concentrate on simulating actual matches, but many also 
+include a number of management functions as well—the challenges of managing
+a team or an athlete’s career. A few sports games implement only this aspect of
+the sport and don’t allow the player to control individual athletes in matches. 
+Occasionally called manager games, these are particularly popular in Europe.
+A NOTE ON SPORT GAMES TERMINOLOGY
+Because sports games simulate other games, as opposed to a war, a race, or an eco-
+nomic competition of some kind, the words player and game are ambiguous. Does player
+refer to the person playing the video game or to one of the athletes playing the game on 
+the ﬁ eld? This chapter uses the following convention: Player refers to the person playing 
+the video game, as it does throughout the rest of the book. The people in the game are 
+the athletes. Game refers to the video game. Match describes the contest being simulated 
+by the game. The type of match that the athletes are playing (basketball or soccer, for 
+example) is called the sport.
+A great many sports involve a playing area with a goal at either end and athletes trying 
+to manipulate some object into the goal. Basketball, ice hockey, water polo, and soccer 
+are all examples. These are referred to collectively as soccerlike games.
+Game Structure
+The main gameplay mode in a sports game is match play, simulating the sport itself 
+as it is played. Players can usually pause the game, which normally brings up a 
+menu permitting them to substitute athletes, change the camera view, perform 
+other sorts of coaching tasks, and sometimes adjust the AI. Players can also save
+the game for later or abandon it.
+Outside of match play, most of the game’s modes relate to other aspects of the 
+sport: studying the athletes’ ratings and performance statistics, hiring and trading 
+them, deciding who the starting athletes will be, and following the sport’s match 
+or tournament schedule on a calendar. The screen layouts tend to reﬂ ect the book-
+keeping nature of these activities, often resembling tables or graphs.
+
+
+--- PAGE BREAK ---
+
+484 
+FUNDAMENTALS OF GAME DESIGN
+Player Roles
+The player’s role is most commonly that of an athlete, but in a team sport, that 
+doesn’t mean just one particular athlete. The player’s focus of control usually fol-
+lows the action rather than being tied to a single individual. Thus, the player’s role 
+shifts rapidly, especially if some athletes play specialized positions such as catcher 
+or goalie.
+The player may sometimes elect to play as the coach, again a role found chieﬂ y in 
+team sports. The coach selects the starting athletes for the team, sets offensive and 
+defensive strategies, and makes athlete substitutions during the match. See Figure 
+16.1 for an example. The player usually switches to the coach role during timeouts 
+or other pauses in the action.
+Finally, there’s the role of general manager of the team. The general manager hires 
+and ﬁ res athletes, trying to recruit the best athletes within the limitations of the 
+budget. In a game that allows it, the manager also tries to build up the team over a 
+period of years, improving its standing in the league.
+FIGURE 16.1 
+Madden NFL 09’s 
+training camp screen, 
+a coaching function 
+
+
+--- PAGE BREAK ---
+
+SPORTS GAMES 
+485
+ CHAPTER 16
+Gameplay and Rules
+The challenges and actions of a sports game are those of the actual sport but with 
+the actions of the athletes’ bodies mapped onto the control devices of the game 
+machine. Whatever the athletes try to achieve in the match, the player tries to 
+achieve. In the coaching role, the challenges are to choose the most appropriate 
+strategy for the moment from among those offered by the game and to manage the 
+athletes so that they don’t become overtired or injured (assuming the game imple-
+ments those concepts).
+The rules of a sports game are, for the most part, the rules of the sport in the real 
+world. You might ﬁ nd that you need to relax these rules in some areas, particularly 
+with respect to faults, fouls, or judgment errors that the player might make. Because 
+the player is using a handheld device to manipulate an athlete on-screen instead of 
+playing on the ﬁ eld himself, it’s much more difﬁ cult to judge when his avatar is 
+about to bump into someone, cross into a forbidden zone, and so on. A few games 
+allow the player to set the level of computerized refereeing to forgiving or strict, 
+depending on which way he likes to play.
+You also have to decide if you want to simulate athlete mistakes that are outside the 
+player’s control. For example, in American football, penalties are called for holding,
+grabbing hold of another athlete instead of merely pushing him. This is an aspect 
+of the sport that a computerized version might have difﬁ culty simulating and could 
+avoid entirely: The game could simply make it impossible for one athlete to hold 
+another. However a match in which no holding penalties ever occurred would feel 
+unrealistic. On the other hand, a match in which the player is randomly penalized 
+for holding when he hasn’t actually done anything wrong might be frustrating for 
+some players. Allowing the player to adjust the refereeing mechanism can solve 
+this problem. Under realistic refereeing, the game would generate penalties at ran-
+dom at about the same rate at which they occur in real matches. Under relaxed 
+refereeing, the game would not generate any penalties except for those actually 
+under the player’s control.
+Competition Modes
+Sports games, unlike most other games, allow all possible modes of competition. 
+Depending on the sport and on how many input devices your platform supports, 
+you can offer single-player, competitive, cooperative, team, and league modes;
+people love to play sports games competitively. Sports games sell far more copies for 
+console machines than they do for PCs primarily because console machines allow 
+many people to play at once in the same room. In addition, console versions can 
+use a TV instead of a monitor on a desk, so all the players have a better view of the 
+action. Because many real sports are played by teams of people, these sports natu-
+rally offer opportunities for multiplayer action.
+
+
+--- PAGE BREAK ---
+
+486 
+FUNDAMENTALS OF GAME DESIGN
+One other competition mode you should consider including is one with no players 
+at all: the computer versus itself. Few other games besides chess games ever imple-
+ment this mode; after all, people play computer games to interact, not to watch. 
+However, with sports games, people do occasionally like to let the game play itself 
+and watch the results, just as if they were watching a real match on TV. This also 
+allows the computer to play simulated matches that the player doesn’t want to play; 
+see the later section “Simulating Matches Automatically.”
+Victory and Loss Conditions
+The victory and loss conditions for a match are the same as in the real sport. 
+However, many games that simulate team or league sports offer players a variety of 
+ways of playing the game, usually referred to simply as modes. (Note that these are 
+not the same as competition modes or gameplay modes.)
+■ Season mode. The player selects a single team (or athlete, for individual sports 
+such as skiing) from all those available and plays a series of matches throughout a 
+season, trying to make it into the championships. The schedule of play for the sea-
+son and the rules for moving into and up the championship bracket are adopted 
+from the real sport. Some season modes allow a player to play not just one team’s 
+matches but every single match played throughout an entire season.
+■ Exhibition mode. In this mode, the players play one single match, but it has no 
+long-term consequences, just like exhibition matches (also called friendlies in the 
+UK) played by real teams. Whoever wins the match wins the game.
+■ Sudden death. As a variant of exhibition mode, players play a match only until 
+the ﬁ rst score is made. Whoever makes the ﬁ rst score wins the game. This is handy 
+for very quick games, although it means that luck plays a much greater role in 
+determining the outcome.
+■ Round robin. Players in a group each take a team and play each other’s team a 
+ﬁ xed number of times, sometimes just once. Whoever has won the most matches at 
+the end is the winner.
+■ Tournament mode. In a single-elimination tournament, any player who loses 
+any match is dropped, and the winner goes on to play the winner of another 
+match. This requires that the number of players be a power of two. You may orga-
+nize tournaments in other ways as well.
+■ Franchise mode, also called dynasty mode. The player controls a team over the 
+course of several seasons, trying to build its strength through the years. This mode 
+often appears in games that include mechanisms for hiring athletes and trading 
+them among teams. For games such as tennis, in which most athletes play alone, 
+the equivalent mode is called career mode—that is, the player controls the athlete 
+over the course of several years of his or her career.
+
+
+--- PAGE BREAK ---
+
+SPORTS GAMES 
+487
+ CHAPTER 16
+Opportunities for Creative Play
+As sports games are essentially simulations, they offer fewer opportunities for
+creative play than other genres. However, several do exist:
+■ Athlete and team creation. You may give the players the opportunity to create 
+teams of their own, either by choosing athletes from the existing database or by 
+entering new athletes with all their attributes (see Figure 16.2). This will allow 
+players to create dream teams or famous teams from the past. If you want to pre-
+vent them from creating unbeatable teams, you can require that the sum of all the 
+attributes of all the athletes on the team must not go over a certain limit. (Strange 
+though it sounds, once players know they can create unbeatable teams or unbeat-
+able play strategies, they lose some respect for the game.)
+■ Strategy design. Players greatly enjoy setting up their own strategies, adjusting 
+how the athletes will behave and what roles they will play in a team sport. You will 
+have to work closely with the programmers, who implement the game’s strategy 
+and AI to determine what parameters the player can change. One risk of allowing 
+the players to design their own strategy is that they may hit upon some combina-
+tion that the game AI is completely unable to beat, regardless of the circumstances. 
+FIGURE 16.2 
+The athlete-creation 
+screen in Pro Evolution 
+Soccer 2008
+
+
+--- PAGE BREAK ---
+
+488 
+FUNDAMENTALS OF GAME DESIGN
+Allowing the players to design their own strategies will require the development 
+team to do a lot more testing in order to prevent this.
+■ Playing ﬁ eld design. Most sports rigidly deﬁ ne the shape of the ﬁ eld. However, 
+in a few cases (baseball, cricket), the boundaries of the ﬁ eld may be variable. You 
+can allow the player to edit the shape of the playing ﬁ eld or import new playing 
+ﬁ elds made in other tools.
+Miscellaneous Issues
+If you want to, you can invent a completely new sport for your game, but this 
+approach is not always a commercial success. Sports games also include two fea-
+tures not usually found in other games: weather and instant replay (the ability to 
+watch an action again in slow motion). This section addresses these issues, which 
+don’t generally apply to other genres.
+INVENTED SPORTS
+From time to time, someone tries to create a sports video game of a completely 
+invented sport as opposed to a simulation of an existing one. Experience shows 
+that this is a risky enterprise. Hardcore sports gamers seldom take an interest in 
+completely new sports; they’d rather play a game that simulates a sport they’re 
+already familiar with. Other types of gamers aren’t particularly interested in sports 
+games anyway, so they aren’t very likely to want to play a one-off sports game 
+unless it appeals to them for some other reason. If you’re thinking of inventing a 
+new sport, you should design it primarily as a video game rather than designing it 
+as an athletic sport for humans to play and then converting it to a video game.
+This is how Empire Interactive designed Speedball; although theoretically a sport, 
+Speedball includes powerups and other arcade-game elements to make it more inter-
+esting to people who don’t normally like sports games.
+One of the trickiest aspects of sports game design is mapping real-world activities 
+to a limited input device. Players are willing to tolerate some awkwardness in the 
+user interface when it’s a real sport because they understand the problems, but with 
+an invented sport, they’re unlikely to be so generous. When designing a completely 
+new sport, you might consider working backward from the controller to the sport 
+itself, designing around the limitations of your hardware.
+WEATHER
+Many sports have special rules regarding weather conditions: Rain stops play in 
+baseball but not in football, and so on. The weather can deﬁ nitely affect the play. 
+Rain and snow make traction difﬁ cult, reducing the athletes’ ability to accelerate 
+and lowering the top speed that they can reach. Equipment becomes slippery and 
+more difﬁ cult to control when it’s wet. Hot, humid days cause athletes to tire out 
+
+
+--- PAGE BREAK ---
+
+SPORTS GAMES 
+489
+ CHAPTER 16
+more easily. Think about how the weather affects the athletes, playing ﬁ eld, and 
+equipment, and adjust your core mechanics appropriately.
+INSTANT REPLAY
+Instant replay is now an essential part of watching sports on television, so naturally 
+video game players want it as well. To implement instant replay, your game will 
+need to keep track of the exact position and animation step of every athlete and all 
+the equipment on the ﬁ eld or be able to reliably recreate them.  The amount of data 
+storage available will limit how much information you can keep around in case the 
+player wants to see it again. When possible, select  natural boundaries in the game-
+play as the point to begin recording: in baseball, when the ball is pitched; in 
+American football, when the ball is snapped. In continuously ﬂ owing games such 
+as basketball, you might need to establish an artiﬁ cial time limit.
+A good many games now show an instant replay automatically after important 
+events, to better re-create the experience of watching the sport on television. Some 
+players ﬁ nd this annoying, however, because it breaks up the ﬂ ow of the game. All 
+sports games should include instant replay, but players should be able to interrupt 
+the instant replay and to switch the automatic replay off if they want to. Wii Sports 
+provides an automatic instant replay that the player can interrupt by pressing the 
+A button.
+The best instant-replay mechanisms allow all the following features for maximum 
+ﬂ exibility:
+■ Play, stop, fast-forward, rewind, and single-frame advance and reverse operations 
+to allow the player to see exactly what happened at every instant.
+■ The ability to move the camera in all three dimensions to a different position 
+above the ﬁ eld or court, and to pitch the camera up and down and pan left and 
+right. (This assumes you are using a 3D graphics engine. With a 2D engine you 
+should at least allow the player to move the camera around unless the ﬁ eld or court 
+ﬁ lls the screen.)
+■ The ability to lock the camera to a given athlete or to the ball in order to follow 
+that athlete or ball wherever it goes. This is usually done by showing a symbol on 
+the ground that represents the camera’s focus of attention. If the symbol is directly 
+under an athlete’s feet when the player stops moving the camera, the camera locks 
+onto that athlete.
+Instant replay lets the players see the action from perspectives that they can’t use 
+when actually playing the game. For the game’s publisher and developer, this kind 
+of instant replay is an invaluable tool for grabbing dramatic screen shots or game-
+play footage for sales and demonstrations. You should consider it an essential 
+feature of any sports game that you design.
+
+
+--- PAGE BREAK ---
+
+490 
+FUNDAMENTALS OF GAME DESIGN
+THE MADDEN NFL SERIES
+Madden NFL is one of the longest-established and best-selling game franchises in the history of the industry. 
+From its earliest beginnings on the Apple II, it has grown into a ﬁ nancial powerhouse that produces a new edition 
+on several different platforms every year and makes millions of dollars for its publisher, Electronic Arts. Versions 
+of Madden have appeared for personal computers and every major console machine ever produced.
+Madden is not redesigned every year, nor is its code rewritten. Electronic Arts updates its artwork and video 
+sequences and adds new features each year, but it undertakes a complete overhaul only every four or ﬁ ve years—
+often when a new generation of game console appears. The majority of the design work each year consists of 
+tuning and improving the gameplay and adding more features. These features expand the football experience
+to include aspects of the sport that go beyond playing a single match against another team, including:
+•  Ability to hire and trade athletes among teams, subject to the limitations of the salary cap established by 
+the NFL.
+• Participation in the NFL draft.
+• Detailed performance statistics on athletes.
+• Season, tournament, and practice modes.
+•  Franchise mode, letting players take a team through several seasons in an effort to build a dynasty.
+• A play editor, allowing players to customize their playbooks.
+•  Training camp mode, in which the players can practice and get to know the capabilities of the athletes on their 
+team. Recent editions of Madden use this feature to collect data about the player’s skills, and automatically 
+adjust the difﬁ culty of the game to compensate.
+•  Adjustable AI, enabling players to set the coaching stances of computer-controlled teams to aggressive,
+neutral, or conservative.
+• Arcade mode, a simpliﬁ ed and exaggerated form of the game.
+As you can see, even though the sport itself changes little from year to year, you can always add new features
+and details to a sports game.
+By far the largest single design task in developing Madden every year is research: rating the skills of the real ath-
+letes who appear in the game, keeping track of which team they’re playing for, ﬁ nding photographs of them, and 
+so on. In addition to researching the athletes, the game developers must research the coaches—trying to ﬁ nd out 
+what kinds of plays they like to run, whether they’re aggressive or conservative, and so on. The game developers 
+must also update each team’s playbooks every year to reﬂ ect changes in coaching practice, and test the new plays 
+to make sure that they’re effective but not unstoppable.
+In short, Madden is a highly successful sports game that offers its players a wide range of playing styles, from the 
+quick and easy arcade game to the detailed minutiae of designing plays and adjusting rosters. As a game that 
+tries to do it all, it’s well worth studying.
+
+
+--- PAGE BREAK ---
+
+SPORTS GAMES 
+491
+ CHAPTER 16
+Core Mechanics
+Football is brutal only from a distance. In the middle of it there’s a calm, a tranquility… 
+When the systems interlock, there’s a satisfaction to the game that can’t be duplicated. 
+There’s a harmony.
+—DON DELILLO, END ZONE
+Sports games present a number of design issues that designers of other kinds of 
+games rarely encounter. This section covers issues raised by the physics, AI, athlete 
+skill ratings, and other aspects peculiar to sports games.
+Physics for Sports Games
+During play, your game will be running a physics engine that determines the 
+behavior of moving bodies in the match. The physical behavior of an inanimate 
+object such as a baseball is comparatively easy to implement. The physical behavior 
+of humans, however, is much more complicated. Early sports games tended to treat 
+a running athlete rather like a rocket: She had a velocity vector that gave the speed 
+and direction of her movement and an acceleration vector that gave the force and 
+direction with which she pushed. Modern sports games have much richer simula-
+tions with a great many variables, taking into account such things as the friction 
+coefﬁ cient of the playing surface—for example, rain and snow make ﬁ elds slippery 
+and reduce traction.
+Designing the physics simulation for a sports game is a highly technical problem 
+and is beyond the scope of this book. However, beware: Because a sports game is a 
+simulation of the real world, it is a common error to think that the physics in a 
+sports game should be as realistic as possible. It shouldn’t be, for two reasons:
+■ First, the player is not actually running around on the playing ﬁ eld herself; she 
+is watching a screen and controlling an athlete through a handheld controller. She 
+has neither the immediate experience of being on the ﬁ eld nor the precise control 
+over her movements that a real athlete does.
+■ Second, the player is not a professional athlete. There is a good reason why only 
+a small number of people can hit a baseball pitched at 95 miles per hour. The 
+length of time that the ball is within reach of the bat is about 0.04 seconds. It’s 
+simply not realistic to expect that an ordinary person looking at a video screen 
+without the beneﬁ t of depth perception could react quickly enough to “hit” a ball 
+thrown at this speed.
+For both of these reasons, you need to adjust the physics to make the game play-
+able. In a baseball game, slow the pitch to give the batter a reasonable chance of 
+hitting the ball, and artiﬁ cially adjust the position of the bat so that it intersects 
+the path of the ball. Whether the physics perfectly copies that of the real world 
+doesn’t matter as much as whether the game seems to be producing a reasonable 
+
+
+--- PAGE BREAK ---
+
+492 
+FUNDAMENTALS OF GAME DESIGN
+simulation of the sport as it is played by professionals. Even in a highly realistic 
+game, your objective is to provide an enjoyable experience, not a mathematical 
+simulation of nature.
+Rating the Athletes
+One of the biggest tasks you take on in designing a sports game is developing a rat-
+ing system for the skills and athletic abilities of all the athletes in the game. The 
+rating system provides the raw data that the physics engine needs to accurately 
+simulate the behavior of the athletes. As your programming team develops the 
+physics engine and game AI, you should work with them to determine what ratings 
+are needed. Researching the athletes’ performances and setting the ratings for them 
+can take many months, and the lead designer will probably want to delegate it to 
+junior designers or assistant producers.
+In most team games, all athletes share one set of ratings, plus specialized ratings 
+that apply only to athletes playing a particular position.
+COMMON RATINGS
+The kinds of ratings that might be common to all the athletes in a game include:
+■ Speed. The athlete’s maximum moving (running or skating or swimming) speed 
+under ideal conditions.
+■ Agility. A measure of the athlete’s ability to change directions while moving.
+■ Weight. The athlete’s weight, which affects the force he transmits in a collision 
+and the inertia he has when struck by someone else.
+■ Acceleration. The rate at which the athlete can reach top speed.
+■ Jumping. The height to which the athlete can jump.
+■ Endurance. The rate at which the athlete gets tired during the course of
+the game.
+■ Injury resistance. The probability that an athlete will, or will not, be injured 
+during play.
+SPECIALIZED RATINGS
+Some ratings apply to a speciﬁ c position—this example uses the quarterback in 
+American football:
+■ Passing strength. The distance that the quarterback can throw the ball.
+■ Passing accuracy. The precision with which the quarterback can throw the ball.
+
+
+--- PAGE BREAK ---
+
+SPORTS GAMES 
+493
+ CHAPTER 16
+■ Dexterity. The quarterback’s general dexterity in handling the ball. This affects 
+his chances of dropping the snap or fumbling a handoff.
+■ Awareness. The quarterback’s ability to sense that he’s about to be tackled and 
+to try to get out of the way.
+Athlete AI Design
+In action games and ﬁ rst-person shooters, the player’s AI-driven opponents typi-
+cally exhibit a small number of behaviors each triggered by a speciﬁ c event 
+(appearance of the player on the scene, being shot at, and so on). When together in 
+a group, the AI seldom assigns special roles to particular individuals or instructs 
+them to help each other. It’s every monster for itself.
+These kinds of actions aren’t acceptable in a sports game. People don’t mind if a 
+monster in a ﬁ rst-person shooter wanders aimlessly around, but the athletes in a 
+sports game must behave like humans, and that means deliberate, intelligent 
+action. Particularly in team games, each athlete works with the others on the team 
+to accomplish particular goals. The position the athlete plays dictates behavior to 
+some extent, but within those boundaries, the athlete still must respond intelli-
+gently to a number of possible events. In a relatively simple simulation such as 
+tennis, there might not be many of these events, but a highly complex simulation 
+such as American football, with 22 players on the ﬁ eld at a time, presents hundreds 
+of them.
+DEFINING THE STATE SPACE
+The play in a sports match can be broken down into states that are deﬁ ned primar-
+ily by the rules and secondarily by the tactics and strategy of the game. For 
+example, the period of time before a tennis player serves the ball is one state, and 
+the rules dictate where she may stand and what actions she may take (and likewise 
+for her opponent). The moment she serves the ball, the game enters a new state. 
+The moment the ball passes over the net, it enters another one, and so on. The best 
+way to design a sports-game AI is to map out a game’s states as a giant ﬂ owchart. 
+There could be far more states than you realize at ﬁ rst. Corner kick in soccer is not 
+just one state but several: the period before the ball is kicked, after the kick but 
+before the ball touches another athlete, after it has been touched by another ath-
+lete, and so on. See Figure 16.3 (next page) for a partial example.
+Consult the ofﬁ cial rules of the sport as you construct the ﬂ owchart; they often 
+describe states in detail, with special rules applying to each. However, the rules 
+alone are not enough—rules describe game states for the purposes of listing legal 
+and illegal actions, but not for purposes of tactics or strategy. Whenever something 
+changes that requires the athletes to adopt a different tactic, the game has moved 
+into a different state.
+
+
+--- PAGE BREAK ---
+
+494 
+FUNDAMENTALS OF GAME DESIGN
+SETTING COLLECTIVE AND INDIVIDUAL GOALS
+After you deﬁ ne the game states, you can start thinking about what the team 
+should do in each state—where each athlete should be trying to go and what he 
+should be trying to do to support the team’s collective goal at that moment. In 
+some cases, these activities are deﬁ ned with reference to a speciﬁ c individual on 
+the opposing team, for example, trying to prevent an opposing player from doing 
+his job. The software must have a way of matching up athletes with their oppo-
+nents, just as the real athletes do.
+After you deﬁ ne what the team should be trying to accomplish in a particular state 
+and have assigned each athlete a role, you then must deﬁ ne exactly how the athlete 
+is to perform that role: what direction he moves, what other movements he makes, 
+which animations should be displayed, and so on.
+An athlete with nothing to do shouldn’t just stand still. Most sports games include 
+ﬁ dgets, short animations in which the athlete shifts his weight, stretches his arms, 
+or makes some other neutral action every few seconds. If play is under way, an ath-
+lete not closely involved—the third baseman on a ﬂ y ball to right ﬁ eld, for instance—
+should turn and watch the action.
+FIGURE 16.3 
+A ﬂ owchart detailing 
+part of the corner kick 
+situation in soccer 
+Ball in Air
+Before 
+Corner Kick
+Ball Kicked
+Indirect 
+Free Kick to 
+Opponents
+Kicker 
+touches ball
+Corner Kick is 
+Retaken
+Out of 
+bounds
+Normal Play 
+Continues
+Ball touches 
+another player
+Direct 
+Free Kick to 
+Opponents
+Kicker handles 
+ball outside the 
+penalty area
+Penalty 
+Kick to 
+Opponents
+Kicker handles 
+ball inside the 
+penalty area
+
+
+--- PAGE BREAK ---
+
+SPORTS GAMES 
+495
+ CHAPTER 16
+Like war games, team sports games are good candidates for using hierarchical ﬁ nite 
+state machines to produce the artiﬁ cially intelligent behavior required. Two-player 
+sports can use simple ﬁ nite state machines, one for each player. See the discussion 
+on ﬁ nite state machines at the end of Chapter 14, “Strategy Games.”
+Injuries
+I wouldn’t ever set out to hurt anybody deliberately unless it was, you know, important—
+like a league game or something.
+—DICK BUTKUS, NFL LINEBACKER
+Injuries are a sad but common side effect of sports, and serious simulations take 
+them into account. Because injuries occur somewhat randomly, they’re outside the 
+player’s control and can be frustrating. Most sports games allow the players to turn 
+off injuries if they don’t like the effect that injuries have on the game.
+Although it’s possible for an athlete to injure herself simply by running or jumping, 
+this doesn’t provide the player with any visible explanation for why the injury 
+occurred. A lot of sports games therefore limit injuries to cases of some kind of col-
+lision, ordinarily between two athletes. To determine whether an injury occurs, you 
+should include such factors as the relative speed of the two athletes, their weights, 
+their respective susceptibilities to injury, and a random probability just to introduce 
+some uncertainty into the situation. The heavier an athlete is, the more force she 
+imparts in a collision, and it is the force that does the damage to the other athlete.
+The stress of playing some positions, such as pitching in baseball, can injure an 
+athlete without a collision, with injuries becoming more likely the longer the 
+pitcher stays in the game. You can compute the probability of an injury on every 
+pitch and raise the probability slightly with each ball thrown.
+You can also decide which part of the body sustains the injury and the length of 
+time for which it will disable the athlete. Study reports of injuries and recovery 
+times for the sport you are simulating. If your game tracks athletes over a period
+of time, you should consider the cumulative effect of injury and recovery time on 
+their careers.
+Arcade Mode Versus Simulation Mode
+Switching into arcade mode skews the play toward lots of action and relatively few 
+slow-paced game states, such as strikeouts or walks. Arcade mode makes the game 
+more exciting at the expense of realism; simulation mode makes it a more accurate 
+simulation of the real sport at some expense in fun. In baseball, for example, an 
+athlete does well to achieve a .333 batting average—that is, gets a hit only once for 
+every three at bats. Some players may ﬁ nd that a little dull. Switching the game to 
+arcade mode could let the player get a hit 50 percent of the time or even more. In 
+American football, you can artiﬁ cially increase the number of completed passes by 
+
+
+--- PAGE BREAK ---
+
+496 
+FUNDAMENTALS OF GAME DESIGN
+improving the quarterback’s throwing accuracy and the receiver’s catching skills. If 
+you allow the player to switch between arcade mode and simulation mode, he can 
+adjust the behavior of the game to suit his tastes.
+To implement arcade mode, you have to decide what sort of changes to the real 
+game would make it more exciting. If you want your game to have both arcade and 
+simulation modes, start with the serious simulation ﬁ rst and then create the adjust-
+ments that make it arcadelike. Serious simulations are much more difﬁ cult to tune, 
+and it’s important to get them right ﬁ rst. If you start with an arcadelike design and 
+then try to make it serious, you might never get it right.
+Simulating Matches Automatically
+Sports games that simulate an entire season for a whole league of teams often pro-
+vide a means of simulating matches automatically without the player’s having to 
+play them. Each team in American professional baseball currently plays 162 
+matches in a season. With 30 teams in the two leagues and 2 teams in each match, 
+this totals 2430 matches—only the most rabid fan would want to play each match 
+personally. To generate results for matches that the player doesn’t play, you need a 
+way of simulating a match. Of course, you want the resulting scores to accurately 
+reﬂ ect the relative strengths of the teams: A bad team should be able to beat a good 
+team occasionally but not often.
+COMPUTER VERSUS COMPUTER
+The simplest way to simulate matches automatically is to let the computer play out 
+the match in computer versus computer mode (as described in the earlier section 
+“Competition Modes”) and record the results. A game with a good simulation 
+model should produce scores that reﬂ ect the real abilities of the competitors.
+However, if the player wants to generate results for a match that she doesn’t want to 
+play herself, she probably wants it done quickly. You can speed up the process by 
+turning off the graphics. Because displaying the graphics often takes up the major-
+ity of the computer’s time, an entire match can be simulated invisibly in a few 
+seconds, and the computer can report only the result. Electronic Arts’ Earl Weaver 
+Baseball game did this successfully. When you implement a nondisplayed mode like 
+this, test the game to be sure that the results without graphics are the same as those 
+with graphics.
+GENERATING FAKE RESULTS
+Instead of simulating entire matches with the graphics turned off, many games fake 
+it—in effect, they roll dice to generate game scores. The dice are loaded somewhat 
+so that good teams get high scores and bad teams get low ones, and whichever 
+team rolls the highest score wins the match.
+
+
+--- PAGE BREAK ---
+
+SPORTS GAMES 
+497
+ CHAPTER 16
+If you choose this approach, you will need to devise a suitable algorithm for gener-
+ating point values; in games such as American football and rugby, in which 
+different kinds of scores produce different numbers of points (touchdown, ﬁ eld 
+goal, and so on), certain score values are much more common than others. It’s 
+extremely rare, for example, for a team to end an American football game with a 
+score of 2. You’ll also need to make sure that your algorithm creates reasonable 
+scores and a reasonably random distribution of scores. No professional soccer game 
+should ever end with a winning score over about 15, and even that will be rare; 
+your algorithm should produce many more games with winning scores of 4 or less.
+Unfortunately, the dice-rolling technique doesn’t generate any statistics other than 
+the scores themselves. In a particularly statistics-rich sport such as baseball, if you 
+don’t generate performance data for each individual athlete, some fans will con-
+sider your game to be a lightweight simulation rather than a serious one. It’s up to 
+you to decide just how important that market is to you and how much effort you’re 
+prepared to exert to meet their expectations.
+Home-Field Advantage
+Considerable debate has raged over the years about whether to build a home-ﬁ eld 
+advantage into sports games. Although the home-ﬁ eld advantage is statistically
+signiﬁ cant in a number of sports, it’s better not to build it into the mechanics of 
+the game. Players like to feel that they are playing a fair game, and if they know 
+that the odds are artiﬁ cially stacked against them whenever they play an away 
+game, they will resent it. It’s also unclear exactly how the home-ﬁ eld advantage 
+should be implemented. Fans normally observe the home-ﬁ eld advantage from 
+win-loss statistics, but of course, the computer can’t simply turn a loss into a win. 
+You could shave off a percentage of goal-scoring attempts, but even this slight 
+intervention is likely to generate odd side effects. If a scoring attempt that clearly 
+should have succeeded fails for no visible reason, the players are bound to notice it. 
+If you feel you must simulate home-ﬁ eld advantage, the best (and least detectable) 
+way to do it is probably to improve all the ratings slightly for all the athletes on
+the home team.
+The Game World
+The setting of your game will be the normal venue for the sport, usually a stadium 
+or an arena. It adds a great deal of verisimilitude to present these as accurate copies 
+of real places. Players enjoy being able to recognize the architectural details of their 
+favorite stadiums. Some sports, such as basketball or American football, require a 
+playing area of a ﬁ xed shape and size, but others do not—different baseball ﬁ elds 
+famously have different effects on gameplay. Some sports, such as skiing and bob-
+sledding, take place in venues that vary enormously and require a great deal of 
+practice to learn.
+
+
+--- PAGE BREAK ---
+
+498 
+FUNDAMENTALS OF GAME DESIGN
+The crowd also contributes signiﬁ cantly to the setting. Although you won’t want to 
+devote a lot of graphical resources to spectators, the sounds of a crowd add greatly 
+to the atmosphere. Increase the volume at tense moments. Let the players hear 
+chants if it’s the kind of match at which spectators chant; add cheering after a score 
+by the home team and a sudden silence after a score by the visitors. Horns, whis-
+tles, and vendors calling out, “Ice-cold beer here!” are all part of the experience.
+Licenses, Trademarks, and Publicity Rights
+Many years ago, small developers could make and sell computer games using names 
+such as NFL and get away with it because the National Football League never knew 
+about it. You can’t do this now. Interactive entertainment is big business, and 
+you have to be scrupulously careful to avoid violating trademarks or personal pub-
+licity rights.
+TEAM AND LEAGUE TRADEMARKS
+The exact details vary from league to league and country to country, but generally 
+in America the professional leagues hold the license to use the names, logos, uniform 
+designs, and other indicia of all the teams in a league, plus the name and logo of 
+the league itself. Colleges and universities normally belong to a governing body 
+such as the National Collegiate Athletics Association in the USA, which represents 
+their collective interests. You or your publisher will have to negotiate an agreement 
+with the league or governing body to use these symbols in your game. If you do not 
+have such an agreement, you can refer to teams only by their towns (such as San 
+Francisco or Madrid) rather than their team names, and you may not use their 
+logos, uniform colors, or other identifying marks.
+A variety of governing bodies in different countries around the world manage 
+individual sports such as gymnastics or ﬁ gure skating. The names and indicia of 
+particular events, such as the Kentucky Derby, belong to the organizations that 
+produce them—in this case, the Churchill Downs racetrack. In recent years, these 
+groups have begun to exploit their intellectual property rights in a variety of ways, 
+so they tend to come down hard on anything that seems to be an infringement. 
+Don’t assume that just because an event has been around for decades you can freely 
+use its name.
+PERSONAL PUBLICITY RIGHTS
+You cannot use the name or photograph of a real athlete without permission. An 
+athlete’s name and likeness make up part of his personal publicity rights, and of 
+course, famous athletes sell the rights to use their names for millions of dollars 
+when they endorse a particular product as an individual. You might need to negoti-
+ate with an organization that licenses the rights to use all the athletes’ names 
+collectively. This might be the league in some cases; in others, however, including 
+the NFL and Major League Baseball, you have to contact the athletes’ unions. In 
+
+
+--- PAGE BREAK ---
+
+SPORTS GAMES 
+499
+ CHAPTER 16
+college sports, the rules will be different again. Unless you have the endorsement
+of a speciﬁ c athlete, you must make sure that your game displays all athletes in 
+approximately the same way, or endorsement could be implied. You can’t make it 
+look as if an athlete has endorsed your game when that’s not the case.
+Photographs present further difﬁ culties. You must obtain a license from the person 
+in the photograph and also the photograph’s copyright holder (usually the person 
+who took the photograph). Again, some governing bodies use special clearing-
+houses for these kinds of things: NFL Photos, a special department of the NFL, 
+licenses still photos for all the photographers who are accredited to take pictures at 
+NFL matches. The license from the copyright holder, however, does not grant you 
+the personal publicity rights of the athlete in the picture; you have to obtain those 
+separately. You can also license photos from the trading card companies, as well as 
+from journalistic bodies such as the Associated Press, and from private photo libraries.
+In short, the whole issue of rights in sports games is a legal mineﬁ eld. Nowadays, even 
+the stadiums might claim special rights, and many stadium owners auction the name 
+of the stadium to the highest bidder, as with AT&T Park (the San Francisco baseball 
+stadium). As a designer, you probably won’t have to deal with obtaining all these 
+licenses yourself, but you should know that it’s not safe to specify simply that a 
+game will use all the team and athlete names and photos. Obtaining them and the 
+right to use them is a very costly and time-consuming business. It’s best to design 
+the game in such a way that it doesn’t depend on having these things unless you’re 
+certain that they will be available.
+Audio Commentary
+Most sports games try to reproduce the experience of watching the sport on television. 
+An important part of that experience is hearing the announcers’ commentary, or 
+play-by-play. Most TV and radio sports broadcasts include at least two people, the play-
+by-play announcer and the color commentator. The play-by-play announcer describes 
+the action on a moment-by-moment basis. The color commentator, usually a retired 
+coach or player, offers insights into strategy and tactics, as well as background material 
+on the teams or individual athletes. To make the player feel she’s right there in the 
+stands, you might include a third voice, that of the stadium announcer over the public 
+address system. His remarks tend to be quite formulaic, although they do occasion-
+ally include requests to move badly parked cars, retrieve found children, and so on.
+To study what kinds of things your audio commentary will need to do, record a TV 
+broadcast of a real match and then transcribe everything that is said and who said 
+it. Do this for two or three matches, and you will begin to notice patterns in the 
+play-by-play: The announcers tend to read out the score at particular times, they 
+use certain repetitive language, and so on. As you watch the match on videotape, 
+take note of the different kinds of events that occur and the different remarks these 
+events elicit from the commentators. The events that provoke a reaction from the 
+color commentator aren’t necessarily the same events that trigger a response from 
+
+
+--- PAGE BREAK ---
+
+500 
+FUNDAMENTALS OF GAME DESIGN
+the play-by-play announcer. The color commentator speaks at more dramatic 
+moments or when an athlete has done something particularly spectacular (or par-
+ticularly bad). For example, in tennis, you might have a color comment such as, 
+“She’s having a terrible time with those double faults!” when an athlete commits 
+four double faults in a single game. Remember, a commentator would use this line 
+only once, not after every subsequent double fault.
+When you need to create commentary for a set of match events, sit down with the 
+programmers and discuss the events to make sure the software can detect them. 
+Some, such as a strikeout in baseball, will be uncomplicated, but many events will 
+be judgment calls. A dropped pass in football that the athlete really should have 
+caught, for instance, is not so easily detectable; you can detect the dropped pass, 
+but what determines whether the receiver should have caught it? The probability of 
+the receiver’s catching the pass must be calculated from such things as the receiv-
+er’s dexterity rating and the accuracy with which the quarterback threw the pass in 
+the ﬁ rst place—provided that the ball wasn’t tipped away by a defender. It’s always 
+best to err on the side of caution in these cases: Don’t design judgment calls that 
+the player is likely to disagree with, or he’ll think you’ve delivered a stupid game. 
+As the saying goes, “It’s better to remain silent and be thought a fool than to open 
+one’s mouth and remove all doubt.”
+Don’t forget the introductory and wrap-up material at the beginning and end of the 
+match—commentary such as, “Welcome to Invesco Field for today’s game between 
+the New England Patriots and the Denver Broncos. It’s a cold and windy day.”
+For more detailed information on writing commentary scripts, including the many 
+tricky issues associated with assembling commentary out of speech fragments, read 
+Chapter 13, “Interchangeable Dialogue Content,” of Game Writing: Narrative Skills 
+for Videogames, edited by Chris Bateman (Bateman, 2006).
+The Presentation Layer
+Sports games offer some of the most beautifully realistic graphics and audio of any 
+genre, and their presentation features borrow heavily from those seen on televi-
+sion. TV sports presentations have their own particular look and feel, which change 
+from time to time, and many game art directors take their cue from them.
+Interaction Model
+The interaction model in sports games varies considerably depending on the sport, 
+but in most cases, the player controls an avatar who is an athlete in the match. In 
+one-on-one sports such as tennis, this is straightforward, but in team sports, the 
+player’s control typically switches automatically from one athlete to another as the 
+focus of play changes. In basketball games, for example, control switches to the 
+athlete who has the ball. If the player’s team is on defense, most games allow the 
+
+
+--- PAGE BREAK ---
+
+SPORTS GAMES 
+501
+ CHAPTER 16
+player to choose which athlete to control and allow him to switch quickly from one 
+athlete to another as conditions change. This often requires signiﬁ cant changes to 
+the user interface as play progresses; the functions of the buttons have to change if 
+the player assumes control of an athlete with a specialized function—for example, 
+switching from the thrower to a sweeper in curling after delivering the rock.
+Camera Models
+In one-on-one sports games, the camera model is seldom difﬁ cult to manage. 
+Choose a spot where the camera gives a clear view of the athletes and where their 
+movements and activities will map neatly onto the machine’s input devices. As a 
+general rule, you shouldn’t do sports games in the ﬁ rst person. A lot of the fun of 
+watching a sport is in seeing the athletes exercise their skills. For example, you 
+could make a tennis game in the ﬁ rst person, but you wouldn’t get to see your ath-
+lete playing tennis, and you might not even get to see your racket hit the ball. An 
+overhead perspective, with your tennis player at the bottom of the screen and your 
+opponent at the top, presents a much more natural view and lets you see both ath-
+letes running, jumping, serving, and so on.
+Managing the camera for a team game is trickier, particularly when the focus of 
+attention moves from place to place. With most soccerlike games, an end view or
+a side view, from a somewhat elevated position, works best. With large ﬁ elds, you 
+won’t be able to get the whole ﬁ eld on the screen, so you’ll need to design an intel-
+ligent camera that follows the ball.
+Sports in which actions take place at widely separated locations pose a special chal-
+lenge in choosing a perspective. In most sports, the action takes place around one 
+focal point: the leader of a race, the ball in most ballgames, the skier on the slope. 
+Sports such as baseball and cricket, however, offer two focal points: on the ball and 
+on the runners. In baseball, the two focal points can be separated by as much as 
+400 feet. You can’t show both the runners and the ball without zooming out to a 
+blimp view so high that it’s difﬁ cult to see anything clearly.
+Most baseball video games implement a picture-in-picture solution: The camera
+follows the ball, but a small diagram of the baseball diamond in one corner of the 
+screen shows the positions of the runners, often indicated by colored dots (see 
+Figure 16.4). When a runner reaches a base, his dot changes color to indicate that 
+he is safe. The player controlling the ﬁ elders watches the main screen, and the one 
+controlling the runners watches the diagram (keeping one eye on the main screen 
+to see if the ball is coming). Because cricket uses only two stumps instead of four 
+bases, this arrangement works even better.
+NOTE  Some angles 
+don’t work at all. 
+American football is
+almost unplayable 
+from a side view
+because too many
+athletes block the 
+player’s view of other 
+athletes, and he can’t 
+see gaps in the line.
+
+
+--- PAGE BREAK ---
+
+502 
+FUNDAMENTALS OF GAME DESIGN
+User Interface Design
+In most other genres, the controls work the same way in most situations, and if 
+their functions change, they do so only in response to explicit actions by the player. 
+Sports games are unusual in this regard; the user interface changes on a second-by-
+second basis, depending on conditions in the match itself. American football is a 
+particularly complex example. On each play, the player on offense selects the for-
+mation and play to run; calls signals and makes adjustments at the line of scrimmage; 
+and then takes the snap and either hands off the ball, passes it, or runs with it
+himself. If he passes it, control switches to the receiver and a whole series of new 
+options for running, jumping, diving, and dodging defenders comes into play. 
+Each of these different states requires that certain moves or choices be assigned to 
+buttons on the controller, and these assignments change rapidly as play progresses.
+INPUT DEVICES
+The hardest thing about sports game user interface design is that you have to map 
+athletic activities—complex motions of the whole human body—onto a game 
+machine’s input device, which until recently was typically a handheld controller 
+with joysticks and binary buttons. Of all the genres of game, the motion-sensing 
+FIGURE 16.4 
+The pitcher’s view in 
+MVP Baseball 2005.
+Note the inset showing 
+the baserunners’ posi-
+tions as circles on the 
+diamond and small 
+windows showing the 
+runners themselves. 
+TIP Be forgiving. 
+The Nintendo Wii 
+owes its huge success 
+to the fact that inex-
+perienced players can 
+pick up the Wii Sports
+game and have a good 
+time. Nintendo wisely 
+adjusted the game so 
+that even poor players 
+can hit a fastball or 
+bowl a strike now 
+and then.
+
+
+--- PAGE BREAK ---
+

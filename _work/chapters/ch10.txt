@@ -1,0 +1,1715 @@
+GAMEPLAY 
+285
+ CHAPTER 9
+Design Practice QUESTIONS
+1. What types of challenges do you want to include in your game? Do you want to 
+challenge the player’s physical abilities, his mental abilities, or both?
+2. Game genres are deﬁ ned in part by the nature of the challenges they offer. What 
+does your choice of genre imply for the gameplay? Do you intend to include any 
+cross-genre elements, challenges that are not normally found in your chosen genre?
+3. What is your game’s hierarchy of challenges? How many levels do you expect it 
+to have? What challenges are typical of each level?
+4. What are your game’s atomic challenges? Do you plan to make the player face 
+more than one atomic challenge at a time? Are they all independent, like battling 
+enemies one at a time, or are they interrelated, like balancing an economy? If they 
+are interrelated, how?
+5. Does the player have a choice of approaches to victory? Can he decide on one 
+strategy over another? Can he ignore some challenges, face others, and still achieve 
+a higher-level goal? Or must he simply face all the game’s challenges in sequence?
+6. Does the game include implicit challenges (those that emerge from the design), 
+as well as explicit challenges (those that you specify)?
+7. Do you intend to offer settable difﬁ culty levels for your game? What levels of 
+intrinsic skill and stress will each challenge require?
+8. What actions will you implement to meet your challenges? Can the player sur-
+mount a large number of challenges with a small number of actions? What is the 
+mapping of actions to challenges?
+9. What other actions will you implement for other purposes? What are those pur-
+poses—unstructured play, creativity and self-expression, socialization, story 
+participation, or controlling the game software?
+10. What save mechanism do you plan to implement?
+
+
+--- PAGE BREAK ---
+
+Core Mechanics
+The core mechanics of a game determine how that game actually operates: what its 
+rules are and how the player interacts with them. This chapter begins by deﬁ ning 
+the core mechanics and explaining their role in creating the entertainment experi-
+ence. You’ll learn how the core mechanics differ between real-time and turn-based 
+games and how the core mechanics are related to level design. Next we’ll look at 
+some key elements of core mechanics: resources, entities, and mechanics. You’ll 
+learn the deﬁ nitions of these terms and how you may use these concepts to specify 
+rules precisely.
+From the general features of core mechanics, we’ll then turn to their speciﬁ c imple-
+mentation in the internal economy of games, a set of mechanics that governs the ﬂ ow 
+of quantities. We’ll also look at how designers use mechanics to create gameplay by 
+implementing both challenges and actions. Having introduced all these aspects of 
+core mechanics, you’ll learn an approach for designing them, which involves reex-
+amining early design work and rendering it speciﬁ c and concrete. The chapter 
+concludes by brieﬂ y discussing random numbers and how to use them in games.
+What Are the Core Mechanics?
+Isn’t the greatest rule of all the rules simply to please?
+ 
+ 
+ 
+ 
+—M OLIÈRE
+You ﬁ rst read about core mechanics in Chapter 2, “Design Components and 
+Processes.” There you learned that the core mechanics are the heart of the game, 
+generating the gameplay and implementing the rules. This chapter examines the 
+core mechanics in further detail and offers a formal deﬁ nition:
+CORE MECHANICS The core mechanics consist of the data and the algorithms that 
+precisely deﬁ ne the game’s rules and internal operations.
+Turning Rules into Core Mechanics
+In the early stages of design, you may have only a hazy idea of the details of your 
+game’s rules. Early on, you may say, “Players will be penalized for taking too long 
+to get through the swamp.” or “Players will have only a limited time to get through 
+the swamp.” But that description does not supply enough information to build a 
+game. What is the penalty? How long does the player have? When you design the 
+core mechanics, you deﬁ ne the rules precisely and completely. That same rule in 
+CHAPTER 10
+286
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+287
+ CHAPTER 10
+the core mechanics might read something like, “When the avatar enters the 
+swamp, the black toadstools begin to emit a poison gas that the player can see ﬁ ll-
+ing the screen, starting at the bottom and rising at a rate of 1 game-world inch 
+every 3 seconds; by the end of 3 minutes, the gas reaches the height of the avatar’s 
+face, and if by that time the avatar is still in the swamp, the avatar dies. If the ava-
+tar returns to the swamp later, the gas is gone but the process starts over again from 
+the beginning.” In this example, the clauses beginning with when and if state algo-
+rithms, and 1 game-world inch every 3 seconds and 3 minutes are examples of data 
+that also form a part of the rule.
+THE RULES AND CORE MECHANICS OF MONOPOLY
+The rules of Monopoly, as Parker Brothers ships them with the game, take up less than 
+three full pages. However, the rules printed on the paper are not sufﬁ cient to build a 
+computer game: They don’t include complete documentation of all the data necessary to 
+play. To properly specify the core mechanics of Monopoly, you would have to include not 
+only the printed rules but the prices of each of the properties on the board, the different 
+amounts of rent that may be collected at each location (including special mechanics for 
+the utilities and railroads), the layout of the board, and the effects of all the Chance and 
+Community Chest cards. A full speciﬁ cation of the core mechanics of Monopoly is consid-
+erably more detailed than the general rules.
+Where Are the Core Mechanics?
+The core mechanics—the precise deﬁ nition of the rules and internal operations of 
+the game—remain the same whether you keep them in your head, write them on 
+paper, or implement them in any programming language you like. Although the 
+mechanics remain the same, their implementation varies as your project goes through 
+the different stages of the design and development process. First you document the 
+algorithms in ordinary language in a design document; at this point, if you want to 
+change the mechanics, you edit the document. Later you may build a spreadsheet 
+containing the algorithms and data and tweak them there. Or you might make a 
+paper prototype that allows you to play the game, writing the values of the variables 
+on pieces of paper and manipulating them yourself according to the algorithms 
+you’ve worked out, to see if the algorithms produce the game experience you want 
+to offer. Using what you learn, you may update the design documents or just let the 
+spreadsheets become the ofﬁ cial implementation. The core mechanics remain the 
+rules of the game; only the implementation has changed.
+Eventually the core mechanics, as complete as you can make them, should be so 
+precisely stated that the programmers can write code using your core mechanics 
+document or your spreadsheet as speciﬁ cations. The algorithms of the core 
+mechanics become the algorithms in their code, and the data required by the core 
+mechanics reside in ﬁ les so that the game software can read them in as necessary. 
+
+
+--- PAGE BREAK ---
+
+288 
+FUNDAMENTALS OF GAME DESIGN
+At this point, if you want to change the mechanics, you ask the programmers to 
+change the code or the data ﬁ les. You should in principle also change the design 
+documents; in practice, designers seldom do this because the code and ﬁ les have 
+become the authorized implementation of the core mechanics. In short, the core 
+mechanics are wherever your team considers their ofﬁ cial implementation to be:
+in the design documents, the spreadsheets, or in the code and data ﬁ les.
+The player does not experience the core mechanics directly. She can’t point to 
+something on the screen and say, “Those are the core mechanics.” If you apply 
+player-centric design principles, all of the core mechanics work together to provide 
+a good game experience even though players don’t know what core mechanics are 
+and can only infer the functionality of the core mechanics from the way the game 
+behaves.
+DESIGN RULE Design the Game, Not the Software
+The game engine is the part of the software that implements the game’s rules. While the 
+core mechanics spell out the rules of the game in detail, so that in practice they specify 
+what the game engine will do, the core mechanics do not dictate exactly how the game 
+engine will do it. Don’t worry about deﬁ ning the precise algorithms the programmers 
+should use to build the game engine. That decision is theirs to make. In short, if there is 
+more than one way to achieve the same effect in the game, let the programmers decide 
+which one to use.
+You don’t have to know how to program to design the core mechanics, but you 
+must be generally familiar with algorithmic processes. The later section “Mechanics”
+addresses this in more detail.
+The Core Mechanics as Processes
+If you get a job in the game industry, you will hear industry professionals talk 
+about the core mechanics as if the mechanics actively take part in the game: The 
+core mechanics “talk to the storytelling engine” or “signal the UI.” But rules can’t 
+act. You would never say of Monopoly that the rules do anything beyond perhaps 
+“allowing” the player to take a particular action or “specifying” a penalty. So what’s 
+going on?
+The relationship between the core mechanics and the game engine is extremely 
+close, because the core mechanics specify how it will behave. So references to the 
+core mechanics may sound like references to the engine itself. As long as you 
+understand that the core mechanics consist of algorithms and data that precisely 
+deﬁ ne the rules, it doesn’t really matter. When these algorithms exist only in the 
+core mechanics design document, they obviously can’t do anything, but when the 
+programmers turn them into code, they can.
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+289
+ CHAPTER 10
+Therefore, when you read, “The core mechanics send triggers to the storytelling 
+engine,” it’s just shorthand for a longer sentence that reads, “The game engine, using 
+algorithms speciﬁ ed by the core mechanics, sends triggers to the storytelling engine.”
+Functions of the Core Mechanics in Operation
+During play, the core mechanics (as implemented by the game engine) operate 
+behind the scenes to create and manage gameplay for the player, keep track of 
+everything that happens in the game world, and work with the storytelling engine 
+to help tell the story. The following list details what core mechanics do:
+■ Operate the internal economy of the game. The core mechanics specify how 
+the game or the player creates, distributes, and uses up the goods on which the 
+game bases its economy. This function is the most important role of the core 
+mechanics. The later section “The Internal Economy” addresses this in detail.
+■ Present active challenges to the player via the user interface, as the level design 
+speciﬁ es. Active challenges are those governed by mechanics. Passive challenges, 
+such as a chasm that the avatar must jump over, don’t have mechanics of their 
+own. The later section “Challenges and the Core Mechanics” discusses the distinc-
+tion between active and passive challenges.
+■ Accept player actions from the user interface and implement their effects upon 
+the game world and other players.
+■ Detect victory or loss, and the termination conditions of the game. More gener-
+ally, the mechanics detect success or failure in all challenges in the game, and 
+apply whatever consequences the rules call for.
+■ Operate the artiﬁ cial intelligence of nonplayer characters and artiﬁ cial 
+opponents.
+■ Switch the game from mode to mode. The core mechanics keep track of the 
+current gameplay mode and, whenever a mode change occurs (either because the 
+nature of the game requires it or the player requests it), the core mechanics switch 
+modes and signal the user interface to update the UI accordingly.
+■ Transmit triggers to the storytelling engine when game events or player 
+actions that inﬂ uence the plot occur.
+Real-Time Games Versus Turn-Based Games
+Your speciﬁ cation of the core mechanics will read somewhat differently depending 
+on whether your game is turn-based or takes place in real time.
+Most video games operate in real time, so the core mechanics specify the parame-
+ters of a living world that operates on its own whether the player acts or not. Many 
+of the mechanics you design will be processes that operate continuously or for 
+extended periods. AI-driven characters go about their business, traps check to see
+
+
+--- PAGE BREAK ---
+
+290 
+FUNDAMENTALS OF GAME DESIGN
+if they should spring upon anyone, banks collect and pay interest, and so on. 
+When you specify one-shot events rather than continuous processes, the events
+will often occur as a direct or indirect consequence of player actions or because 
+some process detects a special condition, such as when a runner crosses the ﬁ nish 
+line in a race. (The later section “Mechanics” discusses events and processes in 
+greater detail.)
+In a turn-based game with no artiﬁ cial opponents, the core mechanics don’t do 
+anything at all until a player takes his turn. Once he has done so, the core mechan-
+ics can compute the effects of his actions on the game world. Then the mechanics 
+remain idle while the next player takes her turn, and so on. In some games, all the 
+players enter their intended actions simultaneously while the mechanics remain 
+idle; once the players ﬁ nish for that turn, the core mechanics compute the effect of 
+all players’ actions.
+In a turn-based game, then, your design for the mechanics will read like a speciﬁ ca-
+tion for a sequence of events rather than a set of processes that operate all the time. 
+You will state the effects of each possible action and what other computations take 
+place as a consequence. Although you may design processes for a turn-based game, 
+you must realize that processes do not really operate continuously; they only run 
+between player turns. Your design for a process in a turn-based game must include 
+points at which the process may safely be interrupted for the next player’s turn.
+In a turn-based game that does have artiﬁ cial opponents or NPCs, the mechanics 
+don’t remain entirely idle between turns because they must compute the behavior 
+of these characters. However, the artiﬁ cial characters still act in turns, just as the 
+player does.
+Core Mechanics and Level Design
+Most video games for consoles and personal computers present gameplay in sepa-
+rate levels (also called chapters, missions, or scenarios, depending on the genre), 
+each with its own set of initial conditions, challenges, and termination conditions. 
+Level designers plan, construct, and test these levels, as Chapter 12, “General 
+Principles of Level Design,” discusses.
+Ordinarily, the level design speciﬁ es the type, timing, and sequence of challenges 
+that appear during play, whereas the core mechanics specify how different chal-
+lenges actually work. When a level starts up, the core mechanics read the level 
+design data from a ﬁ le, which includes: the initial state of the game world for each 
+level; the challenges, actions, and NPCs for each level; and the victory conditions 
+for the levels (see Figure 10.1). If the game consists of only one level or creates ran-
+domized levels, the core mechanics must also include mechanics for setting up the 
+level before the game ﬁ rst enters a gameplay mode.
+Therefore, your design for the core mechanics should specify how challenges work 
+in general but not exactly which challenges each level will contain. As you design 
+the core mechanics, concentrate on those features of the game that will be needed 
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+291
+ CHAPTER 10
+in more than one level, and leave special-case features found only in a particular 
+level to the level designer. It may be that the level designer can create code for 
+those features using a scripting language and won’t have to ask the game’s pro-
+grammers to do it.
+This doesn’t mean that you can push all the work off onto the level designers, 
+though. Think of the features you create in the core mechanics as being like LEGO 
+blocks that the level designers will use to build their level. In a war game, the core 
+mechanics, not the level designs, deﬁ ne how all the units in the game move and 
+ﬁ ght. Once you design all the units, the level designers can use your information 
+on how the units operate to construct exciting levels featuring those units.
+Key Concepts
+To design the core mechanics, you must document the different components that 
+deﬁ ne how your game works: resources, entities, attributes, and mechanics. This sec-
+tion deﬁ nes these terms. Although you do not have to be a programmer to design a 
+game, you wouldn’t be a game designer if you didn’t intend for your ideas to 
+FIGURE 10.1
+The core mechanics 
+read the level design 
+data from ﬁ les.
+PLAYER
+USER INTERFACE
+STORYTELLING ENGINE
+CORE MECHANICS
+Inputs
+Outputs
+Triggers
+Narrative Events
+In-Game Events
+Player Events
+LEVEL 
+DESIGN 
+DATA
+
+
+--- PAGE BREAK ---
+
+292 
+FUNDAMENTALS OF GAME DESIGN
+eventually turn into computer programs. You will need to have at least a nodding 
+acquaintance with how programmers think about data and the relationships 
+between different items of data, ideas that crop up in this discussion.
+Resources
+The term resource refers to types of objects or materials the game can move or 
+exchange, which the game handles as numeric quantities, performing arithmetic 
+operations on the values. Resource does not refer to speciﬁ c instances of these types 
+of objects but the type itself in an abstract sense. Marbles constitute a resource in 
+your game if your player can pick up marbles, trade them, and put them down 
+again, but the word resource doesn’t describe a speciﬁ c marble in your player’s 
+pocket or even a speciﬁ c collection of marbles; it describes marbles generally. 
+Marbles are a resource, but the 15 marbles in the player’s pocket are an instance of a 
+resource: a particular collection of marbles.
+The core mechanics deﬁ ne the processes by which the game creates, uses, trades, 
+and destroys resources; that is, the rules by which speciﬁ c instances of resources—
+one lump of gold, the marbles in the player’s pocket, the ammo in her inventory, 
+the water in her reservoir—can legally be moved from place to place or from owner 
+to owner, or can come into or go out of the game. 
+A resource may be of a type that can be handled as individual items, such as mar-
+bles, or of a type that cannot be divided into individual items, such as water 
+(although water may be measured in volumetric units).
+Games often treat nonphysical concepts such as popularity or vague concepts such 
+as resistance to poison as resources, even though we don’t ordinarily think of these 
+as quantities that can be measured and even bought and sold. Part of a game 
+designer’s job involves quantifying the unquantiﬁ able—turning such abstract
+qualities as charisma or pugnacity into numbers that a program can manipulate.
+Entities
+An entity is a particular instance of a resource or the state of some element of the 
+game world. (A light may be on or off, for instance.) A building, a character, or an 
+animal can be an entity, but perhaps less obviously a pile of gold or a vessel of 
+water can be an entity. The state of a trafﬁ c light that at any given time might be 
+red, green, or yellow can also be an entity.
+Be sure you understand the difference between resources and entities. Remember 
+that a resource is only a type of thing, not the thing itself. A speciﬁ c airplane is an 
+entity, but if your game includes a factory that manufactures airplanes, such that 
+management of the supply of airplanes makes up part of the gameplay, then air-
+planes, as a commodity, constitute a resource even though each individual airplane 
+remains an entity. Earlier, we noted that marbles can be a resource but a marble in 
+NOTE Purely cos-
+metic items are not a 
+resource. If you build 
+a level full of ﬂ owers 
+but the player can’t 
+do anything with 
+them and nothing 
+ever happens to them, 
+then ﬂ owers are not a 
+resource. The ﬂ owers 
+set the stage and con-
+tribute aesthetically, 
+but the core mechanics 
+will not need to take 
+ﬂ owers into account. 
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+293
+ CHAPTER 10
+the player’s pocket is not; now we can see that each marble in his pocket is an 
+entity. Points in a sports game qualify as a resource, but the team’s score is an 
+entity. The score pertains only to that team, recording a number of points scored.
+SIMPLE ENTITIES
+The player’s score or the current state of a trafﬁ c light can be completely speciﬁ ed 
+by a single datum; this is called a simple entity. The single value stored in this 
+datum can be numeric, such as a score, or symbolic, such as the possible states of a 
+trafﬁ c light: red, green, or yellow. The later section “Numeric and Symbolic 
+Relationships” discusses the differences between numeric and symbolic values.
+Once you decide to add a symbolic entity, such as a trafﬁ c light, to the game world, 
+you will need to deﬁ ne it in the core mechanics as a simple entity, specifying its 
+initial state and providing a list of all its possible states. For a numeric entity, you’ll 
+need to deﬁ ne an initial quantity and the range of possible legal values. In the tun-
+ing stage of design, you will spend a great deal of time adjusting these values, so 
+don’t worry too much about getting them exactly right at ﬁ rst.
+COMPOUND ENTITIES
+It may take more than one data value to describe an entity. In a ﬂ ying game, in 
+which characterizing the wind requires stating both its speed and its direction, the 
+wind is a compound entity. Each of these values is called an attribute.
+An attribute is an entity that belongs to, and therefore helps to describe, another 
+entity. To describe the wind, you need to know the values of its speed attribute and 
+its direction attribute. You can specify the wind’s speed with a numeric value and 
+its direction with a symbolic value (one of a set that includes northwesterly, westerly,
+southwesterly, and so on). In this case, each attribute of our overall entity (the wind) 
+is itself a simple entity, but this is not always, and not even usually, the case. 
+Attributes may themselves be compound entities. In a sports game, a team has 
+attributes such as its name, hometown, and statistics, as well as its collection of 
+athletes, each of whom is an entity with his own attributes such as speed and agil-
+ity. In a driving game, the car the player drives is a compound entity with 
+attributes that describe its performance characteristics. In a business simulation, 
+factories are compound entities with attributes for rates of production, stock on 
+hand, and so forth. Most of the entities you will deﬁ ne for any game, other than 
+the most elementary of games, will be compound entities. Figure 10.2 shows an 
+example of three types of entities: one simple, one compound containing only sim-
+ple attributes, and one compound containing both simple attributes and another 
+compound entity. The gray boxes are only labels to aid understanding; their con-
+tents are not stored as data.
+Both Chapter 5, “Creative and Expressive Play,” and Chapter 6, “Character 
+Development,” discuss attributes at some length, so that information is not 
+repeated here. Be aware, however, that you don’t use attributes only for characters. 
+
+
+--- PAGE BREAK ---
+
+294 
+FUNDAMENTALS OF GAME DESIGN
+Any entity in the game may have attributes that describe it: Vehicles have perfor-
+mance characteristics, factories have production rates, and so on.
+As with any simple entity, you should choose an initial quantity or state for an 
+attribute when you decide to include the attribute in your game.
+Points Scored
+1,755,245
+Northwest
+Voldarok
+25
+117
+Elf
+Feasting Hall
+5
+Sword
+Shield
+Food
+Helmet
+Armor
+35
+Wind
+Speed
+Name
+Money
+Health
+Race
+Location
+# Items
+Item 1
+Item 2
+Item 3
+Item 4
+Item 5
+Direction
+Inventory
+Avatar
+IF YOU HAPPEN TO BE A PROGRAMMER… 
+If you are a programmer, you may have noticed that entities sound a lot like objects in
+object-oriented programming: They include variables for storing numeric and symbolic 
+values and may be made up of other entities in the same way that programming objects 
+may be made up of other objects. And like classes of objects in programming, entities 
+have associated mechanics (though programmers would call them functions or methods)
+for manipulating these data.
+For most practical purposes, you can treat entities and programming objects as identical, 
+and if you happen to program as well as design your game, you will certainly implement 
+entities as objects in your code. This book uses the term entity rather than object
+because we normally use object in the everyday sense to refer to some physical item in 
+the game world.
+UNIQUE ENTITIES
+If your game contains only one entity of a particular type, then that is a unique 
+entity. In most adventure games, the objects that the avatar can pick up are unique 
+entities. The avatar itself in most games is a unique entity because there is usually 
+FIGURE 10.2
+Examples of three 
+different entities
+A Simple 
+Numeric Entity
+A Compound Entity 
+with Two Attributes
+A Compound Entity Containing Another 
+Compound Entity as an Attribute
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+295
+ CHAPTER 10
+only one avatar. In a football game, the football is a unique entity, because there 
+may never be two footballs in play at any one time.
+Note that the airplanes mentioned in the previous section are not unique entities 
+even if each carries its own serial number and particular state of repair. They still 
+may be treated collectively, bought and sold in groups, and when treated as a group 
+considered to be a resource.
+DEFINING ENTITIES FOR YOUR GAME
+As you specify your core mechanics, you will need to create entities for any charac-
+ter, object, or substance that the game needs to manipulate and for any value that 
+the game needs to remember. In the case of items such as footballs, vehicles, 
+money, and health, determining what attributes each entity requires will probably 
+seem obvious—although deﬁ ning their mechanics won’t always be simple. You 
+may also need to create entities that hold quantities or other information that the 
+user interface will display. Every indicator in the user interface needs an entity that 
+reﬂ ects the indicator’s state or appearance.
+Suppose you want to warn the player when a valuable resource, such as fuel in a 
+car’s gas tank, reaches critically low levels. You would normally put a needle gauge 
+in the user interface to show the fuel level, and you may want to add a warning 
+light to draw the player’s attention to the gauge. The light can be either on or off. 
+To support the light, you need to deﬁ ne an entity called fuel warning that can exist 
+in two states. During play, the user interface checks the state of the fuel warning 
+entity to display the appropriate image of the light. You also need to create a 
+mechanic (discussed in the next section “Mechanics”) to deﬁ ne precisely what con-
+ditions change the state of the fuel warning entity.
+You may wonder why you should create an additional entity and mechanic for the 
+state of the warning light rather than have the user interface software check the 
+fuel level and decide for itself whether to turn on the warning light. Professionals 
+keep the mechanics in one part of the design and the UI in another. That way, the 
+UI designer doesn’t have to worry about underlying mechanics; she can concen-
+trate on screen layouts and usability considerations, and if you want to adjust the 
+point at which the light comes on during the tuning stage of design, you can do so 
+without interfering with the user interface itself.
+Mechanics
+Mechanics document how the game world and everything in it behave. Mechanics 
+state the relationships among entities, the events and processes that take place 
+among the resources and entities of the game, and the conditions that trigger 
+events and processes. The mechanics describe the overall rules of the game but also 
+the behavior of particular entities, from something as simple as a light switch up to 
+
+
+--- PAGE BREAK ---
+
+296 
+FUNDAMENTALS OF GAME DESIGN
+the AI of a very smart NPC. The earlier section “Functions of the Core Mechanics 
+in Operation” gave a list of the kinds of things mechanics do in a game.
+Some mechanics operate throughout the game, while others apply only in particu-
+lar gameplay modes and not in others. A mechanic that operates throughout the 
+game is called a global mechanic. Any game with more than one gameplay mode 
+needs at least one global mechanic that governs when the game changes from 
+mode to mode, and an entity that records what mode it is in.
+RELATIONSHIPS AMONG ENTITIES
+If the value of one entity depends upon the value or state of one or more other enti-
+ties, you need to specify the relationship between the entities involved. In the case 
+of numeric entities, you express the relationship mathematically. Many role-playing
+games, for example, deﬁ ne character levels in terms of experience points earned; when
+a character earns a certain amount of experience, his level goes up. The formula may
+be given by a simple equation, such as character level = experience points × 1,000,
+or a more complicated equation, or it may require looking the value up in a table.
+If the nature of this relationship remains constant throughout the game, you need 
+not worry about specifying when it should actually be computed; let the program-
+mers decide that. Just specify the relationship itself.
+EVENTS AND PROCESSES
+When you describe an event or a process, you state that something happens:
+A change occurs among, or to, the entities speciﬁ ed in the mechanics.
+An event is a speciﬁ c change that happens once when triggered by a condition
+(deﬁ ned in the next section) and doesn’t happen again until triggered again. 
+“When the player picks up a golden egg” speciﬁ es a trigger condition, and “he
+gets two points” deﬁ nes an event.
+A process refers to a sequence of activities that, once initiated, continues until 
+stopped. A player action or other game event starts a process that runs until some-
+thing stops it.
+Both events and processes may consist of whole sequences of actions that the com-
+puter must take. When you document such a sequence, be clear about the order in 
+which things should happen. Part of the sequence getting dressed might be, “First 
+put on socks, then put on shoes.” If you leave the language ambiguous and the pro-
+grammer misinterprets your meaning, you will introduce a bug into the game.
+NOTE Designing 
+the core mechanics 
+requires the greatest 
+clarity and precision of 
+language. Ambiguous 
+mechanics turn into 
+buggy code. 
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+297
+ CHAPTER 10
+ANALYZING A MECHANIC
+Let’s go back to the sample mechanic that Chapter 2 introduced in the sidebar “Game 
+Idea Versus Design Decision” and identify its various components. To specify the idea 
+“Dragons should protect their eggs,” we create a mechanic that reads: “Whenever they 
+have eggs in their nests, female dragons do not move out of visual range of the nest. 
+If an enemy approaches within 50 meters of the nest, the dragon abandons any other 
+activity and returns to the nest to defend the eggs. She does not leave the nest until no 
+enemy has been within the 50-meter radius for at least 30 seconds. She defends the eggs 
+to her death.”
+This mechanic makes up one small part of the speciﬁ cation of a female dragon’s artiﬁ cial 
+intelligence. It applies to all female dragons at any time, so it belongs in the core 
+mechanics, not in the design of a level. (However, if dragons appear in only one level, 
+this mechanic should be part of that level’s design, and if the dragon is a unique entity, 
+you should specify the mechanics relating to its behavior wherever you deﬁ ne what a 
+dragon is, and nowhere else.)
+Here’s how this mechanic looks with the components identiﬁ ed:
+“Whenever they have eggs in their nests (a condition about a relationship between a 
+resource, eggs, and an entity, the nest, such that eggs in nest > 0), female dragons (each 
+one an entity) do not move (a process) out of visual range of the nest (a condition placed 
+on the movement process). If an enemy (an entity) comes within 50 meters of the nest (a 
+condition), the dragon abandons any other activity (end her current process) and returns 
+to the nest (a process) to defend the eggs (a process). She does not leave the nest (initiate 
+a process) until no enemy has been within the 50-meter radius for at least 30 seconds (a 
+complicated condition that prevents her from initiating the process of leaving the nest). 
+She defends the eggs to her death (a condition indicating that the dragon does not initi-
+ate any other process while defending the eggs, such as running away).”
+Even this, complex as it is, isn’t complete. It doesn’t say whether or not eggs can be 
+destroyed or removed from the nest and, if so, what the dragon does about it. It doesn’t 
+state how visual range should be computed, how the dragon goes about returning to her 
+nest, or what defending the eggs actually consists of. It also includes a negative condi-
+tion (“she does not leave the nest until . . . ”) without a general rule stating when she 
+does leave the nest in the ﬁ rst place. All that information must be included elsewhere in 
+the deﬁ nition of the dragon’s AI and the deﬁ nition of a nest and an egg. If you don’t 
+deﬁ ne these things speciﬁ cally, the programmers will either come and ask you to, or they 
+will make a guess for themselves.
+
+
+--- PAGE BREAK ---
+
+298 
+FUNDAMENTALS OF GAME DESIGN
+CONDITIONS
+Use conditions to deﬁ ne what causes an event to occur and what causes a process to 
+start or stop. Conditional statements often take the form if (condition) then (execute 
+an event, or start or stop a process); whenever (condition) take action to (execute an 
+event, or start or stop a process); and continue (a process) until (condition). 
+Mechanics deﬁ ning victory and loss conditions conform to this style.
+You can also deﬁ ne conditions in negative terms, such as if (condition) then do not
+(execute an event, or start or stop a process), although a condition in this form is 
+incomplete. “If the mouse is wearing its cat disguise, the cat won’t attack it,” doesn’t 
+provide enough information because it doesn’t tell the programmers when the cat 
+does attack the mouse. Use this form of conditional mechanic for indicating excep-
+tions to more general rules already speciﬁ ed: “When a cat sees a mouse, the cat will 
+attack it. But if the mouse is wearing its cat disguise, the cat won’t attack it.”
+ENTITIES WITH THEIR OWN MECHANICS
+Some mechanics deﬁ ne the behavior of only one type of entity and nothing else in 
+the game, in which case you should ﬁ gure out the details and document the entity 
+and its associated exclusive mechanics together. This makes it easier for the pro-
+grammers to build the game and for you to ﬁ nd the documentation if you need to 
+change something. This is very like object-oriented programming. In object-ori-
+ented programming, you think about the variables and the algorithms that 
+manipulate them together as a unit. 
+Examples of entities with their own mechanics include symbolic entities that 
+require special mechanics to indicate how they change state (such as a trafﬁ c light); 
+numeric entities whose values are computed from other entities by a formula (such 
+as the amount of damage done in an attack under Dungeons & Dragons rules—it is 
+computed from several other factors, some of them random); nonplayer characters 
+with AI-controlled behavior (the deﬁ nition of the artiﬁ cial intelligence consists of 
+mechanics); and entities that act autonomously even if their behavior doesn’t really 
+qualify as artiﬁ cial intelligence, such as a trap that triggers whenever a character 
+comes near. In the case of a triggered trap, you deﬁ ne its various attributes, both 
+functional and cosmetic, and a set of mechanics that indicate exactly what sets it 
+off and what kind of damage it does to the character who triggers it.
+Numeric and Symbolic Relationships
+This section discusses the differences between the numeric and symbolic relationships 
+and how you may combine them to achieve your design goals for the core mechanics.
+NUMERIC RELATIONSHIPS
+Numeric relationship means a relationship between entities deﬁ ned in terms of num-
+bers and arithmetic operations. For example, the statement “A bakery can bake 50 
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+299
+ CHAPTER 10
+loaves of bread from one sack of ﬂ our and four buckets of water” speciﬁ es a 
+numeric relationship between water, ﬂ our, and bread. Here is another example: 
+“The probability of an injury occurring to an athlete in a collision with another 
+athlete is proportional to the weight difference between the two athletes and their 
+relative speeds at the time of the collision.” Although this second example leaves 
+the precise details up to the programmer to decide, it does specify a numeric rela-
+tionship: Weights and speeds, both numeric attributes of the athletes, go into 
+computing the probability of an injury, a numeric entity. (Remember that an attri-
+bute is just an entity that belongs to another entity.)
+Deﬁ ning numeric relationships precisely requires some familiarity with algebra and 
+arithmetic. First, you must ensure that you use meaningful equations; if you write 
+that the speed the convoy will travel is in part a function of the quantity deﬁ ned by 
+(the weight of supplies) ÷ (number of pack horses – number of camp followers),
+you may very well end up with a divide-by-zero error. Because the resulting value 
+interacts with other parts of the mechanics, changes in the way you calculate that 
+value will have a domino effect, ultimately inﬂ uencing the gameplay itself, and 
+you must be able to understand and predict these effects. Chris Crawford’s Balance 
+of Power: International Politics as the Ultimate Global Game (Crawford, 1986) remains 
+one of the best books ever written on numeric relationships in the core mechanics. 
+Although it is out of print, used copies are still available from online bookstores. 
+The text is also available in ASCII form at www.erasmatazz.com/library/
+Balance%20of%20Power.txt. 
+Numeric relationships lie at the heart of internal economies, and the later section 
+“The Internal Economy” discusses them further.
+SYMBOLIC RELATIONSHIPS
+The values of symbolic entities—red, on, empty, found, and the like—cannot be 
+added together or otherwise manipulated mathematically. You must specify all the 
+states that a symbolic entity may represent, and the relationships among them, 
+without equations. For instance, the red, yellow, and green states of a trafﬁ c light 
+are not related to each other numerically; they’re simply different. To use a trafﬁ c 
+light, you must document how it gets into each of its possible states and how the 
+light in each of those states affects the behavior of other entities. To deﬁ ne the 
+behavior of an NPC driver who sees a trafﬁ c light, you would write three separate 
+mechanics into his AI, one for each state of the light, to say how the driver reacts to 
+seeing a red light, a yellow light, or a green light. When any entity in the game 
+(such as a driver) interacts with a symbolic entity (such as a trafﬁ c light), you must 
+state exactly what happens for each possible symbolic state of the entity. If you 
+leave one state out, no interaction will occur with that state.
+A binary (two-state) entity is sometimes called a ﬂ ag. You will often create ﬂ ags in 
+your game to document whether the avatar has entered locations, overcome spe-
+ciﬁ c obstacles, and so on.
+TIP The values of 
+numeric entities may 
+change according to 
+arithmetic processes, 
+but you must create 
+mechanics that explic-
+itly change symbolic 
+entities from state 
+to state. 
+
+
+--- PAGE BREAK ---
+
+300 
+FUNDAMENTALS OF GAME DESIGN
+This chapter doesn’t discuss symbolic relationships much further because they are 
+relatively easy to deﬁ ne and their results are easier to predict; numeric relationships 
+are harder to create and tune. Although it is possible to create extremely compli-
+cated symbolic relationships (think about Rubik’s Cube), most of the symbolic 
+relationships in games tend to be rather simple.
+INTEGRATING SYMBOLIC AND NUMERIC RELATIONSHIPS 
+Although you cannot perform arithmetic operations on symbolic values, you can 
+deﬁ ne how symbolic entities change from state to state in terms of other numeric 
+data. If the symbolic entity fuel warning can take the values on and off, you can 
+deﬁ ne a mechanic for each of the states based on the quantity of fuel available: 
+“When the amount of fuel goes below 2 gallons, the fuel warning value switches to 
+on. When the amount of fuel rises to 2 gallons or more, the fuel warning value 
+switches to off.”
+A symbolic entity can contribute to a mathematical function if you have a 
+mechanic that associates a symbolic entity into number. For example, the state of
+a car’s transmission is symbolic; the transmission is either in one gear or another, 
+and you can’t add gears together. But you can make a table that shows the gear ratio 
+of each gear, and use the results to make computations about the speed of the 
+driveshafts. For example you can specify, “In ﬁ rst gear, the ratio is 3.83 to 1. In sec-
+ond gear, the ratio is 2.01 to 1. In third gear, the ratio is 1.46 to 1. In reverse gear, 
+the ratio is 4 to -1. The negative value causes the driveshaft to turn backwards.” 
+This mechanic converts a symbolic entity (transmission state) into a numeric entity 
+(gear ratio).
+The Internal Economy
+An economy is a system in which resources and entities are produced, consumed, 
+and exchanged in quantiﬁ able amounts. Most games have an internal economy, 
+though the complexity and importance of the internal economy varies consider-
+ably from genre to genre. Chapter 18, “Construction and Management Simulations,”
+provides more discussion of internal economies.
+A game designer spends part of her time designing and tuning her game’s econ-
+omy, and the more complex the economy, the more time she needs to spend. This 
+section introduces aspects of an internal economy, which it explains by reference 
+to both a simple action game (a shooter) and a complex game (a construction and 
+management simulation).
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+301
+ CHAPTER 10
+MECHANICS OUTSIDE THE INTERNAL ECONOMY
+The internal economy of a game includes those resources and mechanics that the player 
+knows about and tries to manipulate. These include data that may be displayed by the 
+user interface or that form part of the victory and loss conditions. Designers generally 
+do not consider those mechanics over which the player does not exert control to be part 
+of the internal economy. The mechanics that deﬁ ne the AI of nonplayer characters, for 
+example, make up part of the core mechanics but not part of the internal economy of 
+the game.
+A mechanic governing avatar and vehicle movement may or may not be considered part 
+of the internal economy, depending on whether movement produces or consumes any 
+resource. A serious car racing simulation treats fuel as a resource that the engine con-
+verts to kinetic energy (another resource) as the engine drives the car forward. The 
+brakes consume kinetic energy, slowing the car down, and this wears out the brakes. 
+Only the most realistic racing games bother to simulate fuel consumption, kinetic energy, 
+or brake wear, and in those games, such factors can legitimately be considered part of 
+the internal economy. Less sophisticated vehicle simulations make the vehicle stop and 
+go at the player’s command without incorporating any concept of resource production or 
+consumption. Similarly, in most games featuring a humanoid avatar, the avatar can walk, 
+climb, jump, and ﬁ ght indeﬁ nitely without ever needing food; these processes do not 
+consume anything. For the most part, then, the mechanics of movement don’t form part 
+of a game’s internal economy unless the physics simulation is sophisticated enough to 
+justify its inclusion.
+Sources
+If a resource or entity can come into the game world having not been there before, 
+the mechanic by which it arrives is called a source.
+In a simple shooter, the game begins with some resources, such as enemies, already 
+in the game world, but more enemies may appear at spawn points. A spawn point is 
+a designated location where the core mechanics insert new resources into the game 
+world and therefore into the economy. Enemies are part of the economy, a resource 
+that is produced at spawn points and consumed by conﬂ ict with the avatar. Each 
+spawn point is governed by a mechanic that speciﬁ es its location, what kind of 
+resource it generates (spawn points in shooters can also produce weapons, ammuni-
+tion, or health packs), and at what frequency. 
+Sources often produce resources automatically (or at least produce resources auto-
+matically once the player starts them going, for example, by building a factory). 
+You will need to deﬁ ne a production rate, either ﬁ xed or variable, and different 
+sources may produce the same resource at different rates. In The Settlers games, riv-
+ers produce ﬁ sh at a constant rate. A mechanic also deﬁ nes the maximum number 
+
+
+--- PAGE BREAK ---
+
+302 
+FUNDAMENTALS OF GAME DESIGN
+of ﬁ sh that may be in a river at any one time, so the river stops producing ﬁ sh 
+when it gets full.
+Sources can be global mechanics: A mechanism that pays the player interest at reg-
+ular intervals on the money he owns would be one example. An interest-payment 
+mechanism applies throughout the game regardless of anything else, so it is global. 
+Sources can also make up part of the mechanics governing the behavior of entities. 
+In The Settlers, a stream that produces ﬁ sh is an entity, one of whose attributes is 
+the number of ﬁ sh it contains. 
+Sources can be limited or unlimited. In Monopoly, the “Go” square constitutes
+an unlimited source—according to the rules, it can never run out of money. (If
+the bank runs low, the banker may make more money by writing on paper.) But
+the collection of houses and hotels stored in the bank is a limited source: Once
+the banker sells all the houses and hotels, no more may come into the game. The 
+stream in The Settlers is an unlimited source of ﬁ sh. Although it can be temporarily 
+empty if too many ﬁ shermen are catching ﬁ sh from it, it goes on producing ﬁ sh 
+until it is full, as long as the game is running.
+Drains
+A drain is a mechanic that determines the consumption of resources—that is, a rule 
+specifying how resources permanently drop out of the game (not to be confused 
+with a converter, which we’ll look at next). In a shooter game, the player ﬁ ring his 
+weapon drains ammunition—that’s what makes ammunition, a resource, disap-
+pear. Being hit by an enemy shot drains health points. Enemies drain out of the 
+game by dying when their health points reach zero. The most common drain in a 
+construction and management simulation is decay—ongoing damage to the objects 
+the player constructed, which he must spend resources to reverse or repair. (Decay 
+is also sometimes called entropy, although technically entropy refers to increasing 
+disorder rather than loss of resources.) Typical decay mechanics look something 
+like this: “Each section of road includes a numeric attribute indicating its level of 
+decay as a percentage, with 0 (zero) indicating that the section is new and 100 indi-
+cating that the section is fully decayed and impassable. Sections of roads begin to 
+decay 3 months after they are constructed, and 3 percent is added to their level of 
+decay every year, plus an additional 1 percent for every 100,000 car trips over the 
+section in the course of that year. When decay reaches or exceeds 100 percent, the 
+road section becomes impassable and it must be replaced.”
+Because resources are valuable, the player wants to know why a resource disappears 
+from the world and what beneﬁ t compensates for its loss. In Monopoly, players get 
+money from the bank by passing “Go”—in effect, for no reason at all—but when-
+ever a player has to give money back to the bank, the game provides a reason: The 
+player owes income tax, incurs a ﬁ ne, or something similar. Players don’t mind get-
+ting money for free, but when they have to spend it, they want to know why. 
+Explain your drains.
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+303
+ CHAPTER 10
+Converters
+A converter is a mechanic—and usually an entity, too—that turns one or more 
+resources into another type of resource. In designing a converter, you must specify 
+its production rate and the input-to-output ratio that governs the relationship of 
+resources consumed to resources produced. The Settlers offers several examples. The 
+windmill converts grain into ﬂ our at a rate of one to one, so one bag of grain pro-
+duces one bag of ﬂ our. It takes 20 real-time seconds to turn one bag of grain into 
+one bag of ﬂ our, so the rate of production of ﬂ our works out to three bags per min-
+ute. The iron smelter turns one load of ore into one iron bar, consuming one load 
+of coal in the process. However, if fed charcoal instead of coal, the smelter requires 
+three loads of charcoal for each iron bar because charcoal is less efﬁ cient than coal.
+Traders
+A trader mechanic governs trades of goods, generally between the player and the 
+game. In a stock-trading game, the trader may be a faceless ﬁ nancial construct; in a 
+role-playing game, the trader usually comes in the form of a blacksmith who trades 
+in swords or something similar.
+Traders cause no change in the game world other than reassignment of ownership. 
+If you trade your old dirk and a gold coin for a new short sword, then in theory the 
+game still contains that dirk, that coin, and that short sword, although all three 
+articles have been assigned to new owners. The trader can, if your game permits it, 
+sell the old dirk to the next player who comes along.
+THE PROBLEM OF RUNAWAY PROFITS
+A player must never be able to repeatedly buy an item from a trader at a low price and 
+sell it back at a higher price unless you set limits on the process. If players can buy from 
+and sell to traders indeﬁ nitely and rapidly and they can sell something for more than they 
+paid for it, they will exploit this ruthlessly, piling up huge fortunes by endlessly buying 
+and reselling and ignoring the rest of the game.
+You can use various schemes to prevent this. You can make it impossible to make a proﬁ t 
+by requiring all subsequent sales to be for less than the original purchase price. If you 
+want players to be able to make a reasonable proﬁ t, place limits on the amount of buying 
+and selling they can do: Require that they wait a while before selling an item back again, 
+or have the trader refuse to sell items to them more than a certain number of times or 
+refuse to buy goods back. The trader itself can have limited funds and be unable to buy if 
+funds run out. In a multiplayer game, you can let players buy and sell at a proﬁ t to one 
+another but not to an automated or NPC trader. Transactions among the players don’t 
+change the total amount of money in the game; but selling things back to an automated 
+trader mechanic that has an unlimited supply of money has the potential for abuse.
+NOTE A trader 
+is different from a 
+converter. A trader 
+changes the ownership 
+of things, but does 
+not change the things 
+themselves. A converter 
+turns something into 
+something else, con-
+suming the ﬁ rst item 
+and producing the 
+second one.
+
+
+--- PAGE BREAK ---
+
+304 
+FUNDAMENTALS OF GAME DESIGN
+You can also build a bargaining feature into the mechanics of a trader, such that it 
+sells at a high price but can, via a user interface mechanism designed for the purpose, 
+lower its price after a little haggling. Your scheme might make some traders more 
+ﬂ exible than others, thereby encouraging players to shop around for the best deal.
+Production Mechanisms
+Production mechanism describes a class of mechanics that make a resource conve-
+niently available to a player. These include sources that bring the resource directly 
+into the player’s hands, but they can also include special buildings, characters, or 
+other facilities that gather resources from the landscape and make them available 
+to the player. Many real-time strategy games employ special characters to perform 
+this function. For instance, in the Command & Conquer series, a harvester vehicle 
+collects a resource called tiberium and carries it to a reﬁ nery where it is converted 
+into money that the player can use to buy weapons. The harvester is a production 
+mechanism; the reﬁ nery is a converter.
+Tangible and Intangible Resources
+If a resource possesses physical properties within the game world, such as requiring 
+storage space or transportation, the resource is said to be tangible. On the other 
+hand, if it occupies no physical space and does not have to be transported, it is 
+intangible. In a shooter game, ammunition is tangible—it exists in physical form in 
+the environment, and the avatar has to carry it around. Most construction and 
+management simulations treat money as intangible: It exists as a meaningful 
+resource in the game world but takes up no space and has no particular location.
+A number of games treat resources in a mixed fashion, sometimes tangible and 
+sometimes intangible. In Age of Empires, food and building materials have to be 
+transported from their production points to a storage facility; during transport, 
+these items can be stolen or destroyed by an enemy. Once stored, however, materi-
+als become intangible: They cannot be seized or destroyed even if the enemy 
+demolishes the storage facility.
+Similarly, most construction and management simulations and real-time strategy 
+games don’t require a resource to be physically transported before it can be spent or 
+consumed; the commodity simply vanishes. When constructing a building in Age 
+of Empires, the player doesn’t transport the stone from the storage pit to the con-
+struction site. This takes an extra management burden off the player. The section 
+“Logistics” in Chapter 14, “Strategy Games,” discusses the gameplay implications of 
+intangible resources at greater length. 
+Feedback Loops, Mutual Dependencies, and Deadlocks
+A production mechanism that requires some of the resource that the mechanism 
+itself produces constitutes a feedback loop in the production process. Note that this 
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+305
+ CHAPTER 10
+use of the term feedback is not related 
+to the feedback elements discussed in 
+Chapter 8, “User Interfaces.” In the 
+context of a user interface, feedback 
+refers to a means of giving the player 
+information about the effects of his 
+actions upon the game world. In the 
+context of an internal economy, feed-
+back refers to resources that are fed back
+into a production mechanism.
+So long as the mechanism has a supply 
+of the resource to start with and the 
+mechanism produces more than it req-
+uires, there’s nothing wrong with using
+a feedback loop. But if for any reason the
+system runs out of the resource, the mech-
+anism won’t be able to produce any 
+more. This condition, called a deadlock,
+locks up that part of the economy unless
+you provide some other supply of the 
+resource—a way to break the deadlock.
+The Settlers III contains a feedback 
+loop. The player needs stone to build a stonecutter’s hut in order to house a stone-
+cutter who produces more stone (see Figure 10.3). Ordinarily, the game starts with 
+some stone already in storage, so if the player builds a stonecutter’s hut right away, 
+the stonecutter produces the stone needed for other activities. However, if the 
+player uses up all her stored stone constructing other buildings, she might not have 
+enough to build a stonecutter’s hut, and she will be in a deadlock—hut building 
+can’t proceed without stones; stones can’t be produced without a hut. The Settlers III
+provides a way to break the deadlock: The player can demolish another building 
+and get back enough raw stone to build a stonecutter’s hut after all. Note that the 
+stonecutter’s hut doesn’t actually need stone to operate, but the player does need 
+stone to build it in the ﬁ rst place. As long as the player builds and retains one 
+stonecutter’s hut, she shouldn’t get into a deadlock.
+Two production mechanisms that each require the other’s output as their input in 
+order to work are mutually dependent. Again, there’s a loop in the process. If the re-
+sources produced by either one are diverted elsewhere and production stops for lack 
+of input, this, too, can produce a deadlock.
+In designing your game’s internal economy, you need to watch out for deadlocks, 
+which can occur whenever there’s a loop in the production process. To avoid dead-
+locks, either avoid such loops or provide an alternative source for one of the resources. 
+This is the point of collecting $200 when you pass “Go” in Monopoly. A player who 
+FIGURE 10.3 The feedback loop in The Settlers III
+Needed to 
+Stone
+Stonecutter’s Hut
+Produces
+
+
+--- PAGE BREAK ---
+
+306 
+FUNDAMENTALS OF GAME DESIGN
+owns no properties can’t earn money by collecting rent, but without rent, the player 
+can’t buy properties: a deadlock. Monopoly solves this by giving the players money 
+to start with and by giving them $200 every time they pass “Go.” As the game pro-
+gresses, that $200 becomes less signiﬁ cant, but it is enough to break a deadlock.
+DESIGN RULE Provide Means to Break Deadlocks
+If your internal economy contains either feedback loops or mutual dependencies, be sure 
+you include a means to break a deadlock if one occurs
+Static and Dynamic Equilibrium
+It’s possible to design a system in such a way that, left alone, it enters a state of 
+equilibrium. Static equilibrium is a state in which the amounts of resources pro-
+duced and consumed remain constantly the same: Resources ﬂ ow steadily around 
+without any signiﬁ cant change anywhere. Dynamic equilibrium occurs when the 
+system ﬂ uctuates through a cycle. It’s constantly changing, but it eventually 
+returns to a starting point and begins again.
+Here’s an example of static equilibrium. Suppose you have a miller grinding wheat 
+to make ﬂ our and a baker baking bread from the ﬂ our. If the bakery consumes the 
+ﬂ our at exactly the same rate at which the mill produces it, then the amount of 
+ﬂ our in the world at any one time will remain static. If you then upset the system 
+by stopping the bakery for a while, the ﬂ our will build up. When the bakery 
+restarts, the amount of ﬂ our available will be static at the new level. The system 
+returns to static equilibrium because the key factors—the production and con-
+sumption rates of the mill and the bakery—have not changed (see Figure 10.4).
+NOTE The terms 
+static and dynamic 
+equilibrium are bor-
+rowed from economics, 
+not from physics. In 
+physics, static equi-
+librium means that all 
+forces on an object 
+are equally balanced, 
+so the object does not 
+move. In economics, 
+static equilibrium 
+means that supply 
+and demand for goods 
+are balanced, and 
+although the goods 
+themselves move, 
+the amounts do not 
+change.
+FIGURE 10.4
+An example of static 
+equilibrium
+Flour builds up
+FLOUR 
+AVAILABLE
+Static equilibrium
+TIME
+Bakery shuts down
+Bakery/resumes
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+307
+ CHAPTER 10
+Now let’s suppose that only one person does both jobs. She mills enough to bake 
+three loaves of bread; then she bakes the three loaves; then she mills again; and so 
+on. This is an example of dynamic equilibrium: Conditions are changing all the 
+time, but they always return to the same state after a while because the process is 
+cyclic. If we tell the woman to stop baking and only mill for a while, and then re-
+sume baking later, again the ﬂ our builds up. When she resumes baking, the system 
+settles into a new state of dynamic equilibrium (see Figure 10.5).
+When a game such as a construction and management simulation settles into a 
+static equilibrium, players can easily judge the effect of their actions on the system 
+by making one small change and watching the results. This makes the game easy to 
+learn and play. Dynamic equilibrium is more difﬁ cult for players to handle. With 
+the system in constant ﬂ ux, it’s hard to tell whether the changes players see result 
+from a natural process or from something they’ve done.
+Settling into a state of equilibrium, static or dynamic, takes the pressure off the 
+player. She can simply watch the game run for a while and make adjustments when 
+she feels like it. Some construction and management simulations do work that way, 
+but most give the player more of a challenge. Rather than settling into equilibrium, 
+the designers build in a factor that requires the player to take action to prevent the 
+system from running out of some needed resource. To use our milling–baking met-
+aphor, perhaps the player has to take action to keep the mill supplied with wheat. If 
+the player doesn’t keep an eye on the wheat supply, both milling and baking come 
+to a halt. In Age of Empires, farms produce food automatically, but after a while they 
+stop working and the player must intervene to rebuild them. In SimCity, the roads 
+wear out and the player has to repair them.
+Whether your system settles into equilibrium or runs down without player action, 
+one thing is certain: The player should always have to do something to obtain 
+growth—he should have to press on the gas pedal of your game, as it were. If the 
+FIGURE 10.5 
+A new state of dynamic 
+equilibrium
+Flour builds up
+FLOUR 
+AVAILABLE
+Dynamic equilibrium
+TIME
+Baking stops, milling continues
+Triggers
+Baking resumes
+Cycles of milling and baking
+
+
+--- PAGE BREAK ---
+
+308 
+FUNDAMENTALS OF GAME DESIGN
+system can grow constructively and proﬁ tably of its own accord, there’s no reason 
+for the player to interfere. This is the player’s primary challenge: ﬁ guring out how 
+to produce growth using the many (metaphorical) levers and knobs that you pro-
+vide via the core mechanics. In effect, the player is himself an element of the 
+economy, and growth depends on his active participation.
+Core Mechanics and Gameplay
+Figure 10.1 shows that, during play, the core mechanics present challenges to the 
+player and accept actions from the player, both mediated by the user interface. So 
+far, our discussion has concentrated on the core mechanics as a description of a sys-
+tem, without addressing the role of the player. The core mechanics manage the 
+gameplay of the game, implementing all player actions and many challenges. This 
+section discusses how that works.
+Challenges and the Core Mechanics
+The core mechanics implement the mechanisms by which most challenges operate, 
+and they perform tests to see whether a challenge has been surmounted. The chal-
+lenges that the core mechanics present may appear at any level of the challenge 
+hierarchy, from atomic challenges to the victory condition for the entire game. 
+Remember that the level design actually speciﬁ es the type and placement of indi-
+vidual challenges for each level, but the core mechanics implement challenges, if 
+necessary, when the player encounters them.
+PASSIVE CHALLENGES
+Suppose the level designers want to set up a purely static obstacle as a challenge, 
+such as a wall that the avatar must climb over in an action game. You would not 
+need to create an entity to represent the wall or a mechanic to present the chal-
+lenge itself; the wall would simply be an unchanging feature of the landscape. The 
+mechanics play a role in implementing the action the player takes to meet the chal-
+lenge (climbing) but play no role in presenting the challenge itself. This type of 
+challenge is called a passive challenge.
+If the level designers need to detect that a player has conquered a passive challenge 
+(in order to give a reward, perhaps), they design a special event that occurs when 
+the avatar arrives on the other side of the wall—that is, when the avatar’s location 
+attributes meet a condition that the level designers establish. Otherwise, the play-
+er’s presence on the other side implies success, which doesn’t require any special 
+mechanics.
+NOTE Passive chal-
+lenges do not require 
+mechanics to operate, 
+though level designers 
+may want to establish 
+a condition to detect 
+when the challenge 
+has been surmounted. 
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+309
+ CHAPTER 10
+ACTIVE CHALLENGES
+Suppose that the level designers want to set up a more complex challenge for the 
+player, such as a puzzle that the player manipulates to unlock a door. Your design 
+for the core mechanics must supply the level designers with the necessary entities 
+and mechanics to deﬁ ne the puzzle, allow the player to interact with it, display the 
+consequences of her actions, and detect when the puzzle has reached its solution 
+state. This is an active challenge.
+An enemy character that the player must defeat in combat represents another 
+active challenge. The core mechanics deﬁ ne the characteristics and the AI of the 
+enemy character. The level designers place that character at a location in the land-
+scape by setting his location attributes and perhaps they also set some other 
+attributes, such as health and ammunition. In effect, your design creates the tools 
+and parts that the level designers use to build levels, create puzzles, position ene-
+mies, and so on. In a long game, the level designers probably reuse the same tools 
+several times to create variants of the same challenge in different parts of the game. 
+(This is one of the reasons why the same characters seem to appear over and over 
+in a game: The level designers reuse the basic mechanics.)
+Actions and the Core Mechanics
+The challenges in a game vary from level to level in type, frequency, sequence, and 
+other respects, but the actions available to the player normally do not change from 
+level to level except that, in some games, more actions become available as the 
+player progresses through the game. Consequently, the level designers play a 
+smaller role in determining what actions are available than they do in choosing 
+challenges for a level, though they can choose challenges that tend to require the 
+use of some actions more than others. (Sometimes level designers also specify that 
+familiar actions should not be available. See “Make Atypical Levels Optional” in 
+Chapter 12.)
+PLAYER ACTIONS TRIGGER MECHANICS
+When you design the core mechanics, you must specify a mechanic that imple-
+ments each action in each gameplay mode, which will either initiate an event or 
+start or stop a process. When the user interface detects data arriving from an input 
+device, UI routines determine what action the player desires by checking the 
+assignment of actions to buttons (or similar control devices) established by the 
+gameplay mode’s interaction model. The UI then triggers whatever mechanic you 
+speciﬁ ed for that action.
+Let’s look at a simple example from a ﬁ rst-person game. When a player presses a 
+button assigned to the crouch action, the UI triggers a crouch mechanic that imple-
+ments the action. You must deﬁ ne this mechanic to do two things. First, it changes 
+a symbolic posture attribute of the avatar from the walking upright state to the 
+NOTE Active 
+challenges require 
+mechanics that imple-
+ment their activity. 
+
+
+--- PAGE BREAK ---
+
+310
+FUNDAMENTALS OF GAME DESIGN
+crouching state. (This attribute may affect other mechanics—it could inﬂ uence how 
+big a target the crouching ﬁ gure presents—but the crouch mechanic does not imple-
+ment those effects itself.) Next, because all actions should be accompanied by 
+feedback, your crouch mechanic lowers the value of a numeric attribute of the ava-
+tar that determines how far the avatar’s head is above the ground. The graphics 
+engine detects this and shows the ﬁ rst-person view from a crouching, rather than 
+an upright, perspective.
+ACTIONS ACCOMPANIED BY DATA
+More complicated actions may involve manipulation or storage of data that arrives 
+from the user interface. In such cases, you must create both an event mechanic that 
+implements the action and an entity that stores the data. The user interface sets the 
+value of the entity for the mechanic to interpret.
+Suppose that in our ﬁ rst-person game, the player uses a mouse to control which 
+direction the avatar faces, and he moves the mouse to the right. This input trans-
+lates into an action, causing the avatar to turn to the right. But a mouse is an 
+analog device, not a binary one like a controller button, so in addition to the infor-
+mation that the mouse moved, the UI also sends data about how far it moved. This 
+event requires a mechanic that must interpret the data and make the appropriate 
+changes to the avatar’s direction-facing attribute.
+Core Mechanics Design
+Entia non sunt multiplicanda praeter necessitatem. (Do not create more entities than 
+necessary.)
+—ATTRIBUTED TO WILLIAM OF OCCAM
+Designing the core mechanics consists of identifying the key entities and mechan-
+ics in the game and writing speciﬁ cations to document the nature of the entities 
+and the functioning of the mechanics. This is the very heart of the game designer’s 
+job, and the more complex the game, the longer it takes—sometimes weeks or 
+months. Because you can make so many kinds of games, this book can describe the 
+process only in general terms. Use your knowledge of existing games and of your 
+chosen genre to ﬁ ll in the details.
+Reading this chapter alone gives you the tools to document your core mechanics, 
+but it doesn’t contain the information necessary to create a balanced game. Don’t 
+start designing your mechanics until you have also read Chapter 11, “Game 
+Balancing.”
+TIP Implement 
+actions in the core 
+mechanics by creating 
+mechanics that the 
+user interface can trig-
+ger and entities that 
+the user interface can 
+supply with data from 
+the input devices. 
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+311
+ CHAPTER 10
+Goals of Core Mechanics Design
+Before looking into the question of how to go about designing the core mechanics, 
+remember what you are actually trying to achieve with your design. Never forget 
+that your ultimate goal is to create entertainment for the player—that’s the point
+of the quote from Molière at the beginning of the chapter. But in addition to this 
+overarching objective, certain principles help you design an enjoyable game 
+efﬁ ciently.
+STRIVE FOR SIMPLICITY AND ELEGANCE
+The most elegant games operate with the smallest number of rules. Some of the 
+greatest games are those whose mechanics are extremely simple yet still manage to 
+offer interesting variety. As the quote from William of Occam suggests, try to avoid 
+making your mechanics too complex. Simple games are easier for players to learn, 
+and that gives simple games a broader appeal than complicated ones.
+You can maintain players’ interest with a variety of content that explains a small 
+number of mechanics in a large number of ways. As mentioned in the sidebar “The 
+Rules and Core Mechanics of Monopoly,” the general rules of Monopoly are simple, 
+but the Chance and Community Chest cards create additional interest. The major-
+ity of these cards concern the transfer of money to or from the player who draws 
+the card—a simple mechanic—but each card gives a different explanation for why 
+the money is being transferred (such as “Income tax refund, collect $20”). The 
+explanations are purely cosmetic, but they add variety. You can build similar fea-
+tures into your own game while still keeping the rules simple.
+LOOK FOR PATTERNS, THEN GENERALIZE
+Learn to recognize patterns in your ideas for your game and to convert them into 
+generalized systems rather than trying to document dozens of individual cases. Here’s 
+an example. Suppose you decide that swamp leeches really belong in water and that 
+a swamp leech should lose 10 points of health for every minute that it’s out of the 
+water. Later, you decide that a salamander (a mythical ﬁ re-loving creature) should 
+lose 5 points of health for every minute that it’s out of the ﬁ re. A pattern emerges: 
+Certain creatures are dependent upon their native environment, and they lose 
+health at a speciﬁ ed rate when they leave it. Instead of describing this mechanic 
+over and over for each creature, explain the general case only once, for all environ-
+ment-dependent creatures. Note that each creature in the game will need two 
+attributes to support this mechanic: a symbolic attribute indicating what the crea-
+ture’s native environment is (water, ﬁ re, and so on, and be sure to include a special 
+value to use if the creature is not dependent on any environment), and a numeric 
+attribute stating the rate at which the creature loses health when out of its environ-
+ment (the value should be zero if the creature is not environment-dependent). 
+Then, as you design each creature in your game, you can decide what values these 
+attributes should have without having to document the whole mechanism again.
+
+
+--- PAGE BREAK ---
+
+312
+FUNDAMENTALS OF GAME DESIGN
+By designing general patterns rather than individual cases, you can more easily 
+understand how your game will really work, and you will also make it easier for the 
+programmers to program it. The programmers will write general-case code that 
+applies most of the time, rather than having to write separate subroutines for each 
+creature. You can still create a few special cases for variety or when circumstances 
+require it. In Monopoly, the rules for collecting rent on colored properties (the ones 
+named after streets) are the general case, while the railroads and utilities are special 
+cases that create additional interest. But try to avoid creating large numbers of spe-
+cial cases.
+DON’T TRY TO GET EVERYTHING PERFECT ON PAPER
+Unless you’re designing a trivially simple game, you won’t get everything perfectly 
+right on paper, because you won’t be able to compute the effects of all your mechanics
+in your head. Designing core mechanics (and just about everything else in a video 
+game, too) requires iterative reﬁ nement. Create a ﬁ rst draft of your mechanics and 
+then build a prototype that implements them, either in a spreadsheet program or 
+in software. Test and adjust your mechanics using the prototype. If you try to get 
+everything exactly right on paper, you won’t ever get the project ﬁ nished. Although
+this may sound odd, it is more important to be clear and precise in your documen-
+tation than it is to be accurate. You will ﬁ nd it much easier to correct a mechanic 
+that doesn’t work quite the way you expected than to try to resolve ambiguous lan-
+guage late in the development process.
+FIND THE RIGHT LEVEL OF DETAIL
+You can design core mechanics at any level of detail, but there are tradeoffs. If you 
+document the core mechanics minutely, with no detail left unaddressed, the pro-
+grammers can turn your mechanics directly into code very quickly. That seems like 
+a good idea in principle, but in practice you will almost certainly be swamped with 
+work. Designers who try to document every single thing about the core mechanics 
+delay their projects—or cause them to be canceled.
+The problem at the opposite end of the spectrum, leaving too much unclear, is 
+almost as bad. Either the programmers will have to come and ask you for further 
+details, or they will make their best guess for themselves. If you have clearly com-
+municated your vision to them, and you see eye to eye about how the game should 
+work in principle, then their guesses may be good ones. But in practice, the pro-
+grammers will often make assumptions other than what you intended, and you’ll 
+notice the mistake in the tuning phase. It can be time consuming to go back and 
+correct bugs introduced by ambiguous design decisions.
+To ﬁ nd a happy medium, use traditional gaming conventions where appropriate to 
+avoid overloading yourself. If your game features some very ordinary scenarios and 
+you are conﬁ dent that the programmers will know what you mean, you can afford 
+to use general language. You don’t have to write, “When a car’s number of laps 
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+313
+ CHAPTER 10
+attribute goes over 500, set the eligible to win ﬂ ag to TRUE for that car. Continuously 
+check all cars to see if the location attributes of the cars that are eligible to win show 
+that they are on or beyond the ﬁ nish line. Set the winner entity with the number of 
+the ﬁ rst car whose location attribute meets that condition.” It’s okay just to say, 
+“The ﬁ rst car that has completed all 500 laps and crosses the ﬁ nish line is the win-
+ner,” because this is a perfectly familiar situation.
+The less familiar the mechanisms that you document, the more speciﬁ c you need 
+to be, especially if any of them run counter to convention. In the dart game 301, 
+the player starts with a score and reduces that score by the amount that he hits on 
+the dartboard. The object of the game is to be the ﬁ rst to achieve a score of exactly 
+zero. Because this runs counter to convention, it’s the sort of thing you have to 
+explain more precisely. Similarly, the mechanic that describes the behavior of 
+female dragons in the earlier sidebar “Analyzing a Mechanic” requires more detail 
+because female dragons are entirely imaginary; nobody can count on his existing 
+experience with dragons to know how they should behave.
+If you know how to program even a little bit, you can write pseudo-code to docu-
+ment processes that you need to explain extremely carefully. Pseudo-code includes 
+the if and while statements that indicate conditional or repeated operations but 
+without exact variable names or the other syntactic features of a real programming 
+language. Pseudo-code can be handy in circumstances that call for precise explana-
+tions, which is why potential designers would beneﬁ t by taking at least one class in 
+programming. It doesn’t much matter what language you study, as long as it 
+includes the concepts of conditional and repeated execution.
+Revisit Your Earlier Design Work
+To begin designing the core mechanics, go back to your earlier design work and 
+reread it to identify entities and mechanics. Make a list of the nouns and verbs that 
+you encounter. Whenever you come across a noun in your design documents, that 
+noun will probably be implemented in the core mechanics as an entity, a resource, 
+or both. Whenever you see a verb, that action will probably be implemented as a 
+mechanic. Also watch for sentences that include the words if, when, and whenever.
+These designate conditions that will become part of the mechanics.
+Look particularly closely at the following items:
+■ Your answers to the question, “What is the player going to do?” The answers 
+to this question give the player’s role and some information about the challenges 
+he will face and the actions he will perform. They will include some of the most 
+critical nouns and verbs of all. Even if the answer is simply “ﬂ y an airplane,” it con-
+tains the key verb for the whole game, ﬂ y, and the key noun, airplane.
+■ Your ﬂ owboard of the game’s structure. Each gameplay mode and shell menu 
+represents a separate state of the mechanics, so the mechanics will require a sym-
+bolic entity to keep track of the current gameplay mode during play.
+
+
+--- PAGE BREAK ---
+
+314 
+FUNDAMENTALS OF GAME DESIGN
+■ Your list of gameplay modes and your plans for them. Be sure to pay special 
+attention to the challenges and actions you plan to offer the player in each mode 
+and any user interface feedback and control mechanisms you have speciﬁ ed.
+■ The general outline of the story you want to tell, if any. If it’s a branching or 
+foldback story, look at the structure that you made for it. Take note of the circum-
+stances that cause it to branch. You will convert these into conditions.
+■ The names of any characters you planned for your story. Unless these charac-
+ters only appear in narrative events, they will certainly be entities in the core 
+mechanics.
+■ Your general plans for each level in the game. Unless the level designers are 
+already at work, you won’t have speciﬁ c details, but you will know what kinds of 
+things you wanted to include in each level.
+■ The progression of the levels that you want to provide, if the levels progress in 
+a sequence. Note whether any information carries over from level to level; you will 
+create entities to store the data.
+■ Any victory or loss conditions that you expect to use (or that you anticipate 
+the level designers will want to establish).
+■ Any non-gameplay actions that you may wish to include, such as moving the 
+virtual camera, pausing or saving the game, and other forms of creative play.
+Certain nouns and verbs in this material may not apply to the core mechanics. If
+a noun describes a passive landscape feature that acts as a challenge or something 
+purely cosmetic, you can cross it off your list. If a verb describes an activity unre-
+lated to gameplay, such as setting the volume level of the sound effects, you can 
+cross that off, too.
+List Your Entities and Resources
+Once you have your list of nouns, decide whether each represents a resource, an 
+independent entity, an attribute of another entity—or perhaps none of the above, 
+in which case, you can cross those off the list. Now you have a list of resources and 
+entities. For each item on your list, consider these questions:
+■ Does the noun describe a resource—some item or substance that changes in a 
+general way throughout the game? Or does it describe an entity, a particular value, 
+or quantity?
+■ If the noun describes an entity, is the entity simple or compound? If simple, is it 
+symbolic or numeric? If symbolic, what states can it take? If numeric, what is the 
+range of numbers? What will its initial symbolic or numeric value be? These initial 
+data form a critical part of the core mechanics that you will tune throughout the 
+development process. Write them down in your document or in a spreadsheet.
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+315
+ CHAPTER 10
+■ If the noun describes a compound entity, what attributes describe it? (They 
+might be elsewhere on the list, or you might have to invent some new ones.) Add 
+any new attributes to your deﬁ nition of the compound entity and go back to the 
+previous question to determine their qualities.
+Unless a game offers only one gameplay mode and no shell menus (which would be 
+extremely rare), it will undoubtedly require an entity to record which gameplay 
+mode or shell menu the game occupies at any given time.
+This process will give you an initial list of all the resources and entities your game 
+features. It won’t be a complete list; you will undoubtedly add more as work goes 
+on. If your early design stated generalities but not speciﬁ cs, add the details now. 
+Suppose you wrote, “Level 5 will consist mostly of formal logic puzzles.” At this 
+point, you must deﬁ ne the entities that the level designers will require to build the 
+formal logic puzzles. Will the player drag tiles, ﬂ ip switches, and click on colored 
+marbles? Then add tiles, switches, and marbles to your list of entities. Now you’ve 
+got some attributes to think about: The tiles have positions, the switches have 
+states, and the marbles have colors. Write it all down.
+Add the Mechanics
+With your list of entities and list of verbs, you’re ready to start deﬁ ning the 
+mechanics. Again reread your earlier design work. If any sentence includes or 
+implies the word somehow, now is the time to deﬁ ne exactly how. “The player gets 
+money” or “gets money somehow” must turn into a precise speciﬁ cation of when 
+the player’s money entity increases and by what amount.
+As you read, remember that mechanics consist of relationships, events, processes, and 
+conditions.
+THINK ABOUT YOUR RESOURCES
+Start with any resources that you identiﬁ ed in the previous step and think about 
+how they ﬂ ow through the game. What sources bring them into the game? What 
+drains remove them? Can they be traded or converted automatically into another 
+resource? Every source, every drain, and every conversion requires mechanics that 
+determine how a conversion operates, when, and at what rate. Also ask yourself 
+what happens when the resource runs out. If nothing much changes, you may not 
+need the resource. Because a resource is a general concept rather than a speciﬁ c 
+quantity like an entity, you may be able to determine a lot about a resource’s 
+mechanics just by thinking through the resource ﬂ ow in the economy.
+Remember that games that don’t deal in numeric quantities don’t have resources. 
+Such games contain only symbolic entities.
+
+
+--- PAGE BREAK ---
+
+316
+FUNDAMENTALS OF GAME DESIGN
+STUDY YOUR ENTITIES
+Once you have a good grasp of your resources’ sources, drains, and conversions, 
+move on to your entities. Go down your list of entities and ask the following ques-
+tions about each one:
+■ Does this entity store an amount of a resource, and if so, have I already docu-
+mented how it works in the previous step?
+■ What events, processes, and relationships affect the entity? What conditions 
+apply to these events, processes, and relationships?
+■ What events, processes, and relationships does the entity contribute to? What 
+conditions apply to them?
+■ What can the entity do by itself, if anything? Any entity that can do something 
+by itself—whether the entity is as simple as a detector or as complicated as an 
+NPC—requires mechanics to deﬁ ne what it does and how.
+■ What can the player do to the entity, if anything? If the player can manipulate 
+the entity, he requires an action to do so, and actions require mechanics.
+■ Is this a symbolic entity? If so, it requires mechanics to control how the entity 
+gets into each of its possible states.
+Many of the verbs in your list of verbs will be associated with particular entities, so 
+as you examine an entity, check to see which verbs apply to it and what mechanics 
+they imply.
+ANALYZE CHALLENGES AND ACTIONS
+Go over the list of challenges and actions that you intend to offer in each gameplay 
+mode. All the active challenges and each action must have an associated mechanic 
+and possibly some associated data. (If it requires data, you should already have an 
+entity deﬁ ned for it.) How does the action affect the world? How does the challenge 
+affect the avatar or the other entities under the player’s control? Use the answers to 
+these questions to document your mechanics.
+LOOK FOR GLOBAL MECHANICS
+Global mechanics operate all the time, regardless of what gameplay mode or level 
+the game may be in. Global mechanics include those that implement actions such 
+as pausing the game or, if the player can win or lose in more than one gameplay 
+mode or level, detecting the victory or loss conditions. (In many games, the level 
+designers specify a different victory condition for each level, but the loss condi-
+tions—such as running out of money or health—remain the same in every level.) 
+Go through your list of verbs and see how many of them describe global mechan-
+ics, and then deﬁ ne how each works.
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+317
+ CHAPTER 10
+Random Numbers and the Gaussian Curve
+So many games use random numbers that, although you may not know any pro-
+gramming, you should understand how to use random numbers in a computer game.
+When a computer generates random numbers, by convention it always does so as a 
+real number value greater than or equal to 0 but less than 1. In statistical calcula-
+tions, probabilities are always expressed as a fractional value between 0 and 1, so 
+an event with a probability of 0.1 has 1 chance in 10, or 10 percent, of occurring. 
+To see if an event with a given probability occurs, the computer generates a random 
+number, then checks to see if the random number is less than the event’s probabil-
+ity. If so, the event happens. The random number is always less than 1, so if an 
+event’s probability is exactly 1, the event always happens. The random number is 
+never less than 0, so if an event’s probability is 0, it never happens.
+The “Numeric Attributes” section of Chapter 14 discusses a number of ways to use 
+random numbers when computing things such as whether a weapon hits the point 
+at which it’s aimed. A weapon with an accuracy rating of 0.8 hits its mark 80 per-
+cent of the time. To see whether a particular shot hits, generate a random number 
+and compare the number to the weapon’s accuracy rating. If the random number is 
+less than the rating, the weapon hits.
+Pseudo-Random Numbers
+Random-number generation algorithms normally take an input value, called a seed,
+that determines the sequence of random numbers the algorithm produces. If the 
+seed is identical each time the game is played, the sequence of random numbers 
+that the algorithm generates is identical each time, too. In other words, it’s as if 
+each time you play a board game, you get the exact same sequence of die rolls that 
+you got the last time you played. Each roll is different from the previous roll, but 
+the sequence of rolls is identical. Such numbers are called pseudo-random.
+This feature is extremely useful when you’re tuning the game’s mechanics. When 
+you make adjustments to the mechanics, it is difﬁ cult to determine what the effect 
+of your change is if the operation of chance keeps changing the game. By using the 
+same seed each time you play, you always get the same random numbers, so the 
+effects of chance don’t change from one playing to the next. The mechanics 
+become deterministic and predictable. This quality is also essential for bug-ﬁ xing.
+If a bug happens by chance, it might not happen the next time someone plays the 
+game, so the programmer won’t be able to ﬁ nd it and ﬁ x it. If the game uses 
+pseudo-random numbers, the bug should be easier to reproduce.
+Naturally, in the ﬁ nal version of the game that the customer buys, you won’t want 
+the effects of chance to be the same on each play through. Just before the game is 
+ready to ship, the programmers will change the code to take the seed from some 
+random source, such as the system clock, so the player will get a different experi-
+ence each time he plays.
+
+
+--- PAGE BREAK ---
+
+318 
+FUNDAMENTALS OF GAME DESIGN
+Monte Carlo Simulation
+If you have a simple deterministic mechanic that simulates some real-world effect, 
+then it doesn’t take long to see if it works correctly. For example, the gears in a car’s 
+drive train govern the relationship between the speed of a car’s engine and the 
+speed of the car’s wheels. It’s a ﬁ xed mathematical relationship and easy to com-
+pute. On the other hand, if you design a complicated mechanic with all sorts of 
+factors, it may be difﬁ cult to predict how it will behave. You don’t have time to test 
+all possible outcomes to make sure they all make sense. Instead, you can do some-
+thing called Monte Carlo simulation.
+In Monte Carlo simulation, you make a large number of test runs of your system 
+using random inputs, and record the results in a ﬁ le. Then you can examine the ﬁ le 
+and make sure that the outcomes reﬂ ect the behavior that you expect. Here’s an 
+example: Many sports games let the player manage a team throughout a whole sea-
+son, and play each match that the real team would play. The game simulates all the 
+other matches in the league season (the ones not involving the player’s team) auto-
+matically. If you don’t want the machine to play each simulated match through 
+moment by moment, which the player probably won’t want to wait for, you will 
+need to design a mechanic that fakes it; an algorithm that generates the win-loss 
+results for all the other matches without really playing them. Your mechanic will 
+probably be based on the attributes (such as the performance characteristics) of the 
+athletes on the team. (The section “Simulating Matches Automatically” in Chapter 
+16, “Sports Games,” discusses this issue in more detail.) But how can you be sure 
+that your mechanic produces realistic results? You can try it by hand a few times, 
+but that’s not enough to constitute a serious test.
+To perform a Monte Carlo simulation, randomly generate two teams of athletes, with 
+a variety of random attribute settings for each athlete, then apply your mechanic to 
+them and record which team wins. Do this repeatedly, 1000 times or so. Afterwards, 
+analyze the data from the simulations to see if any anomalies occurred. Did a weak 
+team ever beat a strong team? Did it happen often, or was it a ﬂ uke? If it was a 
+ﬂ uke, happening once in 1000 times, that’s OK—if sports matches were completely 
+predictable they’d be boring. But if it happened often, you know your mechanic 
+has a problem. If you know statistical methods, you can compute the correlation 
+between the inputs (relative team strength) and the outputs (who won) and make 
+sure that there’s a positive correlation between strength and victory.
+People use Monte Carlo simulation for all sorts of things: to predict proﬁ ts when 
+people buy products at different price points, to predict the failure rate of new 
+products, and so on. Microsoft Excel and other spreadsheet programs contain built-
+in tools for performing Monte Carlo simulations. If you can deﬁ ne your mechanic 
+in a spreadsheet, you can easily use these tools.
+NOTE This method 
+of simulating a process 
+with a variety of 
+random inputs is 
+named after the famous 
+casino at Monte Carlo. 
+Gambling games all 
+use random values 
+(shufﬂ ed cards, thrown 
+dice, and so on), but 
+by repeated simulation 
+a casino can compute 
+the probable proﬁ t-
+ability of a particular 
+game.
+
+
+--- PAGE BREAK ---
+
+CORE MECHANICS 
+319
+ CHAPTER 10
+Uniform Distribution
+When a computer generates a random number, it ordinarily does so with a uniform 
+distribution. That means the chance of getting any one number exactly equals the 
+chance of getting any other number. It’s like rolling a single die: There’s an equal 
+chance that a die will land on any one of its faces. That is exactly the behavior you 
+will want whenever you ask the computer to choose among a certain number of 
+equally probable options. For example, if you specify that four possible answers in
+a multiple-choice quiz game should be presented to the player in a random order, 
+you’ll want the possibilities to be mixed up so that each answer has an equal 
+chance of being presented ﬁ rst, second, third, or fourth.
+You can create a uniformly distributed die roll value with the following formula 
+(and by discarding any digits after the decimal point in the result):
+Die Roll = (Random number × Number of faces on the die) + 1
+Nonuniform Distribution
+In other circumstances, you may not want the random values to be evenly distrib-
+uted but may instead want some values to occur frequently and others to occur 
+only rarely. Suppose you’re designing a game about Olympic archery. The player 
+will compete against an artiﬁ cial opponent, and you want to use a random number 
+to decide where the artiﬁ cial opponent’s arrow lands. At the Olympics, the chances 
+that an archer will hit the bull’s-eye are pretty high. The chances that he’ll miss 
+the target entirely are extremely low. In specifying where the arrow lands, you 
+won’t want it to be uniformly distributed across the target, you’ll want it to have a 
+better chance of landing in the middle than anywhere else.
+One of the simplest ways to achieve this result is to generate more than one uniformly 
+distributed random number (that is, roll several dice) and add the resulting numbers 
+together to give you a value. This does not yield a uniform distribution of values; 
+the values tend to cluster around a central point, with few values at the extremes.
+Here’s an example. We all know that if you roll two six-sided dice and add them 
+together, the chance of rolling a 7 is much higher than the chance of rolling a 2 or 
+a 12. But how much higher? As you design the core mechanics of your game, this is 
+something you need to know.
+Rolling two six-sided dice and adding the results can produce any of 11 possible 
+values, from 2 (two 1s) to 12 (two 6s). Of 36 possible combinations of two six-sided 
+dice, only one combination yields a 2: throwing two 1s. On the other hand, there 
+are six possible ways to get a 7: 1 + 6, 2 + 5, 3 + 4, 4 + 3, 5 + 2, and 6 + 1. So when 
+you roll two six-sided dice, you’re six times as likely to roll a 7 as you are to roll a 2.
+The rules of Dungeons & Dragons specify that certain types of random numbers 
+must be generated by rolling three six-sided dice and adding them together. With 
+three dice, the chances are even higher that the result will be somewhere in the 
+
+
+--- PAGE BREAK ---
+
+320 
+FUNDAMENTALS OF GAME DESIGN
+middle. There are 216 possible combinations, producing 12 possible values from 3 
+(1 + 1 + 1) to 18 (6 + 6 + 6). There are 27 ways to throw a 10 or an 11, but again, only 
+one way to throw a 3 or an 18. In other words, you’re 27 times as likely to roll a 10 
+as you are an 18.
+The Gaussian Curve
+When you add dice together like this, the probability of each possible result forms a 
+bell-shaped, or Gaussian, curve, a phenomenon familiar to mathematicians. Figure 
+10.6 shows a graph of all the possible results when rolling three six-sided dice and 
+adding the resulting numbers.
+It’s important that you realize what this means for your game. If you use this addi-
+tive dice mechanism and you specify that a player must roll an 18 to succeed at a 
+task, he has only one chance in 216 of actually rolling it. That’s less than one-half 
+of 1 percent. In other words, it will almost never happen. This system is not the 
+same as rolling one die with 16 faces numbered from 3 to 18. With one such die, 
+the chance of rolling an 18 is identical to the chance of rolling any other face, one 
+in 16, or 6.25 percent. That’s far more than one chance in 216.
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 
+11 
+12 
+13 
+14 
+15 
+16 
+17 
+18
+30
+25
+20
+15
+10
+5
+0
+These curves describe many phenomena in the universe, from the pattern of water 
+droplets falling from a central point to the intelligence levels of animals (and 
+humans). To put it succinctly, most things lie somewhere in the middle of the 
+curve; rare things lie in the extremes. When that’s the sort of effect you want in 
+your game design, use a Gaussian distribution.
+FIGURE 10.6
+The Gaussian curve 
+produced by rolling 
+three six-sided dice 
+and adding the result-
+ing numbers
+Number of Ways to Throw a Given Value
+Added Values of Three Six-Sided Dice
+
+
+--- PAGE BREAK ---
+

@@ -1,0 +1,1293 @@
+590 
+FUNDAMENTALS OF GAME DESIGN
+■ What forms of interaction did the player have in the simulation? Did you per-
+ceive the player interactions as fun? If not, why not?
+■ If the product did not involve the life cycle of a life form, what forms of interac-
+tion did the player have in the simulation? Did you perceive the player interactions 
+as fun? If not, why not?
+■ Brieﬂ y document the interface for the game. How does the player interact with 
+the world, in a direct or indirect manner? How well does the interface allow the 
+player to interact, or does the interface inhibit or limit interaction?
+■ Address the game progression: Did the game change over time? How did the 
+player interactions affect the life form(s)?
+Choose a puzzle game that you believe, from your own experience of playing it, is 
+an excellent example of the genre (or use one your instructor assigns). It should be 
+a solitaire (single-player) game where puzzle solving is the primary activity. Write a 
+report documenting this simulation. Be sure to cover at least the following areas:
+■ Describe the gameplay and game mechanics. Describe the presentation of the 
+game and interaction of the player.
+■ If the game has a physical representation in the real world (solitaire card games, 
+for example), what does the computer bring to the video game version? What rules 
+or designs were changed for the new medium?
+■ Does the game have levels or increased difﬁ culty? Is it clear to the player how 
+the game progression works? In your opinion, does the game ramp up too quickly 
+or not quickly enough?
+■ Address the combination of puzzles: Is there more than one type of puzzle in 
+the game? Is the mechanism that is used to combine the puzzles into a single game 
+clear to the player and does it make sense?
+■ Discuss whether the victory condition for any level or the overall game is clear 
+to the player.
+In your report, use screen shots to illustrate your points. End the case study with 
+suggestions for improvement or, if you feel the game cannot be improved, sugges-
+tions for additional features that might be fun to have in the game.
+Alternatively, choose an A-life or puzzle game that you believe is particularly bad.
+Do the same case study, explaining what is wrong and how it could be improved.
+A case study is neither a review nor a design document; it is an analysis. You are 
+not attempting to reverse-engineer the entire game but simply to explain how it 
+works in a general way. Your instructor will tell you the desired scope of the assign-
+ment; I recommend from ﬁ ve to twenty pages.
+
+
+--- PAGE BREAK ---
+
+ CHAPTER 21
+591
+Online Gaming
+Online gaming has grown from a tiny fraction of the interactive entertainment 
+business into a major market in its own right. In this chapter, you’ll learn about 
+some of the features and design challenges that set online gaming apart from the 
+more traditional single-player or multiplayer local games. Online gaming is a tech-
+nology rather than a genre, a mechanism for connecting players together rather 
+than a particular pattern of gameplay. Therefore, this chapter doesn’t look for 
+design commonalities as the chapters on game genres did. Instead, it addresses 
+some of the design considerations peculiar to online games no matter what genre 
+those games belong to. It’s a huge topic, however, and there is only room in this 
+book for the highlights.
+Don’t confuse online gaming, as this book uses the term, with online gambling
+or online casino gaming. Online gambling is a different industry, and is not
+covered here.
+The second half of the chapter is devoted to online games that are persistent worlds,
+also known as massively multiplayer online games, or MMOGs. Raph Koster, lead 
+designer of both Ultima Online and Star Wars Galaxies, and Tess Snider, lead program-
+mer at Trion World Network, provided a great deal of assistance with this material.
+What Are Online Games?
+This chapter uses the term online games to refer to multiplayer distributed games in 
+which the players’ machines are connected by a network. (This is as opposed to 
+multiplayer local games in which all the players play on one machine and look at 
+the same screen.) While online games can, in principle, include solitaire games that 
+happen to be provided via the Internet, such as Bejeweled, the online aspect of soli-
+taire games is incidental rather than essential to the experience. Bejeweled is simply 
+a puzzle game. Online games do not need to be distributed over the Internet; games 
+played over a local area network (LAN) also qualify as online games.
+Advantages of Online Games
+Some features of online games offer advantages to us as game developers, and some 
+offer advantages to players, attracting people who might not otherwise play com-
+puter games.
+CHAPTER 21
+
+
+--- PAGE BREAK ---
+
+592 
+FUNDAMENTALS OF GAME DESIGN
+Player Socializing
+Online games offer opportunities for social interaction. The social aspect enhances 
+the players’ enjoyment of the experience. Girls and women have traditionally 
+shown less interest in interactive entertainment, especially games for personal com-
+puters, in part because these tend to offer solitary activity. Women represent a 
+much greater proportion of the online game market than they do the single-player 
+game market, partially because they enjoy interacting with others.
+At the moment, most games offer only limited social interaction with conversation 
+restricted to typing text (chatting), which is awkward while you are trying to play a 
+fast-paced game, but more and more games include voice communication. When 
+enough people get broadband access, online games could include video as well. A 
+time might come when we see players dressing appropriately for their roles in the 
+game so that they’ll look cool on camera.
+As the creator of such an online game, you’re more than just a game designer; you 
+must also be a social architect. This is actually your toughest challenge, far more 
+difﬁ cult than designing the core mechanics of a single-player game. An online game
+isn’t an experience that you lead a player through; it’s a petri dish for growing social
+situations, and it’s nearly impossible to predict in advance what will happen there. 
+Human Intelligence Instead of Artiﬁ cial Intelligence
+In single-player games, the player competes against the computer, so the computer 
+has to have enough artiﬁ cial intelligence (AI) to be a good opponent; building the 
+AI for a complex game presents a huge programming task and one that is difﬁ cult 
+to get right. But if the players compete against each other, as they do in most online
+games, you don’t usually need as much AI. The players provide all the intelligence 
+required in many situations.
+You can use AI in an online game if you want to: You might include nonplayer 
+characters (NPCs) who need to behave intelligently, or you might design a game in 
+which all the players play cooperatively against artiﬁ cial opponents. Several popular
+games have limited NPCs but have some large opponents that the online players 
+must work together to combat. Guild Wars, for example, encourages this type of play.
+The AI-controlled enemies are challenging to beat with a team of online friends and
+impossible for an individual. But many online games rely on their players to provide
+most of the intelligence in the game, and this can make the game easier to develop 
+in that respect. A real-time strategy game, for example, still needs AI for its individ-
+ual units when played online, but players supply the strategic and tactical thinking.
+Online Gameplay Versus Local Multiplayer Gameplay
+Multiplayer gameplay, whether online or local, offers great ﬂ exibility to the game 
+designer, allowing purely competitive (everyone for himself), purely cooperative 
+NOTE  For further 
+discussion of this
+topic, please read
+the excellent and
+insightful Community
+Building on the
+Web by Amy Jo Kim
+(Kim, 2000).
+
+
+--- PAGE BREAK ---
+
+ONLINE GAMING 
+593
+ CHAPTER 21
+(us against the machine), or team-based (us versus them) play. In online play, a net-
+work links the players, who occupy (generally, but not necessarily) separate locations.
+Local play can be broken into two categories: LAN play or physically local play. LAN
+play is virtually identical to online play except that Internet access is not required—
+a technical distinction that has little or no impact on game design. In physically 
+local play (hereafter referred to simply as local play), all the players sit in the same 
+room, playing the game on the same machine and, most important, looking at the 
+same screen.
+For the last 30 years, local play has been the standard mode of interaction for mul-
+tiplayer console games: Each player holds a controller, and all players look at the 
+TV. This may change now that the new generation of consoles has network capabil-
+ity, but local play is likely to remain the most common way people use multiplayer 
+games because it incurs no network charges and lets friends play together in groups. 
+PROBLEMS WITH LOCAL PLAY
+Local play as just described presents the game designer with serious difﬁ culties. For 
+one thing, because all the players share the same TV, any user interface elements 
+displayed must be duplicated for each player, taking up valuable screen space. If the 
+game maintains a separate point of view for each player, you must subdivide the 
+screen into little windows. Each player will ﬁ nd it harder to see a small individual 
+window than the full screen image, and activity in the other players’ windows will 
+distract him.
+More important, however, because local play uses a single display device, you have 
+no way to hide information. Each player can see everything the others do. This 
+works well for ﬁ ghting games, but not as well for any game in which players might 
+want to keep their activities secret—war games, for instance.
+Finally, local play necessarily imposes limits on the number of people who can par-
+ticipate at one time. Consoles seldom support more than four players; PCs support 
+even fewer. Even if you could add players indeﬁ nitely, the screen would become 
+crowded with characters and other data, and the machine itself would bog down
+as the computing tasks grew.
+BENEFITS OF NETWORKED PLAY
+Online gaming solves all these problems. Each player uses her own screen, and the 
+entire display supports only her gaming experience. The game can present her with 
+her own unique perspective, including exactly as much information as the designer 
+wants her to have and no more. And online games can support large numbers of 
+people (although games requiring a central server may ﬁ nd the server capacity lim-
+iting); it’s not uncommon for some games to support tens of thousands of players 
+online at a time. With an online game, players can always ﬁ nd other people to play 
+with at any hour of the day or night.
+NOTE The Nintendo 
+GameCube is unusual: 
+It allows players to 
+plug in a Game Boy 
+Advance and use it 
+as a controller. The 
+designer may take 
+advantage of the Game 
+Boy’s screen to display 
+secret information 
+only to the player who 
+should see it. The 
+wireless connectivity 
+of the Nintendo DS 
+also allows multiplayer 
+local play in which 
+each player has his 
+own screen.
+
+
+--- PAGE BREAK ---
+
+594 
+FUNDAMENTALS OF GAME DESIGN
+Disadvantages of Online Games
+Playing games over a network, especially the Internet, presents the designer with 
+certain disadvantages, as well. This section discusses some of these technical chal-
+lenges, as well as the ongoing responsibilities of providing new content and customer
+service. You should also be aware that strangers playing your game anonymously 
+over a network can cause social friction and that this can range from minor misbe-
+havior to serious criminal offenses.
+Technical Issues
+Although this is a book about game design rather than programming, you need to 
+be aware of certain technical issues for online games that local games don’t have
+to address. This section doesn’t go into them in great detail, but aims to make you 
+familiar with these technical considerations. If you design an online game you will 
+need to discuss them with your programming team.
+COMMUNICATION MODELS
+Your programming team will need to choose a communication model from the two 
+currently in use in networked gaming. In the ﬁ rst, client/server, each player runs a 
+program, called the client, on his computer, that communicates with a central program,
+the server, on a computer owned by a company providing the game service. In the 
+client/server model, the server runs the game engine, sending packets of information
+to the various clients, and the clients merely present that information to the players. 
+The other model, peer-to-peer, involves direct communication between the players’ 
+computers. Implementation of peer-to-peer (sometimes abbreviated P2P) communi-
+cation is quite straightforward for two-player games but becomes more complicated 
+as more players are involved. The players’ systems must decide which machine to 
+designate as the host—that is, which will control the game while the others become 
+guests. If the host logs out of the network, one of the guests’ computers must take 
+over and become the new host—preferably automatically and without anyone’s 
+noticing (this is known as automated host migration, a feature already supplied by 
+Microsoft’s DirectPlay facilities). Some companies also operate matchmaking ser-
+vices in which the company’s server functions only to allow players to ﬁ nd one 
+another and connect together in peer-to-peer networks. All of this is programming 
+work that ofﬂ ine games don’t have to bother with.
+LATENCY
+The Internet is designed for redundancy rather than speed, so it doesn’t make any 
+guarantees about how long a given packet of data will take to get from one point to 
+another. This phenomenon is called latency. In many games, a faster connection 
+translates into a gaming advantage, making players with high-speed connections 
+more likely to win the game. You can design around this by making your game 
+
+
+--- PAGE BREAK ---
+
+ONLINE GAMING 
+595
+ CHAPTER 21
+turn-based or trying to match up opponents on the basis of their connection 
+speeds. At the moment, there is no one satisfactory answer.
+DROPPED AND GARBLED PACKETS
+What happens to your game if it doesn’t get some of the information it needs 
+because of a glitch in the network? Your system will require a mechanism for 
+detecting a missing packet or one containing bad data, and requesting that the 
+packet be resent from the server or host. Packets can also arrive out of order, which 
+can cause confusion if your client receives information that a race car is about to 
+cross the ﬁ nish line, but the next packet indicates that the car is 100 yards back on 
+the track instead. Every packet must have a unique serial number, in sequence, so 
+that you can tell if one is missing or if packets are arriving in the wrong order. 
+Fortunately, middleware companies are starting to offer software packages to help 
+manage this problem.
+It’s Harder to Suspend Disbelief
+For some players, gaming is a form of escapism that takes them away to a magical 
+place, and they want it to stay magical while they’re there. To them, it’s particularly 
+important that nothing occur in the game to break their suspension of disbelief, 
+but in online games there will always be players who won’t stay in character or who 
+will talk about real-world issues and events while they’re in the game. Unless 
+there’s a strong (and enforced) ethos of in-character role-playing, people who play 
+in an online game have to accept that their imaginary world includes a lot of 
+entirely real people.
+The persistent world World of Warcraft offers players multiple versions of its game 
+world with different versions imposing different rules on the player. In some ver-
+sions, in-character role-playing is expected—although there is no real mechanism 
+to enforce it.
+Misbehavior
+Unfortunately, playing with strangers—particularly anonymous strangers—creates 
+opportunities for a variety of types of misbehavior that can ruin the game for oth-
+ers. These range from simple rudeness to harassment, cheating in various forms, 
+and outright fraud. Rudeness might not sound very serious, but it drives away other 
+customers. Furthermore, if you want children to play your game, it is particularly 
+important to make sure you offer a safe environment—you may even have a legal 
+obligation to make sure adults don’t use your game environment to abuse chil-
+dren—and that means hiring customer service people to monitor the players. 
+Self-contained networks such as America Online have some tools at their disposal 
+to manage these problems, but on open networks such as the Internet, it’s much 
+harder. The section “Design Issues for Online Gaming” later in this chapter 
+addresses some of these issues.
+NOTE Raph Koster 
+said, only partly jok-
+ing, that the sole rule 
+in Star Wars Galax-
+ies is, “Any behavior 
+that hurts business is 
+bad behavior.”
+
+
+--- PAGE BREAK ---
+
+596 
+FUNDAMENTALS OF GAME DESIGN
+The Need to Produce Content
+When you’re building a single-player game to be sold in retail stores, your job gen-
+erally ﬁ nishes when the gold master disc goes off to manufacturing. The players 
+buy the game and you can go off to work on another project.
+Online games don’t work this way; they earn money either through advertising rev-
+enue, micropayments, or subscriptions. To keep people interested, you have to 
+change things, and that means producing new content on an ongoing basis. This is 
+expensive for the service provider and ties up skilled development staff. The prob-
+lem is most obvious with persistent worlds, but even simple games need to be kept 
+fresh. Maﬁ a Wars, a popular browser game available via the Facebook social net-
+working web site, does not use 3D graphical environments or sounds, but the 
+developers regularly add new gear for players to buy and things for them to do.
+Customer Service
+All game companies require customer service staff to help players with problems, 
+but online games need far, far more of them. With ofﬂ ine games, players mostly 
+need help with technical difﬁ culties; for gameplay problems, they can buy strategy 
+guides or ﬁ nd hints on the Internet. But in a live, online environment, players 
+expect to get help immediately, and they demand help for a much larger range of 
+issues than they do in ofﬂ ine games. Players expect customer service people not 
+only to solve technical problems but also to explain the user interface, answer ques-
+tions about game content, and enforce justice by investigating and punishing 
+misbehavior by other players. With thousands of players logged on at any one time, 
+providing these services can become very expensive.
+Design Issues for Online Gaming
+This section addresses some design issues peculiar to online games: the problems 
+presented by players arriving or disappearing during play, the pros and cons of real-
+time versus turn-based play, things to consider when providing a chat feature, and 
+a variety of issues regarding security and the prevention of cheating.
+Arriving Players
+Players can log on wanting to play your game at any time, and the game must be 
+capable of dealing with them intelligently. In most noncomputer games, all the 
+players must be present at the beginning of the match or it won’t be fair. In Monopoly,
+for example, anyone who entered the game late would be at a signiﬁ cant disadvan-
+tage—the others would have already grabbed the best properties, and the game’s 
+built-in inﬂ ation would swiftly bankrupt newcomers.
+The usual solution for this problem is to start new matches at frequent intervals 
+and to have a waiting area, or lounge, where the players can hang around while they 
+
+
+--- PAGE BREAK ---
+
+ONLINE GAMING 
+597
+ CHAPTER 21
+wait for a new match to begin. In a game that can be played with any number of 
+players, such as bingo, you can simply start a new match, say, every three minutes, 
+and whoever is waiting may play. In games requiring a ﬁ xed number of players, 
+such as bridge, you will need to establish a matchmaking service that allows them 
+to form groups and to wait (more or less patiently) for enough players to join a par-
+ticular group; the game begins as soon as the required number of players arrives. 
+The number of players needed for a game should be small, however, to minimize 
+waiting times. Any game that requires more than about eight players risks alienat-
+ing players who do not want to wait.
+In some games, players can join almost immediately without any disadvantage—
+poker, for instance. Each hand takes little time, and new players can join at the
+end of the current hand. Tournament play, of course, has a deﬁ nite start, and play-
+ers cannot join after the game begins. For games of indeﬁ nite duration, such as 
+persistent worlds, you can’t do anything about the fact that some players possess 
+advantages other players don’t. The players who began the earliest and who devote 
+the most time to play will always have an advantage (unless you allow players to 
+purchase prebuilt characters for real money on eBay, but that just shifts the advan-
+tage from players who have the most time to players who have the most money). 
+You can, however, prevent those advantages from spoiling the game for other players:
+■ Get rid of the victory condition. Without winners and losers, an online enter-
+tainment ceases to be a game per se and becomes a different kind of amusement. 
+The player focuses on her own achievements rather than on defeating all the other 
+players. In this case, the old cliché becomes apt: It’s not whether you win or lose, 
+but how you play the game. Persistent worlds, which are addressed later in the 
+chapter, work on that basis.
+■ Discourage competition between experienced players and newcomers. You 
+can measure the progress of your players and see to it that only those who are fairly 
+matched come into direct conﬂ ict. Tournament chess uses a ranking system to do 
+just that. A highly ranked player who beats a newcomer gets little or no reward for it. 
+Maﬁ a Wars only permits players with similar levels of experience to ﬁ ght each other.
+■ Be sure that direct competition is consensual. If experienced players do get the 
+chance to compete directly with newcomers, you should give the newcomers the 
+option to refuse to play. No one should be forced to take part in an unfair competition.
+Disappearing Players
+Just as players can appear at any time, they can log off at any time, or lose their 
+connection to the game for technical reasons. If possible, your game should deal 
+with this neatly and with minimal disruption to other players. In many games, 
+such as racing games, players compete against one another in a free-for-all. If one 
+player disappears, it doesn’t make that much difference—his car vanishes from the 
+track, and that’s all. In effect, the player forfeits the race and the others continue. 
+On the other hand, if the game requires players to work in teams, the disappear-
+ance of one player could put his team at a serious disadvantage. In games that 
+
+
+--- PAGE BREAK ---
+
+598
+FUNDAMENTALS OF GAME DESIGN
+require a ﬁ xed number of participants, your only options are to give the person a 
+chance to reconnect, assuming the disappearance was a mistake, to include an AI 
+element that can take over for the missing player, or to shut down the game.
+Tournaments require special consideration. If players compete to get the best win-
+loss ratio, one might deliberately choose to log out rather than lose the game—
+which can deny the other person victory. Should the vanishing player be forced
+to forfeit? What if the disconnection was an accident, caused by a bad line? 
+Unfortunately, there’s no sure way to tell if it was.
+You may ﬁ nd that one of the following suggestions solves the problem of vanishing 
+players for your game:
+■ The vanishing player forfeits the game. This solution may unfairly penalize 
+players who are disconnected by accident. It’s only a good solution if the network 
+connections are extremely reliable, such as a local area network. If the players run 
+the risk of being disconnected accidentally and you are offering something valu-
+able to the winner (such as a cash prize in a tournament), then you should not 
+require vanishing players to forfeit the game. Online gambling games do not 
+require the player to forfeit; they implement mechanisms for allowing a player to 
+restart a game in the event of a disconnection.
+■ Institute a penalty for disconnections that is less severe than forfeiture. If a 
+player disconnects in the middle of combat during an EverQuest session, the avatar 
+remains in the game for a minute, taking additional damage. Unfortunately, the 
+avatar doesn’t ﬁ ght very well by itself. On the MSN network, players who get dis-
+connected once have 10 minutes to reconnect and resume the game; if they fail to 
+do so, they forfeit or, in some games, an artiﬁ cial player managed by the server 
+takes over for them. If they get disconnected twice, they forfeit automatically. In 
+many games, the game tries to reconnect to the player for a limited amount of 
+time. In a turn-based game, such as poker, this has a minimal impact on the other 
+players who have to wait for their turn anyway. Ultimately, the player is assumed to 
+be away from his computer, and play continues without him until he reconnects.
+■ Award victory to whomever is ahead in the game at the time of the discon-
+nection. This solution seems fair but means that the moment someone goes ahead, 
+she can disconnect to deny her opponent a chance to catch up. Again, you should 
+consider this only in circumstances in which it is difﬁ cult or impossible to discon-
+nect intentionally.
+■ Record it as a tie. While this solution might motivate a losing player to discon-
+nect intentionally, it still makes a fairly neutral solution.
+■ Record it as a “disconnected game.” You then have to decide exactly what this 
+means in the context of a tournament. If other players can view the records, they 
+can tell when someone racks up a suspiciously high number of disconnections and 
+avoid playing with that person. Or the server can determine that a player is being 
+disconnected too often and prevent him from playing for a period of time.
+
+
+--- PAGE BREAK ---
+
+ONLINE GAMING 
+599
+ CHAPTER 21
+■ Abandon the game entirely. This is the fairest solution in the case of accidental 
+disconnections, but it is unfair to whomever is leading if the player who is behind 
+pulls the plug.
+■ Use referees. The World Cyber Games, a large gaming tournament, keeps a log 
+ﬁ le during play, and in the event of disconnection, a referee can examine the ﬁ le to 
+adjudicate victory. If the players agree, they can also restart the match. This requires 
+a human referee to be available, however, which adds to the operating costs.
+There’s no one right answer to this problem; it depends too much on the nature of 
+the individual game. It’s up to you as the designer to think about the problem and 
+try to decide what’s fair.
+Real-Time Versus Turn-Based Games
+Many online games take place in real time with each player acting simultaneously. 
+This offers players maximum freedom; they always have something to do and can 
+order their activities any way they like. It’s also more immersive than turn-based 
+gaming. Waiting your turn while other players act harms suspension of disbelief. 
+Unfortunately, real-time gaming tends to make a strategy game into an action 
+game. Whichever player moves his pieces fastest has the advantage. In games such 
+as Command & Conquer, victory becomes a matter of establishing an efﬁ cient weap-
+ons-production system as quickly as possible.
+Turn-based games seem rather old-fashioned nowadays, but there is still a demand 
+for them. Many simpler online games are automated versions of noncomputerized 
+card games and the like, and they still require players to take turns. For this to work 
+smoothly, you must include certain features:
+■ Limit the number of players in one game. Four or ﬁ ve is a good maximum. 
+With more than this, players will have to wait too long between turns and will 
+grow impatient.
+■ Set a time limit on the length of a player’s turn. A slow player or one who has 
+left to answer the phone mustn’t be allowed to hold up the game. Both the player 
+whose turn it is and all the other players should be able to see a countdown timer. 
+The length of time will naturally vary depending on the sort of game; for a card 
+game such as hearts, 10 seconds should be plenty.
+■ Determine a reasonable default action if the player runs out of time. In 
+games in which it’s possible to pass, the best default might simply be to pass with-
+out acting, but in a game such as checkers, in which a move is required, the game 
+will have to choose a move. It doesn’t have to be a very smart move, however. It’s 
+up to the player to supply the intelligence; if he doesn’t, it’s his own fault.
+■ Let players do other things while waiting for their turn. They should deﬁ -
+nitely be allowed to chat with one another, study the battleﬁ eld, organize their 
+units, or do anything else that doesn’t actually inﬂ uence the gameplay.
+
+
+--- PAGE BREAK ---
+
+600 
+FUNDAMENTALS OF GAME DESIGN
+A few games, such as Age of Wonders II or Civilization IV, allow all the players to take 
+their turns simultaneously—that is, they each choose their next move at the same 
+time, without knowing what the others are doing. Once they have all chosen (or a 
+timer runs out), the turn ends, and the computer processes and displays the results 
+of all of the moves.
+Note that some turn-based games permit very long turns in which players make 
+only one move every 24 hours or exchange their moves by e-mail. This can allow 
+novices to compete against more advanced players. However, such games are rare. 
+This chapter is concerned with players who are online in real time, even if the 
+game itself is turn-based.
+Chat
+Every multiplayer game for machines that use keyboards should include a chat
+feature—a mechanism that enables players to send messages to one another. Voice 
+chat, implemented with microphones, is now a common feature of online console 
+games and many PC games as well. Depending on the nature of the game, players 
+should be able to send private messages to one other individual, messages only to 
+members of their own team (if any), or general broadcast messages to all other play-
+ers who might reasonably be interested. In a game played by thousands of players, 
+any one player should be able to broadcast messages only to those in his vicinity or 
+on his team, whatever that might mean in the context of the game—the players at 
+his table, the players in the same room of a dungeon, and so on.
+Unfortunately, chat brings a new set of problems: the potential for rude, abusive, or 
+harassing behavior. People who pay to play your game expect that others will meet 
+certain minimum standards of civility. This is particularly important for games that
+will be played by children; parents rightfully want to protect their kids from abusive
+or offensive behavior. In a sporting event, the referee enforces rules that maintain 
+these standards, or if there is no referee, then the collective authority of the other 
+players must sufﬁ ce. Online, it’s much more difﬁ cult to police players’ behavior.
+LIMITED CONTENT
+The surest solution is to restrict what players may say to each other. Mario Kart for 
+the Nintendo Wii offers no voice chat and only allows players to choose remarks 
+from a ﬁ xed list of phrases. This guarantees that they can’t say anything offensive, 
+but it doesn’t really meet the social need that chat supplies.
+PROFANITY FILTERS
+Designers have tried profanity ﬁ lters, but they aren’t fully reliable, and they sometimes
+produce laughable results. Words such as damn and hell are perfectly legitimate when
+talking about religion, even if they’re considered swearing in another context—
+and don’t think that people won’t talk about religion when they’re in your dungeon;
+they’ll talk about everything under the sun. In any case, people can easily get around
+
+
+--- PAGE BREAK ---
+
+ONLINE GAMING 
+601
+ CHAPTER 21
+such ﬁ lters by misspelling the words (and of course, profanity ﬁ lters don’t solve the 
+problem for voice chat). A profanity ﬁ lter should always be backed up by other 
+means, such as online customer service representatives to whom players can report 
+bad behavior.
+COMPLAINT AND WARNING SYSTEMS
+Some chat systems include complaint mechanisms designed to discourage online 
+rudeness. Some online games give players a Report button they can push whenever 
+they receive an offensive message. The offending message is, if it consists of text, 
+automatically forwarded to someone in authority (usually online customer service 
+staff), who can then investigate and take appropriate action: warn the offender to 
+mend his ways, kick him ofﬂ ine, or even ban his account.
+The America Online Instant Messenger includes a fully automated system that 
+allows users to warn each other, either anonymously or openly, when one partici-
+pant behaves badly. A user can be warned once per message that he sends; the more 
+warnings he receives, the less frequently the system permits him to send messages. 
+If he receives enough complaints, he may be unable to send any further messages 
+for several hours. The record of the complaints is deleted over time, so a user’s bad 
+behavior is not held against him permanently. If he has behaved himself for a 
+while, he can resume sending messages.
+IGNORING OTHER PLAYERS
+Some chat mechanisms allow a player to hide messages from other individuals whose
+behavior they ﬁ nd offensive, a practice called ignoring. The player simply selects the 
+name of a person he wants to ignore, and he no longer receives chat messages from 
+that person, no matter what the person writes. You can permit this to take place 
+silently (the other player doesn’t know she’s being ignored) or automatically send a 
+message telling her that she has been ignored—the online equivalent of deliber-
+ately turning your back on someone. This mechanism is both effective—the users 
+have full control over whom they hear from and whom they don’t—and inexpen-
+sive because it doesn’t require staff intervention. You should also include the ability 
+to turn chat off entirely if players simply don’t want to hear from anyone else.
+MODERATED CHAT SPACES
+The most effective, but also the most expensive, way of keeping order in a chat space 
+is to give one person authority to discipline the others at all times. Internet Relay Chat 
+uses this method; the creator of a chat room exercises the authority to kick people out.
+If the enforcer also participates in the game, this method is subject to abuse. When 
+people set up their own online matches among their friends, you can let them police 
+themselves; but when they are paying someone to arrange the game for them (as in a 
+match making service or persistent world), the moderator must be an impartial rep-
+resentative of the game’s provider—a customer service agent, in effect, whether 
+paid or unpaid.
+
+
+--- PAGE BREAK ---
+
+602 
+FUNDAMENTALS OF GAME DESIGN
+Collusion
+Collusion is a form of cheating in which players who are supposed to be opponents 
+work together in violation of the rules. The rules of Monopoly explicitly prohibit col-
+lusion. The fact that the players are all in the same room, and usually have social 
+obligations to one another, tends to enforce that rule. Unfortunately, you can’t 
+count on those factors in an online game. Some players will join a game with a 
+deliberate, even avowed, intent to cheat. Because they’re playing with strangers, 
+they have no social relationship at stake, and because they’re physically miles 
+apart, no one can see them do it. 
+EXAMPLES OF COLLUSION
+Computer games seldom have written rules because the designers assume that the 
+game will enforce the rules automatically: The players simply can’t make illegal 
+moves, in most cases. However, software can’t detect certain kinds of collusion 
+between players.
+Consider an online multiple-choice trivia game with three possible answers for 
+each question. Each player receives the same question from the server and has a 
+ﬁ xed length of time in which to enter an answer. When a player enters his answer, 
+he immediately learns whether he was right or wrong. Correct answers earn points, 
+and the player with the largest number of points at the end of the game wins.
+Four players can easily collude at this game to guarantee that one of them will win. 
+They all play on different machines in the same physical location—an Internet 
+café, for instance. When a question appears, three of the players each immediately 
+enter a different response—A, B, or C—and the fourth one waits. When the soft-
+ware informs one of three players that she is correct, she immediately calls out her 
+letter, and the fourth player enters it before the time runs out. This way the fourth 
+player always enters the correct answer. Even with fewer than four players collud-
+ing this way, they can greatly increase the odds of winning.
+You can easily defeat this form of collusion: You simply don’t reveal the correct 
+answer until the time for entering answers runs out. Players who enter an answer 
+early simply have to wait to ﬁ nd out whether they answered correctly. But other 
+forms of collusion can be more insidious. Online poker, for example, can involve 
+players sharing information about their cards via instant messaging or some form of 
+physical communication. There is no way for the system to account for external means 
+of communication. If you offer a prize for the player who wins the greatest number 
+of chess games in a certain length of time, for example, two players can collude to 
+play each other, with one always trying to lose to the other as quickly as possible.
+DESIGNING TO REDUCE COLLUSION
+The designer of an online game must try to anticipate collusion as much as possi-
+ble. Unfortunately, experience shows this to be extremely difﬁ cult. There are no 
+
+
+--- PAGE BREAK ---
+
+ONLINE GAMING 
+603
+ CHAPTER 21
+limits on players’ ingenuity or the lengths to which some will go. Even if your 
+game doesn’t offer a chat feature, players can play from two machines in the same 
+room, call each other on mobile phones, or use any online chat facility to collude.
+You can’t prevent players from colluding, but you can design the game to minimize 
+the effects of cheating. You should consider in what ways the following types of 
+collusion might affect your game:
+■ Sharing secret knowledge. Does the player ever have secret knowledge that she 
+can share to someone else’s beneﬁ t? In the trivia game described previously, some 
+players receive the correct answer before the time runs out. Withholding this infor-
+mation prevents collusion.
+■ Passing cards (or anything else) under the table. Does the game include 
+mechanisms to transfer assets from one player to another? Is there any way to 
+abuse these mechanisms?
+■ Taking a dive. What are the consequences if one player deliberately plays to 
+lose? If you allow gambling on matches (even if only with play money or points), 
+you should look out for this.
+If you’re designing a game in which the competition mode is supposed to be every 
+player for herself, try imagining what would happen if you made it a team game in 
+which you encouraged players to collaborate. If it’s already a team game, try to 
+imagine what would happen if one player on the team spied for the other team.
+Technical Security
+People feel a strong impulse to test the limits of computer software—to see what it 
+will do with nonsensical inputs (such as ﬁ ring upon their own troops in a war 
+game). Similarly, players often think of ways to do things that the designers never 
+intended or expected. Sometimes these unanticipated maneuvers, such as using the 
+rocket launcher to propel the player upward in Quake, even become standard tactics.
+Making unexpected but legal moves is not cheating; one can argue that designers 
+should anticipate these tactics or that testers should discover them. But other forms 
+of cheating, such as hacking the game’s software or data ﬁ les, are clearly unfair. In 
+a single-player game, it doesn’t really matter, but cheating in multiplayer games 
+presents a more serious problem. People who wouldn’t dream of cheating their 
+close friends in person—say, playing poker around the living room table—happily 
+cheat strangers when protected by the distance and anonymity that an online 
+game offers. 
+Players have a moral right to expect a fair game when they’re playing against other 
+people, and they have a legal right to a fair game as well if they’re paying money 
+for the privilege. This becomes even more crucial if they’re playing for prizes. 
+Although all game software comes with a disclaimer that the publisher sells the 
+software as is and without any warranty, the moment you start to give out prizes 
+
+
+--- PAGE BREAK ---
+
+604 
+FUNDAMENTALS OF GAME DESIGN
+with monetary value, you must be very careful to ensure that your game is fair if 
+you don’t want to end up in court.
+The legitimate players aren’t the enemy, of course, but the handful of cheaters are. 
+We lock our doors at night not to protect ourselves from the honest majority of the 
+population but to protect ourselves from the dishonest minority. You will have to 
+design your game with the same consideration in mind.
+USE A SECURE TELECOMMUNICATIONS PROTOCOL
+It takes an extremely dedicated hacker to tamper with the data stream between the 
+client software and the server, but it takes only one. If the stakes are high enough, 
+someone will decide the reward is worth the time spent. To foil hackers, your soft-
+ware must use a secure telecommunications protocol. Designing such a thing is a 
+programming problem and is beyond the scope of this book, but if you’re designing 
+an online game, you should be sure that the telecommunications protocol you use 
+provides the following features.
+■ First, all data should be encrypted to prevent users from understanding it out-
+right. Each packet of data should be sent with suitable error-checking and error-
+correcting facilities, which will enable the software to detect whether the data has 
+lost integrity in transmission. Even though Internet communications are far more 
+reliable than the old modem-based systems were, it’s always a good idea to verify 
+that the arriving data is correct.
+■ Second, you might want to consider a heartbeat mechanism. In this system, your 
+client software sends a short packet to your server at regular intervals, even when 
+the client doesn’t need to transmit data, simply to tell the server that the client is 
+still present. This enables you to detect disconnections. If the nature of the game 
+allows the client to remain silent indeﬁ nitely, the server doesn’t know if the client 
+has disconnected or if the player is just thinking.
+■ Each packet should include a unique serial number, to indicate the correct 
+order of packets and to prevent spurious packets from being inserted by unauthor-
+ized means.
+DON’T STORE SENSITIVE DATA ON THE PLAYER’S COMPUTER
+A game typically contains two kinds of data about a player. Your game needs to 
+keep settings or preferences about the way the player appears and likes to play, as 
+well as information that’s actually relevant to the game state: the player’s position, 
+score, possessions, and so on. In Monopoly, for instance, the player’s playing piece 
+(hat, shoe, car, and so on) belongs in the former category; it doesn’t matter to the 
+state of the game which token the player uses. However, the player’s properties, 
+cash, and position on the board belong in the latter category; changes to those 
+attributes affect the player’s status in the game.
+
+
+--- PAGE BREAK ---
+
+ONLINE GAMING 
+605
+ CHAPTER 21
+This second kind of information shouldn’t be stored on the player’s own computer. 
+Even with encryption techniques, you have to assume that someone will tamper 
+with any data kept on the player’s machine to give that player an unfair advantage. 
+If your game truly generates too much sensitive data about each character to store it 
+all on the server, at least store a checksum over the data when the player logs out so 
+that when he logs back in again, you can check his data and determine whether it 
+has been improperly modiﬁ ed in the meantime.
+DON’T SEND THE PLAYER DATA HE ISN’T SUPPOSED TO HAVE
+A common characteristic of real-time strategy games is the fog of war, in which 
+unexplored areas of the map appear dark and the player cannot detect movements 
+of the enemy unless a friendly unit nearby can plausibly see them. Single-player 
+games store all of this information in the player’s computer; it’s just not visible to 
+the player. Online games should not send any such hidden information to the 
+player. If the player hacks the game to lift the fog of war, he can see unexplored 
+areas and watch the movements of enemy units, giving him a signiﬁ cant advantage 
+over his opponents.
+DON’T LET THE CLIENT PERFORM SENSITIVE OPERATIONS
+In designing a client/server game, you must always strike a balance between the 
+amount of processing that the server does and the amount that the client does. It 
+saves CPU time on the server for you to ofﬂ oad as much of the processing work 
+onto the client as you can, but it isn’t always safe. Suppose, for example, that you’re 
+designing a simple role-playing game in which the player occasionally encounters 
+monsters and must ﬁ ght them. It reduces the load on the server if the server sends 
+the client some information about the current monster and lets the ﬁ ght take place 
+entirely on the player’s computer. After the ﬁ ght, the client sends a message back to 
+the server reporting whether the player won, lost, or ran away, but this presents a 
+danger: If the player hacks the client, he can program it to report that he wins 
+every ﬁ ght. In fact, the server, not the client, should perform the computations for 
+the ﬁ ght and determine whether the player won or lost.
+Persistent Worlds
+A good many online games are not really games at all by the deﬁ nition you learned 
+in Chapter 1, “Games and Video Games.” Persistent worlds such as World of Warcraft,
+EverQuest, Anarchy Online, and so on constitute permanent environments in which 
+players can play, retaining the state of their avatar from one session to another. 
+Persistent worlds present a number of special problems and design requirements, 
+which this section discusses at a general level. For a more in-depth discussion, read 
+Designing Virtual Worlds by Richard Bartle (Bartle, 2003), and Developing Online 
+Games: An Insider’s Guide by Jessica Mulligan and Bridgette Patrovsky (Mulligan and 
+Patrovsky, 2003).
+
+
+--- PAGE BREAK ---
+
+606 
+FUNDAMENTALS OF GAME DESIGN
+Persistent worlds signiﬁ cantly predate today’s popular graphical MMOGs. Since 
+1978, a small but dedicated community of developers has been building, playing, 
+and studying text-based persistent worlds called MUDs (multiuser dungeons or 
+domains, depending on who you talk to) that could be played by groups of people 
+over the Internet. In these worlds, in which players interact by typing commands,
+a rich culture of online role-playing evolved. 
+This book won’t go into MUD design in any detail here; there is no commercial 
+market for MUDs, and you can already ﬁ nd a vast amount of literature about the 
+subject on the Internet. Many of the design problems of today’s MMOGs, particu-
+larly those relating to social interactions among players, were solved—or at least 
+studied—long ago in the MUD community.
+How Persistent Worlds Differ from Ordinary Games
+Part of the appeal of computer games is the environment in which the player ﬁ nds 
+herself: a fantasy world where magic really works or behind enemy lines in World 
+War II. Another part is the role the gamer will play in the game: detective or pilot 
+or knight-errant. Yet another is the gameplay itself, the nature of the challenges the 
+player faces and the actions she may take to overcome them. And, of course, there 
+is the goal of the game, its victory condition: to halt the enemy invasion or ﬁ nd the 
+magic ring. The victory is usually the conclusion of a story that the player experi-
+ences and contributes to.
+Persistent worlds offer some of these things but not all of them, and there are sig-
+niﬁ cant differences between the kinds of experiences that persistent worlds offer 
+and those that conventional games offer.
+STORY
+Because persistent worlds have so many players, and because they are intended to 
+continue indeﬁ nitely, the traditional narrative arc of a single-player game doesn’t 
+apply. Persistent worlds may offer storylike quests, but they always return to the world 
+eventually; you can’t have a once-and-for-all ending in the sense that a story does.
+The setting of a persistent world consists of the environment itself and the overall 
+conditions of life there. It can be a dangerous place or a safe one, a rich place or a 
+poor one, a place of tyranny or a place of democracy. You can challenge players to 
+respond to problems in the world as it is or to problems that you introduce, 
+whether slowly or suddenly.
+The goal is a quest or errand that the player undertakes as an individual or with 
+others. Goals can be small-scale (eliminate the pack of wild dogs that has been 
+marauding through the sheep ﬂ ocks) or large-scale (everyone in the town gets 
+together to rebuild the defenses in anticipation of an invasion). Most persistent 
+worlds offer large numbers of quests from which players may choose.
+NOTE Persistent 
+worlds used to be 
+commonly called 
+massively multiplayer 
+online role-playing 
+games or MMORPGs, 
+because the earliest 
+ones belonged to the 
+role-playing genre. 
+More recently the 
+industry has begun to 
+call them massively 
+multiplayer online 
+games (MMOGs) in-
+stead, to reﬂ ect their 
+growing diversity.
+NOTE The MMOG A
+Tale in the Desert is un-
+usual in that its world 
+regularly comes to an 
+end and starts again 
+fresh in a new edi-
+tion, called a Telling.
+Although the game 
+persists for months at a 
+time, it does not persist 
+indeﬁ nitely.
+
+
+--- PAGE BREAK ---
+
+ONLINE GAMING 
+607
+ CHAPTER 21
+As a designer, you probably want players to feel as if they are the ﬁ rst ones ever to 
+undertake a particular quest, or to explore an area of the game world. Ordinary 
+computer games allow you to evoke that feeling, because the game world is created 
+fresh when the player starts up the game program. In a persistent world, on the 
+other hand, only those who logged in on its ﬁ rst day of operation are the ﬁ rst to 
+experience a quest or explore a new area. Furthermore, those who went before will 
+always tell those who arrive later what to expect. In short, it’s impossible to keep 
+anything secret about a persistent world. As soon as a few players know it, they’ll 
+tell the other players.
+Chapter 7, “Storytelling and Narrative,” introduced the emergent narrative: stories 
+that emerge from the core mechanics of a game. In a persistent world, stories 
+emerge not so much from the core mechanics as from interactions among the
+players. The best emergent stories (those that make the player feel as if he’s
+participating in a story created by a great writer) occur in purely role-playing
+environments with almost no gamelike elements. In effect, the story experience
+in a persistent world comes about when the players are excellent role-players: good 
+at acting and improvisational theater. As a designer, you cannot force good stories 
+to emerge; it depends too much on the imagination and talent of the participants.
+THE PLAYER’S ROLE
+In a single-player, plot-driven game, the player’s role is deﬁ ned by the actions he is 
+allowed to take and is constrained by the requirements of the story. In a persistent 
+world, the player doesn’t follow a single storyline, so he may, in theory, choose 
+from a larger variety of things to do and has more opportunities to deﬁ ne his own 
+role. The early persistent worlds offered only a limited number of roles, but modern 
+ones are increasingly rich and varied.
+As the designer, you must supply an assortment of possible roles the player may 
+take on and make those roles meaningful in your world. You should also give the 
+player the freedom to change her role (though not always easily or immediately) as 
+she sees ﬁ t. Because the world continues indeﬁ nitely without coming to a narrative 
+conclusion, you can’t expect the player to want to play the same way forever. Just as 
+people change careers and hobbies over time, players need to be able to change roles.
+GAMEPLAY
+Finally, there’s the question of the gameplay. Without a victory condition, you 
+can’t simply offer the player a predeﬁ ned sequence of challenges and achievements 
+as her ultimate objective. In the familiar persistent worlds designed like role-play-
+ing games, the player’s objective is to advance her character. She (usually) accomp-
+lishes this by ﬁ ghting AI-controlled opponents, such as monsters, although she 
+could also attain many other things as well: wealth, political power, fame (or noto-
+riety), and so on.
+TIP If your game 
+offers too few things 
+to do, it will fail. Your 
+game design must be 
+expansive. Even the 
+coolest game mechanic 
+becomes tiresome after 
+a time. You have to 
+supply alternative 
+ways of playing or 
+alternative ways of 
+experiencing the 
+world. Otherwise, the 
+players will go to 
+another world where 
+they can have new 
+experiences. You will 
+need to release addi-
+tions to the game or, 
+better yet, completely 
+different subgames 
+embedded in the 
+actual game.
+
+
+--- PAGE BREAK ---
+
+608 
+FUNDAMENTALS OF GAME DESIGN
+In a single-player game, the player tries to read the designer’s mind to some extent, 
+to ﬁ gure out what you want him to do, and then he does it. His play is often reac-
+tive, a response to challenges thrown at him. In a persistent world, the player 
+decides for himself what he wants to do. He seeks out challenges if he feels like it, 
+but he can spend all his time socializing if he prefers. His gameplay—and, indeed, 
+the entire nature of the experience—is expressive and active rather than reactive. 
+This quality of persistent-world play has profound effects on the design of such 
+worlds, as you will see later in this section.
+WHERE DOES SECOND LIFE FIT IN?
+Second Life is a widely publicized online environment that allows users (known in the 
+environment as residents) to build landscapes and a nearly unlimited variety of artifacts, 
+including avatars and buildings, and sell them to one another. They may also interact 
+with each other in a wide variety of ways. Users access the virtual world through a client, 
+just as players of MMOGs do. However, unlike MMOGs, Second Life does not offer quests 
+to achieve, combat or other types of challenges, a system for leveling characters up, or 
+any of the other gameplay features typical of persistent worlds. It is simply an environ-
+ment, and what happens in it is entirely up to the users. They can build their own games 
+within the game world if they want to, but the system does not include many tools for 
+implementing and enforcing the rules. All land in the game consists of islands in the sea 
+that are owned by the residents (except for a few islands used for training new arrivals). 
+Users must purchase an island in the sea from the operators, Linden Labs, if they want to 
+construct their own environment. A built-in scripting language allows objects in the 
+game to perform behaviors when a resident interacts with them.
+Residents in Second Life may instantaneously teleport or ﬂ y their avatars to any location 
+in the world that is not private (most are open). Residents use the virtual world for social 
+interaction, personal expression, education, evangelism, and as a means of offering virtual 
+goods and services for sale. A number of corporations and a small number of countries 
+have opened “ofﬁ ces” in Second Life as a means of informing people about themselves.
+Because every object and even the landscape in Second Life may be modiﬁ ed or deleted 
+at any time, the user’s client software must continually download the graphics for the 
+virtual world. This is not true of most MMOGs, where the landscape is largely static and 
+cannot be modiﬁ ed by the players. The constant data transmission required by Second 
+Life creates a time lag in displaying the graphics that would be unacceptable in most 
+MMOGs. Second Life is not intended for real-time play the way World of Warcraft is.
+For the moment, Second Life is unique or nearly so. It costs nothing to use, although resi-
+dents must purchase Linden dollars (the in-game currency) with real money if they want 
+to purchase in-world artifacts, and there is a price for some premium services. But it is 
+not an MMOG.
+
+
+--- PAGE BREAK ---
+
+ONLINE GAMING 
+609
+ CHAPTER 21
+The Four Types of Players
+In 1997, MUD developer Richard Bartle wrote a seminal article called “Hearts, 
+Clubs, Diamonds, Spades: Players Who Suit MUDs” for the ﬁ rst issue of the Journal 
+of Virtual Environments (Bartle, 1997). He proposed that MUD players fall into
+four categories depending on whether they enjoy either acting on (manipulating, 
+exploiting, or controlling) or interacting with (learning about and communicating 
+with) either the world or the other players (see Figure 21.1). Those who enjoy act-
+ing on other players he dubbed Killers, or clubs; those who enjoy interacting with 
+other players he called Socializers, or hearts. Those who enjoy acting on the world 
+he described as Achievers, or diamonds; those who enjoy interacting with the 
+world he referred to as Explorers, or spades.
+Bartle went on to claim that a healthy MUD community required a certain propor-
+tion of each of these types of players and that adjusting the game design to attract 
+or discourage any given type of player would tend to inﬂ uence the numbers of oth-
+ers as well. In effect, a persistent world is a sort of ecology in which the players’ 
+styles of play inﬂ uence the balance of the population. Bartle drew his data from 
+personal observation rather than rigorous statistical analysis, so his conclusions can 
+certainly be questioned. Nevertheless, his grouping of player types proved to be use-
+ful not only in the design of MUDs, but in graphical persistent worlds as well.
+Creating an Avatar
+Playing in persistent worlds is more than merely a form of gameplay; it’s also a 
+form of expression. The ﬁ rst thing a player does when she joins a persistent world
+is to create an avatar, or character who represents her in the game, one of the most 
+expressive things she can do. Chapter 5, “Creative and Expressive Play,” discusses 
+avatar creation at greater length.
+ENJOY ACTING
+WORLD-
+ORIENTED
+ENJOY INTERACTING
+PLAYER-
+ORIENTED
+Socializers
+Explorers
+Achievers
+Killers
+FIGURE 21.1
+Richard Bartle’s four 
+types of players
+
+
+--- PAGE BREAK ---
+
+610 
+FUNDAMENTALS OF GAME DESIGN
+If you’re making an online role-playing game that includes traditional avatar attri-
+butes such as speed, strength, and so on, consult Chapter 15, “Role-Playing Games,” 
+for more information.
+Players like to maintain a proﬁ le listing some of their intangible attributes in order 
+to identify and describe their avatars to other players. Proﬁ les can include such 
+things as:
+■ Unique name or handle. Unless your game allows totally anonymous play, peo-
+ple will need some way of identifying their avatars by name. That way, a player’s 
+name can appear in documents, on leader boards, in chat rooms and bulletin 
+boards, and so on.
+■ Physical appearance. People clearly need to be able to tell one character from 
+another on the screen. The physical appearance of avatars should be as customiz-
+able as you can afford to make it. Even if appearance does not affect gameplay, 
+players identify with and respond to physical appearances.
+■ History or experience. Players like to record their characters’ achievements
+for others to see. Records can include experience levels, quests undertaken, kills
+in battle, or any other accomplishments the player might be proud of. You’ll have 
+to decide whether some players will want to keep some of these things private and, 
+if so, whether they should be allowed to.
+■ Reputation. The system computes and stores the reputation as a number or sym-
+bol based on the player’s play or on complaints or praise received about the player. 
+(The eBay auction web site includes a simple reputation system.) Some games use 
+the reputation mechanism as a way of automatically tagging players who fre-
+quently take advantage of others. The reputation attribute warns other players, 
+“This person is dangerous” or “This person is trustworthy.” Beware, however:
+An automated system is subject to abuse through collusion if you don’t place
+limits on it. If you offer a player the opportunity to repair a bad reputation through 
+some apparently virtuous action such as donating money to another character,
+he can simply donate money repeatedly to a friend, who promptly donates it all 
+back to him.
+■ Player autobiography. It’s fun for a player to make up a history for his charac-
+ter, a background that introduces that character to others in the world. It’s another 
+form of self-expression. However, if children play in your world, you will need to 
+have a real person approve autobiographies for suitability.
+You might or might not want to include important gameplay attributes in the
+player’s proﬁ le; it depends on how making such information public affects the 
+gameplay. Does allowing a player to hide attributes from the world constitute a 
+legitimate part of gameplay or an unfair advantage? (Consider Monopoly, which 
+does not allow players to hide their property cards under the table but allows
+everyone to see what all players own.)
+
+
+--- PAGE BREAK ---
+
+ONLINE GAMING 
+611
+ CHAPTER 21
+World Models
+If you plan to offer more than just a chat room, you must give players something
+to do. The types of things that you give them to do and the rewards they earn for 
+doing those things constitute the world model. Raph Koster identiﬁ ed ﬁ ve classic 
+world models, although you can undoubtedly devise more. Yours may include ele-
+ments from more than one of Koster’s original ﬁ ve, listed here:
+■ Scavenger model. Players collect things and return them to places of safety.
+The game is primarily a large treasure hunt, and players don’t risk losing anything 
+they’ve collected.
+■ Social model. The world exists primarily to provide an expressive space. The 
+fun comes from role-playing in character; most goals represent social achievement 
+(political power, adulation, notoriety, and so on). Players use their characters’ attri-
+butes as a basis for role-playing rather than computer-managed combat. 
+■ Dungeons & Dragons model. In games based on this, the best-known model, 
+the player is primarily in conﬂ ict with the environment, ﬁ ghting NPCs for ad-
+vancement and doing some scavenging along the way. Such games rely heavily
+on the functional attributes of the avatar for gameplay and include feedback mecha-
+nisms: Defeating enemies advances the character, which requires the game to offer 
+tougher enemies next time. Such worlds tend to include quests as a form of narra-
+tive and a way of offering challenges to the players.
+■ Player-versus-Player (PvP) model. In this sort of world, players advance by 
+defeating one another at contests, often characterized as combat. Players advance 
+through a combination of their natural skill and rewards from winning battles. For 
+this to work successfully, they need to be reasonably evenly matched; you can’t 
+have the old-timers beating up the newcomers all the time. EVE Online is perhaps 
+Spore broke new ground in a number of ways, and one was its use of the Internet. Spore 
+is not a multiplayer online game in the usual sense. It does not maintain a single, central 
+game world and players cannot interact with one another directly. However, when a 
+player creates a creature or a building in the later levels of Spore, the game uploads the 
+player’s creation to a database stored on a server maintained by Electronic Arts, the pub-
+lisher. These data are available to all other players, which means that one player’s creature 
+may appear in another player’s world. This makes the player’s experience of the game 
+extremely rich, as creations from thousands of players may turn up in his game world. 
+However, there is still no direct interaction with other players. A player can download a 
+copy of another player’s creature from the server (in fact, this happens automatically), 
+but he cannot intentionally inﬂ uence another player’s experience. Will Wright, the 
+designer, jokingly called Spore a massively single-player online game.
+SPORE: A MASSIVELY SINGLE-PLAYER ONLINE GAME
+
+
+--- PAGE BREAK ---
+
+612 
+FUNDAMENTALS OF GAME DESIGN
+the most cutthroat of the successful PvP games, with very little in the rules to
+prevent players from abusing newcomers.
+■ Builder model. This somewhat rare sort of world enables players to construct 
+things and actually modify the world in which they play. It’s a highly expressive 
+form of entertainment. People get kudos not for their ﬁ ghting skills, but for their 
+aesthetic and architectural ones, both intangible qualities.
+Avatar Death
+In any persistent world that includes combat, you must decide whether it’s possible 
+for the player’s avatar to die and what will happen if it does. As in other games, ava-
+tar death must be accompanied by a disincentive of some kind or combat will not 
+be a meaningful part of gameplay. The trick is to ﬁ nd a disincentive that is propor-
+tional to the likelihood of the avatar’s death. It is a question of balance: If the 
+avatar can easily be killed through no fault of the player (such as through igno-
+rance or bad luck), then the cost of dying—the disincentive—should be low, but if 
+the player really has to be stupid to get his avatar killed, the cost should be high. 
+Some examples follow.
+PERMANENT DEATH
+In the most extreme case, the avatar dies and cannot be resurrected. The player 
+loses all property that he owns (in which case you must decide what happens to 
+that property) and must start over from scratch with a new avatar. This makes 
+sense in games of short duration, but seldom in persistent worlds. Players in persis-
+tent worlds put too much time and effort into building up their avatars for you to 
+ask them to start over.
+RESURRECTION WITH REDUCED ATTRIBUTES
+Designers commonly penalize the player for letting her avatar die by bringing the 
+avatar back to life with reduced functional attributes—with less strength or per-
+haps fewer skills. In effect, you give the player a bit of a setback in her quest to 
+grow a powerful avatar. Players ﬁ nd this irritating, so fear of incurring such a set-
+back discourages risky play, but the penalty makes a certain amount of sense. If a 
+gang of club-wielding trolls beats the avatar to death, the avatar ought to feel pretty 
+lousy for a while when she comes back to life!
+RESURRECTION WITH SOME PROPERTY MISSING
+Another classic disincentive for dying involves loss of money, gear, clothes, and 
+other items in the avatar’s inventory at the time. How much of his property he 
+loses and what becomes of it can vary considerably from game to game. You can 
+also allow players to have a vault in the game in which they can keep items that 
+they’re not carrying with them, and these items can remain safely in the vault for 
+
+
+--- PAGE BREAK ---
+
+ONLINE GAMING 
+613
+ CHAPTER 21
+use by their resurrected avatar. You might as well include this feature because, if 
+you don’t, the players will create a second character that they never play with, 
+known in MMOG parlance as a mule, to hold their primary avatar’s things for them.
+The Player-Killer (PK) Problem
+No aspect of the design of persistent worlds has been debated more than this one 
+simple question: Should players’ avatars be allowed to kill one another? The next 
+few sections summarize some of the issues so that you can make an informed deci-
+sion for your own game.
+Most designers offer persistent worlds resembling role-playing games in that players 
+advance in skill and power through combat. It’s generally more interesting if this 
+combat occurs against another player rather than against an NPC, for several reasons. 
+First, another player’s avatar is more likely to be carrying interesting and valuable 
+objects worth looting (if the game permits looting) than a randomly generated 
+NPC; unlike an NPC, another player will have kept only valuable items and gotten 
+rid of anything not worth keeping. Second, ﬁ ghting another player is a social expe-
+rience, which an NPC cannot offer. Finally, a player can use his human intelligence 
+to put up a better ﬁ ght; an NPC has to use AI, which is seldom as sophisticated.
+THE ULTIMA ONLINE EXPERIENCE
+The designers of Ultima Online initially permitted players to kill one another
+without restraint (except in towns), hoping that players would establish their own 
+justice mechanisms within the game. Unfortunately, the world quickly began to 
+resemble present-day Somalia: unremitting random violence, feuds, continual
+victimization of the weak by the strong, and petty warlords or gangs of bandits 
+controlling areas of turf. Players engaging in this behavior became known as player-
+killers, or PK players. No satisfactory solution arose from the players, partly because 
+the software did not offer any genuinely painful punishment mechanisms for them 
+to use against offenders. (In real life, we either lock murderers away for a very long 
+time or kill them permanently, neither of which any for-pay persistent world can 
+afford to do.) Designers then tried a variety of different automated mechanisms for 
+encouraging justice, but players found ways of exploiting most such mechanisms. 
+In the end, the developers threw up their hands and divided the world into shards
+(separate, independent versions of the world) with different rules for each. Some 
+allowed player-versus-player (PvP) combat, and others did not. Approximately 80 
+percent of the players chose to play in non-PvP shards.
+JUSTICE MECHANISMS
+Koster offers the following summary of approaches to regulating PvP combat, 
+whether fatal or not:
+
+
+--- PAGE BREAK ---
+
+614 
+FUNDAMENTALS OF GAME DESIGN
+■ No automated regulation. Anyone can attack anyone, and administrators or 
+social mechanisms (vigilante justice) deal with rogue players. Koster estimates that 
+as much as 40 percent of the potential audience will avoid this type of game 
+because they don’t like PvP.
+■ Flagging of criminals. Player killing is considered a criminal act within the 
+game’s rules: not prevented by the system, but wrong. The server automatically 
+detects criminal behavior and ﬂ ags the criminals, who become fair game for others 
+to attack. The system can also reduce the attributes of criminals, in effect penaliz-
+ing them for their behavior. This can be used for thievery and other crimes as well 
+as murder, matching the reduction to the severity of the crime. Single-player RPGs 
+use a version of this system too: players may behave in good or bad ways, but those 
+who behave badly frequently suffer penalties—NPCs will not talk to them or trade 
+with them, for example.
+■ Reputation systems. This is similar to ﬂ agging, except that players decide when 
+to report someone for criminal behavior and can choose not to do so. In practice, 
+they almost always do, however.
+■ PvP switch. Players indicate their willingness to ﬁ ght other players by setting a 
+switch (a binary attribute) in their proﬁ le, becoming either a PvP player, who can 
+attack and be attacked, or a non-PvP player, who cannot attack or be attacked by 
+others. You can use this switch to give temporary consent for duels and arena-
+based combat. Unfortunately, this mechanism creates suspension-of-disbelief 
+problems when players use area-effect weapons such as a magic ﬁ reball spell: Three 
+PvP players get roasted by a ﬁ reball that leaves a non-PvP player in the same vicin-
+ity untouched because he cannot be attacked.
+■ Safe games; no PvP allowed. This is the least troublesome solution, but even 
+this approach has its hazards. Players will still ﬁ nd ways of abusing one another—
+for example, by luring an unsuspecting newcomer into an area where he will be 
+attacked by a monster. Koster estimates that this approach will cost you up to 20 
+percent of your potential audience, that 20 percent being those players who like PvP.
+You can also divide the world into safe and dangerous geographic zones, but in 
+practice people tend to either stay in the safe zones or play near the edges, hoping 
+to lure a potential victim over the line without his realizing it.
+FACTION-BASED PVP
+A number of persistent worlds allow players to belong to factions. These can be as 
+small as gangs or as large as entire nations at war. The rules enable players to attack 
+members of enemy factions but not members of their own faction—in effect, it’s 
+team play. Different factions control different regions, so players can generally tell 
+safe areas from unsafe areas. For the most part, this arrangement solves the random 
+violence problem that initially plagued Ultima Online.
+
+
+--- PAGE BREAK ---
+
+ONLINE GAMING 
+615
+ CHAPTER 21
+THE BOTTOM LINE ON PLAYER KILLING
+You cannot please everybody, so you will beneﬁ t from deciding whom you want to 
+please and tailoring your environment to them. In a game that allows player kill-
+ing, a certain number of players will inevitably abuse the system, exploiting their 
+superior strength to victimize weaker ones without ever putting themselves at risk. 
+You can’t please them without also providing them with victims who won’t be 
+pleased, so it’s not worth trying. Ultimately, you need to bear two things in mind:
+■ It’s a fantasy world. That means it’s supposed to be enjoyable, escapist enter-
+tainment. People don’t fantasize about being harassed, bullied, or abused. A fair 
+contest among consenting players is one thing; perpetual harassment or an 
+ambush by a gang is quite another.
+■ People pay to play. This makes your world distinctly different from the real 
+world. The real world doesn’t owe us anything; we survive as best we can. But as a 
+game provider, you’ve taken the players’ money, so you have obligations to them. 
+Just exactly what those obligations are is open to debate, of course, but if players 
+don’t feel that you are meeting your obligations, they will leave.
+PLAYER EXPECTATIONS
+Players have higher expectations of the virtual world than of the real world. For example, 
+players expect all labor to result in proﬁ t; they expect life to be fair; they expect to be 
+protected from aggression before the fact, not just having to seek redress after the fact; 
+they expect problems to be resolved quickly; and they expect that their integrity will be 
+assumed to be beyond reproach. In other words, they expect too much, and you will not 
+be able to supply it all. The trick is to manage their expectations.
+The Nature of Time
+In a single-player computer game, you maintain a great deal of control over the 
+relationship between game time and real time. Most games run at many times the 
+speed of real time, and a player often experiences a simulated day in a game world 
+in an hour or less of real time. You can also hand over control of the speed of time 
+to the player when you want to; it’s not uncommon for players in combat ﬂ ight 
+simulators to speed up time when ﬂ ying to and from the combat zones and then 
+slow down to real time again when they get there. Finally, you can skip time 
+entirely—useful during periods when the player’s avatar sleeps. You can blank the 
+screen for a moment and then put up a text message that says, “8 hours later… ,” 
+and continue with the game.
+But you can’t use any of these options in multiplayer games. You obviously can’t 
+allow some players to move through time at different speeds than others, and you 
+can’t skip time unless you force all players to skip that time together. Although 
+
+
+--- PAGE BREAK ---
+
+616 
+FUNDAMENTALS OF GAME DESIGN
+game time might be faster than real time, game time must proceed at the same 
+ﬁ xed pace for everyone.
+As a result, you must be careful about designing time-consuming activities. 
+EverQuest, for example, employs a mechanism called meditation, in which players 
+simply have to wait around for a while to restore their magic powers. There’s no 
+way to speed up this process—it literally does involve waiting. Nor can they log out 
+of the game while meditating and log back in again later when the meditation pro-
+cess ﬁ nishes. Players can’t even switch to a different process on their computers. 
+Verant, the developers of EverQuest, eventually built in a mini-game for players to 
+play while waiting—a patch but not a real solution. If your game contains features 
+so boring that you have to distract the players, you need to rethink the features.
+Single-player games can be stopped and restarted at the player’s discretion—a key 
+consideration for designers of such games. If the player can save the game, he can 
+essentially reverse time by going back to a previous point in the game and replay-
+ing the game from that point. This robs single-player games of the emotional 
+impact of events because anything that happens, good or bad, can be reversed by 
+reloading a saved version of the game. You can design the game to include some 
+inevitable events, but of course, the more of these you include, the less interactive 
+the game is.
+In an online game, time is irreversible. Even if you had a convenient way to reverse 
+time, you can’t reasonably ask all your players to agree to reverse time to an earlier 
+point (although the managers of some persistent worlds have had to roll back to a 
+saved state when the game got into problems). In the ordinary course of events, 
+when an event occurs in an online game, it’s done and can’t be undone. 
+Persistent World Economies
+If the players in a persistent world can collect and trade things of value, then
+the world includes an economy. Chapter 18, “Construction and Management 
+Simulations,” discussed economies in some detail. Economies are much easier to 
+design and tune in a single-player game than they are in a persistent world. You 
+can control the actions of a single person fairly strictly; in a persistent world,
+thousands of people interact within your game in ways that you might not have 
+anticipated.
+The original Ultima Online had a completely self-contained, closed economy with a 
+ﬁ xed number of resources ﬂ owing around and around. You could mine iron ore, 
+smelt it into iron, and forge the iron into weapons. Using the weapons would cause 
+them to deteriorate, and when worn, they would return to the pool of raw iron ore 
+available for mining. This last step wasn’t strictly realistic, but it did close the loop.
+The designers, however, didn’t anticipate that players would hoard objects without 
+using them. Because unused objects didn’t go back into the pool, the iron ore 
+quickly ran out, and as resources dwindled, inﬂ ation ran rampant. The players
+
+
+--- PAGE BREAK ---
+

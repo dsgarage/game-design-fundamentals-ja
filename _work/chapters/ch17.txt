@@ -1,0 +1,672 @@
+506 
+FUNDAMENTALS OF GAME DESIGN
+12. What states can the game be in, even in times between active play? How does an 
+athlete behave in each state? What are her goals in each state, and in team play, 
+what is the collective goal of the team in each state? How does the individual ath-
+lete’s behavior contribute to meeting the team’s goal?
+13. Are you going to offer automatic simulation of matches? How will that be done?
+14. What will the audio commentary be like? What events will it cover?
+15. How does instant replay work?
+
+
+--- PAGE BREAK ---
+
+ CHAPTER 17
+Vehicle Simulations
+Vehicle simulations create the feeling of driving or ﬂ ying a vehicle, real or imagi-
+nary. In simulations of real vehicles, one of the chief goals is verisimilitude, an 
+(apparently!) close relationship to reality. You can expect your players to know a lot 
+about these machines and to want an experience that is at least visually similar to 
+that of really controlling one. The machine’s gross performance characteristics 
+(speed and maneuverability) should also be similar to reality, although its ﬁ ner 
+details probably can’t be, for reasons you’ll learn in this chapter.
+If you’re designing an imaginary vehicle, you’re free to create any kind of driving 
+experience that you like without being restricted by such things as gravity, 
+G-forces, fuel capacity, and so on. Your game really needs to just create the feeling 
+of movement; you can place whatever limitations you like on that movement.
+In this chapter, you’ll learn the deﬁ nition of vehicle simulations and then explore 
+the core mechanics of various types of them. The chapter focuses primarily on 
+driving and ﬂ ying simulations, spending a lot of time discussing the creation of 
+military simulations. We’ll also review the game environment requirements, the 
+look and camera angles best suited for these simulations, and the behaviors of arti-
+ﬁ cial opponents.
+What Are Vehicle Simulations?
+Vehicle simulations cover several environments and game mechanics. They can be 
+in the air, on the ground, on water, or in space. They can include races against 
+other players or artiﬁ cially intelligent opponents, or they can involve exploration 
+or simply the experience of using the vehicle. The most common element is the 
+sense of verisimilitude: Players are looking for an experience that feels the way it 
+would truly feel to drive, ﬂ y, or otherwise control a vehicle. Because most of us 
+have driven cars, we have an expectation of how that feels. But most of us don’t 
+know what it feels like to drive a car at 200 miles per hour or to drive a car that has 
+various weapons installed. Most of us have not experienced ﬂ ying a plane our-
+selves, but we know what being in a plane feels like.
+Simulations vary from realistically representing the way the vehicle handles on the 
+road or in the air to adding game mechanics such as combat, racing, special chal-
+lenges like skids or slaloms, and so on. Although space and water vehicle simulations 
+also exist, they tend to follow the same fundamental features as the ﬂ ying and 
+driving simulations. Not only do the same physics generally apply, but the addi-
+tional game mechanics and features are often the same.
+507
+CHAPTER 17
+
+
+--- PAGE BREAK ---
+
+508 
+FUNDAMENTALS OF GAME DESIGN
+Game Features
+Flight simulators fall into two general categories: civilian and military. Civilian 
+ﬂ ight sims don’t include aerial combat; they’re mostly about the way the aircraft 
+looks and performs and so are often quite realistic. Military ﬂ ight sims have to be 
+simpliﬁ ed for reasons we’ll look at later in this chapter, but they offer exciting 
+physical and tactical challenges.
+Driving simulators also tend to fall into two categories: organized racing and imagi-
+nary racing. Organized racing simulators try to reproduce the experience of driving 
+a racing car or motorcycle in an existing racing class, such as IndyCar, NASCAR, or 
+Formula 1. To use the ofﬁ cial name and indicia of any of these racing organiza-
+tions, you will need to get a license (see the section “Intellectual Property Rights” 
+later in this chapter). Imaginary racing games are just that: games about racing in 
+imaginary situations, driving madly through cities or the countryside or even fan-
+tasy environments.
+The players themselves also fall into two categories. The purists demand highly 
+accurate simulations of real vehicles with all their quirks and limitations; if a purist 
+forgets to retract the airplane’s ﬂ aps after takeoff, he wants those ﬂ aps to be dam-
+aged by excessive airspeed and to be stuck in the down position with appropriate 
+consequences for the plane’s handling characteristics. On the other hand, casual 
+players don’t care about the details as long as they can ﬂ y or drive around, prefera-
+bly fast, and maybe even shoot at things.
+The Player’s Role
+The player’s role in a ﬂ ight simulator seems quite straightforward: It’s that of a 
+pilot. In single-seat aircraft, that’s all that is required. However, if you’re going to 
+simulate larger aircraft such as bombers or two-seat ﬁ ghters, you’ll have to decide 
+how you want to handle the varying roles available. In LucasArts’ excellent World 
+War II simulator Their Finest Hour, the player can play any of the waist and tail gun 
+positions of the Junkers Ju 88 bomber while leaving the plane on autopilot, or he 
+can set the guns to ﬁ re automatically at any target that comes into view. To drop 
+the bombs, however, he has to take over the bombardier’s position personally. 
+Three-Sixty Paciﬁ c’s game Megafortress required the player to manage no fewer than 
+ﬁ ve different stations: pilot, copilot, navigator, electronic warfare specialist, and 
+offensive weapons ofﬁ cer. Each station had its own instrument panel and responsi-
+bilities, and the player had to move constantly from one to another to check on 
+conditions and respond to emergencies. At times when the player was away from 
+the pilot’s seat, the plane ﬂ ew on autopilot toward the next waypoint.
+In racing-oriented driving games, the player’s role is that of a racing driver most of 
+the time, but the more serious simulations, such as IndyCar Racing, also allow the 
+player to be a mechanic, modifying the angle of the airfoils, changing tires to com-
+pensate for weather conditions, and so on.
+
+
+--- PAGE BREAK ---
+
+VEHICLE SIMULATIONS 
+509
+ CHAPTER 17
+Competition Modes
+A few vehicle simulations aren’t really games because they don’t offer the player a 
+goal, apart from learning to control the vehicle. They don’t have any rules other 
+than the laws of physics. Most vehicle simulations, however, offer driving or ﬂ ying 
+within a competitive context, either a race or a battle of some kind.
+The competition modes of military ﬂ ight simulators resemble those of ﬁ rst-
+person shooters: single-player modes against artiﬁ cial opponents, multiplayer death 
+matches (every player for himself), and team-based play. Civilian ﬂ ight simulators 
+usually offer only a single-player mode, although they sometimes also allow races 
+and follow-my-lead competitions. Driving simulators are generally single-player 
+games or multiplayer races and are seldom team-based.
+Both military ﬂ ight simulators and organized race-driving simulators often include 
+a career mode; in this mode the player creates a pilot or driver and follows his 
+career (trying not to get him killed, of course), racking up victories and collecting 
+performance statistics.
+These games also include campaign modes. In a driving game’s campaign mode, 
+the player, as a race driver, tries to win in a real racing circuit, collecting points 
+according to the ofﬁ cial rules of the circuit.
+In military ﬂ ight simulators, the campaign mode can work in a variety of ways. In 
+one type of campaign mode, the game offers a series of missions, one at a time, in 
+which the player must achieve a speciﬁ ed victory condition before going on to the 
+next mission; completing all the missions constitutes winning the campaign. In 
+another type of campaign mode, the player can play all the missions in order, 
+whether she meets the mission objectives or not. However, if she plays through all 
+of them without achieving enough mission objectives, she loses the campaign. The 
+better she ﬁ ghts on any given occasion, the more chance she has of winning the 
+war in the long run, but she can still afford to lose the occasional battle. This more 
+closely approximates what happens in a real war, but as the designer, you must pro-
+vide clear feedback to the player about how she’s doing as she goes along.
+Gameplay and Victory Conditions
+The primary challenge in playing any vehicle simulator is in controlling the vehi-
+cle: learning to speed it up, slow it down, and steer it without crashing it into 
+something. Without being able to feel the G-forces on his body, the player has to 
+depend on other cues to determine how fast he is going and how hard he is 
+braking.
+In the case of ﬂ ight simulators, you can make this challenge simple, requiring the 
+player to know almost nothing about aerodynamics, or extremely difﬁ cult, accu-
+rately modeling the behavior of an airplane. Unlike a car, airplanes respond rather 
+slowly to their controls, often beginning to execute a maneuver a few seconds after 
+the player has ﬁ rst moved the yoke or joystick. Players used to driving a car will 
+
+
+--- PAGE BREAK ---
+
+510
+FUNDAMENTALS OF GAME DESIGN
+tend to overcontrol the plane when they ﬁ nd that it doesn’t respond immediately. 
+If you want to present a realistic challenge, you can model this problem accurately; 
+to keep the game easy, treat the plane more like a car.
+MILITARY FLIGHT SIMS
+In military ﬂ ight simulators, the player must not only ﬂ y the aircraft but also 
+achieve the mission’s objectives, usually attacking enemy aircraft and ground 
+installations. Modern air-to-air combat, conducted with long-range guided missiles 
+and often directed by Airborne Warning and Control System (AWACS) planes, is a 
+rather cerebral exercise. Hence the continuing popularity of World War I and II 
+ﬂ ight simulators and ﬁ ctional battles such as those in Crimson Skies (see Figure 17.1).
+These let the players dogﬁ ght, twisting and turning through the sky, hiding behind 
+clouds, diving out of the sun, and blasting away with bullets at short range. It’s a 
+much more action-packed experience.
+The role of the aircraft being simulated deﬁ nes the gameplay for military ﬂ ight
+simulators. Fighter planes are designed primarily to attack enemy aircraft and to 
+protect friendly aircraft and ground units from air attacks; attack planes are 
+designed to attack moving ground targets; bombers are designed to attack station-
+ary ones. Most military ﬂ ight simulators offer a series of missions, often with 
+primary and secondary objectives such that achieving either or both of them con-
+stitutes victory. Being killed or having the player’s plane shot down constitutes a 
+FIGURE 17.1 
+A pilot’s view in 
+Crimson Skies. Note 
+the very simple instru-
+ment panel. 
+
+
+--- PAGE BREAK ---
+
+VEHICLE SIMULATIONS 
+511
+ CHAPTER 17
+loss. However, you don’t have to establish binary victory conditions; you can allow 
+for partial success by rating the accomplishments of a mission according to the 
+number of objectives achieved, the length of time it took, and the amount of dam-
+age sustained by the aircraft, for instance. You can also assign bonus points for a 
+swift and safe return.
+CIVILIAN FLIGHT SIMS
+Civilian ﬂ ight simulators such as the excellent Microsoft Flight Simulator (see Figure 
+17.2) seldom include any victory conditions unless they implement racing or tests 
+of ﬂ ying ability. Many of them simply let the player ﬂ y and try different things 
+with the aircraft rather than present him with a speciﬁ c mission to accomplish. 
+However, civilian ﬂ ight sims can present a wide variety of challenges: ﬂ ying at 
+night; ﬂ ying in rain, fog, or strong winds; and using visual ﬂ ight rules or instru-
+ment ﬂ ight rules. Landing smoothly and safely, particularly in adverse weather 
+conditions, is always the most dangerous moment in a ﬂ ight and usually represents 
+the toughest challenge that a civilian ﬂ ight simulator offers. Most provide an auto-
+land function that simply returns the plane to the ground without the player’s 
+having to perform the landing.
+FIGURE 17.2 
+An instrument panel 
+in Microsoft Flight 
+Simulator 2002. This is 
+a game for people who 
+take piloting seriously. 
+
+
+--- PAGE BREAK ---
+
+512 
+FUNDAMENTALS OF GAME DESIGN
+DRIVING SIMS
+Organized racing simulations, like sports games, take their gameplay from the real 
+thing. The challenge is primarily to win races without crashing. This may be just as 
+complicated as real racing, including such details as refueling, managing the tires, 
+and compensating for the weather. Some games also include an economic element: 
+The player wins prize money for doing well in a race, and the prize money enables 
+her to buy better equipment. This produces positive feedback that must be counter-
+acted to balance the game; as the player improves, her artiﬁ cial opponents must 
+also improve to offer her a worthy challenge.
+In more arcadelike driving games, the games often include other challenges such as 
+running other drivers off the road, gathering up collectibles or power-ups, weaving 
+through hoops or cones, shooting at enemies or dropping devices to delay them, 
+and so on.
+Core Mechanics
+Designing a vehicle simulation is primarily a matter of research and compromise. 
+Unless your game is a just-for-fun simulation such as Super Mario Kart or Beetle 
+Adventure Racing!, vehicle simulation is the most technologically oriented of games, 
+so the core mechanics of the game are almost entirely about physics. Much of the 
+entertainment value of accurate simulation games comes from the feeling of con-
+trolling a real machine instead of meeting strategic challenges or taking part in a 
+story. To provide that value, you will need to research your vehicles thoroughly. If 
+you’re designing a military vehicle, you can probably ﬁ nd much of what you need 
+from Jane’s Information Group, publishers of such volumes as Jane’s All the World’s 
+Aircraft, and of course, from the vehicle’s manufacturer. For automobiles, the vari-
+ous enthusiast magazines offer all the data you could want.
+The compromises occur when you start trying to control a simulated vehicle with a 
+computer or console machine’s I/O devices, especially a large, complicated vehicle 
+such as a B-52 bomber. The kinds of compromises you make and the places they 
+take you will depend mostly on whether your target audience is the purist or the 
+casual player.
+Designing Opponents
+The easiest way to design a variety of opponents in a vehicle simulation is simply to 
+provide different drivers’ vehicles with different performance characteristics. One 
+plane climbs slightly faster than another; one can turn more sharply. The player 
+will experience different challenges in dealing with each opponent based on its 
+design parameters. However, once the player ﬁ gures it out, the opponent is easily 
+beaten. As soon as the player discovers that a Supermarine Spitﬁ re can consistently 
+outrun a Messerschmitt Bf 109 in level ﬂ ight, the situation offers an obvious strat-
+egy for Spitﬁ re pilots: boom and zoom (hitting and running away).
+
+
+--- PAGE BREAK ---
+
+VEHICLE SIMULATIONS 
+513
+ CHAPTER 17
+To create further variety, modify the behavior of individual opponent drivers (or 
+pilots). Design the AI for these opponents by starting with perfect performance and 
+then creating variations from perfection. For example, it’s possible to create a “per-
+fect” AI driver in a racing simulation, one that always follows the most efﬁ cient 
+line around the track, always shifts gears at precisely the correct moment, and 
+knows the ideal speed at which to take each corner without spinning out. If such a 
+driver has a better car than the player’s, he will be unbeatable. The trick, then, is to 
+modify the AI driver’s judgment so that it isn’t perfect—so that he doesn’t always 
+shift at exactly the right time or follow the most efﬁ cient line. This combination of 
+factors, both vehicle characteristics and variable driver skill, provides the variety 
+among opponents in vehicle simulators.
+As you research ﬂ ying or driving, you will discover other tricks to incorporate in 
+the AI: drafting behind other cars, for example, and diving out of the sun to sur-
+prise the enemy in a dogﬁ ght.
+Damage
+You need to decide what to do about damage. Comical or arcadelike racing sims 
+may not simulate damage at all; if the car hits something, it simply bounces off, 
+although doing so usually slows the car down. This allows the driver to be much 
+more careless, and it is a good solution for casual and children’s games. They can 
+afford to hit a few things and still win the race—at least in the earlier, easier stages 
+of the game. Other games model damage as a single variable, like unit health points 
+in a war game. When damage reaches a certain level, the vehicle simply stops run-
+ning (which, in the case of an airplane, means that it crashes or explodes). If your 
+target machine doesn’t have much CPU power (as in a cell phone, for example), 
+these approaches mean you don’t have to model the physics very accurately.
+To model damage accurately, you should divide the vehicle into separate areas that 
+can suffer damage in a collision (or, in a military simulator, from enemy ﬁ re), and 
+decide how that damage affects the performance of the vehicle. For instance, a race 
+car with minor damage to the airfoils or body can continue, although with a per-
+formance penalty, but a blown tire forces it to halt. With airplanes, the consequences
+can be dramatically different depending on what part of the aircraft sustains dam-
+age. A plane can still ﬂ y without its tail, but it is unstable and extremely difﬁ cult to 
+handle. These approaches give great verisimilitude but require sophisticated phys-
+ics models to accomplish.
+The Game World
+The landscape that a simulated vehicle moves through is an important part of the 
+game’s entertainment—even if it’s a relatively static landscape as in a racing 
+game—because the landscape is connected with the function of the vehicle itself.
+The settings of ﬂ ight simulators consist of the plane itself and the ground that it 
+ﬂ ies above. With a few exceptions, such as Microsoft Combat Flight Simulator, most 
+
+
+--- PAGE BREAK ---
+
+514 
+FUNDAMENTALS OF GAME DESIGN
+ﬂ ight sims don’t offer interesting terrain. If your ﬂ ight simulator has a historical 
+setting, you can do a lot with the ancillary screens to set the mood. Electronic Arts’ 
+World War II ﬂ ight simulator, Jane’s WWII Fighters, shows a hangar, a full of period 
+aircraft and other gear, and even plays Glenn Miller tunes in the background. 
+Unfortunately, in the pursuit of historical accuracy, Electronic Arts sets all its com-
+bat missions above the Ardennes Mountains in the wintertime: a bleak, snowy 
+landscape covered with leaﬂ ess trees. The technical quality of the graphics is 
+superb for its day; it’s too bad they aren’t depicting something more interesting. Its 
+competitor Microsoft Combat Flight Simulator is less historically accurate but argu-
+ably more fun to ﬂ y because you can buzz the Eiffel Tower or London’s Houses of 
+Parliament.
+Driving simulators are set on either racetracks or roads except for a few off-road 
+simulators that offer the fun of bouncing all over interesting terrain without hav-
+ing to steer carefully. Narrow, twisting mountain roads are a popular choice for 
+road-based games because they offer both an interesting challenge and pretty 
+scenery.
+Weather is a critical factor to consider when designing the settings of both ﬂ ight 
+and driving simulators. Can the player drive or ﬂ y at night? In rain? In fog? Rain 
+plays an important strategic role in automobile racing because each driver needs to 
+make a pit stop to switch to rain tires, which hold the road better. The pit stop takes 
+time, but drivers who don’t take the time run an increased risk of crashing.
+Because ﬂ ight and driving simulators rarely show other people, their worlds can 
+seem eerily devoid of life. Cities are depicted as collections of buildings with no 
+pedestrians (and in ﬂ ight simulators, no vehicles). Each airport has only one plane, 
+the player’s, and no ground staff. Simulator designers often feel that, because these 
+things aren’t critical to the gameplay, it is a waste of time to implement them. Still, 
+they add considerably to the player’s immersion. A World War II airﬁ eld should 
+have other planes, pilots, and ground staff moving around; a track-based racing
+ sim should certainly have a crowd in the grandstand.
+Other Vehicles
+Flight and driving simulators are by far the most popular kinds, but there are other 
+sorts of vehicle simulators as well, usually for niche markets. The last few years 
+have seen the arrival of large numbers of new vehicles from the hang glider in Far 
+Cry to the magic broomsticks in the Harry Potter games. This section addresses a few 
+of the more common types.
+Boats and Ships
+Most boat simulations are of powerboats or jet skis, offering the same kinds of 
+speed thrills that driving simulators do (see Figure 17.3). The handling 
+
+
+--- PAGE BREAK ---
+
+VEHICLE SIMULATIONS 
+515
+ CHAPTER 17
+characteristics of powerboats differ from those of cars. Because boats move in a 
+ﬂ uid medium, they don’t have traction the way a car does, so they can’t turn as 
+sharply as a car can. Powerboat simulations usually offer racing over a twisting 
+course marked off by buoys. Jet ski or fantasy water vehicle simulations often have 
+outrageous jumps and other challenges as well.
+There have been a few simulators of warships over the years, often fairly small craft 
+with high speed and maneuverability, such as the PT boat of World War II fame. 
+Larger vessels such as battleships and aircraft carriers move more slowly and delib-
+erately and, therefore, tend to be simulated not as individual vehicles but as part of 
+naval warfare simulations involving whole ﬂ eets, such as Harpoon or Dangerous Waters.
+Submarine simulations such as Silent Hunter III are fairly popular because of the spe-
+cialized nature of their situation and because they can move in three dimensions. 
+They normally concentrate on rather old-fashioned submarine activities, such as 
+looking through the periscope and ﬁ ring torpedoes at surface ships. We associate 
+these sorts of things with submarines from watching old war movies, and of course, 
+they’re the most visually dramatic. Relatively few games simulate the modern role 
+of submarines, hunting and hiding from one another in total darkness, because it’s 
+too cerebral an activity.
+FIGURE 17.3 
+Jetboat Superchamps
+in a third-person view. 
+Note the map overlay. 
+
+
+--- PAGE BREAK ---
+
+516
+FUNDAMENTALS OF GAME DESIGN
+Sailing simulations are comparatively rare, but they do exist; see Virtual Skipper 4
+on the left of Figure 17.4. Although sailing a boat is a complex and interesting 
+challenge, such games appeal only to a specialized market. Most people prefer sim-
+ulations in which you can point the vehicle in the direction you want to go and 
+push the gas pedal to get you there.
+FIGURE 17.4 Virtual Skipper 4 and Sea Dogs II
+Few ship simulations model the ocean in all its complexity, with shoals and cur-
+rents, tides and storms. Rather, they tend to treat the water the way driving 
+simulations treat the ground: simply as an area over which ships move. Pirate 
+games such as Sea Dogs II (Figure 17.4, right side) and Sid Meier’s Pirates! are usually 
+arcade or role-playing games rather than sailing simulations.
+Tanks and Mechs
+Tank simulations seldom implement the complexity of tank battles as they really 
+happened in World War II, the Arab-Israeli wars, or the Gulf War. Real tanks have a 
+top speed of about 50 MPH, have limited visibility, and carry only a few types of 
+weapons, so they don’t appeal much to the casual gamer. Like military ﬂ ight simu-
+lators, tank simulators are typically about a lone tank operating against other tanks 
+and a variety of other enemies.
+From a gameplay standpoint, the most interesting characteristic of a tank is its 
+rotating turret, which enables it to shoot in directions other than the one in which 
+it is facing. (Notice the example in Figure 17.5.) It can be difﬁ cult to design a good 
+user interface for this. You will need to provide a mechanism for rotating the turret 
+that is separate from the mechanism that steers the tank and a separate view win-
+dow for aiming and ﬁ ring the gun. Real tanks have a commander and a gun crew 
+as well as a driver, but as with bombers and other multiseat aircraft, you will have 
+to ﬁ nd a way to let a single player control everything.
+
+
+--- PAGE BREAK ---
+
+VEHICLE SIMULATIONS 
+517
+ CHAPTER 17
+A popular alternative is the mech, which is a science-ﬁ ction cousin to the tank that 
+is usually depicted as a large armed and armored walking machine (see Figure 17.6).
+Because mechs aren’t restricted by reality, they can carry all sorts of imaginary 
+weapons and hardware, and they can be optimized for single-player play.
+FIGURE 17.5 
+A tank in Panzer Elite.
+The turret is facing in a 
+different direction from 
+the tracks. 
+FIGURE 17.6 
+MechWarrior 4: 
+Mercenaries
+
+
+--- PAGE BREAK ---
+
+518 
+FUNDAMENTALS OF GAME DESIGN
+Spacecraft
+There are almost no simulations of real spacecraft—except for quasi-educational 
+ones about the space shuttles—because real spacecraft respond far too slowly and 
+move too deliberately to make for an interesting game. The majority of spacecraft 
+simulations, therefore, are science ﬁ ction, and they typically consist of either 
+ﬁ ghter planes in space, such as the Wing Commander series, or capital ship (large 
+warship) simulations, such as the many Star Trek games. The ﬁ ghter types are sim-
+ple action games with only a few variables to manage: fuel, ammunition, damage, 
+shields, and rarely anything else. Capital ship simulations are more strategic, giving 
+the player control of a wide range of weapons and other equipment.
+Intellectual Property Rights
+As a general rule, you can depict and simulate military equipment without obtain-
+ing permission from their manufacturers. Because such machines are not sold
+to the general public or generally exploited in the marketplace in any other way, 
+you may safely use their images in your games without worrying about who owns 
+the rights.
+Automobiles are another story, however. If you are going to simulate an existing car 
+and use its real name and logo, you must have a license from the manufacturer. 
+The manufacturer might not be willing to let you show the car crumpled and burn-
+ing by the side of the road either. This accounts for the large number of vehicle 
+simulations in which the cars can ﬂ ip over in an accident but never get damaged—
+they ﬂ ip back upright a second or two later, as in Beetle Adventure Racing! Or, you 
+can do as Interstate ’76 did and use cars that look rather like existing vehicles and 
+have similar names but don’t actually show the manufacturer’s indicia.
+The Presentation Layer
+The presentation layer of a vehicle simulator is chieﬂ y concerned with creating the 
+visual and auditory appearance of being in the vehicle itself, so management activi-
+ties are kept to a minimum. When there are different gameplay modes at all, they 
+usually offer the player a new perspective rather than a different set of challenges. 
+The major exception is serious racing games, which generally provide a variety of 
+camera angles while driving, but also a number of customization and tuning 
+modes for modifying the car in the workshop.
+Interaction Model
+The interaction model in a vehicle simulator is quite straightforward: The player’s 
+vehicle is his avatar. The machine’s controls are mapped onto the computer’s input 
+
+
+--- PAGE BREAK ---
+
+VEHICLE SIMULATIONS 
+519
+ CHAPTER 17
+devices, and the player’s view is normally that of the pilot or driver, forward 
+through the cockpit windows.
+Camera Model
+The camera model in most vehicle simulations doesn’t try to be intelligent; it just 
+offers a variety of ﬁ xed perspectives from different angles. Although the game can-
+not be played from all of these angles, the unplayable angles can be used for taking 
+dramatic screenshots or for viewing instant replays of the action.
+VIEWS COMMON TO DRIVING AND FLIGHT SIMULATORS
+Both driving and ﬂ ight simulators implement certain standard views:
+■ Pilot’s/driver’s view. This is the normal view that most simulators offer by 
+default. The player sees what the pilot would see from the cockpit or what the 
+driver would see from the driver’s seat. The vehicle’s instruments take up the lower 
+half of the screen, and the upper half shows the view out of the windshield, often 
+partially obscured by parts of the hood or the nose of the plane. Most sims offer 
+separate look-left, look-right, and look-backward views, as well as a mode in which 
+the player can swivel the view smoothly in all directions to see what’s overhead 
+and down to see instruments located below the pilot’s normal line of sight.
+■ Cockpit-removed view. This unrealistic but dramatic viewpoint uses the full 
+screen to show the pilot or driver’s view out of the front of the vehicle, unobscured 
+by the cockpit controls. Semitransparent overlays in the corners of the screen allow 
+the player to see instrument readings without much interference with the view. 
+Even these overlays can be removed, providing an unobscured view of the world 
+outside with no visible indication that the player is in a vehicle at all.
+■ Chase view. This is an exterior view of the player’s vehicle, as if from another 
+one following closely behind and mimicking its movements. In ﬂ ight simulators, 
+the plane always seems to be level when in chase view and the world turns around 
+it. For example, if the player banks her plane, the horizon tilts while the player’s 
+plane appears to be level in the middle of the screen. In driving simulators, the 
+point of view when in chase mode/view is usually somewhat elevated so the play-
+er’s car does not obscure the view of the road in front.
+■ Rear, side, and front views. These are exterior views of the player’s vehicle 
+from all four sides. If the player’s plane banks, the view does not bank; the ground 
+remains below.
+■ Free-roaming camera. Generally used only in an instant-replay mode, this 
+enables the camera to be moved anywhere in the world and tilted or rotated to look 
+in any direction. This view is useful for players trying to analyze exactly what hap-
+pened in a particular encounter.
+
+
+--- PAGE BREAK ---
+
+520 
+FUNDAMENTALS OF GAME DESIGN
+VIEWS UNIQUE TO MILITARY FLIGHT SIMULATORS
+The following views are found only in ﬂ ight simulators—and military ones, at that:
+■ Ground target view. This is a view of the target on the ground that is currently 
+selected for attack. The camera is positioned at a nearby ground location, facing the 
+target, and does not move. This view lets the player watch incoming missiles or 
+bombs arrive to see whether they accurately hit the target.
+■ Bomb or missile view. This is the point of view from a recently released bomb 
+or missile, as if it had a camera in its nose (as many modern weapons do). This 
+allows a particularly dramatic perspective as the weapon approaches its target. This 
+view disappears after the weapon detonates, and the perspective returns to the 
+default view.
+VIEWS UNIQUE TO DRIVING SIMULATORS
+The following views occur only in driving simulators. Obviously, the cars are not 
+drivable from these perspectives, but they are great for instant replays.
+■ Track-side view. Many real racetracks locate cameras at ﬁ xed points around the 
+track, and a good many games emulate this. The game’s point of view can be either 
+locked to a speciﬁ c location or made to track the player’s car as it moves past. It’s 
+also common to have a routine that automatically makes the display switch from 
+one track-side camera to another to follow the leaders as they go around. This gives 
+a good simulation of watching televised coverage of a race (see Figure 17.7).
+■ Grandstand view. This is the traditional spectator’s view of the ﬁ nish line.
+■ Blimp view. This is a high aerial view looking straight down onto the racetrack 
+or course, letting you see all the cars at once.
+FIGURE 17.7 
+A typical track-side 
+view in GT Legends
+
+
+--- PAGE BREAK ---
+
+VEHICLE SIMULATIONS 
+521
+ CHAPTER 17
+User Interface Design
+The biggest challenge in designing the user interface of a vehicle simulator is in 
+mapping the vehicle’s real controls to those available on the target machine. For 
+serious simulations, analog controls are essential; the binary D-pads of older hand-
+held controllers don’t allow the kind of precision the player needs to steer accurately. 
+At one time, console machines simply couldn’t support serious simulations, but 
+now that most console machines offer analog joysticks, mapping the controls of a 
+race car to those of a home console machine presents less of a problem.
+Vehicle simulations beneﬁ t from motion-sensing controllers almost as much as 
+sports games do. Use their tilt sensors to serve as a steering wheel, and their but-
+tons for acceleration and braking. Don’t require the player to turn them by more 
+than about 90 degrees in either direction from the central, neutral position, 
+though. As drivers we can turn a real steering wheel hand-over-hand because it’s 
+circular and ﬁ xed in place by the steering column, but the iPhone and Wii control-
+lers are rectangular and not attached to anything. It would be awkward for the 
+player to reposition his hands on them during play. 
+DON’T RELY ON EXTRA-COST CONTROLLERS
+Force-feedback joysticks, throttles, control yokes, steering wheels, and pedals (rudder 
+for planes, and gas and brake for cars) all help immensely, and serious players will have 
+them. You can greatly improve the quality of the simulation experience for such players 
+by supporting them. However, don’t design—and, more important, don’t tune—your 
+game with a presumption that your players will have this kind of hardware. Your game 
+should be an enjoyable experience even with only a standard console controller or a mouse
+and keyboard. If it’s not, you’ve severely limited your audience, and reviewers are bound 
+to slam it. You may ignore this advice if you ship the special controller with the game, as 
+Guitar Hero does, but such an approach will raise the price of your game substantially.
+SIMPLIFICATIONS
+Military ﬂ ight simulators always require some simpliﬁ cation from the real thing; 
+you will have to decide how much. Real military pilots require months or years of 
+training, much of it spent sitting in classrooms. Because you want your players to 
+be able to ﬂ y the planes within a few minutes of installing the software, you have 
+to make considerable compromises in the realism of the games. You will almost cer-
+tainly want to reduce the number of instruments in the cockpit and the number of 
+functions that some of them perform.
+Flight simulators commonly simplify navigation as well. Modern planes have 
+global positioning systems, but World War I and II pilots still needed celestial navi-
+gation skills; they plotted their courses by the stars at night and by landmarks or 
+dead reckoning during the daytime. Because this isn’t the most exciting thing 
+about ﬂ ying, it’s acceptable to just give the player a map.
+
+
+--- PAGE BREAK ---
+
+522
+FUNDAMENTALS OF GAME DESIGN
+AN EXTREME CASE
+The takeoff sequence in the game Megafortress was possibly the longest for any
+consumer-level ﬂ ight simulator ever made. The game simulated a hypothetical stealth-
+modiﬁ ed B-52 bomber. To get the plane off the ground (fortunately, it was already lined 
+up on the runway), you had to:
+1. Switch on battery power.
+2. Switch on interior lights.
+3. Switch on power to all eight engines.
+4. Fire starter cartridges for all eight engines.
+5. Switch off battery power after the engines were running.
+6. Switch on navigation lights.
+7. Switch on landing lights.
+8. Pressurize the plane to noncombat levels.
+9. Tune radio to correct frequency (this also served as the game’s copy protection).
+10. Lower ﬂ aps.
+11. Release brakes.
+12. Throttle up all eight engines (fortunately, this could be done simultaneously).
+13. Pull back on stick (plane takes off).
+14. Raise landing gear.
+15. Raise ﬂ aps.
+This sequence involved moving back and forth from the pilot’s seat to the copilot’s seat a 
+couple of times, too. Soon after you got into the air, you had to switch all the lights back 
+off to avoid being detected by enemy aircraft. If you forgot to pressurize the plane, the 
+crew complained about being cold. When you went into combat, you were supposed to 
+lower the air pressure to avoid a violent decompression if the plane was hit.
+Megafortress was a techno-geek’s dream. It was not, however, a big ﬁ nancial success as 
+ﬂ ight simulators go.
+COORDINATED FLIGHT
+Another common simpliﬁ cation that almost all ﬂ ight simulators make is to produce 
+automatically coordinated ﬂ ight. Ordinarily, the pilot of an airplane must coordinate 
+the movements of the ailerons and rudder when he turns to prevent the plane from 
+skidding sideways in the air, in the same way that a car skids sideways on wet pave-
+ment if it takes a turn too fast. Because the plane has no tires gripping pavement to 
+
+
+--- PAGE BREAK ---
+
+VEHICLE SIMULATIONS 
+523
+ CHAPTER 17
+control the direction it is facing, this can happen even more easily in the air. 
+However, most players have only one control mechanism, the joystick. To simplify 
+ﬂ ight, the left-right motion of the joystick controls both the rudder and the aile-
+rons simultaneously, producing automatically coordinated ﬂ ight.
+CREATING THE SENSE OF SPEED
+In a ﬂ ight simulation, simply going fast is rarely the point. Most players either try 
+to ﬂ y accurately and aerobatically or are engaging in aerial combat. Although speed 
+is an important factor in the game, conveying that sense to the player isn’t critical 
+to the experience.
+In driving simulations, however, the sense of speed is all-important. Here are some 
+ways to create it:
+■ Give the player a speedometer. This is the most obvious way to inform a 
+player of his speed, but it creates a purely logical awareness, not a visceral one. It 
+might also help to give him a tachometer so he can see that the engine is near its 
+maximum potential.
+■ Vary the driving surface. Don’t present a smooth ribbon of black, but make 
+the road a series of continuously changing dark grays. (Look back at Figure 17.7,
+GT Legends, to see this done well.) The rate at which these color gradations move 
+toward the car helps create the feeling of speed. Don’t just use a set of random dots, 
+though, or at high speed the player will just see a static, ﬂ ickering surface. It’s bet-
+ter to implement these cues as a series of narrow strips parallel to the road’s edges. 
+Also, on roads (as opposed to racetracks), be sure to implement the dotted white 
+line down the center. The sight of the lines ﬂ icking by provides a continuous visual 
+cue to the speed, as well as a good way to tell when the vehicle is speeding up or 
+slowing down. (In a ﬂ ight simulator, the equivalent is to be sure the ground is as 
+detailed as possible.)
+■ Include roadside objects. A continuous fence, guardrail, or strip of grass 
+doesn’t do much to give the player a feeling of motion. Make sure there are lots of 
+trees, road signs, and bridges. Anything that rises vertically beside the road or that 
+passes over or under the car helps create the impression of motion.
+■ Use sounds. The sound of the engine is the most obvious auditory cue, but you 
+can also include road noise (the sound the tires make on the pavement), wind 
+noise, and tires squealing as the vehicle rounds corners. Another excellent cue is a 
+Doppler shift as the car passes, or is passed by, some noise-making object.
+G-FORCES
+The driver of any vehicle feels a variety of forces affecting her body: acceleration, 
+deceleration, and centrifugal force. The forces give a lot of valuable feedback about 
+the behavior of the vehicle. Unfortunately, in a home-based simulator, you can’t 
+
+
+--- PAGE BREAK ---
+

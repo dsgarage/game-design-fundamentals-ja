@@ -1,0 +1,1115 @@
+GAME CONCEPTS 
+83
+ CHAPTER 3
+3. Certain genres are more often found on one kind of machine than on another. 
+Write an essay explaining which machine each genre works best on and why. How 
+do the machine’s features and the way that it is used in the home facilitate or hin-
+der the gameplay in each genre?
+Design Practice QUESTIONS
+Once you have a game idea in mind, these are the questions you must ask yourself 
+in order to turn it into a fully ﬂ edged game concept. You don’t have to be precise or 
+detailed, but you should have a general answer for all of them.
+1. Write a high concept statement: a few sentences that give a general ﬂ avor of the 
+game. You can make references to other games, movies, books, or any other media 
+if your game contains similar characters, actions, or ideas.
+2. What is the player’s role? Is the player pretending to be someone or something, 
+and if so, what? Is there more than one? How does the player’s role help to deﬁ ne 
+the gameplay?
+3. Does the game have an avatar or other key character? Describe him/her/it.
+4. What is the nature of the gameplay, in general terms? What kinds of challenges 
+will the player face? What kinds of actions will the player take to overcome them?
+5. What is the player’s interaction model? Omnipresent? Through an avatar? 
+Something else? Some combination?
+6. What is the game’s primary camera model? How will the player view the game’s 
+world on the screen? Will there be more than one perspective?
+7. Does the game fall into an existing genre? If so, which one?
+8. Is the game competitive, cooperative, team-based, or single-player? If multiple 
+players are allowed, are they using the same machine with separate controls or dif-
+ferent machines over a network?
+9. Why would anyone want to play this game? Who is the game’s target audience? 
+What characteristics distinguish them from the mass of players in general?
+10. What machine or machines is the game intended to run on? Can it make use of, 
+or will it require, any particular hardware such as dance mats or a camera?
+11. What is the game’s setting? Where does it take place?
+12. Will the game be broken into levels? What might be the victory condition for a 
+typical level?
+13. Does the game have a narrative or story as it goes along? Summarize the plot in 
+a sentence or two.
+
+
+--- PAGE BREAK ---
+
+Game Worlds
+Games entertain through gameplay, but many also entertain by taking the player 
+away to an imaginary place—a game world. (This book uses the terms world, setting,
+and game setting interchangeably with game world.) In fact, the gameplay in most 
+single-player video games appears to the player as interactions between himself and 
+the game world. This chapter deﬁ nes a game world and introduces the various 
+dimensions that describe a game world: the physical, temporal, environmental, 
+emotional, and ethical dimensions, as well as a quality called realism.
+What Is a Game World?
+A game world is an artiﬁ cial universe, an imaginary place in which the events of 
+the game occur. When the player enters the magic circle and pretends to be some-
+where else, the game world is the place she pretends to be.
+Not all games have a game world. A football game takes place in a real location, not 
+an imaginary one. Playing football still requires pretending because the players 
+assign an artiﬁ cial importance to otherwise trivial actions, but the pretending 
+doesn’t create a game world. Many abstract games, such as tic-tac-toe, have a board 
+but not a world—there is no imaginary element in playing the game. Chess has 
+only a hint of a world; although the board and the moves are abstract, the names of 
+the pieces suggest a medieval court with its king and queen, knights and bishops. 
+Stratego has a slightly more elaborate world: The board is printed to look like a land-
+scape, and the pieces are illustrated with little pictures, encouraging us to pretend 
+that they are colonels, sergeants, and scouts in an army. Stratego could be played 
+entirely abstractly, using only numbers and a bare grid for a board, but the setting 
+makes it more interesting.
+ART IS NOT ENOUGH
+When deﬁ ning your game world, it will be tempting to start drawing pictures right away, 
+especially if you’re artistically inclined anyway. That’s good in the early stages of design; 
+you will need concept art to pitch your game. But don’t make the mistake of thinking that 
+nice drawings are enough. Your game world must support and work with the core 
+mechanics and gameplay of your game. To make the world serve the game well, you 
+must design it carefully. Otherwise you may forget to address an important issue until 
+late in the development process, when it’s expensive to make changes. 
+CHAPTER 4
+84
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+85
+ CHAPTER 4
+Most video games present their game world with pictures and sound: art, anima-
+tion, music, and audio effects. Not all game worlds have a visible or audible 
+component, however. In a text adventure, the player creates the images and sounds 
+of the world in his imagination when he reads the text on the screen. Designing 
+such a world is a matter of using your literary skills to describe it in words.
+Game worlds are much more than the sum of the pictures and sounds that portray 
+them. A game world can have a culture, an aesthetic, a set of moral values, and 
+other dimensions that you’ll look at in this chapter. The game world also has a rela-
+tionship to reality, whether it is highly abstract, with little connection to the world 
+of everyday things, or highly representational, attempting to be as similar to the 
+real world as possible.
+The Purposes of a Game World
+Games entertain by several means: gameplay, novelty, social interaction (if it is a 
+multiplayer game), and so on. In a game such as chess, almost all the entertain-
+ment value is in the gameplay; few people think of it as a game about medieval 
+warfare. In an adventure game such as Escape from Monkey Island, the world is 
+essential to the fantasy. Without the world, Escape from Monkey Island would not 
+exist, and if it had a different world, it would be a different game. One of the pur-
+poses of a game world is simply to entertain in its own right: to offer the player a 
+place to explore and an environment to interact with.
+As a general rule, the more that a player understands a game’s core mechanics, the 
+less the game world matters. Mastering the core mechanics requires a kind of 
+abstract thought, and fantasy can be a distraction. Serious chess players don’t think 
+of the pieces as representing actual kings and queens and knights. When players 
+become highly skilled at a game such as Counter-Strike, they no longer think that 
+they’re pretending to be soldiers or terrorists; they think only about hiding, mov-
+ing, shooting, ambushing, obtaining ammunition, and so on. However, this kind 
+of abstract play, ignoring a game’s world, usually occurs only among experienced 
+players. To someone who’s playing a game for the ﬁ rst time, the world is vital to 
+creating and sustaining her interest.
+The other purpose of a game’s world is to sell the game in the ﬁ rst place. It’s not the 
+game’s mechanics that make a customer pick up a box in a store but the fantasy it 
+offers: who she’ll be, where she’ll be, and what she’ll be doing there if she plays 
+that game.
+The Dimensions of a Game World
+Many different properties deﬁ ne a game’s world. Some, such as the size of the 
+world, are quantitative and can be given numerical values. Others, such as the 
+world’s mood, are qualitative and can only be described with words. Certain 
+
+
+--- PAGE BREAK ---
+
+86 
+FUNDAMENTALS OF GAME DESIGN
+properties are related to one another, and these groups of related properties are the 
+dimensions of the game world. To fully deﬁ ne your world and its setting, you need 
+to consider each of these dimensions and answer certain questions about them.
+The Physical Dimension
+Video game worlds are almost always implemented as some sort of simulated physi-
+cal space. The player moves his avatar in and around this space or manipulates 
+other pieces or characters in it. The physical properties of this space determine a 
+great deal about the gameplay.
+Even text adventures include a physical dimension. The player moves from one 
+abstract location, usually called a room even if it’s described as outdoors, to another. 
+Back when more people played text adventures, the boxes the games came in used 
+to carry proud boasts about the number of rooms in the game. Gamers could take 
+this as a very rough measure of the size of the world they could explore in the game 
+and, therefore, the amount of gameplay that the game offered.
+The physical dimension of a game is itself characterized by several different proper-
+ties: spatial dimensionality, scale, and boundaries.
+SPATIAL DIMENSIONALITY
+One of the ﬁ rst questions to ask yourself is how many spatial dimensions your 
+physical space will have. It is essential to understand that the dimensionality of
+the game’s physical space is not the same as how the game displays that space (the 
+camera model) or how it implements the space in the software. How to implement 
+the space and how to display it are separate but related questions. The former has
+to do with technical design, and the latter has to do with user interface design. 
+Ultimately, all spaces must be displayed on the two-dimensional surface of the 
+monitor screen.
+These are the typical dimensionalities found in video games:
+■ 2D. A few years ago, the vast majority of games had only two dimensions. This 
+was especially noticeable in 2D side-scrolling games such as Super Mario Bros. (see 
+Figure 4.1). Mario could run left and right and jump up and down, but he could 
+not move toward the player (out of the screen) or away from him (into the screen). 
+Two-dimensional worlds have one huge advantage when you’re thinking about 
+how to display them: The two dimensions of the world directly correspond to the 
+two dimensions of the monitor screen, so you don’t have to worry about conveying 
+a sense of depth to the player. On the other hand, a number of games with 2D 
+game worlds still use 3D hardware accelerators for display so that objects appear 
+three-dimensional even though the gameplay does not use the third dimension. 
+Two-dimensional worlds may seem rather old-fashioned nowadays, but there are 
+still many uses for them in casual browser-based games and smaller devices such as 
+low-end mobile phones.
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+87
+ CHAPTER 4
+■ 2.5D, typically pronounced “two-and-a-half D.” This refers to game worlds that 
+appear to be a three-dimensional space but in reality consist of a series of 2D layers, 
+one above the other. StarCraft, a war game, shows plateaus and lowlands, as well as 
+aircraft that pass over obstacles and ground units. The player can place objects and 
+move them horizontally within a layer with a ﬁ ne degree of precision, but vertically 
+an object must be in one plane or another; there is no in-between. Flying objects can’t 
+move up and down in the air; they’re simply in the air layer as Figure 4.2 depicts.
+FIGURE 4.2
+StarCraft, with 
+plateaus and 
+lowlands visible
+FIGURE 4.1
+Super Mario Bros.,
+the classic 2D side-
+scrolling game
+
+
+--- PAGE BREAK ---
+
+88 
+FUNDAMENTALS OF GAME DESIGN
+■ 3D. Three true dimensions. Thanks to 3D hardware accelerators and modeling 
+tools, 3D spaces are now easy to implement on hardware that supports them. They 
+give the player a much greater sense of being inside a space (building, cave, space-
+craft, or whatever) than 2D spaces ever can. With a 2D world, the player feels as if 
+he is looking at it; with a 3D world, he feels as if he is in it. 3D worlds are great for 
+avatar-based games with exploration challenges, such as the Prince of Persia series 
+(see Figure 4.3). Most large games for personal computers and consoles now use 
+three dimensions, but many small casual games still need only two.
+■ 4D. If you want to include a fourth dimension for some reason (not counting 
+time), implement it as an alternate version of the 3D game world rather than
+an actual four-dimensional space. In other words, create two (or more) three-
+dimensional spaces that look similar but offer different experiences as the avatar 
+moves among them. For example, the Legacy of Kain series presents two versions
+of the same 3D world, the spectral realm and the material realm, with different 
+gameplay modes for each. The landscape is the same in both, but the material 
+realm is lit by white light while the spectral realm is lit by blue light, and the archi-
+tecture is distorted in the spiritual realm (see Figure 4.4). The actions available to 
+the player are different in each realm. The realms look similar but are functionally 
+different places governed by different laws. In the movie version of The Lord of the 
+Rings, the world that Frodo inhabits while he is wearing the Ring can be thought
+of as an alternate plane of reality as well, overlapping the real world but appearing 
+and behaving differently.
+FIGURE 4.3
+Prince of Persia, a fully 
+3D environment
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+89
+ CHAPTER 4
+When you ﬁ rst think about the dimensionality of your game space, don’t immedi-
+ately assume that you want it to be three-dimensional because 3D seems more real 
+or makes the best use of your machine’s hardware. As with everything else you 
+design, the dimensionality of your physical space must serve the entertainment 
+value of the game. Make sure all the dimensions will contribute meaningfully. 
+Many games that work extremely well in two dimensions don’t work well in three. 
+Lemmings was a hit 2D game, but Lemmings 3D was nowhere near as successful 
+because it was much more difﬁ cult to play. The addition of a third dimension 
+detracted from the player’s enjoyment rather than added to it.
+SCALE
+Scale refers to both the absolute size of the physical space represented, as measured 
+in units meaningful in the game world (meters, miles, or light-years, for instance) 
+and the relative sizes of objects in the game. If a game is purely abstract and doesn’t 
+correspond to anything in the real world, the sizes of objects in its game world 
+don’t really matter. You can adjust them to suit the game’s needs any way you like. 
+But if you are designing a game that represents (if only partially) the real world, 
+you’ll have to address the question of how big everything should be to both look 
+real and play well. Some distortion is often necessary for the sake of gameplay, 
+especially in war games; the trick is to distort the scale without harming the play-
+er’s suspension of disbelief too much.
+In a sports game, a driving game, a ﬂ ight simulator, or any other kind of game in 
+which the player expects a high degree of verisimilitude, you have little choice but 
+to scale things to their actual sizes. In old 2D sports games, it was not uncommon 
+for the athletes to be depicted as 12 feet tall to make them more visible, but nowa-
+days players don’t tolerate a game taking such liberties with reality. Serious 
+simulations need to represent the physical world accurately.
+Similarly, you should scale most of the objects in ﬁ rst-person games accurately. 
+Fortunately, almost all ﬁ rst-person games are set indoors or within limited areas, 
+seldom larger than a few hundred feet in any dimension, so this doesn’t create 
+implementation problems. Because the player’s perspective is that of a person 
+FIGURE 4.4
+Legacy of Kain: Soul 
+Reaver’s material (left) 
+and spiritual (right) 
+realms. Notice how the 
+walls are slightly 
+twisted in the spiritual 
+realm and the overlay 
+indicator is different. 
+
+
+--- PAGE BREAK ---
+
+90 
+FUNDAMENTALS OF GAME DESIGN
+walking through the space, objects need to look right for their surrounding area. 
+You might want to slightly exaggerate the size of critical objects such as keys, weap-
+ons, or ammunition to make them more visible, but most things, such as doors and 
+furniture, should be scaled normally.
+If you’re designing a game with an aerial or isometric perspective, you might need 
+to distort the scale of things somewhat. The real world is so much larger and more 
+detailed than a game world that it’s impossible to represent objects in their true 
+scale in such a perspective. For example, in modern mechanized warfare, ground 
+battles can easily take place over a 20-mile front, with weapons that can ﬁ re that 
+far or farther. If you were to map an area this size onto a computer screen, an indi-
+vidual soldier or even a tank would be smaller than a single pixel, completely 
+invisible. Although the display will normally be zoomed in on one small area of 
+the whole map, the scale of objects will have to be somewhat exaggerated so that 
+the objects are clearly identiﬁ able on the screen.
+Games frequently distort the relative heights of people and the buildings or hills in 
+their environment. The buildings are often only a little taller than the people who 
+walk past them. (See Figure 4.5 for an example.) To be able to see the roofs of all 
+the buildings or the tops of all the hills, the camera must be positioned above the 
+highest point in the world. But if the camera is positioned too high, the people are 
+hardly visible at all. To solve this problem, the game simply does not include tall 
+buildings or hills and exaggerates the height of the people. Because the vertical 
+dimension is seldom critical to the gameplay in products such as war games and 
+role-playing games, it doesn’t matter if heights are not accurate, as long as they’re 
+not so inaccurate as to interfere with suspension of disbelief.
+Designers often make another scale distortion between indoor and outdoor loca-
+tions. When a character walks through a town, simply going from one place to 
+another, the player wants the character to get there reasonably quickly. The scale of 
+the town should be small enough that the character takes only a few minutes to get 
+from one end to another unless the point of the game is to explore a richly detailed 
+urban environment. When the character steps inside a building, however, and 
+needs to negotiate doors and furniture, you should expand the scale to show these 
+additional details. If you use the same animation for a character walking indoors 
+and outdoors, this will give the impression that the character walks much faster 
+outdoors than indoors. However, this seldom bothers players—they’d much rather 
+have the game proceed quickly than have their avatar take hours to get anywhere, 
+even if that would be more accurate.
+This brings up one ﬁ nal distortion, which is also affected by the game’s notion of 
+time (see the section “The Temporal Dimension” later in this chapter), and that is 
+the relative speeds of moving objects. In the real world, a supersonic jet ﬁ ghter can 
+ﬂ y more than a hundred times faster than an infantry soldier can walk on the 
+ground. If you’re designing a game that includes both infantry soldiers and jet 
+ﬁ ghters, you’re going to have a problem. If the scale of the battleﬁ eld is suitable for 
+jets, it will take infantry weeks to walk across; if it’s suitable for infantry, a jet could 
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+91
+ CHAPTER 4
+pass over it in the blink of an eye. One solution is to do what the real military does 
+and implement transport vehicles for ground troops. Another is simply to accept a 
+certain amount of distortion and create jets that ﬂ y only four or ﬁ ve times as fast as 
+people walk (StarCraft uses this trick). As long as the jet is the fastest thing in the 
+game, it doesn’t really matter how much faster it is; the strike-and-retreat tactic that 
+jets are good at will still work. Setting these values is all part of balancing the game, 
+as Chapter 9, “Gameplay,” discusses in more detail.
+BOUNDARIES
+In board games, the edge of the board is the edge of the game world. Because com-
+puters don’t have inﬁ nite memories, the physical dimension of a computer game 
+world must have an “edge” as well. However, computer games are usually more 
+immersive than board games, and they often try to disguise or explain away the 
+fact that the world is limited to help maintain the player’s immersion.
+In some cases, the boundaries of a game world arise naturally, and we don’t have
+to disguise or explain them. Sports games take place only in a stadium or an arena, 
+and no one expects or wants them to include the larger world. In most driving 
+games, the car is restricted to a track or a road, and this, too, is reasonable enough.
+Setting a game underground or indoors helps to create natural boundaries for the 
+game world. Everyone expects indoor regions to be of a limited size, with walls 
+FIGURE 4.5
+In Age of Empires, the 
+buildings are only a 
+little taller than the 
+people. 
+
+
+--- PAGE BREAK ---
+
+92 
+FUNDAMENTALS OF GAME DESIGN
+deﬁ ning the edges. The problem occurs when games move outdoors, where players 
+expect large, open spaces without sharply deﬁ ned edges. A common solution in 
+this case is to set the game on an island surrounded by water or by some other kind 
+of impassable terrain: mountains, swamps, or deserts. These establish both a credi-
+ble and a visually distinctive “edge of the world.”
+In ﬂ ight simulators, setting the boundaries of the world creates even more prob-
+lems. Most ﬂ ight simulators restrict the player to a particular area of the real world. 
+Because there are no walls in the air, there’s nothing to stop the plane from ﬂ ying 
+up to the edge of the game world; when the player arrives there he can clearly see 
+that there’s nothing beyond. In some games, the plane just stops there, hovering in 
+midair, and won’t go any farther. In Battleﬁ eld 1942, the game tells the player that 
+he has left the scene of the action and forcibly returns him to the runway.
+A common solution to the edge-of-the-world problem is to allow the ﬂ at world to 
+“wrap” at the top, bottom, and sides. Although the world is implemented as a rect-
+angular space in the software, objects that cross one edge appear at the opposite 
+edge—they wrap around the world. If the object remains centered on the screen 
+and the world appears to move beneath it, you can create the impression that the 
+world is spherical. This is used to excellent effect in Bullfrog Productions’ game 
+Magic Carpet. Maxis’s Spore actually displays the world as a sphere on the screen,
+not just a wrapping rectangle (see Figure 4.6).
+FIGURE 4.6
+Parts of Spore are set 
+on a genuinely spheri-
+cal world. 
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+93
+ CHAPTER 4
+Finally, you can solve the problem of boundaries by requiring the player to move 
+among deﬁ ned locations. For example, you might let a player ﬂ y from planet to 
+planet in the solar system by clicking on the planet she wants to go to. The player 
+cannot go beyond the boundary of the solar system because there are no planets in 
+interstellar space. The user interface for movement creates a natural limit that 
+requires no further explanation.
+The Temporal Dimension
+The temporal dimension of a game world deﬁ nes the way that time is treated in that 
+world and the ways in which it differs from time in the real world.
+In many turn-based and action games, the world doesn’t include a concept of
+time passing: days and nights or seasons and years. Everything in the world idles
+or runs in a continuous loop until the player interacts with the game in some way. 
+Occasionally, the player is put under pressure by being given a limited amount of 
+real-world time to accomplish something, but this usually applies to only a single 
+challenge and is not part of a larger notion of time in the game.
+In some games, time is implemented as part of the game world but not part of the 
+gameplay. The passage of time creates atmosphere and gives the game visual vari-
+ety, but it doesn’t change the game’s challenges and actions. This usually feels 
+rather artiﬁ cial. If the player can do exactly the same things at night that she can 
+during the day and no one ever seems to sleep, then there’s little point in making 
+the distinction. For time to really support the fantasy, it must affect the experience 
+in ways besides the purely visual.
+Baldur’s Gate, a large role-playing game, is a good example of a game in which
+time is meaningful. At night, shops close and the characters in the game run an 
+increased risk of being attacked by wandering monsters. It’s also darker and hard
+to see. Taverns are open all day and all night, which is reasonable enough, but the 
+customers don’t ever seem to leave and the bartender never goes off shift. In this 
+way, the game’s use of time is a little inconsistent, but the discrepancy serves the 
+gameplay well because you can always trade with the bartender and pick up gossip 
+no matter what time it is. The characters do need rest if they’ve been on the march 
+for a long while, and this makes them vulnerable while they’re sleeping. In the 
+underground portions of the game, day and night have less meaning, as you would 
+expect.
+VARIABLE TIME
+In games that do implement time as a signiﬁ cant element of the gameplay, time in 
+the game world usually runs much faster than in reality. Time in games also jumps 
+(as it does in books and movies), skipping periods when nothing interesting is hap-
+pening. Most war games, for example, don’t bother to implement nighttime or 
+require that soldiers get any rest. In reality, soldier fatigue is a critical consideration 
+
+
+--- PAGE BREAK ---
+
+94 
+FUNDAMENTALS OF GAME DESIGN
+in warfare, but because sleeping soldiers don’t make exciting viewing and certainly 
+aren’t very interactive, most games just skip sleep periods. Allowing soldiers to ﬁ ght 
+continuously without a pause permits the player to play continuously without a 
+pause also.
+The Sims, a game about managing a household, handles this problem a different 
+way. The simulated characters require rest and sleep for their health, so The Sims
+depicts day and night accurately. However, when all the characters go to sleep, the 
+game speeds up considerably, letting hours go by in a few seconds. As soon as any-
+one wakes up, time slows down again.
+The Sims is a rather unusual game in that it’s chieﬂ y about time management. The 
+player is under constant pressure to have his characters accomplish all their chores 
+and get time for sleep, relaxation, and personal development as well. The game 
+runs something like 48 times as fast as real life, so it takes about 20 minutes of real 
+time to play through the 16 hours of game-world daytime. However, the characters 
+don’t move 48 times as fast. Their actions look pretty normal, about as they would 
+in real time. As a result, it takes them 15 minutes according to the game’s clock just 
+to go out and pick up the newspaper. This contributes to the sense of time pressure. 
+Because the characters do everything slowly (in game terms), they often don’t get a 
+chance to water their ﬂ owers, which consequently die.
+ANOMALOUS TIME
+In The Settlers: Rise of an Empire, a complex economic simulation, a tree can grow 
+from a sapling to full size in about the same length of time that it takes for an iron 
+foundry to smelt four or ﬁ ve bars of iron. This is a good example of anomalous 
+time: time that seems to move at different speeds in different parts of the game. 
+Blue Byte, the developer of The Settlers, tuned the length of time it takes to do each 
+of the many tasks in the game to make sure that the game as a whole would run 
+smoothly. As a result, The Settlers is very well balanced at some cost to realism. 
+However, it doesn’t disrupt the fantasy because The Settlers doesn’t actually give the 
+player a clock in the game world. There’s no way to compare game time to real 
+time, so in effect, the game world has no obvious time scale (see Figure 4.7).
+Another example of anomalous time appears in Age of Empires, in which tasks that 
+should take less than a day in real time (gathering berries from a bush, for example) 
+seem to take years in game time according to the game clock. Age of Empires does 
+have a time scale, visible on the game clock, but not everything in the world makes 
+sense on that time scale. The players simply have to accept these actions as sym-
+bolic rather than real. As designers, we have to make them work in the context of 
+the game world without disrupting the fantasy. As long as the symbolic actions 
+(gathering berries or growing trees) don’t have to be coordinated with real-time 
+actions (warfare) but remain essentially independent processes, it doesn’t matter
+if they operate on an anomalous time scale.
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+95
+ CHAPTER 4
+LETTING THE PLAYER ADJUST TIME
+In sports games and vehicle simulations, game time usually runs at the same speed 
+as real time. An American football game is, by deﬁ nition, an hour long, but because 
+the clock stops all the time, the actual elapsed time of a football game is closer to 
+three hours. All serious computerized football games simulate this accurately. 
+Verisimilitude is a key requirement of most sports games; if a game does not
+accurately simulate the real sport, the league might not approve of it, and its com-
+petitors are bound to point out the ﬂ aw. However, most such games also allow the 
+players to shorten the game by playing 5- or 10-minute quarters instead of 15-minute
+quarters because most people don’t want to devote a full three hours to playing a 
+simulated football game. This is also a useful feature in testing; it takes far too long 
+to test the product if you have to play a full-length game every time.
+Flight simulators also usually run in real time, but there are often long periods of 
+ﬂ ying straight and level during which nothing of interest is going on; the plane is 
+simply traveling from one place to another. To shorten these periods, many games 
+offer a way to speed up time in the game world by two, four, or eight times—in 
+effect, make everything in the game world go faster than real time. When the plane 
+approaches its destination, the player can return the game to normal speed and 
+play in real time.
+FIGURE 4.7
+Activities in The 
+Settlers: Rise of an 
+Empire take anomalous 
+lengths of time, but the 
+user interface does not 
+include a clock.
+
+
+--- PAGE BREAK ---
+
+96 
+FUNDAMENTALS OF GAME DESIGN
+The Environmental Dimension
+The environmental dimension describes the world’s appearance and its atmosphere.
+You’ve seen that the physical dimension deﬁ nes the properties of the game’s space; 
+the environmental dimension is about what’s in that space. The environmental 
+characteristics of the game world form the basis for creating its art and audio. We’ll 
+look at two particular properties: the cultural context of the world and the physical 
+surroundings.
+CULTURAL CONTEXT
+The cultural context of a game refers to its culture in the anthropological sense:
+the beliefs, attitudes, and values that the people in the game world hold, as well as 
+their political and religious institutions, social organization, and so on—in short, 
+the way those people live. These characteristics are reﬂ ected in the manufactured 
+items that appear in the game: clothing, furniture, architecture, landscaping, and 
+every other man-made object in the world. The culture inﬂ uences not only what 
+appears and what doesn’t appear (a game set in a realistic ancient Egypt obviously 
+shouldn’t include ﬁ rearms), but also how everything looks—including the user 
+interface. Cleopatra: Queen of the Nile is an excellent example of a game’s culture 
+harmonizing with its user interface; see Figure 4.8. The way objects appear is 
+affected not only by their function in the world, but also by the aesthetic sensibili-
+ties of the people who constructed them; for example, a Maori shield looks entirely 
+different from a medieval European shield.
+FIGURE 4.8
+The cultural context of 
+Cleopatra: Queen of the 
+Nile inﬂ uences every-
+thing on the screen, 
+including the icons and 
+text. 
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+97
+ CHAPTER 4
+The cultural context also includes the game’s backstory. The backstory of a game is 
+the imaginary history, either large-scale (nations, wars, natural disasters) or small-
+scale (personal events and interactions), that preceded the time when the game 
+takes place. This prior history helps to establish why the culture is the way it is. A 
+warlike people should have a history of warfare; a mercantile people should have a 
+history of trading. In designing the backstory, don’t go into too much depth too 
+early, however. As Chapter 3, “Game Concepts,” warned, the story must serve the 
+game, not the other way around.
+For most game worlds, it’s not necessary to deﬁ ne the culture or cultures in great 
+detail. A game set in your own culture can simply use the things that you see 
+around you. The SimCity series, for example, is clearly set in present-day America 
+(European cities are rarely so rectilinear), and it looks like it. But when your game 
+begins to deviate from your own culture, you need to start thinking about how it 
+deviates and what consequences that deviation has.
+PHYSICAL SURROUNDINGS
+The physical surroundings deﬁ ne what the game actually looks like. This is a part 
+of game design in which it’s most helpful to be an artist or to work closely with 
+one. In the early stages of design, you don’t need to make drawings of every single 
+thing that can appear in the game world (although sooner or later someone will to 
+have to do just that). For the time being, it’s important to create concept sketches: 
+pencil or pen-and-ink drawings of key visual elements in the game. Depending on 
+what your game is about, this can include buildings, vehicles, clothing, weaponry, 
+furniture, decorations, works of art, jewelry, religious or magical items, logos or 
+emblems, and on and on. See Grim Fandango (Figure 4.9) for a particularly distinc-
+tive example. The game’s culture inﬂ uences constructed artifacts in particular. A 
+powerful and highly religious people are likely to have large symbols of their spiri-
+tuality: stone temples or cathedrals. A warlike nomadic people have animals or 
+vehicles to carry their gear and weapons they can use on the move. (Note that 
+these might be future nomads, driving robo-camels.)
+Nor should you neglect the natural world. Games set in urban or indoor environ-
+ments consisting entirely of manufactured objects feel sterile. Think about birds 
+and animals, plants and trees, earth, rocks, hills, and even the sky. Consider the 
+climate: Is it hot or cold, wet or dry? Is the land fertile or barren, ﬂ at or mountain-
+ous? These qualities, all parts of a real place, are opportunities to create a visually 
+rich and distinctive environment.
+If your world is chieﬂ y indoors, of course, you don’t have to think about nature 
+much unless your character passes a window, but there are many other issues to 
+think about instead. Where does the light come from? What are the walls, ﬂ oors, 
+and ceilings made of, and how are they decorated? Why is this building here? Do 
+the rooms have a speciﬁ c purpose, and if so, what? How can you tell the purpose of 
+a room from its contents? Does the building have multiple stories? How does the 
+player get from one ﬂ oor to another?
+
+
+--- PAGE BREAK ---
+
+98
+FUNDAMENTALS OF GAME DESIGN
+Physical surroundings include sounds as well as sights: music; ambient environ-
+mental sounds; the particular noises made by people, animals, machinery, and 
+vehicles. If you think about the sounds things make at the same time that you 
+think about how they look, this helps you create a coherent world. Suppose you’re 
+inventing a six-legged reptilian saddle animal with clawed feet rather than hooves. 
+How does that creature sound as it moves? Its scales might rattle a bit. Its feet are 
+not going to make the characteristic cilp-clop sound of a shod horse. With six legs, 
+it will probably have some rather odd gaits, and those should be reﬂ ected in the 
+sound it makes.
+The physical surroundings play a big role in setting the tone and mood of the game 
+as it is played, whether it’s the lighthearted cheerfulness of Mario or the gritty reali-
+ties of the Godfather series (see Figure 4.10). The sound, and especially the music, 
+will contribute greatly to this. Think hard about the kind of music you want, and 
+consider what genres will be appropriate. Stanley Kubrick listened to hundreds of 
+records to select the music for 2001: A Space Odyssey, and he astonished the world 
+with his choice of “The Blue Danube” for the shuttle docking sequence. You have a 
+similar opportunity when you design your game.
+FIGURE 4.9
+Grim Fandango com-
+bines Aztec, Art Deco, 
+and Mexican Day of the 
+Dead themes. 
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+99
+ CHAPTER 4
+DETAIL
+Every designer must decide how much detail the game world needs—that is to say, 
+how richly textured the world will be and how accurately modeled its characteris-
+tics will be. To some extent, your answer will be determined by the level of realism 
+that you want, but technical limitations and time constraints will necessarily 
+restrict your ambitions. No football game goes to the extent of modeling each fan 
+in the stadium, and few ﬂ ight simulators model all the physical characteristics of 
+their aircraft. Detail helps to support the fantasy, but it always costs, in develop-
+ment time and in memory or disk space on the player’s machine. In an adventure 
+game, it should, in principle, be possible to pick up everything in the world; in 
+practice, this just isn’t practical. As a consequence, the player knows that if he can 
+pick up an object, it must be important for some reason; if he can’t pick it up, it 
+isn’t important. Similarly, in god games, it’s common for all the people to look 
+alike; they’re often male adults. Bullfrog Productions once designed a god game 
+with both male and female adults, but there wasn’t enough time for the artists to 
+model children as well. People simply were born into the world full grown. 
+Lionhead’s Black & White, on the other hand, managed to include men, women, 
+and children.
+The camera model you choose, and the way that the player moves through the 
+world, may inﬂ uence your decisions about the level of detail. For example, in a 
+small stadium such as the Wimbledon tennis courts, the athletes may be conscious 
+of speciﬁ c people in the crowd, so it makes sense to model them in some detail. In 
+motorsports, however, the spectators will ﬂ ash past in a blur, and there’s no point 
+in putting much effort into their appearance.
+FIGURE 4.10
+A shootout in The 
+Godfather II
+
+
+--- PAGE BREAK ---
+
+100 
+FUNDAMENTALS OF GAME DESIGN
+Here’s a good rule of thumb for determining the level of detail your game will con-
+tain: Include as much detail as you can to help the game’s immersiveness, up to the 
+point at which it begins to harm the gameplay. If the player must struggle to look 
+after everything you’ve given him, the game probably has too much detail. (This
+is one of the reasons war games tend to have hundreds rather than hundreds of 
+thousands of units. The player in a war game can’t delegate tasks to intelligent sub-
+ordinates, so the numbers have to be kept down to a size that he can reasonably 
+manage.) A spectacularly detailed game that’s no fun to play doesn’t sell many copies.
+DEFINING A STYLE
+In describing how your world is going to look, you are deﬁ ning a visual style for 
+your game that will inﬂ uence a great many other things as well: the character 
+design, the user interface, perhaps the manual, and even the design of the box and 
+the advertising. You actually have two tasks to take on here: deﬁ ning the style of 
+things in your world (that is, its intrinsic style), and also deﬁ ning the style of the 
+artwork that will depict your world. They aren’t the same. For example, you can 
+describe a world whose architectural style is inspired by Buddhist temples but draw 
+it to look like a ﬁ lm noir movie. Or you could have medieval towns with half-tim-
+bered houses but depict them in a slightly fuzzy, Impressionistic style. You must 
+choose both your content and the way in which you will present that content.
+Both decisions will signiﬁ cantly inﬂ uence the player’s experience of the game, 
+jointly creating a distinct atmosphere. In general, the style of depiction tends to 
+superimpose its mood on the style of the object depicted. For example, a Greek 
+temple might be architecturally elegant, but if its style of drawing suggests a 
+Looney Tunes cartoon, players will expect something wacky and outrageous to take 
+place there. The drawing style imposes its own atmosphere over the temple, no 
+matter how majestic it is. For one example, take a look at Naruto: Ultimate Ninja 
+Storm (see Figure 4.11). All the locations in Naruto are rendered in a ﬂ at-shaded 
+style reminiscent of the comic book that inspired the game.
+Unless you’re the lead artist for your game as well as its designer, you probably 
+shouldn’t—or won’t be allowed to—deﬁ ne the style by yourself. Your art team will 
+have ideas of its own, and you should listen to those suggestions. The marketing 
+department might insist on having a say as well. It’s important, however, that you 
+try to keep the style harmonious and consistent throughout your game. Too many 
+games have been published in which different sections had wildly differing art 
+styles because no one held and enforced a single overall vision.
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+101
+ CHAPTER 4
+OVERUSED SETTINGS
+All too often, games borrow settings from one another or from common settings 
+found in the movies, books, or television. A huge number of games are set in sci-
+ence ﬁ ction and fantasy worlds, especially the quasi-medieval, sword-and-sorcery 
+fantasy inspired by J. R. R. Tolkien and Dungeons & Dragons, popular with the 
+young people who used to be the primary—indeed, almost the only—market for 
+computer games. But a more diverse audience plays games nowadays, and they 
+want new worlds to play in. You should look beyond these hoary old staples of 
+gaming. As Chapter 3 mentioned, Interstate ’76 is inspired by 1970s TV shows. It 
+includes cars, clothing, music, and language from that era, all highly distinctive 
+and evocative of a particular culture. Interstate ’76 has great gameplay, but what 
+really sets it apart from its competitors is that it looks and sounds like nothing else 
+on the market.
+Especially if you are going to do science ﬁ ction or fantasy, try to make your game’s 
+setting distinctively different. At present, real spacecraft built by the United States 
+or Russia look extremely functional, just as the ﬁ rst cars did in the 1880s, and the 
+spacecraft in computer games tend to look that way also. But as cars became more 
+common, they began exhibiting stylistic variation to appeal to different kinds of 
+people, and now there is a whole school of aesthetics for automotive design. As 
+spacecraft become more common, and especially as we start to see personal space-
+craft, we should expect them to exhibit stylistic variation as well. This is an area in 
+which you have tremendous freedom to innovate.
+FIGURE 4.11
+Naruto overlays the 
+architecture of a mod-
+ern Japanese city, and 
+many other places, 
+with a comic book style. 
+
+
+--- PAGE BREAK ---
+
+102 
+FUNDAMENTALS OF GAME DESIGN
+The same goes for fantasy. Forget the same old elves, dwarves, wizards, and dragons 
+(Figure 4.12). Look to other cultures for your heroes and villains. Right now about 
+the only non-Western culture portrayed with any frequency in games is Japanese 
+(feudal, present-day, and future) because the Japanese make a lot of games and their 
+style has found some acceptance in the West as well. But there are many more 
+sources of inspiration around the world, most untapped. Around AD 1200, while 
+the rulers of Europe were still holed up in cramped, drafty castles, Islamic culture 
+reached a pinnacle of grace and elegance, building magniﬁ cent palaces ﬁ lled with 
+the riches of the Orient and majestic mosques of inlaid stone. Yet this proud and 
+beautiful civilization seldom appears in computer games because Western game 
+designers haven’t bothered to learn about it or don’t even know it existed. Set your 
+fantasy in Valhalla, in Russia under Peter the Great, in the arctic tundra, at Angkor 
+Wat, at Easter Island, or at Machu Picchu.
+SOURCES OF INSPIRATION
+Art and architecture, history and anthropology, literature and religion, clothing 
+fashions, and product design are all great sources of cultural material. Artistic and 
+architectural movements, in particular, offer tremendous riches: Art Nouveau, Art 
+Deco, Palladian, Brutalism. If you haven’t heard of one of these, go look it up now. 
+Browse the web or the art, architecture, and design sections of the bookstore or the 
+public library for pictures of interesting objects, buildings, and clothing. Carry a 
+digital camera around and take pictures of things that attract your eye, then post 
+the pictures around your workspace to inspire yourself and your coworkers. Collect 
+FIGURE 4.12
+Yet another quasi-
+medieval setting: 
+Armies of Exigo
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+103
+ CHAPTER 4
+graphic scrap from anywhere that you ﬁ nd it. Try old copies of National Geographic.
+Visit museums of art, design, and natural history if you can get to them; one of the 
+greatest resources of all is travel, if you can afford it. A good game designer is always
+on the lookout for new ideas, even when he’s ostensibly on vacation.
+It’s tempting to borrow from our closest visual neighbor, the movies, because
+the moviemakers have already done the visual design work for us. Blade Runner
+introduced the decaying urban future; Alien gave us disgustingly biological aliens 
+rather than little green men. The problem with these looks is that they’ve already 
+been borrowed many, many times. You can use them as a quick-and-dirty backdrop 
+if you don’t want to put much effort into developing your world, and players will 
+instantly recognize the world and know what the game is about. But to stand out 
+from the crowd, consider other genres. Film noir, the Marx Brothers, John Wayne 
+westerns, war movies from the World War II era, costume dramas of all periods—
+from the silliness of One Million Years B.C. to the Regency elegance of Pride and 
+Prejudice, they’re all grist for the mill.
+Television goes through its own distinct phases, and because it’s even more 
+fashion-driven than the movies, it is ripe for parody. The comedies of the 1950s 
+and 1960s and the nighttime soaps of the 1970s and 1980s all had characteristic 
+looks that seem laughable today but that are immediately familiar to most adult 
+Americans. This is not without risk; if you make explicit references to American 
+popular culture, non-Americans and children might not get the references. If your 
+gameplay is good enough, though, it shouldn’t matter.
+The Emotional Dimension
+The emotional dimension of a game world deﬁ nes not only the emotions of the 
+people in the world but, more important, the emotions that you, as a designer, 
+hope to arouse in the player. Multiplayer games evoke the widest variety of emo-
+tions, because the players are socializing with real people and making friends (and, 
+alas, enemies) as they play. Single-player games have to inﬂ uence players’ emotions 
+with storytelling and gameplay. Action and strategy games are usually limited to a 
+narrow emotional dimension, but other games that rely more heavily on story and 
+characters can offer rich emotional content that deeply affects the player.
+The idea of manipulating the player’s emotions might seem a little strange. For 
+much of their history, games have been seen only as light entertainment, a means 
+to while away a few hours in a fantasy world. But just because that’s all they have 
+been doesn’t mean that’s all they can be. In terms of the richness of their emotional 
+content, games are now just about where the movies were when they moved from 
+the nickelodeon to the screen. Greater emotional variety enables us to reach new 
+players who value it.
+
+
+--- PAGE BREAK ---
+
+104 
+FUNDAMENTALS OF GAME DESIGN
+INFLUENCING THE PLAYER’S FEELINGS
+Games are intrinsically good at evoking feelings related to the player’s efforts to 
+achieve something. They can create “the thrill of victory and the agony of defeat,” 
+as the old ABC Wide World of Sports introduction used to say. Use the elements of 
+risk and reward—a price for failure and a prize for success—to further heighten 
+these emotions. Games can also produce frustration as a by-product of their chal-
+lenges, but this isn’t a good thing; some players tolerate frustration poorly and stop 
+playing if it gets too high. To reduce frustration, build games with player-settable 
+difﬁ culty levels and make sure the easy level is genuinely easy. Excitement and 
+anticipation, too, play large roles in many games. If you can devise a close contest 
+or a series of stimulating challenges, you will generate these kinds of emotions.
+Construction and management simulations, whose challenges are usually ﬁ nancial, 
+arouse the player’s feelings of ambition, greed, and desire for power or control. 
+They also offer the emotional rewards of creative play. Give the player a way to 
+amass a fortune, then let her spend it to build things of her own design. The 
+SimCity and various Tycoon games (RollerCoaster Tycoon, Railroad Tycoon, and so on), 
+do this well. Artiﬁ cial life games and god games such as Spore or The Sims let the 
+player control the lives of autonomous people and creatures for better or worse, sat-
+isfying a desire to be omnipotent over a world of beings subject to the player’s will. 
+(This may not be a very admirable fantasy, but it’s one that a lot of people enjoy 
+having fulﬁ lled.)
+To create suspense, surprise, and fear, use the time-honored techniques of horror 
+ﬁ lms: darkness, sudden noises, disgusting imagery, and things that jump out at the 
+player unexpectedly. Don’t overdo it, however. A gore-fest becomes tedious after a 
+while, and Alfred Hitchcock demonstrated that the shock is all the greater when it 
+occurs infrequently. For suspense to work well, the player needs to feel vulnerable 
+and unprepared. Don’t arm him too heavily; the world’s a lot less scary when you’re 
+carrying a rocket launcher around. Survival horror is a popular subgenre of action 
+game, as seen in the Silent Hill and Resident Evil series, that uses these approaches.
+Another class of emotions is produced by interactions between characters and the 
+player’s identiﬁ cation with one of them. Love, grief, shame, jealousy, and outrage 
+are all emotions that can result from such interactions. (See Figure 4.13 for a 
+famous example.) To evoke them, you’ll have to use storytelling techniques, creat-
+ing characters that the player cares about and believes in and credible relationships 
+between them. Once you get the player to identify with someone, threaten that 
+character or place obstacles in his path in a way that holds the player’s interest. 
+This is the essence of dramatic tension, whether you’re watching Greek tragedy or 
+reading Harry Potter. Something important must be at stake. The problem need not 
+necessarily be physical danger; it can also be a social, emotional, or economic risk. 
+The young women in Jane Austen’s novels were not in imminent peril of death or 
+starvation, but it was essential to their family’s social standing and ﬁ nancial future 
+for them to make good marriages. The conﬂ ict between their personal desires and 
+their family obligations provides the tension in the novels.
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+105
+ CHAPTER 4
+A good many games set the danger at hyperbolic levels with extreme claims such
+as “The fate of the universe rests in your hands!” This kind of hyperbole appeals to 
+young people, who often feel powerless and have fantasies about being powerful. 
+To adults, it just sounds a bit silly. At the end of Casablanca, Rick said, “The prob-
+lems of three little people don’t amount to a hill of beans in this crazy world,” but 
+he was wrong. The whole movie, a movie still popular over a half century after its 
+ﬁ rst release, is about the problems of those three little people. For the duration of 
+the ﬁ lm, these problems hold us entranced. It isn’t necessary for the fate of the 
+world to be at stake; it is the fates of Rick, Ilsa, and Victor that tug at our hearts.
+DESIGN RULE Avoid Implausible Extremes
+Don’t make your game about the fate of the world if you are serious about producing 
+emotional resonance with your audience; the fate of the world is too big to grasp. Make 
+your game about the fate of people instead.
+THE LIMITATIONS OF FUN
+Weaver’s Law: The quality of an entertainment is inversely proportional to the awareness 
+of time engaged in it.
+—CHRIS WEAVER, FOUNDER OF BETHESDA SOFTWORKS
+Most people think that the purpose of playing games is to have fun, but fun is a 
+rather limiting term. It tends to suggest excitement and pleasure, either a physical 
+pleasure such as riding a roller coaster, a social pleasure such as joking around with 
+friends, or an intellectual pleasure such as playing cards or a board game. The prob-
+lem with striving for fun is that it tends to limit the emotional range of games. 
+Suspense, excitement, exhilaration, surprise, and various forms of pleasure fall within 
+the deﬁ nition of fun, but not pity, jealousy, anger, sorrow, guilt, outrage, or despair.
+You might think that nobody in their right mind would want to explore these emo-
+tions, but other forms of entertainment—books, movies, television—do it all the 
+FIGURE 4.13
+The death of Aeris, 
+from Final Fantasy VII
+
+
+--- PAGE BREAK ---
+
+106 
+FUNDAMENTALS OF GAME DESIGN
+time. And, in fact, that’s the key: Those media don’t provide only fun; they provide 
+entertainment. You can entertain people in all sorts of ways. Movies with sad end-
+ings aren’t fun in the conventional sense, but they’re still entertaining. Although 
+we say that we make games, what we in fact make is interactive entertainment. The 
+potential of our medium to explore emotions and the human condition is much 
+greater than the term fun game allows for. A good game is entertainment that 
+involves the player on a number of levels.
+All that said, however, bear in mind that most publishers and players want fun. Too 
+many inexperienced designers are actually more interested in showing how clever 
+they are than in making sure the player has a good time; they place their own cre-
+ative agenda before the player’s enjoyment. As a designer, you must master the 
+ability to create fun—light enjoyment—before you move on to more complex emo-
+tional issues. Addressing unpleasant or painful emotions successfully is a greater 
+aesthetic challenge and is commercially risky besides.
+YOU CAN’T PAINT EMOTION BY NUMBERS
+The idea that games should include more emotional content and should inspire 
+more emotions in players has been gaining ground in the game industry for several 
+years. Unfortunately, this has produced a tendency to look for quick and easy ways 
+to do it, mostly by relying on clichés. The young man whose family is killed and 
+who is obsessed by his desire for revenge or the beautiful princess who needs to be 
+rescued both belong more to fairy tales than to modern ﬁ ction. That may be all right 
+if your game aspires to nothing more, but it won’t do if you’re trying to create an 
+experience with any subtlety. Contrast, for example, the simple themes of the early 
+animation ﬁ lms and the more psychologically rich stories in the recent Pixar ﬁ lms.
+Beware of books or articles that offer simple formulas for emotional manipulation: 
+“If you want to make the player feel X, just do Y to the protagonist.” An imagina-
+tive and novel approach to inﬂ uencing the players’ feelings requires the talents of a 
+skilled storyteller. Paint-by-numbers emotional content has all the sensitivity and 
+nuance of paint-by-numbers art.
+The Ethical Dimension
+The ethical dimension of a game world deﬁ nes what right and wrong mean within 
+the context of that world. At ﬁ rst glance, this might seem kind of silly—it’s only a 
+game, so there’s no need to talk about ethics. But most games that have a setting,
+a fantasy component, also have an ethical system that deﬁ nes how the player is 
+supposed to behave. As a designer, you are the god of the game’s world, and you 
+establish its morality. When you tell a player that he must perform certain actions 
+to win the game, you are deﬁ ning those actions as good or desirable. Likewise, 
+when you say that the player must avoid certain actions, you are deﬁ ning them as 
+bad or undesirable. The players who come into the world must adopt your stan-
+dards or they will lose the game.
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+107
+ CHAPTER 4
+In some respects, the morality of a game world is part of its culture and history, 
+which are part of the environmental dimension, but because the ethical dimension 
+poses special design problems, it needs a separate discussion. The ethics of most 
+game worlds deviate somewhat from those of the real world—sometimes they’re 
+entirely reversed. Games allow, even require, you to do things that you can’t do in 
+the real world. The range of actions that the game world permits is typically nar-
+rower than in the real world (you can ﬂ y your F-15 ﬁ ghter jet all you want, but you 
+can’t get out of the plane), but often the permitted actions are quite extreme: kill-
+ing people, stealing things, and so on.
+MORAL DECISION-MAKING
+On the whole, most games have simple ethics: clobber the bad guys, protect the 
+good guys. It’s not subtle but it’s perfectly functional; that’s how you play checkers. 
+Not many games explore the ethical dimension in any depth. A few include explicit 
+moral choices, but unfortunately, these tend to be namby-pamby, consistently 
+rewarding good behavior and punishing bad behavior. Such preachy material turns 
+off even children, not to mention adults. But you can build a richer, more involv-
+ing game by giving the player tough moral choices to make. Ethical ambiguity and 
+difﬁ cult decisions are at the heart of many great stories and, indeed, much of life. 
+Should you send a platoon of soldiers to certain death to save a battalion of others? 
+How would you feel if you were in the platoon?
+In many role-playing games, you can choose to play as an evil character who steals 
+and kills indiscriminately, but other characters will refuse to cooperate with you 
+and might even attack you on sight. It’s easier to get money by robbing others than 
+by working for it, but you may pay a price for that behavior in other ways. Rather 
+than impose a rule that says, “Immoral behavior is forbidden,” the game imple-
+ments a rule that says, “You are free to make your own moral choices, but be 
+prepared to live with the consequences.” This is a more adult approach to the issue 
+than simply punishing bad behavior.
+You must be sure to explain the ethical dimension of your game clearly in the man-
+ual, in introductory material, or in mission brieﬁ ngs. For example, some games that 
+have hostage-rescue scenarios make the death of a hostage a loss condition: If a 
+hostage dies, the player loses. This means that the player has to be extra careful not 
+to kill any hostages, even at the risk of his own avatar’s life. In other games, the 
+only loss condition is the avatar’s death. In this case, many players shoot with com-
+plete abandon, killing hostages and their captors indiscriminately. In real life, of 
+course, the truth is somewhere in between. Police ofﬁ cers who accidentally shoot a 
+hostage are seldom prosecuted unless they’ve been grossly negligent, but it doesn’t 
+do their careers any good. You can emulate this by penalizing the player somehow. 
+To be fair to the player, however, you need to make this clear at the outset.
+The ethical dimension of multiplayer games, whether online or local, is an enormous 
+and separate problem. Chapter 21, “Online Games,” discusses this issue at length.
+
+
+--- PAGE BREAK ---
+
+108 
+FUNDAMENTALS OF GAME DESIGN
+THE PECULIAR MORALITY OF AMERICA’S ARMY
+America’s Army, a team-based multiplayer ﬁ rst-person shooter (FPS) game distributed 
+free by the U.S. Army, is intended to serve as an education and recruiting tool, teaching 
+players how real soldiers are supposed to ﬁ ght (Figure 4.14). It differs from most FPS 
+games in two signiﬁ cant ways. First, it requires that the player act in conformance with 
+the actual disciplinary requirements of the Army, so it detects and punishes dishonorable 
+behavior. The Army is anxious to make the point that soldiering comes with serious 
+moral responsibilities. Second, and rather strangely, all sides in a ﬁ reﬁ ght see them-
+selves as U.S. soldiers, and they see the enemy as rather generic terrorists. The Army did 
+not want to give any player the chance to shoot at American soldiers, even though they 
+are obviously shooting at one another. So a player sees himself and his teammates as 
+U.S. soldiers carrying M-16 riﬂ es, but his opponents see him and his teammates as ter-
+rorists carrying AK-47s. In other words, everyone perceives himself as a good guy and his 
+opponent as a bad guy, and the game’s graphics literally present two different versions 
+of reality to each team. By avoiding a politically unacceptable design (letting players 
+shoot at American soldiers in a game made by the U.S. Army), they created a moral equiv-
+alence: The question of who is in the right is purely a matter of perspective. America’s 
+Army’s trick of displaying different versions of the game world to different players may 
+be unique among video games.
+FIGURE 4.14 Our guys get the drop on somebody who also thinks he’s one of our guys.
+
+
+--- PAGE BREAK ---
+
+GAME WORLDS 
+109
+ CHAPTER 4
+A WORD ABOUT GAME VIOLENCE
+It’s not part of this book’s mission to debate, much less offer an answer for, the 
+problem of whether violent video games cause violent behavior in children or 
+adults. This is a psychological question that only prolonged and careful study can 
+resolve. Unfortunately, a good many people on both sides of the issue seem to have 
+made up their minds already, and arguments continue to rage in government and 
+the media, supported for the most part by very few facts.
+For you, as a designer, however, consider these suggestions. The essence of many 
+games is conﬂ ict, and conﬂ ict is often represented as violence in varying degrees of 
+realism. Chess is a war game in which pieces are killed—removed from the board—
+but nobody objects to the violence of chess; it’s entirely abstract. American football 
+is a violent contact sport in which real people get injured all the time, but there are 
+no serious efforts to ban football, either. The only way to remove violence from 
+gameplay is to prohibit most of the games in the world because most contain vio-
+lence in some more-or-less abstract form. The issue is not violence, per se, but how 
+violence is portrayed and the circumstances under which violence is acceptable.
+Games get into political trouble when they have a close visual similarity to the real 
+world but an ethical dimension that is strongly divergent from the real world. The 
+game Kingpin encourages the player to beat prostitutes to death with a crowbar, 
+with bloodily realistic graphics. Not surprisingly, it has earned a lot of criticism.
+On the other hand, Space Invaders involves shooting hundreds of aliens, but it is so 
+visually abstract that nobody minds. In other words, the more a game resembles 
+reality visually, the more its ethical dimension should resemble reality as well, or 
+it’s likely to make people upset. If you want to make a game in which you encour-
+age the player to shoot anything that moves, you’re most likely to stay out of 
+trouble if those targets are nonhuman and just quietly disappear rather than break 
+apart into bloody chunks. Tie your ethical realism to your visual realism.
+Computer games are about bringing fantasies to life, enabling people to do things 
+in make-believe that they couldn’t possibly do in the real world. But make-believe 
+is a dangerous game when it’s played by people for whom the line between fantasy 
+and reality is not clear. Young children (those under about age eight) don’t know 
+much about the real world; they don’t know what is possible and what isn’t, what is 
+fantasy and what is reality. An important part of raising children is teaching them 
+this difference. But until they’ve learned it, it’s best to make sure that any violence 
+in young children’s games is suitably proportionate to their age. The problem with 
+showing violence to children is not the violence, per se, but the notion that there’s 
+no price to pay for it. For a detailed and insightful discussion of how children come 
+to terms with violence, read Killing Monsters: Why Children Need Fantasy, Super 
+Heroes, and Make-Believe Violence by Gerard Jones (Jones, 2002). Ultimately, the vio-
+lence in a game should serve the gameplay. If it doesn’t, then it’s gratuitous and 
+you should consider doing without it. 
+
+
+--- PAGE BREAK ---
+
+110
+FUNDAMENTALS OF GAME DESIGN
+Realism
+Chapter 2, “Design Components and Processes,” introduces the concept of realism
+in the context of a discussion about core mechanics. All games, no matter how real-
+istic, require some abstraction and simpliﬁ cation of the real world. Even the multimillion-
+dollar ﬂ ight simulators used for training commercial pilots are incapable of turning 
+the cockpit completely upside down. This event is so rare (we hope) in passenger 
+aircraft that it’s not worth the extra money it would take to simulate it.
+The degree of realism of any aspect of a game appears on a continuum of possibili-
+ties from highly representational at one end to highly abstract at the other. Players 
+and game reviewers often talk about realism as a quality of an entire game, but in 
+fact, the level of realism differs in individual components of the game. Many games 
+have highly realistic graphics but unrealistic physics. A good many ﬁ rst-person 
+shooters accurately model the performance characteristics of a variety of weap-
+ons—their rate of ﬁ re, size of ammunition clips, accuracy, and so on—but allow the 
+player to carry about 10 of them at once with no reduction in speed or mobility. 
+Therefore, realism is not a single dimension of a game world, but a multivariate 
+quality that applies to all parts of the game and everything in it. 
+The representational/abstract dichotomy is mostly useful as a starting point when 
+you’re thinking about what kind of a game you want to create. On the one hand,
+if you’re designing a cartoony action game such as Ratchet & Clank, you know that 
+it’s going to be mostly abstract. As you design elements of the game, you’ll need
+to ask yourself how much realism you want to include. Can your avatar be hurt 
+when he falls long distances? Is there a limit to how much he can carry at once?
+Do Newtonian physics apply to him, or can he change directions in midair?
+On the other hand, if you’re designing a game that people will expect to be repre-
+sentational—a vehicle or sports simulation, for example—then you have to think 
+about it from the other direction. What aspects of the real world are you going to 
+remove? Most modern ﬁ ghter aircraft have literally hundreds of controls; that’s 
+why only a special group of people can be ﬁ ghter pilots. To make a ﬁ ghter simula-
+tion accessible to the general public, you’ll have to simplify a lot of those controls. 
+Similarly, a ﬁ ghter jet’s engine is so powerful that certain maneuvers can knock the 
+pilot unconscious or even rip the plane apart. Are you going to simulate these limi-
+tations accurately, or make the game a little more abstract by not requiring the 
+player to think about them?
+Once again: Every design decision you make must serve the entertainment value of 
+the game. In addition, every design decision must serve your goals for the game’s 
+overall degree of realism. Some genres demand more realism than others. It’s up to 
+you to establish how much realism you want and in what areas. You must also 
+make sure that your decisions about realism don’t destroy the game’s harmony and 
+balance. During the design process, you must continually monitor your decisions 
+to see if they are meeting your goals.
+NOTE If you’re math-
+ematically inclined, 
+think of realism as a 
+vector over every as-
+pect of the game, with 
+values ranging from 
+0, entirely abstract, 
+to 1, entirely realistic. 
+However, no value 
+ever equals 1 because 
+nothing about a game 
+is ever entirely realis-
+tic—if it were, it would 
+be life, not a game.
+
+
+--- PAGE BREAK ---
+

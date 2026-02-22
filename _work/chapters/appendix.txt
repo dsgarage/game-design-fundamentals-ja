@@ -1,0 +1,590 @@
+618 
+FUNDAMENTALS OF GAME DESIGN
+Design Practice QUESTIONS
+1. How do you plan to deal with the issue of new players arriving in the middle of 
+a long game? Get rid of the victory condition, or ﬁ nd a way to make sure that play-
+ers are matched with those of similar ability?
+2. What will happen to the gameplay when a player vanishes? How will it affect 
+the other players’ experience of the game (what they see and hear)? Does it disrupt 
+the balance of the game? Will it make the challenges easier or harder? Is the game 
+even meaningful anymore?
+3. What happens to the game’s score when a player vanishes? Is the game still fair?
+4. Does your game offer a player an advantage of some kind for intentionally dis-
+connecting himself (whether by preventing himself from losing or by sealing his 
+own victory)? Is there any way to minimize this without penalizing players who 
+are disconnected accidentally?
+5. In a turn-based game, what mechanism will you use to prevent a player from 
+stalling play for the other players? Set a time limit? Allow simultaneous turns? 
+Implement a reasonable default if the player does nothing?
+6. If you offer a chat mechanism, what features will you implement to keep it civil? 
+Filters? A complaint system? An ignore system? Or will your game require moder-
+ated chat spaces?
+7. Is your game designed to prevent (or alleviate) collusion? Because you can’t pre-
+vent players from talking to each other on the phone as they play, how will you 
+address this? Or can you design your game in such a way that collusion is part of 
+the gameplay, as in Diplomacy?
+
+
+--- PAGE BREAK ---
+
+APPENDIX
+619
+Designing to Appeal to 
+Particular Groups
+In the concept stage of game design, you must choose a target audience for your 
+game, and throughout development you must keep that audience in mind. This 
+appendix brieﬂ y addresses some design considerations you should take into account
+if you want to appeal to three groups long underserved by the game industry: adult 
+women, children generally, and girls speciﬁ cally. We also brieﬂ y discuss accessibil-
+ity issues for players with disabilities of various kinds, as well as resources for 
+further research. If you plan to design with these groups in mind, it pays to give 
+extra thought to, and do extra research on, their needs and interests.
+Reaching Adult Women
+But what if the player is female?
+—SHERI GRANER RAY, GENDER INCLUSIVE GAME DESIGN
+Women represent a gigantic portion of the gamer market. Audience research
+shows that in the United States, more adult women (34 percent) than teenage boys 
+(18 percent) play video games, a statistic that may surprise you (Entertainment 
+Software Association, 2009). 
+Men and women don’t differ nearly as much as various works of pop psychology 
+would like us to believe. Few individuals conform completely to traditional stereo-
+types of masculinity and femininity, and men’s and women’s interests overlap 
+considerably. In Gender Blending, Holly Devor (Devor, 1989) quoted studies showing 
+that as many as 50 percent of heterosexual women identiﬁ ed themselves as having 
+been tomboys as children. Unfortunately, far too many game designers (and prod-
+uct designers in general) treat men and women as entirely different species with 
+little in common.
+Gender Inclusiveness
+To attract women players, you don’t have to make the game about stereotypically 
+feminine interests such as fashion or shopping, any more than you have to make 
+games about monster truck rallies to attract men. Rather, to make a game of interest 
+to both sexes, you only need to avoid including material that discourages one group 
+APPENDIX
+
+
+--- PAGE BREAK ---
+
+620 
+FUNDAMENTALS OF GAME DESIGN
+or the other from playing. To make a game that both sexes will play, don’t build 
+content that will limit the interest of, or offend, either sex.
+ The biggest turn-offs for women are usually:
+■ Hypersexualized female avatars and other characters.
+■ Repetitive, monotonous play.
+■ Play without a meaningful goal. Simply racking up the highest score isn’t 
+enough.
+■ The solitary nature of single-player play. If you’re making a single-player game, 
+there is nothing you can do about this; it’s just something to be aware of.
+A Few Generalities
+Having warned you not to treat men and women as polar opposites, this section 
+offers a small number of generalities about how male and female play patterns tend 
+to differ among Western men and women (the only group for which much research 
+exists). These observations may not apply to women in Japan, China, Korea, or 
+India—all important new markets for games.
+■ Men and women like to learn differently. Women generally like to know what 
+they will be expected to do before they have to do it rather than be thrown into 
+the deep end to sink or swim. Unfortunately, this makes most arcade games unat-
+tractive to women because arcade games make their money from the player’s 
+ignorance.
+■ Men and women have different attitudes toward risk. Women are more likely 
+to avoid risks that they cannot compute. Men are more willing to experiment even 
+if it means losing frequently.
+■ Women are more interested in people than things and like to socialize as 
+part of their play experience. This explains why online games are more successful 
+than single-player games among female players: Online games allow the players to 
+socialize.
+■ Men and women have different conﬂ ict resolution styles. Women prefer that 
+violence have a justiﬁ cation; ﬁ ghting for its own sake is of little interest to them. 
+They are not opposed to violence per se, but they like the violence to be given a 
+context, such as a story. Women also like to use lateral thinking to ﬁ nd alternatives 
+to brute-force approaches.
+■ Women enjoy mental challenges and ﬁ nding elegant solutions to problems.
+This accounts for the popularity of puzzle games among women.
+■ Women like to customize their avatars. Men often treat their avatar characters 
+as puppets rather than people, someone simply to be controlled for the sake of win-
+ning the game. Women tend to identify with their avatars more. A woman uses the 
+NOTE For further 
+reading, check out 
+Gender Inclusive Game 
+Design by Sheri Graner 
+Ray (Ray, 2003). She 
+discusses these issues 
+in considerable detail.
+
+
+--- PAGE BREAK ---
+
+DESIGNING TO APPEAL TO PARTICULAR GROUPS 
+621
+APPENDIX
+avatar as a means of self-expression and likes to be able to make the avatar look like 
+herself or a fantasy version of herself.
+Again, remember that these are generalities. Although they don’t describe every 
+woman, you should be aware of them.
+DESIGN RULE Women Are a Market, Not a Genre
+Do not try to design a “women’s game” simply by creating features that address these 
+generalities. Rather, design an intrinsically interesting game and bear these issues in 
+mind as you consider the effect that your design decisions will have on your potential 
+customer base.
+Designing for Children
+Video games for children differ from those for adults, just as books and television 
+shows for them do. Nor is there one single type of game appropriate for children—
+their motor and cognitive skills change throughout childhood. Here are the 
+commonly recognized age categories:
+■ Preschool and kindergarten (ages 3 to 6)
+■ Early elementary (ages 5 to 8)
+■ Upper elementary (ages 7 to 12, the tweens)
+■ Middle and high school (13 and up, the teens)
+Each of these groups has, on the whole, its own interests and abilities. Because we 
+encourage children to aspire to adulthood and its privileges and discourage them 
+from acting young (“don’t be a baby”), kids tend to scorn anything made for an age 
+group younger than themselves. As a general rule, entertainment made for children 
+of a certain age group will actually feature characters older than the players.
+If you’re planning to make games for children, consider the following issues.
+■ Hand-eye coordination. Young children’s motor skills are poorly developed at 
+ﬁ rst, while those of teenagers often surpass those of adults.
+■ Cognitive load. Children can solve puzzles just as adults can, but for younger 
+children the puzzles shouldn’t be too complex. The number of elements involved 
+must be fewer, and the chain of reasoning required must be shorter.
+■ Frequent rewards. Games for older players often require the player to go 
+through many steps before reaching a reward. We expect adult players to be patient 
+and to regard their progress alone as sufﬁ cient reward. Children need feedback 
+TIP If you want to 
+learn more about 
+childhood develop-
+ment, study the work 
+of psychologist Jean 
+Piaget. His theories 
+of cognitive develop-
+ment have been hugely 
+inﬂ uential on educa-
+tion and many other 
+ﬁ elds.
+
+
+--- PAGE BREAK ---
+
+622 
+FUNDAMENTALS OF GAME DESIGN
+more frequently. You don’t have to have a saccharine character say “Good job!” 
+every single time they do something right, but provide a clear and pleasant indica-
+tor of success.
+■ Visual design. Young children don’t have as much experience as adults do at ﬁ l-
+tering out irrelevant details, so keep the user interfaces in games for children simple 
+and focused; make them deep rather than broad.
+■ Linguistic complexity. Don’t talk down to children, but use age-appropriate 
+vocabulary and syntax. Long sentences full of words that they don’t know turn 
+kids off. Short sentences made up of carefully chosen words can still express quite 
+sophisticated ideas; for an example, read Saint-Exupéry’s The Little Prince.
+■ Appropriate content. This tricky area actually has more to do with what par-
+ents want for their children than what the children want for themselves. Adult 
+themes are not so much wrong for children as they are irrelevant. Children’s enter-
+tainment needs to address children’s concerns. This is one of the reasons the early 
+Harry Potter books are so brilliant; they capture children’s concerns perfectly. Kids 
+easily identify with Harry’s feelings of alienation, being misunderstood by his fam-
+ily, and his sense of latent but untapped promise. Even the emphasis on food in the 
+early books is signiﬁ cant; for younger children, food is a major interest and a big 
+part of their daily routine.
+Carolyn Handler Miller, a longtime developer of entertainment for children, has 
+devised a list of “Seven Kisses of Death,” features that drive children away rather 
+than appealing to them. The Kisses of Death are widely held misconceptions about 
+what children like, generally founded on what adults want them to like. 
+■ Death Kiss #1: Kids love anything sweet. This holdover from Victorian ideals 
+about childhood holds true for toddlers, but any child older than that knows the 
+world isn’t sugarcoated and rejects the suggestion that it is. Think about the Warner 
+Brothers cartoons: wisecracking Bugs Bunny; Sylvester the cat’s endless efforts to 
+eat Tweety Bird; Wile E. Coyote’s similarly endless efforts to kill the Roadrunner; 
+homicidal Yosemite Sam and rabbit-cidal Elmer Fudd. Kids love these cartoons—
+which actually include a sneaky moral about violence redounding upon the 
+violent—but there’s nothing remotely sweet about them.
+■ Death Kiss #2: Give them what’s good for them. Kids are forever being told 
+what’s good for them. They’re made to eat food they don’t like; they’re made to go 
+to school; they’re made to do chores, learn to play the piano, and a million other 
+things supposedly meant to build their characters or strengthen their bodies or 
+minds. Most of this is reasonable and necessary, but not in an entertainment con-
+text. How would you, as an adult, like to be fed a dose of propaganda with every 
+book and TV show you saw? You wouldn’t, and neither do kids. When they want to 
+relax and have fun, they don’t want a dose of medicine with it.
+■ Death Kiss #3: You’ve just got to amuse them. This is the opposite of Death 
+Kiss #2; it cynically assumes that kids are less discriminating than adults, so any 
+NOTE For further 
+reading on the Kisses 
+of Death, consult
+Carolyn Handler
+Miller’s book Digital 
+Storytelling, Second 
+Edition: A Creator’s 
+Guide to Interactive 
+Entertainment (Miller, 
+2008).
+
+
+--- PAGE BREAK ---
+
+DESIGNING TO APPEAL TO PARTICULAR GROUPS 
+623
+APPENDIX
+old ﬂ uff will do. It won’t. Kids can’t tell the difference between good acting and 
+bad acting, and they aren’t experienced enough to recognize clichéd plot lines, but 
+they won’t put up with just anything. Walt Disney realized this, and so do the writ-
+ers and animators who continue his work; Disney movies are multilayered even 
+though they are for children. So, too, are the best children’s books. Meaningful 
+content will keep a child’s attention longer than trivial content.
+■ Death Kiss #4: Always play it safe! This is a variant of the “sweet” Death Kiss. 
+Some people, in an effort to avoid violent or controversial content, go overboard 
+and try to eliminate anything that might frighten or disturb a child or even raise 
+her pulse. This inevitably results in bland, dull entertainment. Again, look at 
+Disney ﬁ lms for good counter-examples: Dumbo’s separation from his mother; 
+Snow White’s terriﬁ ed ﬂ ight through the forest; the outright murder of Simba’s 
+father in The Lion King. These are not happy things, and that’s OK. Gerard Jones 
+argues in his important treatment of the subject Killing Monsters: Why Children Need 
+Fantasy, Super Heroes, and Make-Believe Violence (Jones, 2002) that learning to deal 
+with threatening situations constitutes an important part of growing up.
+■ Death Kiss #5: All kids are created equal. There’s no such thing as a single 
+children’s market. Kids’ interests and abilities change too quickly to lump them all 
+into a single category. If you’re planning to make a game for ages 6 to 10 and the 
+publishers decide they want a game for ages 8 to 12, you’ll have to redesign the 
+game. One-size-ﬁ ts-all deﬁ nitely doesn’t work with kids.
+■ Death Kiss #6: Explain everything. Kids are much happier with trial-and-error 
+than adults are, and they don’t want long introductions explaining how to play the 
+game. They want to dive in and play. Above all, avoid talking heads with a lot of 
+jabber. Adults naturally tend to assume that kids need things explained to them, 
+but it’s not true of video game worlds in which they can’t hurt themselves or any-
+thing else. Keep exposition—and especially anything that smacks of teaching 
+them—to a minimum.
+■ Death Kiss #7: Be sure your characters are wholesome! Wholesome equals 
+boring. We wouldn’t put up with bland white-bread characters in entertainment for 
+adults; why should we make children do it? You don’t have to introduce serial kill-
+ers, but create real characters with their own personal foibles. Sesame Street
+famously offered a variety of characters, many speciﬁ cally designed to represent 
+moods or attitudes familiar to young children: greedy, grouchy, helpful, and so on.
+Games for Girls
+The game industry has always been overwhelmingly dominated by men, and male 
+developers have tended to design games that they themselves would like (or would 
+have liked when they were boys). Whether for societal or genetic reasons, boys’ and 
+girls’ interests diverge more widely from one another than men’s and women’s do; 
+on their respective bell-shaped curves, the means are farther apart. At certain ages, 
+
+
+--- PAGE BREAK ---
+
+624 
+FUNDAMENTALS OF GAME DESIGN
+boys and girls may ﬂ atly reject things (clothing, toys, or other symbols) associated 
+with the opposite sex.
+For most of the game industry’s history, no one made an effort to design games spe-
+ciﬁ cally for girls or even to think much about what kinds of games girls would like. 
+It was a catch-22 situation: If you proposed a game for girls to a publisher, you 
+would be met with the reply, “Girls don’t play video games.” But, of course, the rea-
+son girls didn’t play video games was that there weren’t many games they liked to 
+play—or at least that was the general perception. (Further research showed that this 
+was an unfounded stereotype; far more girls played games than people realized, 
+even though no one was considering their interests.)
+In the mid-1990s, a number of people realized that girls represented an untapped 
+market, and several companies grew up to exploit it. Unfortunately, many of these 
+early efforts were graphically poor and offered less value for the money than most 
+other games. Girls want, and deserve, games just as good as those made for boys. 
+More recently, several companies have started making games for girls again with 
+more success. Most notable is Ubisoft’s Imagine series of games, which covers a
+huge range of subjects. The Barbie, Bratz, and Nancy Drew licenses have all been 
+steady earners. 
+If you’re interested in making games for this market, remember that the audience is 
+girls, not women. Adult women are naturally more diverse than children and have 
+a wider variety of interests. Don’t assume that what applies to women also applies 
+to girls generally.
+Mattel’s Approach
+If you want to make games speciﬁ cally for girls, as opposed to games that appeal to 
+children of both sexes, you have to ask yourself what especially interests girls—and, 
+perhaps more important, what does not interest girls. For the answer, you need look 
+no farther than Mattel, manufacturer of Barbie, the single most famous toy for girls 
+in the world. Mattel’s great success developing games for girls results from its 
+understanding of its target market. (Mattel doesn’t publish software itself anymore; 
+instead, it licenses its brands to others.)
+Barbie’s success derives partly from the proven, time-tested formula she follows, 
+and a well-targeted market: Mattel aims Barbie at a core age group from 4 to 8 years 
+old. After that, girls’ interests change, and Mattel does not try for a one-size-ﬁ ts-all 
+approach. The company has no social agenda and makes no claim of political 
+correctness.
+
+
+--- PAGE BREAK ---
+
+DESIGNING TO APPEAL TO PARTICULAR GROUPS 
+625
+APPENDIX
+JESYCA DURCHIN’S ADVICE
+Jesyca Durchin owns the consulting company Nena Media (www.nenamedia.com), which 
+creates media content for young girls, and she is a former executive producer for Mattel. 
+At the 2000 Game Developers’ Conference, she gave an extremely useful summary 
+(Durchin, 2000) of what she had learned about how girls in this age group play games:
+Girls Have a Wide Variety of Interests.
+It is vital to identify what type of girl is interested in your type of game. Girls are much 
+more fragmented in their interests than boys. Girls change more rapidly, and their emo-
+tional and intellectual growth happens differently. A girl has different needs in her playtime 
+almost every year of her childhood—loosely deﬁ ned as being between ages 4 and 14.
+Hinge Interactivity on Proven Play Patterns.
+A play pattern is a traditional and almost instinctual way a child approaches an object or 
+an activity to entertain herself. Girls traditionally value the following:
+• Fashion play
+• Glamour play
+• Nurture play
+• Adventure play
+• Action/twitch play
+• Collection play
+• Communication/social play
+As well as exercising their own imaginations, girls like to reproduce daily life in play. 
+Barbie is a vehicle for projecting adult activities into a child’s world. Don’t be afraid of 
+open-ended or non–goal-oriented play.
+Here are a few more observations:
+•
+Girls like stuff. Stuff is what the girl can collect, display, or take away from the
+product. It is incredibly important for the girl to feel there is a reason for her to play. In 
+some ways, collecting stuff replaces the concept of scoring in traditional boy’s software. 
+Collecting each one of a variety of shells, for example, is more interesting than trying to 
+achieve a high, but abstract, numerical score.
+•
+Create environments that are attractive to girls. Girls like environments that are 
+reality-based but either are beautiful or make sense to the storyline. Symmetry and color 
+coherency are important to girls. Not everything has to be pink, purple, and pretty, but 
+each environment should give the girl the feeling of being in another place. Girls (and 
+boys) are highly imaginative, and they create alternative storylines in their own heads. 
+Be aware that the girl’s imagination inﬂ uences her view of your environment.
+continues on next page
+
+
+--- PAGE BREAK ---
+
+626 
+FUNDAMENTALS OF GAME DESIGN
+JESYCA DURCHIN’S ADVICE
+continued
+•
+Girls appreciate sensual interfaces. Girls tend to respond more positively to what is 
+sometimes referred to as the sensual interface. They need colorful, sound-driven inter-
+faces that “feel” good. The interface needs to feel magical and needs to have what I call 
+the brrrring factor. Don’t give girls a group of identical gray pushbuttons, no matter how 
+logically organized they may be; give them buttons that ring and change shape and color.
+•
+Extend the play from existing toys or media into software. Branding is becoming 
+more and more important in the business of software. It is doubly important in the girl’s 
+software business because girls are still just getting involved in viewing the computer as 
+an entertainment tool. Branding is important to rising above all the muck.
+•
+Don’t be ashamed of your work. If you’re embarrassed by what you’re doing, it will 
+show. Do it wholeheartedly or don’t do it at all. Girls can tell if you’re ashamed of making 
+games for them. If you’re uncomfortable using terms like “hair play” or “relationship 
+games,” don’t bother.
+Kaye Elling’s Five Cs
+Kaye Elling was creative manager at Blitz Games on the Bratz series, and in 2006 
+she gave an insightful lecture called “Inclusive Games Design” at the Animex festi-
+val in the UK (Elling, 2006). Elling proposed ﬁ ve characteristics of games, all 
+beginning with the letter C, that designers should strive for to make them more 
+inclusive and accessible to girls.
+■ Characterization. As Chapter 6, “Character Development,” discussed women 
+(and girls) see avatars as someone who represents themselves rather than someone 
+simply to control. Therefore, an avatar has to be someone girls can identify with, 
+and to have no qualities they ﬁ nd distasteful.
+■ Context. Environments matter to girls, and they will be repulsed by environ-
+ments that they ﬁ nd ugly or hostile. This advice concurs with Jesyca Durchin’s 
+thoughts in the sidebar “Jesyca Durchin’s Advice.”
+■ Control. Girls like to feel as if they are in control of the game, rather than it
+is in control of them. The risk-and-reward style of gameplay appeals less to girls 
+because they don’t enjoy taking risks as much as boys do. They also dislike 
+mechanics that harshly punish failure, because those mechanics discourage 
+experimentation.
+■ Customization. Girls customize their mobile phones and other accessories more 
+than boys do, so it makes sense that they would want to customize their games as 
+well—especially their avatars. Bratz: Rock Angelz offered 686 different items of 
+TIP PuzzleQuest is 
+a Nintendo DS role-
+playing game that 
+works very well for 
+both boys and girls. 
+Players can choose 
+a male or female 
+avatar, and combat is 
+characterized as puzzle-
+solving. When the 
+player loses a battle, 
+his avatar is not killed, 
+but simply runs away 
+and can try again later.
+
+
+--- PAGE BREAK ---
+
+DESIGNING TO APPEAL TO PARTICULAR GROUPS 
+627
+APPENDIX
+clothing, makeup, jewelry, and so on. The more desirable ones are unlockable 
+rewards the player can earn for completing mini-games.
+■ Creativity. Creative play is a big part of what makes The Sims successful with 
+girls and women. Creativity gives players a chance to express themselves and show 
+off what they made to others. It’s not conﬁ ned to girl games by any means; even in 
+Halo 2 players can design unique clan badges.
+A Few Misconceptions
+Because people see fewer girls than boys playing hardcore games, they tend to jump to 
+conclusions about what girls want. This section corrects a few of these misconceptions.
+■ Girls don’t like computer games because computers are techie. This is 
+patently false. Although most girls and women generally are less fascinated by the 
+technical details of computers than are boys and men, that doesn’t discourage 
+them from playing computer games any more than automotive speciﬁ cations dis-
+courage them from driving cars.
+■ Girls don’t like violence. No, what girls don’t like is nonstop, meaningless vio-
+lence. It’s not so much that they’re repulsed by it as that they’re bored by it. It 
+doesn’t stimulate their imaginations. If you’ve seen one explosion, you’ve seen 
+them all. Elling also points out that when violence is casual, sadistic, or excessively 
+gory, it becomes brutality, and girls do not like brutality. When violence is defen-
+sive, provoked, or cartoony, it is more acceptable (Elling, 2006).
+■ Girls want everything to be happy and sweet. Not true. If you read books 
+written speciﬁ cally for girls, you’ll see that they’re not just saccharine from one
+end to the other. Girls like stories ﬁ lled with mystery, suspense, even danger—but 
+again, it has to be meaningful, not just random or pointless.
+■ Girls don’t like to be scared. This is only partially true. Jesyca Durchin makes
+a useful distinction between spooky and scary. Girls like things that are spooky but 
+not scary. The abandoned house or the carnival at night is spooky. Walking through 
+dark streets with a murderer on the loose is scary. Spooky is about the possibility of 
+being startled or frightened; scary is about the possibility of being hurt or killed.
+A Final Note
+Bear in mind that these are generalities. The characteristics described previously
+do not appeal to all girls, but they certainly appeal to many. You should take them 
+into consideration if you’re trying to make a game for girls.
+Some developers, both male and female, ﬁ nd the idea of making games about hair, 
+clothing, and makeup repulsive; they feel that this perpetuates a stereotype of fem-
+ininity. Although there’s some merit in that argument, a vastly larger number of 
+games perpetuate a much more unfortunate stereotype of masculinity: They depict 
+
+
+--- PAGE BREAK ---
+
+628 
+FUNDAMENTALS OF GAME DESIGN
+men (and reward players) who are violent, greedy, wanton, and monomaniacal. To 
+condemn games for girls on the basis that they’re stereotypical is to establish an 
+unfair double standard.
+Accessibility Issues
+Although it took them a while to get around to it, Microsoft now leads the world in 
+making their operating system and ofﬁ ce products available to people with disabili-
+ties of various kinds. The game industry, regrettably, remains far behind. Its origins 
+in arcade and twitch gaming have produced an unquestioned assumption that 
+games are only for people with excellent eyesight and good hand-eye coordination. 
+But many people who don’t possess these abilities also would like to play games, 
+and you should consider ways to make your game more accessible to them.
+Physical impairments fall into three general categories: visual, auditory, and mobility.
+Vision-Impaired Players
+Vision impairments fall into several subcategories that require slightly different 
+adjustments. In any case, you should provide audio cues to go with visual cues. 
+Very few events in a video game should be silent ones. When a player selects a unit, 
+have the unit acknowledge its selection with a sound. When the player gives an 
+order, presses a button, or chooses a menu item, be sure to indicate it with an audi-
+ble cue. These cues can be quite subtle; there’s no need to ring loud bells, but make 
+sure the player hears something, even if only a little tick sound.
+PLAYERS WITH LOW VISION
+You can help some players with cataracts and similar conditions by giving them 
+brighter, more high-contrast images. Most likely, these players will already have 
+turned up the brightness and contrast on their monitors, but your game can fur-
+ther augment this by letting players adjust the contrast in your game, assuming 
+that you have a display engine powerful enough to support this feature. Also, make 
+the textures in your game available for modiﬁ cation. Vision-impaired players can 
+then edit your textures to meet their own needs.
+Be sure to include enough contrast in your user interface elements as well as your 
+game world. Don’t try to be cool by using black-on-black or gray-on-gray menus or 
+indicators.
+Increasing brightness or contrast alone is not enough to help people with certain 
+low vision conditions such as macular degeneration. If you really want to make a 
+game that vision-impaired players can see well, you will need to do further research.
+Institutions such as The LightHouse and the Wilmer Eye Institute at Johns Hopkins 
+University (both in the USA) may be able to direct you to additional resources.
+
+
+--- PAGE BREAK ---
+
+DESIGNING TO APPEAL TO PARTICULAR GROUPS 
+629
+APPENDIX
+PLAYERS WHO NEED MAGNIFICATION
+Many vision-impaired players simply need everything to be a bit larger. Older play-
+ers provide a good example; after about age 45, most people need reading 
+glasses—but even reading glasses aren’t much help with tiny type. Tiny type is a 
+bad idea in any case, especially if players have to read it under time pressure.
+You can meet the needs of these people in three ways. First, if possible, allow play-
+ers to change the font size of text that appears in your game, the way web browsers 
+do. Second, support multiple monitor resolutions in your game. Let players who 
+really need to see things in larger scale set their monitors to 640 × 480. If you have 
+a complicated user interface, this may be rather tricky, but if it is, perhaps you 
+should revisit the design of your interface and see if you can do without some of 
+those screen elements. If you have a broad interface, consider making it deeper.
+Finally, you can provide a magnifying glass feature that the player can move 
+around over the screen to magnify different areas. The device probably won’t be 
+usable in action scenarios, but at least it’s trivial to implement. Strange Adventures in 
+Inﬁ nite Space includes a magnifying glass and switchable menu sizes, both of which 
+are very helpful.
+COLORBLIND PLAYERS
+Color blindness is a sex-linked genetic disorder primarily affecting men. Total color 
+blindness is quite rare, but one milder form (deuteranomaly) affects about 6 percent 
+of the male population. Persons with this disorder have reduced sensitivity to dif-
+ferent shades of green; they appear more like yellow. (So-called red–green color 
+blindness is actually a misnomer for several related conditions.)
+This issue matters most in user interface design. If you create identical objects dis-
+tinguishable only by their color, and you use similar shades of yellow and green, 
+you risk confusing the colorblind player. Vehicles or characters in a strategy game 
+whose appearance is identical except for their color would be an example. Also be 
+careful with indicators, such as colored lights, that turn yellow or green. Colorblind 
+drivers can tell the difference between yellow and green trafﬁ c lights because the 
+yellow and green lights are separate lights, so even if the driver can’t see a differ-
+ence, he can tell whether the signal is yellow or green by its position (the middle 
+light is always the yellow light). You can adopt this convention too: make more 
+than one light, with the yellow light in a predictable location. If you don’t have 
+room and have to make do with a single light, use colors other than yellow and 
+green, such as black and white or black and green.
+You can test the appearance of your artwork to players with different forms of color 
+blindness at the Vischeck web site, www.vischeck.com.
+
+
+--- PAGE BREAK ---
+
+630 
+FUNDAMENTALS OF GAME DESIGN
+Hearing-Impaired Players
+To help support hearing-impaired players, consider the following: 
+■ Display visible cues for audible events. If a car scrapes along a railing, show 
+sparks; when a gun ﬁ res, show a muzzle ﬂ ash. Naturally, you can’t do this in some 
+circumstances. In horror games, scary sounds often come from unseen sources, and 
+that aspect is critical to creating the desired emotional effect. But for games that 
+aren’t in the horror genre—which means most of them—you should be able to 
+design for hearing-impaired players by including visual cues for the most critical 
+audible events.
+■ Offer two separate volume controls, one for music and one for sound effects. 
+Be sure the player can mute either one entirely. Hearing-impaired people often 
+complain that they cannot ﬁ lter out background sounds from foreground ones, so 
+conversation becomes impossible in noisy environments. In a video game, music 
+can prevent them from hearing important sound effects. If you can, separate spo-
+ken dialog into a third category and let the players control its volume level, too. 
+Make these controls easily accessible from a pause menu—don’t require the player 
+to save the game and return to a shell menu to adjust them.
+■ Use the rumble (vibration) feature of the controller if the controller includes 
+one. If you do this, players will be able to feel events even if they cannot hear 
+them. Also allow the player to turn vibration off—not all of them like it.
+■ Supply optional subtitles for dialog and sound effects. (This feature is also 
+called closed captioning.) It is very inexpensive to implement and enormously help-
+ful to hearing-impaired players. The biggest drawback of subtitles is that you must 
+leave space for them on the screen. Half-Life 2 includes closed captioning and uses 
+different colors to indicate different speakers.
+For more information on accommodating hearing-impaired players, visit 
+Deafgamers.com at www.deafgamers.com.
+Mobility Impairments
+The best thing you can do for mobility-impaired players is to reduce the time pres-
+sure required to accomplish tasks. Many people with physical impairments can 
+manage well enough given time, but they don’t always get the time. If it’s feasible, 
+include a switch that lets the player adjust the speed of the game. There’s no such 
+thing as too slow.
+Keep your control set simple. Strange Attractors, one of the ﬁ nalists at the 
+Independent Game Festival in 2006, uses a single button for player control. Weird 
+Worlds: Return to Inﬁ nite Space uses a purely mouse-based interface. Researchers are 
+also working on ways to adapt games and game controllers to what is called single-
+switch operation; see “Accessibility Resources” later in this section for more details. 
+Obviously not all games can make do with so few controls, but even if you’re not 
+
+
+--- PAGE BREAK ---
+

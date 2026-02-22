@@ -1,0 +1,731 @@
+572 
+FUNDAMENTALS OF GAME DESIGN
+4. What other characters inhabit the game world? What functions do they serve? 
+How do they look and act? How do they respond to the avatar? Can she affect their 
+moods and attitudes?
+5. How is conversation implemented? What consequences can arise from conversa-
+tions? Can the player choose a variety of attitudes in which to speak?
+6. What kinds of puzzles does the game offer? What obstacles will the player 
+encounter, and what actions will he be able to take to overcome them? Is this a 
+pure adventure game or an action-adventure? If it’s an action-adventure, what are 
+the action elements like?
+7. What graphics technology will be used to display the world? Two-dimensional 
+backgrounds? Real-time 3D? How will this affect the look and richness of the 
+world?
+8. What perspective will the player have on the game setting? Context sensitive? 
+First-person? Third-person?
+9. What is the user interface for moving the avatar around the game world? Will it 
+be point-and-click, direct control, or some other mechanism?
+10. How does the player recognize active objects in the world? How does he com-
+mand the game to manipulate them? What verbs are available for each object?
+11. Is there an inventory, and if so, how is it displayed and used? How does the 
+player pick things up and put them down again? Can objects be combined or used 
+together? How is this handled?
+12. Does the player need a map? If so, will it be static or maintained automatically?
+13. Should the game keep a journal to help the player remember things?
+
+
+--- PAGE BREAK ---
+
+ CHAPTER 20
+573
+Artiﬁ cial Life and 
+Puzzle Games
+This chapter discusses two game genres that aren’t as fashionable as the ones 
+already covered: artiﬁ cial life and puzzle games. That doesn’t mean there’s any-
+thing wrong with them; some extremely successful games belong to these genres. 
+In fact, because there are fewer games in these categories, the market isn’t crowded 
+with look-alike products. If you work in one of these genres, you may have a better 
+chance of creating something distinctly new. However, you might have trouble per-
+suading a conservative producer that a really good puzzle game is a better bet than 
+another ﬁ rst-person shooter.
+Because this chapter covers two genres, there isn’t room to explore the elements of 
+each one; instead, we’ll just look at the highlights. You’ll study artiﬁ cial life games 
+by using The Sims as an example, and then learn a little about genetic life genera-
+tors. You’ll also explore the subgenre of god games. The chapter continues with 
+puzzle games, deﬁ ning them and summarizing how to create and simplify them
+for the computer. 
+Artiﬁ cial Life Games
+Artiﬁ cial life is a branch of computer science research, just as artiﬁ cial intelligence 
+is. Artiﬁ cial life, or A-life as it is sometimes called, involves modeling biological pro-
+cesses, often to simulate the life cycles of living things. A-life researchers hope to 
+discover new ways of using computers by using biological mechanisms—mutation 
+and natural selection, for example—rather than algorithmic ones. In particular, 
+A-life is the study of emergent properties, unanticipated qualities or behaviors that 
+arise out of the interactions of complex systems. Life itself is considered an emer-
+gent property of the planet Earth.
+Because they’re intended for entertainment rather than research, commercial A-life 
+games implement only a subset of what A-life research investigates. There aren’t any 
+commercial A-life games about observing thousands of generations of one-celled 
+animals evolving in an environment. Typically, A-life games focus on maintaining 
+and growing a manageable population of organisms, each of which is unique.
+CHAPTER 20
+
+
+--- PAGE BREAK ---
+
+574 
+FUNDAMENTALS OF GAME DESIGN
+CONWAY’S GAME OF LIFE
+John Conway, a mathematician, created Life, an early, simple A-life game. Life depicts 
+cellular automata, simulated beings that live on a two-dimensional grid. All these autom-
+ata do is survive, reproduce, and die in a series of generations, according to three very 
+simple rules:
+• Death: If a cell has 0 or 1 neighbor cells, it dies of loneliness. If it has 4 or more neigh-
+bors, it dies of overcrowding.
+• Survival: If a cell has exactly 2 or 3 neighbor cells, it survives to the next generation.
+• Birth: If an empty spot on the grid has exactly 3 neighbor cells, a new cell is born in 
+the empty spot in the next generation.
+Playing the game consists of setting up an initial conﬁ guration of cells to see what they 
+do and trying to create arrangements that grow rather than die out. When people ﬁ rst 
+began playing Life, they quickly discovered that it displayed a number of emergent prop-
+erties even though it had such simple rules. Certain patterns of cells (called gliders)
+could move across the grid, and some (glider guns) could even generate an endless 
+stream of new cells.
+Artiﬁ cial Pets
+Artiﬁ cial pets make up one subcategory of artiﬁ cial life games. These simulated
+animals live on your computer (or mobile device), either in an environment of 
+their own or on your desktop. They can be simulations of real animals, as in the 
+Nintendogs game for the Nintendo DS, or fantasy ones like the Tamagotchi that 
+inhabit a tiny and very simple electronic game built into a keychain.
+Artiﬁ cial pets are almost always cute. The gameplay concentrates on training, car-
+ing for, and watching the creatures do endearing things. They seldom reproduce
+or die (although there are exceptions, and sometimes they run away if you ignore 
+them or mistreat them), and the player usually wants to interact with only one or 
+two at a time. (The section “Genetic A-Life Games,” later in this chapter, discusses 
+games about whole populations of organisms in which individuals do reproduce 
+and die.)
+If the player is going to spend much time looking at an artiﬁ cial pet, then the pet 
+needs to have quite a lot of AI: a variety of things that stimulate it and behaviors 
+that it exhibits. An artiﬁ cial pet should have a number of emotions or moods that 
+manifest themselves through the pet’s behavior. The player should be able to tell, 
+by observation, how the pet is feeling and to inﬂ uence its feelings by interacting 
+with it in different ways. The animal also needs to interact meaningfully with oth-
+ers of its own kind: teasing, playing, grooming, ﬁ ghting, and so on. Above all, it 
+needs to be able to learn, so there must be a way for the player to show it how to do 
+
+
+--- PAGE BREAK ---
+
+ARTIFICIAL LIFE AND PUZZLE GAMES 
+575
+ CHAPTER 20
+things. The learning process must not be too long (or the player will get frustrated 
+and think his pet is stupid) or too short (or the player will run through everything 
+he can teach it very quickly). Tamagotchi are exceptions to this principle, because 
+they are very inexpensive and are intended only to provide simple interactions, not 
+gameplay. Tamagotchi also showed that players don’t necessarily need rich graphics 
+to develop an emotional attachment to an artiﬁ cial pet.
+This quality of rich artiﬁ cial intelligence distinguishes artiﬁ cial pets from other 
+kinds of A-life, in which individuals have simple rules but the population as a 
+whole develops emergent properties. Artiﬁ cial pets, on the other hand, can have 
+properties that appear only after they have been around for a while, but typically 
+these are preprogrammed and are not truly emergent.
+Because an artiﬁ cial pet doesn’t present much of a challenge or impose a victory 
+condition (apart from training it to do something speciﬁ c), it’s really a software toy
+rather than a game. In Nintendogs, shown in Figure 20.1, you can see two puppies, 
+both eating from the same bowl. The game takes advantage of the Nintendo DS’s two 
+screens, one of which is touch-sensitive so that you can “pet” your dog. An artiﬁ cial 
+pet exhibits a large number of behaviors that the player sees repeatedly and others 
+that occur more rarely. Part of balancing such a game—making sure that the player 
+doesn’t get bored with it—is making sure that these rare behaviors occur often enough
+that the player does get to see them but doesn’t take them for granted.
+NOTE Software toy is 
+a term coined by Will 
+Wright, designer of 
+the original SimCity,
+for entertainment soft-
+ware that you just play 
+around with, without 
+trying to defeat an 
+opponent or achieve 
+victory.
+FIGURE 20.1
+Nintendogs from 
+Nintendo
+
+
+--- PAGE BREAK ---
+
+576 
+FUNDAMENTALS OF GAME DESIGN
+The Sims
+This section takes an extensive look at The Sims (and its sequels and many mod-
+ules), because it is by far the most successful A-life game ever created. It is also 
+almost the only game of its kind. There was one game a bit like The Sims called 
+Little Computer People many years ago (it ran on the Commodore 64), but it was a 
+much simpler game. The Sims is a virtual dollhouse: It simulates a family in a sub-
+urban home. You can make the people—each of which is called a sim—move 
+around, cause them to complete certain tasks, tell them when to go to bed and 
+when to get up, and so on. You can indirectly inﬂ uence their relationships by mak-
+ing them talk to each other, but you can’t decide what they will say, and you can’t 
+guarantee that they will like each other. Each simulated person comes with his or 
+her own personality, likes, and dislikes.
+The Sims offers multiple ways to play with it, a major selling point. The game 
+includes the features of both an artiﬁ cial pet and a construction and management 
+simulation (CMS). Like a CMS, there is an economy: Sims need money to build 
+additions to the house and to buy new furniture for it. At least one member of a 
+Sim family earns that money by having a job. Players can spend quite a lot of time 
+in the buying-and-building mode, if they can afford it. Some players, the particu-
+larly goal-oriented ones, really concentrate on this aspect, working hard to 
+construct a mansion and ﬁ ll it with luxuries. Others are more interested in the 
+interactions and relationships among the sims and spend a lot of the time giving 
+them things to do and watching their reactions.
+NEEDS
+The main challenge of The Sims is to manage this group of slightly incompetent 
+people and to improve their career prospects by teaching them things that will 
+help them get better jobs. In The Sims 3, each sim has six needs that she must meet 
+on an ongoing basis: hunger, hygiene, bladder, energy level, fun, and social interac-
+tion (see Figure 20.2). These needs drive her behavior. When a sim feels a need, 
+she takes actions to meet it. If the need goes unmet for too long, the sim becomes 
+unhappy and can even die (in the case of an unmet hunger need). Each sim has a 
+list of things to do to meet her current needs, with the most urgent ones at the top. 
+The player can also give the sim orders, in effect inserting a behavior at the top of 
+the list. 
+The need-based behavior simulation in The Sims is based upon pioneering work by 
+the psychologist Abraham Maslow in the 1950s. Maslow organized human needs 
+into a hierarchy, with physiological needs (such as oxygen and water) at the bot-
+tom, and social and psychological needs (such as love and respect) farther up. The 
+lowest-level needs are the most urgent ones, the ones that a person must meet in 
+order to stay alive. Other things being equal, a human will try to meet the lower 
+needs ﬁ rst, but in practice, needs change over time. Once a person has fulﬁ lled his 
+lower-level needs, he can turn to fulﬁ lling his higher-level ones. The Sims uses a 
+NOTE The term sim
+is usually an abbrevia-
+tion of “simulation” 
+in the game industry, 
+as in “ﬂ ight sim.” 
+However, the designers 
+of The Sims decided to 
+call the simulated peo-
+ple in the game sims. You 
+can usually tell which is 
+meant from context. 
+
+
+--- PAGE BREAK ---
+
+ARTIFICIAL LIFE AND PUZZLE GAMES 
+577
+ CHAPTER 20
+similar mechanism. If a sim feels both lonely and hungry, she will seek out food 
+before social interaction, because food is a physiological need and more urgent. Once 
+the sim has met her most urgent needs (for example, she still feels lonely but no 
+longer feels hungry) she will then act to meet her higher-order psychological needs.
+You can design such a system fairly easily. You don’t have to use the needs that 
+Maslow posited for human beings, or the ones in The Sims. A fantasy creature 
+whose behavior is based on an animal such as ants or bees might have a completely 
+different hierarchy of needs. It might give the safety of its colony the highest prior-
+ity, and self-preservation a lower priority, for example. 
+Although the needs-management system is fairly simple, that doesn’t mean that the 
+creature’s AI will be easy to implement. The creature still has to have enough intel-
+ligence to actually perform the behaviors required to meet its needs. If a sim is hungry 
+in The Sims, she must know how to obtain food, and that means knowing which 
+appliances in the house can provide it, where they are, and how to operate them.
+SKILLS
+Unlike artiﬁ cial pets, sims don’t need to be taught by repeatedly showing them 
+what the player wants them to learn. Instead, the trick is ﬁ nding the time for them 
+to improve their skills, which they can do by a variety of means. The sims in the 
+FIGURE 20.2
+The Sims 3
+
+
+--- PAGE BREAK ---
+
+578 
+FUNDAMENTALS OF GAME DESIGN
+original game have six skills: cooking, repair, charisma, body (physical strength 
+and dexterity), logic, and creativity. These skills inﬂ uence the jobs that they can 
+take and, consequently, the amount of money that they can earn. Unfortunately, 
+the sims stay so busy and do everything so slowly that often they don’t get enough 
+leisure time to study or work out. The game is very much an exercise in time man-
+agement. By building up a sim’s skills, the player can make the sim more efﬁ cient, 
+which in turn gives the sim more free time and sometimes allows him to earn more 
+money. In The Sims 3, the player can choose a lifetime goal for each sim that he cre-
+ates and then help the sim achieve it. 
+PERSONALITIES
+Unlike almost every other computer game, The Sims tries to simulate relationships 
+among individual people. These relationships are not terribly sophisticated, but 
+they do include such emotions as jealousy, anger, and love. In the ﬁ rst The Sims 
+game, ﬁ ve key characterization attributes deﬁ ne each sim’s personality: neat, outgo-
+ing, active, playful, and nice. (In The Sims 3, the number of personality traits has 
+gone up to 63!) These determine how sims react to one another and whether 
+they’re likely to get along. Sims become closer to each other if the player actively 
+stimulates interactions by making them talk to each other, give each other gifts, 
+and so on. The Sims encourages the player to develop friendships among his sims 
+because career advancement depends upon having a certain number of friends.
+To construct a mechanism for computing the afﬁ nity between two characters, con-
+sider implementing three rules that each character might have, but which apply to 
+different attributes:
+■ The “I Can’t Stand…” Rule. A character can have an attribute that designates a 
+quality that she cannot tolerate in others. For example, if character A can’t stand 
+talkative people, and character B has a talkativeness attribute above a given thresh-
+old, then A will never make friends with B. Another character might have the same 
+rule, but about a different attribute such as cleanliness. (You can even create hypo-
+critical characters, if a character dislikes a quality in others that he himself 
+possesses!) This rule would override the next two.
+■ The Birds of a Feather Rule. Characters with high levels of particular attributes 
+are attracted to other characters who have high levels of the same attribute; that is, 
+studious people are inclined to be attracted to other studious people. Again, each 
+character might apply the rule to a different attribute, so A tends to be friends with 
+similarly generous people, while B tends to be friends with similarly spontaneous 
+people.
+■ The Opposites Attract Rule. Characters with high levels of particular attributes 
+are attracted to other characters with low levels of the same attribute, and vice 
+versa. For example, a non-musical person might be attracted to a musically talented 
+person (perhaps out of respect for a talent that the former lacks).
+
+
+--- PAGE BREAK ---
+
+ARTIFICIAL LIFE AND PUZZLE GAMES 
+579
+ CHAPTER 20
+While the Birds of a Feather and Opposites Attract rules seem to be mutually exclu-
+sive, they aren’t if they apply to different attributes. One character might prefer the 
+friendship of others who are similarly well organized (the Birds of a Feather Rule, 
+applied to organizational ability), but also enjoy the company of people who have 
+quite different talents from their own (the Opposites Attract Rule, applied to talent).
+THE SUCCESS OF THE SIMS
+The Sims likely owes its huge success to two things: the unprecedented scope for 
+creativity it offers and its emphasis on interpersonal relationships.
+First, it enables the player to exercise his creativity in a familiar sphere: the ordi-
+nary suburban home. In addition to building and furnishing a house, players can 
+design their own skins for the sims, creating people who look like themselves (or 
+anyone else). The game actually offers more creative play than SimCity or SimTower,
+for example, because The Sims offers many different kinds of things to do. Players 
+can also take photographs of their sims’ houses and store them in albums, along 
+with written commentary that the player supplies, effectively creating illustrated 
+stories. And they can share all of these things over the Internet. The game offers 
+more scope for personal creativity on the part of the player than just about any 
+other video game or software toy on the market.
+The second reason for the success of The Sims is its focus on human relationships. 
+The player’s immediate objective in playing The Sims is to make sure his sims’ phys-
+ical needs are met; but his secondary, longer-term objective is to meet the sims’ 
+mental or emotional needs: fun, social interaction, and quality living space. The 
+sims’ need for social interaction is considerably more complex because it involves 
+building relationships with other sims rather than simply interacting with objects, 
+and those social interactions produce emergent behaviors that affect their relation-
+ships. Players enjoy watching and inﬂ uencing these interactions. In fact, the player’s 
+imagination plays a very large role in the game, just as it does in playing with dolls. 
+The sims are not terribly complex simulations, but players give them names and 
+personalities and ascribe many more characteristics to them than they actually 
+possess. The fact that the game is about human relationships rather than abstract 
+challenges contributes strongly to its success, especially among female players.
+God Games
+The term god game refers to games in which the player takes on the role of a god, 
+but one with limited powers like the gods of ancient Greece, rather than an all-
+powerful god from monotheistic traditions. In a god game, the player’s power 
+derives from a population of simulated worshippers—artiﬁ cial characters that the 
+player, in his capacity as their deity, must nurture and care for. The population is 
+usually depicted as a tribal people rather than a civilization.
+
+
+--- PAGE BREAK ---
+
+580 
+FUNDAMENTALS OF GAME DESIGN
+God games use an omnipresent (of course!) interaction model and an aerial per-
+spective. They often share qualities with both construction and management 
+simulations and with real-time strategy (RTS) games. (Sometimes games in these 
+genres are described as god games, but if a game doesn’t speciﬁ cally refer to the 
+player’s role as that of a god, the term is not appropriate. The Civilization games are 
+not god games.) As in a CMS like SimCity, the player of a god game exercises only 
+indirect control over the population. He can’t tell each speciﬁ c individual what to 
+do, as he can in a strategy game. On the other hand, as in an RTS, he competes 
+directly against an enemy—in this case, a rival god—who has his own population 
+of supporters. And unlike either RTS or CMS games, god games offer the player god-
+like powers: controlling the weather, reshaping the landscape, and the ability to 
+bestow various blessings (such as fertility) on his own population and various 
+curses upon the population of his enemy. God games are a subgenre of artiﬁ cial life 
+games because so much of the player’s role involves tending to a population of sim-
+ulated people whom he controls only indirectly.
+THE ECONOMY OF GOD GAMES
+In a god game, the player’s power, usually called mana, grows along with the number 
+and prosperity of his worshippers. The size of the population typically inﬂ uences 
+two critical values: the maximum amount of mana the player may have and the 
+rate at which mana is restored when it is below maximum. Using godly powers con-
+sumes mana, and the player spends much of his time using his godly powers for his 
+people’s beneﬁ t—ﬂ attening hills to make good farmland, reclaiming land from the 
+sea, blessing their crops, and so on. Mana often grows in exponential proportion
+to population size, so as the population increases the player acquires vastly
+greater powers—a progression that god games share with spellcaster characters in 
+role-playing games. However, if his population declines, the maximum amount of 
+mana that he may expend declines also, reducing his ability to help them.
+The close connection between population size and available mana can easily create 
+runaway positive feedback: The more mana the player gets, the more he can do for 
+his people, and the more their population grows, the more mana he gets. Positive 
+feedback is usually limited by several factors, however. First, his people do not 
+reproduce instantaneously, so in spite of the player’s increasing power, he cannot 
+force rapid population growth. Furthermore, they often need land in which to 
+expand, and creating suitable land consumes mana. Second, the mana cost of using 
+his higher-level powers also increases exponentially, so mana growth is balanced 
+by increased spending as he exercises his powers. Finally, many of his higher pow-
+ers cannot be used to help his own population, but only to do damage to his rival’s 
+people. The next section addresses this issue.
+GAMEPLAY IN GOD GAMES
+The primary challenge in a god game is to produce population growth, but the 
+player cannot defeat the rival god simply by helping his own population. He must 
+TIP Bullfrog 
+Productions, a com-
+pany founded by Peter 
+Molyneux and subse-
+quently purchased by 
+Electronic Arts, was 
+the most proliﬁ c and 
+successful developer 
+of god games. To study 
+games in this interest-
+ing genre, seek out 
+Bullfrog’s games such 
+as Populous and 
+Dungeon Keeper.
+Black & White, also 
+developed by Molyneux 
+at his new company 
+Lionhead, is another 
+famous god game.
+
+
+--- PAGE BREAK ---
+
+ARTIFICIAL LIFE AND PUZZLE GAMES 
+581
+ CHAPTER 20
+also do damage to the other god’s worshippers, while repairing the damage that the 
+rival god does to the player’s people. This damage usually takes the form of harm-
+ing his opponent’s population by bringing down natural disasters upon them: 
+spectacular events such as ﬂ oods, volcanoes, earthquakes, lightning strikes, torna-
+does, plagues, rivers of blood, and so on. Because it’s more fun to watch natural 
+disasters than it is to watch crops growing bountifully, god games tend to offer 
+more destructive powers the player can use on his enemies than they do construc-
+tive ones that beneﬁ t his own people. The mana cost of these events rises rapidly in 
+proportion to their destructiveness. In fact, a god game is almost a destruction and 
+management simulation.
+To design a god game, begin, as always, with the question, What is the player going 
+to do?—in this case, as a god. What kinds of powers would you like her to have? 
+And what will differentiate your god game from those that have gone before? Also 
+ask a lot of questions about the culture of the simulated people. What do they do? 
+How do they spend their time? What circumstances are needed for their popula-
+tion to grow? How do they react when their world is damaged by a hostile god? A 
+god game needs a lot of interesting animations for the people; it is an artiﬁ cial life 
+game, after all. Some of the entertainment value of a god game comes (perhaps a 
+little cruelly) from watching the people run around and scream in terror as they 
+respond to the player’s wreaking destruction upon them.
+Genetic A-Life Games
+Some A-life games involve managing a population of creatures over time. Rather 
+than concentrating so much on individuals, the player tries to achieve certain goals 
+with the population as a whole. By far the most successful of these is the Creatures
+series from Creature Labs, in which the player manages a small group of beings 
+called Norns, creatures who can learn things through repetition. Norns also have 
+distinct genetic characteristics that are reﬂ ected in their appearance and behavior. 
+Unlike the people in The Sims, Norns have a limited life span, so the game focuses 
+on breeding generation after generation of Norns and exploring and manipulating 
+their world indirectly through them.
+DESIGNING A GENOME
+To create a game in which you crossbreed creatures and get new, unique individu-
+als, you need to devise a genome: a set of descriptors (genes) that deﬁ ne all the 
+important characteristics of the creature. These characteristics should include 
+everything about the creature that can vary from individual to individual: shape, 
+size, coloration, and so on. You can leave out details common to all creatures. For 
+instance, if all your creatures will have two eyes and that will never change, there’s 
+no need to store a gene called “number of eyes.”
+When two individuals reproduce, they mix their genes, and you will need to deﬁ ne 
+how this mixing takes place. It’s a common mistake to think that you 
+
+
+--- PAGE BREAK ---
+
+582 
+FUNDAMENTALS OF GAME DESIGN
+should average the values from the two parents; if you do this, within a very few 
+generations, all your creatures will be the same height or very nearly so. Human 
+genetics work differently. Humans have not one value for each characteristic, but 
+two, one inherited from the mother and one from the father. These two values are 
+called alleles. If a person’s two alleles for the same trait don’t match, one of them 
+dominates the other according to a rule. The allele for brown eyes dominates the 
+recessive allele for blue, so people with one brown allele and one blue allele will 
+have brown eyes. When a human reproduces, one of the two alleles is chosen at 
+random to go on to the next generation. This means that it’s possible for a brown-
+eyed person to still pass on the allele for blue eyes. Otherwise, the allele for blue 
+eyes disappears from the population almost immediately.
+MUTATION
+Mutation is a change to a gene that occurs as a result of some environmental
+factor. Radiation famously causes mutations; so do some chemicals. Bear in mind 
+that a mutation does not have a lasting effect on the population unless it occurs
+in reproductive cells, and even then the results appear only in the offspring of
+the individual whose cells mutate. Such mutations may beneﬁ t the population by 
+introducing random new values into the gene pool, but they may just as easily be 
+detrimental or even lethal to the individuals that inherit them. For the purposes of 
+your game, you probably don’t want to allow lethal mutations—those that produce 
+miscarriages or stillborn offspring. If your creatures’ gestation period is long, allow-
+ing lethal mutations wastes the player’s time and doesn’t add anything of value to 
+the gene pool—or the game.
+LIFE SPAN, MATURITY, AND NATURAL SELECTION
+Each of your creatures needs a natural life span, or your population will explode. 
+(In Creatures, the life span of a Norn is about 30 real-time minutes.) If you want 
+your population to evolve through natural selection—that is, to become better 
+adapted to its environment—then your creatures also need a period of immaturity, 
+when they are not fertile, followed by a period of maturity, when they are. Natural 
+selection works only if it kills off creatures with maladaptive genes before they 
+mature enough to reproduce. If creatures could reproduce immediately after birth, 
+maladaptive genes would never leave the gene pool.
+If there’s one thing we know about random mutation and natural selection, it’s 
+that the effects of these processes appear slowly. The life span of the Norns in 
+Creatures is really too long for the player to breed hundreds of generations. If you 
+want evolution to be a part of your game, you’ll need to ﬁ nd ways to make it work 
+nonrandomly or you‘ll need to keep the life span of your creatures very short. Of 
+course, the shorter the life span, the less chance you give each creature to exhibit 
+an interesting behavior, so there’s a balance to be struck.
+
+
+--- PAGE BREAK ---
+
+ARTIFICIAL LIFE AND PUZZLE GAMES 
+583
+ CHAPTER 20
+WHAT DOES THE PLAYER DO?
+A genetic A-life game might not seem to have much for the player to do except 
+wind it up and watch it go. A closer look shows a fair number of ways the player 
+can interact with the creatures. She can create completely new individuals and add 
+them to the population to observe how their genes inﬂ uence the population. She 
+can add and remove environmental hazards that would tend to weed out certain 
+genes. She can play with the rate and nature of mutation by adding or modifying 
+mutagenic objects or areas of the environment. She can also mate particular indi-
+viduals to select particular characteristics (with animals, this is considered useful 
+and is called breeding; with people, it is considered evil and is called eugenics).
+WHERE DOES SPORE BELONG?
+Spore is a ﬁ ve-level game in which the player starts with a customizable “single-celled” 
+organism in a 2D world and builds it, in stages, into a civilization of creatures that roam 
+the galaxy terraforming planets to make them habitable and ﬁ ghting, or negotiating 
+with, other species. The ﬁ rst two stages of the game most closely resemble an artiﬁ cial 
+pet, because in those stages the player designs and cares for a single individual. (Even if 
+it is killed, it spontaneously regenerates at no cost.) The remaining stages are more like 
+RTS games, although the player does not have quite as much direct control as in a pure 
+RTS. In these stages, the player interacts with a population of creatures who are 
+semiautonomous.
+Spore is in fact ﬁ ve games rather than one, with different camera and interaction models 
+for each, a different economy, and different victory conditions. As a result, it’s not easy to 
+categorize. It’s not a genetic A-life game; despite references to “DNA points” and a cute 
+form of sexual reproduction, it does not support natural selection. (Early publicity for the 
+game led some biologists to expect a serious simulation of evolution; they were disap-
+pointed.) Spore is probably best characterized as a hybrid combination of artiﬁ cial pet 
+and RTS, with some god game qualities as well.
+Puzzle Games
+Puzzles appear in games in several genres. Many single-player computer games con-
+tain puzzles; in action games, the player often has to ﬁ gure out the boss opponent’s 
+weakness; adventure games are full of puzzles, frequently about obtaining inacces-
+sible objects or getting information from other people; even ﬁ rst-person shooters 
+offer the occasional puzzle, ﬁ guring out how to get past locked doors and other 
+obstacles. Puzzle design is an essential element of game design, and it’s harder than 
+you might think.
+
+
+--- PAGE BREAK ---
+
+584 
+FUNDAMENTALS OF GAME DESIGN
+In puzzle games, puzzle solving is the primary activity, though puzzles may occur 
+within a storyline or lead up to some larger goal. That doesn’t mean that you can 
+offer a random collection of puzzles and call it a game; puzzle games usually pro-
+vide related challenges, variations on a theme. The types of puzzles offered include 
+recognizing patterns, making logical deductions, or understanding a process. In all 
+cases, the puzzles give the player clues that have to be somehow unraveled or solved
+to meet the victory condition. Puzzle solving under severe time constraints—as in 
+Tetris—belongs more to the action than to the puzzle game genre. Tetris and the 
+many games similar to it depend more on physical coordination challenges than 
+they do on logic problems.
+To be a commercial success, a puzzle game needs to be challenging (but not too 
+hard), visually attractive, and above all, enjoyable. It also needs to be fresh and to 
+offer enough gameplay to justify the purchase price. Although solitaire card games 
+such as FreeCell belong in the class of puzzle games, unless you sell a lot of them 
+together as a collection, people are unlikely to want to pay for them.
+Scott Kim’s Eight Steps
+Scott Kim is a designer who creates puzzles for print media, web sites, and computer 
+games. At the 1999 Game Developer’s Conference he gave a lecture entitled “The 
+Art of Puzzle Game Design,” in which he identiﬁ ed eight steps in puzzle game 
+design (Kim, 1999). The ﬁ rst four steps comprise the process of specifying the rules, 
+while the last four comprise the process of building the puzzles and the game itself:
+1. Find inspiration. This can come from a variety of sources, including other 
+games. Tetris, for example, was inspired by a noncomputer game called Pentominoes.
+You can be inspired by a piece of art (the drawings of M. C. Escher have a very
+puzzlelike feel), a story, or some particular subject matter. Another source of inspi-
+ration is a play dynamic of some kind: ﬂ ipping switches, turning knobs, sliding 
+objects around, or picking them up and putting them down. Or there are more 
+complex dynamics among objects: balance, reﬂ ection, connection, and 
+transmission.
+2. Simplify. Suppose you have an idea for a puzzle: efﬁ ciently parking vehicles of 
+different sizes in a crowded parking lot so that when someone asks you to retrieve 
+his car, you have to move as few other cars as possible. Part of making this task fun 
+is simplifying it to its essentials. First, identify the essential tricky core skill (in this 
+case, space planning on the ﬂ y) and concentrate on that. Second, eliminate any 
+irrelevant details. Don’t make your player worry about crashing the cars, for exam-
+ple. Third, make the pieces uniform. Instead of having cars with inﬁ nitely variable 
+shapes and sizes, it’s better to have several standard types that conform to a square 
+grid. Finally, simplify the controls. Figure out what the essential moves are and 
+devise controls that implement them with a minimum of ﬁ ddling.
+
+
+--- PAGE BREAK ---
+
+ARTIFICIAL LIFE AND PUZZLE GAMES 
+585
+ CHAPTER 20
+3. Create a construction set. The only way to be sure that a puzzle concept works 
+is to play it, but obviously you don’t want to code up the whole game before you 
+know whether it’s fun. You can build a paper prototype or a simple version in 
+something like Macromedia Flash to see if it works. The rule designer can play with 
+the prototype to tweak the rules, and later the level designer can use it to build lev-
+els. You can also code a construction set into the ﬁ nal game so that players can 
+build puzzles for each other.
+4. Deﬁ ne the rules. This is the key part of puzzle design. Most puzzles are charac-
+terized in terms of four things: the board (Is it a grid? A network? Is it irregular? Or 
+is there no board at all?), the pieces (How are they shaped? What pictures are on 
+them? What other attributes do they have? Where do they come from?), the moves
+(What is allowed and what is not? Are they sequential or simultaneous? What side 
+effects do they have?), and the goal or victory condition (Does it have to be an 
+exact match, or will a partial one do?).
+5. Construct the puzzles. A puzzle challenges the player to get from a problem to 
+a solution, but of course, the path isn’t simple. Every puzzle requires that the player 
+make choices, some of which lead to dead ends. In an adventure game, each puzzle 
+appears in a larger context (the story) that gives it meaning, and solving it advances 
+the plot somehow. Some puzzle games also offer an overall plot of sorts or won’t let 
+you try the next puzzle until you’ve completed the current one. Good puzzles 
+require insight from the player, the “Aha!” moment that occurs when the player 
+realizes how the puzzle works and how to solve it. But you mustn’t require an 
+insight that’s too obscure, or it will feel unfair. If you tell the player that he’s in a 
+maze, it’s unfair for the only solution to be to knock down the walls unless you 
+indicate somehow that this is possible.
+6. Test. Testing tells you several things. It tells you whether the puzzle is too
+easy or too hard (this can be difﬁ cult to predict in advance), and it also tells you 
+whether it’s fun in the ﬁ rst place. It helps you ﬁ nd out if there are alternative solu-
+tions that you didn’t think of, and it helps you discover errors in the rules. And, of 
+course, it lets people try out the user interface. Because puzzle actions tend to be 
+repetitive, it’s important that the interface be smooth and not frustrating.
+7. Devise a sequence. Now it’s time to order all your puzzles into a sequence. The 
+most obvious arrangement is a linear or accelerating sequence going from easy to 
+difﬁ cult, but in practice, that becomes tiring and discouraging. A better arrange-
+ment is a sawtooth shape, which gets difﬁ cult for a while, then goes back to an easy 
+puzzle, and so on, over and over. And, of course, you can give the player the free-
+dom to play the puzzles out of order or let her earn that right. You also need to 
+think about transitions between puzzles, something that will keep her moving on 
+to the next one. War games and role-playing games often do this with a storyline. 
+Or, the player can be working on a metapuzzle (a single large puzzle, parts of which 
+the player solves in between the regular puzzles), which motivates her to complete 
+the whole game.
+
+
+--- PAGE BREAK ---
+
+586 
+FUNDAMENTALS OF GAME DESIGN
+8. Pay attention to presentation. Finally, of course, there are all the other details 
+of game design: sound, graphical style, animation, user interface elements, story-
+line (if any), and so on. If you’re used to designing other kinds of games, it might 
+be tempting to move this to an earlier point in the process, but with puzzle games, 
+the puzzles are 90 percent of the battle. Get them right ﬁ rst, and the rest won’t be 
+nearly as hard.
+What Computers Bring to Puzzles
+Computers enable us to make a lot of puzzles that would be impossible or expen-
+sive to create in the real world—consider the logistics of supplying all the parts in 
+The Incredible Machine in physical form, including the mandrills, cats, and goldﬁ sh 
+that appear in the game. Even if a puzzle is physically possible, the computer can 
+add a number of useful features to make the gameplay easier and more enjoyable.
+■ Enable nonphysical or awkward moves. The computer can let players do 
+things that don’t correspond to physical actions in the real world—for example, 
+changing the color of something. You can also let the player control several things 
+at once with just one key, something that would be awkward to do in a physical 
+implementation.
+■ Include computation features. You can use the computing power available to 
+automatically generate new puzzles, ﬁ nd solutions to the current puzzle, or gener-
+ate hints about what the player should do next.
+■ Enforce the rules. In a lot of physical puzzles, it’s up to the player to enforce the 
+rules. Sometimes players make mistakes and break the rules accidentally. A com-
+puter game can make sure that never happens.
+■ Record player moves and allow the player to undo them. This very useful fea-
+ture for games involves moving objects around in a sequence. The solitaire game 
+Freecell allows the player to undo one move, but it would be better if he could undo 
+as many as he wanted, back to the begining of the game.
+■ Structure the experience. The computer allows you to present the experience 
+in a particular order, if necessary, passing automatically from one phase to another. 
+In the real world, the player would be looking at the instructions and saying, “Let’s 
+see, what am I supposed to do next?”
+■ Teach. You can include tutorial modes and step-by-step instructions to help 
+your player get into the game.
+■ Use bells and whistles. Obviously, with sound and animation, you can make a 
+puzzle much more aesthetically interesting on the computer than it would be as a 
+physical object.
+■ Enable online play. The computer lets players compete against one another, 
+compare solutions, and be part of a puzzle-solving community.
+
+
+--- PAGE BREAK ---
+
+ARTIFICIAL LIFE AND PUZZLE GAMES 
+587
+ CHAPTER 20
+THE INCREDIBLE MACHINE
+The Incredible Machine furnishes an excellent example of an imaginative and clever puz-
+zle game that sold well. In fact, it’s not just a game but a whole game franchise with ﬁ ve 
+editions so far. The current version, Return of the Incredible Machine: Contraptions, is 
+published by Sierra Entertainment (formerly Sierra On-Line).
+The game consists of a series of puzzles, each of which involves building a crazy machine 
+to accomplish a certain task. The player constructs each machine in a two-dimensional 
+space upon which a variety of mechanical devices can be placed. (Some of these devices 
+are actually animals, which can be frightened by noises or lured by food.) Each puzzle 
+starts with a few objects in given positions, and the victory condition states what the 
+player must accomplish (for example, pop the balloon) using a limited number of addi-
+tional devices. The player must place these devices and hook them together in such a 
+way that the resulting machine, when set in motion, achieves the goal. Playing the game 
+consists of adding elements to the machine, trying them out, adjusting them, trying them 
+again, and so on. Figure 20.3 shows one of the scenarios in The Incredible Machine. The 
+goal is given at the left. Available parts are in the area beneath the main workspace.
+FIGURE 20.3 The Incredible Machine
+continues on next page
+
+
+--- PAGE BREAK ---
+
+588 
+FUNDAMENTALS OF GAME DESIGN
+THE INCREDIBLE MACHINE
+continued
+Scott Kim identiﬁ es three key design decisions that he feels make The Incredible Machine
+the prototypical construction puzzle game.
+• Allow the player to build things. This makes The Incredible Machine a construction 
+game and differentiates it from, say, Tetris (an action puzzle game) or Marble Drop (a 
+logic game in which the player decides where and when to drop marbles into a mech-
+anism). The player is exercising his creativity.
+• Include no real-time decision-making. Constructing the machine and running it take 
+place in separate modes. The player can take as long as he wants to think about what 
+he’s doing. This is in contrast with Lemmings, an excellent game but one that requires 
+the player to solve its puzzles on the ﬂ y. Often if the player doesn’t solve the puzzle in 
+time, he has to start over.
+• Allow players to design their own puzzles. Any time players can build their own ele-
+ments, it adds value to the game and helps create a community of devoted fans. 
+Players can exchange their puzzles by e-mail, post them on web sites, run tourna-
+ments, and enjoy all kinds of other activities, all of which constitute free publicity for 
+the game.
+Checking the Victory Condition
+Bear in mind that players don’t always ﬁ nd the solution to a puzzle the way that 
+you envisioned when you invented it. There might be more than one path to the 
+goal. When your game checks to see whether the player solved the puzzle, you 
+should test only to see whether the player met the victory condition you gave her, 
+not that she has done it in the way you expected. Otherwise, you’ve cheated her, 
+and she’ll be justiﬁ ably frustrated. She’s managed to get to the correct solution 
+state, but your game refuses to recognize it.
+This problem appears in the game Interstate ’76, which, while not a puzzle game, 
+does offer a level containing a puzzle of sorts. The player drives an armed and 
+armored car in an area enclosed by a concrete wall, and the victory condition for 
+winning the level states that (among other things) the vehicle must escape the 
+enclosed area. The game’s designers put in a hidden ramp, which they wanted play-
+ers to ﬁ nd and use to drive out of the area. However, players discovered another 
+way to get out: If a player drops a land mine near the wall and then drives toward it 
+at full speed, the force of the explosion lifts the car high enough to clear the wall, 
+and the car ﬂ ies over it and out. Unfortunately, the software doesn’t test for the 
+solution state that the player is given: Is the car outside the wall? Instead, it tests to 
+see if the player uses the ramp. If a player escapes without using the ramp, the game 
+
+
+--- PAGE BREAK ---
+

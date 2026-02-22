@@ -1,0 +1,1095 @@
+■ Chapter 13: Action Games
+■ Chapter 14: Strategy Games
+■ Chapter 15: Role-Playing Games
+■ Chapter 16: Sports Games
+■ Chapter 17: Vehicle Simulations
+■ Chapter 18: Construction and Management Simulations
+■ Chapter 19: Adventure Games
+■ Chapter 20: Artiﬁ cial Life and Puzzle Games
+■ Chapter 21: Online Gaming
+PART TWO
+391
+
+
+--- PAGE BREAK ---
+
+Action Games
+When most people hear the phrase video game, they tend to think of action games. 
+The reason is historical: Almost all the earliest video games were action games, and 
+some of those early games—Asteroids, Pac-Man, Space Invaders—have become iconic 
+representatives of the action genre. However, the genre is vast and covers just about 
+any imaginable activity that can be characterized in terms of physical challenges. 
+In this chapter, you’ll learn the deﬁ nition of an action game, then go on to study 
+the many subgenres of action games. Following that, we’ll look in more depth at 
+the distinctive features of action games that set them apart from other genres. 
+What Are Action Games?
+ACTION GAME An action game is one in which the majority of challenges presented are 
+tests of the player’s physical skills and coordination. Puzzle-solving, tactical conﬂ ict, 
+and exploration challenges are often present as well.
+Action games require good hand-eye coordination and usually require quick reac-
+tions as well. The fastest action games are sometimes called twitch games, implying 
+that the action takes place at almost a reﬂ ex level. In such games the player doesn’t 
+have time for strategy or planning, so while the stress level is higher than in slower 
+paced games, the intrinsic skill required for each challenge is lower. (See the sec-
+tion “Skill, Stress, and Absolute Difﬁ culty” in Chapter 9, “Gameplay,” if you are not 
+familiar with these terms.) Not all action games depend on raw speed, however. 
+Some require other physical skills such as accurate aim, rhythm or timing, or the 
+ability to execute combo moves—complicated sequences of commands.
+Most arcade games are action games because arcade games make their money by 
+quickly defeating unskillful players. Only highly skilled players can play them for a 
+long time without losing. The simple core mechanics and gameplay of action games 
+mean that those games without too much audiovisual content are also well suited 
+to less powerful machines such as handhelds and mobile phones, and to web 
+browser games.
+CHAPTER 13
+392
+
+
+--- PAGE BREAK ---
+
+ACTION GAMES 
+393
+ CHAPTER 13
+Action Game Subgenres
+Action games fall into a number of subgenres based, like all game genre distinc-
+tions, on the kinds of gameplay that they offer. The most familiar and popular 
+action games are shooting games, but the genre also encompasses platform games, 
+ﬁ ghting games, fast puzzle games, and a broad miscellany of others. Bear in mind 
+that there is no industry standard for these terms, and other authors may refer to 
+these subgenres by other names.
+Shooters
+In shooters, the player takes action at a distance, using a ranged weapon. Aiming
+is therefore a key skill, particularly if the game provides only limited ammunition. 
+In a shooting game, the player must focus attention on two places at once: the area 
+around the avatar, and the target or targets.
+We’ll look at two broad classes of shooting games: those that take place in a
+two-dimensional landscape (2D shooters) and those that take place in a three-
+dimensional landscape (3D shooters), of which by far the best-known are the 
+ﬁ rst-person shooters. The “Camera Models” section, later in this chapter, discusses 
+the differences between the ﬁ rst- and third-person perspectives.
+2D SHOOTERS
+The action in 2D shooters takes place in an environment viewed from either a
+top-down or side-view perspective. Enemies shoot at the avatar, which can be a 
+character or a vehicle, or approach to attack at close quarters. In many of these 
+games the player is under attack by overwhelming numbers of enemies and must 
+shoot them as fast as possible; such games are often called shoot-’em-ups. The player 
+is usually armed with one or more weapons, and some weapons may be better 
+suited to particular enemies than others. It is rare for a 2D shooter to keep track of 
+ammunition (except for particularly powerful types of weapons); instead, the 
+player ﬁ res frenetically and indiscriminately. The weapons seldom damage any-
+thing except legitimate targets.
+2D shooters seldom bother with realistic physics. Projectiles move at a constant 
+speed and in a straight line, unaffected by gravity; vehicles and characters change 
+direction instantaneously, ignoring inertia. These are the conventions of the sub-
+genre, and you change them at your peril.
+Some of the older 2D games have endured and remained popular despite their lim-
+ited graphics—even inspiring modern versions—because they have excellent 
+gameplay. The original Robotron: 2084, released into arcades in 1982, became an 
+instant classic of the genre (see Figure 13.1). The object of this game was to defend 
+the last human family against wave upon wave of killing machines bent on their 
+destruction. A second joystick gave players the ability to shoot independently of 
+TIP Don’t assume 
+that shooting has 
+to mean violence. 
+You can characterize 
+shooting in other ways, 
+such as putting out a 
+ﬁ re with a ﬁ re hose, 
+painting an area with 
+a paint gun, ﬁ lling up 
+a space with objects, 
+and so on. The game 
+Portal used a “portal 
+gun” to create connec-
+tions between different 
+locations.
+
+
+--- PAGE BREAK ---
+
+394 
+FUNDAMENTALS OF GAME DESIGN
+the avatar’s direction of movement. The strength of the Robotron gameplay
+meant that, for many years, updates just weren’t needed. In fact, you can still
+get pixel-perfect versions of Robotron: 2084 for the PC, Game Boy Advance, and 
+other consoles.
+Gauntlet, in its original arcade form, provided an option for cooperative multiplayer 
+play, one of the ﬁ rst games to do so (see Figure 13.2). Each player could take on 
+one of four avatars (Warrior, Wizard, Valkyrie, or Elf) and adventure together with 
+the other members of the party through a seemingly endless series of dungeons, 
+searching for treasure and food. This game introduced many of the common action 
+game features we look at later, such as the locked door and key, monster generators, 
+team play, and dungeon exit.
+FIGURE 13.1 Robotron: 2084 and Robotron X
+FIGURE 13.2 Gauntlet II and Gauntlet: Seven Sorrows
+
+
+--- PAGE BREAK ---
+
+ACTION GAMES 
+395
+ CHAPTER 13
+3D SHOOTERS
+3D shooting games such as those in the Halo and Half-Life series have become so 
+successful that to a great many younger gamers they are the epitome of the entire 
+medium. Never mind that sports games are more popular than shooters on console 
+machines, and strategy games are more popular on home computers (Entertainment
+Software Association, 2009); 3D shooters are at the cutting edge of what game hard-
+ware can do, and so they have the most dramatic graphics and get the most press. 
+Figure 13.3 indicates just how far 3D shooters have come, from Maze War, an early ﬁ rst-
+person shooter for the Xerox Star workstation, to the recently released Battleﬁ eld 1943.
+FIGURE 13.3 Maze War and Battleﬁ eld 1943
+3D shooters are more realistic than 2D shooters, often presenting familiar, or at 
+least recognizable, worlds. In ﬁ rst-person shooters, the physics of the game is much 
+more like that of the real world. Gravity works correctly (for the most part), sound 
+diminishes with distance, objects cast shadows, and collisions are modeled with a 
+fair level of accuracy. Some of these games, such as Electronic Arts’ Black, also 
+implement deformable environments, in which the landscape actually changes 
+shape in response to explosions and other events.
+3D shooters use either a ﬁ rst-person perspective (the ﬁ rst-person shooter or FPS), or a 
+third-person perspective, and many now offer both. The ﬁ rst-person perspective is 
+sometimes reserved for the view through a riﬂ e’s scope or sights and cannot be 
+used while the avatar is moving. The “Camera Models” section discusses these per-
+spectives and their effect on the player’s experience.
+3D shooters may be further subdivided:
+■ Rail-shooters are so-called because players ﬁ ght through an enclosed environ-
+ment that, like a railroad track, has few side branches; the player has few choices to 
+
+
+--- PAGE BREAK ---
+
+396 
+FUNDAMENTALS OF GAME DESIGN
+make and little exploration to do. Play consists of ﬁ ghting from the beginning to 
+the end. Half-Life is the deﬁ nitive example.
+■ Tactical shooters tend to simulate modern-era special forces teams. They offer 
+realistic weapons and situations, and must be played carefully; they cannot be won 
+with Rambo-style mayhem. Stealth and cover assume a large role. Tom Clancy’s 
+Ghost Recon is a good example.
+■ The survival horror class of games uses the power of modern graphics hardware 
+to display disturbingly realistic blood and gore. Exploration takes on a large role in 
+these games. The Silent Hill and Resident Evil series are both widely admired 
+examples.
+■ Arena games such as Quake III: Arena and Unreal Tournament are designed pri-
+marily (and sometimes exclusively) for multiplayer deathmatch or team play in a 
+conﬁ ned area. Much of the design effort goes into balancing the weapons and pow-
+erups and creating interesting places in which to play. Games such as Battleﬁ eld 
+1942 are their equivalents in outdoor settings, and the latter also permit the players 
+to use vehicles.
+An increasing number of single-player 3D shooter games are set in large, open 
+worlds. Such games place few limitations on the player’s movement and provide a 
+world populated with large numbers of AI-driven NPC characters, not all of whom 
+are enemies. The Godfather and Grand Theft Auto series are well-known examples, 
+although both of them offer a great deal of non-shooter gameplay. S.T.A.L.K.E.R.: 
+Shadow of Chernobyl is a more conventional shooter set in the 30 kilometer exclu-
+sion zone around the Chernobyl nuclear power plant. 
+Platform Games
+Platform games, or platformers, are cartoonish games in which an avatar moves 
+through a vertically exaggerated environment, jumping on and off platforms at dif-
+ferent heights, while avoiding obstacles and battling enemies. The avatar has a 
+supernatural jumping ability and can’t be harmed by falling long distances (unless 
+he falls onto something dangerous or into a bottomless chasm, both common fea-
+tures of platform games). Most of the player’s actions consist of jumping, augmented
+by various ﬂ ip-moves and by bouncy objects in the environment. Platform games 
+use highly unrealistic physics; the avatar can usually change directions in midair.
+The vast majority of 2D side-scrolling games with a humanoid avatar are platform 
+games; Super Mario Bros. is the classic example. The conﬂ ict in platform games is 
+often mild and suitable for children. Both Mario and Sonic the Hedgehog attacked 
+enemies simply by jumping on top of them. Stricken enemies disappeared without 
+undue anguish.
+3D platform games, while popular, have never managed to achieve quite the same 
+level of iconic status as 2D games. Crash Bandicoot is one of the more successful 3D 
+
+
+--- PAGE BREAK ---
+
+ACTION GAMES 
+397
+ CHAPTER 13
+platformers. Unfortunately, the addition of a third dimension makes control more 
+complicated and difﬁ cult; the “Controls” section discusses this in more detail.
+Fighting Games
+Fighting games have little in common with other action games because they 
+involve neither exploration, shooting, nor puzzle-solving. They still qualify as 
+action games because they place great demands on a player’s physical skills: reac-
+tion time and timing. These games simulate hand-to-hand combat, usually using 
+highly exaggerated moves vaguely modeled on Asian martial arts techniques. 
+(Serious boxing games belong more to the sports genre than to the action genre, as 
+they try to model the techniques of boxing realistically.) Fighting games may be 
+further subdivided into those in which characters ﬁ ght in one-on-one bouts, and 
+mêlée games in which one or two characters ﬁ ght against large numbers of oppo-
+nents. (The latter are sometimes called beat-‘em-ups.) Fighting games also use 
+hand-to-hand weapons such as swords and staves, and a limited number of ranged 
+weapons. Figure 13.4 shows screen shots from two ﬁ ghting games, Street Fighter and 
+Dead or Alive 3.
+FIGURE 13.4 Fighting games, Street Fighter and Dead or Alive 3
+The player’s actions typically consist of hand-to-hand attacking and defending 
+moves of various sorts. Typically, certain defenses block some attacks but not oth-
+ers, and players have to learn when and how the moves are effective through trial 
+and error. Each successful attack takes energy away from the character hit, and the 
+game continues until one ﬁ ghter’s energy drops to zero. The strategy of the game 
+rather resembles rock-paper-scissors as players try to guess which move their oppo-
+nent will use next.
+A common feature of ﬁ ghting games is the combo move, often simply shortened to 
+combo. Because early console and arcade machines offered only a small number of 
+buttons and a simple 8-way joystick or D-pad, there was no way to assign a separate 
+
+
+--- PAGE BREAK ---
+
+398
+FUNDAMENTALS OF GAME DESIGN
+button to each of the moves that the designers wanted to include. To compensate 
+for this and to create an extra challenge, they designed games so that the player 
+would execute an especially effective or spectacular attack if she could rapidly issue 
+a particular sequence of buttons and joystick maneuvers. The effectiveness of the 
+move is often related to its difﬁ culty of execution; more complex combos carry 
+higher risk because the avatar is open to attack while the player carries out the 
+sequence. 
+When the software detects that a player has started a combo move, it sometimes 
+displays a combo meter somewhere on the screen—a visual indicator of the player’s 
+progress through pressing the buttons. If the player stops or gets the sequence 
+wrong, the meter resets to zero and she has to start over.
+Bout-structured ﬁ ghting games tend to show all the ﬁ ghters on-screen at once from 
+a side view. Even in a game that uses 3D technology to display the world and the 
+ﬁ ghters, the play is largely 2D in the plane of the video screen. The ﬁ ghters move 
+left and right and may jump up and down, but they seldom move toward the player 
+or away from him. Again, realistic boxing games are an exception because they try 
+to model the ring and boxers’ movements accurately—another reason why they’re 
+not usually classed with ﬁ ghting games.
+Most innovation in ﬁ ghting games consists of developments in characters’ actions 
+and reactions. This includes their interactions with each other and their environ-
+ment and their reactions to injury, as well as the methods used to control the 
+ﬁ ghters—especially when considering how to handle special moves and combos.
+Fast Puzzle Games
+Most computerized puzzle games, such as Sokoban, move slowly and allow the 
+player to think about his next move for as long as he wants, so they’re not action 
+games. Fast puzzle games require the player to solve a problem as quickly as possi-
+ble. These games are usually simple, visually abstract, have a limited control set, 
+and are easy to design and build. Tetris is the archetypal fast puzzle game. Other 
+examples include Collapse!, Columns, and Bejeweled in its timed mode. Casual gam-
+ers like fast puzzle games because they are easy to learn and don’t take a long time 
+to play. They also don’t use stereotypical content associated with many video 
+games: no guns, no dragons, no scantily clad women. This subgenre is ideal for 
+handheld devices and cell phones.
+Action-Adventures
+The action-adventure is a hybrid genre, combining features from both action 
+games and adventure games. To play them well requires a fair amount of physical 
+skill, but they also offer a storyline, numerous characters, an inventory system, dia-
+log, and other features of adventure games. The later editions of the Zelda series for 
+the Nintendo 64 and Nintendo GameCube are action-adventures, as is Indiana Jones 
+NOTE Assassin’s 
+Creed combines the 
+close-combat ﬁ ghting 
+of a more conventional 
+ﬁ ghting game with 
+the open world and 
+missions of a Grand 
+Theft Auto style game, 
+producing a unique 
+hybrid.
+
+
+--- PAGE BREAK ---
+
+ACTION GAMES 
+399
+ CHAPTER 13
+and the Infernal Machine. The earlier, 2D isometric Indiana Jones games were pure 
+adventure games.
+Chapter 19, “Adventure Games,” discusses action-adventures in more detail. 
+Music, Dance, and Rhythm Games
+Dance Dance Revolution, PaRappa the Rapper, and similar games belong to a compara-
+tively new subgenre of action games, those that challenge the player’s sense of 
+rhythm. They typically show an avatar on screen who dances in response to the 
+player’s button presses. In single-player mode, the player’s avatar must dance better 
+than a computer-controlled character; in multiplayer mode, two avatars compete 
+head to head. The screen shows which dance step the player should perform next, 
+while the game awards points for pressing the correct button on the controller or 
+pad on a dance mat, and for being on the beat.
+Music games are more recent arrivals. The huge success of Guitar Hero and Rock 
+Band demonstrates that a lot of players want to enjoy the fantasy of being a musi-
+cian—even though they don’t actually make music in these games. Much of the 
+fun in these games comes from using their specialized, guitar-shaped controllers. 
+Other Action Games
+A great many action games don’t ﬁ t neatly into any of the preceding subgenres, and 
+the variety among them is enormous. They are difﬁ cult to categorize except in neg-
+ative terms: They don’t involve shooting, hand-to-hand ﬁ ghting, or abstract puzzle 
+solving. They do, however, frequently use representational puzzle solving. Most of 
+these action games demand skills such as maneuvering and path planning.
+Frogger, shown in Figure 13.5, is a good example of an action game that belongs to 
+no obvious subgenre. The player maneuvers the world’s only nonswimming frog 
+family across a busy road and a logging river infested with crocodiles. A highly suc-
+cessful arcade game launched in 1981, the Frogger series eventually became one of 
+the most successful of all time. Hasbro’s 1997 remake, Frogger 3D (also shown in 
+Figure 13.5) sold millions of copies, remaining on the software bestsellers charts for 
+many months after release. The developers kept the gameplay virtually unchanged 
+and just updated the presentation, increasing the variety of the levels available to 
+the player. Frogger 2: Swampy’s Revenge, a sequel to Frogger 3D, introduced a more 
+structured game while still remaining faithful to the gameplay of the original.
+Other notable action games that don’t ﬁ t into deﬁ ned subgenres include Pong,
+Marble Madness, Pac-Man, Q*bert, Lemmings, and Katamari Damacy. Both Marble 
+Madness (1986) and Katamari Damacy (2004) use an excellent but seldom-seen chal-
+lenge, controlling a rolling object that exhibits inertia. Lemmings, a brilliant game 
+about trying to prevent a group of dim-witted creatures from killing themselves by 
+NOTE Players could 
+instantly understand 
+what they were sup-
+posed to do in Frogger,
+which accounts for a 
+lot of its success. It 
+also appealed to both 
+male and female play-
+ers at a time when that 
+was rare. These are 
+qualities to strive for.
+
+
+--- PAGE BREAK ---
+
+400 
+FUNDAMENTALS OF GAME DESIGN
+falling off cliffs, involves selecting particular creatures and assigning tasks to them 
+that inﬂ uence the way the others move, all under time pressure.
+FIGURE 13.5 Frogger and Frogger 3D
+Game Features
+Action games provide a good ﬁ eld in which to study many features also found in 
+other genres because the simplicity of action games means that the issues aren’t 
+obscured by other considerations. Action games tend to set simple, obvious goals 
+and offer clear, direct ways to reach them (although the goals may be difﬁ cult to 
+achieve).
+Although 2D action games are no longer the state of the art technically, if you are a 
+student, you will probably be asked to build a simple 2D action game as your ﬁ rst 
+project. This is a great place to start, providing you with practice using—and a way 
+to demonstrate your grasp of—the fundamentals of game design. You can easily 
+build small 2D action games with very little programming by using the free Game 
+Maker tool from YoYo Games. Download it at www.yoyogames.com.
+Progression
+Level progression in action games tends to be linear. Once the player completes 
+all levels, she has won the whole game. (There are exceptions; in Spyro the Dragon,
+the player has a choice of levels at any given time. Completing some levels unlocks 
+others not previously available.) Within a level, progress may be linear (the player 
+can go only forward or back) or nonlinear (the player has some freedom to choose 
+her own path). Occasionally a linear level includes a hidden shortcut that, when 
+discovered, allows the player to jump ahead, bypassing many obstacles and dangers.
+
+
+--- PAGE BREAK ---
+
+ACTION GAMES 
+401
+ CHAPTER 13
+LEVELS
+Designers often group action game levels by theme. All the levels in a themed set 
+have a similar appearance and a similar set of enemies or obstacles to overcome. A set 
+of themed levels usually ends in an encounter with a big boss, who must be defeated. 
+In some cases, the player must acquire powerups or gain skills while completing 
+tasks in the levels to defeat that set’s big boss and progress to the next set of levels.
+Each level presents the player with a variety of challenges, and failure to surmount 
+them eventually causes the player to lose the game—whether it’s dancing well in a 
+dance game or shooting things in a shooter. However, in most such games, the 
+sequence of the challenges in a given level remains the same from one play session 
+to the next. Except for the occasional wildcard enemy (described later in this chap-
+ter), the player can be conﬁ dent that if a given region contains certain challenges 
+the ﬁ rst time it’s played, the same region will contain exactly the same challenges 
+the next time. Thus, players eventually ﬁ nish action games by learning what tasks 
+lie ahead and how to accomplish them through repeated attempts.
+As a designer, you will ﬁ nd that levels are easier to balance when they contain 
+ﬁ xed, rather than randomized, challenges. However, this approach makes the game 
+repetitious, and that makes the game unattractive to two groups: those who don’t 
+like repetitive play and those who don’t have a lot of leisure time. To avoid alienat-
+ing those groups, include a save-and-reload feature so the player can restart the 
+game in the middle whenever he loses. Alternatively, use checkpoints, as described 
+in the next section.
+Level design is discussed in more detail in Chapter 12, “General Principles of
+Level Design.”
+PLANNING YOUR PACING
+As Chapter 12 explained, the most important level design principle for action games 
+is variety of pacing. Game developers often waste a lot of time and money rebuild-
+ing game levels because something just doesn’t feel right—the pacing is wrong. 
+In two valuable Gamasutra articles, “Gameplay Fundamentals Revisited: Harnessed 
+Pacing and Intensity” and “Gameplay Fundamentals Revisited, Part 2: Building a 
+Pacing Structure,” Mike Lopez argues that to avoid poor pacing, you should plan 
+the pacing of your entire game in advance, during the pre-production phase of 
+development (Lopez, 2008a and 2008b). (Note that this is not the same as the con-
+cept stage of game design. Pre-production takes place during the early part of the 
+elaboration stage.) He recommends a nine-step process to create an intensity and 
+pacing plan for your game, summarized brieﬂ y here:
+1. Brainstorm. Think of locations for your levels, exciting moments of action asso-
+ciated with those locations (such as “the building collapses”), and generic moments 
+of excitement that are independent of location (such as suddenly facing a powerful 
+enemy). At this point you’re not deciding on the sequence of these events, just 
+
+
+--- PAGE BREAK ---
+
+402 
+FUNDAMENTALS OF GAME DESIGN
+thinking of the kinds of events you’d like to have. Remember, this applies to the 
+entire game, not just a single level.
+2. Set priorities. Decide which of the ideas generated by brainstorming are most 
+important.
+3. Create a story framework. Don’t write the entire story; just create a high-level 
+outline that interweaves plot elements with the actions you have planned so they 
+work together.
+4. Rate and sequence key events. Give each planned event a numeric intensity 
+rating (say, from 1–10). Using these ratings, construct a sequence of events that 
+builds toward rising moments of intensity throughout each level, and throughout 
+the game generally. The intensity at the beginning of a level should be somewhat 
+lower than the intensity at the end of the previous level.
+5. Rate and sequence plot points. Do the same thing with the major plot points 
+in your story framework that you did with the key events: determine their intensity 
+and ﬁ gure out where they ﬁ t in best. Include periods of reduced intensity between 
+moments of high excitement; Lopez recommends using devices such as narration 
+or dialog for these periods.
+6. Set the time between high-intensity events. Space the high-intensity events so 
+that they occur at reasonable intervals and don’t last too long. This is one of the 
+most intricate and uncertain aspects of level design. You cannot estimate this pre-
+cisely because players don’t all play at the same rate. Be sure to playtest your game 
+with both skilled and unskilled players. 
+7. Evaluate the trends. Step back from your plan and examine the whole thing, 
+looking for any gaps or anomalies, such as an exciting moment that is much less 
+exciting than the one that preceded it, which might feel like an anticlimax. (This is 
+not the same as a lull or relaxation period.)
+8. Begin constructing levels. The level designers can now begin building the lev-
+els according to the pacing plan.
+9. Review and iterate. Test and adjust what you’ve built to be sure you are achiev-
+ing your pacing goals. 
+Lopez intends his approach primarily for use in action games to reproduce the kind 
+of roller coaster ride that people experience watching TV shows such as 24 or Prison 
+Break. This method, while clearly not suited to all genres, is valuable not only for 
+action games, but for many hybrid genres such as action-adventures and action-ori-
+ented role-playing games, and it works for games of different sizes. You can 
+construct a classic side-scrolling action game like Sonic the Hedgehog using this pro-
+cess just as effectively as you can a modern ﬁ rst-person shooter.  Look up Lopez’s 
+original articles for a more in-depth discussion, complete with examples.
+
+
+--- PAGE BREAK ---
+
+ACTION GAMES 
+403
+ CHAPTER 13
+CHECKPOINTS
+Some action games allow the player to explicitly save and resume the game at any 
+time, which allows them to recover from failure, but many do not. Older games 
+required the player to start again from the beginning of the current level or even 
+the beginning of the entire game. This is now considered poor design. In many 
+modern games, the avatar’s new incarnation appears in the same location at which 
+it died, or if that is impossible (for example, if Mario falls into water), then the new 
+avatar appears in the last safe location it occupied before it died (for example, the 
+last platform that Mario occupied before he fell into the water). The state of the 
+level remains unchanged—the avatar just appears, and play resumes. Apart from 
+the loss of a life and perhaps the loss of the avatar’s possessions, the player is not 
+punished for letting the avatar die.
+Avatars may also reappear at a checkpoint. Checkpoints mark the positions on a
+level at which a player’s avatar may appear in its next incarnation if it should die
+in that level. As the player progresses through a level, he passes through one or 
+more checkpoints along the way, usually marked by some visual indicator that 
+changes to inform the player it has been passed. In Sonic the Hedgehog, for example, 
+streetlamps mark the checkpoints, turning from white to red when the avatar 
+passes them (see Figure 13.6). If the avatar dies, the level is reset to the condition
+it was in when the player last successfully passed a checkpoint, and the avatar
+reappears at the checkpoint location.
+FIGURE 13.6 
+This lamppost check-
+point (between the 
+totem pole and the 
+tree) in Sonic the 
+Hedgehog turns red 
+when the hedgehog 
+passes it. 
+
+
+--- PAGE BREAK ---
+
+404 
+FUNDAMENTALS OF GAME DESIGN
+LEVEL EXITS, LEVEL WARPS, AND TELEPORTERS
+Many action games that require the player to explore the layout of each level desig-
+nate a particular location as the normal transition point to the next level—the level 
+exit or dungeon exit. A level exit may be guarded by enemies, be well hidden, or both. 
+Finding and passing through the level exit is usually the primary goal of the level.
+Game designers often provide more than one exit from a level: the standard exit, 
+which takes the player to the next level, and one or more special exits that jump 
+the player ahead several levels or take the player to an otherwise secret level. These 
+are known as level warps. Level warps are usually hidden or particularly difﬁ cult to 
+reach, and the reward is proportional to the level of sacriﬁ ce required to get to them.
+Games from Stargate to Luigi’s Mansion and the Super Mario series use level warps. If 
+you provide a hidden exit, you may want to give the player a subtle clue. For exam-
+ple, in Super Mario World, the world overview map shows levels with secret exits as 
+ﬂ ashing red dots, rather than ﬂ ashing yellow dots. The red dots are a signal to the 
+player (without telling him explicitly) that the level contains a secret exit.
+A teleporter is a transition point that causes the player’s avatar to jump someplace 
+else within the same level. These points may be marked by a sign or object that tells 
+the player he has found a teleporter, or they may be unmarked, giving the player 
+no warning that he is about to be teleported and no explanation for why he is sud-
+denly somewhere else. Teleporters often become available at the end of a long 
+period of exploration, so the player can simply jump back to a previous location 
+(such as a home base or camp) without having to walk all the way back.
+Challenges
+Action games have more different kinds of challenges than just about any other 
+genre, although almost all of these challenges test physical skills—speed and reac-
+tion time, steering and shooting, timing and rhythm, and the ability to execute 
+combo moves in ﬁ ghting games. Other common types of challenges include pat-
+tern recognition (recognizing the attack and patrol behaviors of enemies) and 
+exploration (learning your way around a space). A few action games, such as Tetris
+and Portal, include puzzle-solving elements. The complexity of the puzzles should 
+be inversely proportional to the amount of time pressure the player feels.
+This section looks at the way pure action games characteristically present and
+organize their challenges. Action-adventure hybrid games frequently incorporate 
+challenges from the adventure game genre, such as locked doors and mazes. See
+the “Challenges” section of Chapter 19 for more information.
+OBSTACLES AND DANGERS
+In a game that requires navigation through a space, the player’s avatar is typically 
+faced with three types of problems: passive obstacles, stationary dangers, and active 
+dangers or enemies.
+
+
+--- PAGE BREAK ---
+
+ACTION GAMES 
+405
+ CHAPTER 13
+A passive obstacle impedes movement without actually threatening the avatar. To 
+get past a wall or a chasm, the player climbs over or jumps across. Obstacles can 
+also trap the avatar in a region with other dangers. Obstacles are usually, but not 
+always, indestructible.
+A stationary danger attacks the avatar when she gets close to it but does not move 
+around the landscape. Examples of stationary dangers include electric fences, 
+swinging blades on a pendulum, or plants that bite. Some stationary dangers must 
+be attacked or destroyed to allow the avatar to pass by; others are indestructible 
+and must be treated like obstacles, so the avatar has to avoid or surmount them.
+Active dangers, or enemies, attack the avatar, moving around in the landscape. In 
+old games, they often moved in a ﬁ xed pattern that the player could learn to avoid, 
+but in modern games, artiﬁ cially intelligent enemies locate and pursue the avatar. 
+See Chapter 6, “Character Development,” for more information on designing 
+enemy characters.
+WAVES
+When enemies appear or attack in groups, usually groups of the same type or simi-
+lar types of enemies, they are said to come in waves. The makeup of the wave 
+normally varies, including a selection of enemies appropriate to the current level of 
+the game. As the game progresses, the waves include stronger enemies. At later 
+stages of the game you may want to phase out the earlier weaker enemies, because 
+they will no longer provide an effective challenge. Enemies increase in strength 
+and number, reaching a peak at the end of the level.
+Waves of enemies can appear in exactly the same way every time the player plays
+(a scripted wave) or they may vary according to an algorithm that you design. 
+Scripted waves of enemies have appeared in games ranging from the original Space
+Invaders to Max Payne and many others. In these types of games, you simply build 
+the size and composition of the wave into the level however you wish.
+If you want waves of enemies to arrive according to an algorithm rather than in a 
+ﬁ xed progression, choose particular locations in the level (or time intervals in the 
+game) and a pool of enemy types from which to draw the enemies who will appear. 
+Design your algorithm to select a number of enemies consistent with the level of 
+the game and the difﬁ culty setting, if there is one. You can implement a simple 
+form of dynamic difﬁ culty adjustment by having your algorithm check the amount 
+of avatar lives or health points remaining; if the number is low, generate fewer ene-
+mies or weaker ones.
+THE BIG BOSS
+In many games, a large enemy, or big boss, signiﬁ cantly harder to ﬁ ght than any of 
+the previously encountered enemies, guards the end of a group of themed levels. 
+Defeating the boss takes the player to a new set of themed levels. Boss characters 
+TIP The player won’t 
+know the algorithm 
+that generates waves 
+of enemies and may 
+perceive their arrival 
+to be random. You 
+should not really 
+generate waves at 
+random, however, 
+or you risk creating 
+spikes or troughs in 
+the difﬁ culty level.
+
+
+--- PAGE BREAK ---
+
+406 
+FUNDAMENTALS OF GAME DESIGN
+often can’t be hurt by normal methods; damaging them may require special weap-
+ons, a special attack method, or special timing. For example, the Piranha Plants in 
+Super Mario Sunshine are invincible until they open their mouths.
+The boss character’s appearance and actions complement the theme of the set of 
+levels it guards. Sometimes the boss character is simply a much larger version of 
+another character that the player already defeated. This enhances the gameplay by 
+allowing the player to predict some of the boss’s behavior and gives him a small 
+advantage in knowing what to expect.
+Games with a serious storyline aren’t suited for such an unsubtle set of themed
+levels, but even so, the themed level and big boss are mainstays of action games. 
+Virtually every level-based, action-based game today uses a succession of levels 
+increasing in difﬁ culty, culminating in a climactic defeat of a big boss. 
+WILDCARD ENEMIES
+To break up the predictability of predeﬁ ned waves of enemies, many games insert a 
+randomly generated wildcard enemy to provide a fresh challenge. Wildcard ene-
+mies, unlike level bosses, normally attack at the same time as normal enemies and 
+behave in unexpected ways.
+The Atari game Asteroids, for instance, offers predictable waves of enemies (in this 
+case drifting rocks; although they do not shoot, they are still an active danger), but 
+at random times during the waves, a UFO appears and follows an unpredictable 
+path, shooting at the player. The game awards extra points for shooting the UFO, 
+but trying to do this tends to distract the player and cause her to make mistakes: a 
+perfect example of risk and reward in an action game.
+MONSTER GENERATORS AND SPAWN POINTS
+Many action games include a feature that causes new enemies to suddenly appear 
+in the game world. If the enemies appear from a visible object that the player can 
+destroy, that object is a monster generator. If the enemies appear seemingly out of 
+thin air at a particular location, that location is a spawn point. The game Doom uses 
+spawn points: Monsters suddenly appear, each in a ﬂ ash of green light, and there is 
+nothing a player can do to prevent it. In Gauntlet, on the other hand, monster gen-
+erators are machines visible in the game world. If the player destroys a monster 
+generator, no more monsters come out of it. As a result, the player has a choice of 
+strategies: ﬁ ght the monsters or destroy the generator. The strategy with the lowest 
+risk involves destroying the monster generators before they can spawn too many 
+monsters, but players aiming for the highest score may delay destroying the mon-
+ster generator until they boost their scores sufﬁ ciently by killing enough monsters. 
+This choice makes the game more interesting.
+Monster generators and spawn points may create either a limited or an unlimited 
+number of enemies. If you design a spawn point that produces an unlimited 
+TIP Don’t use spawn 
+points or monster 
+generators in single-
+player combat games 
+set in realistic situa-
+tions such as World 
+War II. In a realistic 
+environment, the play-
+er reasonably expects 
+that when he clears a 
+region of enemies, it 
+will remain empty. You 
+can still have enemies 
+walk, drive, or ﬂ y in 
+from elsewhere, but 
+having them materialize 
+out of thin air destroys 
+your game’s credibility.
+
+
+--- PAGE BREAK ---
+
+ACTION GAMES 
+407
+ CHAPTER 13
+number of enemies, the player can never defeat them all and must meet some other 
+condition (such as ﬁ nding the level exit) to make the level end. If you use a mon-
+ster generator instead, even if it generates enemies indeﬁ nitely, the player can 
+ultimately get rid of them all by destroying the generator itself. A monster genera-
+tor or spawn point might produce only one type of enemy, or it might offer a range 
+of different foes. You should adjust the strength of the enemies that it generates 
+based on the difﬁ culty level of the game.
+Player Actions
+Action games routinely allow moving or maneuvering an avatar; aiming and shoot-
+ing; selecting, collecting, manipulating, or modifying objects; and various kinds of 
+ﬁ ghting moves—punching, kicking, defending, and so on. Platformers naturally 
+include a number of moves for climbing and jumping. 3D shooters frequently offer 
+a number of specialized activities associated with infantry combat, including 
+crouching or lying prone to avoid ﬁ re and improve one’s aim, dropping and rolling 
+to get out of danger, and peeking out from behind cover.
+Two specialty actions—smart bombs and hyperspace escape—are characteristic of 
+action games and are seldom found anywhere else. They’re normally found in 
+high-speed 2D games. A smart bomb sounds like an object, but it’s usually imple-
+mented as an action available to the player. Pressing the smart bomb button clears 
+the area immediately surrounding the avatar, typically leaving it entirely free of 
+enemies, although the range cleared varies from game to game. Because the smart 
+bomb is so powerful, you should make it costly, generally by making it available 
+only once or by making its effect diminish every time it is used. Because the player 
+doesn’t know what lies ahead, he is always faced with the decision of whether to 
+use it in a given situation or to try to make do without it in case he gets into even 
+worse trouble later on.
+Hyperspace escape is a button or other player-selectable option that instantly 
+moves the player’s avatar to another location in the game world, normally at ran-
+dom. It’s a means of getting out of trouble. However, unlike the smart bomb, a 
+hyperspace escape is just as likely to land the avatar in an equally difﬁ cult situation 
+as it is to transport it to safety. Asteroids provides an example of the early use of 
+hyperspace escape. Designers usually allow players to use the hyperspace button 
+more frequently than the smart bomb because the usefulness of the maneuver is 
+balanced by the chance that the avatar could end up in an even worse situation. 
+Ironically, the more likely the Asteroids player is to need it (usually because of the 
+amount of debris on the playﬁ eld), the more risk there is to the player. 
+Core Mechanics Features
+The core mechanics of action games should be simple and obvious. Action games 
+have small numbers of resources, and the relationships among these resources are 
+
+
+--- PAGE BREAK ---
+
+408 
+FUNDAMENTALS OF GAME DESIGN
+straightforward: Being hit by an enemy costs energy points; collecting gold stars 
+increases the ﬁ nal score; and so on. The player in an action game is too busy to 
+study a complex internal economy.
+LIVES
+Designers usually allow the player’s avatar a small number of reprieves from death. 
+The number of lives provided usually ranges between three and ﬁ ve. Colliding with 
+an enemy or some other dangerous object costs the player a life. Players earn extra 
+lives by picking up a powerup or reaching a certain score. The player’s avatar is usu-
+ally invulnerable for a few seconds when he reappears after losing a life, so he can 
+regain his bearings. When the player loses all his lives, he must either start over or 
+return to the most recent checkpoint or saved game. The limited-life mechanic 
+remains standard for arcade games, but it is being replaced rapidly in console and 
+computer games by designs that allow unlimited lives.
+ENERGY
+The player’s avatar begins the game with a limited amount of energy, sometimes 
+characterized as hit points or health. Dangerous encounters with enemies or other 
+hazardous features of the game world deplete this energy; in some games time 
+itself, just living in the game world, consumes energy.
+This energy can often be partially or even fully replenished by using a collectible or 
+a powerup, but when the avatar’s energy is fully depleted, it dies. In a game in 
+which avatars have multiple lives, when the avatar’s energy is completely depleted, 
+one of its lives is lost.
+In some games, an avatar’s energy is shared over a number of physical features
+—for example, energy can be a limited resource that is distributed between shields 
+and fuel, requiring the player to carefully balance resources.
+POWERUPS
+As a reward for progress, the player may be given a powerup, that is, the opportu-
+nity to increase her avatar’s strength or some other attribute temporarily or even 
+permanently. In the case of a shooter, this can come in the form of stronger weap-
+ons or shields.
+A permanent powerup is one that remains with the avatar for an extended period—
+possibly the remainder of the game but at least the current life or level. Space Tripper
+(and many other shooters) uses this model, although Space Tripper is unusual in 
+that when the avatar dies, it loses only powerups gained on the most recent level.
+Temporary powerups provide a powerful but short-lived advantage. These may be 
+limited by time—for example, the avatar may move faster, but only for a short 
+period, from a few seconds to a few minutes—or by the number of times they can 
+be used. For example, a shield may be used up after it has absorbed a certain 
+
+
+--- PAGE BREAK ---
+
+ACTION GAMES 
+409
+ CHAPTER 13
+number of hits. A general design rule is that the more powerful the advantage, the 
+shorter the time the avatar should be allowed to use it. The Quad Damage powerup 
+in Quake III provides a perfect example of the temporary powerup; it quadruples 
+the damage that the player’s weapons do for 30 seconds.
+Some games vary the use of powerups by using power points. The player receives a 
+certain number of power points to spend on an upgrade and enjoys some latitude 
+in deciding how she wants to upgrade her avatar. Space Tripper provides two main 
+weapons; the currently selected weapon will be upgraded when the player uses her 
+power points. Playing Space Tripper successfully requires that the player balance the 
+upgrade points between these weapons.
+COLLECTIBLES
+Collectibles are bonus objects the player can pick up that are not essential to the 
+game and are often used only to augment the player’s score. The player is not 
+penalized for failing to collect them, but if he can justify the risk, then the rewards 
+are high.
+Collectibles can also unlock secret levels or cause special bonus events to occur. In 
+Rainbow Islands, the player can collapse rainbows onto his enemies. As the enemies 
+die, they deposit crystals the player can collect to earn bonus points. Collecting the 
+crystals in the right order (red, orange, yellow, green, blue, indigo, violet) opens a 
+doorway to a secret level, which gives the player a huge score and a permanent 
+secret powerup.
+TIME LIMIT
+Many games employ a timer that counts down from some initial value to zero. 
+When the timer reaches zero, some major game event occurs.
+A level timer indicates how much time the player has to complete the level; if he 
+fails to do so, the level and the level timer are reset, and the player has to start 
+again. This is often accompanied by a life loss. If the player ﬁ nishes the level with 
+time remaining on the level timer, then this excess time may be multiplied by a 
+constant as a score bonus, or the player may receive some other reward for complet-
+ing the level early.
+You can also use a timer to count down to a catastrophe. The player must achieve 
+some task before the timer runs out, or the task becomes much more difﬁ cult to 
+achieve. Sinistar uses this form of time limit to good effect; when the timer runs 
+out, the eponymous Sinistar has been built, and the player is in a lot of trouble.
+Time limits may also govern the effectiveness of powerups. In this case, when the 
+timer runs out, a temporary powerup stops being effective, and the player’s avatar 
+reverts to its normal state. Pac-Man’s power pellets, which allow the Pac-Man to eat 
+the ghosts for a limited time, are good examples of this use of time limits.
+
+
+--- PAGE BREAK ---
+
+410 
+FUNDAMENTALS OF GAME DESIGN
+SCORE
+For many action game players, earning a high score is more important than the 
+story. Keep track of the player’s accomplishments: completing tasks, defeating ene-
+mies, collecting items, length of time through each level, and so on. One of these 
+numbers is normally more important than the others, especially if it is the one that 
+determines victory over other players in a multiplayer game. Which achievement is 
+most important depends on the subgenre of the game; in deathmatch shooter 
+games, for example, frags (enemy kills) are the most important. Display the player’s 
+primary score, whichever score that is, onscreen at all times in the primary game-
+play mode. Display the player’s other achievements at the end of the levels. Be sure 
+to provide one or more high-score tables so the players can see their own earlier 
+achievements in single-player games and compare themselves with others in multi-
+player ones. 
+Many games reward skillful play with bonus scores and multipliers. The classic 
+example of the score multiplier can be found in Pac-Man: After getting the power 
+pill, the ﬁ rst ghost that the player eats earns 200 points, the next earns 400 points, 
+then 800, and then 1600. 
+Victory Conditions
+Not all action games have victory conditions because not all games can be won—in 
+some games, the most the player can aspire to is a higher score. The object of Space
+Invaders is supposedly to save Earth from waves of evil alien invaders, but each 
+wave gets faster and more aggressive until the aliens overwhelm the player. The 
+game is unwinnable. This design is now considered outdated for any but arcade 
+machines. On other types of machines there is no reason to discourage the player 
+from playing for as long as she wants and indeed completing the game.
+The victory conditions in simple action games tend to be either crystal clear and 
+known to the player in advance—Banjo needs to rescue his sister in Banjo-Kazooie
+—or nonexistent, as in the case of Space Invaders. In action games with a storyline, 
+the designers often change the (apparent) victory condition as the game goes on. In 
+Half-Life, for example, the player’s ﬁ rst goal is simply to get out of the Black Mesa 
+research complex, but later she discovers that she has to do more things before she 
+can win the game.
+Interaction Model
+The most commonly used interaction model for action games is the avatar, found 
+in everything from the original Space Invaders to Half-Life 2. In games that involve 
+exploration or defeating enemy attackers, it makes the most sense for the player to 
+project his will into the game world at a single point, the location of the avatar. 
+However, in subgenres in which the player neither ﬁ ghts nor explores, the avatar 
+
+
+--- PAGE BREAK ---
+
+ACTION GAMES 
+411
+ CHAPTER 13
+model makes less sense. Tetris, for example, uses a puzzle-manipulation model. 
+Lemmings uses an omnipresent model; the player may click any lemming at any time.
+The nature of the actions you choose to include will tend to dictate your interac-
+tion model. Ask yourself what the player is going to do, and that will tell you how 
+she should do it.
+Camera Models
+Because the player must see and react to events so quickly in action games, the 
+choice of camera model is critical. We’ll look ﬁ rst at the distinction between 2D 
+and 3D games and then at the choices available in 3D games.
+2D CAMERA MODELS
+Two-dimensional action games typically use one of two camera models: a side view 
+or a top-down view. Tetris uses a side view; Robotron: 2084 uses a top view of the 
+playﬁ eld, although the characters themselves are displayed side-on. If the side view 
+can scroll long distances to the left and right, this is known as side-scrolling and is 
+classic for avatar-based games from Defender to Kung Fu Panda. Top-down views 
+sometimes scroll long distances from the top to the bottom of the screen as the 
+avatar moves forward through an environment; this is known as top-scrolling and is 
+best known in ﬂ ying games like Xevious. Gauntlet has a top-down view that scrolls 
+in all four directions.
+You may also design your game so that it scrolls continuously at a ﬁ xed rate from 
+top to bottom or right to left; this is called continuous scrolling. It puts more pressure 
+on the player because she cannot stop it; she can only deal with challenges as they 
+come. Variable scrolling causes the landscape to scroll under, or behind, the avatar 
+in direct response to the player’s actions; if the avatar turns around and goes in the 
+opposite direction, the view duly scrolls back again. In effect, it lets the player run 
+away from enemies and perhaps even take a break.
+Continuous scrolling and variable scrolling have a direct effect on the gameplay, 
+because the latter allows the player to control the pace at which he faces enemies, 
+whereas the former does not. You may also encounter another term, parallax scroll-
+ing, which is a cosmetic display technique with no actual effect on the gameplay. 
+Parallax scrolling creates a slight illusion of three dimensions in a two-dimensional 
+environment by having objects that are designated as being in the background 
+scroll by more slowly than the ones in the foreground. This gives the impression 
+that the background objects are farther away.
+3D FIRST PERSON
+In games set in a 3D space, the perspective is most often, but not always, closely 
+tied to an avatar with either a ﬁ rst-person or a third-person point of view. The ﬁ rst-
+person perspective is particularly successful for high-speed 3D shooting games such 
+
+
+--- PAGE BREAK ---
+
+412 
+FUNDAMENTALS OF GAME DESIGN
+as the Quake series because it enables the player to see clearly what she is shooting 
+at, without the avatar blocking part of the screen. Unfortunately, the ﬁ rst-person 
+perspective does not let the player see the area around the avatar very clearly; she 
+can only see ahead of the avatar, whatever faces the avatar, and so this point of 
+view is unsuitable for ﬁ ghting games (such as Prince of Persia: The Sands of Time) in 
+which enemies attack the avatar from all sides.
+Although the ﬁ rst-person perspective seems realistic in principle, in fact, on a con-
+ventional monitor with a 4:3 aspect ratio, the ﬁ rst-person view constrains the 
+player’s vision to about a 30-degree arc. The normal human enjoys an arc of vision 
+of about 120 degrees horizontally, so the player’s ﬁ eld of view is really only about 
+one-fourth of normal size. Widescreen TVs have begun to help with this, and fortu-
+nately the mouse-based user interface of most ﬁ rst-person games enables the player 
+to look left and right more quickly than she could in real life. In order to be fair to 
+the player of a ﬁ rst-person single-player game, however, you must still make sure 
+that most of her enemies approach her from the front.
+The ﬁ rst-person perspective also allows nice touches such as zooming, giving the 
+impression that the avatar is using binoculars or a riﬂ e with a telescopic sight.
+3D THIRD PERSON
+Many 3D games, such as Super Mario Sunshine, Gears of War, and the Tomb Raider
+series, offer a third-person view. The player can see his avatar on-screen, usually 
+from a viewpoint in which the camera is behind and somewhat above the avatar. 
+Players can see some distance ahead of the avatar, though not as far as in the ﬁ rst-
+person view because the camera is tilted downward. In this case, you must not 
+present the player with dangers at a very long range (for example, an enemy with a 
+sniper riﬂ e) because the player won’t be able to see them until it’s too late.
+Players may also see a little of what is behind and to the side of the avatar. In these 
+types of games, the camera must move to follow the avatar both predictably and 
+unobtrusively. Many third-person shooters allow the player to switch to a ﬁ rst-
+person perspective momentarily for more precise aiming. Some ﬁ rst-person 
+shooters switch to third-person in particular situations. Halo switches from ﬁ rst
+to third whenever the avatar gets into a vehicle (at which time the vehicle itself 
+temporarily becomes the avatar).
+GAMEPLAY IMPLICATIONS OF 2D AND 3D
+In a 3D environment, the player cannot easily tell the speed or distance of objects 
+that come directly toward her point of view. (This is also true in the real world, 
+while driving, for example.) By operating in only two dimensions, 2D games 
+remove this problem and simplify the amount of visual processing that the player 
+must do. She can directly see the distance between her avatar and other objects, 
+she can clearly see the speed at which things are moving, and she doesn’t have to 
+construct a mental 3D model of a space as she explores it. This means that 2D 
+TIP Resident Evil 4
+introduces an innova-
+tion, a third-person 
+camera positioned im-
+mediately behind the 
+avatar’s right shoulder, 
+rather than farther 
+back as in Tomb Raider.
+This approach makes
+it impossible 
+to see the avatar’s 
+entire body, but the 
+player can aim and 
+see dangers much 
+more easily than in 
+traditional third-
+person games. The 
+technique achieves 
+some of the beneﬁ ts 
+of the ﬁ rst-person 
+view in a third-person 
+perspective.
+
+
+--- PAGE BREAK ---
+
+ACTION GAMES 
+413
+ CHAPTER 13
+games can throw a lot more challenges at the player before overwhelming her—in 
+short, they can simply be more frenetic than 3D games.
+Three-dimensional games make greater use of the environment to present their 
+challenges than 2D games do. The player must traverse a complex three-dimensional
+landscape, which requires him to remember how rooms join other rooms. This isn’t 
+so bad in environments with conventional architecture but it can become night-
+marish in unfamiliar spaces or those in which rooms or regions all look alike. 
+Descent provided a particularly good example of this problem: The player’s space-
+ship ﬂ ies through a sort of zero-gravity 3D maze. Because the ship can rotate in any 
+direction and the rooms have no clearly deﬁ ned ﬂ oors or ceilings, it is easy to become
+disoriented. The same room can look quite different from different camera angles.
+In 3D combat games, enemies can hide behind doors and around corners in a way 
+that is not possible in 2D games. They can also sneak up on the avatar from behind,
+although there is some debate about whether this is fair to the player. In 2D games, 
+the player can always see what’s coming. In practice, this means that 3D games 
+have greater opportunities to startle and surprise the player, which has been used 
+to great effect in survival horror games.
+CONTEXT-SENSITIVE MODELS
+The context-sensitive camera model is becoming increasingly popular in action 
+games. In this model, the camera moves around depending on the circumstances 
+of the moment, controlled by AI. One of the best examples of this comes from Ico,
+shown in Figure 13.7. The camera, seeking to provide the best angle from which to 
+show the action, changes its angle as the avatar moves from room to room. This 
+works well for slower games, but in fast games, especially if the player is ﬁ ghting for 
+his life, it is a distraction. If the camera moves—especially if it jumps suddenly—
+the player becomes disoriented and is likely to make mistakes. Context-sensitive 
+perspectives are great for offering visual variety, but in high-speed action you 
+should stick to more ﬁ xed and predictable points of view.
+FIGURE 13.7 
+The camera in Ico
+moves continuously to 
+display the avatar from 
+the best angle. 
+
+
+--- PAGE BREAK ---
+
+414 
+FUNDAMENTALS OF GAME DESIGN
+User Interface
+The user interface for action games should be, as Einstein said of physics, “as simple 
+as possible, but not simpler.” Players must be able to quickly and accurately assess 
+the play environment, and for that you need to keep distractions to a minimum. 
+Controls must be responsive, predictable, and easy to learn. This section looks at 
+some user interface features that you can use to meet these requirements.
+VISUAL AND AUDIO INDICATORS
+Not only does the player have to contend with the frantic action in your game, he 
+also has to pay attention to the indicators in the user interface. He should be able to 
+do this at a glance without having to work to interpret the data. Follow these sug-
+gestions in order to help your player understand what he’s seeing.
+■ Display only as much as the player needs to know. Most action games require 
+only a limited amount of information, so this isn’t difﬁ cult. For example, the HUD 
+(head-up display) for Quake III shows the minimum amount of information: the 
+player’s current health, weapon, and amount of ammo.
+■ Keep it on-screen. All the vital information that the player needs should be 
+immediately visible. Don’t require the player to switch to another screen to learn 
+something important; it destroys his concentration. 
+■ Where possible, use graphical indicators rather than numbers or text. In an 
+action game, players seldom need to know exact quantities. It takes more mental 
+processing power to recognize a number than it does to understand a simple power 
+bar or gauge. See the section “Feedback Elements” in Chapter 8, “Using Interfaces,” 
+for more details.
+■ Draw attention to critical information. The player can’t be watching his indi-
+cators all the time, so warn him when critical resources run low. To draw the player’s
+attention to something in the status panel, make it blink or ﬂ icker. On the periph-
+ery of our ﬁ eld of vision, the eye is attuned to detect changes in contrast or color, 
+so the easiest way to get the player’s attention is to use a ﬂ ashing or ﬂ ickering indi-
+cator. Don’t rely solely on color changes, however, as this handicaps colorblind 
+players. See “Colorblind Players” in Appendix A, “Designing to Appeal to Particular 
+Groups.”
+■ Keep maps in the primary gameplay mode simple and clean. If you are plan-
+ning to give the player a map in the primary gameplay mode—and it’s often a good 
+idea—it must be as immediately comprehensible as any other indicator. If your map 
+needs to be complicated for some reason, make it available in a separate mode that 
+pauses the action while the player studies the map.
+■ Use plenty of audio feedback. Players depend heavily on their ears to warn 
+them of approaching dangers and to let them know when they’ve succeeded at a 
+challenge or obtained something valuable. In the middle of fast action, they might 
+not see it, so make sure they can hear it as well. 
+
+
+--- PAGE BREAK ---
+
+ACTION GAMES 
+415
+ CHAPTER 13
+CHARACTERS AND OBJECTS
+In action games, the player’s avatar must be extremely easy to pick out. FPS games, 
+in which the avatar is not displayed on-screen, don’t present this problem, but in 
+other action games, the avatar may show up in a clutter of other graphics. The ava-
+tar must be distinctive, with a unique shape, color, or position on-screen. Lara 
+Croft, for example, wears a distinctive shirt in a teal blue used nowhere else in 
+Tomb Raider. If the player can see a splash of that particular blue on the screen, 
+then he knows he is looking at Lara. 
+Quickly identifying enemies is equally important. The majority of action games 
+use color schemes that indicate enemies, extending the idea of the avatar’s unique 
+color so that enemies, too, follow a common scheme of color or appearance. In the 
+ﬁ lm Tron, you can easily identify the bad guys because they’re the ones in red; the 
+good guys wear blue.
+Two-dimensional scrolling games frequently use position to distinguish the avatar. 
+In these games, the world moves around the avatar, which remains in the same 
+absolute position, or at least on the same horizontal or vertical line, on-screen,
+giving players a ﬁ xed point of reference by which they can orient themselves.
+CONTROLS
+Action games (with the exception of ﬁ ghting games) require simple controls. 
+Because of the fast pace of these games, the physical act of using the controls 
+should, wherever possible, directly translate to avatar action—pushing left on the 
+controls makes the avatar go left, pushing right makes the avatar go right, and so 
+on. For 2D games, this is simple to design, but for ﬁ rst- or third-person 3D games, 
+the third dimension complicates matters. Until recently, all input devices—
+joysticks, mice, D-pads, and so on—have allowed input in only two dimensions,
+so movement in the third dimension had to be controlled by separate—usually 
+binary—buttons, which is less convenient. Nintendo’s Wii controller can input 
+control data in three dimensions.
+Some action games have attempted to implement more complex control schemes 
+for 3D movement. The success of these games depends on the lengths to which 
+players are prepared to go to learn the system. Games that succeed in this are usu-
+ally the games that set the standards for new genres. For example, the Doom and 
+Quake modes of interaction for FPS games are ubiquitous nowadays, but they’re still 
+by no means simple for a beginner. 
+As already mentioned, the user interface for ﬁ ghting games presents more difﬁ -
+culty. Moves such as walking, kicking, and punching may be straightforward, but 
+for the more complex and rewarding combo moves, the player must perform a long 
+string of commands in the correct sequence. Because the commands bear no rela-
+tion to the actual move executed, players ﬁ nd them harder to learn and remember.
+
+
+--- PAGE BREAK ---
+
